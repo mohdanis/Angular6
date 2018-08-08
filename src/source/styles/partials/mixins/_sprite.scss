@@ -1,0 +1,71 @@
+//Advance sprite mixin with dimensions
+@mixin advance-sprite-image($name, $sprites: $icons, $sprites2x: $icons2x, $dimensions: true, $pad: 0) {
+  @if $dimensions == true {
+    @include sprite-dimensions($sprites, $name);
+  }
+
+  background-image: sprite-url($sprites);
+  background-position: sprite-position($sprites, $name, -$pad, -$pad);
+  background-repeat: no-repeat;
+
+  @if $pad > 0 {
+    padding: $pad;
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3 / 2), (min--moz-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 144dppx) {
+    & {
+      $name2x: $name + "@2x";
+      $pos: sprite-position($sprites2x, $name2x, -$pad * 2, -$pad * 2);
+
+      background-image: sprite-url($sprites2x);
+      background-position: (nth($pos, 1) / 2) (nth($pos, 2) / 2);
+
+      @include background-size(ceil(image-width(sprite-path($sprites2x)) / 2) auto);
+    }
+  }
+}
+
+//Sprite mixin with retina and 1 http request
+@mixin use-sprite-icon($icon) {
+  #{$icons-prefix}#{$icon} {
+    @include sprite-image($icon, true);
+  }
+}
+
+@mixin sprite-image($sprite, $sprite-retina: false, $sprite-map: $icons) {
+  $sprite-high-res: #{$sprite}#{$retina-suffix};
+
+  background-image: sprite-url($sprite-map);
+  background-position: sprite-position($sprite-map, $sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  height: image-height(sprite-file($sprite-map, $sprite));
+  width: image-width(sprite-file($sprite-map, $sprite));
+
+  @if $sprite-retina {
+    @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3 / 2), (min--moz-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 144dppx) {
+      background-size: (image-width(sprite-path($sprite-map)) / 2) (image-height(sprite-path($sprite-map)) / 2);
+      background-position: round(nth(sprite-position($sprite-map, $sprite-high-res), 1) / 2) round(nth(sprite-position($sprite-map, $sprite-high-res), 2) / 2);
+      height: image-height(sprite-file($sprite-map, $sprite));
+      width: image-width(sprite-file($sprite-map, $sprite));
+    }
+  }
+}
+
+//Sprite mixin with optional retina and offset
+@mixin sprite-background-image($name, $icons, $offset-x, $offset-y, $icons-2x) {
+  background-image: sprite-url($icons);
+  background-position: sprite-position($icons, $name, $offset-x, $offset-y);
+  background-repeat: no-repeat;
+
+  $sprite-path: sprite-path($icons);
+  $sprite-height: image-height($sprite-path);
+  $sprite-width: image-width($sprite-path);
+
+  @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+    background-image: sprite-url($icons-2x);
+    background-position: sprite-position($icons, $name, $offset-x, $offset-y);
+    background-size: $sprite-width $sprite-height;
+    background-repeat: no-repeat;
+  }
+}

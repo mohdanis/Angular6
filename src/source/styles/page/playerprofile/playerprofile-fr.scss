@@ -1,0 +1,18 @@
+@import "../../lang/en/partials/mixins/utilities";
+@import "../../partials/base/fonts";
+@import "../../lang/en/fontface";
+@import "../../includes-ltr";
+@import "common";
+
+/* Adjestment for playerprofile card*/
+
+.goals-passing-charts li text,.stats-passing-charts  li text {
+        @include font-size(4.5,important);
+}
+	.stats-passing-charts{
+            g{
+                .passing-percentage{
+                    @include font-size(12,important);
+                }
+            }
+       }

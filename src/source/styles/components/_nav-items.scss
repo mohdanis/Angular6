@@ -1,0 +1,283 @@
+// Match Items in navigation
+.match-item {
+  @include padding(30, 20, 40, 20, important);
+  height: 444px !important;
+  &__league {
+    // text-align: center;
+    // height: 75px;
+    // position: relative;
+    img {
+      // display: inline-block;
+      // left: 50%;
+      // max-height: 45px;
+      // position: absolute;
+      // //top: 50%;
+      // bottom: -15px;
+      // transform: translate(-50%, -50%);
+    }
+  }
+  &__info {
+    width: 100%;
+    display: table;
+    @include font-size(0);
+    text-align: center;
+    &--team {
+      display: inline-block;
+      width: calc(50% - 70px);
+      text-align: center;
+      vertical-align: middle;
+      @include font-size(40,en);
+      @include line-height(32,px,en);
+      @include primary-bold(en);
+      color: #1a1a1a;
+      height: 50px;
+      &:nth-child(2) {
+        width: 76px;
+        height: 48px;
+        color: $white;
+        position: relative;
+        span {
+          @include vertical-align;
+          display: inline-block;
+        }
+      }
+      &.red-block {
+        background: $mu-red;
+      }
+      &.gray-block {
+        background: $gray-draw;
+        @include font-size(32,en);
+      }
+      &.black-block {
+        background: $mu-black;
+      }
+      img {
+        display: inline-block;
+        max-width: 50px;
+        max-height: 50px;
+        @include vertical-align;
+      }
+      .match-stage {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        @include tertiary-bold;
+        @include font-size(14);
+        @include line-height(1.33);
+        color: #1a1a1a;
+        @include bottom(48);
+      }
+      .agg-score {
+        @include percentage-value(width, 100);
+        @include text-align(center);
+        @include secondry-regular;
+        @include font-size(14);
+        @include line-height(1.33);
+        @include color($mu-black);
+        @include text-transform(capitalize);
+        position: absolute;
+        @include top(52);
+      }
+      &.team-name {
+        @include font-size(24);
+        height: 30px;
+        width: calc(50% - 30px);
+        text-align: initial;
+        span {
+          @include vertical-align;
+          display: inline-block;
+          @include pull-right;
+          @include padding-right(12);
+        }
+        ~ .team-name {
+          span {
+            @include pull-left;
+            @include padding-left(12);
+          }
+        }
+      }
+      &.team-vs {
+        background: $white-lighter;
+        height: 24px;
+        width: 36px;
+        color: $mu-black;
+        transform: skew(-10deg);
+        @include font-size(14);
+        @include line-height(1.14);
+        span {
+          @include secondry-bold;
+          position: relative;
+          @include top(50,percent);
+          -webkit-transform: translateY(-50%) skew(10deg);
+          -ms-transform: translateY(-50%) skew(10deg);
+          transform: translateY(-50%) skew(10deg);
+          display: inline-block;
+        }
+      }
+    }
+    &.teams {
+      @include margin-top(15);
+    }
+    &.with-agg {
+      @include margin-top(25);
+    }
+    &--teasure {
+      text-align: center;
+      @include margin(0, 0, 40, 0);
+      @include font-size(14);
+      span {
+        @include display(block);
+      }
+    }
+  }
+  &__status {
+    img {
+      display: inline-block;
+    }
+    &--score {
+      display: inline-block;
+    }
+    width: 140px;
+    vertical-align: middle;
+    @include margin-auto(0 auto);
+    background: #f2f2f2;
+    @include padding(7,10,7,10);
+    position: relative;
+    height: 52px;
+    p {
+      display: inline-block;
+      vertical-align: top;
+      @include font-size(26);
+      @include padding(8,5,8,5);
+      background: #d4d4d4;
+      position: absolute;
+      @include right(5);
+      @include primary-bold;
+      span {
+        @include font-size(18);
+        vertical-align: top;
+        color: #1a1a1a;
+      }
+      &.match-item__status--score {
+        color: #d0021b;
+      }
+    }
+  }
+  &__cta {
+    @include margin(10,0,10,0);
+    position: absolute;
+    @include left(0);
+    @include bottom(20);
+    width: 100%;
+    text-align: center;
+    transform: skew(-10deg);
+    a {
+      //border: 1px solid #1a1a1a;
+      @include border-transparent(1, solid, $mu-black, 0.2);
+      @include padding(13,35,13,35);
+      @include font-size(14);
+      color: #1a1a1a;
+      display: inline-block;
+      text-transform: uppercase;
+      @include secondry-semibold;
+      letter-spacing: 0.9px;
+      i {
+        @include pull-right;
+        @include margin(2, 0, 0, 10);
+      }
+      &:hover {
+        @include background-color(#1a1a1a, 0.15)
+      }
+      &.live {
+        background: #c70101;
+        color: #fff;
+        border: 1px solid #c70101;
+        .icon-cta-arrow {
+          @extend .icon-cta-arrow-white;
+          @include pull-right;
+          @include margin(2, 0, 0, 10);
+        }
+        &:hover {
+          background-color: #9f0000;
+          border: 1px solid #9f0000;
+        }
+      }
+    }
+  }
+}
+
+// Video Sub Navigation Items
+.mu-item {
+  &.video,
+  &.audio {
+    @extend %black-card;
+    @include cursor(pointer);
+    figure {
+      @include percentage-value(width, 100);
+      @include percentage-value(height, 100);
+      img {
+        text-indent: -9999px;
+      }
+    }
+    .mu-item__gradient {
+      z-index: 0px;
+    }
+    .mu-item__videoinline {
+      height: 100%;
+    }
+    .mu-item__video {
+      height: 100%;
+      @include position(relative);
+      @include z-index(0);
+      // @include display(none);
+    }
+    & .mu-item__title {
+      @include color($white);
+      &:before {
+        @include display(none);
+      }
+    }
+    .mu-item__teasure {
+      color: $white !important;
+      // @include important-value(color, $white);
+    }
+    .mu-item__player {
+      @include percentage-value(width, 100);
+      @include percentage-value(height, 100);
+      @include z-index(8);
+      @include position(relative);
+    }
+    .mu-item__play {
+      @include margin-bottom(12);
+      @include background-color($mu-red);
+      width: 52px;
+      height: 52px;
+      span {
+        @extend %btn-center;
+      }
+    }
+    .mu-item__info a {
+     @include padding-top(0);
+    }
+    .mu-item__sponsor__wrapper {
+      z-index: 10;
+    }
+  }
+}
+
+.mu-content {
+    .mu-item {
+        &.video,
+        &.audio {
+            .oo-player-container {
+                min-width: 10px;
+                @include percentage-value(height, 100);
+                display: block;
+                opacity:0;
+            }
+            a.oo-state-screen-selectable{
+                cursor:pointer !important;
+            }
+        }
+    }
+}

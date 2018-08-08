@@ -1,0 +1,277 @@
+nav, ul, li, a {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.toggleMenu {
+  @include display(none);
+
+  @include background-color($brand-color);
+
+  @include padding(15, 15, 15, 15);
+
+  @include color($white);
+
+  @include breakpoint($medium) {
+    position: absolute  !important;
+    top: -50px !important;
+  }
+}
+
+.nav-wrapper {
+  @include background-color($brand-color, 0);
+
+  @include position(absolute);
+
+  @include px-to-rem(height, 30);
+
+  right: 1px;
+  top: 3px;
+  text-align: right;
+  z-index: 999;
+
+  @include breakpoint($medium) {
+    @include position(static);
+
+    @include background-color($brand-color, 0.7);
+
+    text-align: left;
+  }
+}
+
+.nav {
+  list-style: none;
+  *zoom: 1;
+
+  @include background-color($brand-color);
+
+  position: absolute;
+  width: 100%;
+  top: 70px;
+
+  @include breakpoint($medium) {
+    @include position(static);
+
+    @include background-color($brand-color, 0);
+
+    @include padding(0, 0, 0, 108);
+
+    @include margin-top(2);
+  }
+
+
+  &:before {
+    content: " ";
+
+    @include display(table);
+  }
+
+  &:after {
+    content: " ";
+
+    @include display(table);
+
+    clear: both;
+  }
+
+  ul {
+    list-style: none;
+    width: 9em;
+  }
+}
+
+.nav ul {
+  list-style: none;
+  width: 9em;
+}
+
+.nav a {
+  color: #fff;
+
+  @include padding(10, 35, 10, 10);
+
+  &:hover {
+    @include background-color(#C81601);
+  }
+}
+
+.nav li {
+  position: relative;
+  text-align: left;
+}
+
+.nav > li {
+  @include pull-left;
+
+  border-top: 1px solid #660000;
+
+  @include breakpoint($medium) {
+    border-top: 0px solid #660000;
+
+    @include padding(0, 20, 0, 0);
+
+    &:first-child {
+      @include padding(0, 20, 0, 0);
+    }
+  }
+}
+
+.nav > li > .parent {
+  background-image: url("../../assets/images/icons/downArrow.png");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.nav > li > a {
+  display: block;
+}
+
+.nav li ul {
+  position: absolute;
+  left: -9999px;
+}
+
+.nav > li.hover > ul {
+  left: 0;
+}
+
+.nav li li.hover ul {
+  left: 100%;
+  top: 0;
+}
+
+li.hover a.parent {
+  font-weight: bold;
+}
+
+.nav li li a {
+  display: block;
+
+  @include background-color($brand-color);
+
+  border-top: 1px solid #660000;
+  position: relative;
+  z-index: 9999;
+  padding-left: 30px;
+
+  @include breakpoint($medium) {
+    padding-left: 10px;
+  }
+}
+
+.nav li li li a {
+  @include background-color($brand-color);
+
+  z-index: 200;
+  border-top: 1px solid #660000;
+}
+
+.nav li > ul > li > ul {
+  visibility: hidden;
+  width: 200px;
+  position: absolute;
+  top: 0px;
+  left: 143px;
+  border-left: 1px solid #000;
+}
+
+.nav li > ul > li > ul > li > a {
+  @include background-color(#C81634);
+}
+
+.nav li > ul > li:hover > ul {
+  visibility: visible;
+}
+
+@media screen and (max-width: 768px) {
+  .active {
+    display: block;
+  }
+
+  .nav > li {
+    float: none;
+  }
+
+  .nav > li > .parent {
+    background-position: 98% 50%;
+  }
+
+  .nav li li .parent {
+    background-image: url("../../assets/images/icons/downArrow.png");
+    background-repeat: no-repeat;
+    background-position: 95% 50%;
+  }
+
+  .nav ul {
+    display: block;
+    width: 100%;
+  }
+
+  .nav > li.hover > ul, .nav li li.hover ul {
+    position: static;
+  }
+
+  .nav li > ul > li > ul {
+    visibility: visible;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    padding-left: 30px;
+    border-left: 1px solid #000;
+  }
+
+  .nav > li > ul > li.hover > ul {
+    position: static;
+  }
+}
+
+#nav-toggle {
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+  position: absolute;
+  right: 10px;
+  top: 25px;
+}
+
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: white;
+  position: absolute;
+  display: block;
+  content: '';
+}
+
+#nav-toggle span:before {
+  top: -10px;
+}
+
+#nav-toggle span:after {
+  bottom: -10px;
+}
+
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+  transition: all 200ms ease-in-out;
+}
+
+#nav-toggle.active span {
+  background-color: transparent;
+}
+
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+  top: 0;
+}
+
+#nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+
+#nav-toggle.active span:after {
+  transform: rotate(-45deg);
+}

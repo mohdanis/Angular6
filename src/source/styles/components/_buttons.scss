@@ -1,0 +1,281 @@
+%btn-skew {
+    @include display(inline-block);
+    white-space: nowrap;
+    transform: skew(-10deg);
+    @include margin-auto(0);
+    vertical-align: middle;
+    @extend %txt-uppercase;
+    a {
+        @include padding(14, 26, 14, 26);
+        @include pull-left;
+    }
+    span {
+        @include color($mu-black);
+        @include font-size(14);
+        @include secondry-semibold;
+        @include text-align(center);
+        @include pull-left;
+        @include font-style(italic); // letter-spacing: 0.9px;
+        @include px-to-rem(letter-spacing, 0.6);
+        transform: skew(10deg);
+    }
+    i {
+        @include margin(3, 0, 0, 12);
+        @include pull-right;
+        /*transform: skew(10deg);*/
+    }
+}
+
+
+
+
+/* Destination Buttons
+   white,red,black,transparent and link type buttons...
+*/
+
+%btn-destination__mu-red {
+    @extend %btn-skew;
+    @include border-transparent(1, solid, $mu-red, 0.2);
+    span {
+        @include color($white);
+    }
+    @include btn-transition(background, $mu-red);
+    &:hover {
+        @include btn-transition-hover(background, $mu-red-hover);
+    }
+}
+
+%btn-destination__mu-black {
+    @extend %btn-skew;
+    @include border-transparent(1, solid, $black, 0.2);
+    @include pull-left;
+    span {
+        @include color($white);
+    }
+    @include btn-transition(background, $mu-black);
+    &:hover {
+        @include btn-transition-hover(background, $black-cta-hover); // @include btn-transition-hover($mu-black, 0.6);
+        //background-color: #484848;
+    }
+}
+
+%btn-destination__mu-white {
+    @extend %btn-skew;
+    @include btn-transition(background, $white);
+    @include border-transparent(1, solid, $grey-btn, 0.2);
+    span {
+        @include color($mu-black);
+    }
+    &:hover {
+        transition: unset;
+        -webkit-transition: unset;
+        -moz-transition: unset;
+        -o-transition: unset;        
+        background-color: rgba(184, 183, 185, 0.15); // @include btn-transition-hover($white, 0.15);
+    }
+}
+
+%btn-destination__mu-transparent {
+    @extend %btn-skew;
+    background-color: none;
+    a {
+        @include padding(0, 0, 0, 0);
+    }
+    span {
+        @include color($mu-black);
+        @include secondry-semibold;
+        @include font-size(14);
+        @include letter-spacing(0.9);
+        @include text-transform(uppercase);
+    }
+}
+
+%btn-destination__mu-link {
+    @extend %btn-skew;
+    @include border-none();
+    @include pull-right;
+    @include background(none);
+    @include pull-left;
+    @include margin(12, 0, 0, 0);
+    clear: both;
+    transform: skew(0deg);
+    a {
+        @include padding(0, 0, 0, 0);
+        @include cursor(pointer);
+    }
+    span {
+        @include color($mu-black);
+        @include secondry-semibold;
+        @include font-weight(normal);
+        @include font-style(normal);
+        font-stretch: normal;
+        @include line-height(1);
+        letter-spacing: 0.6px;
+        transform: skew(-12deg);
+        height: 20px;
+        &:hover {
+            // height: 20px;
+            border-bottom: 1px solid #c70101;
+        }
+    }
+    i {
+        @include margin-left(8, important);
+        @include margin-top(3, important);
+    }
+}
+
+%btn-non-destination {
+    i {
+        @include display(none);
+    }
+}
+
+
+
+
+/* ALL class of Destination Buttons
+   white,red,black and link type buttons...
+*/
+
+.red-btn-skew {
+    @extend %btn-destination__mu-red;
+
+    i{
+        transform: skew(10deg);
+    }
+}
+
+.black-btn-skew {
+    @extend %btn-destination__mu-black;
+
+    i{
+        transform: skew(10deg);
+    }
+}
+
+.white-btn-skew {
+    @extend %btn-destination__mu-white;
+    @include cursor(pointer);
+
+    i{
+        transform: skew(10deg);
+    }
+}
+
+.link-btn-black {
+    @extend %btn-destination__mu-link;
+}
+
+.link-btn-white {
+    @extend %btn-destination__mu-link;
+    span {
+        @include color($white);
+    }
+    .icon-cta-arrow {
+        @extend .icon-cta-arrow-white;
+    }
+}
+
+.transparent-btn-skew {
+    @extend %btn-destination__mu-transparent;
+
+    i{
+        transform: skew(10deg);
+    }
+}
+
+.non-dest {
+    @extend %btn-non-destination;
+}
+
+//Used For Matchday load more...
+.white-btn-skew-v2 {
+    @include border(1, solid, #d2d2d2); // @include tertiary-regular;
+    @include secondry-semibold;
+    @include font-weight(normal);
+    @include font-style(normal);
+    @include letter-spacing(0.9);
+    @include font-size(14);
+    @include cursor(pointer);
+    @include padding(13, 32, 13, 32);
+    @include margin-top(0);
+    @include margin-bottom(32);
+    @include px-to-rem(height, 44);
+    @include display(inline-block);
+    @include breakpoint($xsmall) {
+        @include margin-top(24);
+        @include margin-bottom(48);
+    }
+    @include breakpoint($medium) {
+        @include margin-top(0);
+        @include margin-bottom(48);
+    }
+    @include margin-right(4);
+    @include text-transform(uppercase);
+    transform: skew(-10deg); // @include btn-transition(background, none); // background: none;
+    // transition: background .7s ease .1s;
+    // -webkit-transition: background .7s ease .1s;
+    background: transparent;
+    transition: background .7s ease .1s;
+    -webkit-transition: background .7s ease .1s;
+    -moz-transition: background .7s ease .1s;
+    -o-transition: background .7s ease .1s;
+    span {
+        transform: skew(10deg);
+        @include text-transform(uppercase);
+    }
+    &:hover {
+        background-color: white;
+        transition: unset;
+        -webkit-transition: unset;
+        -moz-transition: unset;
+        -o-transition: unset;
+    }
+}
+
+%action-btn {
+    a {
+        @include border-transparent(1, solid, $mu-slate, 0.2);
+        @include border-radius(4);
+        @include padding(1, 5, 1, 5);
+        @include display(inline-block);
+        @include font-size(14);
+        @include secondry-regular;
+        @include color($mu-slate);
+        white-space: nowrap;
+        vertical-align: middle;
+        text-transform: capitalize;
+        text-decoration: none;
+    }
+}
+
+// .red-btn-skew {
+//     &.cta-success {
+//         border: none;
+//         background:none;
+//         span {
+//             @include color($mu-black);
+//         }
+//         .icon-follow-live {
+//             @extend .icon-success;
+//         }
+//         i {
+//             margin: 0 0 0 12px !important;
+//         }
+//     }
+// }
+.cta-success {
+    span {
+        @include font-size(14);
+        @include font-weight(600);
+        letter-spacing: 0.9px;
+        @include secondry-semibold;
+        font-style: italic;
+        @include pull-left;
+        text-transform: uppercase;
+    }
+    i {
+        @include margin-left(12);
+        @include margin-top(2);
+    }
+}

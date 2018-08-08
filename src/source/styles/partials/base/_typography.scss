@@ -1,0 +1,327 @@
+//Headings (h1 to h6)
+%heading1 {
+    @include font-size(48);
+    @include line-height(40,px);
+    @extend %font-normal;
+    @extend %txt-uppercase;
+    @include primary-bold;
+    @include breakpoint($medium) {
+        @include font-size(72);
+        @include line-height(0.83);
+    }
+}
+
+%new-heading2 {
+    @include font-size(36);
+    @include primary-bold;
+    @include line-height(0.9);
+    @extend %txt-uppercase;
+    @extend %secondry-color;
+    @include breakpoint($medium) {
+        @include font-size(48);
+        @include line-height(0.83);
+        
+    }
+}
+
+%new-heading3 {
+    @include font-size(36);
+    @include line-height(26,px);
+    @include primary-regular;
+    @extend %txt-uppercase;
+    @extend %secondry-color;
+    @include breakpoint($medium) {
+        @include primary-bold;
+        @include font-size(32);
+        @include line-height(0.88);
+    }
+}
+
+%new-heading4 {
+    @include font-size(18);
+    @include primary-regular;
+    @include line-height(26,px);
+    @include breakpoint($medium) {
+        @include font-size(24);
+        @include primary-bold;
+        @include line-height(0.92);
+    }
+}
+
+%new-heading5 {
+    @include font-size(18);
+    @include secondry-bold;
+    @include line-height(20,px);
+    @include breakpoint($medium) {
+        @include font-size(16);
+        @include line-height(0.92);
+    }
+}
+
+%new-heading6 {
+    @include font-size(16);
+    @include secondry-bold;
+    @include line-height(20,px);
+    @include breakpoint($medium) {
+        @include font-size(16);
+        @include line-height(0.92);
+    }
+}
+
+
+/*==Alternet headings============================================================================================*/
+
+%heading1-alt {
+    @include font-size(36);
+    @include line-height(0.88);
+    @extend %font-normal;
+    @extend %txt-uppercase;
+    @include tertiary-semibold;
+    @include primary-bold;
+    letter-spacing: normal;
+    @include breakpoint($medium) {
+        @include font-size(48);
+        @include line-height(0.88);
+    }
+}
+
+%new-heading2-alt {
+    @include font-size(32);
+    @include primary-bold;
+    @include line-height(0.9);
+    @extend %txt-uppercase;
+    @extend %secondry-color;
+    @include breakpoint($xsmall) {
+        @include font-size(40);
+        @include line-height(0.83);
+    }    
+    // @include breakpoint($xlarge) {
+    //     @include font-size(48);
+    // }
+}
+
+%new-heading3-alt {
+    @include font-size(24);
+    @include line-height(1);
+    @include tertiary-semibold;
+    @extend %txt-uppercase;
+    @extend %secondry-color;
+    @include breakpoint($medium) {
+        @include font-size(24);
+        @include line-height(1);
+    }
+}
+%new-heading4-alt {
+    @include font-size(14);
+    @include tertiary-semibold;
+    @include line-height(1.14);
+    letter-spacing: 0.4px;
+    @include breakpoint($medium) {
+        @include font-size(14);
+        @include line-height(1.14);
+    }
+}
+%new-heading5-alt {
+    @include font-size(12);
+    @include tertiary-semibold;
+    @include line-height(1.17);
+    letter-spacing: 0.4px;
+    @include breakpoint($medium) {
+        @include font-size(12);
+        @include line-height(1.17);
+    }
+}
+
+/*===paragraph===================================================================*/
+//Body (large font)
+%paragraph-large {
+    @include font-size(24);
+    @include secondry-light;
+    @include line-height(1.33);
+    @include color($mu-black);
+    letter-spacing: -0.2px;
+    a {
+        @extend %link;
+    }
+}
+//Body (medium light)
+%paragraph-medium {
+    @include font-size(20);
+    @include secondry-light;
+    @include line-height(1.5);
+    @include color($mu-black);
+    //@include color($vertical-strips);    
+    a {
+        @extend %link;
+    }
+}
+//Body Font-18 (bold/regular)
+%paragraph {
+    @include font-size(18);
+    @include secondry-regular;
+    @include line-height(1.44);
+    //@include color($vertical-strips);  
+    a {
+        @extend %link;
+    }
+}
+%paragraph-bold {
+    @include font-size(18);
+    @include secondry-semibold;
+    @include line-height(1.44);
+    @include color($vertical-strips);
+    a {
+        @extend %link;
+    }
+}
+//Body (Xsmall)  Font-16 (bold/regular)
+%paragraph-bold2 {
+    @include font-size(16);
+    @include secondry-semibold;
+    @include line-height(1.38);
+    @include color($mu-black);
+    a {
+        @extend %link;
+    }
+}
+%paragraph-regular {
+    @include font-size(16);
+    @include secondry-regular;
+    @include line-height(1.38);
+    @include color($mu-black);
+    a {
+        @extend %link;
+    }
+}
+//Body (tiny)
+%paragraph-tiny {
+    @include font-size(14);
+    @include secondry-regular;
+    @include line-height(1.29);
+    @include color($mu-black);
+    a {
+        @extend %link;
+    }
+}
+////////////////////////////////////////////
+//Paragraph with light color text
+%lighter-paragraph {
+    @extend %paragraph;
+    @include color($paragraph-light);
+}
+//Bold text
+%small-bold-text {
+    @extend %font-bold;
+    @include font-size(13);
+    @include secondry-regular;
+    @include line-height(16,px);
+}
+//Links
+%link {
+    cursor: pointer;
+    text-decoration: underline;
+    &:hover {
+        color: inherit;
+    }
+}
+%anchor {
+    text-decoration: none;
+}
+//Text
+%sub-text {
+    @include font-size(13);
+    @include secondry-regular;
+    @include line-height(16,px);
+    @include margin(10, 0, 10, 0);
+    display: inline-block;
+    color: #000;
+    a {
+        cursor: pointer;
+        text-decoration: underline;
+        color: inherit;
+        &:hover {
+            color: inherit;
+        }
+    }
+}
+%lighter-sub-text {
+    @extend %sub-text;
+    color: #999;
+}
+//Titles
+%section-title-1 {
+    @include font-size(30);
+    @include line-height(26,px);
+    @include primary-bold;
+    @extend %txt-uppercase;
+}
+%section-title-2 {
+    @extend %new-heading4;
+    @include margin-bottom(0);
+    @include padding-bottom(0);
+}
+//Likes
+%likes {
+    @include font-size(13);
+    @include secondry-regular;
+    @extend %txt-uppercase;
+    @extend %secondry-color;
+}
+//Default body font
+%body {
+    @include font-size(16);
+    @include secondry-regular;
+    @extend %secondry-color;
+}
+//fonts
+%primary-font {
+    @include primary-bold;
+}
+%primary-font-regular {
+    @include primary-regular;
+}
+%primary-font-thin {
+    @include primary-light;
+}
+%primary-font-thiner {
+    @include primary;
+}
+%secondry-font {
+    @include quaternary-semibold;
+}
+%secondry-font-regular {
+    @include quaternary-regular;
+}
+%secondry-font-semibold {
+    @include quaternary-semibold;
+}
+%secondry-font-thin {
+    @include quaternary-light;
+}
+%ternory-font {
+    @include secondry-bold;
+}
+%ternory-font-regular {
+    @include secondry-regular;
+}
+%ternory-font-thin {
+    @include secondry-light;
+}
+%ternory-font-semibold {
+    @include secondry-semibold;
+}
+.font-light {
+    @include font-color($light);
+}
+.font-dark {
+    @include font-color($dark);
+}
+.pull-left {
+    @include pull-left;
+}
+.pull-right {
+    @include pull-right;
+}
+a {
+    text-decoration: none;
+}

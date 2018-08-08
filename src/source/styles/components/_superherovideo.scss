@@ -1,0 +1,472 @@
+.superhero {
+    .img-holder {
+        @include breakpoint($medium) {
+            @include background-image(none);
+        }
+    }
+    .loader-container {
+        @include display(none);
+        @include breakpoint($medium) {
+            @include padding(0);
+            @include px-to-rem(width, 66);
+            @include px-to-rem(height, 66);
+            @include position(absolute);
+            @include left(50, percent);
+            @include top(50, percent);
+            @include margin-left(-33);
+            @include margin-top(-33);
+            @include display(block);
+            @include z-index(99999);
+        }
+    } 
+    // @include position(relative);
+    // height: 100vh;
+    // overflow: hidden;
+    width: 100%;
+    @include pull-left;
+    .oo-player-container .oo-player {
+        padding: 56.25% 0 0 !important;
+    }
+    video {
+        position: absolute;
+        @include top(50, percent);
+        @include left(50, percent);
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: 1;
+        object-fit: cover !important;
+        transform: translateX(-50%) translateY(-50%);
+        background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
+        background-size: cover;
+        transition: 1s opacity;
+    }
+    &-scrolldown {
+        // @include background-color($black, 0.3);
+        background-color: rgba(26, 26, 26, 0.1);
+        @include text-align(center);
+        @include padding(0,
+        0,
+        0,
+        0);
+        position: absolute;
+        @include bottom(0);
+        @include left(0);
+        width: 100%;
+        z-index: 999;
+        height: 38px;
+        cursor:pointer;
+        a {
+            @include display(inline-block);
+        }
+    }
+    &-hashtag {
+        position: absolute;
+        @include top(43,
+        percent);
+        @include left(0);
+        width: 100%;
+        @include text-align(center);
+        color: #fff;
+        @include primary-regular;
+        @include font-size(56);
+        z-index: 9;
+    }
+    &__controls {
+        list-style: none;
+        @include pull-right;
+        position: absolute;
+        @include left(20);
+        @include top(20);
+        z-index: 99;
+        display: block;
+        @include breakpoint($medium) {
+            display: none;
+        }
+        li {
+            @include pull-left;
+        }
+    }
+    .superhero-wrapper {
+        &.mute {
+            .oo-player-container .oo-unmute {
+                //@include display(none, important);
+                @include px-to-rem(width, 44);
+                @include px-to-rem(height, 44);
+                @include padding(0,0,0,0);
+                outline: 0;
+                border: none;
+                border-radius: unset;
+                background-color: transparent;
+                box-shadow: none;
+                @include margin-left(15);
+                @include margin-top(10);
+                transition: all .3s ease-in-out;
+                text-indent: -9999px;
+                @include overflow(hidden);
+                .oo-unmute-icon-wrapper {
+                    @include padding-left(0);
+                    @include px-to-rem(width, 44);
+                    @include px-to-rem(height, 44);
+                }
+            }
+        }
+    }    
+    .superhero-wrapper {
+        &.mute {
+            .oo-player-container {
+                /*.oo-state-screen.oo-playing-screen[style*="cursor: none;"],
+                .oo-state-screen.oo-playing-screen[style*="cursor:none;"] {
+                     .oo-unmute {
+                        @include margin-left(15);
+                    }
+                }*/
+                .oo-control-bar .oo-volume {
+                    @include display(none);
+                }                
+            }
+            .superhero__controls li.volume {
+                @include display(none);
+            }
+            &.muted {
+                .oo-player-container {
+                   .oo-icon.oo-icon-pause-slick {
+                        @include margin-left(58);
+                    }
+                }
+            }
+        }/*
+        &.mute-left {
+            .oo-player-container {
+                .oo-unmute {
+                    @include margin-left(15);
+                }    
+            }
+        } */           
+    }
+}
+
+.superhero.full video {
+    object-fit: none!important;
+}
+
+.superhero-wrapper {
+    width: 100% !important;
+    height: 100vh;
+    @include position(relative);
+    -moz-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    -webkit-transition: all 1s ease-out;
+    transition: all 1s ease-out;
+    .mu-item {
+        @include margin-bottom(0);
+        .img-holder figure {
+            opacity: 1 !important;
+        }
+    }
+}
+
+// .superhero-scrolldown .icon-arrow-down{
+//   // margin: 2px 0px;
+//   // margin-top:12px;
+// }
+.superhero-scrolldown a {
+   // @include vertical-align;
+    position: relative;
+    top: 30%;
+    -webkit-transform: translateY(-30%);
+    -ms-transform: translateY(-30%);
+    transform: translateY(-30%);
+}
+.superhero-scrolldown:hover i.icon-arrow-down {
+    margin-top: 10px;
+    float: left;
+}
+.superhero-scrolldown .icon-arrow-down{
+    transition: 0.3s;
+}
+
+
+.fullscreen {
+    img,
+    .icon-vid-play {
+        display: block;
+        @include breakpoint($medium) {
+            display: none;
+        }
+    }
+    .icon-vid-pause {
+        display: none;
+        @include breakpoint($medium) {
+            display: block;
+        }
+    }
+}
+
+.fullscreen .videoplayer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.fullscreen .mu-item__gradient{
+    z-index:99999 !important;
+    pointer-events:none;
+    height: 100%;
+}
+
+.fullscreen .videoplayer .oo_promo,
+.oo_end_screen {
+    background-size: cover !important;
+}
+
+.fullscreen .innerWrapper video {
+    position: absolute !important;
+    @include top(50,
+    percent,
+    important);
+    @include left(50,
+    percent,
+    important);
+    z-index: 1 !important;
+    min-width: 100% !important;
+    min-height: 100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.fullscreen .mu-item__info {
+    width: 200px;
+    @include top(0);
+    @include right(0);
+    position: absolute;
+    height: 70px;
+}
+
+.fullscreen .oo_controls,
+.oo_start_button,
+.oo_replay {
+    opacity: 0 !important;
+}
+
+// .fullscreen .icon-arrow-down {
+//     margin-top:12px;
+// }
+.fullscreen .mu-item__info {
+    position: absolute;
+    @include top(0);
+}
+
+// .fullscreen .super-hero__wrapper {
+//     top: 42% !important
+// }
+.fullscreen .oo-player-container {
+    display: none;
+    height: 100%;
+    @include breakpoint($medium) {
+        display: block;
+    }
+}
+
+// .fullscreen .oo-interactive-container {
+//   display: none !important;
+// }
+// .fullscreen .oo-action-icon-pause,
+// .oo-action-icon-play {
+//   display: none !important
+// }
+.fullscreen .mu-item__gradient-video {
+    z-index: 99;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    @include top(0);
+    cursor: auto;
+    display: block; //background-color: rgba(57, 52, 52, .7);
+    // background-image: linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,.9));
+    // background-color: rgba(57, 52, 52, 0.1);
+    // background-image: -webkit-linear-gradient(5deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 60%);
+    // background-image: -ms-linear-gradient(5deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 60%);
+    // background-image: -o-linear-gradient(5deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 60%);
+    // background-image: linear-gradient(5deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 60%);
+    @include breakpoint($medium) {
+        display: none;
+    }
+}
+
+// .fullscreen .mu-item.video .oo-player-container {
+//   display: none;
+//   @include breakpoint($medium){
+//     display:block;
+//   }
+// }
+// .fullscreen .oo-control-bar {
+//   display: none !important;
+// }
+///changes again 
+.superhero .oo-player-container .oo-state-screen .oo-interactive-container {
+    @include top(0);
+    @include bottom(initial);
+}
+
+// .superhero .oo-player-container .oo-control-bar .oo-control-bar-items-wrapper .oo-control-bar-item {
+//     // background: #c70101 !important;
+//     width: auto;
+//     height: auto;
+//     @include margin-right(10);
+//     @include left(20);
+//     @include top(20);
+//     @include margin-top(40);
+//     @include padding(0,
+//     0,
+//     0,
+//     0,
+//     important);
+// }
+
+// .superhero .oo-control-bar-items-wrapper .oo-control-bar-item .oo-volume.oo-control-bar-item {
+//     background: green !important;
+// }
+// .superhero .oo-player-container [class*=" oo-icon-"] {
+//     @include line-height(52,
+//     px);
+// }
+
+.superhero .oo-scrubber-bar-container,
+.superhero a.oo-volume-bar.oo-on,
+.superhero a.oo-closed-caption.oo-control-bar-item,
+.superhero .oo-popover-button-container,
+// .superhero a.oo-fullscreen.oo-control-bar-item,
+.superhero a.oo-time-duration.oo-control-bar-duration,
+.superhero a.oo-more-options.oo-control-bar-item,
+.superhero .oo-text-track-background,
+.superhero .oo-player-container .oo-xsmall .oo-text-track-container {
+    display: none !important;
+}
+
+.superhero .oo-player-container .oo-control-bar {
+    background: none !important;
+}
+
+.superhero span.oo-icon.oo-icon-play-slick {
+    @include advance-sprite-image(#{vid-play},
+    $icons,
+    $icons2x);
+    position: relative;
+    @include font-size(0);
+    height: 44px;
+    width: 44px;
+    @include pull-left;
+    opacity: 1 !important;
+    &:hover {
+        width: 44px !important;
+        height: 44px !important;
+        @include advance-sprite-image(vid-play);
+    }
+}
+
+.superhero span.oo-icon.oo-icon-pause-slick {
+    @include advance-sprite-image(#{vid-pause},
+    $icons,
+    $icons2x);
+    position: relative;
+    @include font-size(0);
+    height: 44px;
+    width: 44px;
+    @include pull-left;
+    opacity: 1 !important;
+    &:hover {
+        width: 44px !important;
+        height: 44px !important;
+        @include advance-sprite-image(vid-pause);
+    }
+}
+
+.superhero span.oo-icon.oo-icon-volume-on-ooyala-default,
+.superhero span.oo-icon.oo-icon-volume-on-ooyala-defualt {
+    @include advance-sprite-image(#{vol-mute},
+    $icons,
+    $icons2x);
+    position: relative;
+    @include font-size(0);
+    height: 44px;
+    width: 44px;
+    @include pull-left;
+    opacity: 1 !important;
+    &:hover {
+        width: 44px !important;
+        height: 44px !important;
+        @include advance-sprite-image(vol-mute);
+    }
+}
+
+.superhero span.oo-icon.oo-icon-volume-mute-ooyala-default,
+.superhero span.oo-icon.oo-icon-volume-mute-ooyala-defualt {
+    @include advance-sprite-image(#{vol-unmute},
+    $icons,
+    $icons2x);
+    position: relative;
+    @include font-size(0);
+    height: 44px;
+    width: 44px;
+    @include pull-left;
+    opacity: 1 !important;
+    &:hover {
+        width: 44px !important;
+        height: 44px !important;
+        @include advance-sprite-image(vol-unmute);
+    }
+}
+
+.superhero .oo-player-container .oo-xsmall .oo-volume-bar {
+    height: 0px;
+    display: none;
+}
+
+.superhero .oo-player-container .oo-volume-bar {
+    display: none !important;
+}
+
+.superhero .oo-player-container .oo-action-icon-pause span.oo-icon {
+    display: none;
+}
+
+.superhero .oo-volume-bar {
+    display: none;
+}
+
+.superhero .oo-volume-bar.oo-on {
+    display: none;
+}
+
+.superhero .oo-volume-slider {
+    display: none;
+}
+
+.superhero button.oo-fullscreen.oo-control-bar-item {
+    display: block;
+    @include breakpoint($medium) {
+        display: none;
+    }
+}
+
+.superhero span.oo-icon.oo-icon-system-fullscreen,
+.superhero span.oo-icon.oo-icon-system-minimizescreen {
+    line-height: 24px;
+    height: 44px;
+    width: 44px;
+    background: black;
+    padding: 10.5px;
+    opacity: 0.8 !important;
+    filter: none !important;
+}
+
+// .superhero button.oo-mute-unmute.oo-control-bar-item {
+//     margin-top: 0px !important;
+// }
+.oo-volume.oo-control-bar-item {
+    padding: 0px !important;
+}

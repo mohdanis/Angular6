@@ -1,0 +1,61 @@
+.mu-item {
+  &__gradient {
+    .countdown {
+      color: #fff !important;
+    }
+
+    .mu-item--info__venue {
+      @include color(#fff);
+    }
+  }
+
+  .countdown {
+    @include color(#111);
+
+    @include position(relative);
+
+    @include px-to-rem(width, 150);
+
+    @include margin-auto(0);
+
+    span {
+      @include px-to-rem(width, 55);
+
+      @include font-size(48);
+
+      @include quaternary-semibold;
+
+      @include line-height(48,px);
+
+      @include margin(0, 3, 0, 3);
+
+      @include pull-left;
+
+      &#countdown-seprator {
+        @include px-to-rem(width, 15);
+      }
+    }
+  }
+
+  &__plane {
+    .countdown, .mu-item--team__info, .mu-item--team__vs, .mu-item--info, h3 {
+      @include color(#111);
+    }
+  }
+
+  &--info {
+    @include color(#111);
+    @include text-align(center);
+    width: span(6 of 6 0);
+
+    @include pull-left;
+
+    .mu-item__line-bottom {
+      @include padding(0,0,0,0,important);
+    }
+
+    &__league {
+      @include color(#bbb);
+    }
+  }
+}

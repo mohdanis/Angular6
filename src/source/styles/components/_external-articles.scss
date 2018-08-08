@@ -1,0 +1,36 @@
+    .mu-item {
+        &.external-article {
+            .mu-item__sponsor {
+                span {
+                    @include important(background, none);
+                    @include padding(0, 0, 0, 0);
+                }
+            }
+        }
+    }
+
+    .child {
+        .mu-item {
+            &.external-article {
+                .link-btn-white {
+                    span {
+                        @include color($mu-black);
+                    }
+                    .icon-cta-arrow {
+                        @extend .icon-red-arrow;
+                    }
+                }
+                .mu-item__sponsor {
+                    span {
+                        @include important(background, none);
+                        @include padding(0, 0, 0, 0);
+                    }
+                }
+            }
+        }
+    } 
+
+    //Need to remove
+    // #homePage .news-grid .mu-item__logo-title {
+    //   @include display(none);
+    // }

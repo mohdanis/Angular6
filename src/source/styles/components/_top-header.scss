@@ -1,0 +1,33 @@
+.header {
+    &__wrapper {
+        @include background-color($mu-red);
+        @include px-to-rem(height, 66);
+        @include breakpoint($medium) {
+            @include px-to-rem(height, 115);
+        }
+    }
+    &__nav {
+        & nav {
+            @include background-color($header-nav-bg);
+            @include percentage-value(width, 100);
+            @include px-to-rem(height, 44);
+            @include pull-left;
+            ul {
+                li {
+                    @include pull-left;
+                    @include display(block); 
+                    //@include border(solid,1,)
+                    a {
+                        @include color($white);
+                        @include text-transform(uppercase);
+                    }
+                }
+            }
+            & .right {
+                @include pull-right;
+                @include px-to-rem(width, 150);
+                border: solid 1px #fff;
+            }
+        }
+    }
+}

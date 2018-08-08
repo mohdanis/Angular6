@@ -1,0 +1,194 @@
+.news-article {
+  &__banner {
+    //@include position(relative);
+
+    @include padding(0, 0, 20, 0);
+
+    @include span(6 of 6 0);
+
+    span.author {
+      @include position(absolute);
+
+      @include right(5);
+      @include bottom(0);
+    }
+
+    .video-player-xlarge {
+      @include margin(0, 0, 0, 0);
+
+      @include span(6 of 6 0);
+    }
+  }
+
+  &__title {
+    @include margin(26, 0, 5, 0);
+
+    @extend %heading1;
+  }
+
+  &__left {
+    @include span(6 of 6);
+
+    @include breakpoint($large) {
+      @include span(8 of 12);
+    }
+
+
+    &__content {
+      @include span(6 of 6);
+
+      p {
+        @include margin(20, 0, 20, 0);
+      }
+
+      @include breakpoint($medium) {
+        //width: span(7 of 12);
+        @include margin-auto(0);
+      }
+
+
+      @include breakpoint($xlarge) {
+        width: span(8 of 12);
+         @include margin-auto(0);
+        @include pull-none;
+      }
+
+
+      .blockquote {
+        @include color($black);
+        @include margin(20, 0, 27, 0);
+      }
+
+      .video-card {
+        @include position(relative);
+
+        @include span(6 of 12);
+
+        @include background(#f2f2f2);
+
+        @include padding(0, 0, 30, 0);
+
+        @include breakpoint($medium) {
+          @include span(4 of 8);
+
+          @include padding(0, 0, 0, 0);
+        }
+
+
+        img {
+          @include span(6 of 6 0);
+
+          @include breakpoint($medium) {
+            @include span(2 of 4 0);
+          }
+        }
+
+        p {
+          @include span(6 of 6 0);
+
+          @include breakpoint($medium) {
+            @include span(2 of 4);
+          }
+        }
+
+        .article-tag {
+          @include font-size(14);
+
+          @include border-top(2, solid, #C81617);
+
+          @include text-transform(uppercase);
+
+          @include margin(3, 10, 3, 10);
+
+          @include position(absolute);
+
+          @include bottom(12);
+          @include right(5);
+
+          @include pull-right;
+
+          i {
+            @include position(absolute);
+
+            @include top(3);
+            @include left(-25);
+          }
+        }
+      }
+    }
+
+    .video-player {
+      @include span(6 of 6 0);
+
+      @include pull-left;
+
+      @include margin(20, 0, 20, 0);
+    }
+  }
+
+  &__catbar {
+    @include border-top(1, solid, #d8d8d8);
+
+    @include border-bottom(1, solid, #d8d8d8);
+
+    @include padding(7, 0, 7, 0);
+
+    @include margin(22, 0, 22, 0);
+
+    ul {
+      @extend %navul;
+
+      li {
+        @include padding(10, 5, 5, 5);
+
+        span {
+          @include display(none);
+
+          @include breakpoint($medium) {
+            @include display(inline-block);
+          }
+        }
+
+        &.author {
+          width: span(6 of 6 0);
+
+          @include padding(10, 15, 17, 45);
+
+          @include border-bottom(1, solid, #d8d8d8);
+
+          @include position(relative);
+
+          span {
+            @include color($brand-color);
+            @include display(inline-block);
+          }
+
+          img {
+            @include position(absolute);
+
+            @include left(0);
+            @include top(0);
+
+            @include breakpoint($medium) {
+              @include top(-10);
+            }
+          }
+
+          @include breakpoint($medium) {
+            width: auto;
+
+            @include border-bottom(0, solid, #d8d8d8);
+
+            @include padding(2, 2, 2, 45);
+          }
+        }
+      }
+    }
+  }
+}
+
+.video-banner {
+  span.author {
+    @include bottom(-35, important);
+  }
+}

@@ -1,0 +1,29 @@
+.adaptive {
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include position(relative);
+    .visually-hidden {
+        max-height: 100%;
+    }
+}
+
+.cart_section_demo {
+    @include span(6 of 12);
+}
+
+.cart_section_demo1 {
+    @include span(2 of 12);
+}
+
+.cart_section_demo1,
+.cart_section_demo2 {
+    @include span(2 of 12);
+}
+
+.cart_section_demo3 {
+    @include span(4 of 12);
+}
+
+.cart_section_demo4 {
+    @include span(4 of 12 last);
+}

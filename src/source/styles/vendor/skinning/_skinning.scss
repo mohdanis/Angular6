@@ -1,0 +1,2200 @@
+//@import "../../partials/mixins/sprite";
+//@import "../../partials/base/fonts";
+
+
+*{
+    –webkit-overflow-scrolling: touch !important;
+}
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    @include display(table);
+}
+.gigya-screen-dialog.gigya-style-modern{
+    -webkit-overflow-scrolling: touch !important;
+    -moz-overflow-scrolling: touch !important;
+}
+.gigya-screen, .gigya-screen *{
+    @include font-size(18, important);
+}
+.clearfix:after {
+    @include clear(both);
+}
+
+.gigya-style-modern.gigya-screen-dialog {
+    @include top(0, important);
+    @include left(0, important);
+    @include right(0, important);
+    @include bottom(0, important);
+
+}
+
+.gigya-screen-dialog-main {
+    max-width: 100% !important;
+    max-height: 100% !important;
+}
+
+.gigya-screen-content div.gigya-screen.landscape {
+    width: 100% !important;
+}
+
+.gigya-screen-dialog .gigya-screen-dialog-inner .gigya-screen-content  {
+    width: 550px;
+    @include margin-auto(0);
+}
+
+.gigya-screen.landscape .gigya-layout-row .gigya-layout-cell.under-site-login {
+    @include margin-left(0, important);
+}
+
+.gigya-login-providers .gigya-login-providers-list .gigya-login-provider-row {
+    height: 55px!important;
+}
+
+.gigya-login-form {
+    .gigya-layout-row {
+        .responsive {
+            label.gigya-divider-content.gigya-composite-control {
+                text-transform: lowercase !important;
+            }
+        }
+    }
+}
+
+.responsive.with-social-login {
+    .gigya-social-login-container.gigya-style-modern {
+        height: 120px !important;
+    }
+}
+
+.gigya-login-providers-container {
+    width: 312px !important;
+}
+
+.responsive.custom-space {
+    @include margin(25, 0, 15, 0, important);
+}
+
+.gigya-screen .gigya-composite-control.gigya-composite-control-dropdown input,
+.gigya-screen .gigya-composite-control.gigya-composite-control-dropdown select,
+.gigya-screen .gigya-composite-control.gigya-composite-control-textbox input,
+.gigya-screen .gigya-composite-control.gigya-composite-control-textbox select,
+.gigya-screen .gigya-composite-control.gigya-composite-control-password input,
+.gigya-screen .gigya-composite-control.gigya-composite-control-password select {
+    @include secondry-regular;
+    @include padding-left(10, important);
+    @include padding-right(25, important);
+    @include margin-bottom(13, important);
+}
+
+.gigya-screen input,
+.gigya-screen select {
+    @include padding-left(0, important);
+    text-indent: 0 !important;
+}
+
+.gigya-screen.gigya-skinning a.gigya-button,
+.gigya-screen.gigya-skinning input[type=email],
+.gigya-screen.gigya-skinning input[type=password],
+.gigya-screen.gigya-skinning input[type=text],
+.gigya-screen.gigya-skinning select,
+.gigya-screen.gigya-skinning textarea,
+.gigya-screen.gigya-skinning.portrait div.gigya-tfa .gig-tfa-container .gigya-button.gig-tfa-phone-code-resend {
+    @include border-bottom(1, solid, $skinning-ipt, 1, important); 
+}
+
+.gigya-composite-control.gigya-composite-control-dropdown.vertical-top-padding {
+    //padding-top: 27px;
+    @include padding-top(27);
+}
+
+.gigya-composite-control.gigya-composite-control-dropdown.vertical-space.gigya-layout-row {
+    label {
+        @include padding-top(21, important);
+        @include padding-bottom(10, important);
+    }
+}
+
+label.gigya-composite-control.gigya-composite-control-label.custom-option-text {
+    @include padding-bottom(0);
+}
+
+body .gigya-screen {
+    @include color($feed-text);
+}
+
+.gigya-style-modern, .gigya-style-modern-mobile {
+    .gigya-screen-dialog-main {
+        @include border-radius(0, important);
+        .gigya-screen {
+            &-dialog {
+                &-caption, .gigya-screen-dialog-top .gigya-screen-dialog-caption, &-top h2 {
+                    @include primary-bold;
+                    @include font-size(40);
+                    @include padding(64, 0, 24, 0);
+                    @include color($mu-black, important);
+                }
+                &-top {
+                    @include border-radius(0);
+                    background-color: $mu-black;
+                }
+                &-close {
+                    >a {
+                        >img {
+                            @include margin-top(31);
+                            @include margin-right(20);
+                        }
+                    }
+                }
+                &-inner {
+                    @at-root .portrait {
+                        .first-row .second-cell {
+                            @include pull-right;
+                        }
+                    }
+                }
+            }
+        }
+        #gigya-login-screen {
+            @include padding-left(30);
+        }
+    }
+}
+
+.gigya-screen-dialog-top {
+    @include border-radius(0);
+    @include background-color($light, 1, important);
+    @include position(relative);
+    .gigya-screen-dialog-close {
+        > a {
+            @include cursor(pointer);
+            @include display(block);
+            @include border-none(important);
+            > img {
+                @include display(none);
+                @include margin-top(31);
+                @include margin-right(20);
+            }
+        }
+    }
+}
+
+#gigya-login-form h3.gigya-composite-control.gigya-composite-control-header {
+    @include font-size(18);
+    @include font-weight(600);
+    @include secondry-semibold;
+    @include color($mu-black);
+    @include text-transform(none);
+    @include text-align(center);
+    letter-spacing: -0.3px;
+}
+
+.gigya-screen.gigya-skinning {
+    h2.gigya-composite-control {
+        @at-root .gigya-screen-dialog, .gigya-screen-dialog-mobile {
+            #gigya-register-screen.gigya-skinning h2.gigya-composite-control,
+            #gigya-login-screen.gigya-skinning h2.gigya-composite-control,
+            #gigya-profile-form.gigya-login-form h2.gigya-composite-control,
+            #gigya-parentalConsent-form h2.gigya-composite-control-header,
+            #gigya-forgot-password-screen h2.gigya-composite-control-header,
+            #gigya-verification-pending-screen h2.gigya-composite-control-header,
+            #gigya-verification-sent-screen h2.gigya-composite-control-header, 
+            #gigya-password-change-required-screen h2.gigya-composite-control-header,
+            #gigya-forgot-password-success-screen h2.gigya-composite-control-header,
+            #gigya-link-accounts-form h2.gigya-composite-control-header,
+            #gigya-update-profile-screen-final h2.gigya-composite-control-header,
+            #gigya-emailverification-sent-screen h2.gigya-composite-control-header, 
+            .gigya-login-form h2.gigya-composite-control-header,
+            .gigya-register-form h2.gigya-composite-control-header,
+            .gigya-reset-password-form h2.gigya-composite-control-header,
+            #gigya-forgot-password-success-screen h2.gigya-composite-control-header,
+            #gigya-reauthentication-form h2.gigya-composite-control-header,
+            #gigya-message-screen h2.gigya-composite-control-header,
+            #gigya-reset-password-message-screen h2.gigya-composite-control-header, 
+            #gigya-login-message-screen h2.gigya-composite-control-header,
+            #gigya-emailexpired-message-screen h2.gigya-composite-control-header,
+            #gigya-parent-consent-pending-screen h2.gigya-composite-control-header,
+            #gigya-error-message-screen h2.gigya-composite-control-header,
+            #gigya-change-password-message-screen h2.gigya-composite-control-header,
+            #gigya-emailverified-message-screen h2.gigya-composite-control-header,
+            #gigya-change-email-message-screen h2.gigya-composite-control-header,
+            #gigya-parent-consent-decline-screen h2.gigya-composite-control-header,
+            #gigya-migrated-thank-you-screen h2.gigya-composite-control-header,
+            #gigya-parent-consent-link-error-screen h2.gigya-composite-control-header,
+            #gigya-email-activation-link-error-screen h2.gigya-composite-control-header,
+            #gigya-account-verification-message-screen h2.gigya-composite-control-header, 
+
+            #gigya-register-screen.gigya-skinning p.gigya-composite-control,
+            #gigya-login-screen.gigya-skinning p.gigya-composite-control,
+            #gigya-profile-form.gigya-login-form p.gigya-composite-control,
+            #gigya-parentalConsent-form p.gigya-composite-control-header,
+            #gigya-forgot-password-screen p.gigya-composite-control-header,
+            #gigya-verification-pending-screen p.gigya-composite-control-header,
+            #gigya-verification-sent-screen p.gigya-composite-control-header, 
+            #gigya-password-change-required-screen p.gigya-composite-control-header,
+            #gigya-forgot-password-success-screen p.gigya-composite-control-header,
+            #gigya-link-accounts-form p.gigya-composite-control-header,
+            #gigya-update-profile-screen-final p.gigya-composite-control-header,
+            #gigya-emailverification-sent-screen p.gigya-composite-control-header, 
+            .gigya-login-form p.gigya-composite-control-header,
+            .gigya-register-form p.gigya-composite-control-header,
+            .gigya-reset-password-form p.gigya-composite-control-header,
+            #gigya-forgot-password-success-screen p.gigya-composite-control-header,
+            #gigya-reauthentication-form p.gigya-composite-control-header,
+            #gigya-message-screen p.gigya-composite-control-header, 
+            #gigya-reset-password-message-screen p.gigya-composite-control-header,
+            #gigya-login-message-screen p.gigya-composite-control-header,
+            #gigya-emailexpired-message-screen p.gigya-composite-control-header,
+            #gigya-parent-consent-pending-screen p.gigya-composite-control-header,
+            #gigya-error-message-screen p.gigya-composite-control-header,
+            #gigya-change-password-message-screen p.gigya-composite-control-header,
+            #gigya-emailverified-message-screen p.gigya-composite-control-header,
+            #gigya-change-email-message-screen p.gigya-composite-control-header,
+            #gigya-parent-consent-decline-screen p.gigya-composite-control-header,
+            #gigya-migrated-thank-you-screen p.gigya-composite-control-header,
+            #gigya-parent-consent-link-error-screen p.gigya-composite-control-header,
+            #gigya-email-activation-link-error-screen p.gigya-composite-control-header,
+            #gigya-account-verification-message-screen p.gigya-composite-control-header{
+                @include color($vertical-strips);
+                @include padding-bottom(12);
+                @include position(relative);
+                @include text-align(left);
+                @include text-transform(inherit);
+                @include font-size(20);
+                @include font-weight(100);
+                @include secondry-light;
+                @include line-height(28, px);
+                letter-spacing: 0.1;
+            }
+            h3.gigya-composite-control.gigya-composite-control-header {
+                @include font-size(18);
+                @include font-weight(600);
+                @include secondry-semibold;
+                @include color($mu-black);
+                @include text-transform(none);
+                 @include text-align(center);
+                letter-spacing: -0.3px;
+            }
+        }
+        @at-root .gigya-screen-dialog {
+            #gigya-link-account-screen.portrait .main-Header {
+                @include text-align(left);
+                @include secondry-regular;
+                @include font-size(16);
+                color: $mu-black;
+                .title {
+                    @include secondry-semibold;
+                    @include text-align(left);
+                      @include padding-bottom(0);
+                }
+            }
+        }
+    }
+    .gigya-layout-row {
+        @include text-align(left);
+        > .gigya-layout-cell.with-divider {
+            > .gigya-divider-content.gigya-divider-content.gigya-composite-control-label {
+                width: 44px;
+                height: 44px;
+                @include color($light);
+                @include padding(0, 0, 0, 0);
+                border-radius: 50%;
+                @include line-height(44, px);
+                @include text-transform(lowercase);
+                @include left(10);
+                @include color($mu-black);
+            }
+            @at-root .gigya-screen-dialog #gigya-login-screen.landscape {
+                .gigya-layout-row.with-divider .gigya-layout-cell.with-divider {
+                    background-image: none;
+                    > .gigya-divider-content.gigya-divider-content {
+                        @include margin-left(33);
+                    }
+                }
+            }
+            @at-root .gigya-skinning#gigya-register-screen.portrait {
+                .gigya-layout-row .gigya-layout-cell.with-divider {
+                    background-image: none;
+                    label {
+                        @include margin-right(auto);
+                    }
+                }
+            }
+        }
+        .gigya-layout-cell {
+            @include text-align(left);
+        }
+        .gigya-composite-control.gigya-composite-control-submit,
+        .gigya-composite-control.gigya-composite-control-button,
+        .gigya-composite-control.gigya-composite-control-link.button {
+            @include margin-top(20);
+        }
+        .gigya-layout-cell.responsive.under-site-login {
+            label.gigya-composite-control {
+                @include secondry-regular;
+                a {
+                    @include secondry-regular;
+                }
+            }
+        }
+    }
+    .gigya-captcha-wrapper {
+        .gigya-captcha {
+            @include margin-left(0);
+        }
+    }
+    .portrait.v2 {}
+    .gigya-myPhoto-profile-box-wrapper {
+        border-radius: 50%;
+        @include overflow(hidden);
+        border-width: 3px;
+    }
+    &#gigya-link-account-screen,
+    &#gigya-reauthentication-screen {
+        .main-Header {
+            @include text-align(left);
+            @include secondry-regular;
+            @include font-size(16);
+            color: $mu-black;
+            .title {
+                @include secondry-semibold;
+                @include padding-bottom(0);
+                @include text-align(left);
+            }
+        }
+        .main-text.inlined {
+            @include padding-bottom(10);
+            @include secondry-semibold;
+            @include text-align(left);
+        }
+        .site-container-title,
+        .sub-title-text {
+            @include text-align(left);
+        }
+    }
+    .title {
+        @include font-weight(bold);
+    }
+    .gigya-composite-control-textbox input::-webkit-input-placeholder {
+        color: $vertical-strips;
+        @include font-size(18);
+        @include opacity(0.6);
+    }
+    .gigya-composite-control-textbox input:-moz-placeholder {
+        color: $vertical-strips;
+        @include font-size(18);
+        @include opacity(0.6);
+    }
+    .gigya-composite-control-textbox input::-moz-placeholder {
+        color: $vertical-strips;
+        @include font-size(18);
+        @include opacity(0.6);
+    }
+    .gigya-composite-control-textbox input:-ms-input-placeholder {
+        color: $vertical-strips;
+        @include font-size(18);
+        @include opacity(0.6);
+    }
+    .gigya-composite-control-dropdown select::-webkit-input-placeholder,
+    .gigya-composite-control-dropdown select:-moz-placeholder,
+    .gigya-composite-control-dropdown select::-moz-placeholder,
+    .gigya-composite-control-dropdown select:-ms-input-placeholder{
+        @include opacity(0.6);
+    }
+    &#gigya-link-account-screen.portrait.mobile .main-Header {
+        width: 100%;
+    }
+    @at-root .gigya-skinning.no-gradient {
+        background: none;
+        @include background-color($light);
+    }
+    /* 3 Column CSS starts here */
+    .left-holder .left:last-child {
+        @include padding-right(0);
+    }
+    .left {
+        @include pull-left;
+        width: 33.3%;
+        @include padding-right(10);
+    }
+    .box-sizing {
+        box-sizing: border-box;
+        @include margin(0, 0, 0, 0);
+    }
+    /* 3 Column CSS ends here */
+    /* checkbox aspect */
+    [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
+        @include position(absolute);
+        @include left(-9999);
+    }
+    [type="checkbox"]:not(:checked) + label,
+    [type="checkbox"]:checked + label {
+        @include position(relative);
+        @include cursor(pointer);
+    }
+    [type="checkbox"]:not(:checked) + label:before,
+    [type="checkbox"]:checked + label:before {
+        content: '';
+        @include position(absolute);
+        @include right(-28);
+        @include top(0);
+        width: 24px;
+        height: 24px;
+        @include border(1, solid, $mu-black);
+        background: $white;
+        @include border-radius(0);
+    }
+    [type="checkbox"]:not(:checked) + label:after,
+    [type="checkbox"]:checked + label:after {
+        content: url(/assets/images/svg/check.svg);
+        @include position(absolute);
+        @include top(3);
+        @include right(-26);
+        @include font-size(16);
+        @include line-height(13, px);
+        @include color($sponsor-gray);
+        transition: all .2s;
+    }
+    /* checked mark aspect changes */
+    [type="checkbox"]:not(:checked) + label:after {
+        @include opacity(0);
+        transform: scale(0);
+    }
+    [type="checkbox"]:checked + label:after {
+        @include opacity(1);
+        transform: scale(1);
+    }
+    [type="checkbox"]:disabled:not(:checked) + label:before,
+    [type="checkbox"]:disabled:checked + label:before {
+        box-shadow: none;
+        border-color: $dark-medium-grey;
+        background-color: $base-border-color;
+    }
+    [type="checkbox"]:disabled:checked + label:after {
+        color: $dark-medium-grey;
+    }
+    [type="checkbox"]:disabled + label {
+        color: $dark-medium-grey;
+    }
+    input[type=checkbox] + label {
+        width: 70%;
+        @include display(inline-block, important);
+    }
+    .gigya-keep-me-logged-in {
+        input[type=checkbox] + label {
+            width: 75%;
+        }
+    }
+    .gigya-checkbox-text {
+        @include font-weight(normal, important);
+    }
+    select,
+    input[type=text],
+    input[type=password],
+    input[type=email],
+    a.gigya-button,
+    &.portrait div.gigya-tfa .gig-tfa-container .gigya-button.gig-tfa-phone-code-resend,
+    textarea {
+        border: none;
+        @include border-bottom(1, solid, $mu-black, 1);
+        @include border-radius(0);
+        box-shadow: none;
+    }
+    select {
+        -webkit-appearance: none;
+        appearance: none;
+        background: url($base-path-images + 'bg/triangle-update-icon.png');
+        background-repeat: no-repeat;
+        background-position: right 17px;
+    }
+    .gigya-composite-control.gigya-composite-control-textbox {
+        width: 100%;
+        position: relative;
+    }
+    .gigya-composite-control-captcha-widget .gigya-captcha-wrapper .gigya-captcha {
+        @include margin-left(0);
+    }
+    .step-progress {
+        @include margin(0, 20, 0, 0);
+        @include padding(0, 0, 0, 0);
+        list-style-type: none;
+        width: 100%;
+    }
+    ul.step-progress {
+        &:before,
+        &:after {
+            content: " ";
+            @include display(table);
+        }
+        &:after {
+            @include clear(both);
+        }
+    }
+    .step-progress li {
+        @include pull-left;
+        @include font-size(14);
+        @include text-align(center, important);
+        @include opacity(0.3);
+        @include padding(14, 0, 14, 0);
+        width: 50%;
+        @include margin-bottom(20);
+        min-height: 20px;
+    }
+    .step-progress.three-steps li {
+        width: 30%;
+    }
+    .step-progress.three-steps li:nth-child(3){
+        width: 39% !important;
+    }
+    .step-progress li.active {
+        @include border-bottom(3, solid, $link-line, 1, important);
+        @include color($mu-black);
+        @include opacity(1);
+        @include font-weight(bold);
+    }
+    .step-progress li.active:hover, .step-progress li.active:focus{
+        @include border-bottom(3, solid, $mu-red, 1, important);
+    }
+    .step-progress li a,
+    .step-progress li.active a {
+        @include cursor(default);
+    }
+    .step-progress li a {
+        text-decoration: none !important;
+        @include color($mu-black, important);
+        @include tertiary-regular;
+        @include font-size(13, important);
+        @include text-transform(uppercase);
+        @include font-weight(300, important);
+    }
+    a,
+    a:hover,
+    a:link,
+    a:visited,
+    &.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-code-resend,
+    &.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-code-resend:hover {
+        @include color($vertical-strips);
+        text-decoration: underline;
+    }
+    &.gigya-screen.portrait .gigya-social-login-container,
+    &.gigya-screen.portrait .gigya-social-login-container>div,
+    &.gigya-screen.portrait .gigya-social-login-container .gigya-login-providers-container {
+        width: 100% !important;
+    }
+    &.portrait#gigya-register-screen .gigya-composite-control.gigya-composite-control-social-login,
+    &.portrait#gigya-login-screen .gigya-composite-control.gigya-composite-control-social-login {
+        @include right(0);
+    }
+    h1,
+    h2,
+    .gigya-composite-control.gigya-footer {
+        @include text-align(left);
+    }
+    &.gigya-screen.landscape .gigya-layout-row .gigya-layout-cell.under-site-login {
+        @include text-align(left);
+        @include margin-bottom(10);
+    }
+    @at-root #gigya-update-profile-screen.gigya-skinning .gigya-layout-cell {
+        width: 48%;
+        min-width: 48%;
+        &:first-child {
+            @include margin-right(2, percent);
+            @include margin-left(0, important);
+        }
+    }
+    .gigya-composite-control.gigya-composite-control-label.main-text {
+        @include font-weight(bold);
+    }
+    .gigya-composite-control.gigya-composite-control-label.sub-text {
+        @include font-weight(normal);
+    }
+    .margin-top-10 {
+        @include margin-top(10, important);
+    }
+    .margin-bottom-10 {
+        @include margin-bottom(0);
+        @include padding-bottom(12);
+    }
+    .vertical-top-padding {
+        @include padding-top(20);
+        @include clear(left);
+    }
+    .vertical-space {
+        @include margin-bottom(20);
+    }
+    .text-wrap {
+        @include pull-left;
+        @include padding-top(20);
+        @include font-size(14, important);
+        @include line-height(18, px);
+        @include color($mu-black);
+        @include opacity(0.7, important);
+    }
+    .gigya-layout-row.grid-6,
+    .gigya-composite-control-checkbox.grid-6 {
+        @include pull-left;
+        @include margin-right(1, percent);
+        width: 48%;
+    }
+    .gigya-label-text.gigya-composite-control.gigya-composite-control-label.main-text {
+        @include padding-bottom(4, important);
+        @include color($feed-text);
+    }
+}
+
+.gigya-verification-sent-screen input.gigya-b .button-forward.cta-btn-arw {
+    @include color($feed-text);
+    @include border(1, solid, $feed-text);
+}
+
+.with-divider {
+    #register-site-login {
+        label.gigya-composite-control-label {
+            @include secondry-regular;
+        }
+    }
+}
+
+.gigya-layout-row.with-divider {
+    @include position(relative);
+    .gigya-layout-cell.responsive.with-divider {
+        @include position(absolute);
+    }
+    .gigya-layout-cell.responsive.with-site-login {
+        @include margin-left(13, percent);
+    }
+}
+.gigya-layout-row {
+    .active {
+      .gigya-layout-row {
+         @include display(block);
+      }   
+    }
+}
+#gigya-complete-registration-screen {
+    width: auto;
+    form.gigya-profile-form {
+        label.gigya-composite-control.gigya-composite-control-label {
+            @include secondry-regular;
+        }
+        .gigya-composite-control.gigya-composite-control-checkbox {
+            width: 48% !important;
+        }
+        .gigya-composite-control.gigya-composite-control-checkbox {
+            &.gigya-terms-valid,
+            &.gigya-terms-error {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.gigya-style-modern {
+    .gigya-screen-dialog-main {
+        .gigya-screen-dialog-inner {
+            background: $white;
+        }
+    }
+}
+
+#gigya-login-form {
+    .gigya-layout-row.with-divider {
+        .gigya-layout-cell.with-site-login {
+            width: 360px;
+        }
+    }
+}
+
+#gigya-profile-form {
+    .gigya-layout-row {
+        .gigya-composite-control.gigya-composite-control-textbox {
+            width: 48%;
+            @include pull-left;
+        }
+        .gigya-composite-control.gigya-composite-control-textbox:nth-child(3) {
+            @include margin-left(3, percent);
+        }
+    }
+    .gigya-layout-row.left-holder {
+        .gigya-composite-control.gigya-composite-control-dropdown {
+            label.gigya-label {
+                @include display(none);
+            }
+        }
+    }
+}
+
+.gigya-screen-dialog-main {
+    .gigya-screen-dialog-inner {
+        form.gigya-profile-form {
+            .gigya-layout-row {
+                .gigya-composite-control.gigya-composite-control-checkbox {
+                    width: 98%;
+                }
+                .gigya-composite-control.gigya-composite-control-dropdown {
+                    label {
+                        span.gigya-label-text {
+                            @include color($mu-black);
+                            @include font-weight(700);
+                            @include secondry-regular;
+                        }
+                    }
+                }
+                .gigya-composite-control.gigya-composite-control-textbox {
+                    label {
+                        @include color($mu-black);
+                        @include font-weight(700);
+                    }
+                }
+            }
+            .gigya-composite-control.gigya-composite-control-dropdown {
+                label {
+                    span.gigya-label-text {
+                        @include color($mu-black);
+                        @include font-weight(700);
+                        @include secondry-regular;
+                    }
+                }
+            }
+            .box-sizing {
+                .gigya-composite-control.gigya-composite-control-dropdown {
+                    label {
+                        @include display(none);
+                    }
+                }
+            }
+            label.gigya-composite-control.gigya-composite-control-label.margin-bottom-10 {
+                span {
+                    @include font-weight(700);
+                    @include color($mu-black);
+                }
+            }
+            #address-block {
+                .gigya-composite-control:nth-child(4),
+                .gigya-composite-control:nth-child(5),
+                .gigya-composite-control:nth-child(6),
+                .gigya-composite-control:nth-child(7) {
+                    width: 48%;
+                    @include pull-left;
+                }
+                .gigya-composite-control:nth-child(5),
+                .gigya-composite-control:nth-child(7) {
+                    @include margin-left(2, percent);
+                }
+            }
+            .marketting-wrap {
+                .gigya-composite-control.gigya-composite-control-checkbox.grid-6 {
+                    width: 48%;
+                }
+            }
+            .medical-wrap {
+                .gigya-composite-control.gigya-composite-control-checkbox {
+                    width: 98%;
+                }
+            }
+        }
+        form.gigya-register-form{
+            #address-block {
+                .gigya-composite-control:nth-child(4),
+                .gigya-composite-control:nth-child(5),
+                .gigya-composite-control:nth-child(6),
+                .gigya-composite-control:nth-child(7) {
+                    width: 48%;
+                    @include pull-left;
+                }
+                .gigya-composite-control:nth-child(5),
+                .gigya-composite-control:nth-child(7) {
+                    @include margin-left(2, percent);
+                }
+            }
+        }
+    }
+}
+
+.gigya-screen.portrait {
+    @include padding(0, 0, 0, 0, important);
+}
+
+.gigya-login-providers-container,
+.gigya-screen.gigya-skinning.gigya-screen.portrait .gigya-social-login-container .gigya-login-providers-container{
+    width: 308px !important;
+}
+.gigya-social-login-container {
+    @include margin-auto(0);
+    #gigya-modal-plugin-container-showScreenSet_social_1_uiContainer{
+        width: auto !important;
+    }
+}
+.gigya-social-login-container > div{
+    width: 308px; 
+}
+
+.gigya-screen-dialog-main .gigya-screen-dialog-inner .gigya-layout-row .gigya-composite-control.gigya-composite-control-dropdown label span.gigya-label-text,
+.gigya-layout-row .gigya-composite-control.gigya-composite-control-dropdown label span.gigya-label-text,
+.gigya-layout-cell .gigya-composite-control.gigya-composite-control-label.margin-bottom-10,
+.gigya-layout-cell .gigya-composite-control.gigya-composite-control-label.margin-bottom-10 span {
+    @include secondry-semibold;
+    @include font-size(18);
+    @include color($vertical-strips);
+}
+
+.register-custom-ui #gigya-complete-registration-screen form.gigya-profile-form .custom-checbox-wid {
+    width: 100% !important;
+}
+
+.gigya-screen-dialog-main {
+    .gigya-screen-dialog-inner {
+        form.gigya-profile-form {
+            label {
+                a {
+                    @include color($feed-text);
+                }
+            }
+        }
+    }
+}
+
+.gigya-register-form {
+    .register-site-login {
+        .gigya-composite-control.gigya-composite-control-captcha-widget {
+            .gigya-captcha-wrapper {
+                .gigya-captcha {
+                    @include margin-left(0);
+                }
+            }
+        }
+    }
+}
+
+#registerDiv .gigya-composite-control input[type=submit],
+#registerDiv .gigya-composite-control input[type=button],
+.gigya-screen-dialog-main .gigya-composite-control input[type=submit],
+.gigya-screen-dialog-main .gigya-composite-control input[type=button] {
+    transform: skew(-10deg);
+    -moz-transform: skew(-10deg);
+    -webkit-transform: skew(-10deg);
+}
+#registerDiv .gigya-composite-control input[type=submit]:hover,
+#registerDiv .gigya-composite-control input[type=button]:hover,
+.gigya-screen-dialog-main .gigya-composite-control input[type=button]:hover, 
+.gigya-screen-dialog-main .gigya-composite-control input[type=submit]:hover{
+    background: $mu-red-hover url($base-path-images + 'icons/follow-live.png') right 30px  center no-repeat !important;
+    transition: background .7s ease .1s;
+    -webkit-transition: background .7s ease .1s;
+    -moz-transition: background .7s ease .1s;
+    -o-transition: background .7s ease .1s;
+}
+
+.gigya-composite-control-textbox.sm-input {
+    @include margin-bottom(0);
+}
+
+.gig-balloon .gig-balloon-frame {
+    background: $white !important;
+    @include border-none(important);
+    @include border-radius(0, important);
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5) !important;
+}
+
+.gig-balloon .gig-balloon-nub-right {
+    @include border-none(important);
+    height: 16px !important;
+    width: 10px !important;
+    @include left(-27, important);
+    @include position(relative, important);
+    background-image: none !important;
+}
+
+.gig-balloon .gig-balloon-nub-right:after {
+    width: 4px !important;
+    content: "";
+    @include position(absolute);
+    @include margin-left(8, important);
+    @include left(18, important);
+    @include top(36, important);
+    width: 0 !important;
+    height: 0 !important;
+    box-sizing: border-box !important;
+    border: 0.5em solid black !important;
+    border-color: transparent transparent $white $white !important;
+    transform-origin: 0 0 !important;
+    transform: rotate(-135deg) !important;
+    box-shadow: -3px 3px 3px 0 rgba(0, 0, 0, 0.2) !important;
+}
+
+.gig-balloon .gigya-passwordStrength-text-requirements {
+    @include text-align(left, important);
+    @include line-height(14, px);
+    @include color($mu-black, important);
+}
+
+.gig-balloon .gigya-passwordStrength-bar {
+    @include position(relative, important);
+}
+
+.gig-balloon .gigya-passwordStrength-bar-too_weak {
+    @include position(absolute);
+    @include top(-1, important);
+    height: 4px !important;
+}
+
+
+/*ends here */
+
+.icon-info-icon {
+    @include position(relative);
+    @include display(inline-block);
+    width: 38px !important;
+}
+
+.icon-info-icon {
+    .tooltip {
+        visibility: hidden;
+        @include font-size(12);
+        background-color: $mu-black;
+        @include color($skinning-reauth);
+        @include padding(10, 10, 10, 10);
+        @include text-align(center);
+        @include position(absolute);
+        @include z-index(1);
+        @include top(138, percent);
+        @include right(5, percent);
+        width: 230px;
+        background-color: $white;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+        @include line-height(14, px);
+        @include font-weight(normal);
+        @include font-size(15, important);
+        &:before,
+        &:after {
+            @include left(88, percent);
+            content: '';
+            width: 24px;
+            height: 24px;
+            @include bottom(88, percent);
+            @include z-index(-88);
+            @include display(block);
+            @include position(absolute);
+            transform: rotate(-45deg);
+            @include border(12, solid, $light);
+
+        }
+        &:before {
+            border-color: $skinning-gry $skinning-gry transparent transparent;
+            @include margin(0, 0, 0, 0);
+        }
+    }
+    &:hover .tooltip {
+        visibility: visible;
+        @include position(absolute);
+        @include z-index(999);
+    }
+}
+
+.gigya-profile-form .icon-info-icon {
+    .tooltip {
+        visibility: hidden;
+        @include font-size(12);
+        background-color: $mu-black;
+        @include color($skinning-reauth);
+        @include padding(10, 10, 10, 10);
+        @include text-align(center);
+        @include position(absolute);
+        @include z-index(1);
+        @include top(138, percent);
+        @include right(5, percent);
+        width: 230px;
+        background-color: $white;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+        @include line-height(14, px);
+        @include font-weight(normal);
+        @include font-size(15, important);
+        &:before,
+        &:after {
+            @include left(88, percent);
+            @include bottom(86, percent);
+            content: '';
+            width: 24px;
+            height: 24px;
+            @include z-index(-88);
+            @include display(block);
+            @include position(absolute);
+            transform: rotate(-45deg);
+            @include border(12, $light, solid);
+
+        }
+        &:before {
+            border-color: $skinning-gry $skinning-gry transparent transparent;
+            @include margin(0, 0, 0, 0);
+        }
+    }
+    &:hover .tooltip {
+        visibility: visible;
+        @include position(absolute);
+        @include z-index(999);
+
+    }
+}
+
+.icon-info-icon:hover .tooltip, .icon-info-icon:focus .tooltip{
+    visibility: visible;
+}
+
+.gigya-screen-dialog select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+form.gigya-profile-form .gigya-layout-row {
+    @include position(relative);
+}
+
+span.icon-info-icon {
+    @include pull-none;
+    @include margin-top(-9);
+    @include position(relative);
+    @include right(-27);
+    @include bottom(14);
+}
+
+.gigya-app-bg {
+    span.icon-info-icon {
+        margin-top: -9px;
+        @include position(absolute);
+        @include right(0);
+        @include top(-1);
+        height: 40px !important;
+        @include font-size(0);
+        width: 40px !important;
+        .tooltip,
+        .screenreader {
+            @include position(absolute);
+            @include right(0);
+            left:inherit;
+        }
+    }
+}
+
+.gigya-layout-row.left-holder.vertical-space {
+    span.icon-info-icon {
+        @include pull-right;
+        @include margin-top(2);
+        @include right(15);
+        @include position(relative);
+    }
+}
+
+.gigya-app-bg {
+    .gigya-layout-row.left-holder.vertical-space {
+        span.icon-info-icon {
+            @include pull-right;
+            @include margin-top(2);
+            @include right(15);
+            @include position(absolute);
+        }
+    }
+}
+
+html.gigya-mobile-modal-mode {
+    height: 100% !important;
+}
+
+#gigya-update-profile-screen.portrait .first-row .gigya-myPhoto-profile-box-wrapper {
+    background: url($base-path + 'avatar.png') 50% 50% / contain no-repeat rgb(255, 255, 255);
+}
+
+.custom-error-msg {
+    //color: #e76468 !important;
+    @include color($dark-border-bottom, important);
+    @include font-weight(700, important);
+    @include font-size(13, important);
+    @include line-height(15, px);
+    @include text-align(center, important);
+}
+
+h1.gigya-screen-caption {
+    @include primary-bold;
+    @include font-size(24, important);
+    color: $white !important;
+}
+
+.gigya-screen .gigya-composite-control.gigya-terms-error {
+    @include border-none(important);
+}
+
+.gigya-app-bg .gigya-screen-dialog-inner {
+    background: $white !important;
+}
+
+.tooltip {
+    @include text-align(left, important);
+}
+
+.button-forward,
+.gigya-skinning input[type=button] {
+    transform: skew(-10deg);
+    -moz-transform: skew(-10deg);
+    -webkit-transform: skew(-10deg);
+}
+
+.gigya-screen-content [type=checkbox]:checked+label:before,
+.gigya-screen-content [type=checkbox]:not(:checked)+label:before {
+    width: 19px !important;
+    height: 19px !important;
+}
+
+.gigya-app-bg .gigya-layout-row .gigya-composite-control.gigya-composite-control-checkbox.grid-6.margin-top-10:first-child {
+    @include margin-top(15);
+}
+
+.gigya-screen.portrait.mobile input[type=text],
+.gigya-screen.portrait.mobile input[type=password] {
+    @include font-size(18, important);
+    height: 34px !important;
+}
+
+.gigya-composite-control.gigya-composite-control-textbox input.gigya-error,
+.gigya-composite-control.gigya-composite-control-password input.gigya-error,
+.gigya-composite-control.gigya-composite-control-dropdown select.gigya-error {
+    @include border-bottom(1, solid, $dark-border-bottom, 1, important);
+}
+
+.custom-checkbox-fix .gigya-layout-cell:first-child {
+    min-width: 45% !important;
+}
+
+.custom-checkbox-fix .gigya-layout-cell:last-child {
+    min-width: 55% !important;
+}
+
+.gigya-screen .gigya-composite-control.gigya-terms-error {
+    @include padding(0, 0, 0, 6);
+}
+
+.register-custom-ui .gigya-composite-control.gigya-composite-control-textbox span.icon-info-icon span.tooltip {
+    @include right(5, percent, important);
+}
+
+.gigya-app-bg .gigya-screen .gigya-login-form .gigya-composite-control.gigya-composite-control-submit {
+    @include margin-top(15);
+}
+
+.main_container,
+.gigya-screen-dialog-main.gigya-app-bg,
+.gigya-screen-dialog-inner,
+.gigya-screen-content,
+#registerDiv {
+    @include margin-top(0, important);
+}
+
+.gigya-reset-password-form .letter-spacing-s {
+    @include position(relative);
+}
+
+.gigya-style-modern div.gigya-screen-dialog-main {
+    box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+}
+
+.custom-signup-list {
+    ul {
+        @include margin-left(20, important);
+        @include margin-bottom(48, important);
+        li {
+            list-style-type: disc;
+            @include color($vertical-strips, important);
+            @include line-height(24, px, important);
+            @include padding-top(8, important);
+            @include font-size(18, important);
+        }
+    }
+}
+
+.gigya-screen.landscape {
+    @include padding(0, 0, 0, 0, important);
+}
+
+.gigya-screen input[type=button],
+.gigya-screen input[type=submit],
+.gigya-screen input[type=button]:hover,
+.gigya-screen input[type=submit]:hover,
+.button-forward {
+    @include secondry-semibold;
+    background: $mu-red url($base-path-images + 'icons/follow-live.png') right 30px center no-repeat !important;
+    @include border-none;
+    @include cursor(pointer);
+    vertical-align: middle;
+    @include margin-left(10);
+    width: auto !important;
+    @include border-none(important);
+    @include text-align(left, important);
+    @include font-size(14, important);
+    @include text-transform(uppercase, important);
+    color: $white !important;
+    @include padding(0, 65, 0, 32, important);
+    @include border-radius(0, important);
+    letter-spacing: 0.6px !important;
+    transition: background .7s ease .1s;
+    -webkit-transition: background .7s ease .1s;
+    -moz-transition: background .7s ease .1s;
+    -o-transition: background .7s ease .1s;
+}
+
+.gigya-screen.gigya-skinning a,
+.gigya-screen.gigya-skinning a:link {
+    text-decoration: none !important;
+    @include line-height(25, px, important);
+}
+
+.register-custom-ui {
+    .gigya-screen .gigya-layout-cell {
+        @include pull-none(important);
+        min-width: auto !important;
+    }
+    .gigya-app-bg .gigya-layout-cell.responsive.with-divider {
+        @include margin-bottom(35, important);
+    }
+    label.gigya-divider-content.gigya-label-text.gigya-composite-control.gigya-composite-control-label {
+        @include text-align(center);
+    }
+    div#password-row {
+        > .gigya-layout-cell {
+            @include pull-left(important);
+            width: 48% !important;
+            min-width: 48% !important;
+            .gigya-composite-control.gigya-composite-control-password {
+                @include padding(0, 0, 0, 0, important);
+                @include margin-left(0, important);
+            }
+            &:nth-child(2) {
+                @include margin-left(4, percent, important);
+            }
+        }
+    }
+    .gigya-composite-control.gigya-composite-control-textbox.sm-input {
+        @include pull-left;
+        @include margin-right(0);
+        width: 48% !important;
+    }
+    .gigya-composite-control.gigya-composite-control-textbox.sm-input.sm-margin {
+        @include margin-left(4, percent);
+    }
+    .gigya-layout-cell.responsive.with-divider {
+        @include text-align(center, important);
+        @include margin(10, 0, 10, 0, important);
+    }
+    .gigya-screen .gigya-composite-control.gigya-composite-control-captcha-widget .gigya-captcha-wrapper .gigya-captcha {
+        @include pull-left(important);
+    }
+    .gigya-social-login.gigya-reset {
+        //float: none;
+        @include pull-none;
+    }
+    form#gigya-register-form .gigya-layout-row .under-site-login {
+        @include margin-left(0, important);
+        @include pull-left(important);
+        @include text-align(left, important);
+        @include margin-bottom(20, important);
+    }
+    .gigya-composite-control.gigya-composite-control-checkbox.grid-12.margin-top-10.gigya-terms-valid.custom-checbox-wid label.gigya-label {
+        width: 85% !important;
+    }
+    .gigya-screen.gigya-skinning .custom-checbox-wid input[type=checkbox]+label {
+        width: 85% !important;
+    }
+    .gigya-composite-control.gigya-composite-control-checkbox {
+        @include position(relative);
+    }
+    .gigya-composite-control.gigya-composite-control-textbox .gigya-input-text[name=email] {
+        width: 100%;
+    }
+    .gigya-screen .gigya-composite-control.gigya-terms-error {
+        @include padding-top(0);
+        @include padding-bottom(14, important);
+    }
+    .gigya-composite-control.gigya-composite-control-textbox {
+        span.icon-info-icon {
+            @include margin-top(9);
+            span.tooltip {
+                &:after {
+                    @include left(88, percent);
+                    @include bottom(85, percent);
+                }
+                &:before {
+                    @include left(88, percent);
+                    @include bottom(85, percent);
+                }
+            }
+        }
+    }
+    .gigya-layout-row.left-holder.vertical-space {
+        .icon-info-icon {
+            span.tooltip {
+                &:after {
+                    @include right(0);
+                    @include left(88, percent);
+                }
+                &:before {
+                    @include right(0);
+                    @include left(88, percent);
+                }
+            }
+        }
+    }
+}
+#gigya-register-form, #gigya-profile-form{
+    width: 544px !important;
+}
+.gigya-app-bg #gigya-register-form, .gigya-app-bg #gigya-profile-form{
+    width: 100% !important;
+}
+.first-capitalize {
+    @include text-transform(capitalize);
+}
+.gigya-screen-dialog-main .gigya-screen-dialog-inner .recaptchatable #recaptcha_response_field{
+    width: 153px!important;
+    @include position(relative, important);
+    @include bottom(3, important);
+    @include padding(0, 0, 0, 0, important);
+    @include margin(8, 0, 0, 0, important);
+    height: 20px !important;
+    @include font-size(12, important);
+}
+.recaptcha_only_if_privacy a{
+    @include font-size(12, important);
+}
+label.gigya-composite-control.gigya-composite-control-label.clearfix.custom-mesg-bottom a{
+    @include font-size(14, important);
+    @include color($mu-black);
+}
+.gigya-screen-dialog-inner .gigya-layout-row .gigya-composite-control.gigya-composite-control-label span{
+    @include text-align(right);
+}
+.gigya-app-bg .keep-text {
+    @include pull-right(important);
+}
+
+.gigya-screen.gigya-skinning [type=checkbox]:checked + label:after,
+.gigya-screen.gigya-skinning [type=checkbox]:not(:checked) + label:after {
+    width: 15px !important;
+}
+.gigya-layout-row{
+    width: 95% !important;
+    @include margin(0, 0, 0, 0, important);
+    @include position(relative, important);
+}
+.icon-info-icon{
+    @include right(-37, important);
+    @include margin(0, 0, 0, 0, important);
+    @include padding(0, 0, 0, 0, important);
+    @include position(absolute, important);
+}
+
+.gigya-profile-form .icon-info-icon{
+    @include right(-25, important);
+}
+#gigya-update-profile-screen-second .icon-info-icon{
+    @include right(-33, important);
+}
+
+.gigya-error-msg, .gigya-error-display{
+    @include text-align(left, important);
+    @include font-weight(normal, important);
+    @include font-style(normal, important);
+    @include font-size(13, important);
+    @include secondry-regular;
+}
+.gigya-style-modern #gigya-screen-dialog-page-overlay{
+    background: $light !important;
+    @include opacity(1, important);
+}
+.gigya-screen-dialog-caption, .gigya-screen-dialog-top .gigya-screen-dialog-caption, .gigya-screen-dialog-top h2{
+    width: 550px;
+    @include margin-auto(0);
+    @include pull-none(important);
+    @include padding-left(0, important);
+}
+.gigya-style-modern div.gigya-screen-dialog-close{
+    @include pull-right;
+    @include cursor(pointer);
+    @include position(absolute);
+    @include top(10);
+    @include right(30);
+}
+.gigya-screen.portrait.mobile select,
+.gigya-screen.portrait.mobile .gigya-label-text,
+.gigya-divider-content.gigya-composite-control.gigya-composite-control-label,
+.gigya-forgotPassword.gigya-composite-control.gigya-composite-control-link{
+    font-size: 18px !important;
+}
+.gigya-composite-control.gigya-composite-control-label.custom-mesg-bottom{
+    @include font-size(14, important);
+    @include opacity(0.7);
+    @include color($mu-black);
+}
+.gigya-screen.landscape .gigya-composite-control.gigya-composite-control-social-login{
+    @include right(0, important);
+}
+.gigya-composite-control.gigya-composite-control-header{
+    @include font-size(20, important);
+}
+.gigya-label .gigya-label-text.gigya-checkbox-text{
+    @include font-size(16, important);
+}
+.gigya-composite-control-dropdown select{
+    @include opacity(1, important);
+    @include color($feed-text);
+}
+.gigya-divider-content{
+    width: 100% !important;
+}
+.gigya-style-modern .gigya-screen-dialog-main .gigya-screen-dialog-inner .gigya-screen-content #gigya-register-screen .gigya-divider-content{
+    @include margin-left(-23);
+}
+.input.gigya-input-submit.button-forward{
+    @include text-transform(uppercase);
+}
+#gigya-complete-registration-screen .gigya-profile-form .gigya-composite-control.gigya-composite-control-checkbox.custom-newsletter-ui{
+    @include position(relative);
+}
+#gigya-complete-registration-screen .gigya-profile-form .gigya-composite-control.gigya-composite-control-checkbox.custom-newsletter-ui span.icon-info-icon{
+    @include right(-6, important);
+    @include top(-10, important);
+}
+.gigya-screen.gigya-skinning ul.step-progress.three-steps li a{
+    @include pull-none(important);
+}
+a.gigya-composite-control.gigya-composite-control-link.button{
+    @include border-none(important);
+}
+.gigya-myPhoto-profile-box-wrapper{
+    border-color: $mu-black !important;
+}
+.gigya-screen.portrait .gigya-composite-control.gigya-composite-control-social-login{
+    @include right(0, important);
+}
+#gigya-parentalConsent-form .gigya-composite-control-submit{
+    @include margin-top(30);
+}
+.gigya-footer{
+    @include line-height(24, px);
+}
+#gigya-complete-registration-screen form.gigya-profile-form .gigya-composite-control.gigya-composite-control-checkbox.custom-checbox-wid{
+    width: 100% !important;    
+}
+#gigya-update-profile-second-form .gigya-error-msg{
+    @include position(absolute);
+    @include margin-top(-10);
+}
+#gigya-link-account-screen .responsive.with-social-login .gigya-social-login-container.gigya-style-modern{
+    height: 60px !important;
+}
+.profile__details .profile__description span::first-letter{
+    @include text-transform(uppercase, unset);
+}
+#pgcLastName{
+    @include text-transform(capitalize);
+}
+.gigya-myPhoto-profile-box-wrapper span.gigya-myPhoto-upload-button{
+    @include font-size(15, important);
+    @include line-height(15, px);
+}
+.membership-num .gigya-composite-control.gigya-composite-control-textbox{
+    width: 98% !important;
+    @include margin-left(0, important);
+}
+[data-on-success-screen='gigya-update-profile-screen-second'].gigya-profile-form .icon-info-icon{
+    @include right(-37, important);
+}
+.gigya-myPhoto-profile-box-wrapper{
+    @include border(1, solid, $mu-black, important);
+}
+.ui-marketing-preferences span.icon-info-icon{
+    @include top(-10);
+}
+a#gigya-link-manual{
+    @include padding-bottom(0, important);
+    @include display(inline-block);
+    @include margin-bottom(20);
+    @include cursor(pointer);
+}
+#btnselectAddress{
+    @include margin-top(20);
+}
+[data-on-success-screen='gigya-update-profile-screen-third']#gigya-update-profile-second-form .gigya-input-submit{
+    @include margin-top(30, important);
+}
+[data-caption='UPDATE COMPLETE']#gigya-update-profile-screen-final .gigya-composite-control.gigya-composite-control-link{
+    @include margin-top(10, important);
+}
+.custom-ui-full{
+    width: 98% !important;
+    @include pull-none(important);
+    @include margin(0, 0, 0, 0, important);
+}
+.gigya-link-accounts-form .gigya-footer .first-cell, .gigya-link-accounts-form .gigya-footer .second-cell{
+    width: 50% !important;
+    @include pull-left(important);
+}
+#gigya-update-profile-screen.portrait .first-row .second-cell{
+    width: calc(100% - 220px) !important;
+}
+/*Facebook Sign In start*/
+.gigya-login-providers .gigya-login-providers-list [data-gigya-provider="facebook"] button.tabbing-button div,
+.gigya-login-providers .gigya-login-providers-list [data-gigya-provider="googleplus"] button.tabbing-button div,
+.gigya-login-providers .gigya-login-providers-list [data-gigya-provider="sina"] button.tabbing-button div,
+.gigya-login-providers .gigya-login-providers-list [data-gigya-provider="wechat"] button.tabbing-button div{
+    @include display(none, important);
+}
+/*Facebook Sign In end*/
+
+/*Facebook Sign-Up start*/
+#register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="facebook"] button.tabbing-button div,
+#register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="googleplus"] button.tabbing-button div,
+#register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="sina"] button.tabbing-button div,
+#register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="wechat"] button.tabbing-button div{
+    //display: none !important;
+    @include display(none, important);
+}
+/*Facebook Sign-Up end*/
+
+.gigya-login-providers .gigya-login-providers-list [data-gigya-provider="facebook"] button.tabbing-button,
+#register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="facebook"] button.tabbing-button,
+.gigya-login-providers .gigya-login-providers-list [data-gigya-provider="googleplus"] button.tabbing-button,
+#register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="googleplus"] button.tabbing-button,
+.gigya-login-providers .gigya-login-providers-list [data-gigya-provider="sina"] button.tabbing-button,
+#register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="sina"] button.tabbing-button,
+.gigya-login-providers .gigya-login-providers-list [data-gigya-provider="wechat"] button.tabbing-button,
+#register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="wechat"] button.tabbing-button {
+    width: 308px!important;
+    height: 48px!important;
+    background-color: $skin-provider;
+    @include border-radius(4);
+}
+
+.gigya-login-providers .gigya-login-providers-list [data-gigya-provider="googleplus"] button.tabbing-button,
+#register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="googleplus"] button.tabbing-button
+{
+    background-color: $skin-list;
+}
+.gigya-login-providers .gigya-login-providers-list [data-gigya-provider="sina"] button.tabbing-button,
+#register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="sina"] button.tabbing-button{
+    background-color: $sina-col;
+}
+.gigya-login-providers .gigya-login-providers-list [data-gigya-provider="wechat"] button.tabbing-button,
+#register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="wechat"] button.tabbing-button{
+    background-color: $wechat-col;
+}
+.gigya-login-providers .gigya-login-providers-list [data-gigya-provider="facebook"] button.tabbing-button,
+#register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="facebook"] button.tabbing-button,
+.gigya-login-providers .gigya-login-providers-list [data-gigya-provider="googleplus"] button.tabbing-button,
+#register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="googleplus"] button.tabbing-button,
+.gigya-login-providers .gigya-login-providers-list [data-gigya-provider="sina"] button.tabbing-button,
+#register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="sina"] button.tabbing-button,
+.gigya-login-providers .gigya-login-providers-list [data-gigya-provider="wechat"] button.tabbing-button,
+#register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="wechat"] button.tabbing-button{
+    @include color($light);
+    @include font-size(18);
+    @include text-align(center, important);
+    @include secondry-semibold;
+}
+.gigya-login-providers .gigya-login-providers-list .gigya-login-provider-row:first-child{
+    @include position(relative);
+}
+.gigya-login-providers .gigya-login-providers-list .gigya-login-provider-row:last-child{
+    @include position(relative);
+}
+.gigya-login-providers .gigya-login-providers-list [data-gigya-provider="facebook"],
+#register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="facebook"],
+.gigya-login-providers .gigya-login-providers-list [data-gigya-provider="googleplus"],
+#register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="googleplus"],
+.gigya-login-providers .gigya-login-providers-list [data-gigya-provider="sina"],
+#register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="sina"],
+.gigya-login-providers .gigya-login-providers-list [data-gigya-provider="wechat"],
+#register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="wechat"]{
+    width: 100% !important; 
+}
+.gigya-login-providers-list-container{
+    width: 100% !important; 
+}
+#gigya-login-screen .with-site-login .gigya-composite-control.gigya-composite-control-header,
+#gigya-register-screen .with-site-login .gigya-composite-control.gigya-composite-control-header,
+#gigya-login-screen .with-site-login h3.gigya-composite-control.gigya-composite-control-header {
+    @include font-size(18, important);
+}
+.gigya-screen.gigya-skinning .ui-marketing-preferences input[type=checkbox]+label{
+    width: 85%;
+}
+#address-finder > .gigya-composite-control.gigya-composite-control-textbox{
+    width: 100% !important;
+}
+#address-finder > .gigya-composite-control.gigya-composite-control-submit,
+#address-finder > .gigya-composite-control.gigya-composite-control-link.button{
+    @include margin-top(0);
+}
+#loginDiv_content #gigya-profile-form .gigya-layout-row .gigya-composite-control.gigya-composite-control-textbox:nth-child(2){
+    @include margin-left(3, important);
+}
+#loginDiv{
+    @include margin-top(40, important);
+}
+.gigya-screen-dialog-main{
+    min-height: 100%;
+    -webkit-overflow-scrolling: touch !important;
+}
+.gigya-myPhoto-profile-box-wrapper .gigya-myPhoto-profile-image{
+    background-size: cover !important;
+}
+.gigya-style-modern.gigya-screen-dialog-mobile div.gigya-screen-dialog-top{
+    @include position(relative, important);
+}
+.gigya-layout-row.width-auto{
+    width: auto !important;
+}
+.gigya-screen.portrait .gigya-composite-control.gigya-composite-control-social-login{
+    width: auto !important;
+}
+.gigya-link-accounts-form .gigya-layout-row.width-auto .gigya-visible-when label{
+    @include padding-bottom(10);
+}
+#gigya-link-accounts-form .gigya-layout-row.width-auto .gigya-layout-cell.with-social-login .main-Header h2.gigya-composite-control-header{
+    @include padding-bottom(5);
+}
+.gigya-login-providers .gigya-login-providers-list-container .gigya-login-provider-row span.gigya-login-provider{
+    height: auto !important;
+}
+.gigya-divider-content.gigya-label-text.gigya-composite-control.gigya-composite-control-label{
+    @include text-align(center, important);
+}
+.gigya-login-providers .gigya-login-providers-list-container .gigya-login-provider-row span.gigya-login-provider{
+    height: auto !important;
+}
+.gigya-app-bg .ui-space-profile{
+    @include margin-top(20, important);
+}
+.gigya-screen .gigya-composite-control.gigya-composite-control-link.button{
+    @include padding-bottom(0, important);
+    @include margin-bottom(25, important);
+}
+.main_container .gigya-login-form h2.gigya-composite-control-header{
+    //color: #232323;
+    @include color($vertical-strips);
+    @include padding-bottom(26);
+    @include position(relative);
+    @include text-align(left);
+    @include text-transform(inherit);
+    @include font-size(20);
+    @include font-weight(100);
+    @include secondry-light;
+    @include line-height(28, px);
+    letter-spacing: 0.1px;
+}
+h3.gigya-composite-control.gigya-composite-control-header {
+    @include font-size(18);
+    font-weight: 600;
+    @include secondry-semibold;
+    @include color($mu-black);
+    @include text-transform(none);
+    @include text-align(center);
+    letter-spacing: -0.3px;
+}
+.main_container #registerDiv h1.gigya-screen-caption{
+    @include primary-bold;
+    @include font-size(40, important);
+    @include padding(64, 0, 12, 0);
+    @include color($mu-black, important);
+    width: 550px;
+    @include margin-auto(0);
+    @include pull-none(important);
+    @include padding-left(0, important);
+    @include border-none(important);
+}
+.page-wrap .main_container #registerDiv.gigya-style-modern{
+    @include margin-top(-300, important);
+}
+.page-wrap .main_container #registerDiv #registerDiv_content_caption{
+    width: 550px !important;
+}
+.gigya-skip-link-account{
+    @include secondry-regular;
+}
+#gigya-link-accounts-form .gigya-layout-row.width-auto .gigya-layout-cell.responsive .gigya-layout-row.gigya-footer .gigya-container.gigya-container-enabled .gigya-layout-row.width-auto{
+    @include text-align(center);
+}
+legend{
+    @include pull-left(important);
+}
+.gigya-screen.portrait.mobile select{
+    height: 35px;
+}
+
+/*snipper start*/
+.gigya-screen-dialog-main input[type=number]::-webkit-outer-spin-button,
+.gigya-screen-dialog-main input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    @include margin(0, 0, 0, 0);
+}
+.gigya-screen-dialog-main input#gigya-textbox-88127192751096600, .gigya-screen-dialog-main input#gigya-textbox-76111460448028400{
+    border-left:none;
+    border-right:none;
+    border-top :none;
+    @include border-radius(0);
+    @include border-bottom(1, solid, $skinning-ipt, 1, important);
+}
+.gigya-screen-dialog-main input[type=number] {
+    -moz-appearance:textfield;
+}
+/*snipper end*/
+
+/*myunited direct page start*/
+.main_container.gigya-ui-bg{
+    width: 550px !important;
+    @include margin-auto(0);
+}
+.gigya-ui-bg .gigya-screen .gigya-layout-cell{
+    min-width: 100%;
+}
+#registerDiv_content .gigya-screen .gigya-layout-row.with-two-inputs>.gigya-layout-cell+.gigya-layout-cell>.gigya-composite-control{
+    @include padding-left(0);
+}
+h1.gigya-screen-caption{
+    background: none;
+}
+/*myunited direct page end*/
+
+.gigya-show-checkmark.gigya-valid{
+    background-image: url($base-path-images + 'icons-2x/checked_icon@2x.png') !important;
+    background-size: 15px !important;
+}
+.forgot-password-cell{
+    @include line-height(26, px);
+}
+.gigya-reauthentication-form .responsive.with-social-login .gigya-social-login-container.gigya-style-modern{
+    height: 60px !important;
+}
+.gigya-reauthentication-form .gigya-divider-content.gigya-composite-control.gigya-composite-control-label{
+    @include text-align(center);
+}
+.gigya-reauthentication-form a{
+    @include color($skinning-reauth, important);
+    text-decoration: none !important;
+}
+.responsive.custom-space.gigya-container.gigya-visible-when.or-visbility[data-screenset-element-id="__gig_template_element_113_1499421552347"]{
+    @include display(none, important);
+}
+.gigya-layout-row .gigya-composite-control-dropdown select{
+    @include line-height(24, px);
+}
+.gigya-screen-dialog-top .gigya-screen-dialog-close>a {
+    @extend .icon-cross-gigya;
+}
+.gigya-screen.gigya-skinning .text-wrap a{
+    @include font-size(14, important);
+    @include color($base-link-color, important);
+}
+input.gigya-input-text::-webkit-input-placeholder, 
+input.gigya-input-password::-webkit-input-placeholder,
+input.gigya-input-text::-moz-input-placeholder, 
+input.gigya-input-password::-moz-input-placeholder,
+input.gigya-input-text:-ms-input-placeholder, 
+input.gigya-input-password:-ms-input-placeholder,
+input.gigya-input-text:-moz-input-placeholder, 
+input.gigya-input-password:-moz-input-placeholder     {
+    @include color($skinning-reauth, important);
+    @include opacity(1, important);
+}
+.gigya-composite-control.gigya-composite-control-header span#pgcFirstName, 
+.gigya-composite-control.gigya-composite-control-header span#pgcEmail, 
+.gigya-composite-control.gigya-composite-control-header span#pgcLastName{
+    @include color($vertical-strips, important);
+    @include font-size(20);
+}
+.gigya-composite-control.gigya-composite-control-header span#pgcEmail{
+    word-break: break-all;
+}
+.gigya-screen.gigya-skinning .step-progress li.active, .gigya-screen.gigya-skinning .step-progress li.active a{
+    @include cursor(default);
+}
+.gigya-screen.gigya-skinning .step-progress li .screenreader {
+    display: none;
+}
+.gigya-screen.gigya-skinning .step-progress li.active .screenreader {
+    display: block !important;
+}
+.gigya-screen.gigya-skinning .step-progress li, .gigya-screen.gigya-skinning .step-progress li a{
+    @include cursor(pointer);
+}
+
+#address-block select{
+    @include color($skinning-reauth, important);
+    @include opacity(1, important);
+}
+.modal.email-modal .close{
+    @include cursor(pointer);
+}
+.gigya-screen.gigya-skinning a:hover, a#gigya-link-manual:hover, .gigya-screen-dialog-main a:hover, .gigya-reset-password-form .gigya-layout-row.link-row a:hover {
+    @include border-bottom(1, solid, $mu-red, 1, important);
+}
+.gigya-screen.gigya-skinning a, a#gigya-link-manual, .gigya-screen-dialog-main a, .gigya-reset-password-form .gigya-layout-row.link-row a{
+    @include border-bottom(1, solid, $link-line, 1, important);
+}
+.gigya-reset-password-form .gigya-layout-row.link-row a {
+    text-decoration: none!important;
+    line-height: 25px!important;
+    @include secondry-regular;
+    @include color($skinning-link);
+}
+.step-progress.three-steps li a, .step-progress.three-steps li a:hover, .gigya-screen-dialog-close:hover{
+    @include border-none(important);
+}
+.gigya-screen.gigya-skinning a.button:hover{
+    @include border-none(important);
+}
+#registerDiv #gigya-link-accounts-form h2.gigya-composite-control-header,
+#registerDiv #gigya-forgot-password-screen h2.gigya-composite-control-header,
+#registerDiv h2.gigya-composite-control-header{
+    @include color($vertical-strips);
+    @include padding-bottom(12);
+    @include position(relative);
+    @include text-align(left);
+    @include text-transform(inherit);
+    @include font-size(20);
+    @include font-weight(100);
+    @include secondry-light;
+    @include line-height(28, px);
+    letter-spacing: 0.1;
+}
+
+.gigya-app-bg .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="facebook"] button.tabbing-button:before,
+.gigya-app-bg #register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="facebook"] button.tabbing-button:before,
+.gigya-custom-signuptext .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="facebook"] button.tabbing-button:before,
+.gigya-custom-signuptext #register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="facebook"] button.tabbing-button:before{
+    content: 'Log In with Facebook';
+    @include color($light);
+    @include font-size(18);
+    @include top(38);
+    @include left(50, percent);
+    transform: translate(-50%, -25px);
+    @include position(absolute);
+    @include secondry-semibold;
+}
+.gigya-app-bg #register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="facebook"] button.tabbing-button:before,
+.gigya-custom-signuptext #register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="facebook"] button.tabbing-button:before{
+    content: 'Sign Up with Facebook';
+}
+
+.gigya-app-bg .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="googleplus"] button.tabbing-button,
+.gigya-app-bg #register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="googleplus"] button.tabbing-button,
+.gigya-custom-signuptext .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="googleplus"] button.tabbing-button,
+.gigya-custom-signuptext #register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="googleplus"] button.tabbing-button{
+    height: 48px!important;
+    background-color: $skin-list;
+    @include border-radius(4);
+}
+.gigya-app-bg .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="googleplus"] button.tabbing-button:before,
+.gigya-app-bg #register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="googleplus"] button.tabbing-button:before,
+.gigya-custom-signuptext .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="googleplus"] button.tabbing-button:before,
+.gigya-custom-signuptext #register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="googleplus"] button.tabbing-button:before{
+    content: 'Log In with Google';
+    @include color($light);
+    @include font-size(18);
+    @include top(38);
+    @include left(50, percent);
+    transform: translate(-50%, -25px);
+    @include position(absolute);
+    @include secondry-semibold;
+}
+.gigya-app-bg #register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="googleplus"] button.tabbing-button:before,
+.gigya-custom-signuptext #register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="googleplus"] button.tabbing-button:before{
+    content: 'Sign Up with Google';
+}
+
+.gigya-app-bg .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="sina"] button.tabbing-button:before,
+.gigya-app-bg #register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="sina"] button.tabbing-button:before,
+.gigya-custom-signuptext .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="sina"] button.tabbing-button:before,
+.gigya-custom-signuptext #register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="sina"] button.tabbing-button:before{
+    content: 'Log In with Sina Weibo';
+    @include color($light);
+    @include font-size(18);
+    @include top(38);
+    @include left(50, percent);
+    transform: translate(-50%, -25px);
+    @include position(absolute);
+    @include secondry-semibold;
+}
+.gigya-app-bg #register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="sina"] button.tabbing-button:before,
+.gigya-custom-signuptext #register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="sina"] button.tabbing-button:before{
+    content: 'Sign Up with Sina Weibo';
+}
+
+.gigya-custom-signuptext .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="wechat"] button.tabbing-button,
+.gigya-custom-signuptext #register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="wechat"] button.tabbing-button{
+    height: 48px!important;
+    @include border-radius(4);
+}
+.gigya-app-bg .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="wechat"] button.tabbing-button:before,
+.gigya-app-bg #register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="wechat"] button.tabbing-button:before,
+.gigya-custom-signuptext .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="wechat"] button.tabbing-button:before,
+.gigya-custom-signuptext #register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="wechat"] button.tabbing-button:before{
+    content: 'Log In with Wechat';
+    @include color($light);
+    @include font-size(18);
+    @include top(38);
+    @include left(50, percent);
+    transform: translate(-50%, -25px);
+    @include position(absolute);
+    @include secondry-semibold;
+}
+#register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="wechat"] button.tabbing-button, 
+.gigya-login-providers .gigya-login-providers-list [data-gigya-provider="wechat"] button.tabbing-button{
+    background-color: $wechat-col;
+}
+.gigya-app-bg #register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="wechat"] button.tabbing-button:before,
+.gigya-custom-signuptext #register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider="wechat"] button.tabbing-button:before{
+    content: 'Sign Up with Wechat';
+}
+
+#recaptcha_privacy{
+    @include position(absolute, important);
+    @include top(23, important);
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  @include color($vertical-strips);
+  @include opacity(0.6);
+}
+::-moz-placeholder { /* Firefox 19+ */
+  @include color($vertical-strips);
+  @include opacity(0.6);
+}
+:-ms-input-placeholder { /* IE 10+ */
+  @include color($vertical-strips);
+  @include opacity(0.6);
+}
+:-moz-placeholder { /* Firefox 18- */
+  @include color($vertical-strips);
+  @include opacity(0.6);
+}
+//.gigya-screen.gigya-skinning input[type=password]{
+//    @include text-transform(capitalize);
+//}
+.gigya-screen.gigya-skinning input[type=checkbox]+label[for=gigya-checkbox-13116206212616040]{
+    width: 74%;
+}
+.gigya-screen.gigya-skinning input[type=checkbox]+label[for=gigya-checkbox-88018391784309310]{
+    width: 79%;
+}
+#model-change-email .modal-content .title-text::first-letter,
+#model-change-email .previous-credentials .old-email::first-letter{
+    @include text-transform(capitalize, unset);
+}
+.gigya-show-checkmark.gigya-valid:focus {
+    background-repeat: no-repeat !important;
+    @include padding-right(25, important);
+    background-position-x: 100% !important;
+    background-position-y: 50% !important;
+    background-position: right 5px center !important;
+}
+.gigya-profile-form div:nth-child(4n) .gigya-layout-cell{
+    @include pull-left(important);
+}
+.gigya-screen .gigya-input-text:focus{
+    //@include border(1, solid, #b6bdc5, important);
+    box-shadow: none !important;
+}
+input#gigya-textbox-35441821385175400, input#gigya-textbox-88127192751096600, input#gigya-textbox-76111460448028400,
+input#gigya-textbox-35441821385175400:focus, input#gigya-textbox-88127192751096600:focus, input#gigya-textbox-76111460448028400:focus{
+    @include border-none(important);
+    @include border-bottom(1, solid, $skinning-ipt, 1, important);
+    @include border-radius(0, important);
+}
+.gigya-wrapper-login-providers-arrow-marker,
+.gigya-wrapper-login-providers-arrow-marker{
+    @include display(none);
+}
+header .avatar {
+    background-position: 50% 0 !important;
+}
+.gigya-screen a.gigya-button:active,
+.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gigya-button.gig-tfa-phone-code-resend:active, 
+.gigya-screen input[type=button]:active, 
+.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-button-container .gig-tfa-button:active, 
+.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-button-container .gig-tfa-button-submit:active, 
+.gigya-screen input[type=submit]:active, 
+.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-edit-link:active{
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+body .gigya-app-bg #loginDiv .gigya-screen-loader, 
+body .gigya-app-bg #loginDiv .gigya-screen-dimmer{
+    @include display(none);
+}
+
+.change-email-success, .change-email-error, .change-email-exist{
+    @include display(none);
+}
+body.scrollShow{
+    overflow: inherit !important;
+}
+body.scrollHide{
+    overflow: hidden !important;
+}
+.scrollHideAll{
+    overflow:hidden !important;
+    @include position(fixed);
+}
+.gigya-screen .multi-choice-wrap{
+    @include margin-auto(0);
+    width: 55%;
+}
+.gigya-screen .gigya-multi-choice-item{
+    width: 40%;
+    @include pull-left;
+}
+.gigya-screen .gigya-composite-control-multi-choice{
+    @include margin-bottom(5);
+    @include margin-top(10);
+}
+.gigya-screen label{
+    @include line-height(22, px);
+}
+.gigya-multi-choice-item{
+    @include position(relative);
+}
+.gigya-multi-choice-item label{
+    cursor: pointer;
+    width: 55px;
+    @include padding-left(40);
+    @include position(relative);
+    z-index: 6;
+}
+.gigya-multi-choice-item input[type=radio]{
+    opacity: 0;
+    @include position(absolute);
+}
+.gigya-multi-choice-item .check {
+    @include display(block);
+    @include position(absolute);
+    @include border(2, solid, $mu-black);
+    @include top(0);
+    @include left(10);
+    @include z-index(5);
+    @include margin-top(12);
+    border-radius: 100%;
+    height: 14px;
+    width: 14px;
+    transition: border .25s linear;
+    -webkit-transition: border .25s linear;
+}
+
+.multi-choice-wrap input[type=radio]:checked ~ label {
+    @include color($mu-black);
+}
+.gigya-multi-choice-item .check::before {
+    @include display(block);
+    @include position(absolute);
+    @include top(3);
+    @include left(3);
+    @include margin-auto(0);
+    content: '';
+    border-radius: 100%;
+    height: 8px;
+    width: 8px;
+    transition: background 0.25s linear;
+    -webkit-transition: background 0.25s linear;
+}
+
+.multi-choice-wrap input[type=radio]:checked ~ .check::before {
+    background: #c70101;
+}
+
+.multi-choice-wrap input[type=radio]:checked ~ .check {
+    @include border(2, solid, $mu-red);
+}
+.multi-choice-wrap input[type=radio]:focus ~ .check {
+    outline: #0079c1 solid 2px;
+}
+.gigya-layout-row .gigya-container-enabled .under-twitter{
+    width: 100% !important;
+}
+.gigya-profile-form .gigya-composite-control-submit.custom-submit input[disabled]{
+    pointer-events: none;
+}
+input::-webkit-contacts-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+}
+#__gigyaScreenSet_MufcWeb-ReAuthentication ~ .loader-container{
+    z-index: 9999999;
+}
+.gigya-style-modern select::-ms-expand{
+    display:none !important;
+}
+#gigya-profile-form .gigya-layout-row fieldset{
+    width: 100%;
+}
+.gigya-style-modern .gigya-screen.portrait{
+    width: 100%;
+}
+.gigya-register-custom,
+.gigya-login-custom,  
+.gigya-reauthentication-form-custom{
+    @include text-align(center);
+}
+.gigya-screen .icon-info-icon .tooltip a{
+    @include font-size(15, important);
+}
+#preferenceCenterMsg1 a, 
+#gigya-verification-sent-screen #preferenceCenterMsg1 a, 
+#gigya-verification-sent-screen #lblParentalMessage #pgcFirstName, 
+#gigya-verification-sent-screen #lblParentalMessage #pgcLastName, 
+#gigya-verification-sent-screen #lblParentalMessage #pgcEmail,
+#lblMessage a{
+    @include font-size(20, important);
+}
+#lblParentalMessage #pgcEmail{
+    word-break: break-word !important
+}
+.gigya-screen-dialog-top .gigya-screen-dialog-caption{
+    @include line-height(50, px);
+}
+.mandatory-new-password,
+.mandatory-confirm-password{
+    width: 49% !important;
+    float: left !important;
+}
+.mandatory-confirm-password{
+    margin-left: 2% !important;
+}
+.lang-specific{
+    display: none;
+}
+[lang="en"]{
+    .lang-specific{
+         display: inline-block;
+         text-transform: lowercase !important;
+    }
+}
+.gigya-app-bg h1.gigya-screen-caption{
+    @include border-none(important);
+}
+[lang="ja"]{
+    #gigya-register-form .gigya-label-text.gigya-composite-control.gigya-composite-control-label.gigya-footer{
+        @include font-size(14, important);   
+    }
+}
+[lang="zh"]{
+    .responsive.with-social-login .gigya-social-login-container.gigya-style-modern{
+        height: 60px!important;
+    }
+}
+.language__dropdown a[aria-expanded='true'] + ul.language__slector{
+    overflow: visible !important;
+}

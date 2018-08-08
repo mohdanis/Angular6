@@ -1,0 +1,36 @@
+//Horizontal lines with solid or dashed line
+%dashed-line {
+  border-style: dashed;
+
+  @include px-to-rem(border-width, 1);
+}
+
+%lighter-dashed-line {
+  @extend %dashed-line;
+
+  @include color($base-border-color);
+}
+
+%lighter-solid-line {
+  border-style: solid;
+
+  @include px-to-rem(border-width, 1);
+
+  @include color($base-border-color);
+}
+
+//Search icon (need to overrite the css which is generated from sprite)
+%icon-search {
+  @include pull-right;
+
+  @include position(absolute);
+
+  @include border(0, solid, transparent);
+
+  @include margin(2, 0, 0, 0);
+
+  @include right(-1,important);
+  height: 38px !important;
+  @include top(2,important);
+  cursor: pointer;
+}

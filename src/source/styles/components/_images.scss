@@ -1,0 +1,359 @@
+.mu-item {
+    &.collections {
+        @include cursor(pointer);
+        .mu-item__gradient {
+            @include percentage-value(width, 100);
+            @include percentage-value(height, 100);
+            @include overflow(hidden);
+            @include radial-gradient(rgba(0, 0, 0, .4), rgba(255, 255, 255, 0), 50%, 60%);
+            @include z-index(98);
+        }
+        .stats-bar {
+            @include background-color($white);
+            @include z-index(99);
+        }
+    }
+}
+
+////For Image Card ///////////////////
+.mu-item {
+    &.image,
+    &.infographics {
+        @include cursor(pointer);
+        .mu-item__teasure {
+            @include display(block);
+            @include font-size(16);
+        }
+        .mu-item__title {
+            @include display(block);
+        }
+        .mu-item__sponsor {
+            @include padding-bottom(4);
+        }
+        .mu-item__info{
+            @include padding-bottom(0);
+        }
+    }
+}
+
+// .carousal {
+//     .mu-item {
+//         &.image,
+//         &.infographics {
+//             .icon-camera-white {
+//                 @include display(none);
+//             }
+//         } 
+//     }
+// }
+
+.micro-card {
+    &.ratio {
+        .image,
+        .infographics,
+        .image-gallery {
+            .mu-item__teasure {
+                @include display(block);
+                @include color($mu-black);
+                .icon-camera-white {
+                    @include display(none);
+                }
+            }
+            .mu-item__info {
+                @include padding-bottom(44);
+            }
+            .mu-item__sponsor {
+                @include pull-right;
+                @include percentage-value(width, 100);
+                @include text-align(right);
+            }
+        }
+    }
+}
+
+//////// For Image Gallery ///////////
+.mu-item {
+    &.image-gallery {
+        @include cursor(pointer);
+        .mu-item__title {
+            @include tertiary-semibold;
+            @include margin-bottom(0);
+            text-transform: uppercase;
+            // @include breakpoint($small $max-xsmall){
+            //     @include font-size(16, important);
+            //     @include line-height(16,px, important)
+            // }
+        }
+        .mu-item__teasure {
+            @include margin-top(12);
+            @include margin-bottom(0);
+            @include display(block);
+            @include breakpoint($small $max-small) {
+                @include display(none);
+            }
+        }
+        .link-btn-white {
+            @include margin-top(16);
+        }
+        .mu-item__tint {
+            @include display(block);
+        }
+        .mu-item__gradient {
+            @include display(block);
+            
+        }
+        .mu-item__tint{
+          @extend .mu-item__gradient;
+        }
+
+
+    }
+}
+.mini-card {
+    .mu-item {
+        &.image-gallery {
+            .mu-item__title {
+                @include font-size(14, important);
+                @include line-height(18,px, important);
+            }
+        }
+    }
+}
+.micro-card {
+  .mu-item {
+        &.image-gallery {
+            .mu-item__title {
+                @include font-size(16, important);
+                @include line-height(16,px, important);
+            }
+        }
+    }
+}
+
+.grid-3,
+.grid-4 {
+    .mu-item {
+        &.image-gallery {
+            .mu-item__title {
+                @include font-size(24);
+                @include line-height(24,px);
+            }
+            .mu-item__teasure {
+                @include display(none);
+            }
+        }
+    }
+}
+
+.grid-6,
+.grid-8 {
+    .mu-item {
+        &.image-gallery {
+            .mu-item__title {
+                @include font-size(24);
+                @include line-height(24,px);
+            }
+        }
+    }
+}
+
+.grid-12 {
+    .mu-item {
+        &.image-gallery {
+            .mu-item__title {
+                @include font-size(48);
+                @include line-height(42,px);
+            }
+        }
+    }
+}
+
+.micro-card {
+    &.ratio {
+        .mu-item__sponsor {
+            @include text-align(right);
+            .mu-item__sponsor__wrapper {
+                span {
+                    &:first-child {
+                        @include display(none);
+                    }
+                }
+            }
+        }
+        .mu-item__sponsor + .mu-item__info {
+            @include margin-top(8);
+            @include padding-top(0,important);
+        }
+        .mu-item__info {
+            @include margin-top(16);
+            @include padding-top(0,important);
+        }
+        .mu-item.image-gallery {
+            .mu-item__teasure {
+                @include display(none);
+            }
+            .mu-item__title {
+                @include tertiary-semibold;
+                @include font-size(24);
+                @include line-height(24,px);
+                @include text-transform(uppercase);
+            }
+            .link-btn-white {
+                @include margin-top(8);
+                span {
+                    @include color($mu-black);
+                    @include font-size(14);
+                    @include secondry-semibold;
+                }
+                .icon-cta-arrow {
+                    @extend .tag-red-arrow;
+                }
+            }
+        }
+    }
+}
+
+//For mini card
+.mini-card {
+    &.ratio {
+        .mu-item__sponsor {
+            @include text-align(left);
+            @include position(absolute);
+            @include top(0);
+            position: absolute;
+            .mu-item__sponsor__wrapper {
+                span {
+                    &:first-child {
+                        @include display(none);
+                    }
+                    img {
+                        //@include px-to-rem(max-width, 125);
+                    }
+                }
+            }
+        }
+        .mu-item.image-gallery {
+            .mu-item__title {
+                @include tertiary-semibold;
+                @include font-size(16);
+                @include line-height(16,px);
+                @include important(text-transform, uppercase);
+            }
+            .link-btn-white {
+                @include margin-top(12,important);
+                span {
+                    @include color($white);
+                    @include font-size(14);
+                    @include secondry-semibold;
+                }
+                .icon-cta-arrow {
+                    @extend .icon-cta-arrow-white;
+                }
+            }
+        }
+    }
+}
+
+// Closing Image Gallery ///
+//
+//For Image Collection
+// heading and teasure is diffrent for all cards so
+// we have set it according to grid..
+.mu-item {
+    &.image-collection {
+        .mu-item__info {
+            @include percentage-value(width, 100);
+            @include pull-left;
+            @include text-align(center);
+        }
+        .mu-item__teasure {
+            @include secondry-semibold;
+            @include font-size(20);
+            @include line-height(28,px);
+            @include font-style(italic);
+            @include pull-left;
+            @include percentage-value(width, 100);
+            @include text-align(center);
+            @include display(block);
+        }
+        .mu-item__title {
+            @include tertiary-semibold;
+            &:before {
+                @include left(50,percent);
+                @include horizontal-mid(absolute);
+            }
+        }
+    }
+}
+
+.grid-12 {
+    .mu-item {
+        &.image-collection {
+            .mu-item__title {
+                @include font-size(30);
+                @include line-height(32,px);
+                @include breakpoint($medium) {
+                    @include font-size(48);
+                    @include line-height(42,px);
+                }
+            }
+        }
+    }
+}
+
+.grid-8 {
+    .mu-item {
+        &.image-collection {
+            .mu-item__title {
+                @include font-size(24);
+                @include line-height(24,px);
+                @include breakpoint($medium) {
+                    @include font-size(32);
+                    @include line-height(30,px);
+                }
+            }
+        }
+    }
+}
+
+.grid-6 {
+    .mu-item {
+        &.image-collection {
+            .mu-item__title {
+                @include font-size(24);
+                @include line-height(24,px);
+                @include breakpoint($medium) {
+                    @include font-size(32);
+                    @include line-height(30,px);
+                }
+            }
+            .mu-item__teasure {
+                @include font-size(20);
+                @include line-height(28,px);
+                @include breakpoint($medium) {
+                    @include font-size(16);
+                    @include line-height(20,px);
+                }
+            }
+        }
+    }
+}
+
+.grid-3,
+.grid-4 {
+    .mu-item {
+        &.image-collection {
+            .mu-item__title {
+                @include font-size(24);
+                @include line-height(24,px);
+                &:before {
+                    @include top(-16);
+                }
+            }
+            .mu-item__teasure {
+                @include font-size(16);
+                @include line-height(20,px);
+            }
+        }
+    }
+}

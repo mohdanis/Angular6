@@ -1,0 +1,142 @@
+//primary, secondary, tertiary, quaternary, quinary, senary, septenary, octonary, nonary, and denary
+/*
+  primary: BebasNeueBook
+  secondry: SourceSansProBlack
+  tertiary: MontserratBlack
+  quaternary-en: RajdhaniRegular
+  quinary-en: ClearSansRegular
+*/
+
+
+//Primary font
+
+@mixin primary($locale:null) {
+  font-family: 'BebasNeueBook', 'Helvetica', sans-serif;
+}
+
+@mixin primary-bold($locale:null) {
+  font-family: 'BebasNeueBold', 'Helvetica', sans-serif;
+}
+
+@mixin primary-light($locale:null) {
+  font-family: 'BebasNeueLight', 'Helvetica', sans-serif;
+}
+
+@mixin primary-regular($locale:null) {
+  font-family: 'BebasNeueRegular', 'Helvetica', sans-serif;
+}
+
+@mixin primary-thin($locale:null) {
+  font-family: 'BebasNeueThin', 'Helvetica', sans-serif;
+}
+
+//Secondry font
+@mixin secondry($locale:null) {
+  font-family: 'SourceSansProBlack', 'Helvetica', sans-serif;
+}
+
+@mixin secondry-bold($locale:null) {
+  font-family: 'SourceSansProBold', 'Helvetica', sans-serif;
+}
+
+@mixin secondry-light($locale:null) {
+  font-family: 'SourceSansProLight', 'Helvetica', sans-serif;
+}
+
+@mixin secondry-regular($locale:null) {
+  font-family: 'SourceSansProRegular', 'Helvetica', sans-serif;
+}
+
+@mixin secondry-semibold($locale:null) {
+  font-family: 'SourceSansProSemiBold', 'Helvetica', sans-serif;
+}
+
+@mixin secondry-semibolditalic($locale:null) {
+  font-family: 'SourceSansPro-SemiboldItalic', 'Helvetica', sans-serif;
+}
+
+@mixin secondry-lightitalic($locale:null) {
+  font-family: 'SourceSansPro-LightItalic', 'Helvetica', sans-serif;
+}
+
+@mixin secondry-italic($locale:null) {
+  font-family: 'SourceSansPro-Italic', 'Helvetica', sans-serif;
+}
+
+@mixin secondry-extralightitalic($locale:null) {
+  font-family: 'SourceSansPro-ExtraLightItalic', 'Helvetica', sans-serif;
+}
+
+@mixin secondry-bolditalic($locale:null) {
+  font-family: 'SourceSansPro-BoldItalic', 'Helvetica', sans-serif;
+}
+
+@mixin secondry-blackitalic($locale:null) {
+  font-family: 'SourceSansPro-BlackItalic', 'Helvetica', sans-serif;
+}
+
+
+//Ternery font
+@mixin tertiary($locale:null) {
+  font-family: 'MontserratBlack', 'Helvetica', sans-serif;
+}
+
+@mixin tertiary-bold($locale:null) {
+  font-family: 'MontserratBold', 'Helvetica', sans-serif;
+}
+
+@mixin tertiary-extrabold($locale:null) {
+  font-family: 'MontserratExtraBold', 'Helvetica', sans-serif;
+}
+
+@mixin tertiary-hairline($locale:null) {
+  font-family: 'MontserratHairline', 'Helvetica', sans-serif;
+}
+
+@mixin tertiary-light($locale:null) {
+  font-family: 'MontserratLight', 'Helvetica', sans-serif;
+}
+
+@mixin tertiary-regular($locale:null) {
+  font-family: 'MontserratRegular', 'Helvetica', sans-serif;
+}
+
+@mixin tertiary-semibold($locale:null) {
+  font-family: 'MontserratSemiBold', 'Helvetica', sans-serif;
+}
+
+@mixin tertiary-ultralight($locale:null) {
+  font-family: 'MontserratUltraLight', 'Helvetica', sans-serif;
+}
+
+//Quaternary
+@mixin quaternary-regular($locale:null) {
+  font-family: 'RajdhaniRegular', 'Helvetica', sans-serif;
+}
+
+@mixin quaternary-bold($locale:null) {
+  font-family: 'RajdhaniBold', 'Helvetica', sans-serif;
+}
+
+@mixin quaternary-semibold($locale:null) {
+  font-family: 'RajdhaniSemiBold', 'Helvetica', sans-serif;
+}
+
+@mixin quaternary-light($locale:null) {
+  font-family: 'RajdhaniLight', 'Helvetica', sans-serif;
+}
+
+@mixin quaternary-medium($locale:null) {
+  font-family: 'RajdhaniMedium', 'Helvetica', sans-serif;
+}
+//Quinary
+
+@mixin quinary-bold($locale:null) {
+  font-family: 'ClearSansBold', 'Helvetica', sans-serif;
+}
+
+@mixin quinary-regular($locale:null) {
+  font-family: 'ClearSansRegular', 'Helvetica', sans-serif;
+}
+
+

@@ -1,0 +1,283 @@
+.touch__swipe {
+    @include background(#f2f2f2);
+    @include overflow(hidden);
+    @include padding(0);
+    @include position(relative);
+    @include text-align(center);
+    width: 100%;
+    height: 70px;
+    @include z-index(9987)
+}
+
+@supports (backdrop-filter: initial) {
+    .touch__swipe {
+        backdrop-filter: saturate(180%) blur(20px);
+        background: rgba(242, 242, 242, 0.6)
+    }
+}
+
+
+/* .ac-nav-overlap .touch__swipe,
+  .touch__swipe-overlap .touch__swipe {
+    @include position(absolute);
+    @include top(0);
+    @include left(0)
+  }
+  
+  .ac-nav-overlap .touch__swipe {
+    @include margin-top(44)
+  }
+  
+  @media only screen and (max-width: 767px) {
+    .ac-nav-overlap .touch__swipe {
+      @include margin-top(48)
+    }
+  }*/
+
+.touch__swipe-wrapper {
+    @include position(relative);
+    height: 100%;
+    @include z-index(1);
+}
+
+.touch__swipe-items {
+    list-style: none;
+    // @include margin(0,0,0,10);
+    @include overflow-x(auto);
+    @include overflow-y(hidden);
+    -webkit-overflow-scrolling: touch;
+    @include padding-bottom(50);
+    white-space: nowrap;
+}
+
+@media only screen and (orientation: landscape) {
+    .touch__swipe-items {
+        @include padding-bottom(49);
+    }
+}
+//.tickets__side--nav.touch__swipe .touch__swipe--container li.touch__swipe-item {
+.touch__swipe-item {
+    @include display(inline-block);
+    vertical-align: top;
+    margin: 0 -.11765em;
+    @include padding(0,8,0,8);
+    @include breakpoint($large) {
+        @include padding(0,24,0,24);
+    }
+}
+
+// .touch__swipe-item:first-child {
+//     @include margin-left(0);
+//     @include padding-left(0);
+//     // }
+
+// .touch__swipe-item:last-child {
+//     @include margin-right(0);
+//     @include padding-right(0);
+//     // }
+
+@-webkit-keyframes touch__swipe-slidein {
+    0% {
+        opacity: 0;
+    }
+    1% {
+        -webkit-transform: translateX(160px);
+        transform: translateX(160px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes touch__swipe-slidein {
+    0% {
+        opacity: 0;
+    }
+    1% {
+        -webkit-transform: translateX(160px);
+        transform: translateX(160px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+.touch__swipe-item {
+    -webkit-animation: touch__swipe-slidein 350ms backwards;
+    animation: touch__swipe-slidein 350ms backwards;
+}
+
+.touch__swipe-paddle {
+    @include font-size(20);
+    line-height: 1.5;
+    @include font-weight(300);
+    letter-spacing: 0em;
+    border: 0 solid rgba(51, 51, 51, 0.2);
+    @include color(#000);
+    opacity: 1;
+    @include position(absolute);
+    @include top(0);
+    @include bottom(0);
+    @include text-align(center);
+    width: 33px;
+    -webkit-transition: opacity 150ms ease-out;
+    transition: opacity 150ms ease-out;
+}
+
+.touch__swipe-paddle:after {
+    opacity: .8;
+    -webkit-transition: opacity 200ms linear;
+    transition: opacity 200ms linear;
+}
+
+.touch__swipe-paddle:disabled {
+    opacity: 0;
+}
+
+.touch__swipe-paddle:hover:after {
+    opacity: 1;
+}
+
+.touch__swipe-paddle:focus {
+    outline: none;
+}
+
+.touch__swipe-paddle:focus:after {
+    outline: 3px solid #c1e0fe;
+    outline: 3px solid rgba(131, 192, 253, 0.5);
+    outline-offset: 4px;
+    opacity: 1;
+}
+
+.touch__swipe-paddle:focus:after[data-focus-method="mouse"]:not(input):not(textarea):not(select),
+.touch__swipe-paddle:focus:after[data-focus-method="touch"]:not(input):not(textarea):not(select) {
+    outline: none;
+}
+
+.touch__swipe-paddle:active {
+    outline: none;
+}
+
+.touch__swipe-paddle:active:after {
+    outline: none;
+    opacity: 1;
+}
+
+.touch__swipe-paddle-left {
+    //border-right-width: 1px;
+    @include border-right(1,solid,#333333,0.2);
+    @include left(0);
+}
+
+.touch__swipe-paddle-left:before,
+.touch__swipe-paddle-left:after {
+    font-family: "SF Pro Icons";
+    color: inherit;
+    @include display(inline-block);
+    @include font-style(normal);
+    @include font-weight(inherit);
+    font-size: inherit;
+    line-height: 1;
+    text-decoration: underline;
+    @include position(relative);
+    @include z-index(1);
+    alt: '';
+}
+
+.touch__swipe-paddle-left:before,
+.touch__swipe-paddle-left:after {
+    text-decoration: none;
+}
+
+.touch__swipe-paddle-left:before {
+    @include display(none);
+}
+
+.touch__swipe-paddle-left:before,
+.touch__swipe-paddle-left:after {
+    content: "";
+}
+
+.touch__swipe-paddle-left:after {
+    @include margin-left(8);
+}
+
+.touch__swipe-paddle-right {
+    @include border-left(1,solid,#333333,0.2);
+    @include right(0);
+}
+
+.touch__swipe-paddle-right:before,
+.touch__swipe-paddle-right:after {
+    color: inherit;
+    @include display(inline-block);
+    @include font-style(normal);
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: 1;
+    text-decoration: underline;
+    @include position(relative);
+    @include z-index(1);
+    alt: '';
+}
+
+.touch__swipe-paddle-right:before,
+.touch__swipe-paddle-right:after {
+    text-decoration: none;
+}
+
+.touch__swipe-paddle-right:before {
+    @include display(none);
+}
+
+.touch__swipe-paddle-right:before,
+.touch__swipe-paddle-right:after {
+    content: "";
+}
+
+.touch__swipe-paddle-right:after {
+    @include margin-right(8px);
+}
+
+.touch__swipe-items i {
+    @include display(block);
+    @include pull-none;
+    @include margin-auto(0);
+    @include margin-top(8);
+    height: 39px;
+}
+
+.touch__swipe-wrapper li a {
+    //font-family: MontserratRegular, Helvetica, sans-serif;
+    @include tertiary-regular;
+    @include font-size(12);
+    @include color(#1a1a1a);
+    letter-spacing: 0.3px;
+    @include text-align(center);
+    @include display(inline-block);
+    border-bottom: none;
+    @include padding-bottom(8);
+    text-transform: none;
+}
+
+.touch__swipe-wrapper li a:hover {
+    border-bottom: 4px solid #9c9c9c;
+}
+.touch__swipe-wrapper li a.active{
+    border-bottom: 4px solid #c70101 !important;
+}
+
+//slide for navigation
+.tab-content {
+    @include color(#1a1a1a);
+    .touch__swipe--container {
+        .touch__swipe-items {
+            @include text-align(left);
+            @include margin-left(0);
+        }
+    }
+}

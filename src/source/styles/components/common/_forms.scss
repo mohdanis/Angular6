@@ -1,0 +1,84 @@
+//Forms elements
+.form-group {
+  @extend %form-group;
+}
+
+label {
+  @extend %label;
+}
+
+select {
+  @extend %select;
+}
+
+.checkbox {
+  @include span(full);
+
+  @extend %checkboxes;
+
+  @extend %checkboxes;
+
+  @include px-to-rem(height, 13);
+
+  @include px-to-rem(width, 13);
+
+  @include margin(0, 8, 0, 0);
+}
+
+.radio {
+  @include span(full);
+
+  @extend %radios;
+
+  @include px-to-rem(height, 30);
+
+  //@include px-to-rem(width, 13);
+
+  @include margin(0, 8, 0, 0);
+}
+
+.radio-panel {
+  @include span(full);
+
+  @include pull-left;
+
+  @include margin(0, 0, 10, 0);
+}
+
+.form-control {
+  @extend %input;
+}
+
+.button-danger {
+  @extend %button1;
+}
+
+.button-success {
+  @extend %button2;
+}
+
+.button-info {
+  @extend %button4;
+}
+
+.button-warning {
+  @extend %button3;
+}
+
+.button-primary {
+  @extend %button3;
+}
+
+fieldset {
+  //@extend %fieldset;
+  background: none;
+  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.1) !important;
+
+  @extend %full-width;
+
+  @include position(relative);
+}
+
+*:focus {
+  outline: none;
+}

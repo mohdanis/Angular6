@@ -1,0 +1,428 @@
+%home-component {
+    @include position(relative);
+    @include pull-left;
+    @include percentage-value(width, 100);
+}
+
+%h5-title {
+    @include font-size(16);
+    @include secondry-regular;
+    @include line-height(1.13);
+    @include color($default-text-color);
+    @extend %txt-uppercase;
+    @include font-style(italic);
+}
+
+.home-hero {
+    @extend %home-component;
+    & .img-holder {
+        figure {
+            @include background-img-center;
+            @include position(absolute);
+            @include breakpoint($medium) {
+                @include background-img-initial;
+            }
+        }
+    }
+    /* don't override the below css as it will impact on hero-carousel */
+    .home-hero__info {
+        .black-btn-skew {
+            @include background-none;
+            @include border-none;
+            &:hover {
+                @include background-none;
+            }
+            a {
+                @include padding-left(0);
+            }
+        }
+        .home-hero__title {
+            //@include padding-bottom(16,important);
+        }
+        @include percentage-value(width, 100);
+        @include padding(0,20,0,20);
+        @include bottom(32);
+        @include position(absolute);
+        @include text-align(center);
+        @include z-index(999);
+        @include color($white);
+        @include breakpoint($small $max-xsmall) {
+            //@include percentage-value(height, 100);
+            @include font-size(24);
+        }
+        // @include breakpoint($xlarge $max-xlarge) {
+        //   @include bottom(60);
+        // }
+        // @include breakpoint($xxlarge) {
+        //  @include bottom(56);
+        // }
+        .home-hero__sponsor {
+            @include display(none);
+            @include breakpoint($small $max-xsmall) {
+                @include pull-right;
+            }
+            @include margin-bottom(70);
+            @include padding(10, 10, 10, 10);
+            @include margin-auto(0);
+            & img {
+                @include px-to-rem(max-height, 55);
+                @include background-color($white);
+                @include border(10, solid, $white);
+            }
+        }
+        .home-hero__title {
+            @include primary-bold;
+            @include color($white);
+            @include position(relative);
+            @include word-wrap;
+            @include text-truncate-lines(2, 40, 0.9);
+            @include span(6 of 6 0);
+            @include breakpoint($medium) {
+                @include text-truncate-lines(2, 48, 0.85);
+            }
+            @include breakpoint($xlarge) {
+                @include text-truncate-lines(2, 72, 0.9);
+            }
+           
+            span {
+                @include position(relative);
+            }
+            &:before {
+                @include border-top(2, solid, #c81617);
+                @include position(absolute);
+                width: 61px;
+                content: '';
+                @include top(-16);
+            }
+        }
+        //Todo remove code
+        // .home-hero__line {
+        //     @include display(none);
+        // }
+        .red-btn-skew {
+            @include margin-top(32);
+            @include breakpoint($small $max-small) {
+                //@include bottom(20);
+                //@include margin-top(0);
+                // @include position(absolute);
+                @include left(20);
+            }
+        }
+    }
+    .home-hero__video {
+        @include position(absolute);
+        @include bottom(1);
+        @include z-index(999);
+        @include cursor(pointer);
+    }
+    
+    // To show 1920 after that it shows black screen from both side
+    @extend %hero__conditionaly;
+}
+
+//Quotes
+.home-row {
+    .home-quotes {
+        @include margin-bottom(0,important);
+        .mu-item.quotes {
+            .mu-item__gradient {
+                @include display(none);
+            }
+        }
+    }
+}
+
+.home-quotes {
+    //@extend %home-component;
+    @extend %bottom-gutter;
+    
+    @extend %hero__conditionaly;
+}
+
+.ecommerce-card {
+    @include background-color($white);
+    box-shadow: 0 1px 0 0 #d7d7d7;
+    height: 100%;
+    //@include breakpoint($xsmall) {
+    //    //height: 360px;
+    //}
+    //@include breakpoint($medium) {
+    //    //height: 360px;
+    //}
+    //@include breakpoint($large) {
+    //    //height: 366px;
+    //}
+    //@include breakpoint($xlarge) {
+    //    //height: 444px;
+    //}
+    .ecommerce-card-item {
+        @include padding(32, 0, 0);
+        @include breakpoint($xsmall $max-xsmall) {
+            @include padding(15, 0, 0);
+        }
+        @include margin-auto(0);
+        figure {
+            img {
+                max-height: 203px;
+                width: auto;
+                @include position(relative);
+                @include left(50,percent);
+                transform: translateX(-50%);
+            }
+        }
+    }
+    .ecommerce-card__info {
+        @include text-align(center);
+        @include position(relative);
+        @include percentage-value(width, 100);
+        @include padding(20,20,16,20);
+        @include bottom(0);
+        .white-btn-skew {
+           @include margin-top(8);
+            @include breakpoint($xlarge) {
+                @include margin-top(14);
+            }
+        }
+    }
+    .ecommerce-card__title {
+        @extend %h5-title;
+        @include font-size(14);
+        @include px-to-rem(height, 36);
+        span {
+            transform: translateY(-50%);
+             @include top(50,percent);
+             @include display(inline-block);
+           @include  margin-top(15);
+        }
+    }
+    .ecommerce-card__price {
+        @include font-size(16);
+        @include font-weight(600);
+    }
+}
+
+.ecommerce_info {
+    // width: 334px;
+    height: 210px;
+    @include border-radius(2);
+    @include background-color(#4c4c4c);
+    @include position(absolute);
+    @include bottom(0);
+    @include z-index(99);
+    h1,
+    h2 {
+        font-family: ArialNarrow;
+        @include font-size(22);
+        @include font-weight(bold);
+        @include font-style(italic);
+        font-stretch: normal;
+        @include line-height(1.09);
+        @include color($mu-grey-lightest);
+        @include margin(22,22,22,22);
+    }
+    h2 {
+        @include color($chevrolet-yellow);
+    }
+    img.ecommerce_info-logo {
+        @include right(0);
+        @include position(absolute);
+        @include bottom(0);
+    }
+}
+
+.carousal {
+    // .mu-item__gradient {
+    //     background-color: rgba(35, 35, 35, 0.6);
+    // }
+    & .home-hero {
+        // .mu-item__gradient {
+        //     background-color: rgba(35, 35, 35, 0.4);
+        // }
+        &.inner-gutter {
+            @include percentage-value(height, 100);
+        }
+    }
+    & .carousal__sponsor {
+        @extend %carousal-sponsor;
+    }
+    &.carousal-variant-two {
+        .carousal__info {
+            @include padding(0,58,0,58);
+            .carousal__title {
+                @include font-size(24);
+                @include breakpoint($small $max-small) {
+                    @include font-size(16);
+                }
+                @include tertiary-bold;
+            }
+        }
+        .carousal__sponsor {
+            @extend %carousal-sponsor;
+        }
+        .black-btn-skew {
+            @include display(none);
+        }
+        // .mu-item__gradient {
+        //     @include background-color($black, 0.5);
+        // }
+        .carousal__info-button {
+            .black-btn-skew {
+                @include display(block);
+            }
+        }
+    }
+}
+
+#homePage {
+    @include pull-left;
+    @include percentage-value(width,100);
+    .Spotlight {
+        @include breakpoint($small $max-small) {
+            @include margin-bottom(16);
+        }
+    }
+    @include background-color(#fff);
+    .carousal.match-carousal {
+        @include clear(both);
+        .timer {
+           @include display (inline-block);
+           @include border-radius(2);
+           @include background-color(#f2f2f2);
+            border-color: transparent;
+            //@include margin(20,0,20,0);
+            @include margin-top(-5);
+            @include padding(6,6,6,6);
+            @include left(50,percent);
+            @include position(relative);
+            transform: translate(-50%, 0);
+            &__logo {
+                @include pull-left;
+                height: 38px;
+                @include padding-top(8);
+                width: 40px;
+                img {
+                    height: 23px;
+                }
+            }
+            &__time,
+            .result__time {
+                @include display(block);
+                background: rgba(0, 0, 0, 0) linear-gradient(#c2c2c2 50%, #d4d4d4 50%) repeat scroll 0 0;
+                @include color(#1a1a1a);
+                @include pull-right;
+                @include primary-regular;
+                @include font-size(26);
+                font-stretch: normal;
+                @include font-style(normal);
+                @include font-weight(bold);
+                height: 38px;
+                @include padding(5,10,5,10);
+                @include text-align(center);
+                .injury-time {
+                    @include color(#d0021b);
+                    @include display(inline-block);
+                    @include margin-left(8);
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+    // .mu-item figure {
+    //     z-index: 1;
+    // }
+    .kitbag {
+        .bx-default-pager {
+            @include bottom(-22);
+        }
+    }
+}
+
+.home-row {
+    &:first-child {
+        .Spotlight,
+        .home-hero {
+            // @include margin-top(-16);
+            // @include breakpoint($small $max-xsmall) {
+            //     @include margin-top(0);
+            // }
+            // @include breakpoint($xxlarge) {
+            //     @include margin-top(-24);
+            // }
+        }
+    }
+    // .news-grid {
+    //   @include margin-bottom(-16);
+    //   @include breakpoint($xxlarge) {
+    //     @include margin-bottom(-24);
+    //   }
+    // }
+}
+
+.inner-gutter {
+    @include margin-bottom(24);
+}
+
+%carousal-sponsor {
+    @include position(absolute);
+    @include top(12);
+    @include right(12);
+    @include z-index(9);
+}
+
+%hero-height {
+    @include px-to-rem(height, 457);
+    @include breakpoint($xsmall) {
+        @include px-to-rem(height, 500);
+    }
+    @include breakpoint($medium) {
+        @include px-to-rem(height, 448);
+    }
+    @include breakpoint($large) {
+        @include px-to-rem(height, 351);
+    }
+    @include breakpoint($xlarge) {
+        @include px-to-rem(height, 509);
+    }
+}
+
+%quotes-height {
+    @include px-to-rem(height, 513);
+    @include breakpoint($xsmall) {
+        @include px-to-rem(height, 404);
+    }
+    @include breakpoint($medium) {
+        @include px-to-rem(height, 392);
+    }
+    @include breakpoint($xxlarge) {
+        @include px-to-rem(height, 551);
+    }
+}
+
+.fullscreen {
+    .mu-item__sponsor__wrapper {
+        img {
+            @include display(block);
+        }
+    }
+}
+
+.ratio {
+    .dfp-ads-card {
+        [data-value="light-img-sponser"] {
+           @include display(block);
+        }
+        [data-value="dark-img-sponser"] {
+            @include display(none);
+        }
+    }
+}
+.ratio.micro-card {
+    .dfp-ads-card {
+        [data-value="light-img-sponser"] {
+           @include display(none);
+        } 
+        [data-value="dark-img-sponser"] {
+             @include display(block);
+        }
+    }
+}

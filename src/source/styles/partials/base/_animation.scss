@@ -1,0 +1,152 @@
+
+/****************** 
+   Image zoom in zoom out css
+*****************************/
+
+.mu-item figure {
+    @extend %default-scale-image
+}
+
+.mu-item:hover figure{
+    @extend %hover-scale-image;
+}
+
+.superhero {
+    .mu-item:hover figure {
+        @extend %hover-scale-image-none;
+    }
+}
+.superhero {
+    .mu-item figure {
+        @extend %hover-scale-image-none;
+    }
+}
+//For inline Video play not Zoom
+.grid-7 .mu-item.video:hover figure {
+   @extend %hover-scale-image-none;
+}
+.grid-7 .mu-item.video figure, .collection__right-panel .mu-item figure {
+     @extend %hover-scale-image-none;
+}
+.home-article-detail{
+   .grid-12.ratio {
+        .mu-item figure {
+            @extend %hover-scale-image-none;
+        }
+        .mu-item:hover figure{
+            @extend %hover-scale-image-none;
+        }
+    } 
+}
+
+
+//For Model video not Zoom
+.collection {
+    .inner__content {
+        .mu-item:hover figure {
+           @extend %hover-scale-image-none;
+        }
+    }
+}
+
+
+.mu-item:hover .mu-item__title:before,
+.mu-item:hover .mu-item__logo-title:before {
+    animation-name: imageszoom;
+    animation-duration: .7s;
+    animation-timing-function: ease-out;
+    animation-delay: 0.13s;
+}
+//Ads Card should not show red color line
+.dfp-ads-card {
+    .mu-item:hover {
+        .mu-item__title:before { 
+             @include display(none,important)
+        } 
+    }
+}
+
+
+
+.mu-item__play {
+    @include prefix-vendor(transition, ease-out 0.1s, webkit ms o);
+    &:hover {
+        @extend %hover-scale-image;
+    }
+}
+%default-scale-image {
+    transform-origin: center;
+    transition: -webkit-transform .8s cubic-bezier(.19, 1, .22, 1);
+    transition: transform .8s cubic-bezier(.19, 1, .22, 1);
+    transition: transform .8s cubic-bezier(.19, 1, .22, 1);
+}
+%hover-scale-image{
+    @include prefix-vendor(transform, scale(1.125) rotate(0.02deg) !important, webkit ms o);
+}
+%hover-scale-image-none {
+    @include prefix-vendor(transform, scale(1) !important, webkit ms o);
+}
+
+
+
+
+@keyframes imageszoom {
+    from {
+        width: 0px;
+        animation-delay: 0.13s;
+        animation-duration: .7s;
+        animation-timing-function: ease-out;
+    }
+    to {
+        width: 61px;
+    }
+}
+
+@-webkit-keyframes imageszoom {
+    from {
+        width: 0px;
+        animation-delay: 0.13s;
+        animation-duration: .7s;
+        animation-timing-function: ease-out;
+    }
+    to {
+        width: 61px;
+    }
+}
+
+//Animation
+%transition {
+    transition: all 0.5s;
+}
+
+%transition-height {
+    transition: height 0.5s;
+}
+
+%img-responsive {
+    transition: all 1s ease-in-out;
+}
+
+%img-transition-hover {
+    transform: scale(1.1);
+}
+
+%img-no-effect {
+    @include display(block);
+    @include position(relative);
+    transition: none !important;
+}
+
+%img-hover-no-effect {
+    @include display(block);
+    @include position(relative);
+    transform: none;
+}
+
+figure {
+    overflow: hidden;
+}
+
+%lazy-load-image-fade {
+    transition: opacity .5s ease-in;
+}

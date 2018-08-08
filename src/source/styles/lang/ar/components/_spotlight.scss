@@ -1,0 +1,5 @@
+.state__timer #update-timer span,
+.state__timer--spotlight span,
+.match-item__spot-timer.state__timer span {
+  @include pull-right;
+}

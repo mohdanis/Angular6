@@ -1,0 +1,658 @@
+@function decimal-round ($number, $digits: 0, $mode: round) {
+    $n: 1;
+    // $number must be a number
+    @if type-of($number) != number {
+        @warn '#{ $number } is not a number.';
+        @return $number;
+    }
+    // $digits must be a unitless number
+    @if type-of($digits) != number {
+        @warn '#{ $digits } is not a number.';
+        @return $number;
+    } @else if not unitless($digits) {
+        @warn '#{ $digits } has a unit.';
+        @return $number;
+    }
+    @if $digits > 0 {
+        @for $i from 1 through $digits {
+            $n: $n * 10;
+        }
+    }
+    @if $mode == round {
+        @return round($number * $n) / $n;
+    } @else if $mode == ceil {
+        @return ceil($number * $n) / $n;
+    } @else if $mode == floor {
+        @return floor($number * $n) / $n;
+    } @else {
+        @warn '#{ $mode } is undefined keyword.';
+        @return $number;
+    }
+}
+@function decimal-font-size($size) {
+    @if $size > 14 {
+        $percentage : 30;
+        $number : ($size - ($size * $percentage / 100));
+        @return decimal-round($number, 0, ceil);
+    }
+    @else {
+        @return $size;
+    }
+}
+@function decimal-line-height($size) {
+    $percentage : 67;
+    $number : $size + ($size * $percentage / 100);
+    @return decimal-round($number, 3, floor);
+}
+//Font size in REM with pixel fallback
+/*@mixin font-size($size,$important:null) {
+  @if($important) {
+    font-size: decimal-font-size($size) + px + !important;
+    font-size: decimal-font-size($size) / 16 + rem + !important;
+  } @else {
+    font-size: decimal-font-size($size) + px;
+    font-size: decimal-font-size($size) / 16 + rem;
+  }
+}*/
+// Updated Mixin for inherit English font size for all langs
+@mixin font-size($size,$important:null,$locale:null) {
+  @if($important == en or $locale == en) {
+    @if($important != en or $locale == important) {
+      font-size: $size + px + !important;
+      font-size: $size / 16 + rem + !important;
+    } @else {
+      font-size: $size + px;
+      font-size: $size / 16 + rem;
+    }
+  } @else {
+      @if($important) {
+      font-size: decimal-font-size($size) + px + !important;
+      font-size: decimal-font-size($size) / 16 + rem + !important;
+    } @else {
+      font-size: decimal-font-size($size) + px;
+      font-size: decimal-font-size($size) / 16 + rem;
+    }
+  }
+}
+@mixin text-truncate-lines($lines: 3,
+$font-size: 16,
+$line-height: 1) {
+    font-size: decimal-font-size($font-size) + px;
+    font-size: decimal-font-size($font-size) / 16 + rem;
+    line-height: decimal-line-height($line-height);
+    //max-height: $font-size * $lines * $line-height +px;
+    // font-size: $font-size + px;
+    // line-height: $line-height + rem;
+    // height: $font-size * $lines * $line-height;     
+    // //Fallback for non-webkit 
+    // overflow: hidden;
+    // display: -webkit-box;
+    // @supports (-webkit-line-clamp: $lines) {       
+    //     -webkit-line-clamp: $lines;
+    //     -webkit-box-orient: vertical;
+    //     text-overflow: ellipsis;
+    //     height: auto;
+    //     display: -webkit-box;
+    // }
+}
+@mixin arabic-text-truncate($lines: 3,
+$font-size: 16,
+$line-height: 16) {
+    font-size: arabic-font-size($font-size) + px;
+    font-size: arabic-font-size($font-size) / 16 + rem;
+    line-height: $line-height + px;
+    //height: $lines * $line-height + px;
+    //overflow: hidden;
+    //white-space: nowrap;
+    //text-overflow: ellipsis;
+    //width: 100%;
+}
+//line-height of text
+/*@mixin line-height($value) {
+    line-height: decimal-line-height($value);
+}*/
+
+//line-height of text
+@mixin line-height($value,
+$unit:null,
+$important:null,
+$font:null) {
+  @if ($font == multi or $unit== multi or $important== multi) {
+    @if ($unit== px and $important== important) {
+        line-height: decimal-round(decimal-line-height($value), 0, ceil)+px + !important;
+    }
+    @else if($unit== px) {
+        @if($important) {
+            line-height: decimal-round(decimal-line-height($value), 0, ceil)+px;
+        }
+        @else {
+            line-height: decimal-round(decimal-line-height($value), 0, ceil)+px;
+        }
+    }
+    @else if($unit== important) {
+        @if($important) {
+            line-height: decimal-line-height($value) + !important;
+        }
+        @else {
+            line-height: decimal-line-height($value) + !important;
+        }
+    }
+    @else {
+        line-height: decimal-line-height($value);
+    }
+  } @else {
+    @if ($unit== px and $important== important) {
+        line-height: $value+px + !important;
+    }
+    @else if($unit== px) {
+        @if($important) {
+            line-height: $value+px;
+        }
+        @else {
+            line-height: $value+px;
+        }
+    }
+    @else if($unit== important) {
+        @if($important) {
+            line-height: $value+ !important;
+        }
+        @else {
+            line-height: $value + !important;
+        }
+    }
+    @else {
+        line-height: $value;
+    }
+  }
+}
+
+//Float direction: left
+@mixin pull-left($important:null) {
+    @if($important and $important == important){
+      float: right + "!important";
+    }@else {
+      float: right;
+    }
+}
+//Float direction: right
+@mixin pull-right($important:null) {
+    @if($important and $important == important){
+      float: left + "!important";
+    }@else {
+      float: left;
+    }
+}
+
+//Padding Left
+@mixin padding-left($value: false, $unit: false, $important: false) {
+    @if $value == auto or $value == initial or $value == inherit {
+        @if $unit and $unit == important {
+           @if $value == auto {
+           padding-right: initial +  !important;
+           padding-right: $value + !important;
+           } @else {
+             padding-right: $value !important;
+           }
+      } @else {
+        @if $important == important {
+          @if $value == auto {
+           padding-right: initial +  !important;
+           padding-right: $value +  !important;
+           } @else {
+            padding-right: $value +  !important;
+           }
+        } @else {
+          @if $value == auto {
+           padding-right: initial;
+           padding-right: $value;
+           } @else {
+             padding-right: $value;
+           }
+        }
+      }
+  } @else {
+    @if type-of($value) == number {
+      @if not $unit or $important {
+        @if $important == important {
+          @if $unit == percent {
+            padding-right:$value+unquote("%") +  !important;
+          } @else if $unit == px {
+            padding-right:$value+px +  !important;
+          } @else {
+            padding-right:$value+px +  !important;
+          }
+        } @else {
+          @if $unit == percent {
+            padding-right: $value+unquote("%");
+          } @else if $unit == px {
+            padding-right: $value + px;
+          } @else {
+            padding-right: $value + px;
+          }
+        }
+        } @else if $unit == percent {
+        padding-right: $value+ unquote("%");
+      } @else if $unit == px {
+        padding-right: $value + px;
+      } @else {
+        @if $important == important or $unit == important {
+          padding-right: $value + px +  !important;
+        } @else {
+          padding-right: $value + px;
+        }
+      }
+    } @else {
+        @error '#{ $value } is not a number.';
+    }
+  }
+}
+// Padding Right
+@mixin padding-right($value: false, $unit: false, $important: false) {
+    @if $value == auto or $value == initial or $value == inherit {
+        @if $unit and $unit == important {
+           @if $value == auto {
+           padding-left: initial +  !important;
+           padding-left: $value + !important;
+           } @else {
+             padding-left: $value !important;
+           }
+      } @else {
+        @if $important == important {
+          @if $value == auto {
+           padding-left: initial +  !important;
+           padding-left: $value +  !important;
+           } @else {
+            padding-left: $value +  !important;
+           }
+        } @else {
+          @if $value == auto {
+           padding-left: initial;
+           padding-left: $value;
+           } @else {
+             padding-left: $value;
+           }
+        }
+      }
+  } @else {
+    @if type-of($value) == number {
+      @if not $unit or $important {
+        @if $important == important {
+          @if $unit == percent {
+            padding-left:$value+unquote("%") +  !important;
+          } @else if $unit == px {
+            padding-left:$value+px +  !important;
+          } @else {
+            padding-left:$value+px +  !important;
+          }
+        } @else {
+          @if $unit == percent {
+            padding-left: $value+unquote("%");
+          } @else if $unit == px {
+            padding-left: $value + px;
+          } @else {
+            padding-left: $value + px;
+          }
+        }
+        } @else if $unit == percent {
+        padding-left: $value+ unquote("%");
+      } @else if $unit == px {
+        padding-left: $value + px;
+      } @else {
+        @if $important == important or $unit == important {
+          padding-left: $value + px +  !important;
+        } @else {
+          padding-left: $value + px;
+        }
+      }
+    } @else {
+        @error '#{ $value } is not a number.';
+    }
+  }
+}
+// Padding
+@mixin padding($top: 0,
+$right: 0,
+$bottom: 0,
+$left: 0,$important:null) {
+    @if($important and $important == important){
+      padding: ($top + px) ($left + px) ($bottom + px) ($right + px) + !important;
+    }@else {
+      padding: ($top + px) ($left + px) ($bottom + px) ($right + px);
+    }
+  
+}
+// Margin Left
+@mixin margin-left($value: false, $unit: false, $important: false) {
+    @if $value == auto or $value == initial or $value == inherit {
+        @if $unit and $unit == important {
+           @if $value == auto {
+           margin-right: initial +  !important;
+           margin-right: $value + !important;
+           } @else {
+             margin-right: $value !important;
+           }
+      } @else {
+        @if $important == important {
+          @if $value == auto {
+           margin-right: initial +  !important;
+           margin-right: $value +  !important;
+           } @else {
+            margin-right: $value +  !important;
+           }
+        } @else {
+          @if $value == auto {
+           margin-right: initial;
+           margin-right: $value;
+           } @else {
+             margin-right: $value;
+           }
+        }
+      }
+  } @else {
+    @if type-of($value) == number {
+      @if not $unit or $important {
+        @if $important == important {
+          @if $unit == percent {
+            margin-right:$value+unquote("%") +  !important;
+          } @else if $unit == px {
+            margin-right:$value+px +  !important;
+          } @else {
+            margin-right:$value+px +  !important;
+          }
+        } @else {
+          @if $unit == percent {
+            margin-right: $value+unquote("%");
+          } @else if $unit == px {
+            margin-right: $value + px;
+          } @else {
+            margin-right: $value + px;
+          }
+        }
+        } @else if $unit == percent {
+        margin-right: $value+ unquote("%");
+      } @else if $unit == px {
+        margin-right: $value + px;
+      } @else {
+        @if $important == important or $unit == important {
+          margin-right: $value + px +  !important;
+        } @else {
+          margin-right: $value + px;
+        }
+      }
+    } @else {
+        @error '#{ $value } is not a number.';
+    }
+  }
+}
+@mixin margin-right($value: false, $unit: false, $important: false) {
+    @if $value == auto or $value == initial or $value == inherit {
+        @if $unit and $unit == important {
+           @if $value == auto {
+           margin-left: initial +  !important;
+           margin-left: $value + !important;
+           } @else {
+             margin-left: $value !important;
+           }
+      } @else {
+        @if $important == important {
+          @if $value == auto {
+           margin-left: initial +  !important;
+           margin-left: $value +  !important;
+           } @else {
+            margin-left: $value +  !important;
+           }
+        } @else {
+          @if $value == auto {
+           margin-left: initial;
+           margin-left: $value;
+           } @else {
+             margin-left: $value;
+           }
+        }
+      }
+  } @else {
+    @if type-of($value) == number {
+      @if not $unit or $important {
+        @if $important == important {
+          @if $unit == percent {
+            margin-left:$value+unquote("%") +  !important;
+          } @else if $unit == px {
+            margin-left:$value+px +  !important;
+          } @else {
+            margin-left:$value+px +  !important;
+          }
+        } @else {
+          @if $unit == percent {
+            margin-left: $value+unquote("%");
+          } @else if $unit == px {
+            margin-left: $value + px;
+          } @else {
+            margin-left: $value + px;
+          }
+        }
+        } @else if $unit == percent {
+        margin-left: $value+ unquote("%");
+      } @else if $unit == px {
+        margin-left: $value + px;
+      } @else {
+        @if $important == important or $unit == important {
+          margin-left: $value + px +  !important;
+        } @else {
+          margin-left: $value + px;
+        }
+      }
+    } @else {
+        @error '#{ $value } is not a number.';
+    }
+  }
+}
+// Margin
+@mixin margin($top: 0,
+$right: 0,
+$bottom: 0,
+$left: 0,$important:null) {
+    @if($important and $important == important){
+      margin: ($top + px) ($left + px) ($bottom + px) ($right + px) + !important;
+    }@else {
+      margin: ($top + px) ($left + px) ($bottom + px) ($right + px);
+    }
+}
+// Left
+@mixin left($value: false, $unit: false, $important: false) {
+    @if $value == auto or $value == initial or $value == inherit {
+        @if $unit and $unit == important {
+           @if $value == auto {
+           right: initial +  !important;
+           right: $value + !important;
+           } @else {
+             right: $value !important;
+           }
+      } @else {
+        @if $important == important {
+          @if $value == auto {
+           right: initial +  !important;
+           right: $value +  !important;
+           } @else {
+            right: $value +  !important;
+           }
+        } @else {
+          @if $value == auto {
+           right: initial;
+           right: $value;
+           } @else {
+             right: $value;
+           }
+        }
+      }
+  } @else {
+    @if type-of($value) == number {
+      @if not $unit or $important {
+        @if $important == important {
+          @if $unit == percent {
+            right:$value+unquote("%") +  !important;
+          } @else if $unit == px {
+            right:$value+px +  !important;
+          } @else {
+            right:$value+px +  !important;
+          }
+        } @else {
+          @if $unit == percent {
+            right: $value+unquote("%");
+          } @else if $unit == px {
+            right: $value + px;
+          } @else {
+            right: $value + px;
+          }
+        }
+        } @else if $unit == percent {
+        right: $value+ unquote("%");
+      } @else if $unit == px {
+        right: $value + px;
+      } @else {
+        @if $important == important or $unit == important {
+          right: $value + px +  !important;
+        } @else {
+          right: $value + px;
+        }
+      }
+    } @else {
+        @error '#{ $value } is not a number.';
+    }
+  }
+}
+// Right
+@mixin right($value: false, $unit: false, $important: false) {
+    @if $value == auto or $value == initial or $value == inherit {
+        @if $unit and $unit == important {
+           @if $value == auto {
+           left: initial +  !important;
+           left: $value + !important;
+           } @else {
+             left: $value !important;
+           }
+      } @else {
+        @if $important == important {
+          @if $value == auto {
+           left: initial +  !important;
+           left: $value +  !important;
+           } @else {
+            left: $value +  !important;
+           }
+        } @else {
+          @if $value == auto {
+           left: initial;
+           left: $value;
+           } @else {
+             left: $value;
+           }
+        }
+      }
+  } @else {
+    @if type-of($value) == number {
+      @if not $unit or $important {
+        @if $important == important {
+          @if $unit == percent {
+            left:$value+unquote("%") +  !important;
+          } @else if $unit == px {
+            left:$value+px +  !important;
+          } @else {
+            left:$value+px +  !important;
+          }
+        } @else {
+          @if $unit == percent {
+            left: $value+unquote("%");
+          } @else if $unit == px {
+            left: $value + px;
+          } @else {
+            left: $value + px;
+          }
+        }
+        } @else if $unit == percent {
+        left: $value+ unquote("%");
+      } @else if $unit == px {
+        left: $value + px;
+      } @else {
+        @if $important == important or $unit == important {
+          left: $value + px +  !important;
+        } @else {
+          left: $value + px;
+        }
+      }
+    } @else {
+        @error '#{ $value } is not a number.';
+    }
+  }
+}
+// Text Alignment
+@mixin text-align($align,$important:null) {
+    $newAlign: "";
+    @if($align == left) {
+      $newAlign: right;
+    } @else if($align == right) {
+      $newAlign: left;
+    } @else {
+      $newAlign : $align;
+    }
+    @if($important and $important == important){
+      text-align: $newAlign + !important;
+    }@else {
+      text-align: $newAlign;
+    }
+}
+
+// Bordre Left
+@mixin border-left($width,
+$style,
+$color,
+$opacity: 1,
+$important:null) {
+    @if($important and $important == important){
+      border-right: ($width + px) $style rgba($color, $opacity) + !important;
+    }@else {
+      border-right: ($width + px) $style rgba($color, $opacity);
+    }
+}
+// Border Right
+@mixin border-right($width,
+$style,
+$color,
+$opacity: 1,
+$important:null) {
+    @if($important and $important == important){
+      border-left: ($width + px) $style rgba($color, $opacity) + !important;
+    }@else {
+      border-left: ($width + px) $style rgba($color, $opacity);
+    }
+}
+// Clear Mixin
+@mixin clear($direction,$important:null) {
+    @if($important and $important == important){
+      @if $direction == left {
+          clear: right + !important;
+      } @else if $direction == right {
+          clear: left + !important;
+      } @else {
+          clear: $direction + !important;
+      }
+    }@else {
+      @if $direction == left {
+          clear: right;
+      } @else if $direction == right {
+          clear: left;
+      } @else {
+          clear: $direction;
+      }
+    }
+}
+
+//Text transform
+@mixin text-transform($transform,$important:null,$unset:null) {
+  $arabicUnset: $transform == unset or $important == unset or $unset == unset;
+    @if($arabicUnset == false)  {
+      @if($important and $important == important){
+        text-transform: $transform + !important;
+      }@else {
+        text-transform: $transform;
+      }
+    }
+}

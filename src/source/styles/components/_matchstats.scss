@@ -1,0 +1,1841 @@
+  .stats {
+    background: #f9f9f9!important;
+    .sponsor {
+      &.by {
+        display: none !important;
+      }
+    }
+    &__time {
+      margin: 20px;
+      color: #fff;
+      position: absolute;
+      @include left(0);
+      @include bottom(-20);
+    }
+    .mu-item__wrapper {
+      z-index: 2;
+      @include position(relative);
+    }
+    &__time {
+      &--publised {
+        position: relative;
+        @include top(-3);
+      }
+    }
+    &.save {
+      @include px-to-rem(height, 520);
+      .mu-item__wrapper {
+        @include px-to-rem(height, 477);
+      }
+    }
+    &-item {
+      @include position(relative);
+      @include pull-left;
+      .chart {
+        @include position(absolute);
+        @include top(0);
+        @include left(0);
+        z-index: 1;
+        &.pie {
+          @include top(15,percent);
+          @include left(5,percent);
+          text {
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+    &--match {
+      list-style: none;
+      padding: 0 20px;
+      @include pull-left;
+      @include percentage-value(width, 100);
+      @include percentage-value(height, 100);
+      @include margin(40, 0, 0, 0);
+      li {
+        @include padding(5, 0, 5, 0);
+        // @include breakpoint($medium) {
+        //     @include padding(10, 0, 10, 0);
+        // }
+        @include percentage-value(width, 100);
+        @include pull-left;
+        position: relative;
+        span {
+          width: 20%;
+          letter-spacing: -0.5px;
+          @include percentage-value(width, 30);
+          padding: 10px 1.5%;
+          @include pull-left;
+          @include text-align(center);
+          @include tertiary-regular;
+          @extend %txt-uppercase;
+          @include font-size(18);
+          @include breakpoint($large) {
+            @include font-size(24);
+          }
+          &:nth-child(3) {
+            @include pull-right;
+            @include percentage-value(width, 25);
+          }
+          &:nth-child(2) {
+            @include percentage-value(width, 35);
+          }
+          img {
+            //  @include px-to-rem(width, 47);
+          }
+          &.stats__target {
+            @include font-size(14);
+            @include secondry-semibold;
+            @include line-height(24,px);
+            @include margin-left(17);
+          }
+          &.stats__shot {
+            @include important-value(font-size, 14);
+            letter-spacing: 1px;
+            @include tertiary-semibold;
+            color: $white;
+            @include line-height(24,px);
+          }
+          img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+          }
+        }
+        &.last {
+          @include border-top(1, solid, #E8E8E8);
+        }
+      }
+      &__list {
+        @include position(relative);
+        z-index: 9;
+      }
+    }
+    &--data {
+      color: $white;
+      @include margin(0, 0, 15, 0);
+      span {
+        @include important-value(font-size, 36);
+      }
+    }
+    .mu-item__top-panel {
+      li {
+        background: transparent !important;
+        border-color: #bcb5b9 !important;
+      }
+      .sponsor-tag {
+        li {
+          &:first-child {
+            @include display(block);
+            @include margin(0, 0, 0, 0);
+          }
+        }
+      }
+    }
+    &-bar {
+      @include background-color($white);
+    }
+    .player {
+      &__name {
+        padding: 2px 0;
+      }
+      &__icon {
+        position: relative;
+        width: 60px;
+        margin: 0 auto;
+        height: 60px;
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+        label {
+          position: absolute;
+          @include top(-5);
+          @include right(-15);
+          background: #383838;
+          padding: 10px;
+          color: #fff;
+          @include font-size(16);
+          border-radius: 50%;
+          @include pull-left;
+          @include line-height(10,px);
+          margin: 0;
+          width: auto;
+        }
+      }
+    }
+    &__team {
+      @include padding(20, 0, 10, 0);
+      @include pull-left;
+      width: 87%;
+      position: absolute;
+      @include bottom(10);
+    }
+    .chart-key {
+      @include pull-left;
+      @include secondry-semibold;
+      @include font-size(14);
+      @include color($mu-black);
+      @include padding-left(10);
+      width: auto;
+    }
+    .chart-value {
+      @include pull-right;
+      @include tertiary-regular;
+      @include important-value(font-size, 24);
+      @include padding(5);
+      @include color($mu-black);
+      width: auto !important;
+    }
+    .bar-chart {
+      g {
+        &:nth-child(2) rect {
+          //fill: #383838;
+        }
+      }
+    }
+    .team__vs {
+      text-transform: lowercase;
+      &--team {
+        @include pull-right;
+        max-width: 60%;
+        text-transform: capitalize;
+      }
+    }
+    &__time {
+      margin: 20px;
+      color: #fff;
+      position: absolute;
+      @include left(0);
+      @include bottom(-20);
+      width: calc(100% - 40px);
+      @include pull-left;
+    }
+    .mu-item__sponsor__wrapper {
+      @include pull-right;
+      @include z-index(99);
+      @include position(relative);
+    }
+  }
+  
+  .line-chart {
+    svg {
+      @include top(100,percent,important);
+    }
+  }
+  
+  span.inline-text {
+    @include font-size(14,important);
+    @include padding-top(15,important);
+  }
+  
+  .pie-container {
+    //@include percentage-value(width, 50);
+    //@include percentage-value(height, 50);
+    width: 140px !important;
+    height: 140px !important;
+    margin: 0 auto;
+    @include position(relative);
+    @include margin-bottom(-143);
+    @include display(block);
+  }
+  
+  d3-chart {
+    @include display(block);
+  }
+  
+  %stats--details {
+    @include position(absolute);
+    @include color($white);
+    @include bottom(60);
+    @include margin-left(16);
+    letter-spacing: -0.3;
+    @include secondry-semibold;
+    //@include font-size(16);
+    @include breakpoint($medium) {
+      @include margin-left(28);
+    }
+  }
+  
+  .stats {
+    &.possesion {
+      height: $possesion-height;
+      .mu-item__wrapper {
+        height: $possesion-height;
+      }
+      p {
+        @extend %stats--details;
+        // @include position(absolute);
+        // @include color($white);
+        // bottom: 61px;
+        // margin-left: 16px;
+        // letter-spacing: -0.3;
+        // @include breakpoint($medium) {
+        //   margin-left: 28px;
+        // }
+      }
+      .stats--match {
+        li:last-child {
+          border: none;
+        }
+      }
+      .stats--match li {
+        span {
+          @include important-value(font-size, 32);
+          width: 30%;
+          @include breakpoint($xsmall) {
+            @include font-size(36);
+            width: 40%;
+          }
+          @include breakpoint($medium) {
+            width: 20%;
+          }
+          &:nth-child(2) {
+            @include important-value(font-size, 14);
+            letter-spacing: 0.7;
+            width: 40%;
+            @include breakpoint($xsmall) {
+              @include font-size(36);
+              width: 20%;
+            }
+            @include breakpoint($medium) {
+              width: 60%;
+            }
+          }
+        }
+      }
+      span.stats__shot {
+        position: absolute;
+        @include top(-20);
+      }
+      .stats-bar {
+        z-index: 9;
+      }
+      .stats--match li {
+        padding: 5px 0;
+      }
+    }
+  }
+  
+  .donutchart {
+    @include position(absolute);
+    @include right(30);
+    @include top(50);
+  }
+  
+  .donut {
+    & ul {
+      li {
+        &:nth-child(2) {
+          @include padding-top(110);
+        }
+      }
+    }
+  }
+  
+  //Goals
+  .stats {
+    &.goals {
+      height: $goals-height;
+      .mu-item__wrapper {
+        height: $goals-height;
+      }
+      .match-data {
+        margin: 17px 0 0;
+        padding: 0 0px;
+        @include breakpoint($xsmall) {
+          padding: 0 85px;
+        }
+        @include breakpoint($medium) {
+          padding: 0 193px;
+        }
+      }
+      .stats--match {
+        margin: 10px 0 0;
+        li {
+          padding: 10px 0;
+          @include border-top(1, solid, #E8E8E8);
+          &:first-child {
+            border: none;
+          }
+        }
+      }
+      h6 {
+        position: relative;
+        @include text-align(center);
+        margin: 20px 0 20px;
+        @include color($dark);
+        @include breakpoint($medium) {
+          //margin: 54 0 30 0;
+        }
+      }
+      .pull-left {
+        width: 90%;
+      }
+      .player__name {
+        @include font-size(14);
+        width: 70%;
+        @include pull-left;
+        @include text-align(left);
+        @include margin-left(13);
+        @include margin-top(25);
+        letter-spacing: -0.2;
+      }
+      .player__icon {
+        display: inline-block;
+        @include pull-left;
+      }
+      .player__goals {
+        @include tertiary-semibold;
+        @include font-size(24);
+        letter-spacing: -0.3;
+        width: 10%;
+        @include text-align(right);
+        @include pull-right;
+        @include margin-top(15);
+      }
+      .stats--details {
+        @extend %stats--details;
+        @include color($dark);
+      }
+    }
+  }
+  
+  //Fouls
+  .stats {
+    &.fouls {
+      height: $fouls-height-small;
+      @include breakpoint($xsmall) {
+        height: $fouls-height;
+      }
+      .mu-item__wrapper {
+        height: $fouls-height-small;
+        @include breakpoint($xsmall) {
+          height: $fouls-height;
+        }
+      }
+      .stats--match li span.stats__target {
+        letter-spacing: -0.2;
+        @include secondry-semibold;
+      }
+      .stats--match {
+        ul {
+          padding: 0 0px;
+          @include breakpoint($xsmall) {
+            padding: 0 95px;
+          }
+          @include breakpoint($medium) {
+            padding: 0 160px;
+          }
+          @include breakpoint($large) {
+            padding: 0 330px;
+          }
+        }
+        li:nth-child(2) {
+          @include margin-top(0);
+          @include breakpoint($xsmall) {
+            @include margin-top(40);
+          }
+        }
+        li:first-child {
+          position: relative;
+          @include breakpoint($xsmall) {
+            position: absolute;
+            @include top(93);
+            @include left(0);
+          }
+          span {
+            width: 25%;
+          }
+        }
+      }
+      li.stats--data {
+        background: #f2f2f2;
+      }
+      .stats__foul {
+        letter-spacing: 0.7;
+        @include tertiary-semibold;
+        @include important-value(font-size, 14);
+        @include color($mu-black);
+        @include line-height(24,px);
+        @include margin-left(17);
+      }
+      .stats--details {
+        @extend %stats--details;
+        @include color($dark);
+      }
+    }
+  }
+  
+  %stats--match {
+    ul {
+      padding: 0 0px;
+      @include breakpoint($xsmall) {
+        padding: 0 95px;
+      }
+      @include breakpoint($medium) {
+        padding: 0 160px;
+      }
+      @include breakpoint($large) {
+        padding: 0 330px;
+      }
+    }
+    li:nth-child(2) {
+      @include margin-top(0);
+      @include breakpoint($xsmall) {
+        @include margin-top(40);
+      }
+    }
+    li:first-child {
+      position: relative;
+      @include breakpoint($xsmall) {
+        position: absolute;
+        @include top(93);
+        @include left(0);
+      }
+      span {
+        width: 25%;
+      }
+    }
+  }
+  
+  //Head2head
+  .grid-4 {
+    .stats {
+      &.head2head {
+        height: $head2head-height-small;
+        .mu-item__wrapper {
+          height: $head2head-height-small;
+        }
+        .stats--match {
+          li:first-child {
+            position: relative;
+            @include top(0);
+            @include left(0);
+            .pull-left,
+            .pull-right {
+              width: 45%;
+              .player__name {
+                @include text-align(left);
+              }
+            }
+            .pull-left {
+              .player__icon {
+                @include pull-left;
+              }
+            }
+            .pull-right {
+              .player__name {
+                @include text-align(right);
+              }
+              .player__icon {
+                @include pull-right;
+                @include right(15);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .stats {
+    &.head2head {
+      height: $head2head-height-small;
+      @include breakpoint($xsmall) {
+        height: $head2head-height;
+      }
+      .mu-item__wrapper {
+        height: $head2head-height-small;
+        @include breakpoint($xsmall) {
+          height: $head2head-height;
+        }
+      }
+      .details {
+        @include margin-top(10);
+      }
+      .stats--details {
+        @extend %stats--details;
+        @include color($dark);
+      }
+      .stats--list {
+        min-width: 271px;
+        margin: 0 auto;
+        width: 54%;
+      }
+      .stats--match {
+        li:first-child {
+          position: relative;
+          @include breakpoint($xsmall) {
+            position: absolute;
+            @include top(84);
+            @include left(0);
+          }
+          .pull-left,
+          .pull-right {
+            width: 45%;
+            @include breakpoint($xsmall) {
+              width: 25%;
+            }
+            .player__name {
+              @include text-align(left);
+              @include breakpoint($xsmall) {
+                @include text-align(center);
+              }
+            }
+          }
+          .pull-left {
+            .player__icon {
+              @include pull-left;
+              @include breakpoint($xsmall) {
+                @include pull-none;
+              }
+            }
+          }
+          .pull-right {
+            .player__name {
+             @include text-align(right);
+              @include breakpoint($xsmall) {
+                @include text-align(center);
+              }
+            }
+            .player__icon {
+              @include pull-right;
+              @include right(15);
+              @include breakpoint($xsmall) {
+                @include pull-none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .muchart-lable {
+    color: #fff;
+    @include font-size(14);
+    @include secondry-semibold;
+    letter-spacing: -0.2px;
+   @include text-align(center);
+    text-transform: uppercase;
+  }
+  
+  //Match Day Stats
+  //Right Sidebar Stats
+  .match-overview {
+    padding: 30px 26px;
+    .tpl-multiple__stats {
+      span.chart-value {
+        @include pull-right(important);
+        @include margin-top(20);
+      }
+    }
+    &__title {
+      color: #fff;
+      @include font-size(14);
+      @include tertiary-regular;
+      @include padding-bottom(20);
+    }
+    .stats {
+      background-color: #313138 !important;
+      height: 100%;
+      @include margin-bottom(16);
+      &__entity--team {
+        .entity__player {
+          @include padding-top(0,important);
+        }
+        span {
+          img {
+            //margin-top: -15px !important;
+          }
+        }
+      }
+      .player__icon {
+        width: 47px;
+        @include pull-right;
+        height: 47px;
+      }
+      .Donut {
+        .stats--data {
+          @include margin-bottom(70);
+        }
+      }
+      .Full {
+        .stats--data {
+          @include margin-bottom(10);
+          @include margin-top(-5,important);
+        }
+      }
+      &--data {
+        margin: 0 0 40px 0;
+        span {
+          @include font-size(18,important);
+        }
+        &__secondrow {
+          @include margin-top(20);
+        }
+        &__donut {
+          //margin-top: 60px;
+        }
+        &__bar {
+          height: 1px;
+          @include left(-10000);
+          overflow: hidden;
+          position: absolute!important;
+          @include top(auto);
+          width: 1px;
+        }
+        &__simplebar {
+          background: #fff;
+          color: #111 !important;
+          margin: 15px 0;
+        }
+      }
+      &-item {
+        width: 100%;
+        margin: 0;
+        .chart {
+          position: relative;
+          &.pie {
+            @include top(15);
+          }
+          .dotted-circle {
+            @include top(0);
+          }
+        }
+      }
+      &--match {
+        margin: 10px 0 0;
+        ul {
+          position: relative;
+          z-index: 99;
+          li {
+            color: #fff;
+            &:last-child {
+              border-color: rgba(229, 229, 229, .1)!important;
+            }
+            span {
+              @include font-size(18);
+              img {
+                width: 47px;
+                height: 47px;
+                border-radius: 50%;
+              }
+              &:last-child {
+                @include pull-right;
+                width: 20%;
+                position: static;
+              }
+              &:first-child {
+                @include pull-left;
+                width: 20%;
+                position: static;
+              }
+              &.stats__target {
+                position: absolute;
+                width: 60%;
+                @include left(15,percent);
+                @include font-size(14,important);
+              }
+            }
+          }
+        }
+        &.Semi.Circle,
+        &.Pi {
+          // >ul {
+          //   >li {
+          //     &:first-child {
+          //       margin-top: 20px;
+          //     }
+          //   }
+          // }
+          .chart.pie {
+            @include top(10);
+          }
+        }
+      }
+      &-bar {
+        background-color: #313138 !important;
+        position: relative;
+        padding: 20px 10px 10px;
+        li {
+          color: #fff;
+        }
+      }
+      .mu-item {
+        &__top-panel {
+          li {
+            background: 0 0!important;
+            border-color: rgba(229, 229, 229, .1)!important;
+          }
+        }
+        &__wrapper {
+          z-index: 2;
+          position: relative;
+          min-height: 300px;
+          height: 100%;
+          @include padding-bottom(40);
+        }
+      }
+      .entity__player {
+        position: relative;
+        @include padding-top(25);
+        img {
+          width: 47px;
+          height: 47px;
+          border-radius: 50%;
+          @include pull-left;
+        }
+        &--1 {
+          @include pull-left(important);
+          .player__name {
+            @include left(0);
+          }
+        }
+        &--2 {
+          @include pull-right(important);
+          .player__name {
+            @include right(0);
+            @include text-align(right);
+          }
+        }
+        .player__name {
+          position: absolute;
+          //left: 0;
+          @include top(-10);
+          width: 105px;
+          color: $white;
+        }
+      }
+      &--name {
+        &__donut {
+          position: absolute;
+          @include bottom(-60);
+          width: 100%;
+          @include text-align(center);
+          color: #fff;
+          @include font-size(14);
+          @include left(10);
+        }
+      }
+      &-one__Entity {
+        &.Line {
+          .one-entity {
+            border: none;
+          }
+        }
+        .one-entity {
+          padding: 5px 0;
+          width: 100%;
+          @include pull-left;
+          &:first-child {
+            @include padding-top(100);
+          }
+        }
+      }
+      .chart-key {
+        width: 70% !important;
+        @include text-align(left,important);
+      }
+      .chart-value {
+        @include font-size(18,important);
+      }
+      &-timestamp {
+        @include display(none);
+      }
+      &-mins {
+        @include display(none);
+      }
+    }
+    .sponcerby {
+      display: none !important;
+    }
+    .tpl-parentchild__1 {
+      .stats {
+        &--data {
+          background: #fff;
+          color: #111 !important;
+        }
+        &-val {
+          position: absolute;
+          @include top(26,percent);
+          @include font-size(34,important);
+          width: 100%;
+          @include left(0);
+          @include text-align(center);
+        }
+        &-name {
+          position: absolute;
+         @include top(60,percent);
+          @include font-size(14,important);
+          width: 100%;
+          @include line-height(18,px);
+          @include pull-left;
+          @include left(0);
+          text-transform: capitalize;
+          @include text-align(center);
+        }
+      }
+    }
+    .tpl-parentchild__2 {
+      .stats--match.Donut {
+        @include margin-top(80);
+      }
+    }
+    .full-bar {
+      .muchart-lable {
+        @include font-size(14);
+        word-spacing: 10000px;
+        position: absolute;
+        @include top(100,percent);
+        @include left(0);
+        width: 100%;
+        &:first-line {
+          @include font-size(36);
+        }
+      }
+      &__container {
+        .player__name {
+          position: absolute;
+          @include left(85,important);
+        }
+        .entity__player {
+          @include padding-top(0);
+          @include margin-bottom(25);
+        }
+      }
+    }
+    .sponsor-tag {
+      background: none;
+    }
+    .bar-container {
+      position: absolute;
+      @include left(0);
+      @include top(0);
+      z-index: 1;
+      width: 100%;
+      &__inline {
+        text {
+          fill: #fff;
+        }
+      }
+    }
+    .img-tag {
+      background: rgba(26, 26, 26, .8);
+      display: none;
+    }
+    .muchart-lable {
+      @include tertiary-semibold;
+      margin: 0 auto;
+      @include font-size(12);
+      position: relative;
+      @include top(-3);
+      width: 50%;
+      @include breakpoint($large) {
+        @include top(-3);
+        @include font-size(14);
+      }
+    }
+    .pie-container {
+      text {
+        fill: #fff !important;
+      }
+      &.semi-circle {
+        //top: 40px;
+        text {
+          fill: #fff !important;
+        }
+      }
+      // &.circle {
+      //   width: 180px;
+      //   height: 180px;
+      // }
+    }
+    .chart-inline {
+      text {
+        fill: #fff;
+        @include font-size(18);
+      }
+    }
+    .dotted-circle {
+      path {
+        fill: rgb(199, 1, 1);
+      }
+    }
+    .tpl-single__stats {
+      .stats {
+        &-item {
+          .chart {
+            &.pie {
+             @include top(100);
+            }
+          }
+        }
+        &--name__donut {
+          @include bottom(-140);
+        }
+      }
+      .stats--data {
+        @include margin-top(15);
+      }
+      .stats--match ul li span:first-child {
+        width: 30%;
+      }
+    }
+    .multiple {
+      &-entity {
+        width: 80%;
+        vertical-align: bottom;
+        @include pull-left;
+      }
+      .stats {
+        .player {
+          &__icon {
+            width: 44px;
+            margin: 0;
+            height: 44px;
+            @include pull-left;
+          }
+          &__name {
+            padding: 25px 0 0 10px;
+            display: inline-block;
+            @include pull-left;
+            width: auto;
+          }
+        }
+        .one-entity {
+          margin: 4px 0;
+        }
+        h4 {
+          @include text-align(center);
+          @include font-size(14);
+          margin: 5px 0;
+          color: #fff;
+        }
+      }
+    }
+    .one-entity {
+      &.Line {
+        border: none;
+      }
+    }
+    .chart-value,
+    .chart-key {
+      color: #fff;
+      display: block;
+    }
+    .donutchart {
+      @include top(20);
+      &.pie-container {
+        // max-width: 110px;
+        // max-height: 110px;
+        &.Circle {
+          // max-width: 140px;
+          // max-height: 140px;
+          @include top(40);
+          text {
+            @include font-size(12);
+          }
+        }
+        &.Simple {
+          max-width: 120px;
+          max-height: 120px;
+          @include top(55);
+        }
+        &.Semi.Circle {
+          @include top(40);
+        }
+        &.Pi {
+          @include top(40);
+        }
+        &.Line {
+          @include top(45);
+        }
+      }
+    }
+    .icon-avatar {
+      background-position: -193px -75px;
+    }
+  }
+  
+  //Match Day Left Blog Stats
+  .matchstats__blog {
+    padding: 30px 32px;
+    width: 100%;
+    margin: 0;
+    padding: 0 10px;
+    .tpl-multiple__stats {
+      span.chart-value {
+        @include pull-right(important);
+        @include margin-top(30);
+      }
+    }
+    &__title {
+      color: #1a1a1a;
+      @include font-size(14);
+      @include tertiary-regular;
+      @include padding-bottom(20);
+    }
+    .stats {
+      height: 100%;
+      background: #fff!important;
+      @extend %row-gutter;
+      &-repeater {
+        @include pull-left;
+        width: 100%;
+      }
+      .mu-item__wrapper {
+        z-index: 2;
+        position: relative;
+        height: 100%;
+      }
+      &--data {
+        margin: 0 0 10px 0;
+        span {
+          @include font-size(18,important);
+          @include breakpoint($large) {
+            @include font-size(30,important);
+          }
+        }
+        &__secondrow {
+          @include margin-top(20);
+        }
+        &__donut {
+          @include margin-top(60);
+        }
+        &__bar {
+          height: 1px;
+          @include left(-10000);
+          overflow: hidden;
+          position: absolute!important;
+          @include top(auto);
+          width: 1px;
+        }
+        &__simplebar {
+          background: rgba(242, 242, 242, .8);
+          color: #111 !important;
+          margin: 15px 0;
+          padding: 15px 0 !important;
+        }
+      }
+      &-item {
+        width: 100%;
+        margin: 0;
+        .chart {
+          position: relative;
+          &.pie {
+            @include top(60);
+            @include breakpoint($xsmall) {
+              @include top(-15);
+            }
+          }
+          &.dotted-circle {
+            @include top(0);
+          }
+        }
+        .Pi {
+          text {
+            fill: #fff !important;
+          }
+        }
+        &.tpl-parentchild__1 {
+          .mu-item__wrapper {
+          @include padding-top(0);
+            @include breakpoint($xsmall) {
+              @include padding-top(100);
+            }
+          }
+        }
+      }
+      &--match {
+        @include breakpoint($xsmall) {
+          margin: 50px auto 0 auto;
+          @include pull-none;
+          width: 54%;
+          min-width: 271px;
+          position: relative;
+        }
+        &.Full {
+          width: 100%;
+          margin: 15px 0 0 0;
+          @include breakpoint($xsmall) {
+            margin: 0;
+          }
+          .entity__player {
+            width: 21%;
+            .player__name {
+              @include left(25,percent);
+            }
+          }
+        }
+        > ul {
+          @include margin-bottom(30);
+          @include pull-left;
+          width: 100%;
+        }
+        ul {
+          position: relative;
+          z-index: 99;
+          @include breakpoint($xsmall) {
+            > li {
+              &:first-child {
+                > span {
+                  &:first-child {
+                    position: absolute;
+                    @include left(-35,percent);
+                    @include top(35);
+                  }
+                  &:last-child {
+                    position: absolute;
+                    @include right(35,percent);
+                    @include top(35);
+                  }
+                }
+                > .entity__player--1 {
+                  position: absolute;
+                  @include left(-35,percent);
+                    @include top(35);
+                }
+                > .entity__player--2 {
+                  position: absolute;
+                  @include right(35,percent);
+                  @include top(35);
+                }
+              }
+            }
+          }
+          li {
+            color: #1a1a1a;
+            &:last-child {
+              border-color: rgba(229, 229, 229, .1)!important;
+            }
+            span {
+              width: 20%;
+              &:last-child {
+                @include pull-right;
+                width: 20%;
+                position: relative;
+                @include right(0);
+              }
+              img {
+                @include breakpoint($xsmall) {
+                  width: 60px;
+                  height: 60px;
+                }
+                width: 47px;
+                height: 47px;
+                border-radius: 50%;
+              }
+              &.stats__target {
+                position: absolute;
+                width: 100%;
+                @include left(0);
+                @include font-size(14,important);
+                padding: 10px 50px;
+                @include margin-left(0);
+                @include line-height(1);
+              }
+            }
+          }
+        }
+      }
+      &-bar {
+        background: #fff;
+        position: relative;
+        li {
+          color: #1a1a1a;
+        }
+      }
+      .mu-item {
+        &__top-panel {
+          li {
+            background: 0 0!important;
+            border-color: rgba(229, 229, 229, .1)!important;
+          }
+        }
+        &__wrapper {
+          z-index: 2;
+          position: relative;
+          min-height: 300px;
+          height: 100%;
+        }
+      }
+      .entity__player {
+        position: relative;
+        @include padding-top(25);
+        @include margin-top(30);
+        @include breakpoint($xsmall) {
+          @include margin-top(0);
+        }
+        .player__icon {
+          position: relative;
+          width: 47px;
+          margin: 0 auto;
+          height: 47px;
+          @include breakpoint($xsmall) {
+            width: 60px;
+            height: 60px;
+          }
+        }
+        label {
+          @include breakpoint($xsmall) {
+            @include right(-15);
+          }
+          @include right(-5);
+        }
+        img {
+          @include breakpoint($xsmall) {
+            width: 60px;
+            height: 60px;
+          }
+          width: 47px;
+          height: 47px;
+          border-radius: 50%;
+          @include pull-left;
+        }
+        &--1 {
+          @include pull-left(important);
+        }
+        &--2 {
+          @include pull-right;
+        }
+        .player__name {
+          @include breakpoint($xsmall) {
+            @include top(-10);
+          }
+          position: absolute;
+          @include left(0);
+          @include top(0);
+          width: 105px;
+        }
+      }
+      &--name {
+        &__donut {
+          @include breakpoint($xsmall) {
+            @include bottom(-30);
+          }
+          position: absolute;
+          @include bottom(-100);
+          width: 100%;
+          @include text-align(center);
+          color: #1a1a1a;
+          @include font-size(14);
+          @include left(10);
+        }
+      }
+      &-one__Entity {
+        &.Line {
+          .one-entity {
+            border: none;
+          }
+        }
+        .one-entity {
+          padding: 5px 0;
+          width: 100%;
+          @include pull-left;
+          &:first-child {
+            @include padding-top(20);
+          }
+        }
+      }
+      &__time {
+        margin: 20px 0;
+        position: absolute;
+        @include left(24);
+        @include bottom(0);
+        z-index: 9;
+        color: #1a1a1a;
+      }
+    }
+    .sponcerby {
+      display: none !important;
+    }
+    .tpl-parentchild__1 {
+      &.Full {
+        .stats--match ul > li:first-child > .entity__player--1 {
+          position: absolute;
+         @include left(0);
+          @include breakpoint($xsmall) {
+            @include top(0);
+          }
+        }
+        .mu-item__wrapper {
+          @include padding-top(0,important);
+        }
+      }
+      .stats {
+        &--data {
+          background: rgba(242, 242, 242, .8);
+          color: #1a1a1a !important;
+          max-width: 165px;
+          max-height: 130px;
+          margin: 0 auto;
+          @include right(0);
+          @include breakpoint($xsmall) {
+            margin: 0 auto;
+            @include left(0);
+          }
+          .stats-name {
+            @include font-size(14,important);
+          }
+          .stats-val {
+            @include font-size(36,important);
+          }
+        }
+        &-val {
+          position: absolute;
+          @include top(26,percent);
+          @include font-size(40,important);
+          width: 100%;
+          @include left(0);
+          @include text-align(center);
+        }
+        &-name {
+          position: absolute;
+          @include top(60,percent);
+          @include font-size(24,important);
+          width: 100%;
+          @include pull-left;
+          @include left(0);
+          text-transform: capitalize;
+          @include text-align(center);
+          @include font-size(18,important);
+        }
+        &--match {
+          &.Full {
+            width: 100%;
+            margin: 0 auto;
+            @include breakpoint($xsmall) {
+              width: 54%;
+            }
+          }
+          ul {
+            @include breakpoint($xsmall) {
+              >li {
+                &:first-child {
+                  position: relative;
+                  @include left(-40,percent);
+                  outline: none;
+                  > .entity__player--1 {
+                    position: absolute;
+                    @include left(0,important);
+                    @include top(-100);
+                  }
+                }
+              }
+            }
+          }
+        }
+        .one-entity {
+          .chart-key {
+            width: 70% !important;
+            @include text-align(left);
+          }
+        }
+      }
+      .Full {
+        .entity__player {
+          &.entity__player--1 {
+            position: static !important;
+            margin: 50px 5%;
+          }
+        }
+      }
+      .full-bar {
+        .muchart-lable {
+          @include top(100,percent);
+          @include left(0,percent);
+          width: 100%;
+        }
+      }
+    }
+    .tpl-parentchild__2 {
+      .stats--match {
+        ul {
+          li {
+            &:nth-child(2) {
+              @include padding-top(40);
+            }
+          }
+        }
+      }
+    }
+    .full-bar {
+      .muchart-lable {
+        @include font-size(14);
+        word-spacing: 10000px;
+        position: absolute;
+        @include top(100,percent);
+        @include left(-30);
+        width: 60%;
+        &:first-line {
+          @include font-size(36);
+        }
+      }
+      &__container {
+        .player__name {
+          position: absolute;
+          @include left(85,important);
+        }
+        .entity__player {
+          @include padding-top(0);
+          @include margin-bottom(25);
+        }
+      }
+    }
+    .mu-item__sponsor__wrapper {
+      background: #f8f8f8;
+    }
+    .bar-container {
+      position: absolute;
+      @include left(0);
+      @include top(0);
+      z-index: 1;
+      width: 100%;
+      &__inline {
+        text {
+          fill: #fff;
+        }
+      }
+    }
+    .img-tag {
+      background: rgba(26, 26, 26, .8);
+      display: none;
+    }
+    .muchart-lable {
+      @include tertiary-semibold;
+      width: 60%;
+      margin: 0 auto;
+      @include font-size(12);
+      position: relative;
+      @include top(-11);
+      @include breakpoint($large) {
+        @include top(0);
+        @include font-size(14);
+      }
+    }
+    .pie-container {
+      &.circle {
+        // width: 180px;
+        // height: 180px;
+      }
+      text {
+        fill: #1a1a1a !important;
+      }
+      &.semi-circle {
+        @include top(40);
+        text {
+          fill: #1a1a1a !important;
+        }
+      }
+    }
+    .chart-inline {
+      .muchart-lable {
+        @include top(0,important);
+      }
+      text {
+        fill: #fff;
+        @include font-size(18);
+      }
+    }
+    .dotted-circle {
+      path {
+        fill: rgb(199, 1, 1);
+      }
+    }
+    .tpl-single__stats {
+      .stats {
+        &--match {
+          width: 100%;
+          ul {
+            li {
+              &:nth-child(2) {
+                @include breakpoint($xsmall) {
+                  @include padding-top(60);
+                }
+                span {
+                  @include font-size(30);
+                  &:first-child {
+                    @include pull-left;
+                  }
+                }
+              }
+              &:first-child>span:first-child {
+                @include top(0);
+                @include left(0);
+              }
+              &:first-child>span:last-child {
+                @include top(0);
+                @include right(0);
+              }
+              &:first-child> .entity__player--1 {
+                @include top(-15);
+                @include left(11,percent);
+              }
+              &:first-child> .entity__player--2 {
+                @include top(-15);
+                @include right(11,percent);
+              }
+              span {
+                color: #fff;
+                width: 30% !important;
+                @include breakpoint($small $max-small) {
+                  @include font-size(18,important);
+                }
+              }
+            }
+          }
+        }
+      }
+      .bar-container {
+        .muchart-lable {
+          @include top(-30);
+        }
+      }
+    }
+    .multiple {
+      &-entity {
+        width: 80%;
+        vertical-align: bottom;
+        @include pull-left;
+      }
+      .stats {
+        .player {
+          &__icon {
+            width: 60px;
+            margin: 0;
+            height: 60px;
+            @include pull-left;
+          }
+          &__name {
+            padding: 35px 0px 0 10px;
+            display: inline-block;
+            @include pull-left;
+            width: auto;
+          }
+        }
+        .one-entity {
+          margin: 4px 0;
+        }
+        h4 {
+          @include text-align(center);
+          @include font-size(14);
+          margin: 5px 0;
+          color: #1a1a1a;
+        }
+      }
+    }
+    .one-entity {
+      border-bottom: 1px solid rgba(233, 233, 233, 1);
+      display: inline-block;
+      width: 100%;
+      &.Line {
+        border: none;
+      }
+    }
+    .chart-value,
+    .chart-key {
+      color: #1a1a1a;
+      display: block;
+    }
+    .donutchart {
+      @include top(50,important);
+      @include right(20);
+      @include breakpoint($xsmall) {
+        @include left(0);
+      }
+      &.pie-container {
+        // max-width: 130px;
+        // max-height: 130px;
+        @include top(90);
+      }
+    }
+    .Full {
+      li {
+        &.stats--data {
+          color: #fff !important;
+        }
+      }
+    }
+    @include breakpoint($small $max-small) {
+      .stats--match.Full ul>li:first-child .entity__player {
+        @include margin-top(0);
+      }
+      .stats--match.Pi {
+        @include padding-top(20);
+      }
+      .tpl-parentchild__2 .stats--match ul li:nth-child(2) {
+        @include padding-top(30);
+      }
+      .tpl-parentchild__1 .entity__player.entity__player--1 {
+        @include margin-top(0);
+        @include padding-top(0);
+      }
+      .tpl-parentchild__1 .stats-one__Entity .one-entity:first-child {
+        @include padding-top(100);
+      }
+      .tpl-parentchild__1 .donutchart.pie-container {
+        @include top(70,important);
+        @include right(20,important);
+      }
+      .tpl-parentchild__1 .donutchart .chart.pie {
+        @include top(-15,percent);
+      }
+      .stats__time {
+        @include bottom(-10);
+      }
+    }
+    .player--v__team {
+      .tpl-parentchild__1 .stats--match ul>li:first-child {
+        @include left(0);
+        .entity__player--1 {
+          @include left(-35,percent,important);
+          @include top(35);
+          @include breakpoint($small $max-small) {
+            @include padding-top(25);
+            @include left(0,important);
+          }
+        }
+      }
+      .stats--match ul li:nth-child(2) {
+        @include margin-top(10);
+      }
+      .stats-item.tpl-parentchild__1 .mu-item__wrapper {
+        @include padding-top(0);
+      }
+    }
+    .player-or__team4 {
+      .tpl-parentchild__1 .stats--match ul>li:first-child>.entity__player--1 {
+        @include breakpoint($xsmall) {
+          @include left(85,percent,important);
+        }
+      }
+    }
+    .icon-avatar {
+      background-position: -185px -70px;
+    }
+  }
+  
+  .matchstats__blog .stats--match.Full ul > li:first-child > span:last-child,
+  .matchstats__blog .stats--match.Full ul > li:first-child > span:first-child,
+  .matchstats__blog .stats--match.Full ul > li:first-child > .entity__player--1,
+  .matchstats__blog .stats--match.Full ul > li:first-child > .entity__player--2 {
+    position: relative !important;
+    @include left(0);
+    @include top(30);
+    color: #fff;
+  }
+  
+  .one-entity {
+    border-bottom: 1px solid rgba(232, 232, 232, .1);
+    display: inline-block;
+    width: 100%;
+    padding: 4px 0;
+    .chart-key {
+      @include font-size(14,important);
+    }
+  }
+  
+  .one-entity:last-child {
+    border-bottom: none;
+  }
+  
+  .stats--match.Bar li:nth-child(4),
+  .stats--match.Full li:nth-child(3) {
+    border: none;
+  }
+  
+  .unrelated-1 li:nth-child(2) {
+    @include margin-top(45);
+    .one-entity {
+      //border-bottom: none !important;
+    }
+  }
+  
+  .Pi .stats--data {
+    @include padding-bottom(30);
+  }
+  
+  .Donut .stats--data {
+    @include padding-bottom(30);
+  }
+  
+  .stats-item .chart.pie {
+    @include left(0);
+  }
+  
+  .stats-bar {
+    padding: 0 10px 10px;
+    z-index: 9;
+    @include pull-left;
+    width: 100%;
+    li {
+      @include pull-left;
+      width: 33%;
+      min-height: 10px;
+      table {
+        margin: 0 auto;
+      }
+      .emoji {
+        position: relative;
+        cursor: pointer;
+        @include pull-right;
+      }
+      &:nth-child(2) {
+        @include text-align(center);
+        span {
+          @include pull-none;
+          display: inline-block;
+        }
+      }
+    }
+  }
+  
+  .stats-bar li {
+    @include pull-left;
+    width: 33%;
+  }
+  
+  .tpl-single__stats {
+    .player__name {
+      color: #fff;
+    }
+  }
+  
+  .stats-mins {
+    @include pull-left;
+  }
+  
+  .stats-repeater {
+    @include pull-left;
+    width: 100%;
+  }
+  
+  .stickySidebar {
+    display: none;
+    position: absolute;
+    @include breakpoint($medium) {
+      display: block;
+      @include right(-298);
+      width: 280px;
+    }
+    @include breakpoint($large) {
+      @include right(-318);
+      width: 300px;
+    }
+    @include breakpoint($xlarge) {
+      @include right(-333);
+      width: 315px;
+    }
+  }
+  
+  .stickySidebarfixed {
+    position: fixed!important;
+    @include right(18,important);
+  }
+  
+  .match-day .match-day__wrapper {
+    position: relative;
+  }

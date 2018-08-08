@@ -1,0 +1,12 @@
+%stats-transition {    
+    transform: skew(4deg) scale(1.02);
+    -webkit-transform: skew(4deg) scale(1.02);
+    -moz-transform: skew(4deg) scale(1.02);
+    -o-transform: skew(4deg) scale(1.02);
+    @include breakpoint($small $max-xsmall) {
+        transform: skew(4deg) scale(1.08);
+        -webkit-transform: skew(4deg) scale(1.08);
+        -moz-transform: skew(4deg) scale(1.08);
+        -o-transform: skew(4deg) scale(1.08);
+    }    
+}

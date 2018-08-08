@@ -1,0 +1,758 @@
+%team-result {
+  @include percentage-value(width, 100);
+
+  @include pull-left;
+
+  @include margin(15, 0, 0, 0);
+
+  @include breakpoint($medium) {
+    @include percentage-value(width, 70);
+
+    @include pull-right;
+
+    @include margin(15, 0, 0, 0);
+  }
+
+
+  h3 {
+    @extend %text-align-left;
+
+    @extend %txt-uppercase;
+
+    @include tertiary-semibold;
+
+    @include percentage-value(width, 100);
+
+    @include font-size(14);
+
+    @include color($white);
+
+    @include line-height(1.3);
+
+    @include margin(10, 0, 0, 0);
+
+    @include breakpoint($medium) {
+      @include text-align(right);
+
+      @include font-size(18);
+
+      @include padding(0, 20, 0, 0);
+
+      @include margin(0, 0, 0, 0);
+    }
+  }
+
+  span {
+    @include percentage-value(width, 100);
+
+    @include text-align(left);
+
+    @extend %txt-uppercase;
+
+    @include font-size(12);
+
+    @include padding(10, 0, 0, 0);
+
+    @include pull-left;
+
+    @include secondry-regular;
+
+    @include breakpoint($medium) {
+      @include text-align(right);
+
+      @include padding(0, 20, 0, 0);
+
+      @include font-size(14);
+    }
+  }
+}
+
+%team-logo {
+  @include percentage-value(width, 100);
+
+  @include pull-left;
+
+  @include breakpoint($medium) {
+    @include percentage-value(width, 30);
+
+    @include pull-right;
+  }
+
+
+  img {
+    @include px-to-rem(max-height, 80);
+
+    @include percentage-value(border-radius, 50);
+
+    @include padding(10, 10, 10, 10);
+
+    vertical-align: middle;
+    background: rgba(204, 204, 204, 0.2);
+  }
+}
+
+.results {
+  @include px-to-rem(height, 400);
+
+  @include breakpoint($medium) {
+    @include px-to-rem(height, 320);
+  }
+
+
+  .mu-item__wrapper {
+    @include px-to-rem(height, 360);
+
+    @include breakpoint($medium) {
+      @include px-to-rem(height, 280);
+    }
+
+
+    @include position(relative);
+
+    .mu-item__plane {
+      .team-vs {
+        @include color($mu-black);
+      }
+
+      .team-b__details {
+        h3 {
+          @include color($mu-black);
+        }
+      }
+
+      .team-a__details {
+        h3 {
+          @include color($mu-black);
+        }
+      }
+
+      .team-card {
+        @include color($mu-black);
+      }
+    }
+  }
+
+  .mu-item__result-info {
+    @include percentage-value(width, 90);
+
+    @include position(relative);
+
+    @include z-index(99);
+
+    @include margin-auto(0 auto);
+
+    @include margin-top(85);
+
+    @include breakpoint($medium) {
+      @include margin-top(30);
+    }
+
+
+    .team-a {
+      @include percentage-value(width, 35);
+
+      @include breakpoint($medium) {
+        @include percentage-value(width, 40);
+      }
+
+
+      @include pull-left;
+
+      @include color($white);
+
+      &__details {
+        @extend %team-result;
+      }
+
+      &__logo {
+        @extend %team-logo;
+      }
+    }
+
+    .team-vs {
+      @extend %text-align-center;
+
+      @include percentage-value(width, 30);
+
+      @include breakpoint($medium) {
+        @include percentage-value(width, 20);
+      }
+
+
+      @include pull-left;
+
+      @include primary-bold;
+
+      @include font-size(48);
+
+      @include color($white);
+
+      @include line-height(1.6);
+
+      @include position(relative);
+
+      vertical-align: middle;
+
+      &__time {
+        @include position(absolute);
+
+        @include top(-4);
+
+        @include font-size(14);
+
+        @include line-height(1);
+
+        @include left(45,percent);
+
+        @extend %txt-uppercase;
+      }
+
+      &__minutes {
+        @include position(absolute);
+
+        @include bottom(-20);
+
+        @include font-size(14);
+
+        @include line-height(1);
+
+        @include left(37,percent);
+      }
+    }
+
+    .team-b {
+      @extend %txt-uppercase;
+
+      @include color($white);
+
+      @include pull-right;
+
+      @include text-align(left);
+
+      @include percentage-value(width, 35);
+
+      @include breakpoint($medium) {
+        @include percentage-value(width, 40);
+      }
+
+
+      &__details {
+        @extend %team-result;
+
+        @include padding(0, 0, 0, 0);
+
+        @include breakpoint($medium) {
+          @include padding(0, 0, 0, 10);
+        }
+
+
+        h3 {
+          @include text-align(right,important);
+
+          @include breakpoint($medium) {
+            @include text-align(left,important);
+
+            @include padding(0, 0, 0, 10);
+          }
+        }
+
+        span {
+          @include text-align(right,important);
+
+          @include breakpoint($medium) {
+            //@include text-align(left);
+            @include text-align(left,important);
+
+            @include padding(0, 0, 0, 10);
+          }
+        }
+      }
+
+      &__logo {
+        @extend %team-logo;
+
+        @include pull-left;
+
+        img {
+          @include pull-right;
+        }
+      }
+    }
+
+    .mu-item__line-top {
+      @include percentage-value(width, 100);
+
+      @include breakpoint($medium) {
+        @include percentage-value(width, 40);
+      }
+
+
+      @include px-to-rem(height, 30);
+
+      //@include border-top(1, solid, $gray-dark);
+
+      @include padding(0, 0, 40, 0);
+
+      @include margin-auto(0 auto);
+
+      &-bottom {
+        @include px-to-rem(height, 25);
+
+        @include px-to-rem(width, 1);
+
+        @include margin-left(50,percent);
+
+        @include border-left(1, solid, $gray-dark);
+
+        @include margin-auto(0 auto);
+      }
+    }
+
+    .mu-item__line-bottom {
+      @include percentage-value(width, 100);
+
+      @include px-to-rem(height, 25);
+
+      @include border-bottom(1, solid, $gray-dark);
+
+      @include display(table);
+
+      @include margin-auto(0 auto);
+      clear: both;
+
+      @include breakpoint($medium) {
+        @include percentage-value(width, 40);
+
+        @include padding(30, 0, 0, 0);
+      }
+
+
+      &-top {
+        @include px-to-rem(height, 25);
+
+        @include px-to-rem(width, 1);
+
+        @include margin-left(50,percent);
+
+        @include border-left(1, solid, $gray-dark);
+
+       @include margin-auto(0 auto);
+      }
+    }
+  }
+}
+
+.team-card {
+  @include position(relative);
+
+  &__type {
+    @include px-to-rem(width, 10);
+
+    @include px-to-rem(height, 14);
+
+    @include right(-15);
+
+    @include border-radius(3);
+
+    @include position(absolute);
+
+    &.red {
+      @include background-color(red, 0.7);
+    }
+
+    &.yellow {
+      @include background-color(yellow, 0.7);
+    }
+  }
+}
+
+.grid-3, .grid-4 {
+  .results {
+    @include px-to-rem(height, 380);
+
+    .mu-item__wrapper {
+      @include px-to-rem(height, 340);
+    }
+
+    .mu-item__result-info {
+      @include margin-top(85);
+    }
+
+    .team-a {
+      @include percentage-value(width, 35);
+
+      &__logo {
+        @include percentage-value(width, 100);
+
+        img {
+          @include px-to-rem(max-height, 64);
+        }
+      }
+
+      &__details {
+        @include percentage-value(width, 100);
+
+        @include padding(0, 0, 0, 0);
+
+        @include pull-left;
+
+        h3 {
+          @include percentage-value(width, 100);
+
+          @include text-align(left);
+
+          @include font-size(14);
+        }
+
+        span {
+          @include percentage-value(width, 100);
+
+          @include text-align(left);
+        }
+      }
+    }
+
+    .team-b {
+      @include percentage-value(width, 35);
+
+      &__logo {
+        @include percentage-value(width, 100);
+      }
+
+      &__details {
+        @include percentage-value(width, 100);
+
+        @include pull-right;
+
+        @include padding(0, 0, 0, 0);
+
+        @include margin(0, 0, 0, 0);
+
+        h3 {
+          @include percentage-value(width, 100);
+
+          @include text-align(right);
+
+          @include font-size(14);
+
+          @include padding(0, 0, 0, 0);
+
+          @include margin(0, 0, 0, 0);
+        }
+
+        span {
+          @include percentage-value(width, 100);
+
+          @include text-align(right);
+
+          @include padding(0, 0, 0, 0);
+
+          @include margin(0, 0, 0, 0);
+        }
+      }
+    }
+
+    .team-vs {
+      @include percentage-value(width, 30);
+    }
+
+    .mu-item__line-top, .mu-item__line-bottom {
+      @include percentage-value(width, 100);
+    }
+  }
+}
+
+//Legue match results
+%team-heading {
+  @include color($mu-black);
+
+  @include tertiary-semibold;
+
+  @include font-size(14);
+
+  @include px-to-rem(min-height, 40);
+
+  @include line-height(1);
+
+  @include breakpoint($medium) {
+    @include font-size(18);
+
+    @include px-to-rem(min-height, 50);
+
+    @include line-height(1.3);
+  }
+}
+
+.results {
+  &.league {
+    @include px-to-rem(height, 420);
+
+    .mu-item__wrapper {
+      @include px-to-rem(height, 380);
+    }
+
+    .mu-item__line-top {
+      @include color($gray-dark);
+
+      @include border(0, solid, $gray-dark);
+
+      @include padding(0, 0, 85, 0);
+
+      @extend %text-align-center;
+
+      &-bottom {
+        @include opacity(0.6);
+
+        @include margin(10, 0, 0, 0);
+
+        @include px-to-rem(height, 20);
+
+        @include margin-auto(10 auto, important);
+      }
+
+      span {
+        @extend %text-align-center;
+
+        @extend %txt-uppercase;
+
+        @include color($black);
+      }
+    }
+
+    .mu-item__match-details {
+      ul {
+        @include percentage-value(width, 100);
+
+        @include pull-left;
+
+        li {
+          @include pull-left;
+
+          &:first-child {
+            @include percentage-value(width, 35);
+
+            @include breakpoint($medium) {
+              @include percentage-value(width, 43);
+            }
+
+
+            @extend %text-align-right;
+
+            h3 {
+              @extend %team-heading;
+
+              @include text-align(right);
+            }
+          }
+
+          &:nth-child(2) {
+            @include percentage-value(width, 30);
+
+            @include breakpoint($medium) {
+              @include percentage-value(width, 14);
+
+              @include margin(-7, 0, 0, 0);
+            }
+
+
+            @include breakpoint($large) {
+              @include margin(0, 0, 0, 0);
+            }
+
+
+            @extend %text-align-center;
+
+            @include font-size(36);
+
+            @include primary-bold;
+          }
+
+          &:last-child {
+            @include percentage-value(width, 35);
+
+            @include breakpoint($medium) {
+              @include percentage-value(width, 43);
+            }
+
+
+            @extend %text-align-left;
+
+            h3 {
+              @extend %team-heading;
+
+              @include text-align(left);
+            }
+          }
+        }
+
+        &:first-of-type {
+          li {
+            color: $brand-color !important;
+
+            h3 {
+              color: $brand-color !important;
+            }
+          }
+        }
+      }
+
+      .match-period {
+        @extend %text-align-center;
+
+        width: span(6 of 6 0);
+
+        @include pull-left;
+
+        @include margin(0, 0, 10, 0);
+
+        color: #949494;
+      }
+    }
+
+    .mu-item__line-bottom {
+      @include color($gray-dark);
+
+      @include border(0, solid, $gray-dark);
+
+      @include padding(0, 0, 0, 0);
+
+      @extend %text-align-center;
+
+      &-top {
+        @include opacity(0.6);
+
+        @include px-to-rem(height, 20);
+
+        @include margin-auto(10 auto, important);
+      }
+
+      span {
+        @extend %text-align-center;
+
+        @extend %txt-uppercase;
+
+        @include color($black);
+      }
+    }
+
+    .more-btn {
+      @include secondry-regular;
+
+      @include text-transform(uppercase);
+
+      @include pull-right;
+
+      @include px-to-rem(letter-spacing, 2.3);
+
+      @include color($mu-black);
+
+      i {
+        @include pull-right;
+
+        @include color($brand-color);
+
+        @include secondry-light;
+
+        @include font-size(25);
+
+        @include position(relative);
+
+        @include top(-4);
+
+        @include padding-left(15,percent);
+      }
+    }
+
+    .img-tag {
+      li {
+        @include color($default-text-color);
+
+        @include background-color(#E7E7E7);
+
+        border-left: 1px solid rgba(255, 255, 255, 1);
+      }
+    }
+
+    .sponsor-tag {
+      @include background-color(#E7E7E7);
+
+      border-left: 1px solid rgba(255, 255, 255, 1);
+    }
+
+    .stats-bar {
+      @extend  %article__stats-bar_icons;
+
+      @include border-top(1, solid, $gray-lighter);
+    }
+  }
+}
+
+.grid-3, .grid-4 {
+  .results {
+    &.league {
+      .mu-item__match-details {
+        ul {
+          @include percentage-value(width, 100);
+
+          @include pull-left;
+
+          li {
+            @include pull-left;
+
+            &:first-child {
+              @extend %text-align-right;
+
+              @include percentage-value(width, 35);
+
+              h3 {
+                @extend %team-heading;
+
+                @include font-size(14);
+
+                @include px-to-rem(min-height, 40);
+
+                @include line-height(1);
+
+                @include text-align(right);
+              }
+            }
+
+            &:nth-child(2) {
+              @include percentage-value(width, 30);
+
+              @extend %text-align-center;
+
+              @include font-size(30);
+
+              @include primary-bold;
+            }
+
+            &:last-child {
+              @include percentage-value(width, 35);
+
+              @extend %text-align-left;
+
+              h3 {
+                @extend %team-heading;
+
+                @include font-size(14);
+
+                @include px-to-rem(min-height, 40);
+
+                @include line-height(1);
+
+                @include text-align(left);
+              }
+            }
+          }
+        }
+      }
+
+      .mu-item__line-top {
+        @include padding(0, 0, 85, 0);
+
+        @include percentage-value(width, 100);
+      }
+    }
+  }
+}

@@ -1,0 +1,257 @@
+        .match-day {
+            &.profile {
+                img:not([src]) {
+                    display: block !important;
+                }
+                @include margin-bottom(20);
+                .img-holder {
+                    @include px-to-rem(height, 260);
+                    @include breakpoint($medium) {
+                        @include px-to-rem(height, 300);
+                    }
+                    @include breakpoint($xlarge) {
+                        @include px-to-rem(height, 350);
+                    }
+                    figure {
+                        position: relative !important;
+                    }
+                }
+                .match-day__info {
+                    @include pull-left;
+                    @include span(6 of 6 0);
+                    @include padding(0, 15, 15, 15);
+                    @include margin(30);
+                    & .profile__score {
+                        @include span(6 of 6 0);
+                        @include padding(0, 0, 20, 0);
+                        width: auto;
+                        @include pull-none;
+                        @include text-align(center);
+                        ul {
+                            @include breakpoint($small $max-small){
+                                @include display(table);
+                                margin:0px auto;
+                            }
+                            li {
+
+                                @extend %txt-uppercase;
+                                @extend %text-align-center;
+                                @include secondry-semibold;
+
+                                @include pull-none(important);
+                                @include breakpoint($small $max-small){
+                                    @include display(table-cell);
+                                }
+                                @include display(inline-block);
+                                width: auto;
+                                @include color($grey-text);
+                                @include font-size(14);
+                                @include breakpoint($medium) {
+                                    @include font-size(16);
+                                }
+                                @include border-right(1, solid, $border-line, 0.3);
+                                label {
+                                    @include font-size(40);
+                                    @include padding(20, 0, 0, 0);
+                                    @include color($mu-black);
+                                    @extend %text-align-center;
+                                    @extend %primary-font-thiner;
+                                }
+                                span {
+                                    @include font-size(14);
+                                    @include breakpoint($medium) {
+                                        @include font-size(16);
+                                    }
+                                }
+                                &:last-child {
+                                    @include border-right(0, solid, $associated-tag-bg);
+                                }
+                            }
+                            @include breakpoint($large) {
+                                //@include span(5 of 12 0);
+                                @include pull-none;
+                                @include margin-auto(0);
+                                @include text-align(center);
+                            }
+                        }
+                    }
+                    & .profile__details {
+                        @include span(6 of 6 0);
+                        ul {
+                            @include text-align(center);
+                            li {
+                                @extend %text-align-center;
+                                @extend %txt-uppercase;
+                                @include font-size(14,important);
+                                @include pull-none(important);
+                                @include display(block);
+                                width: auto;
+                                @include breakpoint($medium) {
+                                    @include font-size(16,important);
+                                    @include display(inline-block);
+                                    @include percentage-value(max-width, 30);
+                                }
+                                @include margin-top(14);
+                                @include color($grey-text);
+                                @include secondry-semibold;
+                                label {
+                                    @include color($mu-black);
+                                    @include secondry-regular; //@extend %text-capitalize;
+                                    @include margin-bottom(10);
+                                    @include margin-top(10);
+                                    @include font-size(16);
+                                    text-transform: none;
+                                }
+                            }
+                        } // @include breakpoint($large) {
+                        //     //@include span(8 of 12 0);
+                        //     width: 83%;
+                        //     @include pull-none;
+                        //     @include margin-auto(0);
+                        //     ul {
+                        //         li {
+                        //             @include pull-left;
+                        //             @include margin-top(0);
+                        //             @include percentage-value(width, 33);
+                        //         }
+                        //     }
+                        // }
+                        .btn-wrapper {
+                            @include percentage-value(width, 100);
+                            @include margin-top(15);
+                            @include text-align(center);
+                            @include pull-left;
+                        }
+                    }
+                }
+                & .statsbar {
+                    //@include position(relative);
+                }
+                .mu-item__sponsor {
+                    @include position(absolute);
+                    @include left(0);
+                    @include right(0);
+                    @include top(0);
+                    &__wrapper {
+                        @include background($mu-black);
+                        @include pull-right;
+                        span {
+                            @include color($player-bg);
+                        }
+                    }
+                }
+            }
+            .profile-pic {
+                @include position(relative);
+                @include percentage-value(width, 100);
+                @include z-index(99);
+                @include margin-top(-80);
+                @include pull-left;
+                @include top(0);
+                @include breakpoint($medium) {
+                    @include margin-top(-100);
+                }
+                ul {
+                    li {
+                        @include percentage-value(width, 100);
+                        @include pull-left;
+                        @include color($white);
+                        @extend %text-align-center;
+                        img {
+                            @extend %profile;
+                        }
+                        &:first-child {
+                            @extend %txt-uppercase;
+                            @include font-size(24);
+                            @include tertiary-semibold;
+                            @include padding(0, 0, 15, 0);
+                            @include breakpoint($medium) {
+                                @include font-size(32);
+                                @include tertiary-semibold;
+                            }
+                        }
+                        &:last-child {
+                            @include font-size(16);
+                            @include color($black);
+                            @include secondry-semibold;
+                            @extend %txt-uppercase;
+                        }
+                        h2 {
+                            @include color($white);
+                        }
+                    }
+                }
+                &__thumb {
+                    @include px-to-rem(width, 50);
+                    @include px-to-rem(height, 66);
+                    background-size: cover !important;
+                    background-position: top center !important;
+                    text-indent: 99999px !important;
+                    border-radius: 4px;
+                    @include margin-auto(0 auto);
+                    @include margin-bottom(16);
+                    @include border-transparent(1, solid, $grey-text, 0.4);
+                    background-position: center;
+                    overflow: hidden;
+                    @include breakpoint($medium) {
+                        @include px-to-rem(width, 57);
+                        @include px-to-rem(height, 76);
+                    }
+                    img {
+                        @include breakpoint($medium) {
+                            min-height: 76px;
+                            min-width: 57px;
+                        }
+                        @include breakpoint($small $max-xsmall) {
+                            max-height: 66px;
+                            max-width: 50px;
+                        }
+                    }
+                    .profile-photo {
+                        @include background-color ($black);
+                        @include pull-left;
+                    }
+                    .icon-avtar.no-avatar {
+                        background-image: none !important;
+                    }
+                }
+            }
+        }
+
+        .grid-12 {
+            .match-day {
+                &.profile {
+                    .img-holder {
+                        // @include important-value(height, 260);
+                        // @include breakpoint($medium) {
+                        //     @include important-value(height, 300);
+                        // }
+                        // @include breakpoint($xlarge) {
+                        //     @include important-value(height, 350);
+                        // }
+                        // figure {
+                        //     position: relative !important;
+                        //     @include percentage-value(height, 100);
+                        // }
+                        height: 0 !important;
+                        @include padding-bottom(42.55,percent);
+                        position: relative;
+                        width: 100%;
+                        figure {
+                            position: absolute !important;
+                            @include percentage-value(height, 100);
+                        }
+                    }
+                    .match-day__info {
+                        @include padding-bottom(70);
+                    }
+                }
+            }
+        }
+.profile {
+    .mu-item__gradient {
+        @extend .mu-item__tint;
+    }
+}
+
+

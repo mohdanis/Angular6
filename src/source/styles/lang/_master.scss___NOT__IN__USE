@@ -1,0 +1,90 @@
+//@import "../components/common/global";
+//@import "../components/common/statsbar";
+//@import "../components/common/top-panel";
+//@import "../components/common/ad-block";
+@import "../components/common/cookie-policy";
+//@import "../partials/base/default-layouts";
+//end base
+//
+@import "../components/images";
+@import "../components/videos";
+@import "../components/mu-items";
+@import "../components/trivia";
+
+@import "../components/associated-tags";
+@import "../components/quotes";
+@import "../components/external-articles";
+@import "../components/gallery";
+@import "../components/poll";
+@import "../components/quiz";
+@import "../components/footer";
+@import "../components/player-profile";
+@import "../components/timeline";
+@import "../page/news-article";
+
+@import "../page/home-page";
+@import "../page/match-day"; 
+@import "../page/matches"; 
+@import "../page/player-detail"; 
+@import "../components/audio";
+@import "../components/chat";
+@import "../components/fixtures";
+@import "../components/results";
+@import "../components/lineup";
+@import "../components/image-adaptive";
+@import "../components/header";
+@import "../components/scorelist";
+@import "../components/live-table";
+@import "../components/search";
+@import "../components/news-listing";
+@import "../components/info-graphics";
+@import "../components/matchstats";
+@import "../components/hero-banner";
+@import "../components/collection"; 
+@import "../components/carousal";
+@import "../components/dfp-ads";
+@import "../components/superherovideo";
+@import "../components/superherobanner";
+@import "../components/spotlight";
+@import "../components/verticalstrips";
+@import "../components/news-grid";
+@import "../components/team-grid";
+//@import "../components/top-header";
+@import "../components/blog-card";
+@import "../components/accessibility";
+//@import "../components/navigation-header";
+//@import "../components/hamburger";
+//@import "../components/page-footer";
+@import "../components/article-detail";
+@import "../components/united-profile";
+@import "../components/coming-soon";
+@import "../components/downloads";
+@import "../components/print-product";
+//@import "../components/buttons";
+@import "../components/common/table";
+@import "../components/common/text";
+@import "../components/alerts";
+@import "../components/common/forms";
+@import "../components/match-stats"; //new design
+@import "../components/genericform";//form for editor
+
+
+
+@import "styleguide/styleguide-header";
+@import "styleguide/styleguide-menu";
+@import "styleguide/styleguide-common";
+
+//Templates
+
+@import "../templates/contactus";
+@import "../templates/download";
+@import "../templates/hero-accordian";
+
+@import "../templates/basic";
+@import "../templates/sign-post";
+@import "../templates/table";
+@import "../templates/sub-nav";
+@import "../templates/touchswipe";
+@import "../templates/promo-box";
+
+

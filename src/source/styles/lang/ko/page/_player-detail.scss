@@ -1,0 +1,35 @@
+.player-detail {
+    .player-history {
+        &__group {
+            @include breakpoint($medium) {
+                width: 100%;
+            }
+            &__float {
+                &:nth-child(1),
+                &:nth-child(4) {
+                    width: auto;
+                    min-width: 150px;
+                }
+                &:nth-child(2) {
+                   width: auto;
+                   min-width: 150px;
+                }
+                &:nth-child(3),
+                &:nth-child(5) {
+                    width: auto;
+                    min-width: 150px;
+                }
+            }
+        }
+    }    
+}
+
+.stats-passing-charts {
+   .passing-percentage {
+        @include font-size(9,important);
+    } 
+}
+.goals-passing-charts li text,.stats-passing-charts  li text {
+    @include font-size(4.5,important);
+}
+

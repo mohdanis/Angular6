@@ -1,0 +1,10 @@
+.tpl-basic {
+    .basic-tpl-block {
+        h1, h2 {
+            @include line-height(1.1);
+        }
+    }
+}
+.hero__accordian .home-hero__title, .tpl-basic .basic-tpl-block h1 {
+	@include line-height(1.2, en);
+}

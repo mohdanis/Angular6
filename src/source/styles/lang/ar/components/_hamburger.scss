@@ -1,0 +1,10 @@
+.hamburger {
+    &.active {
+        span:before {
+            transform: rotate(-45deg);
+        }
+        span:after {
+            transform: rotate(45deg);
+        }
+    }
+}

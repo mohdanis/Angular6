@@ -1,0 +1,11 @@
+.vertical-strips {
+    &__child {
+        .vertical-strips {
+            &__image {
+                @include breakpoint($small $medium) {
+                    transform: translate(50%);
+                }
+            }
+        }
+    }
+}

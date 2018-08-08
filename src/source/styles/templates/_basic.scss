@@ -1,0 +1,692 @@
+.tpl-basic {
+    @include background($white); //@extend .grid-12;
+    @include span(10 of 12 0);
+    @include breakpoint($small $max-xsmall) {
+        @include padding-right(16);
+        @include padding-left(16);
+        @include span(6 of 6 0);
+    }
+    @include pull-none;
+    &.tmpls-hero-heading {
+        @include px-to-rem(max-width, 670);
+        @include left(0);
+        @include right(0);
+    }
+    &.tmpls-hero-heading+.tpl-basic {
+        @include percentage-value(width, 100);
+        @include pull-left;
+    }
+    @include margin-left(auto);
+    @include margin-right(auto); // @include breakpoint($medium) {
+    //     @include span(12 of 12);
+    // }
+    &.skin {
+        &-grey {
+            @include background($mu-grey);
+        }
+        &-white {
+            @include background($white);
+        }
+    }
+    .basic-tpl__info {
+        @include pull-left;
+    }
+    .basic-tpl-block {
+        @include span(6 of 6 0);
+        @include margin-auto(30);
+        @include margin-bottom(0);
+        @include position(relative);
+        @include padding(0, 0, 16, 0);
+
+        @include breakpoint($large) {
+            @include padding(0, 0, 30, 0); //@include span(6 of 12 0);
+            //@include pull-none;
+        }
+        @include px-to-rem(max-width, 670);
+        @include pull-none;
+        @include margin-left(auto);
+        @include margin-right(auto);
+
+
+        h1 {
+            @extend %heading1;
+            @include breakpoint($small $max-xsmall) {
+                @include font-size(40)
+            }
+            @include margin-bottom(16);
+        }
+        h2 {
+            @extend %new-heading2-alt;
+            @include margin-bottom(12);
+            &.htmpls-hero__title {
+                @include font-size(40);
+                @include breakpoint($xsmall) {
+                    @include font-size(56);
+                }
+                @include breakpoint($large) {
+                    @include font-size(72);
+                }
+            } //@include pull-none(important);
+            @include span(6 of 6 0);
+        }
+
+        h3 {
+            @extend %paragraph-bold;
+            @include margin-bottom(16);
+            @include text-transform(none);
+            @include line-height(26, px);
+            a {
+                text-decoration: none;
+            }
+        }
+        &.heading1 {
+            h1 {
+                @extend %new-heading2;
+                @include color($mu-black);
+                @include margin-bottom(0);
+            }
+        }
+        .large-summary {
+            @include secondry-light;
+            @include font-size(24);
+            @include px-to-rem(line-height, 34); //@include line-height(1.42);
+            letter-spacing: -0.2px;
+            @include text-align(left);
+            color: $mu-black;
+            @include margin-bottom(14);
+        }
+        p {
+            @include font-size(20);
+            @include line-height(30, px);
+            @include margin-bottom(12);
+            word-wrap: break-word;
+            @include color($vertical-strips);
+            @include secondry-light; // @include breakpoint($large) {
+            //     @include font-size(20);
+            // }
+            &.intro {
+                @include font-size(24);
+                @include line-height(36, px);
+                color: $mu-black;
+                @include px-to-rem(letter-spacing, -0.1);
+                @include secondry-light;
+            }
+        }
+        .basic_tpl_summary {
+            @include margin(40, 0, 40, 0);
+            p {
+                @include font-size(24);
+                @include line-height(28, px);
+                @include px-to-rem(letter-spacing, -0.2);
+                @include secondry-light;
+                @include margin-bottom(20);
+                @include breakpoint($large) {
+                    @include line-height(28, px);
+                }
+            }
+        }
+        .basic_tpl_desc {
+            p {
+                @include background(transparent !important);
+            }
+            span {
+                @include background(transparent !important);
+            }
+        } // .btn-wrapper {
+        //     @include margin-top(16);            
+        //     @include pull-left;
+        //     div {
+        //         @include margin-right(16);
+        //     }
+        // }
+        .cta-success {
+            @include padding(14, 0, 14, 0);
+            @include pull-left;
+            height: 44px;
+            @include margin-top(16);
+            @include margin-right(16);
+        } // .white-btn-skew,
+        // .red-btn-skew {
+        //     @include margin-top(16);
+        //     @include margin-right(16);
+        // }
+        // .white-btn-skew {
+        //     border: 1px solid #1a1a1a;
+        // }
+        &.basic-image {
+            @include percentage-value(max-width, 100);
+        }
+        &.iframeresize {
+            .basic-tpl-block__intro {
+                @include percentage-value(max-width, 100);
+                @include pull-left;
+                @include clear(both);
+            }
+            @include percentage-value(max-width, 100);
+            @include pull-left;
+            .iframeresize {
+                @include percentage-value(width, 100);
+                @include pull-left;
+                @include clear(both);
+                @include overflow(hidden);
+                @include position(relative);
+                @include margin-bottom(24);
+            }            
+            .resize-loader {
+                @include px-to-rem(min-height, 270);        
+                @include percentage-value(width, 100);
+                @include pull-left;
+                .loader-container {
+                    @include padding-top(100, important);
+                    @include background($white);
+                }
+            }
+            .iframeresizesrc {
+                @include pull-left;
+                @include percentage-value(width, 100);
+                @include px-to-rem(min-height, 600);                
+            }
+        }
+    }
+    .basic-image {
+        @include breakpoint($small $max-xsmall) {
+            @include padding-top(16);
+            @include padding-bottom(16);
+        }
+        @include padding-top(24);
+        @include padding-bottom(24);
+        @include pull-none;
+        @include overflow(hidden);
+        @include margin-auto(0);
+        @include display(block);
+
+        h1,
+        h2 {
+            @include text-align(left); //width: 100%;
+            //@include margin-auto(0);
+            //@include breakpoint($medium) {
+            //    width: 50%
+            //}
+        }
+        .basic__info {
+            @include text-align(left);
+            @include margin-top(16);
+            @include span(12 of 12 0);
+            @include breakpoint($medium) {
+                @include span(6 of 12 2);
+            }
+            p:last-child {
+                @include margin-bottom(28);
+            }
+        }
+        .basic__img-holder {
+            @include margin-top(16);
+            @include span(12 of 12 0);
+            @include aspect-ratio(16, 9);
+            @include position(relative);
+            figure {
+                @include position(absolute, important);
+                @include top(0);
+                @include left(0);
+                @include right(0);
+                @include bottom(0);
+                background-size: cover!important;
+                background-position: top center!important;
+                height: 100%;
+            }
+            img {
+                @include margin-bottom(10);
+            }
+            @include breakpoint($medium) {
+                @include span(6 of 12 0);
+                @include aspect-ratio(4, 3);
+            }
+            @include breakpoint($xlarge) {
+                @include aspect-ratio(16, 9);
+            }
+        }
+    }
+    .carousal__skin-title {
+        @include font-size(16);
+        @include tertiary-semibold;
+        @include color($mu-black);
+        letter-spacing: 0.5px;
+    }
+}
+
+.clear-all-section {
+    @include clear(both);
+}
+
+.tmpls {
+    &-container {
+        background: #fff;
+        @include display(block);
+        @include clear(both);
+        @include percentage-value(width, 100); // &.scEnabledChrome{
+        //     .scEnabledChrome[sc-part-of] {
+        //         @include pull-left;
+        //         @include percentage-value(width,100); 
+        //     }
+        // }
+        a {
+            @include color($vertical-strips);
+            @include font-size(18);
+            @include secondry-regular;
+            text-decoration: none;
+            border-bottom: 1px solid #9c9c9c;
+            &:hover {
+                border-bottom: 1px solid #c70101;
+            }
+        }
+        .link-btn-white a {
+            border-bottom: none !important;
+        }
+        .content-center {
+            .red-btn-skew {
+                @include margin-bottom(16);
+            }
+        }
+        .red-btn-skew+.white-btn-skew {
+            @include margin-bottom(16);
+            @include margin-left(0);
+            @include breakpoint($xsmall) {
+                @include margin-top(0);
+                @include margin-left(16);
+            }
+        }
+        .red-btn-skew a,
+        .white-btn-skew a,
+        .home-article-detail__video-panel a,
+        .mu-item a,
+        .carousal a {
+            border-bottom: none !important;
+            &:hover {
+                border-bottom: none !important;
+            }
+        }
+        .home-article-detail__video-panel {
+            .mu-item__info {
+                bottom: 10px;
+            } // .mu-item__gradient {
+            //     display: none;
+            // }
+        } // .mu-item__info {
+        //     a {
+        //         border: none !important;
+        //         &:hover {
+        //             border: none !important;
+        //         }
+        //     }
+        // }
+        @include breakpoint($largest) {
+            @include container($susy-largest);
+        }
+        max-width: 1920px;
+        @include pull-none(important);
+        .card-large {
+            // @include percentage-value(width, 100);
+            // @include px-to-rem(height, 230);
+            // @include breakpoint($xsmall) {
+            //     // @include px-to-rem(height, 325);
+            // }
+            // @include breakpoint($medium) {
+            //     // @include px-to-rem(height, 326);
+            // }
+            // @include breakpoint($large) {
+            //     @include px-to-rem(height, 423);
+            // } //@include breakpoint($xlarge) {
+            // //  @include px-to-rem(height, 550);
+            // //}
+            // @include breakpoint($xxlarge) {
+            //     @include px-to-rem(height, 550);
+            // }
+            // @include breakpoint($largest) {
+            //     @include px-to-rem(height, 700);
+            // }
+            .img-holder {
+                @include percentage-value(width, 100);
+                @include percentage-value(height, 100);
+                @include important(position, relative);
+                @include aspect-ratio(1, 1);
+                @include breakpoint($xsmall) {
+                    @include aspect-ratio(2.35, 1);
+                }
+            }
+        }
+        .img-holder {
+            .adaptive {
+                @include percentage-value(height, 100);
+                @extend %cover-img-initial;
+            }
+        }
+        .carousal-destination {
+            border: none;
+            @include font-size(14);
+            &:hover {
+                border: none;
+            }
+        }
+        .accordian__content {
+            section {
+                @include pull-left;
+                @include percentage-value(width, 100);
+            }
+        } //In mobile not show prev and next
+        @include breakpoint($small $max-small) {
+            .bx-prev,
+            .bx-next {
+                @include display(none);
+            }
+        }
+    }
+    &-hero {
+        // .tpl-basic {
+        //     @include position(relative);
+        //     @include top(-60);
+        //     @include z-index(999);
+        //     background: none;
+        //     @include margin-bottom(-90);
+        //     @include breakpoint($large) {
+        //         @include top(-85);
+        //     }
+        //     .basic-tpl-block {
+        //         margin: 0px auto 30px;
+        //         @include position(relative);
+        //     }
+        // }
+        .tpl-basic.tmpls-hero-heading {
+            @include position(absolute);
+            @include bottom(0);
+            background: none;
+            @include z-index(99);
+            .basic-tpl-block:after {
+                clear: both;
+                content: " ";
+                display: table;
+            }
+        }
+        h2.htmpls-hero__title {
+            color: $white;
+            @include margin-bottom(0); // @include margin-bottom(60);
+            // @include breakpoint($large) {
+            //     @include margin-bottom(85);
+            // }
+        }
+        &__intro {
+            @include px-to-rem(max-width, 670); //@include breakpoint($small $max-xsmall) {
+            //   @include padding-right(16);
+            //   @include padding-left(16);
+            //}
+            @include margin-left(auto);
+            @include margin-right(auto);
+            @include pull-none(important);
+            @include span(6 of 6 0);
+            h6 {
+                @include font-size(24);
+                @include line-height(36, px);
+                @include margin-bottom(20);
+                @include secondry-light;
+                color: $mu-black;
+                @include px-to-rem(letter-spacing, -0.1);
+            }
+            p {
+                @include font-size(20);
+            }
+        }
+    }
+    &-row {
+        // @include breakpoint($medium) {
+        //      border-bottom: 1px solid rgba(204, 204, 204, .5);
+        // }
+        @include display(inline-block);
+        @include percentage-value(width, 100);
+        @include margin-bottom(10);
+    }
+}
+
+.expeditor {
+    .tmpls-container .tpl-basic {
+        @include pull-left;
+        @include percentage-value(width, 100);
+    }
+}
+.tmpls-container {
+    .carousal {
+        .carousal-width {
+            .slick-list {
+                @include breakpoint($large){
+                    @include margin-left(18);
+                }
+                @include breakpoint($xxlarge){
+                    @include margin-left(23);
+                }
+            }
+        }
+        &.hero-carousal__sponsor {
+            .container .carousal__title {
+                
+                @include breakpoint($large){
+                     @include margin-left(4);
+
+                }
+                 @include breakpoint($xxlarge){
+                     @include margin-left(8);
+
+                }
+                
+            }
+        }
+    }
+    
+}
+.carousal.hero-carousal__sponsor .container .carousal__title
+
+
+.align-left {
+    @extend %text-align-left;
+}
+
+.align-right {
+    @extend %text-align-right;
+}
+
+.align-center {
+    @extend %text-align-center;
+}
+
+.roman__list {
+    list-style-type: upper-roman;
+}
+
+.list-titled {
+    list-style-type: none;
+    h3 {
+        @include font-size(28);
+        @include line-height(26, px);
+        @include primary-regular;
+        @include margin-bottom(6);
+    } // @include secondry-regular;
+    li {
+        @include margin-bottom(32);
+        p {
+            @include color($vertical-strips);
+        }
+    }
+}
+
+.list-disc {
+    list-style-type: disc;
+    @include font-size(18);
+    @include line-height(24, px);
+    @include margin-bottom(20);
+    @include color($vertical-strips); // @include breakpoint($large) {
+    //   @include font-size(20);
+    //   @include line-height(32,px);
+    // }
+    @include margin-left(20);
+    li {
+        @include margin-bottom(16);
+    }
+}
+
+.divider {
+    @include margin(32, 0, 32, 0);
+    border-bottom: 1px solid #e4e4e4;
+    hr {
+        @include display(none);
+    }
+}
+
+.basic_template_summary {
+    @include margin(40, 0, 40, 0);
+}
+
+.card-xl {
+    @include aspect-ratio(3, 4);
+    @include breakpoint($xsmall) {
+        @include aspect-ratio(16, 9);
+    }
+    @include breakpoint($medium) {
+        @include aspect-ratio(2.35, 1);
+    }
+    height: auto !important; // .mu-item__gradient {
+    //     @include important(display, none);
+    // }
+}
+
+// .tmpls-container .grid-6 {
+//     @include breakpoint($small $max-xsmall) {
+//         @include span(6 of 6);
+//     }
+// }
+.tmpls-container {
+    .carousal .container {
+        max-width: none;
+        @include padding-right(0);
+        @include padding-left(0);
+    }
+    .container {
+        @include span(6 of 6 0);
+        @include px-to-rem(max-width, 670);
+        @include pull-none;
+        @include breakpoint($small $max-xsmall) {
+            @include padding-right(16);
+            @include padding-left(16);
+        }
+        .contact-us__block {
+            @include padding-right(0);
+            @include padding-left(0);
+        }
+        &.main {
+            max-width: none;
+        }
+    }
+    ol {
+        @extend .list-disc;
+        list-style-type: decimal;
+    }
+    .contact-us__block__description ul {
+        @extend .list-disc;
+    }
+}
+
+.expeditor {
+    .tmpls-container {
+        .container {
+            @include percentage-value(width, 100);
+        }
+    }
+}
+
+.expeditor {
+    .tmpls-container {
+        .carousal {
+            .container {
+                @extend .container;
+                @include breakpoint($xsmall $max-small) {
+                    width: 100%;
+                    max-width: 100%;
+                }
+                @include breakpoint($xsmall) {
+                    //max-width: 552px;
+                    max-width: 500px;
+                }
+                @include breakpoint($medium) {
+                    //max-width: 744px;
+                    max-width: 582px;
+                }
+                @include breakpoint($large) {
+                    //max-width: 1008px;
+                    max-width: 898px;
+                }
+                @include breakpoint($xlarge) {
+                    //max-width: 1260px;
+                    max-width: 1196px;
+                }
+                @include breakpoint($xxlarge) {
+                    max-width: 1196px;
+                }
+                @include breakpoint($largest) {
+                    max-width: 1196px;
+                }
+            }
+        }
+    }
+}
+
+
+.basic-tpl-block_row {
+    @include margin-top(24);
+}
+
+.tmpls-hero {
+    .tpl-basic {
+        width: 100%;
+        float: left;
+        .tmpls-hero__intro {
+            @include padding-right(0);
+            @include padding-left(0);
+        }
+    }
+    &.card-xl {
+        @include margin-bottom(24);
+        @include pull-left;
+        @include percentage-value(width,100);
+    }
+}
+
+.main-container {
+    >div:first-child {
+        min-height: 0px !important; // @include px-to-rem(min-height, 0);
+    }
+}
+
+.tmpls-container {
+    .basic-tpl-block {
+        /*h1{
+            @include margin-bottom(12);
+        } */
+        .basic__info {
+            p.title strong,
+            .boxtop p.title {
+                @include color($mu-red);
+                @include margin(0, 0, 0, 0);
+                @include padding(10, 10, 10, 0);
+            }
+        }
+    }
+    .home-row {
+        // @include margin-bottom(16);
+        @extend %row-gutter;
+    }
+    .carousal-dark a {
+        color: white;
+    }
+}
+
+.align-center {
+    .red-btn-skew {
+        margin-bottom: 16px;
+    }
+}

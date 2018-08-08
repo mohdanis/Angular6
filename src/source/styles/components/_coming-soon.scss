@@ -1,0 +1,20 @@
+.coming-bg{
+    background:url($base-path + "texture.png") repeat;
+    @include pull-left;
+    @include percentage-value(width, 100);
+    @include px-to-rem(min-height, 500);
+    @include margin-bottom(-20);
+}
+.coming-txt {
+    @include primary-bold;
+    @include color($gray-dark);
+    @include font-size(50);
+    @include text-align(center);
+    @include margin-auto(0);
+    @include display(table);
+}
+@include breakpoint($small) {
+    .coming-bg{
+        @include px-to-rem(min-height, 300);
+    }
+}

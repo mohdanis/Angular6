@@ -1,0 +1,16 @@
+.poll {
+    &__options {
+        ul {
+            li {
+                i {
+                    transform: skew(10deg) scale(1.1);
+                }
+            }
+        }
+    }
+}
+.poll-non-desc .grid-12 {
+    .poll__wrapper {
+        transform: translate(50%, -50%);
+    }
+}

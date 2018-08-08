@@ -1,0 +1,39 @@
+<div data-module="news-listing" data-client-rendering="true" id="recommendedItem">
+    <section class="main" data-container="news-listing"  *ngIf="herodata.length">
+            <div>
+                    <div  class="grid-12 newslisting-hero-label">
+                      <div class="hero__container">
+                          <div class="news-list__block">
+                              <div *ngFor="let item of herodata"  class="hero-item news-list-hero-item">
+                                      <div>
+                                              <app-hero [item]="item"></app-hero>
+                                      </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  </div>
+    </section>
+</div>
+<div class="main-container">
+                <div class="news-list__bg newslistBgAccessibility">
+                    <section class="main">
+                        <div class="news-list__bg">
+                            <div class="container  main">
+                                <div class="news-list__block lisitingComponent">
+                                    <div class="grid-12" *ngIf="listitems.length">
+                                        <div class="news-list__item" *ngFor="let item of listitems">
+                                            <!-- <app-listing [item]="item" [parentitem]="listitems" (parentItemArr)="getParentItem($event)"></app-listing> -->
+                                            <app-listing [item]="item" [parentitem]="listitems"></app-listing>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row newslisting-aria-label" style="text-align: center;position: relative;">
+                                    <button tabindex="0" id="loadMore" class="white-btn-skew-v2" (click)="loadMore()" (keypress)="checkIfEnterKeyPressed($event,'loadMore')" aria-label="Show Older stories"><span class="see-older-stories">Load More</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            

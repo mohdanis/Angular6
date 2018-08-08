@@ -1,0 +1,48 @@
+//Alerts
+.alert-success {
+  @extend %alert-success;
+}
+
+.alert-danger {
+  @extend %alert-danger;
+}
+
+.alert-info {
+  @extend %alert-info;
+}
+
+.alert-warning {
+  @extend %alert-warning;
+}
+
+.popup-alert {
+  @extend %alert-warning;
+}
+
+.dialog-content {
+  @extend %dialog-content;
+}
+
+.dialog-header {
+  @extend %dialog-header;
+}
+
+.dialog-footer {
+  @extend %dialog-footer;
+}
+
+.dialog-body {
+  @extend %dialog-body;
+}
+
+.close-icon {
+  @extend %close-icon;
+}
+
+.modal {
+  @extend %modal;
+}
+
+.none {
+  @include display(none);
+}

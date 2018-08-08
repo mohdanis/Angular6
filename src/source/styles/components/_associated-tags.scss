@@ -1,0 +1,20 @@
+.associated-tag {
+    @extend ul;
+    @include pull-left;
+    @include text-align(left);
+    @include percentage-value(width, 100);
+    li {
+        @include pull-left;
+        a {
+            @include border-radius(2);
+            @include background-color($white-lighter);
+            @include secondry-semibold;
+            @extend %text-capitalize;
+            @include color($mu-black);
+            @include display(inline-block);
+            @include padding(10, 10, 10, 10);
+            @include margin(0, 8, 8, 0);
+            @include font-size(16);
+        }
+    }
+}

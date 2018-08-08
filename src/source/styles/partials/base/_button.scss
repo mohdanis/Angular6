@@ -1,0 +1,10 @@
+.btn {
+  &_primary {
+    border: 1px solid $border-dark;
+    @include tertiary-regular;
+    @include font-size(14);
+    background-color: #fff;
+    @include padding(12, 24, 12, 24);
+    cursor: pointer;
+  }
+}

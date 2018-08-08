@@ -1,0 +1,11 @@
+.menu {
+  ul {
+    @extend %navul;
+
+    a {
+      //@extend %text-uppercase;
+
+      @extend %anchor;
+    }
+  }
+}

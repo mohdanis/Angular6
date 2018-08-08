@@ -1,0 +1,501 @@
+//Visually hidden but available screen readers
+%visually-hidden {
+    @include position(absolute);
+    clip: rect(0 0 0 0);
+    clip: rect(0, 0, 0, 0);
+    max-width: 100%;
+    opacity: 0 !important;
+}
+
+//Clearfix
+%clearfix {
+    *zoom: 1;
+    &:before,
+    &:after {
+        content: " ";
+        @include display(table);
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+//Container row
+%container-row {
+    @include span(6 of 6 0);
+    @include breakpoint($medium) {
+        @include span(12 of 12 0);
+    }
+    @include breakpoint($large) {
+        @include span(12 of 12 0);
+    }
+    @include breakpoint($xlarge) {
+        @include span(12 of 12 0);
+    }
+}
+
+// width
+%full-width {
+    @include span(12 of 12 0);
+    @include pull-left;
+}
+
+%full-height {
+    height: 100%;
+}
+
+//Reset for all form elements
+%reset {
+    @include margin(0, 0, 0, 0);
+    @include padding(0, 0, 0, 0);
+    @include margin(0, 0, 0, 0);
+    @include pull-left;
+    @include border(0, solid, $brand-color);
+    @include span(12 of 12 0);
+}
+
+//card minimum height
+%card-min-height {
+    min-height: $card-min-height;
+}
+
+//Gutter
+%gutter {
+    @include margin-bottom(0);
+}
+
+//Text Transform
+%txt-uppercase {
+    text-transform: uppercase;
+}
+
+%txt-lowercase {
+    text-transform: lowercase;
+}
+
+%text-capitalize {
+    text-transform: capitalize;
+}
+
+%txt-initial {
+    text-transform: initial;
+}
+
+%txt-none {
+    text-transform: none;
+}
+
+//Text Alignment
+%text-align-left {
+    @include text-align(left);
+}
+
+%text-align-right {
+    @include text-align(right);
+}
+
+%text-align-center {
+    @include text-align(center)
+}
+%text-align-justify {
+    @include text-align(justify);
+}
+
+//margin auto
+%margin-auto {
+    @include margin-auto(0 auto);
+}
+
+//Text Style
+%font-bold {
+    font-weight: bold;
+}
+
+%font-italic {
+    font-style: italic;
+}
+
+%font-underline {
+    text-decoration: underline;
+}
+
+%font-underline-none {
+    text-decoration: none;
+}
+
+%font-normal {
+    font-weight: normal;
+}
+
+//horizontal line
+%hr {
+    @include border-bottom(1, solid, $gray);
+}
+
+//Messaging and alerts
+%alert {
+    @include padding(15, 15, 15, 15);
+    @include margin(0, 0, 16, 0);
+    @include border(1, solid, transparent);
+    @include border-radius(4);
+    @include font-size(14);
+    @include secondry-regular;
+    @include line-height(18,px);
+    strong {
+        font-weight: bold;
+    }
+    i {
+        @include pull-right;
+        @include font-size(21);
+        @include line-height(1,px);
+        @include color($black);
+        @extend %font-bold;
+        @include opacity(0.2);
+        @extend %font-normal;
+        cursor: pointer;
+        &:hover {
+            @include opacity(1);
+            @extend %font-normal;
+            cursor: pointer;
+        }
+    }
+}
+
+%alert-danger {
+    @extend %alert;
+    @include border(1, solid, $danger-border);
+    @include background($danger-bg);
+    @include color($danger);
+}
+
+%alert-success {
+    @extend %alert;
+    @include border(1, solid, $success-border);
+    @include background($success-bg);
+    @include color($success);
+}
+
+%alert-info {
+    @extend %alert;
+    @include border(1, solid, $info-border);
+    @include background($info-bg);
+    @include color($info);
+}
+
+%alert-warning {
+    @extend %alert;
+    @include border(1, solid, $warning-border);
+    @include background($warning-bg);
+    @include color($warning);
+}
+
+//Close icon for popup
+%close-icon {
+    @include pull-right;
+    @include color($black);
+    @include font-size(26);
+    @include secondry-regular;
+    cursor: pointer;
+}
+
+//Dialog
+%modal {
+    background: rgba(0, 0, 0, 0.5);
+    @include top(0);
+    @include left(0);
+    @include position(fixed);
+    @include z-index(999);
+    width: 100%;
+    height: 100%;
+    .fade {
+        opacity: 0;
+    }
+    .center {
+        @include px-to-rem(max-width, 400);
+        @include margin-auto(0 auto);
+        @include margin-top(10,percent);
+    }
+}
+
+%dialog-content {
+    @include color($black);
+    @include background($white);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+%dialog-header {
+    @include padding(15, 15, 15, 15);
+    @include color($black);
+    @include border-bottom(1, solid, $gray-lighter);
+    i {
+        @include pull-right;
+        @include font-size(21);
+        @include line-height(1,px);
+        @include color($black);
+        @extend %font-bold;
+        @include opacity(0.8);
+        @extend %font-normal;
+        cursor: pointer;
+        &:hover {
+            @include opacity(1);
+            @extend %font-normal;
+            cursor: pointer;
+        }
+    }
+}
+
+%dialog-body {
+    @include position(relative);
+    @include color($black);
+    @include padding(15, 15, 15, 15);
+}
+
+%dialog-footer {
+    @include padding(15, 15, 15, 15);
+    @include border-bottom(1, solid, $gray-lighter);
+    @include text-align(right);
+    @include color($black);
+}
+
+//Tabs Navigations
+%nav-tabs {
+    @include border-bottom(1, solid, $border-color);
+    @include padding(0, 0, 0, 0);
+    @include margin(0, 0, 16, 0);
+    @include pull-left;
+    @extend %full-width;
+    list-style: none;
+}
+
+%nav-item {
+    @include margin(0, 0, -1, 0);
+    @include pull-left;
+    .nav-link {
+        @include display(block);
+        @include padding(15, 20, 15, 20);
+        @include border(1, solid, transparent);
+        @include color($gray-dark);
+        @include border-radius-top(4, 4);
+        @include secondry-regular;
+        text-decoration: none;
+        &.active {
+            @include color($black);
+            @include background($white);
+            border-color: #ddd #ddd transparent;
+        }
+    }
+}
+
+%tab-content {
+    @include pull-left;
+    @extend %full-width;
+    @include color($text-paragraph);
+    @include line-height(22,px);
+    @include secondry-regular;
+    @include font-size(14);
+    .tab-pane {
+        @include display(none);
+        &.active {
+            @include display(block);
+        }
+    }
+}
+
+//Paginatoion
+%pagination {
+    @extend %full-width;
+    @include pull-left;
+}
+
+%page-item {
+    @include display(inline);
+    .page-link {
+        @include position(relative);
+        @include pull-left;
+        @include padding(10, 10, 10, 10);
+        @include background($white);
+        @include color($gray-dark);
+        @include border(1, solid, $border-color);
+        @include margin(10, 0, 10, 0);
+        text-decoration: none;
+        &.active {
+            @include background($brand-color);
+            @include color($white);
+            @include border(1, solid, $brand-color);
+        }
+    }
+}
+
+//Bredcrumb
+%breadcrumb {
+    @extend %full-width;
+    @include pull-left;
+    @include font-size(16);
+    @include secondry-regular;
+    @include color($gray-dark);
+    li {
+        @include pull-left;
+        @include display(inline);
+        @include padding(5, 5, 5, 5);
+        a {
+            @include color($gray-dark);
+            text-decoration: none;
+            &.active {
+                @include color($brand-color);
+            }
+        }
+    }
+}
+
+//Search
+%searchbox {}
+
+//Blockquote
+%blockquote {
+    @include font-size(36);
+    @include primary-regular;
+    @include position(relative);
+    @include padding(0, 0, 0, 40);
+    @include color($gray-dark);
+    &:before {
+        @include border-left(8, solid, $gray-dark);
+        @include position(absolute);
+        content: '';
+        @include top(5);
+        @include bottom(5);
+        @include left(0);
+    }
+}
+
+// default
+body {
+    @extend %body;
+}
+
+//Only used for demo
+%row-seperator {
+    @include margin(20, 0, 20, 0);
+}
+
+%heading-label {
+    @include pull-left;
+    @include span(12 of 12 0);
+    @include font-size(30);
+    @include margin(20, 0, 20, 0);
+    @extend %brand-color;
+    @extend %txt-uppercase;
+    @extend %full-width;
+}
+
+%section {
+    margin-top: $gutter * 2;
+}
+
+//Colors (Used to show all colors)
+%colorbox {
+    @include margin(2, 2, 2, 2);
+    @include span(4 of 12);
+    @include vertical-align;
+    @include quaternary-semibold;
+    @include color($white);
+    @include pull-left;
+    @include text-align(center);
+    @include font-size(30);
+    height: 100px;
+}
+
+//Used for show html tags
+pre {
+    @include display(block);
+    @include padding(20, 20, 20, 20);
+    @include span(12 of 12 0);
+    @include text-align(left);
+    @include pull-left;
+    @include margin(20, 0, 20, 0);
+    @extend %white-card;
+    white-space: pre-line;
+}
+
+%img-responsive {
+    &__effect {
+        max-width: 100%;
+        @include position(relative);
+        @include pull-left;
+        @include transition-property(transform);
+        @include transition-duration(0.5s);
+        @include transition-timing-function(ease-in);
+        &:hover {
+            @include transform(scale(1.2));
+        }
+    }
+}
+
+%lightbox-icon {
+    @include position(absolute);
+    @include color($brand-color);
+    @include px-to-rem(width, 22);
+    @include px-to-rem(height, 22);
+    @include padding(10, 10, 10, 10);
+    @include z-index(999);
+    cursor: pointer;
+    right: gutter();
+    top: gutter();
+    background: url(../images/zoom.png) left top no-repeat;
+}
+
+%icons {
+    @include px-to-rem(width, 15);
+    @include px-to-rem(height, 15);
+    @include pull-left;
+    @include color($brand-color);
+    cursor: pointer;
+}
+
+%time-icon {
+    @extend %icons;
+}
+
+%like-icon {
+    @extend %icons;
+}
+
+%share-icon {
+    @extend %icons;
+}
+
+%profile-icon {
+    img {
+        border-radius: 50%;
+        border: 2px solid $brand-color;
+    }
+}
+
+%white-card {
+    background: $white;
+}
+
+%black-card {
+    background: $mu-black;
+}
+
+%red-card {
+    background: $mu-red;
+}
+
+%black-bg-card {
+    background: $card-bg;
+}
+
+%card-min-height {
+    min-height: $card-min-height;
+}
+
+%gutter {
+    margin-bottom: $gutter;
+}
+
+%shadow {
+    // -moz-box-shadow: 3px 3px 5px 6px #ccc;
+    // -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

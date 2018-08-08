@@ -1,0 +1,1345 @@
+.grid-12 {
+    .mu-item {
+        &__info {
+            //@include padding(16,20,16,20);
+            //@include padding(16, 20, 20, 20);
+            @include breakpoint($small) {
+                //@include span(8 of 12 0);
+                @include percentage-value(width, 100);
+                @include padding-top(16,px,important);
+                @include padding-right(20,px,important);
+                @include padding-bottom(8,px,important);
+                @include padding-left(20,px,important);
+                //@include padding(16, 20, 8, 20);
+            }
+            @include breakpoint($xsmall) {
+                //@include span(9 of 12 0);
+                @include percentage-value(width, 90);
+            }
+            @include breakpoint($medium) {
+                //@include span(9 of 12 0);
+                @include percentage-value(width, 80);
+                
+                @include percentage-value(width, 100);
+                @include padding-top(20,px,important);
+                @include padding-right(20,px,important);
+                @include padding-bottom(20,px,important);
+                @include padding-left(20,px,important);
+            }
+            @include breakpoint($large) {
+                //@include span(7 of 12 0);
+                @include percentage-value(width, 75);
+            }
+            @include breakpoint($xlarge) {
+                //@include span(7 of 12 0);
+                @include percentage-value(width, 70);
+            }
+            @include breakpoint($xxlarge) {
+                //@include padding(16, 16, 8, 16);
+                @include percentage-value(width, 60);
+            }
+        }
+        &__title {
+            @include word-wrap;
+            @include text-truncate-lines(2, 40, 0.9);
+            @include span(6 of 6 0);
+            @include breakpoint($medium) {
+                @include text-truncate-lines(2, 48, 0.85);
+            }
+            @include breakpoint($xlarge) {
+                @include text-truncate-lines(2, 72, 0.9);
+            }
+        }
+        &__teasure {
+            @include display(none);
+        }
+        .mu-item__sponsor {
+            @include position(absolute);
+            @include padding(8, 8, 8, 8);
+            @include top(0);
+        }
+    }
+    &.child {
+        .mu-item {
+            @include border(1, solid, $white-lighter);
+            .mu-item {
+                border: none;
+            }
+            .img-holder {
+                @include span(6 of 6 0);
+                @include breakpoint($xsmall) {
+                    @include span(6 of 12 0);
+                    @include percentage-value(height, 100);
+                }
+                @include breakpoint($medium) {
+                    @include span(6 of 12 0);
+                    @include percentage-value(height, 100);
+                }
+                @include breakpoint($large) {
+                    @include span(7 of 12 0);
+                    @include percentage-value(height, 100);
+                }
+                @include breakpoint($xlarge) {
+                    @include span(8 of 12 0);
+                    @include percentage-value(height, 100);
+                }
+                @include breakpoint($xxlarge) {
+                    @include span(8 of 12 0);
+                    @include percentage-value(height, 100);
+                }
+            }
+            &__title {
+                @include word-wrap;
+                @include margin-bottom(8);
+                @include span(6 of 6 0);
+                @include text-truncate-lines(2, 32, 0.88);
+                @include color($mu-black);
+                @include breakpoint($small $max-small) {
+                    &:before {
+                        @include top(-38);
+                    }
+                }
+                @include breakpoint($medium) {
+                    @include text-truncate-lines(2, 48, 0.85);
+                }
+                @include breakpoint($xlarge) {
+                    @include text-truncate-lines(2, 56, 0.9);
+                }
+                @include breakpoint($xxlarge) {
+                    @include text-truncate-lines(2, 72, 0.9);
+                }
+            }
+            &__info {
+                @include padding(4,24,0,20);
+                @include span(6 of 6 0);
+                @include top(0);
+                @include important(position, relative);
+                @include margin-top(14);
+                @include breakpoint($xsmall) {
+                    @include important(position, relative);
+                    @include span(6 of 12 0);
+                    @include margin-top(90); //need to be change
+                }
+                @include breakpoint($medium) {
+                    @include span(6 of 12 0);
+                    @include important(position, relative);
+                    @include margin-top(36); //Gap given for sponsor                   
+                }
+                @include breakpoint($large) {
+                    @include span(5 of 12 0);
+                }
+                @include breakpoint($xlarge) {
+                    @include span(4 of 12 0);
+                    @include margin-top(49);
+                }
+                @include breakpoint($xxlarge) {
+                    @include span(4 of 12 0);
+                    //@include margin-top(96,important);
+                }
+            }
+            p {
+                @extend %article__info_teasure;
+                @include line-height(1.6);
+                @include position(relative);
+                @include breakpoint($xlarge) {
+                    @include padding-right(40);
+                } //@extend %text-align-justify;
+            }
+            &__teasure {
+                @include display(block);
+            }
+            .mu-item__sponsor {
+                @extend %child-card__info-12; 
+                @extend %sponsor-padding;
+                @include position(relative);
+                @include text-align(right);
+                @include breakpoint($small $xsmall) {
+                    @include position(absolute);
+                    @include padding(12,12,12,12);
+                }
+            }
+            .statsbar {
+                @extend %child-card__info-12;
+                @extend %statsbar-padding;
+                @include breakpoint($large) {
+                    //@include padding-left(0);
+                    //@include padding-right(0);
+                }
+                @include breakpoint($xxlarge) {
+                    @include padding-left(20);
+                    @include padding-right(20);
+                }
+            }
+            .mu-item__gradient {
+                display: none;
+            }
+        }
+    }
+}
+
+//GRID 8
+.grid-8 {
+    .mu-item {
+        @include px-to-rem(height, 360);
+        @include breakpoint($medium) {
+            @include px-to-rem(height, 360);
+        }
+        @include breakpoint($large) {
+            @include px-to-rem(height, 367);
+        }
+        @include breakpoint($xlarge) {
+            @include px-to-rem(height, 393);
+        }
+        @include breakpoint($xxlarge) {
+            @include px-to-rem(height, 360);
+        }
+        .mu-item__info {
+            @include span(6 of 6 0);
+            @include breakpoint($medium) {
+                @include span(6 of 8 0);
+            }
+            @include breakpoint($large) {
+                @include span(5 of 8 0);
+            }
+            @include breakpoint($xlarge) {
+                @include span(4 of 6 0);
+            }
+            @include breakpoint($xxlarge) {
+                @include span(4 of 6 0);
+            }
+        }
+        .mu-item__title {
+            @include word-wrap;
+            @include margin-bottom(8);
+            @include span(6 of 6 0);
+            @include text-truncate-lines(2, 36, 0.95);
+            @include breakpoint($medium) {
+                @include text-truncate-lines(2, 48, 0.95);
+            }
+        }
+        .mu-item__teasure {
+            @include display(none);
+        }
+        .mu-item__sponsor {
+            @include position(absolute);
+            @include padding(8, 8, 8, 8);
+            @include top(0);
+        }
+    }
+    &.child {
+        .mu-item {
+            @include breakpoint($small) {
+                @include margin-bottom(0);
+            }
+            .img-holder {
+                @include span(6 of 6 0);
+                height: auto;
+                @include breakpoint($medium) {
+                    @include span(3 of 6 0);
+                    @include percentage-value(height, 100);
+                }
+            }
+            &__title {
+                @include word-wrap;
+                @include margin-bottom(8);
+                @include color($mu-black);
+                @include span(6 of 6 0);
+                @include text-truncate-lines(2, 32, 0.88);
+                @include breakpoint($xsmall) {
+                    @include primary-bold;
+                    @include font-weight(normal);
+                }
+                @include breakpoint($medium) {
+                    @include primary-bold;
+                    @include font-weight(normal);
+                    @include display(block);
+                    @include pull-left;
+                }
+                @include breakpoint($large) {
+                    // @include text-truncate-lines(2, 48, 0.95);
+                }
+                @include breakpoint($xlarge) {
+                    //@include text-truncate-lines(2, 48, 0.95);
+                }
+            }
+            &__info {
+                @include padding(16,24,16,24);
+                @include span(6 of 6 0);
+                @include top(0);
+                @include important(position, relative);
+                @include margin-top(0);
+                @include breakpoint($xsmall) {
+                    @include important(position, relative);
+                    @include span(6 of 6 0);
+                    @include margin-top(32);
+                }
+                @include breakpoint($medium) {
+                    @include margin-top(49); 
+           
+                    @include span(3 of 6 0);
+                    @include important(position, relative); 
+                }
+                .mu-item__teasure {
+                    @extend %article__info_teasure;
+                    @include display(block);
+                    @include color($black);
+                    @include breakpoint($xsmall) {
+                        @include display(inline);
+                        @include pull-none;
+                    }
+                    @include breakpoint($medium) {
+                        @include display(block);
+                        @include pull-left;
+                    }
+                }
+                p {
+                    @extend %article__info_teasure;
+                }
+            }
+            .mu-item__gradient {
+                display: none;
+            }
+            .mu-item__sponsor {
+                @extend %child-card__info-6; //@extend %card-padding;
+                @extend %sponsor-padding;
+            }
+            .statsbar {
+                @extend %child-card__info-6;
+                @extend %statsbar-padding;
+            }
+        }
+    }
+}
+
+//GRID 6
+.grid-6 {
+    .mu-item {
+        .mu-item__info {
+            @include span(6 of 6 0);
+            @include breakpoint($small $max-small) {
+                @include padding-bottom(4);
+            }
+            @include breakpoint($medium) {
+                //@include span(10 of 12 0);
+                width: 85%; //changed as per suggestion
+                @include padding-bottom(0);
+            }
+            @include breakpoint($large) {
+                //@include span(10 of 12 0);
+                width: 80%; //changed as per suggestion
+            }
+            @include breakpoint($xlarge) {
+                //@include span(8 of 12 0);
+            }
+            @include breakpoint($xxlarge) {
+                //@include span(8 of 12 0);
+            }
+        }
+        .mu-item__title {
+            @include word-wrap;
+            @include span(6 of 6 0);
+            @include margin-bottom(4);
+            @include text-truncate-lines(2, 32, 0.88);
+            @include breakpoint($medium) {
+                @include text-truncate-lines(2, 40, 0.9);
+            }
+        }
+        .mu-item__teasure {
+            @include display(none);
+        }
+        .mu-item__sponsor {
+            @include position(absolute);
+            @include padding(8, 8, 8, 8);
+            @include top(0);
+        }
+    }
+    &.child {
+        .mu-item {
+            @include breakpoint($small) {
+                @include margin-bottom(0);
+            }
+            @include border(1, solid, $white-lighter);
+            .mu-item {
+                border: none;
+            }
+            .img-holder {
+                @include span(6 of 6 0);
+                height: auto;
+                @include breakpoint($medium) {
+                    @include span(3 of 6 0);
+                    @include percentage-value(height, 100);
+                }
+            }
+            &__title {
+                @include word-wrap;
+                @include margin-bottom(8);
+                @include color($mu-black);
+                @include span(6 of 6 0);
+                @include text-truncate-lines(2, 32, 0.88);
+                @include breakpoint($small $max-xsmall) {
+                    &:before {
+                        @include top(-38);
+                    }
+                }
+                @include breakpoint($xsmall) {
+                    @include text-truncate-lines(2, 18, 1.25); // font-weight: bold;
+                    // text-transform: initial;
+                    @include secondry-regular; // @include display(inline);
+                    // float: none;
+                    //@include primary-bold;
+                    @include font-weight(normal);
+                }
+                @include breakpoint($medium) {
+                    @include text-truncate-lines(2, 32, 0.88);
+                    @include primary-bold;
+                    @include font-weight(normal);
+                    @include display(block);
+                    @include pull-left;
+                }
+                @include breakpoint($large) {
+                    // @include text-truncate-lines(2, 48, 0.95);
+                    // @include primary-bold;
+                    // //@include primary-regular;
+                    // @include font-weight(normal);
+                }
+                @include breakpoint($xlarge) {
+                    //@include text-truncate-lines(2, 48, 0.95);
+                }
+            }
+            &__info {
+                @include span(6 of 6 0);
+                @include top(0);
+                @include important(position, relative);
+                @include breakpoint($xsmall) {
+                    @include span(6 of 6 0);
+                    @include margin(0, 0, 15, 0);
+                }
+                @include breakpoint($medium) {
+                    @include right(0);
+                    @include span(3 of 6 0);                
+                    @include margin-top(20); //Gap given for sponsor   
+                }
+                .mu-item__teasure {
+                    @extend %article__info_teasure;
+                    @include display(block);
+                    @include color($black);
+                    @include breakpoint($xsmall) {
+                        @include display(inline);
+                        @include pull-none;
+                    }
+                    @include breakpoint($medium) {
+                        @include display(block);
+                        @include pull-left;
+                        @include font-size(14);
+                    }
+                    @include breakpoint($large) {
+                        @include font-size(16);
+                    }
+                }
+                p {
+                    @extend %article__info_teasure;
+                }
+            }
+            .mu-item__gradient {
+                display: none;
+            }
+            .mu-item__sponsor {
+                @extend %child-card__info-6;
+                @extend %sponsor-padding;
+                @include position(relative);
+                @include breakpoint($small $max-xsmall) {
+                    @include position(absolute);
+                }
+            }
+            .statsbar {
+                @extend %child-card__info-6;
+                @extend %statsbar-padding;
+            }
+        }
+    }
+}
+
+.grid-7 {
+    @extend .grid-6;
+    @include span(7 of 12);
+}
+
+//GRID 3 AND 4
+.grid-3 {
+    .mu-item {
+        &__info {
+            @include span(6 of 6 0);
+            @include breakpoint($small $max-small) {
+                @include padding-bottom(4);
+            }
+            @include padding-bottom(0);
+        }
+        &__title {
+            @include word-wrap;
+            @include margin-bottom(4);
+            @include span(6 of 6 0);
+            @include text-truncate-lines(2, 32, 0.94);
+        }
+        &__teasure {
+            @include display(none);
+        }
+        .mu-item__sponsor {
+            @include position(absolute);
+            @include padding(8, 8, 8, 8);
+            @include top(0);
+        }
+    }
+    &.child {
+        .mu-item {
+            @include breakpoint($small) {
+                @include margin-bottom(0);
+            }
+            @include border(1, solid, $white-lighter);
+            .mu-item {
+                border: none;
+            }
+            .img-holder {
+                @include span(6 of 6 0);
+                height: auto;
+            }
+            &__title {
+                @include word-wrap;
+                @include margin-bottom(4);
+                @include color($mu-black);
+                @include secondry-semibold;
+                @include text-transform(lowercase);
+                &:before {
+                    @include top(-38);
+                    @include breakpoint($medium) {
+                        @include top(-34);
+                    }
+                }
+                &::first-letter {
+                    @include text-transform(uppercase, unset);
+                }
+                @include breakpoint($small) {
+                    @include text-truncate-lines(2, 18, 1.38);
+                }
+                @include breakpoint($medium) {
+                    @include text-truncate-lines(2, 16, 1.38);
+                }
+                @include breakpoint($xlarge) {
+                    @include text-truncate-lines(2, 18, 1.38);
+                }
+            }
+            &__info {
+                @include span(6 of 6 0);
+                @include important(position, relative);
+                @include top(0);
+            }
+            p {
+                @extend %article__info_teasure;
+                @include position(relative);
+                @include breakpoint($medium) {
+                    @include font-size(14);
+                }
+                @include breakpoint($large) {
+                    @include font-size(16);
+                }
+            }
+            &__teasure {
+                @include display(block);
+                @include margin-top(0,important);
+                @include line-height(1.38);
+                @include breakpoint($medium) {
+                    @include font-size(14);
+                }
+                @include breakpoint($large) {
+                    @include font-size(16);
+                }
+            }
+            .mu-item__gradient {
+                display: none;
+            }
+            .mu-item__sponsor {
+                @include position(absolute);
+                @include padding(8,8,8,8,important);
+                /*span {
+                    @include background($social-bg);
+                    @include px-to-rem(min-width, 33);
+                    @include px-to-rem(min-height, 21);
+                    @include padding(5,5,5,5);
+                }
+                */
+            }
+        }
+    }
+}
+//Compact View
+
+.grid-3.child {
+    @include breakpoint($xlarge) {
+        .mu-item.print-prod,.mu-item.video,.mu-item.article-card {
+            .mu-item__title {
+                @include font-size(20);
+                @include margin-bottom(8);
+                @include line-height(1.3);
+            }
+
+            .mu-item__info {
+                @include padding(24,20,0,20);
+            }
+        }
+    }
+}
+
+.grid-4 {
+    @include margin-bottom(0,important);
+    .mu-item {
+        @include px-to-rem(height, 360);
+        @include breakpoint($large) {
+            @include px-to-rem(height, 367);
+        }
+        @include breakpoint($xlarge) {
+            @include px-to-rem(height, 393);
+        }
+        @include breakpoint($xxlarge) {
+            @include px-to-rem(height, 360);
+        }
+        &__info {
+            @include span(6 of 6 0);
+        }
+        &__title {
+            @include word-wrap;
+            @include margin-bottom(8);
+            @include span(6 of 6 0);
+            @include text-truncate-lines(2, 32, 0.94);
+            &:before {
+                @include top(-16);
+            }
+        }
+        &__teasure {
+            @include display(none);
+        }
+        .mu-item__sponsor {
+            @include position(absolute);
+            @include padding(8, 8, 8, 8);
+            @include top(0);
+        }
+    }
+    &.child {
+        .mu-item {
+            @include breakpoint($small $max-small) {
+                @include margin-bottom(0);
+            }
+            @include border(1, solid, $white-lighter);
+            .mu-item {
+                border: none;
+            }
+            .img-holder {
+                @include span(6 of 6 0);
+                height: auto;
+            }
+            &__title {
+                @include word-wrap;
+                @include margin-bottom(8);
+                @include color($mu-black);
+                @include breakpoint($small) {
+                    @include text-truncate-lines(2, 18, 1.33);
+                    @include secondry-regular;
+                    text-transform: none;
+                    font-weight: 600;
+                }
+                &:before {
+                    @include top(-38);
+                    @include breakpoint($medium) {
+                        @include top(-34);
+                    }
+                }
+                &::first-letter {
+                    @include text-transform(uppercase, unset);
+                }
+                @include breakpoint($small) {
+                    @include text-truncate-lines(2, 18, 1.38);
+                }
+                @include breakpoint($medium) {
+                    @include text-truncate-lines(2, 16, 1.38);
+                }
+                @include breakpoint($xlarge) {
+                    @include text-truncate-lines(2, 18, 1.38);
+                }
+            }
+            &__info {
+                @include span(6 of 6 0);
+                @include important(position, relative);
+                @include top(0);
+            }
+            p {
+                @extend %article__info_teasure;
+                @include position(relative);
+                @include breakpoint($medium) {
+                    @include font-size(14);
+                }
+                @include breakpoint($large) {
+                    @include font-size(16);
+                }
+            }
+            &__teasure {
+                @include display(block);
+                @include margin-top(0,important);
+                @include line-height(1.38);
+                @include breakpoint($medium) {
+                    @include font-size(14);
+                }
+                @include breakpoint($large) {
+                    @include font-size(16);
+                }
+            }
+            .mu-item__gradient {
+                display: none;
+            }
+            .mu-item__sponsor {
+                @include position(absolute);
+                @include padding(8,8,8,8,important);
+                span {
+                    @include background($social-bg);
+                }
+            }
+        }
+    }
+}
+
+
+
+//NEW TYPE OF CARD -------------
+//Used only for home page news grid 4,5,6,7 card
+.mini-card {
+    &.ratio {
+        @include display(block);
+        @include breakpoint($xsmall) {
+            @include display(none);
+        }
+        @include aspect-ratio(9, 16);
+        @include span(3 of 6);
+        @include margin-bottom(32);
+        .mu-item {
+            @include pull-left;
+            .img-holder {
+                @include percentage-value(width, 100);
+            }
+            .mu-item__info {
+                @include padding(8, 8, 0, 8);
+                .mu-item__title {
+                    // @include secondry-semibold;
+                    @include text-truncate-lines(2, 24, 0.92);
+                    @include text-transform(none); // letter-spacing: -0.2px;
+                    &:before {
+                        //@include display(none);
+                    }
+                }
+            }
+            .mu-item__teasure {
+                @include display(none);
+            }
+            .mu-item__title {
+                @include important(text-transform, lowercase);
+                &::first-letter {
+                    @include text-transform(uppercase, unset);
+                }
+            }
+            .statsbar__split,
+            .statsbar__tag {
+                @include display(none);
+            }
+            .statsbar {
+                @include percentage-value(width, 100);
+                @include padding(0, 8, 0, 8);
+                span {
+                    @include important(color, $white);
+                }
+            }
+            .link-btn-white {
+                @include margin-bottom(0);
+            }
+            .link-btn-white {
+                @include margin-top(0)
+            }
+            .mu-item__gradient {
+                @include percentage-value(height, 80);
+            }
+        } // &.child {
+        //     .mu-item {
+        //         @include border(1, solid, $white-lighter);
+        //         .mu-item {
+        //             border: none;
+        //         }
+        //         > a {
+        //             @include px-to-rem(height, 85);
+        //         }
+        //     }
+        //     .mu-item {
+        //         &__title {
+        //             @include secondry-semibold;
+        //             @include text-truncate-lines(2, 18, 1.11);
+        //             @include text-transform(none);
+        //             @include font-weight(bold);
+        //             letter-spacing: -0.2px;
+        //             @include color($mu-black);
+        //             &:before {
+        //                 @include display(none);
+        //             }
+        //         }
+        //         &__info {
+        //             @include position(relative);
+
+        //             & a {
+        //                 @include padding-top(0);
+        //             }
+        //         }
+        //         &__teasure {
+        //             @include color($mu-black);
+        //         }
+        //         &.video {
+        //             .mu-item__play {
+        //                 @include px-to-rem(width, 37);
+        //                 @include px-to-rem(height, 37);
+
+
+        //             }
+        //             .mu-item__title {
+        //                 @include color($white);
+        //             }
+        //             .statsbar {
+        //                 span {
+        //                     @include important(color, $white);
+        //                 }
+        //             }
+        //         }
+        //         & .img-holder {
+        //             @include position(relative);
+        //             height: 85px !important;
+        //             @include px-to-rem(height, 85);
+        //         }
+        //     }
+        //     .statsbar {
+        //         @include percentage-value(width, 100);
+        //         @include padding(0, 8, 0, 8);
+        //         span {
+        //             @include important(color, $paragraph-text);
+        //         }
+        //     }
+        //     //box-shadow: 0 1px 0 0 #f2f2f2;
+        // }
+    }
+}
+
+//Used only for home page news grid 8,9,10 card
+.micro-card {
+    &.ratio {
+        @include display(block);
+        @include breakpoint($xsmall) {
+            @include display(none);
+        }
+        @include span(6 of 6);
+        .mu-item {
+            @include margin-bottom(32);
+            @include px-to-rem(min-height, 141);
+            @include pull-left; //box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.23);
+            .mu-item {
+                box-shadow: none;
+            }
+            .img-holder {
+                // @include span(2 of 6 0);
+                width: 106px;
+                @include percentage-value(height, 100);
+                @include position(absolute);
+                @include left(0);
+                .mu-item__gradient {
+                    @include display(none);
+                }
+            }
+            .mu-item__info {
+                // @include span(4 of 6 0);
+                width: calc(100% - 106px);
+                @include padding(16, 16, 16, 16);
+                @include position(static);
+                @include right(0);
+                @include percentage-value(height, 100);
+                @include top(0);
+                @include pull-right;
+                .mu-item__title {
+                    //@include important(text-transform, lowercase);
+                    // &::first-letter {
+                    //     @include text-transform(uppercase, unset);
+                    // }
+                    @include color($mu-black);
+                    @include primary-bold;
+                    @include text-truncate-lines(2, 24, 0.9);
+                    @include text-transform(none);
+                    letter-spacing: -0.2px;
+                    &:before {
+                        @include display(none);
+                    }
+                }
+                & a {
+                    @include padding-top(0);
+                }
+            }
+            .mu-item__sponsor {
+                @include percentage-value(width, 100);
+                @include pull-right(important);
+            }
+            .mu-item__sponsor__wrapper {
+                @include pull-right(important);
+                @include important-value(background-color, $white-lighter);
+            }
+            .statsbar {
+                @include position(absolute);
+                @include right(0);
+                @include bottom(2); // @include span(4 of 6 0);
+                width: calc(100% - 106px);
+                span {
+                    @include important(color, $paragraph-text);
+                }
+                .statsbar__split {
+                    @include important(color, $paragraph-text);
+                }
+            }
+            .mu-item__teasure {
+                @include display(none);
+            }
+        }
+        .mu-content {
+            @include important(position, relative);
+        }
+    }
+}
+
+//for childcard on mobile
+%mob-child {
+    @include breakpoint($small $max-small) {
+        &:before {
+            @include padding-top(0);
+        }
+        .mu-content {
+            position: relative !important;
+        }
+        .mu-item__info {
+            @include padding-bottom(50);
+        }
+    }
+}
+
+//ASpect ratio
+//grid-12 card-xl
+.grid-12 {
+    &.ratio {
+        @include percentage-value(width, 100);
+        @include margin-left(0);
+        @include margin-right(0);
+        @extend %bottom-gutter;
+        @include aspect-ratio(3, 4);
+        @include breakpoint($xsmall) {
+            @include aspect-ratio(16, 9);
+        }
+        @include breakpoint($medium) {
+            @include aspect-ratio(2.35, 1);
+        }
+        &.child {
+            @extend %mob-child;
+            .img-holder {
+                @include aspect-ratio(1, 1);
+                @include breakpoint($large) {
+                    @include aspect-ratio(4, 3);
+                }
+                @include breakpoint($xlarge) {
+                    @include aspect-ratio(16, 9);
+                }
+            }
+        }
+        &.child {
+            @include span(12 of 12 0);
+            .mu-item__info {
+                @include breakpoint($small $max-xsmall){
+                    @include padding-bottom(50,important);
+                }
+            }
+        }
+
+    }
+}
+
+//grid-6 card-lr
+.grid-6 {
+    &.ratio {
+        @include aspect-ratio(3, 4);
+        @extend %bottom-gutter;
+        @include breakpoint($xsmall) {
+            @include aspect-ratio(3, 4);
+        }
+        @include breakpoint($medium) {
+            @include aspect-ratio(16, 9);
+        }
+        &.child {
+            @extend %mob-child;
+            .img-holder {
+                @include aspect-ratio(1, 1); //@include aspect-ratio(4, 3);
+                @include breakpoint($xsmall) {
+                    @include aspect-ratio(2.35, 1); //missing                
+                }
+                @include breakpoint($medium) {
+                    @include aspect-ratio(9, 16);
+                }
+                @include breakpoint($large) {
+                    @include aspect-ratio(3, 4);
+                }
+            }
+        }
+    }
+}
+
+//grid-8 card-
+.grid-8 {
+    &.ratio {
+        @include margin-bottom(0,important);
+        @extend %bottom-gutter; //Grid 8 and 4 height is not managed by ratio
+        // so be are just overdiding the aspect ratio
+        .mu-content {
+            @include important(position, relative);
+            @include percentage-value(height, 100);
+        }
+        &.child {
+            @extend %mob-child;
+            .img-holder {
+                @include aspect-ratio(4, 3);
+                @include breakpoint($xsmall) {
+                    //@include aspect-ratio(4, 3);
+                    //missing
+                }
+                @include breakpoint($medium) {
+                    @include aspect-ratio(9, 16);
+                }
+                @include breakpoint($large) {
+                    @include aspect-ratio(3, 4);
+                }
+            }
+            .mu-content {
+                @include important(position, relative);
+            }
+        }
+        &.only-desktop {
+            @include display(none);
+            @include breakpoint($medium) {
+                @include display(block);
+            }
+        }
+    }
+}
+
+//grid-3 card-md
+.grid-3 {
+    &.ratio {
+        @extend %bottom-gutter;
+        @include aspect-ratio(1, 1);
+        @include breakpoint($xsmall) {
+            @include aspect-ratio(3, 4);
+        }
+        @include breakpoint($medium) {
+            @include aspect-ratio(3, 4);
+        }
+        @include breakpoint($large) {
+            @include aspect-ratio(3, 4);
+        }
+        &.child {
+            @extend %mob-child;
+            .img-holder {
+                @include aspect-ratio(1, 1); //@include aspect-ratio(16, 9);
+                @include breakpoint($xsmall) {
+                    @include aspect-ratio(2.35, 1);
+                }
+            }
+        }
+    }
+}
+
+//grid-4 card-md
+.grid-4 {
+    &.ratio {
+        @extend %bottom-gutter; // @include aspect-ratio(1, 1);
+        // @extend %bottom-gutter;
+        // @include breakpoint($xsmall) {
+        //     @include aspect-ratio(3, 4);
+        // }
+        // @include breakpoint($medium) {
+        //     @include aspect-ratio(3, 4);
+        // }
+        .mu-content {
+            @include important(position, relative);
+            @include percentage-value(height, 100);
+        }
+        &.child {
+            @extend %mob-child;
+            .img-holder {
+                @include aspect-ratio(2.35, 1);
+            }
+            .mu-content {
+                @include important(position, relative);
+            }
+        }
+    }
+}
+
+.poll-card {
+    &.ratio {
+        @extend %bottom-gutter;
+        @include aspect-ratio(3, 4);
+        @include breakpoint($xsmall) {
+            @include aspect-ratio(3, 4);
+        }
+        @include breakpoint($medium) {
+            @include aspect-ratio(16, 9);
+        } // @include breakpoint($large) {
+        //     @include aspect-ratio(16, 9);
+
+        // }
+    }
+}
+
+// Grid Child width to manage statsbar and topbar
+%child-card__info-12 {
+    @include span(6 of 6 0);
+    @include breakpoint($xsmall) {
+        @include span(6 of 12 0);
+        @include right(0);
+    }
+    @include breakpoint($medium) {
+        @include span(6 of 12 0);
+        @include right(0);
+    }
+    @include breakpoint($large) {
+        @include span(5 of 12 0);
+        @include right(0);
+    }
+    @include breakpoint($xlarge) {
+        @include span(4 of 12 0);
+        @include right(0);
+    }
+}
+
+%child-card__info-8 {
+    @include span(6 of 6 0);
+    @include breakpoint($xsmall) {
+        @include span(6 of 12 0);
+        @include right(0);
+    }
+    @include breakpoint($medium) {
+        @include span(6 of 12 0);
+        @include right(0);
+    }
+    @include breakpoint($large) {
+        @include span(6 of 12 0);
+        @include right(0);
+    }
+    @include breakpoint($xlarge) {
+        @include span(6 of 12 0);
+        @include right(0);
+    }
+}
+
+%child-card__info-6 {
+    @include span(6 of 6 0);
+    @include breakpoint($medium) {
+        @include right(0);
+        @include span(3 of 6 0);
+    }
+}
+
+//Ratio Match Day
+.grid-8 {
+    &.ratio-matchday {
+        @include span(12 of 12 0);
+        @include margin-left(0);
+        @include margin-right(0);
+        @extend %bottom-gutter;
+        @include aspect-ratio(3, 4);
+        @include breakpoint($xsmall) {
+            @include aspect-ratio(16, 9);
+        }
+        @include breakpoint($medium) {
+            @include aspect-ratio(16, 9);
+        }
+        @include breakpoint($large) {
+            @include aspect-ratio(16, 9);
+        }
+        @include breakpoint($xlarge) {
+            @include aspect-ratio(2.35, 1);
+        }
+        &.portrait-card {
+            @include breakpoint($medium) {
+                width: 40%;
+                @include margin-auto(0 auto);
+                @include margin-bottom(20);
+                @include pull-none;
+            }
+            @include aspect-ratio(9, 16);
+            .mu-item__info {
+                width: 100%
+            }
+        }
+        &.square-card {
+            @include breakpoint($medium) {
+                width: 60%;
+                @include margin-auto(0 auto);
+                @include margin-bottom(20);
+                @include pull-none;
+            }
+            @include aspect-ratio(1, 1);
+            .mu-item__info {
+                width: 100%
+            }
+        }
+        .mu-item {
+            height: 100%;
+            &.image-card {
+                .mu-item__teasure {
+                    display: block;
+                }
+            }
+        }
+        .mu-content {
+            @include important(position, absolute);
+        }
+        .mu-item__info {
+            @include span(6 of 6 0);
+            @include breakpoint($small) {
+                @include percentage-value(width, 90);
+            }
+            @include breakpoint($medium) {
+                @include padding-bottom(0); //@include span(6 of 8 0);
+            }
+            @include breakpoint($large) {
+                //@include span(5 of 8 0);
+            }
+            @include breakpoint($xlarge) {
+                //@include span(4 of 6 0);
+            }
+            @include breakpoint($xxlarge) {
+                //@include span(4 of 6 0);
+                @include percentage-value(width, 80);
+            }
+        }
+        .mu-item__title {
+            @include word-wrap;
+            @include span(6 of 6 0);
+            @include text-truncate-lines(2, 32, 0.95);
+            @include breakpoint($xsmall) {
+                @include text-truncate-lines(2, 40, 0.95);
+            }
+            @include breakpoint($medium) {
+                @include text-truncate-lines(2, 32, 0.95);
+                @include margin-bottom(0);
+            }
+            @include breakpoint($large) {
+                @include text-truncate-lines(2, 40, 0.95);
+            }
+        }
+        .mu-item__teasure {
+            @include display(none);
+        }
+        .mu-item__sponsor {
+            @include position(absolute);
+            @include padding(8, 8, 8, 8);
+            @include top(0);
+        }
+        .mu-quotes__wrapper,
+        .mu-item__info {
+            @include percentage-value(width, 100);
+            @include breakpoint($xlarge) {
+                @include percentage-value(width, 90);
+            }
+        }
+        &.child {
+            .img-holder {
+                @include aspect-ratio(16, 9);
+                @include breakpoint($large) {
+                    @include aspect-ratio(1, 1);
+                }
+                @include breakpoint($xlarge) {
+                    @include aspect-ratio(4, 3);
+                }
+            }
+            @include breakpoint($medium) {
+                .mu-item.video{
+                    .mu-item__info {
+                        @include margin-top(18,important);
+                    }
+                    .mu-item__sponsor{
+                        @include position(relative);
+                        @include padding-top(50);
+                        &__wrapper{
+                            @include margin-top(-42);  
+                            @include margin-bottom(33);
+                        }
+                    }
+                    .mu-item__sponsor + .mu-item__info {
+                        @include margin-top(-32,important);
+                    }
+                }
+            }
+            @include breakpoint($small $max-small) {
+                &:before {
+                    @include padding-top(0);
+                }
+                .mu-item__info {
+                    width: 100%;
+                    @include margin-top(0);
+                }
+                .mu-content {
+                    position: relative !important;
+                }
+                .mu-item__teasure {
+                    @include margin-bottom(30,important);
+                }
+                .mu-item__title {
+                    @include font-size(32);
+                    &:before {
+                        @include top(-32);
+                    }
+                }
+                .mu-item>a {
+                    width: 100%;
+                }
+                .mu-item__logo-title {
+                    &:before {
+                        @include top(-12);
+                    }
+                }
+            }
+            @include breakpoint($xsmall) {
+                .img-holder {
+                    @include percentage-value(width, 50);
+                    @include percentage-value(height, 100);
+                    @include pull-left;
+                    &:before {
+                        @include padding-top(100,percent);
+                    } //@include span(3 of 8 0);
+                }
+                .mu-item__info {
+                    @include percentage-value(width, 50);
+                    @include pull-right; //@include margin-top(87);
+                    @include margin-top(48);
+                }
+                .mu-item__title {
+                    @include font-size(32);
+                }
+                .mu-content {
+                    position: absolute !important;
+                }
+                .mu-item__logo-title {
+                    &:before {
+                        @include top(-12);
+                    }
+                }
+                .statsbar {
+                    @include right(0);
+                    @include percentage-value(width, 50);
+                }
+            }
+        }
+    }
+}

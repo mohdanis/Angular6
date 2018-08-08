@@ -1,0 +1,193 @@
+//12 Grid system
+.grid-1 {
+    @include span(6 of 6);
+    @include px-to-rem(min-height, 1);
+    @extend %gutter;
+    @include breakpoint($medium) {
+        @include span(1 of 12);
+    }
+}
+
+.grid-2 {
+    @include span(6 of 6);
+    @include px-to-rem(min-height, 1);
+    @extend %gutter;
+    @include breakpoint($medium) {
+        @include span(2 of 12);
+    }
+}
+
+.grid-3 {
+    @include span(6 of 6);
+    @include px-to-rem(min-height, 1);
+    @extend %gutter;
+    @include breakpoint($xsmall) {
+        @include span(6 of 12);
+    }
+    @include breakpoint($medium) {
+        @include span(4 of 12);
+    }
+    @include breakpoint($large) {
+        @include span(3 of 12);
+    }
+}
+
+.grid-4 {
+    @include span(6 of 6);
+    @include px-to-rem(min-height, 1);
+    @extend %gutter;
+    @include breakpoint($xsmall) {
+        @include span(6 of 12);
+    }
+    @include breakpoint($medium) {
+        @include span(4 of 12);
+    }
+}
+
+.grid-5 {
+    @include span(6 of 6);
+    @include px-to-rem(min-height, 1);
+    @extend %gutter;
+    @include breakpoint($xsmall) {
+        @include span(6 of 12);
+    }
+    @include breakpoint($medium) {
+        @include span(5 of 12);
+    }
+}
+
+.grid-6 {
+    @include span(6 of 6);
+    @include px-to-rem(min-height, 1);
+    @extend %gutter;
+    @include breakpoint($xsmall) {
+        @include span(6 of 12);
+    }
+    @include breakpoint($medium) {
+        @include span(6 of 12);
+    }
+}
+
+.grid-7 {
+    @include span(6 of 6);
+    @include px-to-rem(min-height, 1);
+    @extend %gutter;
+    @include breakpoint($medium) {
+        @include span(7 of 12);
+    }
+}
+
+.grid-8 {
+    @include span(6 of 6);
+    @include px-to-rem(min-height, 1);
+    @extend %gutter;
+    @include breakpoint($medium) {
+        @include span(8 of 12);
+    }
+}
+
+.grid-9 {
+    @include span(6 of 6);
+    @include px-to-rem(min-height, 1);
+    @extend %gutter;
+    @include breakpoint($medium) {
+        @include span(9 of 12);
+    }
+}
+
+.grid-10 {
+    @include span(6 of 6);
+    @include px-to-rem(min-height, 1);
+    @extend %gutter;
+    @include breakpoint($medium) {
+        @include span(10 of 12);
+    }
+}
+
+.grid-11 {
+    @include span(6 of 6);
+    @include px-to-rem(min-height, 1);
+    @extend %gutter;
+    @include breakpoint($medium) {
+        @include span(11 of 12);
+    }
+}
+
+.grid-12 {
+    @include span(6 of 6);
+    @include px-to-rem(min-height, 1);
+    @extend %gutter;
+    @include breakpoint($medium) {
+        @include span(12 of 12);
+    }
+}
+
+.grid-xl {
+    @include span(6 of 6);
+    @include px-to-rem(min-height, 1);
+    @extend %gutter;
+    @include breakpoint($medium) {
+        @include span(12 of 12);
+    }
+}
+
+%margin-left-right {
+    @include margin-left(1,percent);
+    @include margin-right(1,percent);
+}
+
+.pull-left-1 {
+    @extend %margin-left-right;
+    @include pull-left;    
+    @include padding-left(6.33333,percent);   
+}
+.pull-left-2 {
+    @extend %margin-left-right;
+    @include pull-left;    
+    @include padding-left(14.66667,percent);   
+}
+.pull-left-3 {
+    @extend %margin-left-right;
+    @include pull-left;    
+    @include padding-left(23,percent);   
+}
+.pull-left-4 {
+    @extend %margin-left-right;
+    @include pull-left;    
+    @include padding-left(31.33333,percent);   
+}
+.pull-left-5 {
+    @extend %margin-left-right;
+    @include pull-left;    
+    @include padding-left(39.66667,percent);   
+}
+.pull-left-6 {
+    @extend %margin-left-right;
+    @include pull-left;    
+    @include padding-left(48,percent);   
+}
+.pull-left-7 {
+    @extend %margin-left-right;
+    @include pull-left;    
+    @include padding-left(56.33333,percent);   
+}
+.pull-left-8 {
+    @extend %margin-left-right;
+    @include pull-left;    
+    @include padding-left(64.66667,percent);   
+}
+.pull-left-9 {
+    @extend %margin-left-right;
+    @include pull-left;    
+    @include padding-left(73, percent);   
+}
+.pull-left-10 {
+    @extend %margin-left-right;
+    @include pull-left;    
+    @include padding-left(81.33333,percent);   
+}
+.pull-left-11 {
+    @extend %margin-left-right;
+    @include pull-left;    
+    @include padding-left(89.66667,percent);   
+}

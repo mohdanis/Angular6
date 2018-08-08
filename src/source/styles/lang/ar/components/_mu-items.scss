@@ -1,0 +1,17 @@
+.mu-item {
+    &.audio, &.video {
+        .mu-item {
+            &__play {
+                span {
+                    transform: translate(50%, -50%);
+                }
+            }
+        }
+    }
+}
+.oo-player-container .oo-player{
+	direction: ltr !important;
+}
+.oo-player-container .oo-scrubber-bar-container .oo-scrubber-bar-padding .oo-played-indicator{
+	left:0;
+}

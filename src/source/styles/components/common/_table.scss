@@ -1,0 +1,12 @@
+//All Tables
+.table-striped {
+  @extend %table-striped;
+}
+
+.table {
+  @extend %table;
+}
+
+.table-bordered {
+  @extend %table-bordered;
+}

@@ -1,0 +1,154 @@
+.no-gutter {
+	.tmpls-container {
+		//Home row
+		.home-row {
+			@include margin-bottom(0);
+			@include margin-top(0);
+			.home-hero{
+				@include margin-bottom(0);
+				@include margin-top(0);
+			}
+		}
+		.home-article-detail__image-panel,
+		.home-article-detail__video-panel {
+			@include margin-top(0);
+			@include margin-bottom(0);
+		}
+		//Download Component
+		.tpl-download__block {
+			@include margin-bottom(0);
+		}
+		//Ad cards
+		.wide-add-panel.ad-block {
+			@include margin-bottom(0);
+			@include margin-top(0);
+		}
+		//Hero Card
+		.tmpls-hero.card-xl {
+			@include margin-bottom(0);
+			@include margin-top(0);
+		}
+	}
+}
+
+
+
+/*.no-gutter {
+	.tmpls-container {
+		//Basic Template
+		.tpl-basic {
+			.basic-tpl-block {
+				@include margin-top(0);
+				@include padding-bottom(0);
+				&.basic-image {
+					@include padding-top(0);
+					@include padding-bottom(0);
+					.basic__img-holder {
+						@include margin-top(0);
+					}
+				}
+			}
+			&.tmpls-hero-heading {
+				.basic-tpl-block {
+					@include padding-bottom(30);
+				}
+			}
+		}
+		//SignPost Component
+		.sign-post-grid {
+			@include margin-top(0);
+			.tpl-sign-post {
+				@include margin-bottom(-2);
+			}
+		}
+		.tpl-sign-post {
+			@include margin-bottom(0);
+		}
+		.sign-post-row {
+			@include margin-top(-1);
+			@include margin-bottom(0);
+		}
+		//SignPost Hero
+		.sign-post__hero {
+			@include margin-top(0);
+		}
+		//Promobox Component
+		.promo-box {
+			@include margin-top(0);
+			@include margin-bottom(0);
+		}
+		//Hero Accordion
+		.home-row {
+			@include margin-bottom(0);
+			@include margin-top(0);
+		}
+		.home-article-detail__image-panel,.home-article-detail__video-panel {
+			@include margin-top(0);
+			@include margin-bottom(0);
+		}
+		.hero__accordian {
+			.home-hero.card-xl {
+				@include margin-bottom(0);
+			}
+			.contact-us__control {
+				@include px-to-rem(bottom,20);
+				p+i.tmpl-pluse-white {
+					@include px-to-rem(margin-bottom,10);
+				}
+				
+			}
+			.contact-us__block + .contact-us__control {
+				@include px-to-rem(bottom,5);
+				@include px-to-rem(margin-top,0);
+			}
+			.icon-minus-accord {
+				@include margin-bottom(0);
+				@include margin-top(8);
+			}
+
+		}
+		//Hero Card
+		.tmpls-hero.card-xl {
+			@include margin-bottom(0);
+		}
+		.tmpls-hero{
+			.tpl-basic {
+			.basic-tpl-block {
+				@include margin-top(30);
+			}
+		}
+		}
+		//ContactUs Component
+		.contact-us__block {
+			.hero__accordian--content {
+				// @include margin-top(0);
+				@include margin-bottom(0);
+				// .home-article-detail__video-panel {
+				// 	// @include margin-top(0);
+				// 	// @include margin-bottom(0);
+				// }
+				// .hero-intro {
+				// 	@include margin-bottom(0);
+				// }
+			}
+		}
+		//Table Component
+		.table-tpl-inner {
+			@include margin-top(0);
+			@include margin-bottom(0);
+			@include padding-bottom(0);
+		}
+		//Red Button
+		.content-center {
+			.red-btn-skew,.white-btn-skew {
+				@include margin-bottom(0);
+			}
+
+		}
+		//Download Component
+		.tpl-download__block {
+			@include margin-bottom(0);
+		}
+	}
+}
+*/

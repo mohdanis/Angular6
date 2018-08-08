@@ -1,0 +1,304 @@
+.footer {
+    @include padding(0, 0, 0, 0);
+    @include prop-auto(height, auto);
+    @include pull-left;
+    @include percentage-value(width, 100);
+    @include margin-top(20);
+    //position: relative;
+    z-index: 1000;
+    @include position(absolute);
+    @include px-to-rem(bottom, 0);
+    &.bottom-sticky {
+        //@include position(absolute);
+        //@include px-to-rem(bottom, 0);
+    }
+    .sponsor {
+        @include pull-left;
+        @include background-color($white);
+        @include percentage-value(width, 100);
+        @include padding(33, 0, 30, 0);
+
+
+
+        &__primary {
+            @include text-align(center);
+            @include px-to-rem(max-width, 1000);
+            @include margin-auto(0);
+            ul {
+                @extend %ul;
+                li {
+                    display: inline-block;
+                    @include margin-right(24);
+                    @include margin-bottom(10);
+                    img {
+                        @include px-to-rem(max-height, 42);
+                        @include px-to-rem(max-width, 85);
+                    }
+                }
+            }
+        }
+        &__secondary {
+            @include text-align(center);
+            @include px-to-rem(max-width, 1000);
+            @include margin-top(10);
+            @include margin-left(auto);
+            @include margin-right(auto);
+            @include margin-bottom(0);
+            ul {
+                @extend %ul;
+                li {
+                    @include display(inline-block);
+                    @include margin-right(12);
+                    @include margin-left(12);
+                    @include margin-bottom(20);
+                    a {
+                        @include pull-left;
+                        @include px-to-rem(height, 35);
+                    }
+                    img {
+                        @include px-to-rem(max-height, 30);
+                        @include px-to-rem(max-width, 75);
+                        @include position(relative);
+                        @include top(50,percent);
+                        transform: translate(0px, -50%);
+                    }
+                }
+            }
+        }
+    }
+    &__social-links {
+        @include pull-left;
+        @include background-color($social-bg);
+        @include percentage-value(width, 100);
+        @include px-to-rem(min-height, 132);
+        @include text-align(center);
+        position: relative;
+        clear: both;
+        .social-icons {
+            @include text-align(center);
+            //@include px-to-rem(max-width, 768);
+            @include margin-auto(0);
+            @include padding-top(50);
+            @include padding-bottom(38);
+            @include display(inline-block);
+            @include breakpoint($small $max-xsmall) {
+              @include padding-top(24);
+              @include padding-bottom(24);
+            }
+            ul {
+                @include display(inline-block);
+                @include breakpoint($small $max-small) {
+                    @include pull-none;
+                    @include padding(0, 75, 0, 75);
+                }
+                li {
+                    @include margin-right(8);
+                    @include margin-bottom(8);
+                    @include display(inline-block);
+                    a {
+                        @include px-to-rem(width, 44);
+                        @include px-to-rem(height, 44);
+                        @include percentage-value(border-radius, 50);
+                        @include background-color(#3f3f3f);
+                        @include pull-left;
+                        &:hover{
+                            background-color: #c70101;
+                        }
+                        i {
+                            @include top(50,percent);
+                            @include left(50,percent);
+                            @include position(relative);
+                            @include margin(0, 0, 0, 0);
+                            transform: translate(-50%, -50%);
+                            -webkit-transform: translate(-50%, -50%);
+                        }
+                    }
+                }
+            }
+        }
+        .social-button {
+            @include pull-left;
+            @include display(inline-block);
+            @include margin-left(32);
+            @include text-transform(uppercase);
+            @include breakpoint($small $max-xsmall) {
+                @include pull-none;
+                @include margin-left(0);
+                @include padding-bottom(24);
+                display: block;
+                > div{
+                  @include pull-none(important);
+                }
+            }
+            @include breakpoint($medium) {
+                @include pull-right;
+            }
+            // .black-btn-skew {
+            //     //@include border(1, solid, $white);
+            //     @include margin-left(10);
+            //     &:hover {
+            //         background: rgba(255, 255, 255, 0.15);
+            //     }
+            // }
+        }
+    }
+    &__menu {
+        @include pull-left;
+        @include background-color($mu-black);
+        @include percentage-value(width, 100);
+        @include border-top(1, solid, $bdr-color, 0.3);
+        @include padding-top(7);
+        //@include padding-bottom(14);
+        @include breakpoint($medium) {
+            @include px-to-rem(min-height, 88);
+        }
+        @include breakpoint($xlarge) {
+            @include px-to-rem(min-height, 44);
+        }
+        .footer__menu__links {
+            @include breakpoint($small $max-xsmall) {
+                @include percentage-value(width, 90);
+                @include margin-left(5,percent);
+                @include pull-left;
+            }
+            @include breakpoint($medium) {
+                @include percentage-value(width, 100);
+                @include text-align(center);
+                @include display(inline-block);
+                @include margin-bottom(5);
+            }
+            @include breakpoint($xlarge) {
+                //@include percentage-value(width, 50);
+                width:auto;
+                @include margin-bottom(0);
+                @include pull-left;
+            }
+            ul {
+                @extend %ul;
+                @include display(inline-block);
+                @include breakpoint($small $max-xsmall) {
+                    @include margin-bottom(20);
+                    @include percentage-value(width, 100);
+                }
+                @include breakpoint($xlarge) {
+                    @include pull-left;
+                }
+                li {
+                    @include pull-left;
+                    @include breakpoint($medium) {
+                        @include margin-left(24);
+                        @include line-height(30,px);
+                    }
+                    @include padding-top(0);
+                    a {
+                        @include color($white);
+                        @include secondry-regular;
+                        @include font-size(14);
+                        &:hover {
+                            border-bottom: 1px solid #ffffff;
+                        }
+                    }
+                    @include breakpoint($small $max-xsmall) {
+                        @include percentage-value(width, 100);
+                        @include border-bottom(1, solid, #e5e5e5, 0.2);
+                        @include text-align(left);
+                        @include padding(15, 0, 15, 0);
+                    }
+                    &:last-child {
+                        border: none;
+                    }
+                }
+            }
+        }
+        .footer__menu__copyright {
+            @include breakpoint($small $max-xsmall) {
+                @include margin-bottom(20);
+                @include percentage-value(width, 90);
+                @include margin-left(5,percent);
+                @include pull-left;
+            }
+            @include breakpoint($medium) {
+                @include percentage-value(width, 100);
+                @include pull-left;
+                @include text-align(center);
+            }
+            @include breakpoint($xlarge) {
+                @include pull-right;
+                 width:auto;
+                //@include percentage-value(width, 50);
+            }
+            ul {
+                @include margin-right(20);
+                @include text-align(left);
+                @include breakpoint($small $max-xsmall) {
+                    @include margin-left(0);
+                }
+                @include breakpoint($medium) {
+                    @include text-align(center);
+                    @include display(inline-block);
+                }
+                @include breakpoint($xlarge) {
+                    @include text-align(right);
+                    @include pull-right;
+                }
+                li {
+                    @include color($footer-color);
+                    @include secondry-regular;
+                    @include font-size(14);
+                    @include pull-left;
+                    @include breakpoint($medium) {
+                        @include padding-left(10);
+                        @include padding-right(10);
+                        @include line-height(30,px);
+                        &:first-child {
+                            @include border-right(1, solid, $bdr-color, 0.3);
+                        }
+                    }
+                    @include breakpoint($small $max-xsmall) {
+                        &:first-child {
+                            @include border-right(0, solid, $bdr-color, 0.3);
+                            @include margin-bottom(20);
+                        }
+                        &:last-child {
+                            @include position(relative);
+                            @include pull-left;
+                            &:before {
+                                @include border-top(1, solid, $bdr-color, 0.3);
+                                @include position(absolute);
+                                content: '';
+                                @include top(-16);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    & .red-btn-skew {
+        @include btn-transition(background, $mu-red);
+        border: solid 1px rgba(199,1,1,0.15) !important;
+        &:hover {
+            //@include background-color($mu-red, 0.8);
+            background-color:rgba(199,1,1,0.8) !important;
+        }
+    }
+    & .black-btn-skew {
+        background:none !important;
+        border: solid 1px rgba(255,255,255,0.15) !important;
+        &:hover {
+            //@include background-color($mu-black, 0.15);
+            background-color: rgba(255,255,255,0.15) !important;
+        }
+    }
+    .social-button{
+        div{
+            @include pull-left;
+            & + div{
+                @include margin-left(8);
+            }
+          @include breakpoint($small $max-small) {
+            @include pull-none;
+          }
+        }
+    }
+}

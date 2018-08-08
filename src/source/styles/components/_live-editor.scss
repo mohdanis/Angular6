@@ -1,0 +1,203 @@
+%live__header {
+    @include span(10 of 12);
+}
+
+%live__timer {
+    @include span(2 of 12);
+}
+
+.sitecore-live-editor {
+    .live-header {
+        @extend %live__header;
+    }
+    .live-header {
+        @extend %live__timer;
+    }
+}
+
+.liveMatch {
+    width: 85%;
+    @include padding(30, 30, 30, 30);
+    @include tertiary-regular;
+    background-color: rgb(50, 50, 50);
+    color: white;
+    @include font-size(28);
+    @include pull-left;
+}
+
+.liveMatch-timer {
+    width: 15%;
+    @include padding(19, 19, 19, 19);
+    @include secondry-regular;
+    background-color: rgb(199, 1, 1);
+    color: white;
+    @include pull-left;
+    @include text-align(center);
+}
+
+.total-time {
+    color: rgb(203, 203, 203);
+    @include font-size(10);
+}
+
+.total-time-duration {
+    @include primary-bold;
+    @include font-size(40);
+}
+
+.event-type {
+    padding: 20px;
+}
+
+h5 {
+    @include tertiary-regular;
+    color: rgb(26, 26, 26);
+    @include font-size(18);
+}
+
+.event-nav {
+    @extend ul;
+    @include pull-left;
+    a {
+        text-decoration: none;
+        color: rgb(68, 68, 68);
+        img {
+            border: none;
+            @include margin-right(7);
+            height: 15px;
+        }
+    }
+    li {
+        @include secondry-semibold;
+        @include display(inline-block);
+        @include pull-left;
+        @include font-size(14);
+        @include padding(7, 7, 7, 7);
+        @include margin(7, 7, 7, 7);
+        //background-color: rgb(242, 242, 242);
+        background-color: #f2f2f2;
+        border: solid 0.5px #e5e3e3;
+        &.active {
+            background-color: #474747;
+            a {
+                color: white;
+            }
+        }
+    }
+}
+
+.live-editor {
+    @include pull-left;
+    width: 100%;
+    padding: 20px;
+}
+
+textarea {
+    @include margin-top(10);
+    width: 80%;
+    height: 40px;
+}
+
+.lead-text {
+    @include pull-left;
+    width: 100%;
+    padding: 20px;
+}
+
+.live-card-heading {
+    @include percentage-value(width, 100);
+    @include pull-left;
+    @include margin-top(20);
+    @include margin-bottom(15);
+    @include margin-left(12);
+}
+
+.live-content {
+    @include background-color(#F1F1F1);
+    ul {
+        @include percentage-value(width, 100);
+       // @include px-to-rem(height, 350);
+        overflow-y: scroll;
+        li {
+            //@include percentage-value(width, 90);
+            @include background-color(#ffffff);
+            @include padding(10, 10, 10, 10);
+            @include pull-left;
+            @include margin-left(12);
+            @include margin-top(10);
+            .live-card-header {
+                h3 {
+                    @include margin-bottom(10);
+                    @include margin-top(15);
+                    @include pull-left;
+                    @include percentage-value(width, 100);
+                    @include secondry-regular;
+                    @include font-size(14);
+                    font-weight: 600;
+                    @include line-height(1.29);
+                    color: #4a4a4a;
+                }
+                p {
+                    @include pull-left;
+                    @include font-size(12);
+                    font-weight: 400;
+                    @include line-height(1.58);
+                    color: #4a4a4a;
+                    @include secondry-regular;
+                }
+            }
+            .live-card {
+                @include pull-left;
+            }
+            .live-time {
+                @include pull-right;
+            }
+            .live-edit-delete {
+                width: 100%;
+                @include pull-left;
+                a {
+                    @include pull-right;
+                    text-decoration: none;
+                    @include font-size(12);
+                    font-weight: 400;
+                    @include line-height(1.58);
+                    color: #4a4a4a;
+                    @include margin-right(13);
+                    @include margin-top(13);
+                }
+            }
+        }
+    }
+}
+
+.button {
+     border: none;
+    @include margin-top(20);
+    width: 100px;
+    height: 36px;
+    border-radius: 5px;
+    background-color: #474747;
+    cursor: pointer;
+    @include font-size(15);
+    font-weight: 400;
+    @include line-height(1.47);
+    color: #ffffff;
+    @include tertiary-regular;
+}
+.live-card-holder{
+    @extend ul;
+    @include pull-left;
+    li {
+        @include secondry-semibold;
+        @include display(inline-block);
+        @include pull-left;
+        @include font-size(14);
+        @include padding(7, 7, 7, 7);
+    }
+}
+.live-event-sidebar {
+    @include span(5 of 12 0);
+}
+.live-event {
+    @include span(7 of 12 0);
+}

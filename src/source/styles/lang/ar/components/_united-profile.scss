@@ -1,0 +1,44 @@
+.united-profile {
+    &__top-panel {
+        & .profile {
+            &__details-left {
+                & .profile__links {
+                    & ul {
+                        li {
+                            span {
+                                i {
+                                    transform: translate(50%, -50%);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.switch {
+    input:checked + &__slider:before {
+        -webkit-transform: translateX(-23px);
+        -ms-transform: translateX(-23px);
+        transform: translateX(-23px);
+    }
+}
+.email-modal {
+    .modal-content {
+        input[type="submit"] {
+            transform: skew(10deg);
+            -moz-transform: skew(10deg);
+            -webkit-transform: skew(10deg);
+        }
+    }
+}
+.united-detail .united__inner-row .icon-next-page-arrow{
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    margin-left: 5px !important;
+}
+.email-modal .modal-content{
+    right: 0 !important;
+}

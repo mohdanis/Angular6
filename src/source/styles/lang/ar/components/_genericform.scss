@@ -1,0 +1,10 @@
+.generic-checkbox {
+    &:checked + label:before {
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+}
+.generic_skewBtn {
+    transform: skew(10deg);
+}
+

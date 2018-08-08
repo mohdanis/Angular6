@@ -1,0 +1,82 @@
+@keyframes slideUp {
+    0% {
+        -webkit-transform: translateY(140px);
+        -ms-transform: translateY(140px);
+        transform: translateY(140px)
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+.cookie-policy-message,
+.cookie-policy-message .icon-top-close,
+.cookie-policy-message p {
+    animation-duration: 0.6s;
+    -webkit-animation-duration: 0.6s;
+    -moz-animation-duration: 0.6s;
+    -o-animation-duration: 0.6s;
+    -webkit-animation-name: slideUp;
+    animation-name: slideUp;
+}
+
+.cookie-policy-message {
+    @include display(none);
+    @include pull-left; //@include percentage-value(width, 100);
+    @include breakpoint ($large) {
+        @include percentage-value(width, 35);
+        bottom: 16px;
+        @include left(auto);
+        @include right(16);
+    }
+    @include background-color($mu-black);
+    @include padding(16, 16, 16, 16);
+    @include position(fixed);
+    z-index: 9999;
+    @include color($white);
+    @include bottom(8);
+    @include left(8);
+    @include right(8);
+    p {
+        @include percentage-value(width, 90);
+        @extend %text-align-left;
+        @include text-align(left); // @include secondry-semibold;
+        @include font-size(14);
+        @include line-height(18, px);
+        @include margin(0, 0, 0, 0);
+        @include breakpoint($medium) {
+            @include percentage-value(width, 80); //@include font-size(16);
+            //@include line-height(22,px);
+            margin: 0 auto;
+        }
+        a {
+            @include color($white);
+            @include secondry-semibold;
+            @include border-bottom(1, solid, #a8a8a8);
+            text-decoration: none;
+            &:hover{
+                @include border-bottom(1, solid, $white);
+            }
+        }
+    }
+    .close-btn,
+    .icon-top-close {
+        height: 44px;
+        width: 44px;
+        @include cursor(pointer);
+        position: absolute;
+        @include top(0);
+        @include right(0);
+        i, em,
+        .icon-top-close {
+            @include margin(0, 0, 0, 0);
+            @include position(absolute);
+
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}

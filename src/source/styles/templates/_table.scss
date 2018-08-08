@@ -1,0 +1,188 @@
+.tpl-table {
+    @include background($white);
+    clear: both;
+    &.skin {
+        &-grey {
+            @include background($mu-grey);
+        }
+        &-white {
+            @include background($white);
+        }
+    }
+}
+
+.table-tpl-inner {
+    @include span(6 of 6 0);
+    @include padding(0, 0, 20, 0);
+    @include px-to-rem(max-width, 670);
+    @include pull-none;
+    @include margin-left(auto);
+    @include margin-right(auto);
+    @include breakpoint($small $max-xsmall) {
+        @include padding-right(16);
+        @include padding-left(16);
+    }
+    @include breakpoint($medium) {
+        @include pull-none(important);
+        @include margin-auto(20);
+    }
+    @include breakpoint($large) {
+    @include margin-auto(20);
+        @include pull-none(important);
+    }
+    caption {
+        @include font-size(18);
+        @include line-height(24,px);
+        
+        @include margin-bottom(45);
+        @include breakpoint($medium) {
+            @include secondry-light;
+            @include font-size(20);
+            // @include font-weight(300);
+            @include line-height(30,px);
+        }
+    }
+    h2 {
+        @include margin-bottom(20);
+        @include line-height(32,px);
+        @include font-size(32);
+        @include breakpoint($large) {
+            @include font-size(48);
+            @include line-height(40,px);
+        }
+    } // p {
+    //     @include font-size(18);
+    //     @include line-height(24,px);
+    //     @include margin-bottom(45);
+    //     @include breakpoint($medium) {
+    //         @include secondry-light;
+    //         @include font-size(20);
+    //         // @include font-weight(300);
+    //         @include line-height(30,px);
+    //     }
+    // }
+    table {
+        @include span(12 of 12 0);
+        @include pull-none;
+        th,
+        tr.header-row {
+            @include display(none);
+            @include padding(20, 0, 20, 0);
+            @include font-size(16);
+            @include border-bottom(2, solid, $black, 0.1);
+        }
+        tr {
+            @include border-bottom(1, solid, $black, 0.1);           
+            @include breakpoint($small $max-xsmall) {
+                td {
+                    &:first-child {
+                        @include padding-top(20);
+                    }
+                    &:last-child {
+                        @include padding-bottom(20);
+                    }
+                }
+            }
+        }
+        td {
+            @include padding(5, 0, 5, 0);
+            @include display(block);
+            @include secondry-regular;
+            @include font-size(16);
+            @include span(12 of 12 0);
+            @include position(relative);
+            @include text-align(left); 
+            @include line-height(1.35);
+            @include breakpoint($medium) {
+                @include padding(20, 0, 20, 0);
+            }
+            p {
+                @include secondry-regular;
+                @include font-size(16);
+                @include display(block);
+                @include line-height(20,px);
+                &:nth-child(2) {
+                    @include line-height(28,px);
+                    @include font-weight(normal);
+                }
+                @include breakpoint($medium) {
+                    @include line-height(22,px);
+                    &:nth-child(2) {
+                        // @include font-weight(normal);
+                        @include line-height(22,px);
+                    }
+                }
+            } // &:first-child {
+            //     @include font-weight(bold);
+            //     // text-decoration: underline;
+            //     // text-decoration-color: #d8d8d8;
+            //     @include line-height(1.2);
+            //     // a {
+            //     //     @include border-bottom(1, solid, $link-line); 
+            //     // }
+            // }
+            @include breakpoint($small $max-xsmall) {
+                // @include font-size(16);
+                // @include padding-left(30,percent,important);
+                word-break: break-word;
+                @include padding-left(40, percent, important);
+                &:before {
+                    content: attr(data-label);
+                    @include pull-left;
+                    @include font-weight(normal);
+                    @include position(relative);
+                    @include left(0);
+                    //width: 30%;
+                    width: 68%;
+                    word-break: break-word;                        
+                        //@include margin-right(24);
+                        @include margin-left(-68, percent);
+                }
+            }
+            a {
+                @include color($mu-black);
+                border-bottom: 1px solid #9c9c9c;
+                &:hover {
+                    border-bottom: 1px solid #c70101;
+                }
+            }
+            a[href=""] {
+                cursor: default;
+                border-bottom: none;
+            }
+        }
+        @include breakpoint($medium) {
+            tr.header-row {
+                @include display(table-row);
+            }
+            th {
+                @include display(table-cell);
+            }
+            td {
+                @include display(table-cell);
+                width: auto;
+                @include pull-none;
+            }
+        }
+    }
+}
+
+.version-two {
+    // @include percentage-value(width, 50);
+    caption h2 {
+        @include text-align(center);
+        @include font-size(40);
+        @include line-height(36,px);
+        @include margin-bottom(18);
+        @include breakpoint($medium) {
+            @include margin-bottom(14);
+        }
+    }
+    th {
+        @include font-weight(600);
+    }
+}
+
+tr.header-row td {
+    @include font-weight(bold);
+}

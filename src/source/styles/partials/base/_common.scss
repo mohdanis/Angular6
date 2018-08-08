@@ -1,0 +1,553 @@
+* {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.bg-white {
+    background-color: #FFFFFF !important;
+}
+
+.bg-gray {
+    background-color: #F2F2F2 !important;
+}
+
+//Tooltip
+%tooltip {
+    @include font-size(12);
+    @include px-to-rem(width, 16);
+    @include px-to-rem(height, 16);
+    @include line-height(16,px);
+    @include px-to-rem(border-radius, 10);
+    @include text-align(center);
+    @include color($white);
+    @include position(relative);
+    @extend %font-bold;
+    @extend %background-info;
+    cursor: default;
+    vertical-align: text-top;
+    .tooltip-popup {
+        @include primary;
+        @include font-size(13);
+        @include px-to-rem(border-radius, 2);
+        @include line-height(16,px);
+        @include padding(10);
+        @include margin-left(24);
+        @include bottom(25);
+        @include left(-60);
+        @include color($white);
+        @include position(absolute);
+        @extend %background-info;
+        visibility: hidden;
+        box-shadow: 1px 3px 3px 0px #cfcfcf;
+        @include breakpoint($xlarge) {
+            @include margin-left(27);
+            @include top(-19);
+            @include px-to-rem(min-height, 55);
+            @include margin(0);
+            @include bottom(initial);
+            @include left(0);
+        }
+        &:before,
+        :after {
+            content: '';
+            @include position(absolute);
+            @include left(30);
+            @include bottom(-7);
+            @include border(15, solid, $border-dark transparent);
+            @include breakpoint($xlarge) {
+                @include top(16);
+                @include left(-8);
+                @include top(16);
+                @include border(11, solid, $border-dark transparent);
+                @include left(-8);
+                @include bottom(100,percent);
+            }
+        }
+    }
+    &:hover .tooltip-popup {
+        visibility: visible;
+        position: absolute;
+        z-index: 999;
+    }
+}
+
+//Success message
+%success-box {
+    @extend %background-success;
+    @include padding(10,10,10,10);
+    .box-heading {
+        @extend %section-title-2;
+        @include margin(0, 0, 6, 0);
+    }
+    .box-text {
+        @extend %paragraph;
+        @include margin(0,0,0,0);
+    }
+    .bold-text {
+        @extend %new-heading4;
+    }
+    .italic-text {
+        @extend %sub-text;
+        @extend %link;
+    }
+}
+
+//Warning message
+%warning-box {
+    @extend %background-warning;
+    @include padding(10,10,10,10);
+    .box-heading {
+        @extend %paragraph;
+        @include margin(0, 0, 6, 0);
+    }
+    .box-text {
+        @extend %lighter-sub-text;
+        @include margin(0,0,0,0);
+    }
+    .bold-text {
+        @extend %new-heading4;
+    }
+}
+
+.heading-label {
+    @extend %heading-label;
+}
+
+.row {
+    @include pull-left;
+    @extend %full-width;
+    &:after {
+        @include display(table);
+        content: "";
+        clear: both;
+    }
+}
+
+.home-container {
+    @include breakpoint($xxlarge) {
+        //@include padding(24, 16, 0, 14);
+        @include pull-left;
+        @include percentage-value(width, 100);
+        // @include percentage-value(height, 100);
+    }
+}
+
+.home-row,
+.ad-block {
+    @include pull-left;
+    @extend %full-width;
+    @include margin-top(8);
+    @include margin-bottom(8);
+    overflow: hidden;
+    // @include breakpoint($xxlarge) {
+    //     @include margin-top(24);
+    //     @include margin-bottom(24);
+    // }
+}
+
+
+.main-container {
+	> div:first-child {
+		@include px-to-rem(min-height, 160);
+	}
+    .home-row:first-child {
+        @include margin-top(0);
+    }
+}
+
+.ad-block-hpto {
+    @include pull-left;
+    @extend %full-width;
+}
+
+.img-responsive {
+    @include pull-left;
+    @extend %full-width;
+}
+
+.seprator {
+    @include margin(10, 0, 10, 0);
+}
+
+//player profile picture
+%profile {
+    @include px-to-rem(height, 76);
+    @include px-to-rem(width, 57);
+    @include bottom(-35);
+    @include px-to-rem(border-radius, 4);
+}
+
+.author-pic {
+    @include pull-left;
+    @include margin(0, 15, 0, 0);
+    img {
+        @include px-to-rem(width, 57);
+        @include px-to-rem(height, 76);
+        @include px-to-rem(border-radius, 4);
+    }
+}
+
+%avatar {
+    @include advance-sprite-image(#{avatar}, $icons, $icons2x);
+}
+
+%team {
+    @include advance-sprite-image(#{team}, $icons, $icons2x);
+}
+
+// %dropdown-arrow{
+//   @include advance-sprite-image(#{dropdown-arrow}, $icons, $icons2x);
+// }
+%search-thumb__default {
+    // @include advance-sprite-image(#{search-video-thumb}, $icons, $icons2x);
+}
+
+.icon-avatar {
+    @extend .avatar !optional;
+    @include px-to-rem(border-radius, 4);
+    @include margin-left(0);
+    @include margin-right(0);
+}
+
+.icon-video-thumb {
+    //@extend %search-thumb__default;
+}
+
+.icon-team {
+    @extend %team;
+    @include percentage-value(border-radius, 50);
+    // @include border(2, solid, $white);
+    text-indent: -99999px;
+}
+
+.grid__container {
+    @include percentage-value(width, 100);
+
+    @include pull-left;
+}
+
+.img-holder {
+    @include overflow(hidden);
+}
+
+.clearfix {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+        clear: both;
+    }
+}
+
+body {
+    min-height: 100%;
+    position: relative;
+    width: 100%;
+    //direction: rtl;
+    overflow-x: hidden;
+    //display: initial;
+    //display:tabel-cell;
+    &:after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+    -webkit-overflow-scrolling: touch !important;
+    -moz-overflow-scrolling: touch !important;
+}
+
+html,
+body {
+    height: 100%;
+   // overflow-x: hidden;
+}
+
+.main-container {
+    @include position(relative);
+    @include percentage-value(width, 100);
+    @include pull-left;
+    @include padding-top(300);
+    min-height:100%;
+     @include breakpoint($medium){
+        min-height:calc(100% - 139px);
+      }
+    //overflow: hidden;
+    //    display: table-footer-group;
+    //    height: 1px;
+    @include left(0);
+    @include right(0);
+    // z-index: 0;
+    //transition: left .5s linear, right .5s linear;
+    transition: left .4s ease-in-out, right .4s ease-in-out;
+    & > .container:empty ~ div:nth-of-type(2),
+    & > * + div:nth-of-type(1):not(.container),
+    & > div:nth-of-type(1):not(.container),
+    & > div:nth-of-type(1):not(.tmpls-container) {
+        @include margin-top(-300);
+
+        width: 100%;
+    }
+    & > .container:first-child:not(:empty) {
+        @include margin-top(-300);
+    }
+    & > div.home-row:first-child {
+        @include margin-top(-284);
+        @include breakpoint($xxlarge) {
+            @include margin-top(-276);
+        }
+    }
+}
+.page-wrap {
+    height:100%;
+}
+// .is-modal-open .main-container {
+//     z-index: auto;
+// }
+img {
+    @include font-size(0);
+    &:not([src]) {
+        display: none !important;
+    }
+}
+
+.img-holder {
+    background-image: url($base-path + "noImage.png");
+    background-color: #2b2b2b;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.no-image {
+    color: #ffffff;
+    font-size: inherit;
+    @include text-align(center);
+    text-indent: 0 !important;
+}
+
+%btn-center {
+    transform: translate(-50%, -50%);
+    @include top(50,percent);
+    @include left(48,percent);
+    position: relative;
+}
+
+%hero__conditionaly {
+    .grid-12 {
+        &.ratio {
+            @include percentage-value(width, 100);
+            @include pull-none;
+            @include margin-auto(0);
+            @include breakpoint($xxlarge) {
+                //@include container($susy-xxlarge);
+                //@include percentage-value(width, 100);
+                //@include pull-none;
+            }
+            @include breakpoint($min-largest) {
+                max-width: $largest;
+                @include percentage-value(width, 100);
+                @include pull-none;
+                @include margin-auto(0);
+                //@include container($susy-largest);                
+            }
+            &.child {
+                @include margin-top(0,percent);
+                @include margin-left(1,percent);
+                @include margin-right(1,percent);
+                @include percentage-value(width, 98);
+                border: none;
+                @include breakpoint($small) {
+                    @include margin-top(0,important);
+                }
+                @include breakpoint($medium) {
+                    @include margin-auto(0 auto);
+                    @include margin-top(16,important);
+                    //@include container($susy-medium);
+                    width: $medium - 45;
+                    //width:723px;
+                    @include pull-none;
+                }
+                @include breakpoint($large) {
+                    @include margin-auto(0 auto);
+                    @include margin-top(20,important);
+                    //@include container($susy-large);
+                    width: $large - 59;
+                    //width:965px;
+                    @include pull-none;
+                }
+                @include breakpoint($xlarge) {
+                    @include margin-auto(0 auto);
+                    @include margin-top(24,important);
+                    width: $xlarge - 76;
+                    //@include container($susy-xlarge);
+                    @include pull-none;
+                }
+                @include breakpoint($xxlarge) {
+                    @include margin-auto(0 auto);
+                    @include margin-top(30,important);
+                    width: 1400px;
+                    //width:$xxlarge - 84;
+                    //@include container($susy-xxlarge - );
+                    @include pull-none;
+                    @include margin-auto(0 auto);
+                }
+                @include breakpoint($largest) {
+                    max-width: $xxlarge - 42;
+                    @include percentage-value(width, 98);
+                    @include pull-none;
+                    @include margin-auto(0);
+                    @include margin-top(24,important);
+                }
+                @include breakpoint($small $max-medium) {
+                    @include margin-left(auto);
+                    @include margin-right(auto);
+                    @include pull-none;
+                }
+                @include breakpoint($small $max-small) {
+                    @include percentage-value(width, 96);
+                }
+            }
+        }
+    }
+}
+
+%carousel__max-width {
+    @include breakpoint($xxlarge) {
+        //@include container($susy-xxlarge);
+        @include percentage-value(width, 100);
+        @include pull-none;
+    }
+    @include breakpoint($largest) {
+        max-width: $largest;
+        @include margin-auto(0);
+        @include pull-none;
+    }
+}
+
+.screenreader {
+    position: absolute !important;
+    @include left(-10000);
+    @include top(auto);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.focus-holder {
+    display: none;
+}
+
+%title-border {
+    @include border-top(2, solid, $brand-color);
+    @include position(absolute);
+    @include px-to-rem(width, 61);
+    content: '';
+    @include top(-16);
+}
+.hyper-link{
+    border-bottom: 1px solid #9c9c9c;
+    &:hover{
+          border-bottom: 1px solid #c70101;
+    }
+}
+//a[href="javascript:void(0)"] {
+//    cursor: default;
+//    &[onclick], &[ng-click] {
+//        cursor: pointer;
+//    }
+//}
+
+/****************** 
+CSS FOR ERROR SCREEN
+******************/
+.error-whoops__container {
+    @include background-color($player-bg);
+    @include percentage-value(width,100);
+    @include pull-left;
+    .grid-12 {
+        &.error-whoops__inner {
+            @include px-to-rem(max-width,690);
+            @include percentage-value(width,100);
+            @include margin-top(40);
+            @include margin-bottom(40);
+            @include margin-left(auto,important);
+            @include margin-right(auto,important);
+            @include pull-none;
+            @include breakpoint($small $max-xsmall){
+                @include padding-left(16);
+                @include padding-right(16);
+            }
+            h1 {
+                @include primary-bold;
+                @include font-size(40);
+                @include color($mu-black);
+                @include margin-bottom(10);
+            }
+            p {
+                @include margin-top(10);
+                @include font-size(16);
+                @include color($mu-black);
+                a {
+                    @include border-bottom(1,solid,$link-line);
+                    @include color($mu-black);
+                    text-decoration: none;
+                    &:hover {
+                        @include border-bottom(1,solid,$mu-red);
+                    }
+                }
+            }
+            .error-text {
+                @include color($error-txt);
+                @include font-size(14);
+            }
+            .red-btn-skew {
+                @include margin-top(28);
+            }
+            .white-btn-skew {
+                @include margin-top(28);
+                @include margin-left(20);
+            }
+        }
+        &.loadmore {
+            @include text-align(center);
+        }
+    }
+}
+[data-optimizely="hide"] {
+    display:none;
+}
+caption, td, th {
+    @include text-align(left);
+}
+.en-span {
+    @include display(inline, important);
+    @include important-value(padding, 0);
+    @include important-value(margin, 0);
+    @include margin(0,important);
+    @include left(0, important);
+    @include right(0, important);
+    @include top(0, important);
+    @include bottom(0, important);
+    @include position(static,important);
+}
+.slick-slider .slick-list .slick-track{
+    transition-duration: 0.3s !important;
+}
+
+input::placeholder,
+input::-moz-placeholder,
+input:-moz-placeholder {
+  color: #6D6D6D !important;
+  opacity: 1 !important;
+}
+input::placeholder {
+  color: #6D6D6D !important;
+  opacity: 1 !important;
+}
+input:-ms-input-placeholder {
+  color: #6D6D6D !important;
+  opacity: 1 !important;
+}
+input::-webkit-input-placeholder{
+  color: #6D6D6D !important;
+  opacity: 1 !important;
+}

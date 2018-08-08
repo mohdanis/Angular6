@@ -1,0 +1,116 @@
+.tpl-download {
+    //@include padding(38, 0, 38, 0);
+    a{
+        border-bottom: none !important;
+        &:hover{
+            border-bottom:none !important;
+        }
+    }
+    &__wrapper {
+        @include margin-auto(0 auto, important);
+        @include pull-none(important);
+        @include margin-left(0);
+        @include margin-right(0);
+        @include px-to-rem(max-width, 670);
+        @include span(6 of 6 0);
+        @include breakpoint($small $max-xsmall) {
+            @include padding-right(16);
+            @include padding-left(16);
+        }
+    }
+    &.skin {
+        &-grey {
+            background: $player-bg;
+            .tpl-download__block {
+                background: $white;
+            }
+        }
+        &-white {
+            background: $white;
+            .tpl-download__block {
+                background: $player-bg;
+            }
+        }
+    }
+    &__block {
+        @include display(block);
+        @include margin-bottom(8);
+        @include clear(both);
+        @include position(relative);
+        @include padding(15,15,15,90);
+        @include px-to-rem(min-height, 121);
+        @include overflow(hidden);
+        @include breakpoint($medium){
+  @include padding(15,15,15,120);
+        }
+    }
+    &__title {
+        @include margin-bottom(48, important);
+
+        &:empty{
+            @include display(none);
+        }
+    }
+    &__icon {
+        // @include px-to-rem(width, 42);
+        @include pull-left;
+        @include position(absolute);
+        @include left(24);
+@include breakpoint($medium){
+  @include left(42);
+        }
+        i {
+            @include margin(0, 0, 8, 0);
+        }
+        label {
+            @include display(inline-block);
+            @include clear(both);
+            color: $mu-black;
+            @include secondry-regular;
+            @include font-size(14);
+            @include text-align(center);
+        }
+    }
+    &__content {
+        h6,.content-heading {
+            @include font-size(24);
+            @include secondry-light;
+            @include line-height(30,px);
+            letter-spacing: -0.2px;
+            color: $mu-black;
+            @include breakpoint($medium){
+    @include line-height(34,px);
+    @include margin-top(0);
+        }
+        }
+        p {
+            color: $mu-black;
+            @include font-size(20);
+            @include line-height(30,px);
+            // @include line-height(28,px);
+            // @include margin-bottom(20);
+            @include secondry-light;
+            @include margin-top(10);
+            @include breakpoint($medium) {
+               @include margin-top(2);
+            }
+        }
+    }
+    &__link {
+        @include margin-top(20);
+        @include display(inline-block);
+        @include clear(both);
+        color: $mu-black;
+        @include secondry-semibold;
+        @include font-size(14);
+        font-style: italic;
+        text-transform: uppercase;
+        letter-spacing: 0.9px;
+        i {
+            @include pull-right;
+            @include margin-left(14);
+            @include top(3);
+            @include position(relative);
+        }
+    }
+}

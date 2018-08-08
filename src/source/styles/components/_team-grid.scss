@@ -1,0 +1,333 @@
+.team-grid {
+    @include percentage-value(width, 100);
+    &__filter {
+        @include percentage-value(width, 100);
+        @include pull-left;
+        @include margin-bottom(-8);
+        @include breakpoint($large) {
+        @include margin-bottom(-4);
+        }
+        @include breakpoint($xlarge) {
+                @include margin-bottom(0);
+        }
+        @include breakpoint($xxlarge) {
+                @include margin-bottom(30);
+        }
+        .team__heading {
+            @extend %team_heading;
+            @include percentage-value(width, 100);
+            @include text-align(center);
+            @include margin-top(16);
+            @include margin-bottom(16);
+            @include line-height(14,px);
+            @include px-to-rem(min-height, 14);
+        }
+        &-tab {
+            overflow: hidden;
+            height: 30px;
+            @include pull-left;
+            @include percentage-value(width, 100);
+            // @include px-to-rem(height, 38);
+            @include margin-top(22);
+            //@include margin-bottom(20);
+            // overflow: hidden;
+            & nav {
+                @include display(block);
+                @include position(relative);
+                @include percentage-value(width, 100);
+                // @include px-to-rem(height, 68);
+                // overflow-y: hidden;
+                overflow-x: auto;
+                ul {
+                    //@include border-bottom(2, solid, $black, 0.1);
+                    // @include px-to-rem(height, 38);
+                    @include pull-left;
+                    @include percentage-value(width, 100); //To do
+                    @include padding-bottom(25);
+                    @include breakpoint($medium) {
+                        @include percentage-value(width, 100);
+                    }
+                    li {
+                        @include pull-left;
+                        @include margin-right(24);
+                        a {
+                            @extend %team_heading_regular;
+                            @include color(#6e6e6e);
+                            @include display(inline-block,important);
+                            @include padding-bottom(10);
+                            &:hover{
+                                @include border-bottom(4, solid, #9c9c9c);
+                            }
+                            &.active {
+                                @include border-bottom(4, solid, $mu-red);
+                                @extend %team_heading_regular;
+                                color: #000;
+                                &:hover{
+                                    @include border-bottom(4, solid, $mu-red);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__details {
+        @include percentage-value(width, 100);
+        @include pull-left;
+        &[data-content="Reserves"],
+        &[data-content="Academy"],
+        &[data-content="Manager & Staff"] {
+            .mu-item__jersey-number {
+                @include font-size(0,important);
+                text-indent: -9999px;
+            }
+            .screenreader {
+                display: none;
+            }
+        }
+        .grid-3 {
+            &.teamgrid-ratio {
+                 @include aspect-ratio(1, 1);
+                 @extend %bottom-gutter;
+                 @include breakpoint($small $xsmall) {
+                    @include margin-bottom(16);
+                 }
+            }
+            .mu-content {
+               @include important(position, absolute);
+               @include percentage-value(height, 100);
+            }
+        }
+    }
+    &__item {
+        @include pull-left;
+        @include percentage-value(width, 100);
+        .team-grid__heading {
+            @extend %team_grid_heading;
+            letter-spacing: 0;
+            @include breakpoint($medium) {
+                @include margin(16, 0, 16, 0);
+            }
+            @include breakpoint($small $xsmall) {
+                @include margin(16, 0, 16, 0);
+            }
+            i {
+                @include pull-right;
+                @include font-size(25);
+                @include cursor(pointer);
+            }
+            &:first-child {
+                @include margin-top(28);
+                @include breakpoint($large) {
+                        @include margin-top(25);
+                }
+                
+                @include breakpoint($xlarge) {
+                        @include margin-top(20);
+                }
+                @include breakpoint($xxlarge) {
+                        @include margin-top(15);
+                        @include margin-bottom(28);
+                }
+            }
+        }
+        .mu-item {
+            &.team-card {
+                @extend %row-gutter;
+                // @include px-to-rem(height, 138);
+                // @include breakpoint($xsmall) {
+                //     @include px-to-rem(height, 240);
+                // }
+                // @include breakpoint($medium) {
+                //     @include px-to-rem(height, 250);
+                // }
+                // @include breakpoint($large) {
+                //     @include px-to-rem(height, 314);
+                // }
+                // @include breakpoint($xlarge) {
+                //     @include px-to-rem(height, 287);
+                // }
+                // @include breakpoint($xxlarge) {
+                //     @include px-to-rem(height, 284);
+                // }
+                & .mu-item__info {
+                    @include padding(0, 0, 16, 20);
+                    @include px-to-rem(bottom, 0);
+                    @include breakpoint($small $xsmall) {
+                        @include padding(0, 0, 12, 12);
+                    }
+                    .mu-item__jersey-number {
+                        @extend %team-grid__jesrsy-number;
+                    }
+                    .mu-item__firstname {
+                        @extend %team-grid__player-name;
+                        @include breakpoint($small $xsmall) {
+                            @include font-size(24);
+                        }
+                    }
+                    .mu-item__lastname {
+                        @extend %team-grid__player-name;
+                        @include breakpoint($small $xsmall) {
+                            @include font-size(24);
+                        }
+                        &:before {
+                            @include display(none);
+                        }
+                    }
+                }
+            }
+        }
+        & .grid-3 {
+            @include span(3 of 6);
+            @include breakpoint($medium) {
+                @include span(4 of 12);
+            }
+            @include breakpoint($xlarge) {
+                @include span(3 of 12);
+                display: inline-block;
+            }
+        }
+    }
+    &__result {
+        background: #f8f8f8;
+        .minheight {
+            @include px-to-rem(min-height, 100);
+            @include position(relative);
+            .loader {
+                @include margin-top(0);
+            }
+        }
+        .grid-12.ad-block {
+            @include breakpoint($small $max-small){
+                @include percentage-value(width,100);
+                @include percentage-value(margin-left,0);
+                @include percentage-value(margin-right,0);
+            }
+            @include margin(24, 0, 24, 0);
+            @include breakpoint($medium $max-medium) {
+                @include px-to-rem(width,750);
+                @include pull-none;
+                @include padding-bottom(20);
+                margin:0px auto;
+            }
+            @include breakpoint($medium $medium) {
+                @include percentage-value(margin-left,-1);
+            }
+            @include breakpoint($large){
+                @include px-to-rem(width,970);
+                @include pull-none;
+                @include padding-bottom(20);
+                margin:0px auto;
+            }
+        }
+        
+    }
+    &__filter {
+        background: #fff;
+    }
+    &__filter-data {
+        .player-items {
+            &:nth-child(1) {
+                @include aspect-ratio(3, 4);
+                @include breakpoint($xsmall) {
+                    @include aspect-ratio(16, 9);
+                }
+                @include breakpoint($medium) {
+                    @include aspect-ratio(2.35, 1);
+                }
+                @include span(6 of 6 0);
+                @include margin-left(0);
+                @include breakpoint($medium) {
+                    @include span(12 of 12 0);
+                }
+                .mu-item__title {
+                    @include tertiary-bold;
+                    @include font-size(32);
+                    @include breakpoint($medium) {
+                        @include font-size(40);
+                    }
+                }
+                @extend %teamgrid-gutter;
+            }
+            @include cursor(pointer);
+            @include span(6 of 6);
+            @include aspect-ratio(3, 4);
+            @include breakpoint($xsmall) {
+                @include aspect-ratio(3, 4);
+            }
+            @include breakpoint($medium) {
+                @include aspect-ratio(16, 9);
+                @include span(6 of 12);
+            }            
+            @extend %defult-card;
+            .mu-item__title {
+                @extend %filter-heading;
+            }
+            .mu-item__info {
+                // @include important(bottom, 16);
+                @include padding(0, 0, 7, 20);
+                bottom: 0 !important;
+            }
+            .mu-content {
+                @include important(position, absolute);
+            }
+            & .mu-item {
+                @include important(height, 100%);
+            }
+        }
+        //@extend %img-hoverimg;
+    }
+    .team-grid__filter .filter__right-tab {
+        @include display(inline-block);
+        padding-left: 0;
+        @include right(12);
+        @include position(absolute);
+        @include top(7);
+        @include breakpoint($small $max-small) {
+            @include pull-right;
+            @include right(0);
+            @include position(relative);
+        }
+    }
+
+    .team-grid__filter .filter__right-tab a{
+        @include position(relative);
+        @include display(inline-block);
+        max-height: 40px;
+        @include padding(8);
+    }
+
+    .team-grid__filter .filter__right-tab a span {
+        @include pull-left;
+        color: #858585;
+        @include text-align(left);
+        @include margin-right(16);
+        font-family: SourceSansProRegular,Helvetica,sans-serif;
+        @include padding-top(6);
+        @include padding-bottom(6);
+        text-transform: uppercase;
+        @include font-size(12);
+    }
+
+    .team-grid__filter .filter__right-tab a img {
+        max-width: 74px;
+        max-height: 24px;
+        @include margin-left(0);
+        @include display(inline-block);
+        vertical-align: middle;
+    }
+
+}
+
+
+.team-grid__item ul li a {
+    @include display(inline-block);
+    width: 100%;
+    height: 100%;
+}
+.team-grid__item .img-holder figure {
+    opacity: 0;
+    //transition: opacity 0.5s ease-out, transform .8s cubic-bezier(0.19,1,.22,1);
+    @extend %lazy-load-image-fade;
+}

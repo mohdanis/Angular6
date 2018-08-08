@@ -1,0 +1,9 @@
+.modal-page {
+    &__footer {
+        span {
+            &.share {
+                transform: translate(50%, 0);
+            }
+        }
+    }
+}

@@ -1,0 +1,62 @@
+.home-header {
+    &.hamburger-menu {
+        nav {
+            .home-header__buttons .social-button {
+                transform: translate(50%);
+            }
+        }
+    }
+}
+.hamburger-menu {
+    li {
+        &.clicked-sub-menu {
+            > a {
+                span.icon-header-arrow {
+                    transform: rotate(180deg) scaleX(-1);
+                }
+            }
+        }
+    }
+}
+.my-united {
+    .white-btn-skew {
+        @include breakpoint($large) {
+            transform: skew(10deg);
+        }
+    }
+}
+.home-header__cards {
+    .match-card {
+        .match-item {
+            &__info {
+                &--team {
+                    &-vs {
+                        transform: skew(12deg);
+                        span {
+                            transform: skew(-12deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+ul.home-header__sub-data li {
+    a {
+        &:after {
+            transform: translate(100%);
+        }
+    }
+    &:hover {
+        a {
+            &:after {
+                transform: translate(-12px);
+            }
+        }
+    }
+}
+ul.home-header__sub-data li {
+    a {
+        transition: padding-right .2s linear;
+    }
+}

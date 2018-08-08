@@ -1,0 +1,25 @@
+.reversetheme {
+	.home-header {
+		background-image: radial-gradient(circle at 50% 55%, $mu-grey, $mu-grey), linear-gradient($mu-grey, $mu-grey);
+		&.scrolled-header {
+			.home-header__bottom {
+				background-image: radial-gradient(circle at 50% 55%, $mu-black, $mu-black), linear-gradient($mu-black, $mu-black);
+			}
+		}
+    }
+    .home-header__bottom {
+    	@include background($mu-black);
+        @include border-top(1,solid,$default-text-color,.8);
+        
+    }
+
+    //Footer
+    .footer {
+        .sponsor {
+            @include background($mu-grey);
+            @include border-bottom(1, solid, $bdr-color, 0.1);
+        }
+
+        
+    }
+}

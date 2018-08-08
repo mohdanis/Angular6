@@ -1,0 +1,427 @@
+%quotes__info {
+    @include position(absolute);
+    @include padding(0);
+    @include span(6 of 6 0);
+    @include margin(0, 0 0 16);
+    @include breakpoint($medium) {
+        @include span(12 of 12 0);
+    }
+}
+
+%blockquotes {
+    @include color($white);
+    @include font-weight(bold);
+    @include primary-bold;
+    @include padding(0, 0, 0, 20);
+    @include position(relative); // @include text-truncate-lines(3, 48,0.88);        
+    width: auto;
+    &:before {
+        @include border-left(4, solid, $white);
+        @include position(absolute);
+        content: '';
+        @include top(5);
+        @include bottom(5);
+        @include left(0);
+        @include px-to-rem(height, 102);
+        @include percentage-value(height, 60);
+    }
+}
+
+%quotes__paragraph {
+    @include color($white);
+    @include secondry-regular;
+    @include font-size(18);
+    @include line-height(26,px);
+    @include position(relative);
+    @include pull-left; //@include text-transform(lowercase);
+    &::first-letter {
+        @include text-transform(uppercase, unset);
+    }
+    font-stretch: normal;
+    // PBL-139 Fix
+    @include breakpoint($small $max-xsmall) {
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+%quotes__paragraph__child {
+    @extend %quotes__paragraph;
+    @include color($vertical-strips);
+    @include secondry-light;
+    @include font-size(20);
+    @include line-height(30,px);
+    @include pull-left;
+}
+
+%author {
+    @include margin-bottom(16);
+    @include margin-top(16);
+    @include color($white);
+    @include secondry-regular;
+    @include font-size(16);
+    @include line-height(22,px);
+    @include pull-left;
+    @include percentage-value(width, 100);
+}
+
+%author__child {
+    @extend %author;
+    @include color($mu-black);
+    @include margin-bottom(24);
+}
+
+.home-article-detail {
+    .mu-item {
+        &.quotes {
+            @include cursor(default);
+        }
+    }
+}
+
+.mu-item {
+    &.quotes {
+        &.no-img {
+            @include opacity(1,important);
+        }
+        @include cursor(pointer);
+        @extend %white-card;
+        .mu-quotes__wrapper {
+            @include position(absolute);
+            @include bottom(44);
+            @include padding-left(20);
+            @include padding-right(20);
+            @include breakpoint($small $max-small) {
+                @include padding-left(20); //@include padding-right(48);
+                @include padding-right(0); //changed as suggested
+            }
+            @include pull-left;
+        }
+        .mu-quotes__info {
+            @include percentage-value(width, 100);
+            @include breakpoint($small $max-small) {
+                @include padding-left(0,important);
+                @include padding-right(0,important);
+            } // @include breakpoint($xlarge) {
+            //     @include percentage-value(width, 70);
+            // }
+        }
+        .img-holder {
+            @include pull-left;
+            @include percentage-value(width, 100);
+            @include percentage-value(height, 100);
+            @include position(relative);
+            figure {
+                @extend %cover-img-initial;
+                    opacity: 0;
+                    //transition: opacity 0.5s ease-out, transform .8s cubic-bezier(0.19,1,.22,1);
+                    @extend %lazy-load-image-fade;
+            }
+        }
+        .mu-quotes__title {
+            @extend %quotes__paragraph;
+        }
+        .mu-item__title {
+            @extend %quotes__paragraph;
+            @include text-transform(none);
+            @include secondry-semibold;
+            @include margin-bottom(3);
+            &:before {
+                @include display(none);
+                .modal &{
+                    @include display(block);
+                }
+            }
+        }
+        .mu-item__sponsor {
+            @include important-value(padding, 8);
+        }
+        .mu-quotes__author {
+            @extend %author;
+        }
+        .mu-item__gradient {
+            @extend .mu-item__tint;
+            //@include display(none);
+        }
+        
+    }
+}
+
+.mu-item {
+    &.quotes {
+        .mu-item__title {
+            &:empty {
+                @include display(none);
+            }
+        }
+        &.child {
+            .mu-item__title {
+                @include color($mu-black); //z-index: 99 !important;
+            }
+            .mu-quotes__title {
+                @extend %quotes__paragraph__child;
+            }
+            .mu-quotes__author {
+                @extend %author__child;
+            }
+            .mu-item__sponsor__wrapper {
+                @include background($white-lighter);
+                @include color($grey-text);
+                @include breakpoint($medium) {
+                    @include pull-right;
+                }
+            }
+            .mu-item__sponsor {
+                @include right(0);
+            }
+            .img-holder {
+                @include display(none);
+            }
+            //for sitecore sponsor
+            img[data-type=light] {
+                @include display(none,important);
+            }
+            img[data-type=dark] {
+                @include display(block,important);
+                @include margin-top(-24);
+            }
+        }
+    }
+}
+
+.grid-12,
+.grid-8 {
+    .mu-item.quotes {
+        &.child {
+            .mu-item__title {
+                @include color($mu-black); //z-index: 99 !important;
+            }
+        }
+        @include margin-bottom(0);
+        .mu-quotes__info {
+            @include percentage-value(width, 100);
+            @include padding-left(20);
+            @include breakpoint($xsmall) {
+                @include padding-left(4,percent);
+            }
+            @include breakpoint($xxlarge) {
+                @include padding-left(8,percent);
+            }
+        }
+        .mu-quotes__title {
+            @include font-size(20);
+            @include line-height(26,px);
+            @include breakpoint($xsmall) {
+                @include font-size(20);
+                @include line-height(30,px);
+            }
+            @include breakpoint($medium) {
+                @include font-size(24);
+                @include line-height(36,px);
+            }
+        }
+        .mu-quotes__wrapper {
+            @include breakpoint($small $max-small) {
+                @include percentage-value(width, 90);
+                @include margin-bottom(25);
+            }
+            @include breakpoint($xsmall) {
+                @include bottom(32);
+            }
+            @include breakpoint($large) {
+                @include percentage-value(width, 80);
+                @include bottom(40);
+            }
+            @include breakpoint($xlarge) {
+                @include percentage-value(width, 70);
+            }
+            @include breakpoint($xxlarge) {
+                @include percentage-value(width, 60);
+            }
+        }
+    }
+}
+
+.grid-12.without-img {
+    @include pull-left;
+    &:before {
+        @include padding-top(0,important);
+    }
+    .mu-content {
+        @include important(position, relative);
+    }
+    .mu-item.quotes {
+        &.child {
+            @include important(background-color, $white-lighter);
+            @include position(relative);
+            .mu-quotes__wrapper {
+                @include important(position, relative);
+                @include margin-top(56);
+                @include breakpoint($xlarge) {
+                    @include margin-top(72);
+                }
+            }
+            .mu-item__sponsor {
+                @include important(position, relative);
+            }
+        }
+    }
+}
+
+.grid-8.ratio-matchday.with-img {
+    .mu-quotes__wrapper {
+        @include breakpoint($small) {
+            width: 100% !important;
+        }
+        @include breakpoint($medium) {
+            @include padding-left(0);
+            @include padding-right(0);
+            width: 90% !important;
+        }
+    }
+    .mu-quotes__info {
+        width: 100% !important;
+    }
+}
+
+.grid-8.ratio-matchday.without-img {
+    .mu-item.quotes {
+        .mu-quotes__wrapper {
+            @include breakpoint($small) {
+                width: 100% !important;
+            }
+            @include breakpoint($medium) {
+                @include padding-left(0);
+                @include padding-right(0);
+                width: 90% !important;
+            }
+        }
+        .mu-quotes__info {
+            width: 100% !important;
+        }
+        &.child {
+            @include important(background-color, $white);
+            @include position(relative);
+            .mu-quotes__wrapper {
+                @include important(position, relative);
+                @include margin-top(56);
+                @include breakpoint($xlarge) {
+                    @include margin-top(72);
+                }
+            }
+            .mu-item__sponsor {
+                @include important(position, relative);
+            }
+            .mu-quotes__info {
+                //@include padding-left(105);
+                //@include padding-right(105);
+                @include percentage-value(width, 100);
+            }
+        }
+    }
+}
+
+.grid-8.ratio-matchday.without-img {
+    @include pull-left;
+    &:before {
+        @include padding-top(0,important);
+    }
+    .mu-content {
+        @include important(position, relative);
+    }
+}
+
+.grid-3 {
+    .quotes {
+        .mu-quotes__author {
+            @include margin-bottom(8);
+        }
+        .mu-quotes__wrapper {
+            @include percentage-value(width, 100);
+        }
+        .mu-quotes__info {
+            @include percentage-value(width, 100);
+        }
+    }
+}
+
+//match day
+.match-day .home-quotes .mu-content {
+    position: absolute!important;
+}
+
+//For Micro card and moni card
+.micro-card {
+    .mu-item.quotes {
+        .mu-quotes__info {
+            // @include span(4 of 6 0);
+            width: calc(100% - 106px);
+            @include padding(16, 16, 16, 16);
+            @include position(static);
+            @include right(0);
+            @include percentage-value(height, 100);
+            @include top(0);
+            @include pull-right;
+            .mu-item__title,
+            .mu-quotes__title {
+                @include important(color, $mu-black);
+            }
+            .mu-quotes__author {
+                @include color($mu-black);
+            }
+            .mu-quotes__wrapper {
+                @include percentage-value(height, 100);
+                @include padding(0, 0, 0, 0);
+            }
+        }
+        .mu-quotes__wrapper {
+            @include position(static);
+            @include padding-bottom(44);
+        }
+        .statsbar .statsbar__split {
+            border-left: solid 1px #686868!important;
+        }
+    }
+}
+
+.mini-card.ratio {
+    .quotes.mu-item {
+        .mu-quotes__wrapper {
+            @include position(absolute);
+            @include padding-left(16);
+            @include padding-right(16);
+            @include percentage-value(width, 100);
+            @include right(0);
+            @include bottom(44);
+        }
+        .mu-item__title {
+            @extend %quotes__paragraph;
+            @include text-transform(none);
+            @include secondry-semibold;
+            @include margin-bottom(3);
+            &:before {
+                @include display(none);
+            }
+        }
+    }
+}
+
+.mini-card.ratio .quotes.mu-item.child .statsbar span {
+    @include important(color, $mu-black);
+}
+
+.carousal {
+    .mu-item.quotes {
+        .mu-quotes__wrapper {
+            @include percentage-value(width, 100);
+        }
+        .mu-quotes__info {
+            @include percentage-value(width, 100);
+        }
+    }
+}
+
+.remove-pointer {
+    cursor: default !important;
+}

@@ -1,0 +1,2186 @@
+/* start new code for touch devices */
+
+.custom-mobile-slider {
+    .grid-3.ratio {
+       &:before {
+            @include breakpoint($small $max-xsmall) {
+              //  padding-top:136% !important;
+            }
+        }
+    }
+   list-style: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    @include padding-bottom(50);
+    white-space: nowrap; //height: 100%;
+    height: 435px !important;
+    @include pull-left;
+    width: 100%;
+    min-width: 279px;
+    opacity: 1 !important;
+    visibility: visible !important;
+    &.carousal-list {
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    &::-webkit-scrollbar:horizontal {
+        width: 0px;
+        -webkit-appearance: none;
+        background: transparent;
+    }
+    &::-webkit-scrollbar:vertical {
+        width: 0px;
+        -webkit-appearance: none;
+        background: transparent;
+    }
+    &::-webkit-scrollbar {
+        width: 0px;
+        -webkit-appearance: none;
+        background: transparent;
+    }
+    &::-webkit-scrollbar-track {
+        width: 0px;
+        -webkit-appearance: none;
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        width: 0px;
+        -webkit-appearance: none;
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        width: 0px;
+        -webkit-appearance: none;
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb:window-inactive {
+        width: 0px;
+        -webkit-appearance: none;
+        background: transparent;
+    }
+}
+
+.custom-mobile-slider li ,.custom-mobile-slider .mobile-listitem{
+    display: inline-block;
+    vertical-align: top;
+    @include pull-none(important);
+    position: relative;
+    white-space: normal;
+    display: inline-block;
+    visibility: visible !important;
+    
+}
+
+.custom-container {
+    width: 100% !important;
+    .carousal-wrapper {
+
+        clear: both;
+        overflow: hidden;
+        z-index: 9987;
+        @include percentage-value(width, 100);
+
+        @include px-to-rem(height, 379);
+        @include margin-bottom(10);
+    }
+}
+.carousal {
+   .carousal-cover__wrapper>figure  {
+        background-size: cover;
+
+    } 
+}
+
+
+
+
+
+
+
+/* end new code for touch devices */
+.home-row{
+    .carousal {
+        .container {
+            .first-slide {
+                .home-hero{
+                  &.inner-gutter.xlarge {
+                     @include margin-top(0,important);
+                  }
+                } 
+            }
+        }
+    }
+ }
+
+.carousal { 
+    .carousal-width {
+        @include breakpoint($small $large) {
+            @include position(relative);
+            @include padding-bottom(7);
+        }
+    }
+    
+    @include margin-auto(0 auto);
+    .slick-disabled {
+        display: none !important;
+    }
+    .black-btn-skew {
+        @include display(none);
+        @include breakpoint($xsmall) {
+            @include display(block);
+        }
+    }
+    .dfp-ads-card {
+        *:focus {
+            outline: 0;
+            overflow: visible;
+        }
+        .mu-item {
+            .mu-content {
+                overflow: hidden;
+            }
+            &:focus {
+                > .img-holder {
+                    box-shadow: 0 0 0 2px #0079c1;                
+                }
+            }
+        }
+    }    
+    & *:focus {
+        outline: #0079c1 solid 2px;
+        overflow:hidden;
+    }
+    & .nofocus *:focus {
+        outline: #0079c1 transparent 0px;
+        overflow:hidden;
+    }
+    // li:focus {
+    //     outline: none !important;
+    //     overflow: visible;
+    // }
+    
+    .focus-none {
+        outline: #0079c1 solid 0px !important;
+    }
+    .slick-list {
+        @include breakpoint($xsmall $max-xsmall) {
+            @include margin-left(12);
+        }
+        @include breakpoint($large) {
+            @include margin-left(6);
+        }
+        @include breakpoint($xxlarge) {
+            @include margin-left(12);
+        }
+    }
+
+    .container {
+        @include breakpoint($small $max-small) {
+            max-width: 100%;
+            width: 100%;
+        }
+        @include breakpoint($xsmall $max-xsmall) {
+            width: 500px;
+        }
+        @include breakpoint($medium $max-medium) {
+            //width: 598px;
+            width: 582px;
+        }
+        @include breakpoint($large $max-large) {
+            width: 898px;
+        }
+        @include breakpoint($xlarge) {
+            width: 1196px;
+        } //@include breakpoint($xxlarge) {
+        //    width: 1212px;
+        //}
+    }
+
+    &.background-content {
+        .container {
+            @include breakpoint($xlarge $max-xlarge) {
+                //width: 898px;
+            }
+            .carousal__info{
+                .carousal__title {
+                    @include breakpoint($small $max-xsmall){
+                        @include display(none);
+                    }
+                    
+                }
+            }
+            
+        }
+        .carousal-cover__wrapper {
+
+            .mu-item__gradient {
+                 @extend .mu-item__tint;
+                // background-color: #393434;
+                // background: rgba(57, 52, 52, .7);
+
+            }
+        }
+     
+    }
+    &.background-content:not(.carousal-light) {
+        .container {
+            @include breakpoint($xlarge $max-xlarge) {
+                //width: 898px;
+            }
+            .grid-3 {
+                .mu-item {
+                    border: 1px solid #404040;                    
+                }
+                .bg-cta {
+                    .mu-item__gradient {
+                        @include breakpoint($small 568px) {
+                            border: 1px solid #404040;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.hero-carousal__sponsor {
+        .container {
+            @include breakpoint($small $max-xsmall) {
+                @include padding-top(30);
+            }
+            .black-btn-skew {
+                background: none;
+                border: none;
+                &:hover {
+                    background: none;
+                }
+            }
+            .carousal__title {
+                @include tertiary-semibold;
+                @include margin(32, 10, 10, 10);
+                @include breakpoint($medium) {
+                    //@include font-size(24);
+                    @include important-value(font-size, 24);
+                    @include line-height(52,px,important);
+                    @include margin(32, 0, 24, 10);
+                }
+                // @include breakpoint($xxlarge) {
+                //     @include margin(32, 0, 32, 0);
+                // }
+                // @include breakpoint($xlarge) {
+                //     @include font-size(40);
+                // }
+            }
+            .infowrapper {
+                @include percentage-value(width, 100);
+                .carousal__info {
+                    @include breakpoint($small $max-small) {
+                        @include percentage-value(width, 80);
+                    }
+                    .carousal__title {
+                        @include margin(0, 0, 12, 0);
+                    }
+                    .black-btn-skew {
+                        a {
+                            @include padding(0, 0, 0, 0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.bg-ncta {
+        .carousal-cover__wrapper {
+            @include breakpoint($small $max-xsmall) {
+                display: none;
+            }
+        }
+        .container>h2+div:not(.carousal-width) {
+            @include breakpoint($small $max-xsmall) {
+                display: none;
+            }
+        }
+        .carousal__info {
+            @include breakpoint($small $max-xsmall) {
+                display: none;
+            }
+        }
+    }
+    .carousal-list {
+        @include percentage-value(height, 100);
+        @include pull-left;
+        width: 100%;
+        min-width: 279px;
+        @include px-to-rem(margin-bottom,16);
+        + a.carousal-destination {
+            @include margin-top(-16);
+        }
+        li, .slick-slide, .mobile-listitem  {
+            &:first-child{
+                @include breakpoint($small $max-xsmall) {
+                    //@include margin-left(20);
+                }
+            }
+        }
+        .firstSlide {
+            .mu-content {
+                //border: 1px solid #404040;
+            }
+            .infowrapper {
+                .carousal__info {
+                    @include percentage-value(width, 100);
+                    @include padding(0, 20 , 0 ,20);
+                    @include bottom(48);
+                    @include left(0);
+                    @include top(auto);
+                    @include position(absolute);
+                    @include z-index(999);
+                    @include color($white);
+                    @include breakpoint($small $max-xsmall) {
+                        //@include percentage-value(height, 100);
+                        @include font-size(24);
+                    }
+                    @include breakpoint($xlarge $max-xlarge) {
+                        bottom: 60px;
+                    }
+                    @include breakpoint($xxlarge) {
+                        bottom: 56px;
+                    }
+                }
+            }
+        }
+
+    }
+
+
+    &.hero-carousal:not(.carousal-light),
+    &.hero-carousal__sponsor:not(.carousal-light) {
+        .slider-next,
+        .slider-prev {
+            // background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)), linear-gradient(#494a50, #494a50);
+            // background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)), linear-gradient(#494a50, #494a50);
+            // box-shadow: 0 4px 17px 0 rgba(0, 0, 0, 0.5);
+            // box-shadow: 0 4px 17px 0 rgba(0, 0, 0, 0.5);
+            background: #494a50;
+            &:hover {
+                background: #ffffff;
+                .icon-arrow-next {
+                    @extend .icon-next-2;
+                }
+                .icon-arrow-prev {
+                    @extend .icon-prev-2;
+                }
+            }
+        }
+        .icon-arrow-next {
+            @extend .icon-next;
+        }
+        .icon-arrow-prev {
+            @extend .icon-prev;
+        }
+    }
+    .slider-prev,
+    .slider-next {
+        @include px-to-rem(height, 44);
+        @include px-to-rem(width, 44);
+        @include position(absolute);
+        @include z-index(999);
+        @include cursor(pointer);
+        background-color: #f8f8f8;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+        text-indent: -9999px;
+        @include top(40,percent);
+        i {
+            @include top(15,important);
+            @include position(absolute);
+            @include z-index(999);
+        }
+        &.slick-disabled {
+            opacity: 0;
+            cursor: none;
+            pointer-events: none;
+        }
+        &:hover {
+            background: #494a50;
+            .icon-arrow-next {
+                @extend .icon-next;
+            }
+            .icon-arrow-prev {
+                @extend .icon-prev;
+            }
+        }
+    }
+    .slider-prev {
+        i {
+            @include left(15,important);
+            @include breakpoint($xsmall, $max-xsmall) {
+                @include left(14,important);
+            
+            }
+        }
+        @include margin-left(0);
+        @include breakpoint($small, $max-small) {
+            @include left(0);
+        }
+        @include breakpoint($xsmall $max-xsmall) {
+            @include left(-18);
+        }
+        @include breakpoint($medium $max-medium) {
+            @include left(-64);
+        }
+        @include breakpoint($large $max-large) {
+            @include left(-50);
+        }
+        @include breakpoint($xlarge) {
+            @include left(-40);
+        }
+        @include breakpoint($xxlarge) {
+            @include left(-50);
+        }
+        @include breakpoint($xxlarge) {}
+    }
+    .slider-next {
+        @include margin-right(0);
+        @include pull-right;
+        i {
+            @include left(16,important);
+            @include breakpoint($small, $max-small) {
+
+                @include left(14,important);
+            }
+        } 
+        @include breakpoint($small, $max-small) {
+            @include right(0);
+        }
+        @include breakpoint($xsmall $max-xsmall) {
+            @include right(-30);
+        }
+        @include breakpoint($medium $max-medium) {
+            @include right(-64);
+        }
+        @include breakpoint($large $max-large) {
+            @include right(-50);
+        }
+        @include breakpoint($xlarge) {
+            @include right(-45);
+        }
+        @include breakpoint($xxlarge) {
+            @include right(-54);
+        }
+    }
+    .slider-next a.disabled,
+    .slider-prev a.disabled {
+    } 
+    //end for Accessibility
+    .bg-cta {
+        @include breakpoint($small $max-small) {
+            //@include display(none);
+        }
+    } // To show 1920 after that it shows black screen from both side
+    @extend %carousel__max-width;
+    .grid-3 {
+        // .mu-item__title {
+        //     
+        // }
+        &.child {
+            .img-holder {
+                &:before {
+                    @include padding-top(42.55319,percent);
+                }
+            }
+            .mu-item__gradient {
+                display: none;
+            }
+            .mu-item.video {
+                .mu-item__title {
+                    @include font-size(18,important);
+                }
+            }
+            .mu-item__teasure {
+                @include font-size(16,important);
+            }
+            .mu-item {
+                &.video,
+                &.audio {
+                    .mu-item__play {
+                        @include top(-60);
+                        @include breakpoint($small $max-xsmall) {
+                            span {
+                            // deleted for carousel video child for mobile landscap 568 
+                            // transform: scale(.5, .5);
+                            transform: translate(-50%,-50%) !important;
+                            @include left(45,percent,important);
+                            @include top(50,percent,important);                           
+                            
+                        }
+                        }
+                    }
+                }
+            }
+        }
+        .mu-item.audio .mu-item__play,
+        .mu-item.video .mu-item__play {
+            @include margin-bottom(12);
+            width: 44px;
+            height: 44px;
+        }
+        @include aspect-ratio(3, 4);
+        &.child {
+            .mu-item__title {
+                //@include margin-top(8);
+            }
+            .mu-item__teasure {
+                @include font-size(14);
+                @include line-height(1.5);
+            }
+            .mu-item.audio .mu-item__play,
+            .mu-item.video .mu-item__play {
+
+            }
+            @include breakpoint($small $max-small) {
+                &:before {
+                    @include padding-top(133.33,percent,important);
+                }
+                .mu-content {
+                    position: absolute !important;
+                }
+            }
+        }
+    } //@include padding-bottom(40);
+    @include background-color($mu-black);
+    @include breakpoint($small) {
+        @include padding-bottom(0);
+    }
+    .carousal-destination {
+        @include breakpoint($xsmall) {
+            //@include margin(20, 0, 22, 0);
+        }
+    }
+    .mu-item__gradient.mu-item__gradient {
+        //@include background-color($vertical-strips, 0.3);
+        height: 100% !important;
+    }
+    &.match-carousal {
+        min-height: auto;
+        @extend %light-bg-bullet;
+        @include background-color($white-lighter);
+        .match-item__info {
+            .match-item__info--team {
+                position: relative;
+                img.no-img {
+                  @include opacity(1);  
+                }
+                &.team-name {
+                    @include font-size(12);
+                    @include tertiary-semibold;
+                    @include text-transform(uppercase);
+                    @include color($mu-black);
+                    @include px-to-rem(height,24);
+                    @include padding-top(0);
+                    span {
+                        @include padding-right(0);
+                    }
+                }
+                &.team-name~.team-name span {
+                    @include padding-left(0);
+                }
+                &.team-vs {
+                    background: none;
+                    width: 25px;
+                    @include px-to-rem(height,24);
+                    @include color(#717171);
+                    @include font-size(12);
+                    @include tertiary-semibold;
+                    @include text-transform(uppercase);
+                    @include padding-top(5);
+                }
+            }
+        }
+        & .carousal-destination {
+            @include color($mu-black);
+            @extend %txt-uppercase;
+            @include margin-right(10);
+            @include breakpoint($small $max-small) {
+                //@include margin-right(35);
+                @include margin-right(21);
+            }
+            .icon-plus {
+                @extend %icon-plus-margin;
+            }
+            &:hover {
+                border-bottom: 1px solid #c70101;
+            }
+        }
+        &.carousal-dark {
+            .mu-item {
+                border: 1px solid #404040;
+            }
+            .bg-cta {
+                .mu-item__gradient {
+                    @include breakpoint($small 568px) {
+                        border: 1px solid #404040;
+                    }
+                }
+            }
+            @include background-color($mu-black);
+            .carousal__skin-title,
+            .carousal__title--light {
+                @include color($white);
+                @include padding(30, 15, 20, 15);
+                @include breakpoint($xsmall) {
+                    @include padding(20, 0, 10, 0);
+                }
+                @include margin-top(0);
+                @extend %txt-uppercase;
+                @include font-size(16);
+                @include tertiary-semibold;
+                @include line-height(1);
+                letter-spacing: 0.5px;
+            }
+            .carousal-destination {
+                @include color($white);
+                .icon-plus {
+                    @extend .icon-plus-icon;
+                    @extend %icon-plus-margin;
+                }
+                &:hover {
+                    border-bottom: 1px solid #ffffff;
+                }
+            }
+            @extend %dark-bg-bullet;
+        }
+        & .mu-item {
+            @include margin-bottom(0,important);
+        }
+        .slider-prev a.bx-prev,
+        .slider-next a.bx-next {
+            @include background($white);
+        }
+
+
+    }
+    .carousal__title {
+        &.white {
+            @include important(color, $white);
+        }
+    }
+    @include position(relative);
+    @include prop-auto(height, auto);
+    &__info {
+        width: 100%;
+        position: absolute;
+        @include text-align(left);
+        z-index: 99;
+        color: #fff;
+        @include top(25,percent);
+        @include left(10,percent);
+        @include breakpoint($small $max-small) {
+            @include padding(0,0,0,0);
+        }
+        @include pull-left;
+        @include breakpoint($xsmall) {
+            position: relative; //@include padding(0, 0, 0, 135);
+            @include top(0);
+            @include left(0);
+        }
+        &-button {
+            @include margin-top(20);
+        }
+    }
+    &__title {
+        color: #fff;
+        letter-spacing: 0;
+        @include line-height(1);
+        @include margin(10, 0, 0, 0);
+        &:before {
+            @include top(5);
+            @include breakpoint($xsmall) {
+                @include top(-42);
+            }
+            @include breakpoint($small $max-small) {
+                display: none;
+            }
+        }
+        @include breakpoint($xsmall) {
+            letter-spacing: 1.1px;
+            @include line-height(1.36);
+            @include margin(0,0,0,0);
+            @include margin-bottom(24);
+        }
+        @include breakpoint($xlarge) {
+            @include margin-bottom(32);
+        }
+        &--light {
+            @include font-size(14);
+            @include tertiary-semibold;
+            color: #232323; 
+            @include margin(40, 0, 24, 20);
+            @include breakpoint($xsmall){
+                @include margin(40, 0, 24, 10);
+            }
+            @include breakpoint($medium){
+                @include margin(48, 0, 24, 10);
+            }
+            @include breakpoint($xxlarge) {
+                @include margin(64, 0, 20, 10);
+            }
+            @include pull-left;
+            width: 100%;
+            
+        }
+    } 
+    &-cover {
+        @include position(absolute);
+        @include left(0);
+        @include top(0);
+        @include pull-left;
+        @include z-index(0);
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        &__wrapper {
+            width: 100%;
+            @include padding(150, 0, 50, 0);
+            @include display(block);
+            &.bg-cta {
+                @include breakpoint($small $max-small) {
+                    //@include display(none);
+                }
+            }
+            @include breakpoint($small $max-small) {
+                @include padding(50, 0, 50, 0);
+            }
+            @include breakpoint($xsmall) {
+                @include display(table);
+            }
+        }
+        &__mobile {
+            @include display(block);
+            @include breakpoint($xsmall) {
+                @include display(none);
+            }
+            .carousal__title {
+                &.white {
+                    @include color($white);
+                }
+            }
+        }
+    }
+    &-list {
+        & li, .slick-slide,.mobile-listitem {
+            [class*="grid-"] {
+                width: 280px;
+                @include margin(0,0,0,0);
+                height: 100%; 
+                overflow:hidden;
+                
+            }
+            margin-left: 12px;
+            margin-right: 12px;
+        }
+
+        // & li ,.mobile-listitem {
+        //     [class*="grid-"] {
+        //         width: 279px;
+        //         @include margin(0,0,0,0);
+        //         height: 100%; 
+        //     }
+        // }
+    }
+    &-list.slidecount2 {
+        & li, .slick-slide,.mobile-listitem {
+            [class*="grid-"] {
+                width: 280px;
+                @include margin(0,0,0,0);
+                height: 100%;
+                // @include breakpoint($xsmall $max-xsmall) {
+                //     width: 250px;
+                // }
+                // @include breakpoint($large) {
+                //     width: 435px;
+                // }
+                // @include breakpoint($xxlarge) {
+                //     width: 500px;
+                // } 
+                // @include breakpoint($small $max-xsmall) {
+                // height: 100%;
+                //}
+            }
+        }
+        .slider-next,
+        .slider-prev {
+            @include breakpoint($xsmall) {
+                display: none;
+            }
+        }
+    }
+    &-list.slidecount2+.carousal-destination {
+        @include top(10,important);
+    }
+    &-destination {
+        &:hover {
+            border-bottom: 1px solid #ffffff;
+        }
+        color: #fff;
+        @include pull-right;
+        @include font-size(14);
+        @include secondry-semibold;
+        font-style: italic;
+        height: 14px; // @include margin(0, 16, 18, 0);
+        @include margin(0, 16, 28, 0);
+        @include breakpoint($small $max-xsmall) {
+            @include margin-top(10);
+            @include margin(0, 21, 28, 0);
+        }
+        @include position(relative);
+        @include z-index(99);
+        @extend %txt-uppercase;
+        @include breakpoint($medium) {
+            @include display(block);
+        }
+        @include breakpoint($xsmall) {
+            @include top(0);
+        }
+    }
+    &-button {
+        a {
+            color: #fff;
+            @include pull-left;
+            i {
+                @include margin(3,10,3,10);
+                @include pull-right;
+            }
+        }
+    }
+    &-without__cta {
+        .carousal-cover__mobile {
+            @include display(none);
+        }
+        .carousal-cover__wrapper {
+            display: block !important;
+        }
+    }
+    & .grid-4 {
+        &.item {
+            .mu-item__title {
+                @include primary-regular;
+                @include font-size(32);
+                @include line-height(0.94);
+                @extend %font-normal;
+            }
+            .mu-item__teasure {
+                @include margin-top(6,important);
+            }
+        }
+    }
+    & .grid-4 {
+        &.item {
+            .mu-item__play {
+                @include margin-top(5,important);
+            }
+            .child {
+                .mu-item.video {
+                    .mu-item__title {
+                        @include primary-regular;
+                        @include font-size(32);
+                        @include line-height(1);
+                        @extend %font-normal;
+                    }
+                    .mu-item__teasure {
+                        @include color($white-lighter);
+                        @include margin-top(10,important);
+                        @include line-height(1.38);
+                    }
+                }
+                .mu-item__play {
+                    width: auto !important;
+                }
+            }
+        }
+    }
+    .last-card {
+        .mu-item__info {
+            @include top(35,percent);
+            @include text-align(center);
+            @include pull-left;
+            .mu-item__title {
+                @include text-transform(initial); //@include secondry-semibold;
+                @include font-size(18);
+                @include margin-bottom(25);
+                &:before {
+                    @include display(none);
+                }
+            }
+            .carousal__info-button {
+                @include margin-top(0);
+                @include display(inline-block);
+                a {
+                    @include padding(18 50 18 50);
+                    @include text-transform(uppercase);
+                    @include secondry-semibold;
+                    @include font-size(18);
+                    @include color($white);
+                }
+            }
+        }
+    }
+    .mu-item {
+        &.last-card {
+            //background: transparent !important;
+        }
+        &.stats {
+            .mu-item__title {
+                @include padding(20, 0, 0, 20);
+                @include font-size(14);
+                color: #2a2a2a;
+                width: 100%;
+            }
+        }
+    }
+    .stats--match {
+        @include margin(0,0,0,0);
+        li {
+            span.stats__target {
+                @include font-size(14);
+            }
+        }
+    }
+    .stats--data {
+        color: #2a2a2a;
+    }
+    .stats.head2head {
+        height: 420px !important;
+    }
+    .stats.head2head .mu-item__wrapper {
+        height: 420px !important;
+    }
+    .head2head-list {
+        p {
+            @include font-size(12,important);
+        }
+    }
+   
+    &.carousal-dark,
+    .carousal-light {
+        @include breakpoint($small $max-small) {
+            .home-hero__title {
+
+            }
+            .home-hero-cta {
+                //  position: absolute;
+
+            }
+        }
+        .carousal-cover__wrapper {
+            @include breakpoint($small $max-xsmall) {
+                @include display(none);
+            }
+        }
+    }
+    &.carousal-dark {
+        .last-card {
+            background-color: #1a1a1a;
+            border: solid 1px #4d4d4d;
+            h2 {
+                @include font-size(18,important);
+                font-weight: normal !important;
+                @include secondry-regular;
+                color: #ffffff;
+            }
+            .link-btn-white {
+                @include pull-none;
+                span {
+                    @include color($white);
+                    &:hover {
+                        border-bottom: 1px solid $mu-red//#ffffff;
+                    }
+                }
+            }
+        }
+        .mu-item {
+            border: 1px solid #404040;
+        }
+        .bg-cta {
+            .mu-item__gradient {
+                @include breakpoint($small 568px) {
+                    border: 1px solid #404040;
+                }
+            }
+        }
+        .last-card {
+            background: #1a1a1a !important;
+        }
+        @extend %dark-bg-bullet;
+        @include background-color($mu-black);
+        .carousal__skin-title {
+            
+            @include color($white);
+            @extend %txt-uppercase;
+            @include tertiary-semibold;
+            @include font-size(14);
+            @include px-to-rem(line-height,16);
+            @include px-to-rem(letter-spacing,0.4);
+            @include margin(40, 0, 24, 20);
+            @include breakpoint($xsmall){
+                @include margin(40, 0, 24, 10);
+            }
+            @include breakpoint($medium){
+                @include margin(48, 0, 24, 10);
+            }
+            @include breakpoint($xxlarge) {
+                @include margin(64, 0, 20, 10);
+            }
+            @include pull-left;
+            width: 100%;
+        }
+        .home-hero__title {
+            @include breakpoint($small $max-xsmall){
+                @include font-size(32)
+            }
+            &.white {
+                @include important(color, $white);
+            }
+        }
+        &.hero-carousal {
+            .carousal__skin-title {
+                @include margin(40, 0, 24, 20);
+                @include breakpoint($xsmall){
+                    @include margin(40, 0, 24, 0);
+                }
+                @include breakpoint($xlarge){
+                     @include margin(40, 0, 20, 0);
+                }
+                @include breakpoint($xlarge){
+                     @include margin(40, 0, 24, 0);
+                }
+            }
+        }
+    }
+    &.carousal-light {
+        .last-card {
+            background-color: #ffffff; //border: solid 1px #dddddd;
+            h2 {
+                @include font-size(18,important);
+                font-weight: normal !important;
+                @include secondry-regular;
+                color: #232323 !important;
+            }
+            .link-btn-white {
+                @include pull-none;
+                span {
+                    color: #232323 !important;
+                }
+                .icon-cta-arrow {
+                    @extend .icon-red-arrow;
+                }
+            }
+        }
+        @include background-color($white-lighter);
+        @extend %light-bg-bullet;
+        .home-hero__title {
+            @include text-align(left);
+        }
+        .carousal__skin-title {
+            @include color($mu-black);
+            @include margin(40, 0, 24, 20);
+            @include breakpoint($xsmall){
+                @include margin(40, 0, 24, 0);
+            }
+            @include breakpoint($xlarge){
+                 @include margin(40, 0, 20, 0);
+            }
+            @include breakpoint($xlarge){
+                 @include margin(40, 0, 24, 0);
+            }
+            @extend %txt-uppercase;
+            @include font-size(14);
+            @include tertiary-semibold;
+            @include line-height(1);
+            letter-spacing: 0.4px;
+            @extend .grid-12;
+        }
+        .carousal-destination {
+            @include color($mu-black);
+            @include secondry-semibold;
+            .icon-plus-icon {
+                @extend .icon-plus;
+                @extend %icon-plus-margin;
+            }
+            &:hover {
+                border-bottom: 1px solid #c70101;
+            }
+        }
+        .carousal__title, // .mu-item__title,
+        .home-hero__info,
+        .home-hero__title {
+            @include color($mu-black);
+        }
+        .last-card {
+            .mu-item__title {
+                @include color($mu-black);
+            }
+        }
+        .home-hero__title {
+            &.white {
+                @include important(color, $white);
+            }
+        }
+    }
+    .bg-image{
+        @include breakpoint($medium){
+            @include display(none);
+        }
+    }
+    .totalshots {
+        .stats--data {
+            color: #fff;
+        }
+        .mu-item__title {
+            color: #fff !important;
+            position: relative !important;
+            z-index: 99 !important;
+        }
+    }
+    .carousal-destination {
+        @include display(block);
+        .icon-plus-icon {
+            @extend %icon-plus-margin;
+        }
+    }
+    &-width {
+        clear: both;
+    }
+    &-list {
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity .2s;
+        //max-height: 396px; //This must be changed if slide height or any padding/margin changed
+        &.slick-initialized {
+            visibility: visible;
+            opacity: 1;
+            li,.slick-slide,.mobile-listitem {
+                visibility: visible !important;
+            }
+        }
+        li,.slick-slide,.mobile-listitem {
+            @include pull-left;
+            @extend %row-gutter;
+            &:first-child {
+                visibility: hidden; //Required to take slide height
+            }
+            @include breakpoint($small $max-small) {
+                @include margin-right(10);
+                @include margin-left(10);
+            }
+            @include breakpoint($xsmall) {
+                @include margin-right(12);
+                @include margin-left(12);
+            }
+            @include breakpoint($medium) {
+                @include margin-right(12);
+                @include margin-left(12);
+            }
+            @include breakpoint($xxlarge) {
+                @include margin-right(10);
+                @include margin-left(10);
+            }
+        }
+    }
+    &__sponsor {
+        @include display(none);
+    }
+    .mu-content {
+        display: inline;
+        .mu-item {
+            & figure {
+                .mu-item__gradient {
+                    //@extend .gradient-card-bottom-left;
+                }
+            }
+        }
+    }
+    .carousal-width {
+        @include position(relative);
+        .bx-viewport {
+            @include important(height, auto);
+        }
+        .mu-content {
+            .mu-item {
+                & figure {
+                    .mu-item__gradient {
+                        //@extend .gradient-card-bottom-left;
+                    }
+                }
+            }
+        }
+    }
+    .infowrapper {
+        @include pull-left;
+        @include breakpoint($xsmall) {
+            @include padding-left(25);
+            @include padding-bottom(25);
+        }
+        @include breakpoint($medium) {
+            @include padding-left(16);
+            @include padding-bottom(16);
+        }
+        @include breakpoint($large) {
+
+            @include padding-bottom(35);
+        }
+        @include breakpoint($xlarge) {
+
+            @include padding-bottom(37);
+        }
+        .carousal__title {
+            @include margin-left(0);
+        }
+    }
+    .home-hero__title {
+        @include text-align(left); 
+    }
+    .mu-item {
+        .mu-item {
+            border: none !important;
+        }
+    } //Player Profile for carousal
+    .grid-3,
+    .grid-4 {
+        .match-day {
+            &.profile {
+                .img-holder {
+                    height: 106px !important
+                }
+                .profile-pic {
+                    @include position(absolute);
+                    @include percentage-value(width, 100);
+                    @include margin-left(0,important);
+                    @include margin-right(0,important);
+                    @include z-index(99);
+                    @include top(30);
+                    @include top(24,percent);
+                    @include left(50,percent);
+                    @include margin-top(0);
+                    transform: translate(-50%,-50%);
+
+                    @include breakpoint($small $max-xsmall){
+                        @include top(26,percent);
+                    }
+    
+                    @include breakpoint($medium){
+                      @include margin-top(0);
+                    }
+                    ul {
+                        li {
+                            &:first-child {
+                                @include font-size(20);
+                                @include margin-bottom(0);
+                                @include margin-left(0);
+                                @include px-to-rem(height,50);
+                               
+                                position: relative;
+                                span {
+                                    position: absolute;
+                                    width: 100%;
+                                    @include left(0);
+                                    @include bottom(10);
+
+                                }
+                            }
+                            &:last-child {
+                                @include margin-top(10);
+                                @include margin-bottom(0);
+                                @include margin-left(0);
+                            }
+                            .profile-pic__thumb {
+                                @include display(none);
+                            }
+                            &:nth-child(2) {
+                                @include margin(0, 0, 0, 0);
+                            }
+                        }
+                    }
+                }
+                .match-day__info {
+                    @include margin-top(50);
+                    .profile__details {
+                        @include percentage-value(width, 100);
+                        ul {
+                            @include display(none);
+                        }
+                    }
+                    .profile__score {
+                        @include percentage-value(width, 100);
+                        ul {
+                            @include percentage-value(width, 100); 
+                            @include display(table);
+                            li {
+                                @include margin-left(0);
+                                @include margin-right(0);
+                                @include display(table-cell);
+                                @include padding-left(4);
+                                @include padding-right(4);
+                                span {
+                                    @include font-size(15);
+                                    white-space:nowrap;
+                                }
+                                label {
+                                    @include px-to-rem(min-width,55);
+                                }
+                            }
+                        }
+                    }
+                    .white-btn-skew a {
+                        @include padding(14, 20, 14, 20);
+                    }
+                    .profile__details .btn-wrapper {
+                        @include margin-top(0);
+                    }
+                }
+                .mu-item__sponsor {
+                    @include position(absolute);
+                    @include top(0);
+                    @include left(0);
+                    @include right(auto);
+                }
+            }
+        }
+    }
+
+    &.carousal-dark {
+        background : radial-gradient(circle at 50% 48%, #323232, #1a1a1a)  !important;
+        background : -webkit-linear-gradient(circle at 50% 48%, #323232, #1a1a1a)  !important;
+        background : -moz-linear-gradient(circle at 50% 48%, #323232, #1a1a1a)  !important;
+        background :  -o-linear-gradient(circle at 50% 48%, #323232, #1a1a1a)  !important;
+        background : -ms-linear-gradient(circle at 50% 48%, #323232, #1a1a1a)  !important;
+    }
+
+    .grid-3{
+        @include breakpoint($small $max-xsmall){
+            @include z-index(1);
+        }
+        .mu-item{
+            @include breakpoint($small $max-xsmall){
+                @include z-index(1);
+            }
+        }
+        } 
+}
+
+//End of carousal
+.player__icon--wrapper .player__icon {
+    width: 50px !important;
+    overflow: visible !important;
+}
+
+.row-seprator {
+    @include padding(60, 0, 60, 0);
+}
+
+.match-item {
+    @include padding(30, 20, 40, 20, important);
+    height: 444px !important;
+    &__league {
+        @include text-align(center);
+        position: relative;
+        @include pull-left;
+        @include percentage-value(width,100);
+        @include margin-top(30);
+        @include margin-bottom(8);
+        @include px-to-rem(height,60);
+
+        img {
+            @include margin-auto(0 auto);
+            height: auto;
+            width: auto; 
+            @include px-to-rem(max-height,60);
+            @include px-to-rem(max-width,160);
+            &.no-img {
+                @include opacity(1);
+            }
+        }
+    }
+    &__info {
+        width: 100%;
+        display: table;
+        @include font-size(0);
+        @include text-align(center);
+        &--team {
+            display: inline-block;
+            width: calc(50% - 70px);
+            @include text-align(center);
+            vertical-align: middle;
+            @include font-size(40, en);
+            @include primary-bold(en);
+            color: #ffffff;
+            height: 50px;
+            //@include padding-top(5);
+            &.gray-block {
+                @include padding-top(10);
+            }
+            &.black-block {
+                @include padding-top(10);
+                //@include padding-top(5);
+            }
+            &.red-block {
+                @include padding-top(0);
+                //@include padding-top(5);
+            }
+
+
+            &:nth-child(2) {
+                &.red-block {
+                
+                span {
+                    position: relative;
+                    top: 10px;
+                    -webkit-transform: translateY(-50%);
+                    -ms-transform: translateY(-50%);
+                    transform: translateY(-50%);
+                    display: initial;
+                }     
+            }
+            }
+            &:nth-child(2) {
+                &.red-block {
+                    span {
+                        position: relative;
+                        top: 10px;
+                        -webkit-transform: translateY(-50%);
+                        -ms-transform: translateY(-50%);
+                        transform: translateY(-50%);
+                        display: initial;
+                    }     
+                }
+            }
+
+            &:nth-child(2) {
+                &.red-block {
+                    span {
+                        position: relative;
+                        top: 10px;
+                        -webkit-transform: translateY(-50%);
+                        -ms-transform: translateY(-50%);
+                        transform: translateY(-50%);
+                        display: initial;
+                    }     
+                }
+            }
+
+            &:nth-child(2) {
+                width: 76px;
+                height: 48px;
+                color: $white;
+                position: relative;
+                span {
+                    @include vertical-align;
+                    display: inline-block;
+
+                }
+            }
+            &.red-block {
+                background: $mu-red;
+            }
+            &.gray-block {
+                background: $gray-draw;
+                @include font-size(32,en);
+            }
+            &.black-block {
+                background: $mu-black;
+            }
+            img {
+                display: block;
+                max-width: 50px;
+                max-height: 50px;
+                @include vertical-align;
+                width: auto;
+                height: auto;
+                @include left(50,percent);
+                transform: translate(-50%,-50%);
+                -webkit-transform: translate(-50%,-50%);
+                -ms-transform: translate(-50%,-50%);
+            }
+            .match-stage {
+                position: absolute;
+                width: 100%;
+                @include text-align(center);
+                @include tertiary-bold;
+                @include font-size(14);
+                @include line-height(1.33);
+                color: #1a1a1a;
+                bottom: 48px;
+            }
+            .agg-score {
+                //@include percentage-value(width, 100);
+                @include text-align(center);
+                @include secondry-regular;
+                @include font-size(14);
+                @include line-height(1.33);
+                @include color($mu-black);
+                @include text-transform(capitalize);
+                position: absolute;
+                @include top(52);
+                @include margin-left(-50);
+                @include px-to-rem(width,171);
+                @include display(block);
+
+
+            }
+            &.team-name {
+                @include font-size(24);
+                //height: 30px;
+                width: calc(50% - 25px);
+                @include px-to-rem(height,24);
+                @include text-align(initial);
+                span {
+                    @include vertical-align;
+                    display: inline-block;
+                    @include pull-right;
+                    @include padding-right(12);
+                    @include px-to-rem(height,24);
+                }
+                ~.team-name {
+                    span {
+                       @include pull-left;
+                    @include padding-left(12);
+                    }
+                }
+            }
+            &.team-vs {
+                background: $white-lighter;
+                @include px-to-rem(height,24);
+                width: 36px;
+                color: $mu-black;
+                transform: skew(-10deg);
+                @include font-size(14);
+                @include line-height(1.14);
+                span {
+                    @include secondry-bold;
+                    position: relative;
+                    @include top(50,percent);
+                    -webkit-transform: translateY(-50%) skew(10deg);
+                    -ms-transform: translateY(-50%) skew(10deg);
+                    transform: translateY(-50%) skew(10deg);
+                    display: inline-block;
+                }
+            }
+        }
+        &.teams {
+            @include margin-top(15);
+        }
+        &.with-agg {
+            @include margin-top(25);
+        }
+        &--teasure {
+            @include text-align(center);
+            @include margin(0, 0, 32, 0);
+            @include font-size(14);
+            span {
+                @include display(block);
+            }
+        }
+    }
+    &__status {
+        img {
+            display: inline-block;
+        }
+        &--score {
+            display: inline-block;
+        }
+        width: 140px;
+        vertical-align: middle;
+        @include margin-auto(0 auto);
+        background: #f2f2f2;
+        @include padding(7, 10, 7 ,10);
+        position: relative;
+        height: 52px;
+        p {
+            display: inline-block;
+            vertical-align: top;
+            @include font-size(26);
+            @include padding(8, 5, 8, 5);
+            background: #d4d4d4;
+            position: absolute;
+            @include right(5);
+            @include primary-bold;
+            span {
+                @include font-size(18);
+                vertical-align: top;
+                color: #1a1a1a;
+            }
+            &.match-item__status--score {
+                color: #d0021b;
+            }
+        }
+    }
+    &__cta {
+        @include margin(10,0,10,0);
+        position: absolute;
+        @include left(0);
+        @inlcude bottom(20);
+        width: 100%;
+        @include text-align(center);
+        transform: skew(-10deg);
+        a {
+            //border: 1px solid #1a1a1a;
+            @include border-transparent(1, solid, $mu-black, 0.2);
+            @include padding(13, 35, 13, 35);
+            @include font-size(14);
+            color: #1a1a1a;
+            display: inline-block;
+            text-transform: uppercase;
+            @include secondry-semibold;
+            letter-spacing: 0.9px;
+            overflow: visible !important;
+            i {
+                @include pull-right;
+                @include margin(2, 0, 0, 10);
+            }
+            &:hover {
+                @include background-color(#1a1a1a, 0.15)
+            }
+            &.live {
+                background: #c70101;
+                color: #fff;
+                border: 1px solid #c70101;
+                .icon-cta-arrow {
+                    @extend .icon-cta-arrow-white;
+                    @include pull-right;
+                    @include margin(2, 0, 0, 10);
+                }
+                &:hover {
+                    background-color: #9f0000;
+                    border: 1px solid #9f0000;
+                }
+            }
+        }
+    }
+}
+
+.carousal.match-carousal {
+    .timer {
+        display: inline-block;
+        border-radius: 2px;
+        background: #f2f2f2;
+        border-color: transparent;
+        @include margin(5, 0, 20, 0);
+        @include padding(6,6,6,6);
+        @include left(50,percent);
+        position: relative;
+        transform: translate(-50%, 0);
+        &__logo {
+            @include pull-left;
+            height: 38px;
+            @include padding-top(8);
+            width: 40px;
+            img {
+                height: 23px;
+            }
+        }
+        &__time,
+        .result__time {
+            display: block;
+            background: rgba(0, 0, 0, 0) linear-gradient(#c2c2c2 50%, #d4d4d4 50%) repeat scroll 0 0;
+            color: #1a1a1a;
+            @include pull-right;
+            @include primary-regular;
+            @include font-size(26);
+            font-stretch: normal;
+            font-style: normal;
+            font-weight: bold;
+            height: 38px;
+            @include padding(5,10,5,10);
+            @include text-align(center);
+            .injury-time {
+                color: #d0021b;
+                display: inline-block;
+                @include margin-left(8);
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+.img-holder {
+    .adaptive {
+        @extend %cover-img;
+    }
+}
+
+
+
+
+
+
+
+/*######### Kitbag Section ###############*/
+
+.carousal {
+    &.kitbag {
+        @include overflow(hidden);
+        &.carousal-dark {
+           .carousal__title--light {
+                @include color($white);
+            } 
+        }
+        &.carousal-light {
+           .carousal__title--light {
+                @include color($black);
+            } 
+        }
+        
+
+        .ecommerce-card__title {
+            text-transform: initial;
+        }
+        &:not(.carousal-light) {
+            .slider-next,
+            .slider-prev {
+                // background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)), linear-gradient(#494a50, #494a50);
+                // background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)), linear-gradient(#494a50, #494a50);
+                // box-shadow: 0 4px 17px 0 rgba(0, 0, 0, 0.5);
+                // box-shadow: 0 4px 17px 0 rgba(0, 0, 0, 0.5);
+                background: #494a50;
+                &:hover {
+                    background: #ffffff;
+                    .icon-arrow-next {
+                        @extend .icon-next-2;
+                    }
+                    .icon-arrow-prev {
+                        @extend .icon-prev-2;
+                    }
+                }
+            }
+            .icon-arrow-next {
+                @extend .icon-next;
+            }
+            .icon-arrow-prev {
+                @extend .icon-prev;
+            }
+        }
+        .carousal-cover__wrapper {
+            @include display(block);
+            // @include padding(140, 0, 20, 0);
+            // @include breakpoint($large) {
+            //     @include padding(170, 30, 0, 30);
+            // }
+        }
+        &.bg-ncta {
+            .carousal-cover__wrapper {
+                @include breakpoint($small $max-xsmall) {
+                    display: none;
+                }
+            }
+            .infowrapper {
+                @include breakpoint($small $max-xsmall) {
+                    display: none;
+                }
+            }
+            .carousal__info {
+                @include breakpoint($small $max-xsmall) {
+                    display: none;
+                }
+            }
+        }
+        &.carousal-light {
+            .carousal__info {
+                @include breakpoint($small $max-small) {
+                    @include top(0,important);
+                }
+            }
+        }
+        .carousal__info {
+            position: relative;
+            @include breakpoint($large) {
+                @include top(15,percent);
+            }
+            @include padding(0, 0, 0, 0);
+            @include left(0);
+        }
+        .carousal__title {
+            @include font-size(14);
+            @include line-height(3.25);
+            font-weight: normal;
+            letter-spacing: 1.8px;
+            @include tertiary-semibold;
+            @include margin(32, 10, 10, 20);
+            @include breakpoint($small $max-xsmall) {
+                @include padding-top(22);
+            }
+            @include breakpoint($medium) {
+                @include font-size(24);
+                font-weight: bold;
+                @include line-height(2.17);
+                letter-spacing: 2px;
+                @include margin(32, 0, 24, 10);
+            }
+            // @include breakpoint($xxlarge) {
+            //     @include margin(32, 0, 32, 0);
+            // }
+            &.white {
+                @include important(color, $white);
+            }
+        }
+        .carousal__title:before {
+            @include top(-25);
+            @include left(-25);
+            @include display(none);
+            @include breakpoint($large) {
+                @include display(none);
+            }
+        }
+        .carousal-destination {
+            @include display(block);
+            .icon-plus-icon {
+                @include margin-top(-2,important);
+                @include margin-right(8);
+            }
+        }
+        .ecommerce-card .ecommerce-card-item {
+            @include display(table);
+            @include breakpoint($xlarge) {
+                @include display(block);
+            }
+        }
+    }
+}
+
+.carousal .simple-bar .stats--data {
+    background: #f2f2f2;
+    @include font-size(18,important);
+}
+
+.stats--match.simple-bar li span:nth-child(2) {
+    @include font-size(14,important);
+    @include margin-top(8);
+}
+
+.carousal .stats {
+    background: #fff !important;
+}
+
+.full-bar {
+    position: relative;
+    z-index: -2;
+}
+
+.full-bar__container .player__name,
+.full-bar__container .mu-item__title {
+    color: #fff !important;
+}
+
+.full-bar .muchart-lable {
+    @include font-size(14);
+    word-spacing: 10000px;
+    position: absolute;
+    @include top(120,percent);
+    @include left(-30);
+    width: 100%;
+}
+
+.full-bar .muchart-lable:first-line {
+    @include font-size(36);
+}
+
+.full-bar__container .player__name {
+    position: absolute;
+    @include left(85);
+}
+
+.carousal .tpl-parentchild__1 .stats--data .stats-val {
+    position: absolute;
+    @include top(26,percent);
+    @include font-size(40,important);
+    width: 100%;
+    @include left(0);
+    @include text-align(center);
+}
+
+.carousal .tpl-parentchild__1 .stats--data .stats-name {
+    position: absolute;
+    @include top(60,percent);
+    @include font-size(24,important);
+    width: 100%;
+    @include pull-left;
+    @include left(0);
+    text-transform: capitalize;
+    @include text-align(center);
+}
+
+.carousal .donut ul li:nth-child(2) {
+    @include padding-top(70);
+}
+
+.multiple-entity {
+    width: 80%;
+    vertical-align: bottom;
+    @include pull-left;
+}
+
+.multiple .stats .player__icon {
+    width: 44px;
+    @include margin(0,0,0,0);
+    height: 44px;
+    @include pull-left;
+}
+
+.multiple .stats .player__name {
+    @include padding(25, 0, 0, 10);
+    display: inline-block;
+    @include pull-left;
+    width: auto;
+}
+
+.multiple .stats .one-entity {
+    @include margin(4,0,4,0);
+}
+
+.multiple .stats h4 {
+    @include text-align(center);
+    @include font-size(14);
+    @include margin(5,0,5,0);
+}
+
+.carousal .home-statsbar__time {
+    //@include color($white);
+}
+
+.carousal .stats--match li span.stats__shot {
+    position: absolute;
+    width: 100%;
+    @include left(0);
+}
+
+.carousal__info {
+    @include percentage-value(width, 100); //@include position(absolute);
+    @include text-align(left);
+    @include z-index(99);
+    @include color($white);
+}
+
+.carousal__title {
+    @include tertiary-bold;
+    @include color($white);
+    @include font-size(24);
+    letter-spacing: 1.1px;
+    @include line-height(1.36); //@include margin(32, 0, 16, 10);
+    @include breakpoint($small $max-small) {
+        @include margin-left(35);
+    } 
+}
+
+.carousal-destination {
+    .icon-plus-icon {
+        @extend %icon-plus-margin;
+    }
+}
+
+%icon-plus-margin {
+    @include margin-right(8,important);
+    @include margin-top(-2,important);
+}
+
+%light-bg-bullet {
+    .bx-pager {
+        .bx-pager-item {
+            a {
+                @include border(1, solid, $mu-black);
+                &.active {
+                    @include background-color($vertical-strips);
+                }
+            }
+        }
+    }
+}
+
+%dark-bg-bullet {
+    .bx-pager {
+        .bx-pager-item {
+            a {
+                @include border(solid, 1, $white);
+                &.active {
+                    @include background-color($white);
+                }
+            }
+        }
+    }
+}
+
+//For all card except carousal
+.ratio.child.matches {
+    .match-item__info--teasure {
+        @include font-size(14);
+        @include margin-bottom(20);
+    }
+    .match-item__cta {
+        @include padding-top(40);
+        @include padding-bottom(30);
+        position: relative;
+    }
+    @include breakpoint($small $max-xsmall) {
+        &:before {
+            @include padding-top(0);
+        }
+        .mu-content {
+            position: relative !important;
+        }
+    }
+}
+
+// For Match Day cards Spotlight Fixture and 
+// .grid-8.ratio-matchday.child.matches {
+//     .statbar {
+//         background:red;
+//         @include position(relative);
+//         @include percentage-value(width, 100);
+//     }
+// }
+.grid-8.ratio-matchday.child.matches {
+    @include span(8 of 12);
+    @include breakpoint($small $max-xsmall) {
+        @include span(6 of 6);
+    }
+    .statsbar {
+        @include position(relative);
+        @include percentage-value(width, 100);
+    }
+    .match-item__info--teasure {
+        @include margin-bottom(20);
+        span {
+            @include display(block);
+            @include breakpoint($medium) {
+                @include display(inline);
+            }
+        }
+    }
+    .match__player-details {
+        @include percentage-value(width, 100);
+        @include pull-left;
+        @include margin-top(10);
+        @include breakpoint($medium) {
+            @include margin-top(40);
+        }
+        .teamA_goals {
+            @include pull-left;
+            @include percentage-value(width, 50);
+            @include padding-right(20);
+            li {
+                i {
+                    @include pull-right;
+                    @include margin-left(7);
+                }
+                span {
+                    display: block;
+                    height: 25px;
+                    @include text-align(right);
+                }
+            }
+        }
+        .teamB_goals {
+            @include pull-right;
+            @include percentage-value(width, 50);
+            @include padding-left(20);
+            li {
+                i {
+                    @include pull-left;
+                    @include margin-right(7);
+                }
+                span {
+                    display: block;
+                    height: 25px;
+                    @include text-align(left);
+                }
+            }
+        }
+    }
+    .match-item__info {
+        &.teams {
+            @include display(block);
+            @include breakpoint($medium) {
+                @include display(none);
+            }
+        }
+    }
+    .match-item__info--team {
+        .agg-score {
+            @include top(55);
+            @include breakpoint($medium) {
+                @include top(90);
+            }
+        }
+        &.teamA {
+            @include text-align(right);
+            img {
+                @include px-to-rem(max-width, 50);
+                @include px-to-rem(max-height, 50);
+                @include breakpoint($medium) {
+                    @include px-to-rem(max-width, 84);
+                    @include px-to-rem(max-height, 84);
+                }
+                @include margin-right(18);
+                @include pull-right;
+            }
+            h2 {
+                @include font-size(24);
+                @include display(none);
+                @include breakpoint($medium) {
+                    @include font-size(32);
+                    @include display(inline);
+                }
+                @include color($mu-black);
+                @include primary-bold;
+                @include text-align(right);
+                @include margin-right(15);
+            }
+        }
+        &.teamB {
+            @include text-align(left);
+            img {
+                @include px-to-rem(max-width, 50);
+                @include px-to-rem(max-height, 50);
+                @include breakpoint($medium) {
+                    @include px-to-rem(max-width, 84);
+                    @include px-to-rem(max-height, 84);
+                }
+                @include margin-left(18);
+                @include pull-left;
+            }
+            h2 {
+                @include font-size(24);
+                @include display(none);
+                @include breakpoint($medium) {
+                    @include font-size(32);
+                    @include display(inline);
+                }
+                @include color($mu-black);
+                @include primary-bold;
+                @include text-align(left);
+                @include margin-left(15);
+            }
+        }
+        &.match-score {
+            @include px-to-rem(width, 76);
+            @include px-to-rem(height, 48);
+            @include font-size(32);
+            @include breakpoint($medium) {
+                @include px-to-rem(width, 126);
+                @include px-to-rem(height, 82);
+                @include font-size(72);
+            }
+        }
+    }
+}
+.carousal .grid-3 .stats-card  {
+    .statsbar {
+        @include px-to-rem(bottom,6);
+    }
+    .statsbar li:last-child {
+        @include pull-right(important);
+    }
+}
+
+.carousal .grid-3:before {
+    @include padding-top(132.33,percent,important);
+}
+  

@@ -1,0 +1,470 @@
+.news-list__bg {
+    @include background-color($player-bg);    
+    .container.main {
+        @include padding-top(25);
+    }
+}
+
+.news-list__filter__bg {
+    //@include background-color($white);
+    //@include pull-left;
+    @include percentage-value(width, 100);
+    &.sticky {
+        //transition: top .5s linear,left .5s linear,right .5s linear;
+        transition: transform .4s ease-in-out;
+        transform: translateY(66px);
+        @include top(0);
+        &.reset{
+            transition: unset;
+            transform: auto;
+            transform: none;
+            transform: initial;
+            @include top(66);
+        }
+        @include position(fixed);
+        @include z-index(998);
+        @include margin-top(0);
+        @include px-to-rem(height, 51);
+        @include padding-top(20);
+        //@include margin-bottom(16);
+        @include background-color($white);
+        //@include margin-left(-6);
+               
+        @include breakpoint($large) {
+            @include px-to-rem(height, 51);
+            @include padding-top(20);
+            //@include margin-bottom(16);
+        }
+        .news-list__filter__tab {
+            @include margin-top(0);
+        }
+    }
+}
+
+.news-list__filter {
+    @include position(relative);
+    @include px-to-rem(height, 51);
+    &__tab {
+        //@include padding(0, 0, 0, 0);
+        //@include margin-left(0);
+        @include pull-left;
+        @include percentage-value(width, 100);
+        //@include position(absolute);
+        //@include overflow(visible);
+        @include margin-top(20);
+        //@include margin-bottom(23);
+        @include px-to-rem(height, 31);
+        & .filter__nav {
+            @include percentage-value(width, 100);
+            @include pull-left;
+            @include display(block);
+            overflow-x: auto;
+            position: relative;
+            overflow-y: hidden;
+            @include breakpoint($medium) {
+                overflow-x: initial;
+                overflow-y: visible;
+            }
+            ul {
+                @include breakpoint($medium) {
+                    width: 100% !important;
+                }
+                @include percentage-value(width, 100);
+                @include pull-left;
+                li {
+                    @include pull-left;
+                    @include display(inline);
+                    @include px-to-rem(height, 31);
+                    @include margin-right(24);
+                    a {
+                        @include tertiary-regular;
+                        @include font-size(14);
+                        @include line-height(1.57);
+                        @include text-align(center);
+                        @include color($image-source-color);
+                        //@include margin(0, 8, 0, 8);
+                        @extend %txt-uppercase;
+                        @include pull-left;
+                    }
+                    span.icon-drop-up,
+                    span.icon-drop-down {
+                        @include margin-top(5);
+                        cursor: pointer;
+                    }
+                    &:hover {
+                        border-bottom: 4px solid #9c9c9c;
+                    }
+                    &.active {
+                        @include border-bottom(4, solid, $mu-red);
+                        @include pull-left;
+                        &:hover {
+                            border-bottom: 4px solid $mu-red;
+                        }
+
+                        a {
+                            @include color($mu-black);
+                        }
+                    }
+                    .mu-mood {
+                        //@include display(none);
+                        @include px-to-rem(max-width, 304);
+                        @include background-color($white);
+                        @include position(absolute);
+                        @include left(-10);
+                        @include top(40);
+                        @include pull-left;
+                        @include padding(2, 2, 2, 2);
+                        @include z-index(999);
+                        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                        @include breakpoint($xsmall) {
+                            @include px-to-rem(max-width, 556);
+                            @include padding(8, 8, 8, 8);
+                            @include left(-27);
+                        }
+                        @include breakpoint($medium) {
+                            @include left(10,percent);
+                        }
+                        .mu-mood__tag {
+                            @extend ul;
+                            @include pull-left;
+                            @include text-align(left);
+                            @include position(relative);
+                            li {
+                                @include display(inline-block);
+                                @include margin(6, 6, 6, 6);
+                                @include position(relative);
+                                @include text-align(center);
+                                @include pull-left;
+                                height: auto;
+                                @include breakpoint($xsmall) {
+                                    @include margin(8, 8, 8, 8);
+                                }
+                                .mu-mood__mask {
+                                    @include background-color($mu-black, 0.6);
+                                    @include position(absolute);
+                                    @include px-to-rem(width, 138);
+                                    @include px-to-rem(height, 138);
+                                    @include cursor(pointer);
+                                    @include breakpoint($xsmall) {
+                                        @include px-to-rem(width, 164);
+                                        @include px-to-rem(height, 164);
+                                    }
+                                }
+                                figure {
+                                    @include px-to-rem(width, 138);
+                                    @include px-to-rem(height, 138);
+                                    @include breakpoint($xsmall) {
+                                        @include px-to-rem(width, 164);
+                                        @include px-to-rem(height, 164);
+                                    }
+                                }
+                                span {
+                                    @include tertiary-semibold;
+                                    @extend %text-capitalize;
+                                    @include font-size(14);
+                                    @include position(absolute);
+                                    @include top(44,percent);
+                                    @include left(0);
+                                    @include line-height(1.13);
+                                    @include px-to-rem(width, 138);
+                                    @include text-align(center);
+                                    @include color($white);
+                                    @include cursor(pointer);
+                                    letter-spacing: 0.5px;
+                                    @include breakpoint($xsmall) {
+                                        @include font-size(16);
+                                        @include px-to-rem(width, 164);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        & .nav-sticky {
+            @include percentage-value(width, 80);
+            @include breakpoint($xsmall) {
+                @include percentage-value(width, 85);
+            }
+            @include pull-right;
+            @include position(relative);
+            @include z-index(999);
+            @include display(block);
+            @include px-to-rem(height, 38);
+            @include tertiary-regular;
+            @extend %txt-uppercase;
+            @include font-size(14);
+            @include line-height(1.57);
+            @include px-to-rem(letter-spacing, 0.4);
+            background: transparent;
+            @include border-bottom(1, solid, $black, 0.24);
+            @include breakpoint($medium) {
+                @include display(none);
+            }
+            & li {
+                @include percentage-value(width, 100);
+                @include pull-left;
+            }
+        }
+    }
+    //need to convert in scss
+    .nav-sticky {
+        li {
+            @include padding(8, 10, 8, 10);
+            @include z-index(2);
+            @include cursor(pointer);
+        }
+    }
+    .nav-sticky li:not(.init) {
+        @include pull-left;
+        @include percentage-value(width, 100);
+        @include display(none);
+        @include background($white-lighter);
+    }
+    .nav-sticky li:not(.init):hover,
+    .nav-sticky li.selected:not(.init) {
+        @include background($gray-light);
+    }
+    @include breakpoint($small, $xsmall) {
+        .grid-12 {
+            @include percentage-value(width, 100);
+            @include margin-left(0);
+            @include margin-right(0);
+        }
+    }
+}
+.news-list__filter__bg {
+  &.sticky {
+    @include breakpoint($small $max-xsmall) {
+      //@include px-to-rem(min-height, 126);
+    }
+    .news-list__filter {
+      @include breakpoint($small $max-xsmall) {
+        @include px-to-rem(height, 51);
+      }
+      &.Sponsor {
+        .filter__right-tab {
+         
+        }
+      }
+    }
+    .filter__right-tab {
+      @include breakpoint($small $max-xsmall) {
+        @include display(none);
+      }
+    }
+    & + .news-list__bg {
+        @include breakpoint($small $max-xsmall){   
+            margin-top: 50px;
+        }
+    }
+    &.with-sponsor + .news-list__bg {
+        @include breakpoint($small $max-xsmall){   
+            margin-top: 90px;
+        }
+    }
+  }
+  .news-list__filter {
+    @include breakpoint($small $max-xsmall) {
+      @include px-to-rem(height, 51);
+    }
+    &.Sponsor {
+		@include breakpoint($small $max-xsmall) {
+		  @include px-to-rem(height, 89);
+		}
+      .filter__nav {
+        @include span(8 of 12 0);
+        @include breakpoint($small $max-xsmall) {
+          @include span(6 of 6 0);
+        }
+      }
+      .filter__right-tab {
+        @include span(4 of 12 0);
+        @include margin-top(-10);
+        @include breakpoint($small $max-xsmall) {
+          
+          @include margin-bottom(16);
+          @include span(6 of 6 0);
+        }
+        @include pull-right;
+        a {
+		  @include text-align(right);
+          //@include px-to-rem(height, 32);
+          @include breakpoint($small $max-xsmall) {
+            //@include px-to-rem(height, 26);
+          }
+          @include display(block);
+          @include pull-right;
+          @include font-size(14);
+          //@include percentage-value(width, 100);
+          @include line-height(18,px);
+          color: #6e6e6e;
+          @include secondry-regular;
+          &:before {
+            //content: '';
+            //@include display(inline-block);
+            //vertical-align: middle;
+            //@include percentage-value(height, 100);
+          }
+          span {
+			  @include display(inline-block);
+			  vertical-align: middle;
+			  span {
+				@include display(inline-block);
+				@include margin-right(16);
+				//vertical-align: middle;
+				@include px-to-rem(max-width, 150);
+				@include text-align(right);
+				@include pull-right;
+				@include breakpoint($small $max-xsmall) {
+				  @include px-to-rem(max-width, 130);
+				}
+                
+			  }
+		  }
+          img {
+            @include pull-right;
+            @include px-to-rem(max-width, 110);
+            @include px-to-rem(max-height, 32);
+			@include breakpoint($small $max-xsmall) {
+				@include px-to-rem(max-height, 26);
+			}
+          }
+		  &:before {
+            content: '';
+            @include display(inline-block);
+            vertical-align: middle;
+            @include px-to-rem(height, 32);
+          }
+        }
+      }
+    }
+  }
+}
+.news-list__block {
+    //@extend %hero__conditionaly;
+    .grid-12 {
+        &.ratio {
+            @include margin-bottom(0,percent);
+            &.child {
+                @include breakpoint($small $max-xsmall) {
+                    
+                    @include percentage-value(width, 100);
+                    @include margin-left(0,percent);
+                    @include margin-right(0,percent);
+                    width:100% !important
+                }
+                .mu-item {
+                    @include breakpoint($small $max-xsmall) {
+                        @include margin-top(0);
+                        @include margin-bottom(0);
+                    }
+                }
+                .statsbar {
+                    @include breakpoint($medium) {
+                        @include padding-left(20);
+                        @include padding-right(20);
+                    }
+                }
+                .mu-item.video {
+                    border: none;
+                }
+            }
+        }
+    }
+    & .news-list__item {
+        @include breakpoint($xsmall) {
+            .grid-4 {
+                @include span(6 of 12);
+            }
+        }
+        @include breakpoint($medium) {
+            .grid-4 {
+                @include span(4 of 12);
+            }
+        }
+        @include breakpoint($xsmall) {
+            .grid-3 {
+                @include span(6 of 12);
+            }
+        }
+        @include breakpoint($medium) {
+            .grid-3 {
+                @include span(3 of 12);
+            }
+        }
+        .ad-block {
+            @include margin-top(12);
+            @include margin-bottom(24);
+            @include breakpoint($small $max-small) {
+                @include margin-top(6);
+                @include margin-bottom(18);
+            }
+            @include breakpoint($medium) {
+                @include margin-top(18);
+                @include margin-bottom(48);
+            }
+            overflow: hidden;
+        }
+    }
+    // To show 1920 after that it shows black screen from both side
+    @extend %hero__conditionaly;
+}
+
+ecommerce,data-ecommerce {
+    @include text-align(center);
+    @include pull-left;
+    @include percentage-value(width, 100);
+}
+
+.last-card__msg {
+    @include font-size(16);
+    @include line-height(30,px);
+    @include color($mu-black);
+    @include secondry-regular;
+    @include percentage-value(width, 100);
+    @include pull-left;
+    @include padding(20,20,20,20);
+    @include margin-top(-52);
+    strong {
+        @include font-weight(bold);
+        @include secondry-semibold;
+        @include color($mu-red);
+    }
+}
+
+.white-btn-skew-v2 {
+    @include display(inline-block,important);
+}
+[data-sticky-filter-tostick] {
+    @include overflow(hidden);
+}
+
+// @include breakpoint($small) {
+//     .grid-12.news-list__filter {
+//         @include percentage-value(width, 100);
+//         @include margin-left(0) ;
+//         @include margin-right(0);
+//     }
+// }
+// .mu-item__title,.mu-item__logo-title {
+//     position: relative;
+//     opacity: 0;
+//     transition: opacity 1.0s ease 0s, transform 1.0s ease 0s;
+//     transform: translateY(250px);
+//     -ms-transition: opacity 1.0s ease 0s, transform 1.0s ease 0s;
+//     -webkit-transition: opacity 1.0s ease 0s, transform 1.0s ease 0s;    
+//     -moz-transform: translateY(150px);
+//     -ms-transform: translateY(150px);
+//     -o-transform: translateY(150px);
+//     -webkit-transform: translateY(150px);
+// }
+// .animate-on {
+//     opacity: 1;
+//     transform: translateY(0);
+//     -moz-transform: translateY(0);
+//     -transform: translateY(0);
+//     -o-transform: translateY(0);
+//     -webkit-transform: translateY(0);
+// }

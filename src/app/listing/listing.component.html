@@ -1,0 +1,13 @@
+<!-- <div (parentItemArr)="getParentItem($event)"></div> -->
+<div *ngIf="(item.contenttype_t | lowercase) == 'article'">
+  <app-article [item]="item"></app-article>
+</div>
+<div  *ngIf="(item.contenttype_t | lowercase) == 'gallery'">
+<app-gallery [item]="item"></app-gallery>
+</div>
+<div  *ngIf="(item.contenttype_t | lowercase) == 'printproduct'">
+    <app-printproduct [item]="item"></app-printproduct>
+</div>
+<button (click)="updateParent()">Load Hero Card</button>
+<!-- <ng-template templateUrl>I'm here</ng-template> -->
+

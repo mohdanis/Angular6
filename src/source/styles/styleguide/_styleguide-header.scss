@@ -1,0 +1,103 @@
+//styleGuide header
+.styleguide-header {
+  @include background-color($brand-color);
+
+  //@include background-color($black);
+
+  @include position(relative);
+
+  @include px-to-rem(top, 0);
+
+  @include z-index(9999);
+
+  @include pull-left;
+
+  @extend %full-width;
+@include px-to-rem(height, 75);
+  //@include padding(10, 0, 10, 0);
+  @include breakpoint($medium) {
+    @include px-to-rem(height, 100);
+
+  }
+
+
+  .content__top {
+    @include padding(0, 0, 0, 0);
+
+    @include px-to-rem(height, 70);
+  }
+
+  h1 {
+    @extend %heading1;
+
+    @include span(4 of 6);
+
+    @include font-size(24);
+
+    @include line-height(1.2);
+
+    @include padding(12, 0, 0, 60);
+
+    @include breakpoint($medium) {
+      @include percentage-value(width, 100);
+
+      @include font-size(60);
+
+      @include line-height(0.8);
+
+      @include padding(10, 20, 0, 85);
+    }
+
+
+    @include color($white);
+
+    @include pull-left;
+
+    // @include padding(10, 0, 0, 0);
+
+    span {
+      @include font-size(18);
+
+      @include line-height(1);
+
+      @include display(block);
+
+      @include breakpoint($medium) {
+        @include font-size(24);
+
+        @include line-height(1.2);
+
+        @include display(inline-block);
+      }
+    }
+  }
+
+  .logo {
+    @include padding(0, 0, 0, 0);
+
+    @include px-to-rem(width, 50);
+
+    @include pull-left;
+
+    @include position(relative);
+
+    @include breakpoint($medium) {
+      @include px-to-rem(width, 70);
+    }
+
+
+    img {
+      @include px-to-rem(max-width, 60);
+
+      @include position(absolute);
+
+      @include px-to-rem(top, 5);
+
+      @include breakpoint($medium) {
+        @include px-to-rem(top, 10);
+
+        @include px-to-rem(max-width, 80);
+      }
+    }
+  }
+}

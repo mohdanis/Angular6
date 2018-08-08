@@ -1,0 +1,39 @@
+.hamburger {
+    cursor: pointer;
+    @include padding(10,35,16,0);
+    @include position(absolute);
+    span,
+    span:before,
+    span:after {
+        cursor: pointer;
+        border-radius: 1px;
+        height: 5px;
+        width: 35px;
+        background: white;
+        @include position(absolute);
+        @include display(block);
+        content: '';
+        transition: all 200ms ease-in-out;
+    }
+    span:before {
+        @include top(-10);
+    }
+    span:after {
+        @include bottom(-10);
+    }
+    &.active {
+        span {
+            background-color: transparent;
+        }
+        span:before,
+        span:after {
+            @include top(0);
+        }
+        span:before {
+            transform: rotate(45deg);
+        }
+        span:after {
+            transform: rotate(-45deg);
+        }
+    }
+}

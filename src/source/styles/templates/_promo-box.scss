@@ -1,0 +1,110 @@
+.promo-box {
+    @include background-color($white);
+    height: auto;
+    border: solid 1px #f2f2f2;
+    @extend %bottom-gutter;
+    @include span(6 of 6 0);
+    @include margin-left(0);
+    @include margin-right(0);
+     @include margin-top(16);
+    @include breakpoint($medium) {
+        @include px-to-rem(height, 204);
+    }
+    @include breakpoint($medium) {
+         @include margin-top(32);
+        @include px-to-rem(height, 216);
+    }
+    .box-content {
+        @include percentage-value(width, 100);
+        @include percentage-value(height, 100);
+    }
+    @include breakpoint($medium) {
+        .img-holder + .mu-item__info {
+            width: calc(100% - 204px);
+        }
+    }
+    @include breakpoint($small $max-xsmall) {
+        .img-holder + .mu-item__info {
+            @include margin-top(0);
+        }
+    }
+    .img-holder {
+        @include percentage-value(width, 100);
+        // @include percentage-value(height, 100);
+        height: auto;
+        @include pull-left;
+        @include breakpoint($small $max-xsmall) {
+            @include aspect-ratio(2.35, 1);
+        }
+        @include breakpoint($medium) {
+            // @include aspect-ratio(1,1);
+            @include px-to-rem(width, 204);
+            @include percentage-value(height, 100);
+        }
+        //@include breakpoint($large) {
+            // @include aspect-ratio(16, 9);
+        //    @include px-to-rem(width, 362);
+       // }
+        // @include breakpoint($xlarge) {
+        //     // @include aspect-ratio(16, 9);
+        //     @include px-to-rem(width, 505);
+        // }
+        figure {
+            @include background-img-initial;
+            @include breakpoint($medium) {
+                @include important(position, relative);
+            }
+        }
+    }
+    .mu-item__info {
+        @include percentage-value(width, 100);
+        @include padding(16,16,16,16);
+        // @include margin-left(8);
+        @include top(0);
+        transform: initial;
+        @include position(relative);
+        @include text-align(center);
+        @include breakpoint($medium) {
+            @include padding(24, 24, 24, 24);
+            // @include margin-left(30);
+           // width: 60%;
+           width: calc(100% - 204px);
+            @include text-align(left);
+            // @include vertical-align;
+        }
+        //@include breakpoint($large) {
+         //   @include margin-left(8);
+         //   width: calc(100% - 362px - 8px);
+        //}
+        // @include breakpoint($small $max-xsmall) {
+        //     @include margin-top( 0);
+        // }
+        .mu-item__title {
+            @include color($mu-black);
+            @include margin-bottom(6);
+            @include text-truncate-lines(2, 40, 0.9);
+           
+            @include breakpoint($xlarge) {
+                @include font-size(40);
+            }
+            &:before {
+                @include display(none);
+            }
+        }
+        .mu-item__teasure {
+            @include display(block);
+            @include line-height(1.33);
+            @include color($vertical-strips);
+            @include font-size(20);
+            @include px-to-rem(line-height,30);
+            @include secondry-light;
+        }
+        .red-btn-skew{
+            @include margin-top(16);
+            @include margin-bottom(16);
+            @include breakpoint($medium) {
+                @include margin-bottom(0);
+            }
+        }
+    }
+}

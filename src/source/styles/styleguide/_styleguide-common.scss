@@ -1,0 +1,168 @@
+#main {
+    @include px-to-rem(margin-top, 140);
+}
+
+.mobile-menu {
+    @include px-to-rem(width, 40);
+    @include px-to-rem(line-height, 26);
+    @include px-to-rem(margin-bottom, 5);
+    @include px-to-rem(margin-top, 5);
+    @include margin(-50, 0, 0, 0);
+    @include pull-right;
+    cursor: pointer;
+}
+
+.heading-label {
+    @extend %heading-label;
+    @include font-size(20);
+    @include pull-left;
+    //@extend %col-twelve;
+    @include span(12 of 12);
+    @include px-to-rem(min-height, 26);
+    @include breakpoint($medium) {
+        @include font-size(30);
+        @include px-to-rem(line-height, 36);
+    }
+}
+
+#componentArea {
+    //overflow: auto;
+    @include position(relative);
+    /* padding-bottom must be same height as the footer */
+    padding-bottom: 100px;
+    //padding-top: 20px;
+}
+
+#container-wrap {}
+
+.landing-banner {
+    padding-top: -100px;
+    background-image: url("../../assets/dam-images/small_stadium.png");
+    background-size: cover;
+    @include percentage-value(width,
+    100);
+    @include percentage-value(height,
+    100);
+    @include position(relative);
+    @include px-to-rem(margin-top,
+    -100);
+    img {
+        @include px-to-rem(margin-top,
+        -20);
+        @include percentage-value(min-height,
+        100);
+    }
+    @include breakpoint($medium) {
+        background-image: url("../../assets/dam-images/large_stadium.png");
+        @include px-to-rem(margin-top,
+        -120);
+    }
+}
+
+.homepage_content {
+    @include position(absolute);
+    @include percentage-value(width,
+    90);
+    @include percentage-value(margin-left,
+    5);
+    @include percentage-value(margin-right,
+    5);
+    @include percentage-value(top,
+    10);
+    text-align: center;
+    @include breakpoint($medium) {
+        @include percentage-value(top,
+        31);
+        @include percentage-value(width,
+        60);
+        @include percentage-value(margin-left,
+        20);
+        @include percentage-value(margin-right,
+        20);
+    }
+    h1 {
+        @extend %heading1;
+        @include font-size(42);
+        @include color($white);
+        @include quaternary-semibold;
+    }
+    p,
+    span {
+        @extend %new-heading4;
+        @include color($white);
+        @include secondry-regular;
+    }
+}
+
+.togglecode {
+    // @extend %col-twelve;
+    @include span(12 of 12);
+    @include background-color(#ccc);
+    @include display(block);
+    @include px-to-rem(width,
+    100);
+    @include px-to-rem(min-height,
+    30);
+    @include px-to-rem(margin-top,
+    0);
+    @include px-to-rem(margin-bottom,
+    0);
+    cursor: pointer;
+    padding: 5px 10px;
+    @include breakpoint($medium) {
+        @include px-to-rem(margin-top,
+        20);
+    }
+}
+
+.togglecode.down {
+    margin-bottom: 0px !important;
+}
+
+.main {
+    //@include padding(20, 0, 20, 0);
+}
+
+.common-heading {
+    @include span(12 of 12);
+    @include px-to-rem(margin-bottom,
+    0);
+}
+
+body {
+    background: #ffffff !important;
+    min-height: 100%;
+    position: relative;
+    width: 100%;
+    //direction: rtl;
+    overflow-x: hidden !important;
+    @include breakpoint($small 319px){
+        overflow-x: auto !important;
+        min-width: 320px;
+    }
+    //display: initial;
+    //display:tabel-cell;
+    &:after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+
+html {
+    height: 100%;
+    //overflow-x: hidden;
+}
+
+.margin-10 {
+    @include margin-top(10);
+}
+
+.page-wrap {
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+.expeditor .page-wrap {
+    position: relative;
+    z-index: 1;
+}

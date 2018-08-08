@@ -1,0 +1,19 @@
+@mixin border-radius($radius: $border-radius) {
+  border-radius: $radius;
+}
+
+@mixin box-shadow($shadow...) {
+  box-shadow: $shadow;
+}
+
+@mixin transition($transition...) {
+  transition: $transition;
+}
+
+@mixin clearfix() {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

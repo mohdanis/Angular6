@@ -1,0 +1,17 @@
+.home-article-detail {
+    &__article-panel {
+        .grid-9 {
+            &.large {
+                a.next-article {
+                    .content-holder {
+                        span {
+                            .tag-red-arrow {
+                                @include margin-top(2);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

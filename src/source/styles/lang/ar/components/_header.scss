@@ -1,0 +1,8 @@
+a.skip:active,
+a.skip:focus,
+a.skip:hover {
+    transform: translate(50%, 0);
+}
+.match__time {
+    transform: skew(10deg);
+}

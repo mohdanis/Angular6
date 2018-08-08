@@ -1,0 +1,128 @@
+div.gig-simpleShareUI-button:hover {
+    transform: translate(-4px, 0);
+    -webkit-transform: translate(-4px, 0);
+    -o-transform: translate(-4px, 0);
+    -moz-transform: translate(-4px, 0);
+}
+
+div[provider] span {
+    text-transform: uppercase;
+}
+
+div.gig-simpleShareUI-closeButton:before {
+    -webkit-transform: rotate(45deg) scaleX(-1);
+    -moz-transform: rotate(45deg) scaleX(-1);
+    -o-transform: rotate(45deg) scaleX(-1);
+    -ms-transform: rotate(45deg) scaleX(-1);
+    transform: rotate(45deg) scaleX(-1);
+}
+
+div.gig-simpleShareUI-closeButton:after {
+    -webkit-transform: rotate(-45deg) scaleX(-1);
+    -moz-transform: rotate(-45deg) scaleX(-1);
+    -o-transform: rotate(-45deg) scaleX(-1);
+    -ms-transform: rotate(-45deg) scaleX(-1);
+    transform: rotate(-45deg) scaleX(-1);
+}
+
+div[provider="facebook"],
+div[provider="twitter"],
+div[provider="email"],
+div[provider="googleplus"],
+div[provider="qq"],
+div[provider="sina"],
+div[provider="whatsapp"],
+div[provider="more"] {
+    div {
+        background-position: right;
+    }
+}
+
+div[provider="facebook"] {
+    @include margin-left(10, important);
+    span {
+        @include margin-left(-10, important);
+    }
+    &:after {
+        @include left(-10, important);
+    }
+}
+
+div[provider="twitter"] {
+    @include margin-left(6, important);
+    span {
+        @include margin-left(-6, important);
+    }
+    &:after {
+        @include left(-6, important);
+    }
+}
+
+div[provider="email"] {
+    @include margin-left(7, important);
+    span {
+        @include margin-left(-7, important);
+    }
+    &:after {
+        @include left(-7, important);
+    }
+}
+
+div[provider="googleplus"] {
+    @include margin-left(2, important);
+    span {
+        @include margin-left(-2, important);
+    }
+    &:after {
+        @include left(-2, important);
+    }
+}
+
+div[provider="qq"] {
+    @include margin-left(7, important);
+    span {
+        @include margin-left(-7, important);
+    }
+    &:after {
+        @include left(-7, important);
+    }
+}
+
+div[provider="sina"] {
+    @include margin-left(2, important);
+    span {
+        @include margin-left(-2, important);
+    }
+    &:after {
+        @include left(-2, important);
+    }
+}
+
+div[provider="whatsapp"] {
+    @include margin-left(7, important);
+    span {
+        @include margin-left(-7, important);
+    }
+    &:after {
+        @include left(-7, important);
+    }
+}
+
+div[provider="more"] {
+    @include margin-left(7, important);
+    span {
+        @include margin-left(-7, important);
+    }
+    &:after {
+        @include left(-7, important);
+    }
+}
+
+.social-share__footer ul li i {
+    transform: translate(50%, -50%);
+    -webkit-transform: translate(50%, -50%);
+}
+textarea[readonly]{
+    left: unset !important;
+    right: -9999px !important;
+}

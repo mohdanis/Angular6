@@ -1,0 +1,1855 @@
+%match-stats-card {
+    @include breakpoint($small $max-medium) {
+        @include percentage-value(width, 100); // @include padding-left(20);
+        // @include padding-right(20);
+    }
+    @include border(1, solid, $white-lighter);
+    @include position(relative);
+    @extend %row-gutter;
+    @include px-to-rem(min-height, 250);
+    @include pull-left;
+    @include background-color($white);
+    @include percentage-value(width, 100);
+}
+
+%match-stats-card__left-info {
+    @include display(block);
+    @include padding(0, 0, 0, 0);
+    @include percentage-value(width, 100);
+    @include pull-left;
+    @include text-align(left);
+
+    @include breakpoint($small $max-small) {
+        @include border-bottom(1, solid, $grey-light-line);
+        @include padding-bottom(10);
+        @include padding-left(0);
+    }
+    @include breakpoint($medium) {
+        @include padding(0, 16, 0, 0);
+        @include border-right(1, solid, $grey-light-line);
+        @include display(inline-block);
+        @include percentage-value(width, 30);
+        @include pull-left;
+        @include text-align(right);
+        @include padding-top(6);
+    }
+    @include breakpoint($medium) {
+        @include px-to-rem(min-height, 100);
+    }
+    @include breakpoint($large) {
+        @include percentage-value(width, 25);
+    }
+}
+
+%match-stats-card__right-info {
+    @include span(6 of 6 0);
+    @include display(block);
+    @include margin-top(12);
+    @include text-align(left);
+    @include breakpoint($medium) {
+        @include margin-top(0);
+        @include percentage-value(width, 70);
+        @include display(inline-block);
+    }
+    @include breakpoint($medium) {
+        @include text-align(right);
+    }
+
+    @include breakpoint($large) {
+        @include percentage-value(width, 75);
+    }
+}
+
+%match-notification {
+
+    @include position(absolute);
+    @include background-color($mu-black);
+    @include top(-5);
+    @include left(-5);
+    @include px-to-rem(letter-spacing, -0.7);
+    @include secondry-semibold;
+    @include color($white);
+    
+    @include padding(3, 3, 4, 3);
+    @include font-size(12);
+    @include border-radius(2);
+    &:empty {
+        @include display(none);
+    }
+}
+
+%match-stats-left_heading1 {
+    @include tertiary-regular;
+    @include font-size(12);
+    @include line-height(1.17);
+    @include color($mu-black);
+    @include percentage-value(width, 100);
+    @include pull-left;
+    @include margin-bottom(5);
+}
+
+%match-stats-left_heading2 {
+    @include tertiary-semibold;
+    @include font-size(14);
+    @include line-height(1.14);
+    @include color($mu-black);
+    @include text-transform(uppercase);
+    @include percentage-value(width, 100);
+    @include pull-left;
+    letter-spacing: 0.4px;
+}
+
+%match-stats-left_heading3 {
+    @include secondry-regular;
+    @include font-size(14);
+    @include line-height(1.14); //@include color($mu-black);
+    @include percentage-value(width, 100);
+    @include pull-left;
+    @include margin-top(7);
+}
+
+%match-player_heading {
+    @include primary-bold;
+    @include font-size(24); //@include color($mu-black);
+    @include line-height(0.92);
+    @include line-height(1);
+    @include pull-left;
+}
+
+%match-player_result-heading {
+    @include tertiary-regular(en);
+    @include font-size(24,en); //@include color($mu-black);
+    @include line-height(1,en);
+    width: auto;
+}
+
+%match-player_result-title {
+    @include secondry-semibold;
+    @include font-size(14); //@include color($mu-black);
+    letter-spacing: -0.2px;
+    @include line-height(1);
+}
+
+%stats-transition {
+
+    //@include skew($bg: $mu-red, $deg: -4deg, $right: -15px, $width: 20); 
+    transform: skew(-4deg) scale(1.02);
+    -webkit-transform: skew(-4deg) scale(1.02);
+    -moz-transform: skew(-4deg) scale(1.02);
+    -o-transform: skew(-4deg) scale(1.02);
+    @include breakpoint($small $max-xsmall) {
+        transform: skew(-4deg) scale(1.08);
+        -webkit-transform: skew(-4deg) scale(1.08);
+        -moz-transform: skew(-4deg) scale(1.08);
+        -o-transform: skew(-4deg) scale(1.08);
+    }
+    @include left(-4);
+    cursor: pointer;
+    -webkit-transition: width 4s;
+    transition: width 4s;
+    &:before {
+        content: '';
+        background: $mu-red;
+        position: absolute;
+        height: 100%;
+        @include margin-left(-49);
+        width: 50px;
+    }
+}
+
+%player-percentage-value {
+    @include color($white);
+    @include tertiary-regular;
+    @include font-size(48);
+    @include line-height(0.88);
+    letter-spacing: 0.2px;
+}
+
+%line-white {
+    @include percentage-value(width, 100);
+    @include pull-left;
+    @include border-bottom(1, solid, $grey-light-line, 0.2);
+}
+
+%barchart {
+    @include background-color($dark);
+    @include percentage-value(width, 100);
+    @include percentage-value(height, 100);
+    @include pull-left;
+    div.brekdown-percentage__value,
+    .percentage-value {
+        @include pull-left;
+        @include percentage-value(height, 100);
+        @include percentage-value(width, 76);
+        @include background-color($mu-red);
+        @include position(absolute);
+        @extend %stats-transition;
+    }
+}
+
+%barchart-IsMUEntity-false {
+    @include background-color($mu-red);
+    @include percentage-value(width, 100);
+    @include percentage-value(height, 100);
+    @include pull-left;
+    div.brekdown-percentage__value,
+    .percentage-value {
+        @include pull-left;
+        @include percentage-value(height, 100);
+        @include percentage-value(width, 0);
+        @include background-color($dark);
+        @include position(absolute);
+        @extend %stats-transition;
+        &:before {
+            @include background-color($dark);
+        }
+    }
+}
+
+stats, data-stats {
+    .hide-ng-repeat {
+        @include display(none, important);
+    }
+}
+
+.is-completed {
+    transform: none !important;
+    @include left(0, important);
+}
+%vs {
+    @include background-color($player-bg);
+    @include px-to-rem(height, 24);
+    @include px-to-rem(width, 36);
+    @include margin-auto(0);
+    @include text-align(center);
+    @include margin-bottom(5);
+    @include margin-top(4);
+    @extend %skew-btn;
+    span {
+        @include display(inline-block);
+        @include color($mu-black);
+        @include font-size(14);
+        @include line-height(1.14);
+        @include secondry-semibold;
+        @include text-align(center);
+        @include margin-top(5);
+        @include text-transform(uppercase);
+    }
+}
+
+%h3-players {
+    @include primary-bold;
+    @include font-size(24);
+    @include line-height(22, px);
+    @include percentage-value(width, 100);
+    @include text-align(center);
+    @include color($mu-black);
+}
+
+%skew-btn {
+
+    transform: skew(-14deg);
+    -webkit-transform: skew(-14deg);
+    -moz-transform: skew(-14deg);
+    -o-transform: skew(-14deg);
+    span {
+        transform: skew(14deg);
+        -webkit-transform: skew(14deg);
+        -moz-transform: skew(14deg);
+        -o-transform: skew(0deg);
+    }
+}
+
+%player-with-notification {
+    @extend %match-notification;
+}
+
+
+%player-img-large {
+    @include pull-left;
+    @include position(relative);
+    img {
+         width:auto;
+        //@include px-to-rem(width, 60);
+        @include px-to-rem(height, 80);
+    }
+    .player-image {
+        img {
+             width:auto;
+            //@include px-to-rem(width, 60);
+            @include px-to-rem(height, 80);
+        }
+    }
+    .team-image {
+        img {
+            width:auto;
+            //@include px-to-rem(width, 60);
+            @include px-to-rem(height, 80);
+        }
+    }
+}
+%load-mobile-design {
+    @include breakpoint($small $max-xsmall) {
+        @include percentage-value(width, 100); // @include padding-left(20);
+        // @include padding-right(20);
+        &__info {
+            &__left {
+                @include percentage-value(width, 100);
+                @include pull-left;
+                @include text-align(left);
+                @include border-bottom(1, solid, $grey-light-line);
+                @include padding-bottom(8);
+                @include margin-bottom(24);
+                @include padding-left(0);
+                min-height: auto;
+                border-right: none;
+            }
+            &__right {
+                @include percentage-value(width, 100);
+                @include pull-left;
+                .chart-area {
+                    @include percentage-value(width, 100);
+                    @include margin-left(0);
+                    @include margin-right(0);
+                    @include pull-left;
+                }
+            }
+        }
+
+        .mu-item__sponsor {
+            @include right(0);
+            @include position(absolute);
+            &__wrapper {
+                @include important(background-color, $player-bg);
+                @include color($grey-text);
+            }
+        }
+        .statsbar {
+            @include position(relative);
+            @include padding(0, 0, 0, 0);
+            @include pull-left;
+        }
+
+    }
+}
+
+
+
+/*
+    Gloabl for All type of card
+    for statsbar, Right Panel
+*/
+
+.match-stats-card {
+    @include breakpoint($small $max-xsmall) {
+        @include display(none);
+    }
+    @include breakpoint($medium) {
+        @include display(block);
+    }
+    .grid-3 {
+        @include breakpoint($small) {
+            @include percentage-value(width, 100);
+            @include padding-left(20);
+            @include padding-right(20);
+            @include margin-left(0);
+            @include margin-right(0);
+            .stats-card {
+                @include border-none;
+                @include background-color($social-bg);
+                @include color($white);
+                &__info__left {
+                    //@extend %line-white;
+                    @include percentage-value(width, 100);
+                    @include pull-left;
+                    @include border-bottom(1, solid, $grey-light-line, 0.2, important);
+                    @include text-align(left);
+                    @include border-right(0, solid, $grey-light-line, 1, important);
+                    @include padding-bottom(8);
+                    @include margin-bottom(24);
+                    @include padding-left(0);
+                    min-height: auto;
+
+                    .date-time,
+                    .type,
+                    .teams {
+                        @include color($white);
+                    }
+                }
+                &__info__right {
+                    .chart-area {
+                        @include percentage-value(width, 100);
+                        @include padding-left(0, Percentage, important);
+                        @include padding-right(0, Percentage, important);
+                        @include margin-left(0, Percentage, important);
+                        @include margin-right(0, Percentage, important);
+                        .players-vs-player {
+                            .vs {
+                                div{
+                                   @include background-color($vs,1,important); 
+                                }
+                                //@include top(25);
+                                span{
+                                    @include color($white,important)
+                                }
+
+                            }
+                        }
+                    }
+                    .players__notification {
+                        .player-info {
+                            h3,
+                            label {
+                                @include color($white);
+                            }
+                        }
+                    }
+                }
+                .statsbar {
+                    @include padding-left(20);
+                    @include padding-right(20);
+                    @include color($white);
+                    @include background-none(important);
+                }
+                .line-chart {
+                    @include background-color($chart-bg, 0.1);
+                }
+                /* ========head-to-head =================*/
+                &.head-to-head {
+                    .stats-card__info__right {
+                        .chart-area {
+                            .players-vs-player {
+                                  .vs {
+                                    @include margin-top(25);
+                                  }
+                                  &.player-only {
+                                    .player__host {
+                                        .player-img {
+                                            h3 {
+                                                @include color($white, important);
+                                            }
+                                        }
+                                    }
+
+                                    .player__opponent {
+                                        .player-img {
+                                            h3 {
+                                                @include color($white, important);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                /* ========Break down=================*/
+                &.brekdown-number {
+                    .brekdown-number__details {
+                        &__left {
+                            @include percentage-value(width, 100);
+                            @include margin-bottom(20);
+                            .players__notification {
+                                @include px-to-rem(width, 130);
+                                @include breakpoint($medium $max-large){
+                                    @include percentage-value(width, 43);
+                                }
+                                @include margin-top(5);
+                                .player-img {
+                                    @include pull-left(important);
+                                }
+                                h3 {
+                                    @include pull-left(important);
+                                    @include color($white);
+                                }
+                            }
+                            .player__detail-chart {
+                                @include breakpoint($medium $max-large){
+                                    @include percentage-value(width, 57);
+                                }
+                                @include margin-top(-30);
+                                .chart-text {
+                                    .text-score {
+                                        @include tertiary-regular;
+                                        @include color($white);
+                                    }
+                                    .total {
+                                        @include tertiary-semibold;
+                                        @include text-transform(uppercase);
+                                        @include color($white);
+                                    }
+                                }
+                            }
+                        }
+                        &__right {
+                            @include percentage-value(width, 100);
+                            ul {
+                                li {
+                                    //@include border-bottom(1,solid,$chart-bg,0.2, important);
+                                    label ,span{
+                                        @include color($white);
+                                    }
+                                }
+                            }
+                        }
+                        &.player-vs-team {
+                            .brekdown-number__details__right {
+                                .brekdown-number__info{
+                                    label,span {
+                                        &:nth-child(2){
+                                                @include px-to-rem(min-width,58);
+                                                @include text-align(center);
+                                        }
+                                    }
+                                }
+                            }
+                            .brekdown-number__details__left {
+                                .vs {
+                                  @include left(42,percent);
+                                }
+                            }
+                            .brekdown-number__details__right {
+                                ul {
+                                    li {
+                                        @include border-bottom(1,solid,$chart-bg,0.2, important);
+                                        label,span {
+                                            @include color($white);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        
+                    }
+                    .stats-card__info__right {
+                        .chart-area {
+                            .players-vs-player.player-only {
+                                .player__host {
+                                    .player-img {
+                                        h3 {
+                                            @include color($white, important);
+                                        }
+                                    }
+                                }
+
+                                .player__opponent {
+                                    .player-img {
+                                        h3 {
+                                            @include color($white, important);
+                                        }
+                                    }
+                                }
+                            }
+                            .player-vs-team {
+                                .brekdown-number__details__left {
+                                    .vs {
+                                          @include background-color($vs);
+                                          span {
+                                               @include color($white);
+                                          }
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                /* ========Break down closing =================*/
+
+                /* Head to head number (for pie)*/
+                &.head-to-head-number{
+                    .stats-card__info__right {
+                        //For Piechar only
+                        .players.piechart {
+                            @include position(relative);
+                            @include percentage-value(width, 100);
+                            @include pull-left;
+ 
+                            .piechart-area{
+                                .piechart-inner{
+                                    @include left(-46, percent);
+                                }
+ 
+                            }
+ 
+                            .players-vs-player{
+                                .player__host{
+                                    @include percentage-value(width, 21);
+                                    @include pull-left;
+                                }
+                                .player__opponent{
+                                    @include position(relative);
+                                    @include percentage-value(width, 23);                                    
+                                }
+                            }
+ 
+                            .players__match-details{
+                                ul li
+                                    {
+                                        &:first-child{
+                                            @include background-none(important);
+                                            @include border-none();
+                                            @include margin-top(-20);
+                                            span.score-info{
+                                                @include display(none);
+                                            }
+                                            
+                                        }
+                                        span.scoreA{
+                                                @include padding-left(0);
+                                            }
+                                            span.scoreB{
+                                               @include padding-right(0);
+                                        }
+                                    }
+                            }
+                        }
+                        .chart-area {
+                            .players {
+                                .players__match-details {
+                                    ul {
+                                        li {
+                                            &:first-child {
+                                                border-bottom:none;
+                                                .scoreA  {
+                                                    @include font-size(24);
+                                                    @include padding-top(20);
+                                                }
+                                                .scoreB  {
+                                                    @include font-size(24);
+                                                    @include padding-top(20);
+                                                }
+                                                .score-info {
+                                                    @include percentage-value(width,40);
+                                                    @include margin-left(30,percent);
+                                                    @include margin-right(30,percent);
+                                                    @include margin-top(-5);
+
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                
+                }
+
+                &.brekdown-percentage.single-stats{
+                    .brekdown-percentage__details__left{ 
+                        &.two-img {
+                            @include percentage-value(width, 100);
+                            .players__notification {
+                                &.left-img {
+                                    @include percentage-value(width, 45);
+                                    @include padding-right(20);
+                                        h3 {
+                                                @include pull-left(important); 
+                                                @include text-align(left);
+                                        }
+                                        label {
+                                                @include pull-left(important); 
+                                                @include text-align(left);
+                                        }
+                                    .player-img {
+                                        
+                                        &.team-image {
+                                                @include pull-left(important); 
+                                                @include text-align(center);
+                                            label {
+                                                    @include text-align(center);
+                                                    @include px-to-rem(min-width,80);
+                                                    width: inherit;
+                                            }
+
+                                        }
+                                        &.player-image {
+                                                @include pull-left(important); 
+                                                @include text-align(left);
+                                        }
+                                    }
+                                    .two-img-score {
+                                        @include pull-left;
+                                    }
+                                }
+                                &.right-img {
+                                    @include percentage-value(width, 45); //@include padding-left(20);
+                                    @include pull-right;
+                                    h3 {
+                                            @include pull-right(important); 
+                                            @include text-align(right);
+                                    }
+                                    label {
+                                            @include pull-right(important); 
+                                            @include text-align(right);
+                                    }
+                                    .player-img {                                        
+                                        &.team-image {
+                                                @include pull-right(important); 
+                                                @include text-align(center);
+                                            label {
+                                                    @include text-align(center);
+                                                    @include px-to-rem(min-width,80);
+                                                    width: inherit;
+                                            }
+                                        }
+                                        &.player-image {
+                                                @include pull-right(important); 
+                                                @include text-align(right);
+                                            
+                                        }
+                                    }
+                                    .two-img-score {
+                                        @include pull-right;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .mu-item__sponsor__wrapper{
+                    @include background-color($mu-black,1,important);
+                    span {
+                        @include background-none(important);
+                    }
+                }
+            }
+        }
+    }
+    .match-overview__title {
+        @include font-size(14);
+        @include pull-left;
+        @include tertiary-regular;
+        @include margin-bottom(16);
+        @include color($white);
+        @include padding-left(20);
+        @include percentage-value(width, 100);
+        @include position(relative);
+
+        &:before {
+            @include background-color($fixture-red);
+            @include position(absolute);
+            @include px-to-rem(width, 32);
+            @include px-to-rem(height,2);
+            content: '';
+            @include px-to-rem(bottom,6);
+            @include left(20);
+           
+        }
+    }
+}
+
+/*
+    Gloabl for All type of card
+    for grid-3 and grid-4
+*/
+
+.grid-3,
+.grid-4 {
+    @include breakpoint($small) {
+        .stats-card {
+            &__info {
+                @include percentage-value(width, 100);
+                @include padding-left(20);
+                @include padding-right(20);
+                &__left {
+                    @include percentage-value(width, 100);
+                    @include pull-left;
+                    @include text-align(left);
+                    @include border-bottom(1, solid, $grey-light-line);
+                    @include padding-bottom(8);
+                    @include margin-bottom(24);
+                    @include padding-left(0);
+                    min-height: auto;
+                    //border-right: none;
+                    @include border-right(0,solid,$grey-light-line);
+                }
+                &__right {
+                    @include percentage-value(width, 100);
+                    @include pull-left;
+                    .chart-area {
+                        @include percentage-value(width, 100);
+                        @include padding-left(0, Percentage, important);
+                        @include padding-right(0, Percentage, important);
+                        @include margin-left(0, Percentage, important);
+                        @include margin-right(0, Percentage, important);
+                        @include pull-left;
+                    }
+                }
+            }
+
+            .mu-item__sponsor {
+                @include right(0);
+                &__wrapper {
+                    @include important(background-color, $player-bg);
+                    @include color($grey-text);
+                    @include margin-left(8);
+                    // span {
+                    //     @include important(background-color, $player-bg);
+                    // }
+                }
+            }
+            .statsbar {
+                @include position(relative);
+                @include padding(0, 0, 0, 0);
+                @include pull-left;
+            }
+        }
+    }
+}
+
+/* Gloabl for All card 320 767 */
+
+.stats-card {
+    @extend %load-mobile-design;
+
+    .avatar, .icon-avatar{
+        //@include px-to-rem(min-width,54);
+        width: 54px !important;
+    }
+}
+
+
+/* Match Day page only for 768 to 1023 */
+
+.match-day__container, .home-article-detail__match-stats {
+    .grid-12.child {
+        .stats-card {
+            @include breakpoint($medium $max-medium) {
+                @include percentage-value(width, 100);
+                &__info {
+                    @include padding-right(20);
+                    &__left {
+                        @include percentage-value(width, 100);
+                        @include pull-left;
+                        @include text-align(left);
+                        @include border-bottom(1, solid, $grey-light-line);
+                        @include padding-bottom(8);
+                        @include margin-bottom(24);
+                        @include padding-left(0);
+                        min-height: auto;
+                        border-right: none;
+                    }
+                    &__right {
+                        @include percentage-value(width, 100);
+                        @include pull-left;
+                        .chart-area {
+                            @include percentage-value(width, 100);
+                            @include margin-left(0);
+                            @include margin-right(0);
+                            @include pull-left;
+                        }
+                    }
+                }
+
+                .mu-item__sponsor {
+                    @include right(0);
+                    @include position(absolute);
+                    &__wrapper {
+                        @include important(background-color, $player-bg);
+                        @include color($grey-text);
+                    }
+                }
+                .statsbar {
+                    @include position(relative);
+                    @include padding(0, 20, 0, 20);
+                    @include pull-left;
+                }
+
+                /* Breakdown number */
+                &.brekdown-number {
+                    .brekdown-number__details__left {
+                        @include percentage-value(width, 100);
+                        .players__notification {
+                            .player-img {
+                                @include pull-left(important);
+                            }
+                            @include pull-left(important);
+                            h3 {
+                                @include color($mu-black);
+                                @include pull-left(important);
+                            }
+                        }
+                    }
+                    .brekdown-number__details__right {
+                        @include percentage-value(width, 100);
+                    }
+                }
+                &.brekdown-percentage {
+                    .stats-card__info {
+                        &__left {
+                            @include border-bottom(1, solid, $grey-light-line, 0.2);
+                        }
+                    }
+                    &.team-section{
+                       .brekdown-percentage__details__left{
+                        &.two-img {
+                            .players__notification {
+                                &.left-img {
+                                    .player-img {                                   
+                                        &.team-image {
+                                            @include pull-left(important);
+                                        }
+                                    }
+                                }
+                                &.right-img {
+                                    .player-img {                                    
+                                        &.team-image {
+                                            @include pull-right(important);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    } 
+                    }
+                    
+
+                }
+            }
+            &.team-section{
+                .brekdown-percentage__details__left{
+                    .player__percentage-value {
+                            @include breakpoint($small $max-xsmall) {
+                                @include bottom(35);
+                                @include text-align(right);
+                            }
+                        }
+                }
+
+            }
+        }
+    }
+}
+
+
+/* 
+    Global for all cards in carousal grid-3 and grid-4
+*/
+
+.carousal {
+    .grid-3 {
+        .stats-card {
+            @include px-to-rem(height, 380);
+            border:none;
+            //@include border(1,solid,$carousal-bdr-gray);
+            &__info {
+                @include padding-top(26);
+                @include breakpoint($small $max-xsmall){
+                     @include padding-top(32);
+                }
+                &__left {
+                     @include margin-bottom(15);
+                }
+                &__right {
+                    @include margin-top(0);
+                }
+            }
+            .statsbar {
+                @include padding-left(20, important);
+                @include padding-right(20, important);
+                @include position(absolute);
+                ul {
+                    li {
+                        span.icon-share-lite,span.icon-share-card-lite {
+                            @include display(none);
+                        }
+                    }
+                }
+            }
+            &.head-to-head {
+                .stats-card__info__right {
+                    @include margin-top(10);
+                }
+                .players-vs-player {
+                    .player-img {
+                        @include display(none);
+                        .notification {
+                            @include display(none);
+                        }
+                    }
+                }
+                .players__match-details {
+                    ul {
+                        li {
+                            @include margin-left(0);
+                            @include margin-right(0);
+                        }
+                    }
+                }
+            }
+            /* Break down percentage */
+            &.brekdown-percentage {
+                .stats-card__info {
+                    .stats-card__info__left {
+                        @include border-bottom(1, solid, $white, 0.2);
+                        //border-right: none;
+                        @include border-right(0,solid,$white);
+                    }
+                    .brekdown-percentage__details__left {
+
+                        .players__notification {
+                            &.left-img {
+                                h3 {
+                                    @include pull-left(important); 
+                                    @include text-align(left);
+                                }
+                                label,span.two-img-score {
+                                        @include pull-left(important); 
+                                        @include text-align(left);
+                                }
+                                .player-img {
+                                &.player-image {
+                                    @include pull-left(important); 
+                                    @include text-align(left);
+                                    img {
+                                        @include px-to-rem(width, 38);
+                                        @include px-to-rem(height, 50);
+                                    }
+                                    h3 {
+                                        @include pull-left(important);
+                                        @include text-align(left);
+                                    }
+                                }
+                                &.team-image {
+                                    @include pull-left(important);
+                                    img {
+                                        @include important(width, auto);
+                                        @include px-to-rem(height, 50);
+                                    }
+                                    label {
+                                        @include text-align(center);
+                                        @include px-to-rem(min-width,50);
+                                        width: inherit;
+                                    }
+                                }
+                            }
+                            }
+                            &.right-img {
+                                h3 {
+                                    @include pull-right(important); 
+                                    @include text-align(right);
+                                }
+                                label,span.two-img-score {
+                                        @include pull-right(important); 
+                                        @include text-align(right);
+                                }
+                                .player-img {
+                                &.player-image {
+                                    @include pull-right(important); 
+                                    @include text-align(right);
+                                    img {
+                                        @include px-to-rem(width, 38);
+                                        @include px-to-rem(height, 50);
+                                    }
+                                    h3 {
+                                        @include pull-right(important);
+                                        @include text-align(right);
+                                    }
+                                }
+                                &.team-image {
+                                    @include pull-right(important); 
+                                    img {
+                                        @include important(width, auto);
+                                        @include px-to-rem(height, 50);
+                                    }
+                                    label {
+                                        @include text-align(center);
+                                        @include px-to-rem(min-width,50);
+                                        width: inherit;
+                                    }
+                                }
+                            }
+                            }
+
+                        }
+                        .player__percentage-value {
+                            @include font-size(32);
+                            @include text-align(right);
+                        }
+                    }
+                    .brekdown-percentage__details__right {
+                        ul {
+                            li {
+                                @include margin-left(0);
+                                @include margin-right(0);
+                            }
+                        }
+                    }
+                }
+
+            }
+            /* head to head number and percentage */
+            &.head-to-head-number {
+                .stats-card__info {
+                    .stats-card__info__left {
+                        @include margin-bottom(8);
+                    }
+                    .stats-card__info__right {
+                        .players-vs-player {
+                            &.player-only {
+                                .player__host {
+                                    @include percentage-value(width, 42);
+                                    .player-img {
+                                        &.player-image {
+                                            @include percentage-value(width, 100);
+                                            img {
+                                                @include display(none);
+                                            }
+                                            .notification {
+                                                @include display(none);
+                                            }
+                                            h3 {
+                                                @include percentage-value(width, 100);
+                                                @include text-align(right);
+                                                @include color($mu-black, important);
+                                            }
+                                        }
+                                    }
+                                }
+                                .vs {
+                                    @include top(0);
+                                    div {
+                                        @include background-none();
+                                        @include secondry-semibold;
+                                        @include font-size(14);
+                                        @include margin-top(-12);
+                                        span {
+                                            @include color($feed-text);
+                                            @include margin-top(10);
+                                        }
+                                    }
+                                }
+                                .player__opponent {
+                                    @include percentage-value(width, 42);
+                                    .player-img {
+                                        &.player-image {
+                                            @include percentage-value(width, 100);
+                                            img {
+                                                @include display(none);
+                                            }
+                                            .notification {
+                                                @include display(none);
+                                            }
+                                            h3 {
+                                                @include percentage-value(width, 100);
+                                                @include text-align(left);
+                                                @include color($mu-black, important);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            &.team-only {
+                                .player-img {
+                                    &.team-image {
+                                        @include px-to-rem(min-height, 60);
+                                        img {
+                                            @include important(width, auto);
+                                            @include px-to-rem(height, 50);
+                                        }
+                                        h3 {
+                                            @include display(none);
+                                        }
+                                    }
+                                }
+                                .vs {
+                                    @include top(30,percent);
+                                }
+                            }
+                        }
+                        .players__match-details {
+                            @include margin-top(0);
+                            ul {
+                                li {
+                                    &:first-child {
+                                        @include border-none();
+                                        span {
+                                            &.scoreA {
+                                                @include font-size(24);
+                                                @include padding(20, 8, 12, 8);
+                                            }
+
+                                            &.scoreB {
+                                                @include font-size(24);
+                                                @include padding(20, 8, 12, 8);
+                                            }
+                                            &.score-info {
+                                                //@include percentage-value(width,40);
+                                                width: inherit;
+                                                @include margin-left(0,percent);
+                                                @include margin-right(0,percent);
+                                                @include margin-top(0);
+                                            }
+                                        }
+                                    }
+                                    @include margin(0, 0, 0, 0);
+                                    @include percentage-value(width, 100);
+                                    @include display(table);
+                                    span{
+                                        &.score-info{
+                                            @include padding-left(0);
+                                            @include padding-right(0);
+                                            @include padding-top(0);
+                                            @include padding-bottom(0);
+                                            @include display(table-cell);
+                                            @include px-to-rem(height,48);
+                                            vertical-align: middle;
+                                            @include position(relative);
+                                        }
+                                        &.scoreA{
+                                                @include padding-left(12,important);
+                                                @include padding-right(0,important);
+                                                min-width:inherit;
+                                                @include px-to-rem(width,72);
+                                                @include text-align(left);
+                                                @include padding-top(15);
+                                                @include padding-bottom(15);
+                                        }
+                                        &.scoreB{
+                                                @include padding-left(0,important);
+                                                @include padding-right(12,important);
+                                                min-width:inherit;
+                                                @include px-to-rem(width,72);
+                                                @include text-align(right);
+                                                @include padding-top(15);
+                                                @include padding-bottom(15);
+                                        }
+                                    }
+                                }
+                            }
+                            div.screenreader{
+                                @include pull-left;
+                                position: relative !important;
+                            }
+                        }
+                    }
+                }
+                //pichart
+                .players.piechart{
+                    @include position(relative);
+                    @include percentage-value(width, 100);
+                    @include margin-top(10);
+                    @include pull-left;
+
+                    .piechart-area{
+                        .piechart-inner{
+                            @include left(-48, percent,important);
+                            @include top(-7);
+                            svg{
+                                @include px-to-rem(width,175);
+                                @include px-to-rem(height,175);
+                               
+                            }
+                        }
+
+                    }
+
+                    .players-vs-player{
+                        .player__host{
+                            @include percentage-value(width, 25);
+                            @include pull-left;
+                            .player-img{
+                                h3{
+                                    @include color($mu-black,important);
+                                }
+                            }
+                        }
+                        .player__opponent{
+                            @include position(relative);
+                            @include percentage-value(width, 29);
+                            .player-img{
+                                h3{
+                                    @include color($mu-black,important);
+                                }
+                            }                                    
+                        }
+                    }
+
+
+
+                    .players__match-details{
+                        ul li
+                             { 
+                                &:first-child {
+                                    @include background-none(important);
+                                    
+                                    @include margin-top(-20,important);
+                                    @-moz-document url-prefix() { 
+                                          @include margin-top(-10,important);
+                                    }
+
+                                    @include border-none;
+                                    span.score-info{
+                                        @include display(none);
+                                    }
+                                    span.scoreA{
+                                        @include padding-left(0,important);
+                                        @include padding-right(0,important);
+                                        @include padding-top(10);
+                                        @include text-align(center);
+                                        @include px-to-rem(width,50);
+                                        @include pull-left;
+                                    }
+                                    span.scoreB{
+                                        @include padding-left(0,important);
+                                        @include padding-right(0,important);
+                                        @include padding-top(10);
+                                        @include text-align(center);
+                                        @include px-to-rem(width,50);
+                                        @include pull-right;
+                                    }
+                                    
+                                }
+                                span.scoreA{
+                                    @include padding-left(0,important);
+                                    @include padding-right(0,important);
+                                    @include text-align(center);
+                                    @include px-to-rem(width,50);
+                                    @include pull-left;
+                                }
+                                span.scoreB{
+                                    @include padding-left(0,important);
+                                    @include padding-right(0,important);
+                                    @include text-align(center);
+                                    @include px-to-rem(width,50);
+                                    @include pull-right;
+                                }
+                            }
+                    }
+                }
+
+            }
+
+            /* head to head only */
+            &.head-to-head {
+                .stats-card__info {
+                    .stats-card__info__left {
+                        @include margin-bottom(4);
+                    }
+                    .stats-card__info__right {
+                        .players-vs-player {
+                            &.player-only {
+                                @include px-to-rem(min-height,45);
+                                .player__host {
+                                    @include percentage-value(width, 42);
+                                    
+                                    @include display(block);
+                                    .player-img {
+                                       &.player-image {
+                                             @include display(block);
+                                            @include percentage-value(width, 100);
+                                            img {
+                                                @include display(none);
+                                            }
+                                            .notification {
+                                                @include display(none);
+                                            }
+                                            h3 {
+                                                @include percentage-value(width, 100);
+                                                @include text-align(right);
+                                                @include color($mu-black, important);
+                                            }
+                                        }
+                                    }
+                                }
+                                .vs {
+                                    @include margin-top(0);
+                                    @include top(0,percent);
+                                    div {
+                                        @include background-none();
+                                        @include secondry-semibold;
+                                        @include font-size(14);
+                                        span {
+                                            @include color($feed-text);
+                                            @include margin-top(10);
+                                        }
+                                    }
+                                }
+                                .player__opponent {
+                                    @include percentage-value(width, 42);
+                                    .player-img {
+                                       &.player-image {
+                                            @include display(block);
+                                            @include percentage-value(width, 100);
+                                            img {
+                                                @include display(none);
+                                            }
+                                            .notification {
+                                                @include display(none);
+                                            }
+                                            h3 {
+                                                @include percentage-value(width, 100);
+                                                @include text-align(left);
+                                                @include color($mu-black, important);
+                                            }
+                                        }
+                                    }
+                                }
+
+
+                            }
+                            &.team-only {
+                                @include px-to-rem(min-height,60);
+                                .player-img {
+                                    &.team-image {
+                                        @include display(block);
+                                        @include px-to-rem(min-height,50);
+                                        img {
+                                            @include important(width, auto);
+                                            @include px-to-rem(height, 50);
+                                        }
+                                        h3 {
+                                            @include display(none);
+                                        }
+                                    }
+
+                                }
+                                .vs {
+                                    @include margin-top(10);    
+                                }
+
+
+                            }
+
+                        }
+                        .players__match-details {
+                            @include margin-top(0);
+                            ul{
+                                li{
+                                    @include px-to-rem(max-height,42);
+                                    @include px-to-rem(height,42);
+                                    @include margin-bottom(4);
+                                    @include display(block);
+                                    @include z-index(999);
+                                    @-moz-document url-prefix() { 
+                                      @include display(block);
+                                    }
+                                    label{
+                                        @include top(0);
+                                    }
+                                    span{
+                                        @include display(table-cell);
+                                        @include px-to-rem(height,42);
+                                        @include px-to-rem(max-height,42);
+                                        @include position(relative);
+                                        vertical-align:middle;
+                                        
+                                        &.scoreA{
+                                            @include px-to-rem(min-width,49);
+                                            @include padding-top(0);
+                                            @include padding-right(0);
+                                            @include padding-bottom(0);
+                                            @include padding-left(10);
+                                            @include text-align(left);
+                                            @include pull-none;
+                                            @include font-size(18);
+                                        }
+                                        &.scoreB{
+                                            @include px-to-rem(min-width,49);
+                                            @include padding-top(0);
+                                            @include padding-left(0);
+                                            @include padding-bottom(0);
+                                            @include padding-right(10);
+                                            @include text-align(right);
+                                            @include pull-none;
+                                            @include font-size(18);
+                                        }
+                                        &.score-info{
+                                            @include padding-right(5);
+                                            @include padding-left(5);
+                                            @include padding-top(0);
+                                            @include padding-bottom(0);
+                                            @include text-align(center);
+                                            @include percentage-value(width,100);
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+                // hide team vs team in carousal
+                &.team-section {
+                   .stats-card__info {
+                    &__left {
+                        .teams {
+                            @include display(none);
+                        }
+                    }
+                   } 
+                }
+            }
+            /*breakdown */
+            &.brekdown-number  {
+                &.playerVteam{
+
+                    &.player-section {
+                         .brekdown-number__details__left{
+                            @include margin-bottom(0);
+                            .players__notification{
+                                @include margin-top(0);
+                            }
+                        }
+
+                    }
+                   .brekdown-number__details__left{
+                    @include percentage-value(width, 100);
+                    .players__notification{
+                        @include percentage-value(width, 50);
+                        @include margin-bottom(0);
+
+                        .player-img{
+                            @include pull-left(important);
+                            @include text-align(left);
+                            @include margin-top(5);
+                            img{
+                                @include px-to-rem(width, 38);
+                                @include px-to-rem(height, 50);
+                            }
+                        }
+                        h3{
+                           @include pull-left(important);
+                           @include text-align(left); 
+                        }
+                        &.team-section{
+                           .player-img{
+                                img{
+                                    @include px-to-rem(width, auto);
+                                }
+                            } 
+                        }
+                    }
+                    
+                    .vs{
+                        @include percentage-value(left, 45);
+                        @include px-to-rem(top,10);
+                    }
+                   }
+                   .brekdown-number__details__right{
+                    @include percentage-value(width, 100);
+                    ul{
+                        li{
+                            @include margin-left(0);
+                            @include margin-right(0);
+                        }
+                    }
+                   }
+                }
+
+
+               .player-vs-team {
+                    .brekdown-number__details__left{
+                        .vs{
+                            @include px-to-rem(top, 16);
+                        }
+                        .players__notification{
+                            @include margin-bottom(0);
+                            .player-img{
+                                @include margin-top(5);
+                                
+                            }
+                        
+                        }
+
+                    }
+                    .brekdown-number__details__right{
+                        .brekdown-number__info{
+                            label,span{
+                                &:nth-child(2){
+                                    @include px-to-rem(min-width, 40);
+                                    @include text-align(center);
+                                }
+                            }
+                        }
+                    }
+               }
+
+               .brekdown-number__details__left{
+                    .players__notification{
+                        h3{
+                            @include pull-left(important);
+                        }
+                    } 
+               }
+               .brekdown-number__details__right{
+                    @include percentage-value(width, 100);
+                    ul{
+                        li{
+                            @include margin-left(0);
+                            @include margin-right(0);
+                        }
+                    }
+               }
+
+               &.team-section{
+                    .brekdown-number__details__left{
+                        @include percentage-value(width,100);
+                        @include margin-bottom(0);
+                        .player__detail-chart{
+                            @include margin-top(-15);
+                        }
+                        .players__notification{
+                            @include px-to-rem(width,95);
+                            @include margin-top(0);
+                            .player-img{
+                                @include pull-left(important);
+                                &.team-image {
+                                    @include margin-top(12);
+                                }
+                            }
+                            @include breakpoint($small $max-xsmall){
+                                @include margin-top(0);
+                            }
+                        }
+                    }
+                    .stats-card__info__left{
+                        @include margin-bottom(15);
+                    }
+
+               }
+
+               &.player-section{
+                .stats-card__info__left{
+                    @include margin-bottom(15);
+                }
+                    .brekdown-number__details__left{
+                        @include percentage-value(width,100);
+                        @include margin-bottom(10);
+                        .player__detail-chart{
+                            @include margin-top(-15);
+                        }
+                        .players__notification{
+                            @include px-to-rem(width,95);
+                            @include margin-top(22);
+                            @include breakpoint($small $max-xsmall){
+                                @include margin-top(0);
+                            }
+                            .player-img{
+                                @include pull-left(important);
+                                img{
+                                    @include px-to-rem(width,38);
+                                    @include px-to-rem(height,50);
+                                }
+                            } 
+                        } 
+                    }
+               }
+
+            }
+
+            //Fixes for if Li is 3 or 4 only On carousal
+            &.head-to-head-number {
+                .stats-card__info {
+                    .stats-card__info__right {
+                        .chart-area {
+                            .players {
+                                .players-vs-player {
+                                    .player__host,.player__opponent {
+                                        .player-img.player-image {
+                                            @include px-to-rem(height,60);
+                                            img {
+                                                @include px-to-rem(height,50);
+                                            }
+                                        }
+                                    }
+                                    .vs {
+                                        @include top(35,percent,important)
+                                    }
+                                }
+                                .players__match-details {
+                                    ul {
+                                        li:first-child span.score-info {
+                                            @include font-size(12);
+                                            word-break: break-word;
+                                            word-break: keep-all;
+                                        }
+                                        li {
+                                            //word-break: break-all;
+                                            //-ms-word-break: inherit;
+                                            //-webkit-word-break: inherit;
+                                            span.scoreA,span.scoreB{
+                                                //width:50px !important;
+                                                width:72px !important;
+                                                @include font-size(18);
+                                                @include padding-top(15,important);
+                                                @include pull-left;
+                                            }
+                                            span.scoreB{
+                                                @include pull-right;
+                                            }
+                                            span.score-info {
+                                                @include font-size(13);
+                                                word-break: break-word;
+                                                word-break: keep-all;
+                                            }
+                                        }
+                                    }
+                                }
+                                
+                            }
+                        }
+                    }
+                    .statsbar {
+                       background:transparent; 
+                    }
+                }
+            }
+
+
+        }
+    }
+}
+
+
+
+
+/***************************
+Article Details CSS
+****************************/
+.home-article-detail__match-stats{
+    @include pull-left;
+    @include percentage-value(width, 100);
+    @include margin-bottom(24);
+    @include breakpoint($large) {
+        .grid-7{
+            @include pull-none;
+            max-width: 670px;
+        }
+    }
+    @include breakpoint($medium $max-medium){
+        .grid-7{
+            @include pull-none;
+            width: 66.66667% !important;
+            @include padding(0);
+            .grid-12{
+                @include percentage-value(width, 100);
+                @include pull-left;
+            }
+        }
+    }
+    @include breakpoint($small $max-xsmall) {
+        .grid-7{
+            @include pull-left;
+            @include percentage-value(width, 100);
+            @include padding(0,16,0,16);
+ 
+            .grid-12{
+                @include margin-left(0);
+                @include margin-right(0);
+            }
+        }
+    }
+    .grid-7{
+        @include pull-none;
+        max-width: 670px;
+        @include percentage-value(width, 100);
+        .grid-12{
+            @include percentage-value(width, 100);
+            @include pull-left;
+ 
+            .img-holder>figure, .mu-content{
+                @include position(relative, important);
+            }
+            &.ratio:before{
+                @include padding-top(0, important);
+            }
+        }
+    }
+    .ie8 .stats-card, .stats-card{
+        @include margin-bottom(0);
+    }
+    .stats-card.brekdown-number, .stats-card.brekdown-percentage{
+        .brekdown-number__details, .brekdown-percentage__details__left{
+            .player__percentage-value{
+                @include padding-left(0);
+            }
+            .players__notification{
+                @include px-to-rem(width, 95);
+                .player-img.team-image{
+                    @include text-align(right);
+                    @include breakpoint($small $max-xsmall){
+                      @include text-align(left);  
+                    }
+                }
+            }
+        }  
+    }
+ 
+    .stats-card.head-to-head-number {
+        .stats-card__info__right .chart-area .players.piechart .piechart-area .piechart-inner{
+        @include percentage-value(left, -50);
+        }
+        .stats-card__info__right .chart-area .players.piechart .players-vs-player .player__host{
+            @include percentage-value(width, 25);
+        }
+    }
+    @include breakpoint($xsmall $max-xsmall){
+        .stats-card.head-to-head-number {
+            .stats-card__info__right .chart-area .players.piechart .piechart-area .piechart-inner{
+                @include percentage-value(left, -50);
+            }
+        }
+        .stats-card.brekdown-number, .stats-card.brekdown-percentage{
+            .brekdown-number__details, .brekdown-percentage__details__left{
+                .players__notification{
+                    .player-img.team-image{
+                        @include pull-left(important);
+                    }
+                }
+            }  
+        }
+    }
+    @include breakpoint($small $xsmall){
+        .stats-card.head-to-head-number {
+            .stats-card__info__right .chart-area .players.piechart .piechart-area .piechart-inner{
+                @include percentage-value(left, -50);
+            }
+        }
+    }
+    @include breakpoint($medium $max-medium){
+        .grid-12.child .stats-card.brekdown-number, .grid-12.child .stats-card.brekdown-percentage{
+            .brekdown-number__details, .brekdown-percentage__details__left{
+                .players__notification{
+                    h3{
+                        @include pull-left(important);
+                        @include text-align(left);
+                    }
+                }
+            }  
+        }
+     
+        .stats-card.head-to-head-number {
+            .stats-card__info__right .chart-area .players.piechart .piechart-area .piechart-inner{
+                @include percentage-value(left, -50);
+            }
+        }
+    }
+}
+
+
+//For Player Profile page carousal
+.player-detail {
+    .carousal {
+        .grid-3 {
+            .stats-card {
+                @include border(1,solid,$white-lighter);
+                .statsbar {
+                    @include px-to-rem(height,43);
+                    @include border-bottom(2,solid,$white-lighter);
+                    li:last-child {
+                        @include margin-top(0);
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+

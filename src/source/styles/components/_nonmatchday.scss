@@ -1,0 +1,575 @@
+.non-matchday-panel__content {
+    @include pull-left;
+    @include percentage-value(width, 100);
+
+
+    @include breakpoint($small $max-xsmall) {
+
+        .home-article-detail__content-panel .home-content-panel__details-social__time {
+            border-right: none !important;
+            @include padding-right(0);
+
+            span {
+                @include display(inline-block);
+                @include px-to-rem(min-height, 34);
+            }
+        }
+
+        .home-article-detail__content-panel .home-content-panel__details-social__icons {
+
+            @include pull-right;
+            @include padding-left(0);
+            @include margin-left(0, important);
+            @include position(inherit);
+            @include left(0);
+        }
+
+        .home-article-detail__content-panel .home-content-panel__details .mu-item__sponsor {
+            @include margin-bottom(15);
+            @include pull-right;
+            position: relative;
+            @include right(0);
+            @include z-index(999);
+
+
+            .mu-item__sponsor__wrapper {
+                @include padding-top(8);
+                @include padding-bottom(8);
+
+
+                span {
+                    @include font-size(12);
+                    color: $grey-text;
+                    @include background-none();
+                }
+            }
+        }
+
+        .home-content-panel__details-text {
+            @include percentage-value(width, 100);
+            @include margin-bottom(24);
+            @include margin-top(5);
+        }
+
+        .home-article-detail__content-panel .home-content-panel__details {
+            @include position(initial);
+        }
+
+        .home-article-detail__content-panel .home-content-panel__details-social__holder {
+            @include margin-bottom(-1);
+        }
+
+        .home-article-detail__content-panel .home-content-panel__details-social__icons .open {
+            @include left(0);
+        }
+    }
+
+    @include breakpoint($medium $max-medium) {
+        .home-article-detail__content-panel .home-content-panel__details .mu-item__sponsor {
+            @include margin-bottom(0);
+            position: absolute;
+            @include right(16);
+        }
+
+        .home-article-detail__content-panel .home-content-panel__details {
+            position: initial;
+        }
+
+        .home-article-detail__content-panel .home-content-panel__details-social__holder {
+            @include margin-bottom(-1);
+        }
+
+        .home-article-detail__content-panel .home-content-panel__details-social__icons {
+            @include pull-left;
+        }
+
+        .home-content-panel__details-text {
+            @include margin-bottom(27);
+            @include margin-top(20);
+
+            p {
+                @include padding-top(0);
+                @include padding-bottom(0);
+            }
+        }
+
+        .home-article-detail__content-panel .home-content-panel__details .mu-item__sponsor {
+
+            .mu-item__sponsor__wrapper {
+                @include background-none();
+            }
+        }
+    }
+    .home-article-detail__content-panel .home-content-panel__details-social__icons {
+        @include margin-left(15);
+        @include margin-top(0);
+        @include margin-bottom(0);
+        width: auto;
+        @include px-to-rem(min-height, 36);
+    }
+
+    @-moz-document url-prefix() {
+        .home-article-detail__content-panel .home-content-panel__details-social__icons {
+            @include px-to-rem(min-height, 38);
+        }
+    }
+
+    .home-article-detail__content-panel .home-content-panel__details-social__time {
+        width: auto;
+        @include display(table-cell);
+        vertical-align: middle;
+        @include text-align(left);
+        @include margin-top(9);
+        @include padding-top(2);
+        @include padding-bottom(2);
+        @include padding-right(15);
+        @include pull-left;
+        @include border-right(1, solid, $li-border);
+    }
+
+    .home-article-detail__content-panel .home-content-panel__details .mu-item__sponsor img {
+        max-width: 74px;
+        max-height: 24px;
+        @include margin-left(-3);
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .mu-item__sponsor__wrapper {
+        @include background-none();
+    }
+
+
+    @include breakpoint($large) {
+        .home-article-detail__content-panel .home-content-panel__details .mu-item__sponsor {
+            @include pull-right;
+            @include margin-bottom(0);
+            position: absolute;
+            @include right(20);
+
+            .mu-item__sponsor__wrapper {
+                @include padding-top(8);
+                @include padding-bottom(8);
+                @include background-none();
+
+                span {
+                    @include font-size(12);
+                    color: $grey-text;
+                    @include background-none();
+                }
+            }
+        }
+
+
+        .home-article-detail__content-panel .home-content-panel__details {
+            position: initial;
+        }
+
+        .home-article-detail__content-panel .home-content-panel__details-social__icons {
+            @include pull-left;
+        }
+
+        .home-content-panel__details-text {
+            @include margin-bottom(32);
+            @include margin-top(20);
+        }
+
+        .home-article-detail__content-panel .home-content-panel__details-social__holder {
+            @include margin-bottom(-1);
+        }
+        .child.grid-12 .mu-item>a,
+        .home-article-detail__content-panel .child.home-content-panel__details .mu-item>a {
+            @include percentage-value(width, 50);
+        }
+    }
+
+    .home-article-detail__content-panel .home-content-panel__details-social__icons .open {
+        @include margin-top(-12);
+        @include breakpoint($large $min-largest) {
+            @include margin-left(-15);
+            ul {
+                @include margin-top(-2);
+                @include margin-left(11);
+            }
+        }
+    }
+
+    .home-article-detail__content-panel .home-content-panel__details {
+        overflow: inherit;
+    }
+}
+
+.nonmatchday-page {
+    .home-article-detail__top-panel {
+        @include margin-top(0);
+        @include margin-bottom(0);
+    }
+    
+    .matchday-blog-card .matchday-blogs__info.Comment .matchday-blogs__title-data span.authorname {
+            @include breakpoint($small $max-small) {
+            @include margin-top(38);
+            @include margin-left(10);
+            @include padding-left(0);
+        }
+    }
+    .matchday-blog-card {
+        .statsbar.blog {
+            ul li:last-child {
+                @include margin-top(-6);
+            }
+        }
+    }
+
+    @include breakpoint($small $max-xsmall) {
+        .home-article-detail__top-panel .home-article-detail__info .home-article-detail__title {
+            @include padding-top(0);
+            @include padding-bottom(0);
+        }
+    }
+    @include breakpoint($large) {
+        .child.grid-12 .mu-item>a,
+        .home-article-detail__content-panel .child.home-content-panel__details .mu-item>a {
+            @include percentage-value(width, 50);
+        }
+        .grid-12.child .mu-item__info,
+        .home-article-detail__content-panel .child.home-content-panel__details .mu-item__info {
+            @include percentage-value(width, 50);
+        }
+        .grid-12.child .mu-item .mu-item__sponsor,
+        .grid-12.child .mu-item .statsbar,
+        .home-article-detail__content-panel .child.home-content-panel__details .mu-item .mu-item__sponsor,
+        .home-article-detail__content-panel .child.home-content-panel__details .mu-item .statsbar {
+            @include percentage-value(width, 50);
+            @include z-index(999);
+        }
+    }
+    @include breakpoint($xxlarge) {
+        .home-article-detail__top-panel .home-article-detail__info {
+            max-width: 670px !important;
+        }
+        .home-article-detail__top-panel .home-article-detail__info .home-article-detail__title {
+            max-width: 670px !important;
+            @include margin-auto(0);
+        }
+        .child.grid-12 .mu-item>a,
+        .home-article-detail__content-panel .child.home-content-panel__details .mu-item>a {
+            @include percentage-value(width, 50);
+        }
+        .grid-12.child .mu-item__info,
+        .home-article-detail__content-panel .child.home-content-panel__details .mu-item__info {
+            @include percentage-value(width, 50);
+        }
+        .grid-12.child .mu-item .mu-item__sponsor,
+        .grid-12.child .mu-item .statsbar,
+        .home-article-detail__content-panel .child.home-content-panel__details .mu-item .mu-item__sponsor,
+        .home-article-detail__content-panel .child.home-content-panel__details .mu-item .statsbar {
+            @include percentage-value(width, 50);
+        }
+    }
+}
+
+
+.non-matchday__bg__container {
+    @include background-color($player-bg);
+    @include pull-left;
+    @include percentage-value(width, 100);
+
+    poll .grid-12,data-poll .grid-12 {
+        position: relative;
+        @include percentage-value(min-height, 100);
+    }
+
+    poll .mu-content, data-poll .mu-content  {
+        position: relative !important;
+    }
+
+    poll .mu-item.poll,data-poll .mu-item.poll {
+        @include margin-bottom(0);
+    }
+    .poll__options ul li label {
+        @include z-index(999);
+    }
+    social-card, data-social-card{
+        @include display(table);
+        @include percentage-value(width, 100);
+        @include pull-left;
+    }
+    social-card .mu-content,data-social-card .mu-content {
+        position: relative !important;
+    }
+    social-card .mu-item.social-card,data-social-card .mu-item.social-card{
+        @include margin-bottom(0);
+    }
+
+    .stats-card {
+        @include margin-bottom(0);
+    }
+
+
+
+
+    @include breakpoint($small $max-xsmall) {
+        @include percentage-value(width, 100);
+        @include padding-top(16);
+        @include padding-right(16);
+        @include padding-bottom(16);
+        @include padding-left(16);
+
+        .non-matchday {
+            .mu-item__title {
+                @include font-size(32);
+                @include line-height(28, px);
+            }
+
+
+            .matchday-blog-card .matchday-blogs__info .matchday-blogs__title-data span {
+                width: auto;
+                @include margin-top(44);
+                @include display(inline-block);
+                @include margin-left(10);
+                @include breakpoint($small $max-xsmall) {
+                    @include margin-top(38);
+                }
+            }
+
+            .matchday-blog-card .matchday-blogs__info .matchday-blogs__title-data span:empty {
+                @include display(none);
+            }
+            .matchday-blog-card .matchday-blogs__info .matchday-blogs__title-data img {
+                @include display(inline-block);
+            }
+
+            .grid-12.child .mu-item .img-holder,
+            .home-article-detail__content-panel .child.home-content-panel__details .mu-item .img-holder {
+                @include percentage-value(width, 100);
+            }
+        }
+    }
+    @include breakpoint($xsmall) {
+        .non-matchday {
+            .matchday-blog-card .matchday-blogs__info .matchday-blogs__title-data span {
+                @include percentage-value(width, 100);
+                @include margin-top(5);
+                @include margin-left(0);
+                @include display(inline);
+            }
+        }
+    }
+    @include breakpoint($medium $max-medium) {
+        @include padding-top(40);
+        @include padding-bottom(88);
+    }
+
+    @include breakpoint($large) {
+        @include padding-top(40);
+        @include padding-bottom(88);
+    }
+
+    .non-matchday {
+        @include position(initial);
+        @include text-align(left);
+        @include color($black);
+
+        image-card,data-image-card {
+            .grid-12.ratio, .ratio-matchday {
+                @include aspect-ratio(16, 9);
+                @include breakpoint($small $max-small){
+                    @include aspect-ratio(1, 1);
+                }
+            }
+        }
+
+        infographics,data-infographics {
+            .grid-12.ratio, .ratio-matchday {
+                @include breakpoint($small $max-small){
+                    @include aspect-ratio(1, 1);
+                }
+            }
+        }
+        @include breakpoint($small $max-xsmall) {
+            @include percentage-value(width, 100);
+            .matchday-blog-card {
+                @include margin-bottom(0);
+                .matchday-blogs__left-info {
+                    @include padding-left(0);
+                }
+            }
+
+            .profile-pic h2 {
+                @include font-size(24);
+                @include line-height(24, px);
+            }
+            .grid-12 .mu-item.image-gallery .mu-item__title {
+                @include font-size(16);
+                @include line-height(24, px);
+            }
+            .grid-12.child .mu-item.article-card {
+                @include margin-bottom(0);
+            }
+        }
+        @include breakpoint($medium $max-medium) {
+            @include percentage-value(width, 100);
+
+            .matchday-blog-card {
+                @include margin-bottom(0);
+                .matchday-blogs__left-info {
+                    @include padding-left(50);
+                }
+            }
+        }
+        .matchday-blog-card .statsbar.blog {
+            @include color($black);
+        }
+
+        .matchday-blog-card .matchday-blogs__info .matchday-blogs__title-data span:nth-child(1) {
+            @include display(none);
+        }
+        .matchday-blog-card .matchday-blogs__info .matchday-blogs__title-data span:empty {
+            @include display(none);
+        }
+        .matchday-blog-card .matchday-blogs__info .matchday-blogs__title-data span {
+            text-transform: capitalize;
+            @include secondry-regular;
+            @include font-size(16);
+        }
+        @include breakpoint($large) {
+            //@include span(8 of 12 0);
+            max-width: 820px;
+            @include pull-none;
+
+            .matchday-blog-card {
+                @include margin-bottom(0);
+
+                .matchday-blogs__left-info {
+                    @include padding-left(0);
+                }
+                .matchday-blogs__left-info {
+                    @include padding-left(78);
+                }
+            }
+
+            .matchday-blog-card .matchday-blogs__info .matchday-blogs__left-info {
+                @include padding-top(0);
+            }
+            .matchday-blog-card .matchday-blogs__info .matchday-blogs__title-data img {
+                @include display(inline);
+            }
+            .matchday-blog-card .matchday-blogs__info .matchday-blogs__title-data span {
+                @include percentage-value(width, 100);
+                @include margin-top(5);
+                text-transform: capitalize;
+                @include secondry-regular;
+                @include font-size(16);
+            }
+
+            .profile-pic h2 {
+                @include font-size(40);
+            }
+            .grid-12 .mu-item.image-gallery .mu-item__title {
+                @include font-size(40);
+                @include line-height(36, px);
+            }
+
+            .mu-item__title {
+                @include font-size(40);
+                @include line-height(42, px);
+            }
+
+            .grid-12.child .mu-item .img-holder,
+            .home-article-detail__content-panel .child.home-content-panel__details .mu-item .img-holder {
+                @include percentage-value(width, 50);
+            }
+        }
+        @include margin-auto(0 auto);
+        @include pull-none(important);
+        .non-matchday__inner {
+            @include pull-left;
+            @include percentage-value(width, 100);
+            &>div>div:first-child {
+                @include margin-bottom(32);
+                @include pull-left;
+                @include percentage-value(width, 100);
+            }
+        }
+        .grid-12.ratio {
+            @include margin-bottom(0);
+        }
+
+        .mu-item.quotes {
+            .mu-quotes__title {
+                @include font-size(18);
+                @include line-height(1.44);
+            }
+            .mu-quotes__author {
+                @include font-size(14);
+            }
+        }
+
+        .matchday-blog-card .matchday-blogs__info .matchday-blogs__post-time {
+            @include display(none);
+        }
+        .matchstats__blog {
+            @include padding(0);
+        }
+        .grid-12,
+        .home-article-detail__content-panel .home-content-panel__details {
+            @include percentage-value(width, 100);
+            @include margin-left(0);
+            @include margin-right(0);
+        }
+        .match-day.profile {
+            @include margin-bottom(0);
+        }
+
+        .nonmatchday-loader {
+            @include percentage-value(width, 100);
+            @include pull-left;
+            @include display(block);
+            @include text-align(center);
+
+            &:active.non-keyboard-outline,
+             :focus.non-keyboard-outline {
+                @include display(inline-block);
+            }
+        }
+
+        .matchday-blog-card .matchday-blogs__info .matchday-blogs__title-data img {
+            @include display(inline-block);
+        }
+    }
+
+    /*Match day notification*/
+    .matchday {
+        &-notification {
+            @include text-align(center);
+            a {
+                background: #d0011b;
+                color: #fff;
+                @include secondry-semibold;
+                @include font-size(14);
+                border-radius: 20px;
+                @include display(inline-block);
+                @include line-height(16, px);
+                @include padding(10, 5, 10, 5);
+                @include margin-bottom(10);
+                i {
+                    @include margin-left(10);
+                    @include pull-right;
+                }
+            }
+        }
+    }
+
+    .sticky-notification {
+        // @include display(none);
+        @include position(fixed);
+        @include z-index(999);
+        @include top(86);
+        @include percentage-value(width, 55); // display:none;
+        left: calc(63% - 175px);
+        transform: translate(-50%, 0);
+        @include breakpoint($small $max-xsmall) {
+            @include left(50, percent);
+        }
+    }
+}

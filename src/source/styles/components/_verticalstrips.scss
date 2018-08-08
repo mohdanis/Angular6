@@ -1,0 +1,300 @@
+.vertical-strips__wrapper {
+    @include percentage-value(width, 100);
+    @include background-color($vertical-strips);
+    &__heading {
+        @include tertiary-regular;
+        @include percentage-value(width, 100);
+        @include font-size(16);
+        @include line-height(3.25);
+        @include px-to-rem(letter-spacing, 1.8);
+        @include color($white);
+        @include px-to-rem(height, 68);
+        @include line-height(68,px);
+        @include padding-left(16);
+    }
+    &__more {
+        //@include px-to-rem(height, 68);
+        //@include line-height(68,px);
+        //@include padding-top(15);
+        @include padding-right(16);
+        @include text-align(right);
+        @include percentage-value(width, 100);
+        @include pull-left;
+        @include background-color($vertical-strips);
+        .carousal-destination {
+            @include margin(20,22,20,22);           
+            @include important(dispaly, block);
+            span {
+                @include pull-left;
+                @include line-height(16,px);
+            }
+
+        }
+    }
+    .icon-plus-icon {
+        @include margin-right(8);
+    }
+}
+
+.vertical-strips {
+    //@include margin(30, 0, 30, 0);
+    @include position(relative);
+    @include pull-left;
+    @include percentage-value(width, 100);
+    @include background-color($vertical-strips);
+    @include breakpoint($medium) {
+        @include px-to-rem(height, 625);
+    }
+    @include breakpoint($large) {
+        @include px-to-rem(height, 506);
+    }
+    @include breakpoint($xxlarge) {
+        @include px-to-rem(height, 711);
+    }
+    @include breakpoint($small $medium) {
+        height: auto
+    }
+    &__child {
+        @include px-to-rem(width, 415);
+        @include position(absolute);
+        @include z-index(0);
+        @include px-to-rem(height, 247);
+        @include breakpoint($xsmall) {
+            @include px-to-rem(height, 468);
+        }
+        @include breakpoint($medium) {
+            @include px-to-rem(height, 625);
+        }
+        @include breakpoint($large) {
+            @include px-to-rem(height, 506);
+        }
+        @include breakpoint($xxlarge) {
+            @include px-to-rem(height, 711);
+        }
+        @include background-color($black);
+        transition: clip 0.3s ease-out 0s,
+        z-index 1s ease-out 0s;
+        @include breakpoint($small $medium) {
+            @include important(clip, auto);
+            @include display(inline-block);
+            @include left(auto,important);
+            @include margin-auto(4% 0 40px 4%);
+            @include position(relative);
+            @include important(width, 44%);
+            @include z-index(0);
+        }
+        @include breakpoint($small $xsmall) {
+            @include important-value(height, 247);
+        }
+        @include breakpoint($xsmall $medium) {
+            @include important-value(height, 468);
+        }
+        @include breakpoint($medium $medium) {
+            @include important-value(height, 624);
+        }
+        .vertical-strips {
+            &__image-container {
+                background-position: center;
+                background-size: cover;
+                @include percentage-value(height, 100);
+                @include breakpoint($small $medium) {
+                    @include percentage-value(width, 100);
+                    @include overflow(hidden);
+                    @include position(absolute);
+                }
+                & .adaptive {
+                    background-size: cover;
+                    background-position: initial;
+                }
+            }
+            &__image {
+                @include opacity(.5);
+                @include percentage-value(height, 100);
+                transition: opacity .3s ease-out;
+                @include breakpoint($small $medium) {
+                    @include prop-auto(height, auto);
+                    @include prop-auto(width, auto);
+                    @include left(50,percent);
+                    @include opacity(1);
+                    @include percentage-value(max-height, 100);
+                    @include percentage-value(min-height, 100);
+                    @include percentage-value(min-width, 100);
+                    @include position(relative);
+                    transform: translate(-50%);
+                }
+            }
+            &__content {
+                @include z-index(9);
+                @include px-to-rem(width, 285);
+                @include margin(0, 65, 0, 65);
+                @include position(absolute);
+                @include bottom(28);
+                @include text-align(center);
+                transition: all 0.3s ease-out 0s;
+                @include breakpoint($small $medium) {
+                    @include bottom(-40);
+                    @include margin(0,0,0,0,important);
+                    @include padding(0, 15, 0, 15);
+                    @include important(width, 100%);
+                }
+                .vertical-strips__header {
+                    @include color($white);
+                    @include text-align(center);
+                    @include breakpoint($small) {
+                        @include font-size(18);
+                        @include line-height(18,px);
+                        @include secondry-regular;
+                        @include text-transform(capitalize);
+                    }
+                    @include breakpoint($xsmall) {
+                        @include font-size(26);
+                        @include line-height(26,px);
+                        @include secondry-regular;
+                        @include text-transform(capitalize);
+                    }
+                    @include breakpoint($medium $medium) {
+                        @include font-size(32);
+                        @include line-height(32,px);
+                        @include secondry-regular;
+                        @include text-transform(capitalize);
+                    }
+                    @include breakpoint($large) {
+                        @include font-size(36);
+                        @include line-height(36,px);
+                        @include primary-regular;
+                        @include text-transform(uppercase);
+                    }
+                }
+                .vertical-strips__description,
+                .red-btn-skew {
+                    @include opacity(0);
+                    @include margin-top(16);
+                    transition: all 0.3s ease-out 0s;
+                    @include breakpoint($small $medium) {
+                        @include opacity(1);
+                    }
+                }
+                .vertical-strips__description {
+                    @include color($white);
+                    @extend %font-italic;
+                    @include breakpoint($small $medium) {
+                        @include display(none);
+                    }
+                }
+                .red-btn-skew {
+                    @include pull-none;
+                    @include border-none;
+                    //width: 130px;
+                    @include breakpoint($small $medium) {
+                        @include background-color($mu-black);
+                        @include border-transparent(1, solid, $white, 0.2);
+                        @include percentage-value(min-width, 90);
+                        @include padding(20, 10, 20, 10);
+                        @include px-to-rem(width, 110);
+                        @include margin-top(30);
+                    }
+                    @include breakpoint($small $max-small) {
+                        @include margin-left(-12);
+                        @include top(-20);
+                        @include position(relative);
+                        @include px-to-rem(width, 130);
+                        @include padding(10, 8, 10, 8);
+                    }
+                    a {
+                        @include color($white);
+                        @include display(inline-block);
+                        @include pull-none;
+                        @include breakpoint($small $max-small) {
+                            @include padding(0, 0, 0, 0);
+                        }
+                        @include breakpoint($xsmall) {
+                            @include padding(10, 20, 10, 10);
+                        }
+                    }
+                    span {
+                        @include display(inline-block);
+                        font-weight: normal;
+                        @include color($white);
+                        @include font-size(14);
+                        @include text-transform(uppercase);
+                        @include breakpoint($xsmall) {
+                            font-weight: 600;
+                            @include margin-left(5);
+                            @include font-size(18);
+                        }
+                        @include breakpoint($medium $medium) {
+                            @include secondry-regular;
+                            @include font-size(24);
+                        }
+                        @include breakpoint($large) {
+                            @include secondry-regular;
+                            @include font-size(14);
+                        }
+                    }
+                    i {
+                        @include breakpoint($small $xsmall) {
+                            @include margin(3, 0, 0, 5);
+                        }
+                        @include breakpoint($xsmall $medium) {
+                            @include margin(5, 0, 0, 15);
+                        }
+                        @include breakpoint($medium $medium) {
+                            @inlcude margin(7, 0, 0, 15);
+                        }
+                    }
+                }
+            }
+        }
+        &:first-child {
+            @include left(0);
+            .vertical-strips__content {
+                @include margin(0, 15, 0, 15);
+            }
+        }
+        &:nth-child(2) {
+            @include left(265);
+        }
+        &:nth-child(3) {
+            @include left(580);
+        }
+        &:last-child {
+            @include left(845);
+            .vertical-strips__content {
+                @include margin(0, 115, 0, 115);
+            }
+        }
+        .mu-item__gradient {
+            background: linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6) 80%) repeat scroll 0 0;
+            z-index: 9;
+            @include top(0);
+            transition: background 0.3s ease-out 0s;
+            @include breakpoint($large) {
+                background: rgba(0, 0, 0, .6);
+                z-index: 98;
+            }
+        }
+        &:hover,
+        &.hovered {
+            @include z-index(100);
+            transition: clip 0.3s ease-out 0s, z-index 0s ease-out 0s;
+            .mu-item__gradient {
+                @include breakpoint($large) {
+                    background: linear-gradient(rgba(0,0,0,0) 40%, rgba(0,0,0,.6) 70%);
+                    z-index: 0;
+                }
+            }
+            .vertical-strips {
+                &__image {
+                    @include opacity(1);
+                }
+                &__content {
+                    @include margin(0, 65, 0, 65);
+                    .vertical-strips__description,
+                    .red-btn-skew {
+                        @include opacity(1);
+                    }
+                }
+            }
+        }
+    }
+}

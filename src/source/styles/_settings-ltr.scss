@@ -1,0 +1,69 @@
+@import "susy";
+@import "compass";
+@import "breakpoint";
+
+//Includes
+@include border-box-sizing;
+@include establish-baseline;
+
+//Breakpoints
+$small: 10px;
+$xsmall: 568px;
+$medium: 768px;
+$large: 1024px;
+$xlarge: 1280px;
+$xxlarge: 1440px;
+$largest: 1920px;
+
+
+
+$susy: (flow: ltr, columns: 6, column-width: 38px, gutters: 12px / 38px, gutter-position: split, global-box-sizing: border-box);
+
+$susy-small: (math: static, columns: 6, column-width: 38px, gutters: 12px / 38px, gutter-position: inside-static, global-box-sizing: border-box);
+
+$susy-xsmall: (math: static, columns: 12, column-width: 34px, gutters: 12px / 34px, gutter-position: inside-static, global-box-sizing: border-box);
+
+$susy-medium: (math: static, columns: 12, column-width: 46px, gutters: 16px / 46px, gutter-position: inside-static, global-box-sizing: border-box);
+
+$susy-large: (math: static, columns: 12, column-width: 64px, gutters: 20px / 64px, gutter-position: inside-static, global-box-sizing: border-box);
+
+$susy-xlarge: (math: static, columns: 12, column-width: 85px, gutters: 20px / 85px, gutter-position: inside-static, global-box-sizing: border-box);
+
+$susy-xxlarge: (math: static, columns: 12, column-width: 95px, gutters: 24px / 95px, gutter-position: inside-static, global-box-sizing: border-box);
+
+$susy-largest: (math: static, columns: 12, column-width: 136px, gutters: 24px / 136px, gutter-position: inside-static, global-box-sizing: border-box);
+
+
+//Container
+.container {
+  clear: both;
+  position: relative;
+
+  @include breakpoint($small) {
+    @include container($susy-small);  
+    width:96%;
+    max-width: 96%;
+  }
+
+  @include breakpoint($xsmall) {
+    @include container($susy-xsmall);
+  }
+
+  @include breakpoint($medium) {
+    @include container($susy-medium);
+  }
+
+  @include breakpoint($large) {
+    @include container($susy-large);
+  }
+
+  @include breakpoint($xlarge) {
+    @include container($susy-xlarge);
+  }
+
+  @include breakpoint($xxlarge) {
+    @include container($susy-xxlarge);
+  }
+  
+}
+

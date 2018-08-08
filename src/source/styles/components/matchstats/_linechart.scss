@@ -1,0 +1,140 @@
+/* Line Chart */
+
+.stats-card {
+    @extend %match-stats-card;
+    &__info {
+        @include percentage-value(width, 100);
+        @include pull-left;
+        @include padding-top(24);
+        @include padding-left(20);
+        @include padding-right(0);
+        @include padding-bottom(20);
+        @include breakpoint($small $max-xsmall){
+          @include padding-right(20);
+        }
+        &__left {
+            @extend %match-stats-card__left-info;
+            .date-time {
+                @extend %match-stats-left_heading1;
+                @include text-transform(uppercase);
+            }
+            .type {
+                @extend %match-stats-left_heading2;
+            }
+            .teams {
+                @extend %match-stats-left_heading3;
+            }
+        }
+        &__right {
+            @extend %match-stats-card__right-info;
+            .chart-area {
+                @include percentage-value(width, 100);
+
+                @include breakpoint($medium) {
+                    @include percentage-value(width, 70);
+                    @include margin-left(15, percent);
+                    @include margin-right(15, percent);
+                }
+            }
+        }
+    }
+    &.top3line {
+        .stats-card__info{
+            .stats-card__info__left{}
+             .stats-card__info__right{
+                @include margin-top(10);
+             }
+        }
+    }
+    .players__notification {
+        @include percentage-value(width, 100);
+        @include pull-left;
+        @include position(relative);
+        @include margin-bottom(16);
+
+        .player-img {
+            @include pull-left;
+            @include margin-right(12);
+            @include position(relative);
+            img {
+                @include px-to-rem(width, 38);
+                @include px-to-rem(height, 50);
+            }
+        }
+        .notification {
+            @extend %match-notification;
+        }
+
+        .player-info {
+            @include margin-top(14);
+            h3 {
+                @extend %match-player_heading;
+            }
+            .resultdata {
+                @include pull-right;
+                @extend %match-player_result-heading;
+            }
+        }
+    }
+    .mu-item__sponsor {
+        @include right(0);
+        @include px-to-rem(min-height,44);
+        &__wrapper {
+            //@include important(background-color, $white-lighter);
+            //@include color($grey-text);
+            a{
+                span {
+                    &:first-child {
+                        @include display(none,important);
+                    }
+                }
+            }
+        }
+    }
+    .statsbar {
+        @include position(relative);
+        @include px-to-rem(bottom, 0);
+        @include pull-left;
+        @include padding-right(20);
+        @include padding-left(20);
+    }
+    &.team-section {
+        .stats-card__info {
+           .stats-card__info__left {
+              .teams {
+                @include display(none);
+              }
+           }
+        }
+
+    }
+}
+
+/* ------------ Close Line Chart -------------------*/
+
+// All chart Drawing
+.line-chart {
+    @include background-color($chart-bg);
+    @include percentage-value(width, 100);
+    @include pull-left;
+    span {
+        @include pull-left;
+        @include percentage-value(height, 100);
+        @include percentage-value(width, 0);
+
+        &.red-line {
+            @include background-color($mu-red);
+        }
+        &.gray-line {
+            @include background-color($dark);
+        }
+    }
+
+    &.line {
+        @include px-to-rem(height, 4);
+        @include margin-top(6);
+        &.ispercentage-false {
+            @include px-to-rem(height, 1);
+        }
+    }
+}

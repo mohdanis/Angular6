@@ -1,0 +1,7 @@
+.non-matchday__bg__container {
+    .sticky-notification {
+        @include left(initial);
+		right: calc(65% - 175px);
+        transform: translate(50%, 0);
+    }
+}

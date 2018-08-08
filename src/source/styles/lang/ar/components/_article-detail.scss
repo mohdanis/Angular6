@@ -1,0 +1,52 @@
+.home-article-detail {
+    &__content-panel {
+        .home-content-panel {
+            &__details {
+                &-social {
+                    &__icons {
+                        li {
+                            i {
+                                transform: translate(50%, -50%);
+                                -webkit-transform: translate(50%, -50%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .home-content-panel__details-social {
+        .back-to-top-btn {
+            transform: translateX(50%);
+            -ms-transform: translateX(50%);
+            -webkit-transform: translateX(50%);
+        }
+    }
+    &__top-panel {
+         .home-article-detail__info {
+             .home-article-detail__title {
+                @include overflow(none);
+             }
+         }
+    }
+    &__article-panel {
+        .content-holder {
+            .heading_h3 {
+                @include line-height(48,px);
+            }
+        }
+        .grid-9 {
+            &.large {
+                a.next-article {
+                    .content-holder {
+                        span {
+                            .tag-red-arrow {
+                                @include margin-top(2);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

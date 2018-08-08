@@ -1,0 +1,27 @@
+.styleguide-footer {
+  @extend %full-width;
+
+  @include background-color($brand-color);
+
+  @include color($white);
+
+  @extend %new-heading4;
+
+  @include padding(20, 20, 20, 20);
+
+  @include text-align(right);
+
+  @include font-size(30);
+
+  @include position(absolute);
+
+  @include px-to-rem(margin-top, -30);
+
+  @include px-to-rem(height, 80);
+
+  bottom: 0;
+  height: 80px;
+  clear: both;
+
+  @include display(none);
+}

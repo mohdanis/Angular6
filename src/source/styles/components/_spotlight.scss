@@ -1,0 +1,774 @@
+#homePage {
+  .Spotlight {
+      @include margin-bottom(8);
+  }
+}
+//SpotLight
+.Spotlight {
+  @include position(relative);
+  @include pull-left;
+  @include percentage-value(width, 100);
+  @include important(background-size, cover);
+  @include z-index(0);
+  @extend %bottom-gutter;
+  .mu-item__gradient {
+    //@include background-color(#393434, 0.7);
+    //background-color: rgba(26, 26, 26, 0.65);
+    //height: 100%;
+    @extend .mu-item__tint;
+  }
+  .img-holder {
+    height: 100%;
+  }
+  figure {
+    @include important(background-size, cover);
+    height: 100%;
+    &.mu-item__gradient {
+      transform: none;
+    }
+  }
+  @media (max-width: 767px) and (min-width: 321px) {
+    .grid-12.ratio:before {
+     @include  padding-top(420);
+    }
+  }
+  @include breakpoint($medium $max-medium) {
+    .grid-12.ratio:before {
+      @include padding-top(56.25,percent);
+    }
+  }
+  @include breakpoint($large $max-large) {
+    .grid-12.ratio:before {
+      @include padding-top(50.25,percent);
+    }
+  }
+  .info {
+    @include position(relative);
+    @include z-index(999);
+    @include percentage-value(width, 100);
+    @include text-align(center);
+    @include vertical-align;
+    @include important(position, absolute);
+    //@include percentage-value(top, 12);
+    //padding: 50px 0 100px;
+    @include breakpoint($xsmall $max-xsmall) {
+      // 568 767
+      //padding: 50px 0 20px;
+    }
+    @include breakpoint($medium $max-medium) {
+      //padding: 50px 0 20px;
+    }
+    @include breakpoint($large $max-large) {
+      @inclde padding(20, 0, 20, 0);
+    }
+    // @include breakpoint($medium) {
+    //     @include percentage-value(top, 15);
+    // }
+    &__kick-off {
+      @include display(none);
+      @include font-size(18);
+      @include secondry-semibold;
+      @include pull-left;
+      @include percentage-value(width, 100);
+      @include line-height(22,px);
+      @include text-align(center);
+      @include color($white);
+      @include margin-top(24);
+      @include margin-left(auto);
+      @include margin-right(auto);
+      @include margin-bottom(0);
+      @include breakpoint($small $max-medium) {
+        @include margin-top(12);
+        @include font-size(14);
+        @include line-height(18,px);
+      }
+      span {
+        @include display(block);
+        font-weight: 600;
+        &:last-child {
+          font-weight: normal;
+        }
+      }
+    }
+    &__matches {
+      @include margin-auto(32, auto);
+      @include percentage-value(width, 100);
+      @include pull-left;
+      //@include percentage-value(width, 88);
+      @include percentage-value(width, 100);
+      //@include background-color($mu-black, 0.8);
+      //padding: 10px;
+      //transform: skew(-10deg);
+      @include breakpoint($xsmall) {
+        //@include percentage-value(width, 70);
+        height: auto;
+      }
+      @include breakpoint($medium) {
+        //@include percentage-value(width, 55);
+      }
+      @include breakpoint($large) {
+        //padding: 20px;
+        //@include percentage-value(width, 88);
+        //@include px-to-rem(min-height, 160);
+      }
+      @include breakpoint($xlarge) {
+        //@include percentage-value(width, 80);
+        //@include px-to-rem(min-height, 160);
+        //height: auto;
+        @include margin-top(24);
+      }
+      @include breakpoint($small $max-medium) {
+        @include margin-top(12);
+        @include margin-bottom(16);
+        @include pull-left;
+        @include percentage-value(width, 100);
+        @include clear(both);
+      }
+      ul {
+        //@include display(table);
+        @include display(inline-block);
+        @include text-align(center);
+        @include margin-auto(0);
+        //transform: skew(10deg);
+        li {
+          @include display(inline-block);
+          @include text-align(center);
+          @include primary-regular;
+          @include font-size(36);
+          @include px-to-rem(max-height, 124);
+          @include color($white);
+          //@include display(table-cell);
+          @include pull-left;
+          @include line-height(2);
+          @include breakpoint($large) {
+            @include line-height(5.7);
+          }
+          span.team__name {
+            @include breakpoint($small $max-medium) {
+              @include px-to-rem(max-width, 105);
+            }
+          }
+          &:first-child {
+
+            span.team__name {
+              @include text-align(right);
+            }
+            @extend %li-child;
+            @include text-align(right);
+            & .team__logo {
+              @include pull-right;
+              @extend %team-crest;
+              @include margin-left(0);
+              @include margin-right(0);
+              @include breakpoint($large) {
+                @include margin-left(25);
+                @include margin-right(0);
+              }
+            }
+            & .team__name {
+              @include pull-right;
+              @extend %team__name;
+            }
+          }
+          &:last-child {
+            span.team__name {
+              @include text-align(left);
+            }
+            @extend %li-child;
+            @include text-align(left);
+            & .team__logo {
+              @include pull-left;
+              @extend %team-crest;
+              @include margin-right(0);
+              @include margin-left(0);
+              @include breakpoint($large) {
+                @include margin-right(25);
+                @include margin-left(0);
+              }
+            }
+            & .team__name {
+              @include pull-left;
+              @extend %team__name;
+            }
+          }
+        }
+      }
+      .match-score {
+        @include padding(0, 10, 0, 10);
+        line-height: initial;
+        @include font-size(0);
+        span {
+          @include percentage-value(height, 100);
+          @include padding-top(50);
+          @include padding(0, 2, 0, 2);
+          @include font-size(72,en);
+          @include line-height(64,px,en);
+          @include breakpoint($medium $max-medium) {
+            @include line-height(100,px,en);
+          }
+          @include breakpoint($large) {
+            @include padding(0, 20, 0, 20);
+            @include padding(0, 7, 0, 7);
+            @include font-size(72,en);
+            @include line-height(127,px,en);
+          }
+          @include breakpoint($xlarge) {
+            @include font-size(118,en);
+            @include line-height(115,px,en);
+          }
+          @include primary-bold(en);
+          @include color($white);
+          //@include pull-left;
+        }
+        .agg-score {
+          @include breakpoint($xlarge) {
+            @include margin-top(0);
+          }
+        }
+      }
+      .agg-score {
+        @include percentage-value(width, 100);
+        @include text-align(center);
+        @include left(0);
+        @include px-to-rem(height, 20);
+        font-family: 'SourceSansProRegular', 'Helvetica', sans-serif;
+        @include px-to-rem(font-size, 18);
+        @include line-height(1.33);
+        @include color($white);
+        @include text-transform(capitalize);
+        @include margin-top(8);
+        @include breakpoint($large) {
+          @include margin-top(-10);
+        }
+        @include breakpoint($xlarge) {
+          @include margin-top(-40);
+        }
+        @include breakpoint($small $max-medium) {
+          @include font-size(14);
+          @include line-height(18,px);
+          @include margin-top(-2);
+        }
+      }
+      .match-vs {
+        span {
+          display: none;
+          @include padding(0, 20, 0, 20);
+          @include breakpoint($xsmall) {
+            @include padding(0,25,0,25);
+          }
+          @include breakpoint($large) {
+            @include padding(0, 40, 0 ,40);
+          }
+          @include breakpoint($xlarge) {
+            @include padding(0, 40, 0, 40);
+          }
+          @media (max-width: 1365px) and (min-width: 1024px) {
+            @include padding(0, 20, 0, 20);
+          }
+        }
+        .agg-score {
+          @include display(none);
+        }
+      }
+    }
+    .match-vs {
+      span {
+        @include primary;
+        @include px-to-rem(font-size,24);
+        @include tertiary-semibold;
+        @include breakpoint($small $max-medium) {
+          @include font-size(14);
+          //@include line-height(72,px);
+          //top: 50%;
+          //-webkit-transform: translateY(-50%);
+          //-ms-transform: translateY(-50%);
+          //transform: translateY(-50%);
+          @include margin-top(21);
+          @include breakpoint($medium $max-medium) {
+            @include margin-top(40);
+          }
+        }
+        letter-spacing: 3px;
+        .agg-score {
+          letter-spacing: 0;
+        }
+      }
+    }
+  }
+  .info__league {
+    @include margin-bottom(10);
+    @include pull-left;
+    @include percentage-value(width, 100);
+    img {
+      @include px-to-rem(max-height, 70); 
+      @include px-to-rem(max-width, 184); 
+      margin:0 auto; 
+      height: auto; 
+      width: auto;
+
+      // @include breakpoint($small $max-small) {
+      //   max-height: 65px;
+      // }
+      // @include breakpoint($xsmall $max-xsmall) {
+      //   max-height: 65px;
+      // }
+      // @include breakpoint($medium $max-medium) {
+      //   max-height: 76px;
+      // }
+      // @include breakpoint($large $max-large) {
+      //   max-height: 90px;
+      // }
+      // @include breakpoint($xlarge) {
+      //   max-height: 130px;
+      // }
+    }
+  }
+  .red-btn-skew {
+    @include margin(0, 12, 0, 12);
+  }
+  .timer {
+    @extend %spotlight-timer;
+    @include display(none);
+  }
+  .sponsor-tag {
+   @include bottom(0,important);
+    @include right(24,important);
+    @include top(initial);
+    @extend %hero-sponsor-tag;
+    @include padding(15, 10, 15, 10);
+    display: none !important;
+  }
+  // To show 1920 after that it shows black screen from both side
+  @extend %hero__conditionaly;
+  .grid-12 {
+    &.ratio {
+      @include margin-bottom(0);
+    }
+  }
+}
+
+//default
+.Spotlight {
+  &.default {
+    //.red-btn-skew,
+    .match-score {
+      @include display(none);
+    }
+    .info__kick-off {
+      @include display(block);
+    }
+    .sponsor-tag {
+      display: block !important;
+    }
+    // .info {
+    //     top: 15%;
+    // }
+    .info__matches {
+      @include background-color($mu-black, 0);
+      .match-vs {
+        span {
+          @include display(block);
+        }
+        .agg-score {
+          @include display(block);
+        }
+      }
+    }
+    .mu-item__gradient {
+      //@include background-color($black, 0.5);
+      //@include background-color(#393434, 0.7);
+    }
+  }
+  > div {
+    cursor: pointer;
+  }
+}
+
+//Pre matches
+.Spotlight {
+  &.countdown {
+    .red-btn-skew,
+    .match-score {
+      @include display(none);
+    }
+    .info__kick-off {
+      @include display(block);
+    }
+    .sponsor-tag {
+      display: block !important;
+    }
+    .timer {
+      //@include display(table);
+    }
+    // .info {
+    //     top: 10%;
+    // }
+    .info__matches {
+      @include background-color($mu-black, 0);
+      .match-vs {
+        span {
+          @include display(block);
+          //@include padding-left(5);
+          //@include padding-right(5);
+        }
+        .agg-score {
+          @include display(block);
+        }
+      }
+    }
+    .mu-item__gradient {
+      //@include background-color($black, 0.2);
+    }
+  }
+}
+
+//Pre matches
+.Spotlight {
+  &.countdown {
+    &.follow {
+      // .info {
+      //     top: 0px;
+      // }
+      .red-btn-skew {
+        @include display(table);
+        @include margin-auto(0, auto);
+      }
+    }
+    .info__matches {
+      .match-vs {
+        span {
+          @include breakpoint($small $max-medium) {
+            @include padding-left(13);
+            @include padding-right(13);
+          }
+        }
+      }
+    }
+    .info__matches {
+      ul li span.team__name {
+        @include display(block);
+      }
+    }
+  }
+}
+
+div.Spotlight,
+div.Spotlight.follow {
+  .info__matches {
+    ul li span.team__name {
+      @include breakpoint($small $max-medium) {
+        @include font-size(14);
+        @include line-height(18,px);
+        @include margin-top(8);
+        width: 100%;
+        clear: both;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+        @include text-align(center,important);
+        @include tertiary-semibold;
+        text-transform: uppercase;
+        //@include display(block);
+      }
+    }
+  }
+}
+
+//Live matches
+.Spotlight {
+  &.live,
+  &.state__result {
+    .timer {
+      //@include display(table);
+    }
+    .info__matches {
+      @include pull-none;
+      @include breakpoint($small $max-medium) {
+        ul li span.team__name {
+          @include display(none);
+        }
+      }
+    }
+  }
+}
+
+.Matches {
+  &.Spotlight {
+    @include display(none);
+    @include margin-bottom(0);
+    @include breakpoint($large) {
+      @include display(block);
+    }
+  }
+}
+
+%li-child {
+  @include display(inline-block);
+  @include line-height(131,px);
+  @include percentage-value(height, 100);
+}
+
+///////
+%team-crest {
+  @include percentage-value(height, 100);
+  @include position(relative);
+  @include px-to-rem(width, 65);
+  @include px-to-rem(height, 65);
+  & img {
+    @include percentage-value(width, 100);
+    @include percentage-value(height, 100);
+    // max-height: initial;
+  }
+  @include breakpoint($large) {
+    @include px-to-rem(width, 120);
+    @include px-to-rem(height, 120);
+  }
+  @include breakpoint($medium $max-medium) {
+    @include px-to-rem(width, 100);
+    @include px-to-rem(height, 100);
+  }
+}
+
+%team__name {
+  @include percentage-value(height, 100);
+  @include px-to-rem(width, 420);
+  @include primary-bold;
+  @include vertical-align();
+  @include margin-top(60);
+  //word-wrap: break-word;
+  @include font-size(60);
+  @include line-height(0.94);
+  @include breakpoint($small $max-medium) {
+    @include display(none);
+  }
+  @include breakpoint($large) {
+    @include font-size(72);
+    @include line-height(64,px);
+    @include display(block);
+  }
+  @media (max-width: 1279px) and (min-width: 1024px) {
+    @include font-size(48);
+    @include px-to-rem(width, 280);
+    @include line-height(50,px);
+  }
+  @media (max-width: 1339px) and (min-width: 1280px) {
+    @include font-size(64);
+    @include line-height(66,px);
+    @include px-to-rem(width, 380);
+    @include line-height(50,px);
+  }
+}
+
+%spotlight-timer {
+  display: inline-block;
+  border-radius: 2px;
+  background-color: #1a1a1a;
+  border: solid 1px #494a50;
+  @include margin-top(24);
+  @include margin-left(auto);
+  @include margin-right(auto);
+  @include margin-bottom(0);
+  @include padding(5,5,5,5);
+  @include breakpoint($small $max-medium) {
+    @include margin-top(12);
+    @include padding(4,4,4,4);
+  }
+  .timer__logo {
+    @include pull-left;
+    height: 40px;
+    @include padding(0,0,0,0);
+    &:before {
+      content: '';
+      @include display(inline-block);
+      vertical-align: middle;
+      @include px-to-rem(height, 40);
+    }
+    a {
+      @include display(inline-block);
+      vertical-align: middle;
+      @include margin-left(-1);
+      @include margin-right(8);
+    }
+    img {
+      @include display(block);
+      @include px-to-rem(max-width, 110);
+      @include px-to-rem(max-height, 36);
+      //@include px-to-rem(margin-left, -3);
+    }
+  }
+  @include breakpoint($small $max-medium) {
+    .timer__logo {
+      @include px-to-rem(height, 32);
+      letter-spacing: 0;
+      @include font-size(20);
+      //padding-top: 4px;
+      img {
+        @include px-to-rem(max-width, 90);
+        @include px-to-rem(max-height, 28);
+        //margin: 5px 5px 4px 5px;
+      }
+      &:before {
+        @include px-to-rem(height, 32);
+      }
+    }
+  }
+  .timer__time {
+    background: rgba(0, 0, 0, 0) linear-gradient(#414144 50%, #4B4C52 50%) repeat scroll 0 0;
+    color: #ffffff;
+    @include pull-right;
+    //font-family: 'BebasNeueBold', 'Helvetica', sans-serif;
+    @include primary-bold;
+    @include px-to-rem(font-size,26);
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: bold;
+    height: 40px;
+    @include padding(7, 8, 7, 8);
+    @include text-align(center);
+    min-width: 70px;
+    letter-spacing: -.5px;
+    word-spacing: -1px;
+    @include breakpoint($small $max-medium) {
+      @include px-to-rem(height, 32);
+      letter-spacing: 0;
+      @include font-size(20);
+      @include padding(6, 7, 6, 7);
+    }
+    &.injury {
+      background:none;
+    }
+    .extra_time {
+      vertical-align: top;
+      @include font-size(16);
+      @include margin-left(3);
+      @include breakpoint($medium) {
+        @include font-size(18);
+      }
+      &:empty{
+        @include display(none);
+      }
+    }
+    // .countdown-seprator {
+    //   display: none;
+    // }
+  }
+  .result__time {
+    display: none;
+  }
+  &.timer-result {
+    background: #f2f2f2 none repeat scroll 0 0;
+    border-color: transparent;
+    .timer__time {
+      .injury-time {
+        color: #d0021b;
+      }
+      // display: none;
+    }
+    .result__time {
+      display: block;
+      background: rgba(0, 0, 0, 0) linear-gradient(#c2c2c2 50%, #d4d4d4 50%) repeat scroll 0 0;
+      color: #1a1a1a;
+      @include pull-right;
+      @include primary-regular;
+      @include font-size(26);
+      font-stretch: normal;
+      font-style: normal;
+      font-weight: bold;
+      height: 40px;
+      @include padding(5, 10, 5, 10);
+      @include text-align(center);
+      @include margin-top(-7);
+      @include margin-right(-8);
+      @include margin-left(-8);
+      .injury-time {
+        color: #d0021b;
+        display: inline-block;
+        @include margin-left(8);
+        transform: scale(1.2);
+      }
+      
+    }
+  }
+}
+
+.Spotlight{
+  .timer{
+    &.timer-result{
+      .result__time{
+        &.injury-content{
+          @include margin-top(0);
+          @include margin-right(0);
+          @include margin-left(0);
+        }
+      }
+
+      #update-timer{
+        .result__time.injury-content{
+          @include margin-top(-7);
+          @include margin-right(-8);
+          @include margin-left(-8);
+          @include px-to-rem(min-width,73);
+        }
+      }
+    }
+  }
+}
+ 
+
+
+.state__timer #update-timer span,
+.state__timer--spotlight span,
+.match-item__spot-timer.state__timer span {
+  //@include px-to-rem(width, 20);
+  @include px-to-rem(width, 13);
+  @include breakpoint($medium) {
+    width: auto;
+  }
+  @include pull-left;
+}
+
+.state__timer #update-timer span.countdown-seprator,
+.state__timer--spotlight span.countdown-seprator,
+.match-item__spot-timer.state__timer span.countdown-seprator {
+  @include px-to-rem(width, 2);
+  @include margin(-1, 5, 1, 6);
+  @include breakpoint($medium) {
+    @include px-to-rem(width, 4);
+    @include margin(-1, 4, -1, 4);
+  }
+}
+
+.Matches span.timer__time-hour.timer__time-hour__centre {
+  @include pull-none;
+  width: auto;
+}
+
+// Spotlight FL Fixes
+// Case 1
+.Spotlight.follow.countdown .timer .timer__time #timer__time {
+  @include primary-bold(en); 
+}
+// Case 2
+.Spotlight.follow.live.state__live .timer__time#update-timer #timer__time {
+  @include primary-bold(en);
+}
+// Case 3 // add .half-time class
+[lang=ar] .Spotlight.follow.live.state__live .timer__time.half-time#update-timer #timer__time,
+[lang=zh] .Spotlight.follow.live.state__live .timer__time.half-time#update-timer #timer__time {
+  @include primary-bold();
+}
+
+// Case 3 // add .full-time class
+[lang=ar] .Spotlight.follow.live.state__live .timer__time.full-time#update-timer #timer__time,
+[lang=zh] .Spotlight.follow.live.state__live .timer__time.full-time#update-timer #timer__time {
+  @include primary-bold();
+}
+  .Spotlight.countdown {
+    .info__matches ul li:first-child, .info__matches ul li:last-child {
+       @include breakpoint($small $max-xsmall){
+          @include px-to-rem(min-width,100);
+       }
+    }
+  }
+
+

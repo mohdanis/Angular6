@@ -1,0 +1,209 @@
+%article__stats-bar {
+    @extend %full-width;
+    @include position(absolute);
+    @include padding(0, 12, 0, 12);
+    @include pull-left;
+    @include color($white);
+    @include px-to-rem(height, 43);
+    @include bottom(0);
+}
+
+%article__stats-bar_icons {
+    li {
+        @include percentage-value(width, 33.3);
+        @include padding(0,important);
+        @include pull-left;
+        @include color($mu-black);
+        @include padding(5, 0, 0, 0);
+        @include px-to-rem(height, 43);
+        span {
+            @include pull-left;
+            @include  margin-left(43,percent);
+            @include top(50,percent);
+            @include position(relative);
+            transform: translate(0, -50%);
+        }
+        &:first-child {
+            @include font-size(14);
+            @include percentage-value(width, 40);
+            span {
+                @include percentage-value(margin-left, 0);
+                @include pull-left;
+                @include margin-top(1); // @extend %txt-lowercase;
+                &:last-child {
+                    @include margin-left(4);
+                }
+            }
+        }
+        &:nth-child(2) {
+            @include percentage-value(width, 20);
+        }
+        &:last-child {
+            @include percentage-value(width, 40);
+            span {
+                @include pull-right;
+                @include cursor(pointer);
+            }
+            @include margin-right(0,percent);
+        }
+    }
+}
+
+//common stats bar
+%statsbar-padding {
+    @include breakpoint($small $max-small) {
+        @include padding(0, 20, 0, 20);
+    }
+    @include padding(0, 20, 0, 20);
+}
+
+.statsbar {
+    width: 100%;
+    @include position(absolute);
+    @include bottom(0);
+    @include z-index(99);
+    @include font-size(14);
+    font-weight: normal;
+    @include line-height(1.43);
+    @include color($white);
+    @include px-to-rem(min-height, 43);
+    @extend %statsbar-padding;
+    li {
+        @include important(width, initial);
+        @include margin-bottom(0,important);
+        @include pull-left;
+        @include line-height(44,px);
+        @include margin-left(0,important);
+        @include margin-right(0,important); //@include margin-left(0);
+        //@include margin-right(0);
+        &:first-child {
+            @include pull-left(important);
+        }
+        &:last-child {
+            @include pull-right(important);
+            @include margin-top(15);
+            span{
+               @include cursor(pointer); 
+               &:after {
+                    content: '';                   
+                    @include px-to-rem(height, 44);
+                    @include px-to-rem(width, 44);
+                    @include pull-left;
+                    @include position(absolute);
+                    @include right(6);
+                    @include bottom(0);
+                    @include z-index(-1);
+                }
+            }
+            
+        }
+    }
+    a {
+        @include pull-right;
+        span {
+            @include color($white);
+            @include font-size(14);
+            &.statsbar__tag {
+                //@include font-weight(bold);
+                //@include cursor(pointer);
+                @include border-none;
+                @include text-truncate();
+                @include px-to-rem(max-width, 155);
+                @include pull-right;
+                @include text-transform(lowercase);
+            }
+        }
+    }
+    .statsbar__split {
+        border-left: solid 1px $white;
+        @include margin(0, 12, 0, 12);
+        @include px-to-rem(height, 12);
+        @include display(inline-block);
+        vertical-align: middle;
+    }
+    .statsbar {
+        &__time {
+            span.date {                
+                @include secondry-regular(en);
+            }
+        }
+    }
+}
+
+.child {
+    .statsbar {
+        box-shadow: none !important;
+        @include color($mu-black);
+        a {
+            span {
+                &.statsbar__tag {
+                    @include color($mu-black);
+                }
+            }
+        }
+
+        .icon-share-lite {
+            @extend .icon-share;
+        }
+        
+        .icon-share-card-lite {
+            @extend .icon-share-card;
+        }
+
+        .statsbar__split {
+            border-left: solid 1px $mu-black;
+        }
+    }
+    .video,
+    .audio {
+        .statsbar {
+            @include color($white);
+            a {
+                span {
+                    &.statsbar__tag {
+                        @include color($white);
+                    }
+                }
+            }
+            .icon-share {
+                @extend .icon-share-lite;
+            }
+            .icon-share-card {
+                @extend .icon-share-card-lite;
+            }
+            .statsbar__split {
+              border-left: solid 1px $white;
+            }
+        }
+    }
+}
+
+.micro-card {
+    .mu-item:not(.video) {
+        .statsbar {
+            .icon-share-card-lite {
+                @extend .icon-share-card;
+            }
+        }
+    }
+    
+}
+//Not showing share icons in EXP Editor
+.expeditor {
+    .statsbar {
+        .icon-share-card-lite {
+            @include display(none,important);
+
+        }
+
+    }
+}
+
+.icon-share-lite,.icon-share-card-lite {
+    min-width: 15px;
+}
+
+
+.modal .statsbar .icon-share-lite {
+    display: inline-block;
+}

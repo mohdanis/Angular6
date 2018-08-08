@@ -1,0 +1,16 @@
+.ecommerce-card {
+    .ecommerce-card-item {
+        figure {
+            img {
+                transform: translateX(50%);
+            }
+        }
+    }
+}
+#homePage {
+    .carousal.match-carousal {
+        .timer {
+            transform: translate(50%, 0);
+        }
+    }
+}

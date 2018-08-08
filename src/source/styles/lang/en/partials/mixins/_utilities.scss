@@ -1,0 +1,80 @@
+@import "common-utilities";
+//Font size in REM with pixel fallback
+/*@mixin font-size($size,$important:null) {
+  @if($important) {
+    font-size: $size + px + !important;
+    font-size: $size / 16 + rem + !important;
+  } @else {
+    font-size: $size + px;
+    font-size: $size / 16 + rem;
+  }
+}*/
+// Updated Mixin for inherit English font size for all langs
+@mixin font-size($size,$important:null,$locale:null) {
+  @if($important == important or $locale == important) {
+    font-size: $size + px + !important;
+    font-size: $size / 16 + rem + !important;
+  } @else {
+    font-size: $size + px;
+    font-size: $size / 16 + rem;
+  }
+}
+@mixin text-truncate-lines($lines: 3,
+$font-size: 16,
+$line-height: 1) {
+    font-size: $font-size + px;
+    font-size: $font-size / 16 + rem;
+    line-height: $line-height;
+    //max-height: $font-size * $lines * $line-height +px;
+    // font-size: $font-size + px;
+    // line-height: $line-height + rem;
+    // height: $font-size * $lines * $line-height;     
+    // //Fallback for non-webkit 
+    // overflow: hidden;
+    // display: -webkit-box;
+    // @supports (-webkit-line-clamp: $lines) {       
+    //     -webkit-line-clamp: $lines;
+    //     -webkit-box-orient: vertical;
+    //     text-overflow: ellipsis;
+    //     height: auto;
+    //     display: -webkit-box;
+    // }
+}
+@mixin arabic-text-truncate($lines: 3,
+$font-size: 16,
+$line-height: 16) {
+    font-size: $font-size + px;
+    font-size: $font-size / 16 + rem;
+    line-height: $line-height + px;
+    //height: $lines * $line-height + px;
+    //overflow: hidden;
+    //white-space: nowrap;
+    //text-overflow: ellipsis;
+    //width: 100%;
+}
+@mixin line-height($value,
+$unit:null,
+$important:null) {
+    @if ($unit== px and $important== important) {
+        line-height: $value+px + !important;
+    }
+    @else if($unit== px) {
+        @if($important) {
+            line-height: $value+px;
+        }
+        @else {
+            line-height: $value+px;
+        }
+    }
+    @else if($unit== important) {
+        @if($important) {
+            line-height: $value + !important;
+        }
+        @else {
+            line-height: $value + !important;
+        }
+    }
+    @else {
+        line-height: $value;
+    }
+}

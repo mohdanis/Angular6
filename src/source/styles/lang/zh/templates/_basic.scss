@@ -1,0 +1,7 @@
+.tpl-basic {
+    .basic-tpl-block {
+        h1, h2 {
+            @include line-height(1.2);
+        }
+    }
+}

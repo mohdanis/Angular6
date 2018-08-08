@@ -1,0 +1,320 @@
+.match-day {
+  &.timeline {
+    .match-day__heading {
+      @include background($brand-color);
+
+      @include span(6 of 6 0);
+
+      @include px-to-rem(min-height, 150);
+
+      @include padding(60, 20, 20, 20);
+
+      @include breakpoint($medium) {
+        @include padding(20, 20, 20, 20);
+      }
+
+
+      @extend %text-align-center;
+
+      @extend %txt-uppercase;
+
+      h1 {
+        @include span(6 of 6 0);
+
+        @include color($white);
+
+        @include font-size(36);
+
+        @include breakpoint($medium) {
+          @include font-size(48);
+        }
+
+
+        @extend %primary-font;
+
+        span {
+          @include position(relative);
+
+          @include z-index(9);
+
+          @include padding(0, 20, 0, 20);
+
+          &:before {
+            @include border-top(0, solid, #9F0000);
+
+            @include position(absolute);
+
+            @include percentage-value(width, 100);
+
+            @include top(10,percent);
+
+            @include top(23);
+
+            @include margin-left(-20);
+
+            @include z-index(-1);
+
+            content: '';
+
+            @include breakpoint($medium) {
+              @include border-top(8, solid, #9F0000);
+            }
+          }
+        }
+      }
+
+      p {
+        @include color($white);
+
+        @include span(4 of 6 0);
+
+        @extend %ternory-font-regular;
+
+        @include font-size(16);
+
+        @include percentage-value(width, 100);
+
+        @include pull-none;
+        @include margin-auto(0 auto);
+
+        @include breakpoint($medium) {
+          @include percentage-value(width, 50);
+        }
+      }
+    }
+
+    .match-day__info {
+      @include span(6 of 6 0);
+
+      @include breakpoint($medium) {
+        @include px-to-rem(max-height, 280);
+
+        @include overflow(hidden);
+
+        // overflow: hidden;
+        // -webkit-transition: height 0.5s;
+        // -moz-transition: height 0.5s;
+        // -ms-transition: height 0.5s;
+        // -o-transition: height 0.5s;
+        // transition: height 0.5s;
+      }
+
+
+      .timeline__image {
+        @include pull-left;
+
+        @include span(0 of 6 0);
+
+        @include px-to-rem(max-height, 0);
+
+        @include breakpoint($medium) {
+          //TO DO just for demo to not show image
+          //@include span(5 of 12 0);
+
+          @include percentage-value(max-height, 100);
+        }
+
+
+        figure {
+          img {
+            height: auto;
+            width: auto;
+          }
+        }
+      }
+
+      .timeline__description {
+        @include pull-left;
+
+        @include span(6 of 6 0);
+
+        @include breakpoint($medium) {
+          //@include span(7 of 12 0);
+
+          //@include px-to-rem(max-height, 215);
+
+          @include overflow(hidden);
+        }
+
+
+        ul {
+          @include margin(0, 0, 0, 10);
+
+          @include breakpoint($medium) {
+            @include margin(0, 0, 20, 30);
+          }
+
+
+          li {
+            @extend %ternory-font-semibold;
+
+            @include border-left(1, solid, $gray-light);
+
+            @include padding(0, 0, 30, 0);
+
+            @extend %txt-uppercase;
+
+            &::before {
+              content: '';
+
+              @include px-to-rem(height, 20);
+
+              @include px-to-rem(width, 20);
+
+              @include percentage-value(border-radius, 50);
+
+              @include border(1, solid, $brand-color);
+
+              @include background($white);
+
+              @include pull-left;
+
+              @include margin(0, 10, 10, -11);
+            }
+
+            &:last-child {
+              @include border-left(0, solid, $line);
+            }
+
+            p {
+              @extend %paragraph;
+
+              @extend %ternory-font-regular;
+
+              @include color(#393939);
+
+              @include padding(10, 0, 0, 20);
+
+              @extend %txt-none;
+            }
+          }
+        }
+      }
+
+      .more-btn {
+        @include secondry-regular;
+
+        @include text-transform(uppercase);
+
+        @include pull-left;
+
+        @include px-to-rem(letter-spacing, 2.3);
+
+        @include position(absolute);
+
+        @include z-index(99);
+
+        @include bottom(53);
+
+        @include margin-left(30);
+
+        @include breakpoint($medium) {
+          @include margin-left(53);
+        }
+
+
+        @include color($mu-black);
+
+        cursor: pointer;
+
+        i {
+          @include pull-right;
+
+          @include color($brand-color);
+
+          @include secondry-light;
+
+          @include font-size(25);
+
+          @include position(relative);
+
+          @include top(-4);
+
+          @include padding-left(15);
+        }
+
+        label {
+          @include px-to-rem(width, 40);
+
+          @include margin-bottom(0);
+
+          @include pull-left;
+
+          cursor: pointer;
+        }
+      }
+    }
+
+    & .stats-bar {
+      @include border-top(1, solid, $white-lighter);
+      @include position(relative);
+    }
+  }
+}
+
+//varient full
+.match-day {
+  &.timeline {
+    .mu-item__top-panel{
+     @include position(absolute);
+       @include percentage-value(width, 100);
+    }
+    @include margin-bottom(20);
+    &.varient-full {
+      .match-day__info {
+        @include breakpoint($medium) {
+          @include percentage-value(max-height, 100);
+        }
+      }
+
+      .timeline__image {
+        @include breakpoint($medium) {
+          @include display(none);
+        }
+      }
+
+      .timeline__description {
+        @include breakpoint($medium) {
+          @include percentage-value(max-height, 100);
+
+          @include span(12 of 12 0);
+        }
+      }
+
+      .more-btn {
+        @include display(none);
+      }
+    }
+  }
+}
+
+//varient-more
+.match-day {
+  &.timeline {
+    &.varient-more {
+      .timeline__image {
+        @include breakpoint($medium) {
+          @include display(none);
+        }
+      }
+
+      .timeline__description {
+        @include breakpoint($medium) {
+          @include span(12 of 12 0);
+        }
+      }
+
+      .more-btn {
+        @include right(20);
+      }
+    }
+  }
+}
+
+.showDetails {
+  max-height: 100% !important;
+
+  .timeline__description {
+    max-height: 100% !important;
+  }
+}

@@ -1,0 +1,114 @@
+.temp-sign-post{
+	@include background($white);
+    @include span(12 of 12 2);
+    .sign-post-temp-common{
+        @include span(10 of 12 2);
+        @include pull-none;
+        @include padding(20, 20, 20, 20);
+        @include margin-auto(20);
+
+        @include breakpoint($large){
+            @include span(12 of 12 6);
+            @include pull-none;
+            @include margin-auto(20);
+        }
+
+	    h2{
+	    	@include font-size(32);
+	    	@include line-height(32,px);
+            @include margin-bottom(10);
+            @include position(absolute);
+            @include color($white);
+            @include bottom(30);
+            @include left(10);
+            z-index:9999;
+            &:before{
+                @include top(-16);
+                @include left(5);
+                @include border-top(2, solid, $mu-red);
+                @include position(absolute);
+                @include px-to-rem(width, 22);
+                @include px-to-rem(height, 2);
+                content: '';
+                @include color($mu-black);
+            }
+            @include breakpoint($large){
+                @include font-size(48);
+                @include line-height(40,px);
+            }
+	    }
+        .sign-post-inner{
+            @include position(relative);
+
+            .sign-post-desc{
+                @include position(absolute);
+                @include bottom(30);
+                @include color($white);
+                @include padding(20, 20, 20, 20);
+                h2{
+                    @include position(relative);
+                    @include bottom(0);
+                    @include left(0);
+                }
+                .sign-post-info-btn{
+                    a{
+                        @include color($white);
+                    }
+                }
+            }
+        }
+        .sign-post-image{
+            @include position(relative);
+        }
+
+        .sign-post-desc{
+            @include padding(10, 10,10,10);
+            p{
+                @include font-size(18);
+                @include line-height(28,px);
+                @include margin-bottom(10);
+            }
+        }
+
+        .sign-post-info-btn{
+            @include margin-bottom(10);
+            a{
+                @include color($mu-black);
+                @include pull-left;
+                @include font-size(14);
+                span{
+                    @include display(inline-block);
+                }
+                i{
+                    @include display(inline-block);
+                    @include pull-none;
+                    @include margin-left(5);
+                }
+            }            
+        }
+
+    }
+
+    &__section_lhs{
+    	@include span(12 of 12 0);
+        img{
+            @include margin-bottom(10);
+        }
+        @include breakpoint($large){
+            @include span(6 of 12 2);
+        }
+    }
+
+    &__section_rhs{
+    	@include span(12 of 12 0);
+
+        @include breakpoint($large){
+            @include span(6 of 12 2);
+        }
+    }
+
+}
+
+.clear-all-section{
+    @include clear(both);
+}

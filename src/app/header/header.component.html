@@ -1,0 +1,1024 @@
+<header class="home-header scrolled-header1" data-module="header" data-container="header">
+  <section class="home-header__top">
+      <div class="containerl">
+          <div class="home-header__left">
+              <style>
+              .icon-mu-logo-cms {
+                  background-image: url(http://assets-qa.herculesmanutd.com/AssetPicker/images/0/0/9/69/607530/Beta_Large_Header1518626117816.png);
+              }
+              
+              .icon-mu-logo-cms-small.mobile {
+                  background-image: url(http://assets-qa.herculesmanutd.com/AssetPicker/images/0/0/9/69/607530/Beta_Large_Header1518626117816.png);
+              }
+              </style>
+              <style>
+              .icon-mu-logo-cms-small {
+                  background-image: url(http://assets-qa.herculesmanutd.com/AssetPicker/images/0/0/9/69/607531/Beta_Scrolled_Header1518710069204.png);
+              }
+              </style>
+              <!-- <a routerLink="/home/123"> -->
+                <a href="javascript:void(0);" (click)="gotToHome()">
+                  <span class="icon-mu-logo-cms" role="img" aria-label="Manchester United Logo"></span>
+                  <span class="icon-mu-logo-cms-small" role="img" aria-label="Manchester United Logo"></span>
+                  <img onerror="this.className = 'no-img'" src="//assets-qa.herculesmanutd.com/AssetPicker/images/0/0/9/69/607530/Beta_Large_Header1518626117816.png" class="logo-icon visually-hidden" tabindex="-1" title="" alt="">
+                  <img onerror="this.className = 'no-img'" src="//assets-qa.herculesmanutd.com/AssetPicker/images/0/0/3/2/197243/logo-text1500995772334.svg" class="logo-text" aria-hidden="true" title="" alt="">
+                  <span class="screenreader">click to go to homepage</span>
+              </a>
+          </div>
+          <div class="home-header__right">
+              <div class="home-header__sponsor">
+                  <a href="/en/Partners/Global/HCL" target="" data-an-track="true" data-track-type="link" data-track-text="powered by HCL Technologies" aria-label="powered by HCL Technologies">
+                      <span class="sponsor-txt">Powered by</span>
+                      <img onerror="this.className='no-img'" src="//assets-qa.herculesmanutd.com/AssetPicker/images/0/0/10/113/684429/HCL-DarkBG1522839236353.png" class="img-responsive" title="HCL" alt="HCL">
+                  </a>
+              </div>
+              <div class="home-header__right-bottom">
+                  <ul>
+                      <li class="header-profile" id="user_image" style="display:none;" aria-hidden="true" tabindex="-1">
+                          <span class="home-search__split-left"></span>
+                          <a href="/en/myunited" data-an-track="true" data-track-type="link" data-track-text="Profile Picture of User" aria-label="Profile Picture of User" aria-hidden="true" tabindex="-1">
+                              <div class="home-header__profile-icon avatar">
+                                  <img src="javascript:void(0)" class="visually-hidden " aria-hidden="true" id="headerprofileimg" alt="Profile pic " title="Profile pic " />
+                              </div>
+                          </a>
+                          <span class="home-search__split-right"></span>
+                      </li>
+                      <li id="gigyalogin">
+                          <a href="javascript:void(0)" data-an-track="true" data-track-type="link" data-track-text="Log In" onclick="showLogin();">
+                              Log In
+
+                              <span class="screenreader">Open overlay</span>
+                          </a>
+                      </li>
+                      <li id="gigyaUser" style="display:none;">
+                          <a href="/en/myunited" id="userName" data-an-track="true" data-track-type="link" data-track-text="myunited" class="login-user-name" tabindex="0"> </a>
+                      </li>
+                      <li id="gigyaEditProfile" style="display:none;"><a href="javascript:void(0)" data-an-track="true" data-track-type="link" data-track-text="ProfileUpdate" onclick="gigya.accounts.showScreenSet({screenSet:'MufcWeb-ProfileUpdate', onAfterScreenLoad:afterScreenLoad});">Edit Profile</a></li>
+                      <li id="gigyaloginRegister">
+                          <a href="javascript:void(0)" data-an-track="true" data-track-type="link" data-track-text="Sign Up" onclick="showRegister();">
+                              Sign Up
+                              <span class="screenreader">Open overlay</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="/en/Help" data-an-track="true" data-track-type="link" data-track-text="Help">Help</a>
+                      </li>
+                      <li class="home-search">
+                          <span class="home-search__split-left" tabindex="-1" aria-hidden="true"></span>
+                          <span class="icon-home-search" tabindex="0" aria-label=" Enter to Search" role="button" onclick="$(this).next().next().show()"></span>
+                          <span class="home-search__split-right" tabindex="-1" aria-hidden="true"></span>
+                          <div class="home-search__panel">
+                              <div class="typeahead-container">
+                                  <input id="search" class="typeahead form-control search-editor" tabindex="0" aria-label="search Editor" type="text" data-header="true" placeholder="Search" data-module="auto-complete">
+                                  <div class="screenreader" aria-live="polite" aria-atomic="true">
+                                      <div class="suggested-items-header"></div>
+                                  </div>
+                                  <img tabindex="0" class="img-search" src="/assets/images/icons-2x/search-results@2x.png" alt="search button" />
+                                  <img tabindex="0" class="img-close-search" src="/assets/images/icons-2x/close-results@2x.png" alt="clear search button" />
+                              </div>
+                          </div>
+                      </li>
+                      <li class="home-dropdown" data-container="language-switcher">
+                          <span class=" accessible-dropdown" tabindex="0" aria-label="Language dropdown" aria-haspopup="true" aria-expanded="false" role="list">
+
+          <span> English</span>
+                          <span class="screenreader">press enter to expand the dropdown menu</span>
+                          <span class="icon-header-dropdown"></span>
+                          </span>
+                          <ul class="language-dropdown">
+                              <li role="option" class=""><a href="/zh" data-an-track="true" lang="zh" data-track-type="link" data-track-text="中文"><span>中文</span></a></li>
+                              <li role="option" class=""><a href="/ja" data-an-track="true" lang="ja" data-track-type="link" data-track-text="日本語"><span>日本語</span></a></li>
+                              <li role="option" class=""><a href="/ko" data-an-track="true" lang="ko" data-track-type="link" data-track-text="한국어"><span>한국어</span></a></li>
+                              <li role="option" class=""><a href="/ar" data-an-track="true" lang="ar" data-track-type="link" data-track-text="العربية"><span>العربية</span></a></li>
+                              <li role="option" class=""><a href="/es" data-an-track="true" lang="es" data-track-type="link" data-track-text="Espa&#241;ol"><span>Espa&#241;ol</span></a></li>
+                              <li role="option" class=""><a href="/fr" data-an-track="true" lang="fr" data-track-type="link" data-track-text="Fran&#231;ais"><span>Fran&#231;ais</span></a></li>
+                          </ul>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </section>
+  <section class="home-header__bottom" id="navigation">
+      <a role="button" class="hamburger home-header__bottom-toggle" href="javascript:void(0)" aria-label="menu"><span></span></a>
+      <nav class="" data-baseapiurl="https://assets4-int.manutd.com/api/v1/en">
+          <div class="nav-content">
+              <div class="home-header__buttons">
+                  <div class="social-button" id="navloginRegisterLink">
+                      <div class="red-btn-skew">
+                          <a data-an-track="true" data-track-type="link" data-track-text="Log In" href="javascript:void(0)" onclick="showLogin();" role="button">
+                              <span>Log In</span>
+                          </a>
+                      </div>
+                      <div class="white-btn-skew">
+                          <a href="javascript:void(0)" data-an-track="true" data-track-type="link" data-track-text="Sign Up" onclick="showRegister();" role="button">
+                              <span>Sign Up</span>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!--Navigation Starts Here-->
+          <ul class=" nav-menu">
+              <li class=" list-item-home parent nav-item">
+                  <a href="/en" data-an-track="true" data-track-type="link" data-track-text="Home" title="Home">Home</a>
+              </li>
+              <li class=" parent    nav-item" data-apiurl="" data-filter="">
+                  <a href="/en/send-feedback" data-an-track="true" data-track-type="link" data-track-text="Feedback">
+                      <span class="web">Feedback</span>
+                      <span class="mobile">Feedback</span>
+                      <span class='icon-header-arrow' tabindex="0">
+                                  <span class="screenreader expand">Expand Feedback</span>
+                      <span class="screenreader collapse">Collapse Feedback</span>
+                      </span>
+                  </a>
+                  <div class="home-header__menu-list sub-nav ">
+                      <ul class=" home-header__sub-data  sub-nav-group">
+                          <li class=" no-child  nav-item" data-apiurl="" data-filter="">
+                              <a href="/en/send-feedback/why-we-have-a-beta-website" data-an-track="true" data-track-type="link" data-track-text="Why we have a Beta website" class="" data-val="Why we have a Beta website">Why we have a Beta website</a>
+                          </li>
+                          <li class=" no-child  nav-item" data-apiurl="" data-filter="">
+                              <a href="https://beta.manutd.com/en/portal/betafeedback" data-an-track="true" data-track-type="link" data-track-text="Report an issue" class="" data-val="Report an issue">Report an issue</a>
+                          </li>
+                          <li class=" no-child  nav-item" data-apiurl="" data-filter="">
+                              <a href="/en/send-feedback/send-feedback" data-an-track="true" data-track-type="link" data-track-text="Send us feedback" class="" data-val="Send us feedback">Send us feedback</a>
+                          </li>
+                          <li class=" no-child  nav-item" data-apiurl="" data-filter="">
+                              <a href="http://www.manutd.com" data-an-track="true" data-track-type="link" data-track-text="Go Back to ManUtd.com" class="" data-val="Go Back to ManUtd.com">Go Back to ManUtd.com</a>
+                          </li>
+                      </ul>
+                      <!--Card Section starts here-->
+                      <div class="home-header__cards">
+                          <h2 class="home-header__cards--heading" tabindex="0">How to provide feedback</h2>
+                          <div class="ratio item grid-4">
+                              <div class="mu-content">
+                                  <div class="mu-item">
+                                      <a href="/https://beta.manutd.com/en/portal/betafeedback" data-an-track="true" data-track-type="link">
+                                          <div class="img-holder">
+                                              <figure class="adaptive" data-module="adaptive" data-headerimg data-classobj="">
+                                                  <img data-imgset="{&quot;large&quot;:&quot;/0/0/10/134/689814/De_Gea_applauds_West_Ham11526050550035_large.jpg&quot;,&quot;medium&quot;:&quot;/0/0/10/134/689814/De_Gea_applauds_West_Ham21526050550035_medium.jpg&quot;,&quot;thumb&quot;:&quot;/0/0/10/134/689814/De_Gea_applauds_West_Ham41526050550038_thumb.jpg&quot;,&quot;small&quot;:&quot;/0/0/10/134/689814/De_Gea_applauds_West_Ham31526050550038_small.jpg&quot;,&quot;xlarge&quot;:&quot;/0/0/10/134/689814/De_Gea_applauds_West_Ham61526050550042_xlarge.jpg&quot;,&quot;portrait&quot;:&quot;/0/0/10/134/689814/De_Gea_applauds_West_Ham51526050550040_portrait.jpg&quot;,&quot;img1x&quot;:&quot;/0/0/10/134/689814/De_Gea_applauds_West_Ham1526050554109.jpg&quot;}" src="javascript:void(0)" alt="" title="" data-module="visually-hidden" class="visually-hidden" data-fallback-img>
+                                                  <div class="mu-item__gradient"></div>
+                                              </figure>
+                                          </div>
+                                      </a>
+                                      <div class="mu-item__info">
+                                          <a href="/https://beta.manutd.com/en/portal/betafeedback" data-an-track="true" data-track-type="link">
+                                              <h2 class="mu-item__title">Report an issue<span class="screenreader">Card</span></h2>
+                                          </a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="ratio item grid-4">
+                              <div class="mu-content">
+                                  <div class="mu-item">
+                                      <a href="/en/Send-Feedback/Send-feedback" data-an-track="true" data-track-type="link">
+                                          <div class="img-holder">
+                                              <figure class="adaptive" data-module="adaptive" data-headerimg data-classobj="">
+                                                  <img data-imgset="{&quot;large&quot;:&quot;/0/0/8/142/560649/Lukaku_celebration11526050609241_large.jpg&quot;,&quot;medium&quot;:&quot;/0/0/8/142/560649/Lukaku_celebration31526050609244_medium.jpg&quot;,&quot;thumb&quot;:&quot;/0/0/8/142/560649/Lukaku_celebration21526050609242_thumb.jpg&quot;,&quot;small&quot;:&quot;/0/0/8/142/560649/Lukaku_celebration61526050609368_small.jpg&quot;,&quot;xlarge&quot;:&quot;/0/0/8/142/560649/Lukaku_celebration41526050609249_xlarge.jpg&quot;,&quot;portrait&quot;:&quot;/0/0/8/142/560649/Lukaku_celebration51526050609250_portrait.jpg&quot;,&quot;img1x&quot;:&quot;/0/0/8/142/560649/Lukaku_celebration1526050612313.jpg&quot;}" src="javascript:void(0)" alt="" title="" data-module="visually-hidden" class="visually-hidden" data-fallback-img>
+                                                  <div class="mu-item__gradient"></div>
+                                              </figure>
+                                          </div>
+                                      </a>
+                                      <div class="mu-item__info">
+                                          <a href="/en/Send-Feedback/Send-feedback" data-an-track="true" data-track-type="link">
+                                              <h2 class="mu-item__title">Email us your feedback<span class="screenreader">Card</span></h2>
+                                          </a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="dfp-wrapper my-united-dfp" data-an-track="true" data-track-type="dfp">
+                      </div>
+                  </div>
+              </li>
+              <li class=" parent    nav-item" data-apiurl="all/web/list/video" data-filter="">
+                  <a href="/en/videos" data-an-track="true" data-track-type="link" data-track-text="Videos">
+                      <span class="web">Videos</span>
+                      <span class="mobile">Videos</span>
+                      <span class='icon-header-arrow' tabindex="0">
+                                  <span class="screenreader expand">Expand Videos</span>
+                      <span class="screenreader collapse">Collapse Videos</span>
+                      </span>
+                  </a>
+                  <div class="home-header__menu-list sub-nav ">
+                      <ul class=" home-header__sub-data  sub-nav-group">
+                          <li class=" no-child  nav-item" data-apiurl="all/web/list/video" data-filter="">
+                              <a href="/en/videos" data-an-track="true" data-track-type="link" data-track-text="Latest" class="" data-val="Latest">Latest</a>
+                          </li>
+                          <li class=" no-child  nav-item" data-apiurl="all/web/list/video" data-filter="Team%20Level%2FFirst%20Team">
+                              <a href="/en/videos/first-team" data-an-track="true" data-track-type="link" data-track-text="First Team" class="" data-val="First Team">First Team</a>
+                          </li>
+                          <li class=" no-child  nav-item" data-apiurl="all/web/list/video" data-filter="Team%20Level%2FReserves">
+                              <a href="/en/videos/reserves" data-an-track="true" data-track-type="link" data-track-text="Reserves" class="" data-val="Reserves">Reserves</a>
+                          </li>
+                          <li class=" no-child  nav-item" data-apiurl="all/web/list/video" data-filter="Team%20Level%2FAcademy">
+                              <a href="/en/videos/academy" data-an-track="true" data-track-type="link" data-track-text="Academy" class="" data-val="Academy">Academy</a>
+                          </li>
+                          <li class=" no-child  nav-item" data-apiurl="all/web/list/video" data-filter="Team%20Level%2FClub%2CTeam%20Level%2FLegends">
+                              <a href="/en/videos/club" data-an-track="true" data-track-type="link" data-track-text="Club" class="" data-val="Club">Club</a>
+                          </li>
+                      </ul>
+                      <!--Card Section starts here-->
+                      <div class="home-header__cards">
+                          <h2 class="home-header__cards--heading" tabindex="0">New To View</h2>
+                          <div class="grid-4 ratio item video_play_dir video_play_modal" data-an-track="true" data-track-type="card" data-cardname="$name" data-contenttype="video" data-tags="" data-itemid="{A486A3D1-B9C1-434A-9294-B581F3B3E368}" data-videotitle="$name" data-videoteasure="" data-datetimevarient="2018-07-18T11:04:00Z" data-sponsorname="" data-videomediaid="B4Mzc0ZjE6WgoXeX1JoDPtwvFAXFrEbB" data-orientation="1920x1080">
+                              <div class="mu-content">
+                                  <div class="mu-item video" data-share-url='http://qa.herculesmanutd.com/en/videos/detail/highlights-man-utd-2-tottenham-1-fa-cup-semi-final-2018'>
+                                      <div class="img-holder">
+                                          <figure data-headerimg class="adaptive" data-module="adaptive">
+                                              <img data-imgset="//assets-qa.herculesmanutd.com/AssetPicker/images/0/0/10/132/689309/GettyImages-94961208251524329863532_medium.jpg" class="img-responsive" src="javascript:void(0)" alt="" title="$name)" style="outline: medium none;" data-fallback-img>
+                                              <div class="mu-item__gradient"></div>
+                                              <div class="mu-item__video">
+                                                  <div data-video-code="B4Mzc0ZjE6WgoXeX1JoDPtwvFAXFrEbB"> </div>
+                                              </div>
+                                          </figure>
+                                      </div>
+                                      <div class="mu-item__info">
+                                          <div class="mu-item__play " data-play="play" aria-hidden="true">
+                                              <span class="icon-play"></span>
+                                          </div>
+                                          <a href="javascript:void(0)" data-ng-click="openModal()">
+                                              <h2 class="mu-item__title">
+                          How we reached the FA Cup final
+                          <span class="screenreader">video</span>
+                      </h2>
+                                          </a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="grid-4 ratio item video_play_dir video_play_modal" data-an-track="true" data-track-type="card" data-cardname="Video" data-contenttype="video" data-tags="" data-itemid="{13EDE142-B44C-499F-A24B-681170190EC8}" data-videotitle="Video" data-videoteasure="" data-datetimevarient="2018-06-13T06:49:54Z" data-sponsorname="" data-videomediaid="ViOXJjZjE68gXHRqbOpeSHSJSyBUIyCJ" data-orientation="480x272">
+                              <div class="mu-content">
+                                  <div class="mu-item video" data-share-url='http://qa.herculesmanutd.com/en/videos/detail/video'>
+                                      <div class="img-holder">
+                                          <figure data-headerimg class="adaptive" data-module="adaptive">
+                                              <img data-imgset="//assets-qa.herculesmanutd.com/AssetPicker/images/0/0/10/136/690203/775018015SD123_Manchester_U41525359719019_medium.jpg" class="img-responsive" src="javascript:void(0)" alt="" title="Video)" style="outline: medium none;" data-fallback-img>
+                                              <div class="mu-item__gradient"></div>
+                                              <div class="mu-item__video">
+                                                  <div data-video-code="ViOXJjZjE68gXHRqbOpeSHSJSyBUIyCJ"> </div>
+                                              </div>
+                                          </figure>
+                                      </div>
+                                      <div class="mu-item__info">
+                                          <div class="mu-item__play " data-play="play" aria-hidden="true">
+                                              <span class="icon-play"></span>
+                                          </div>
+                                          <a href="javascript:void(0)" data-ng-click="openModal()">
+                                              <h2 class="mu-item__title">
+                          FA CUP FINAL
+                          <span class="screenreader">video</span>
+                      </h2>
+                                          </a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="dfp-wrapper my-united-dfp" data-an-track="true" data-track-type="dfp">
+                      </div>
+                  </div>
+              </li>
+              <li class=" parent    nav-item" data-apiurl="all/web/list/news" data-filter="">
+                  <a routerLink="/newslisting" data-an-track="true" data-track-type="link" data-track-text="News">
+                      <span class="web">News</span>
+                      <span class="mobile">News</span>
+                      <span class='icon-header-arrow' tabindex="0">
+                                  <span class="screenreader expand">Expand News</span>
+                      <span class="screenreader collapse">Collapse News</span>
+                      </span>
+                  </a>
+                  <div class="home-header__menu-list sub-nav ">
+                      <ul class=" home-header__sub-data  sub-nav-group">
+                          <li class=" no-child  nav-item" data-apiurl="all/web/list/news" data-filter="Team%20Level%2FAcademy%2CTeam%20Level%2FReserves%2CTeam%20Level%2FFirst%20Team%2CTeam%20Level%2FClub%2CTeam%20Level%2FLegends%2CTeam%20Level%2FCoach%2CTeam%20Level%2FManager">
+                              <a href="/en/news/latest" data-an-track="true" data-track-type="link" data-track-text="Latest" class="" data-val="Latest">Latest</a>
+                          </li>
+                          <li class=" no-child  nav-item" data-apiurl="all/web/list/news" data-filter="Team%20Level%2FFirst%20Team">
+                              <a href="/en/news/first-team" data-an-track="true" data-track-type="link" data-track-text="First Team" class="" data-val="First Team">First Team</a>
+                          </li>
+                          <li class=" no-child  nav-item" data-apiurl="all/web/list/news" data-filter="Team%20Level%2FReserves">
+                              <a href="/en/news/reserves" data-an-track="true" data-track-type="link" data-track-text="Reserves" class="" data-val="Reserves">Reserves</a>
+                          </li>
+                          <li class=" no-child  nav-item" data-apiurl="all/web/list/news" data-filter="Team%20Level%2FAcademy">
+                              <a href="/en/news/academy" data-an-track="true" data-track-type="link" data-track-text="Academy" class="" data-val="Academy">Academy</a>
+                          </li>
+                          <li class=" no-child  nav-item" data-apiurl="all/web/list/news" data-filter="Team%20Level%2FClub%2CTeam%20Level%2FLegends">
+                              <a href="/en/news/club" data-an-track="true" data-track-type="link" data-track-text="Club" class="" data-val="Club">Club</a>
+                          </li>
+                      </ul>
+                      <!--Card Section starts here-->
+                      <div class="home-header__cards">
+                          <h2 class="home-header__cards--heading" tabindex="0">Recent Reads</h2>
+                          <div class="ratio item grid-4">
+                              <div class="mu-content">
+                                  <div class="mu-item article-card">
+                                      <a href="/en/news/detail/moscow-2008-champions-league-final-win-in-man-utd-players-words" data-an-track="true" data-track-type="card" data-cardname="Moscow 2008: in the players&#39; own words" data-share-url="/en/news/detail/moscow-2008-champions-league-final-win-in-man-utd-players-words" data-contenttype="article" data-itemid="{45F210CC-46E2-417C-B091-26D8214C8A2F}">
+                                          <div class="img-holder">
+                                              <figure data-headerimg class="adaptive" data-module="adaptive">
+                                                  <img data-imgset="//assets-qa.herculesmanutd.com/AssetPicker/images/0/0/10/152/694507/GettyImages-8119067511526565335383_medium.jpg" class="img-responsive" src="javascript:void(0)" alt="Rio Ferdinand and Ryan Giggs hold aloft the Champions League trophy surrounded by their United team-mates after the 2008 final win over Chelsea" title="Moscow 2008: in the players&#39; own words" style="outline: medium none;" data-fallback-img>
+                                                  <div class="mu-item__gradient" style="outline: medium none;"></div>
+                                              </figure>
+                                          </div>
+                                      </a>
+                                      <div class="mu-item__info">
+                                          <a href="/en/news/detail/moscow-2008-champions-league-final-win-in-man-utd-players-words">
+                                              <h2 class="mu-item__title">Moscow 2008: in their own words<span class="screenreader">Article Card</span></h2>
+                                          </a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="ratio item grid-4">
+                              <div class="mu-content">
+                                  <div class="mu-item article-card">
+                                      <a href="/en/news/detail/ryan-giggs-previews-the-emirates-fa-cup-final-between-united-and-chelsea" data-an-track="true" data-track-type="card" data-cardname="Giggsy names five men to watch in the FA Cup final" data-share-url="/en/news/detail/ryan-giggs-previews-the-emirates-fa-cup-final-between-united-and-chelsea" data-contenttype="article" data-itemid="{F52C10B1-F465-4CEF-BE81-15726988B763}">
+                                          <div class="img-holder">
+                                              <figure data-headerimg class="adaptive" data-module="adaptive">
+                                                  <img data-imgset="//assets-qa.herculesmanutd.com/AssetPicker/images/0/0/10/145/692508/JP_4841526588877042_medium.jpg" class="img-responsive" src="javascript:void(0)" alt="" title="Giggsy names five men to watch in the FA Cup final" style="outline: medium none;" data-fallback-img>
+                                                  <div class="mu-item__gradient" style="outline: medium none;"></div>
+                                              </figure>
+                                          </div>
+                                      </a>
+                                      <div class="mu-item__info">
+                                          <a href="/en/news/detail/ryan-giggs-previews-the-emirates-fa-cup-final-between-united-and-chelsea">
+                                              <h2 class="mu-item__title">Giggsy names his five players to watch<span class="screenreader">Article Card</span></h2>
+                                          </a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="dfp-wrapper my-united-dfp" data-an-track="true" data-track-type="dfp">
+                      </div>
+                  </div>
+              </li>
+              <li class=" parent    nav-item" data-apiurl="" data-filter="">
+                  <a href="/en/matches" data-an-track="true" data-track-type="link" data-track-text="Fixtures">
+                      <span class="web">Fixtures</span>
+                      <span class="mobile">Fixtures</span>
+                      <span class='icon-header-arrow' tabindex="0">
+                                  <span class="screenreader expand">Expand Fixtures</span>
+                      <span class="screenreader collapse">Collapse Fixtures</span>
+                      </span>
+                  </a>
+                  <div class="home-header__menu-list sub-nav ">
+                      <ul class=" home-header__sub-data  sub-nav-group">
+                          <li class=" no-child  nav-item" data-apiurl="" data-filter="Team%20Level%2FAcademy">
+                              <a href="/en/matches/under-23s/2017-18/all" data-an-track="true" data-track-type="link" data-track-text="Academy" class="" data-val="Academy">Academy</a>
+                          </li>
+                          <li class=" no-child  nav-item" data-apiurl="" data-filter="Team%20Level%2FFirst%20Team">
+                              <a href="/en/matches/fixtures-results" data-an-track="true" data-track-type="link" data-track-text="Fixtures &amp; Results" class="" data-val="Fixtures &amp; Results">Fixtures &amp; Results</a>
+                          </li>
+                          <li class=" no-child  nav-item" data-apiurl="" data-filter="Team%20Level%2FReserves">
+                              <a href="/en/matches/under-18s/2017-18/all" data-an-track="true" data-track-type="link" data-track-text="Reserves" class="" data-val="Reserves">Reserves</a>
+                          </li>
+                          <li class=" no-child  nav-item" data-apiurl="" data-filter="">
+                              <a href="/en/matches/women/2017-18/all" data-an-track="true" data-track-type="link" data-track-text="Women&#39;s Team" class="" data-val="Women&#39;s Team">Women&#39;s Team</a>
+                          </li>
+                          <li class=" no-child  nav-item" data-apiurl="" data-filter="Team%20Level%2FFirst%20Team%2CScreens%2FSearch">
+                              <a href="/en/matches/league-table" data-an-track="true" data-track-type="link" data-track-text="League Tables" class="" data-val="League Tables">League Tables</a>
+                          </li>
+                      </ul>
+                      <!--Card Section starts here-->
+                      <div class="home-header__cards">
+                          <h2 class="home-header__cards--heading" tabindex="0">Latest</h2>
+                          <div class="ratio item grid-4">
+                              <div class="mu-content match-card">
+                                  <a href="/en/matches/matchcenter?matchId=342919150">
+                                      <span class="screenreader">Match result</span>
+                                      <div class="mu-item match-item">
+                                          <div class="match-item__league">
+                                              <img data-imgset="//assets-qa.herculesmanutd.com/AssetPicker/images" src="javascript:void(0)" alt="Dummy_SimultaionTest2" class="" data-fallback-img>
+                                          </div>
+                                          <p class="match-item__info--teasure" data-module="moment-date" data-date="2018-07-17T16:20:00.0000000Z">
+                                              <span data-date-value data-date-text=""></span>
+                                              <span data-time-text=", Old Trafford" data-time-value></span>
+                                          </p>
+                                          <section class="match-item__info" aria-hidden="true">
+                                              <div class="match-item__info--team">
+                                                  <img data-imgset="//assets-qa.herculesmanutd.com/AssetPicker/images/0/0/9/246/652993/Manchester_United_Crest1519654590696.png" src="javascript:void(0)" alt="Man Utd" class="" data-fallback-img>
+                                              </div>
+                                              <div class="match-item__info--team">
+                                                  2 - 0
+                                              </div>
+                                              <div class="match-item__info--team">
+                                                  <img data-imgset="//assets-qa.herculesmanutd.com/AssetPicker/images/0/0/4/191/311289/Huddersfield_Town1505487039854.png" src="javascript:void(0)" alt="Huddersfield" class="" data-fallback-img>
+                                              </div>
+                                          </section>
+                                          <section class="match-item__info-details">
+                                              <div class="match-item__info--team-name">
+                                                  <span class="screenreader">goal by </span> Man Utd
+                                                  <span class="screenreader"> 2</span>
+                                              </div>
+                                              <div class="match-item__info--team-vs">
+                                                  <span aria-hidden="true">
+                                                              VS
+                                                          </span>
+                                                  <span class="screenreader">Versus</span>
+                                              </div>
+                                              <div class="match-item__info--team-name">
+                                                  <span class="screenreader">goal by </span> Huddersfield
+                                                  <span class="screenreader"> 0</span>
+                                              </div>
+                                          </section>
+                                      </div>
+                                  </a>
+                              </div>
+                          </div>
+                          <div class="ratio item grid-4">
+                              <div class="mu-content match-card">
+                                  <a href="/en/matches/matchcenter?matchId=981729">
+                                      <span class="screenreader">Match fixture</span>
+                                      <div class="mu-item match-item">
+                                          <div class="match-item__league">
+                                              <img data-imgset="//assets-qa.herculesmanutd.com/AssetPicker/images/0/0/10/170/699126/Friendly-Logo-WhiteBG1528884247667.png" src="javascript:void(0)" alt="Friendly" class="" data-fallback-img>
+                                          </div>
+                                          <p class="match-item__info--teasure" data-module="moment-date" data-date="2018-07-20T02:00:00.0000000Z">
+                                              <span data-date-value data-date-text=""></span>
+                                              <span>Kick Off </span>
+                                              <span data-time-text=", University of Phoenix Stadium" data-time-value></span>
+                                          </p>
+                                          <section class="match-item__info" aria-hidden="true">
+                                              <div class="match-item__info--team">
+                                                  <img data-imgset="//assets-qa.herculesmanutd.com/AssetPicker/images/0/0/9/246/652993/Manchester_United_Crest1519654590696.png" src="javascript:void(0)" alt="Man Utd" class="" data-fallback-img>
+                                              </div>
+                                              <div class="match-item__info--team result" data-module="moment-date" data-date="2018-07-20T02:00:00.0000000Z">
+                                                  <span data-time-text="" data-time-value></span>
+                                              </div>
+                                              <div class="match-item__info--team">
+                                                  <img data-imgset="//assets-qa.herculesmanutd.com/AssetPicker/images/0/0/10/170/699121/Club-America1528880046902.png" src="javascript:void(0)" alt="Club America" class="" data-fallback-img>
+                                              </div>
+                                          </section>
+                                          <section class="match-item__info-details">
+                                              <div class="match-item__info--team-name">
+                                                  Man Utd
+                                              </div>
+                                              <div class="match-item__info--team-vs">
+                                                  <span aria-hidden="true">
+                                                              VS
+                                                          </span>
+                                                  <span class="screenreader">Versus</span>
+                                              </div>
+                                              <div class="match-item__info--team-name">
+                                                  Club America
+                                              </div>
+                                          </section>
+                                      </div>
+                                  </a>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="dfp-wrapper my-united-dfp" data-an-track="true" data-track-type="dfp">
+                      </div>
+                  </div>
+              </li>
+              <li class=" parent    nav-item" data-apiurl="" data-filter="">
+                  <a href="/en/players-and-staff" data-an-track="true" data-track-type="link" data-track-text="Players">
+                      <span class="web">Players</span>
+                      <span class="mobile">Players</span>
+                      <span class='icon-header-arrow' tabindex="0">
+                                  <span class="screenreader expand">Expand Players</span>
+                      <span class="screenreader collapse">Collapse Players</span>
+                      </span>
+                  </a>
+                  <div class="home-header__menu-list sub-nav ">
+                      <ul class=" home-header__sub-data  sub-nav-group">
+                          <li class=" no-child  nav-item" data-apiurl="" data-filter="Team%20Level%2FFirst%20Team">
+                              <a href="/en/players-and-staff/first-team" data-an-track="true" data-track-type="link" data-track-text="First Team" class="" data-val="First Team">First Team</a>
+                          </li>
+                          <li class=" no-child  nav-item" data-apiurl="" data-filter="Team%20Level%2FManager%2CTeam%20Level%2FCoach">
+                              <a href="/en/players-and-staff/managers" data-an-track="true" data-track-type="link" data-track-text="Manager" class="" data-val="Manager">Manager</a>
+                          </li>
+                          <li class=" no-child  nav-item" data-apiurl="" data-filter="Team%20Level%2FReserves">
+                              <a href="/en/players-and-staff/reserves" data-an-track="true" data-track-type="link" data-track-text="Reserves" class="" data-val="Reserves">Reserves</a>
+                          </li>
+                          <li class=" no-child  nav-item" data-apiurl="" data-filter="Team%20Level%2FAcademy">
+                              <a href="/en/players-and-staff/the-academy" data-an-track="true" data-track-type="link" data-track-text="Academy" class="" data-val="Academy">Academy</a>
+                          </li>
+                          <li class=" no-child  nav-item" data-apiurl="" data-filter="Team%20Level%2FLegends">
+                              <a href="/en/players-and-staff/legends" data-an-track="true" data-track-type="link" data-track-text="Legends" class="" data-val="Legends">Legends</a>
+                          </li>
+                      </ul>
+                      <!--Card Section starts here-->
+                      <div class="home-header__cards">
+                          <h2 class="home-header__cards--heading" tabindex="0">Meet The Squads</h2>
+                          <div class="ratio item grid-4">
+                              <div class="mu-content">
+                                  <div class="mu-item">
+                                      <a href="/en/players-and-staff/First-Team" data-an-track="true" data-track-type="link">
+                                          <div class="img-holder">
+                                              <figure class="adaptive" data-module="adaptive" data-headerimg data-classobj="">
+                                                  <img data-imgset="{&quot;large&quot;:&quot;/0/0/5/70/345778/first_team_squad_photo_2017_1851526049749477_large.jpg&quot;,&quot;medium&quot;:&quot;/0/0/5/70/345778/first_team_squad_photo_2017_1831526049749474_medium.jpg&quot;,&quot;thumb&quot;:&quot;/0/0/5/70/345778/first_team_squad_photo_2017_1841526049749475_thumb.jpg&quot;,&quot;small&quot;:&quot;/0/0/5/70/345778/first_team_squad_photo_2017_1861526049749479_small.jpg&quot;,&quot;xlarge&quot;:&quot;/0/0/5/70/345778/first_team_squad_photo_2017_1811526049749474_xlarge.jpg&quot;,&quot;portrait&quot;:&quot;/0/0/5/70/345778/first_team_squad_photo_2017_1821526049749474_portrait.jpg&quot;,&quot;img1x&quot;:&quot;/0/0/5/70/345778/first_team_squad_photo_2017_181526049752547.jpg&quot;}" src="javascript:void(0)" alt="" title="" data-module="visually-hidden" class="visually-hidden" data-fallback-img>
+                                                  <div class="mu-item__gradient"></div>
+                                              </figure>
+                                          </div>
+                                      </a>
+                                      <div class="mu-item__info">
+                                          <a href="/en/players-and-staff/First-Team" data-an-track="true" data-track-type="link">
+                                              <h2 class="mu-item__title">First Team<span class="screenreader">Card</span></h2>
+                                          </a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="ratio item grid-4">
+                              <div class="mu-content">
+                                  <div class="mu-item">
+                                      <a href="/en/players-and-staff/Reserves" data-an-track="true" data-track-type="link">
+                                          <div class="img-holder">
+                                              <figure class="adaptive" data-module="adaptive" data-headerimg data-classobj="">
+                                                  <img data-imgset="{&quot;large&quot;:&quot;/0/0/5/70/345780/Manchester_United_U23s_celebrate_goal_at_Chelsea_2017_1831526049800536_large.jpg&quot;,&quot;medium&quot;:&quot;/0/0/5/70/345780/Manchester_United_U23s_celebrate_goal_at_Chelsea_2017_1821526049800536_medium.jpg&quot;,&quot;thumb&quot;:&quot;/0/0/5/70/345780/Manchester_United_U23s_celebrate_goal_at_Chelsea_2017_1841526049800537_thumb.jpg&quot;,&quot;small&quot;:&quot;/0/0/5/70/345780/Manchester_United_U23s_celebrate_goal_at_Chelsea_2017_1811526049800536_small.jpg&quot;,&quot;xlarge&quot;:&quot;/0/0/5/70/345780/Manchester_United_U23s_celebrate_goal_at_Chelsea_2017_1861526049800539_xlarge.jpg&quot;,&quot;portrait&quot;:&quot;/0/0/5/70/345780/Manchester_United_U23s_celebrate_goal_at_Chelsea_2017_1851526049800537_portrait.jpg&quot;,&quot;img1x&quot;:&quot;/0/0/5/70/345780/JP11526049808353.jpg&quot;}" src="javascript:void(0)" alt="" title="" data-module="visually-hidden" class="visually-hidden" data-fallback-img>
+                                                  <div class="mu-item__gradient"></div>
+                                              </figure>
+                                          </div>
+                                      </a>
+                                      <div class="mu-item__info">
+                                          <a href="/en/players-and-staff/Reserves" data-an-track="true" data-track-type="link">
+                                              <h2 class="mu-item__title">Reserves<span class="screenreader">Card</span></h2>
+                                          </a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="dfp-wrapper my-united-dfp" data-an-track="true" data-track-type="dfp">
+                      </div>
+                  </div>
+              </li>
+              <li class=" parent    nav-item" data-apiurl="" data-filter="">
+                  <a href="/en/myunited" data-an-track="true" data-track-type="link" data-track-text="My United">
+                      <span class="web">My United</span>
+                      <span class="mobile">My United</span>
+                      <span class='icon-header-arrow' tabindex="0">
+                                  <span class="screenreader expand">Expand My United</span>
+                      <span class="screenreader collapse">Collapse My United</span>
+                      </span>
+                  </a>
+                  <div class="home-header__menu-list sub-nav my-united">
+                      <ul class=" home-header__sub-data  sub-nav-group">
+                          <li class=" no-child logout nav-item" data-apiurl="" data-filter="">
+                              <a href="javascript:void(0)" onclick="showRegister();" data-an-track="true" data-track-type="link" data-track-text="Sign for United" data-val="Sign for United">Sign for United</a>
+                          </li>
+                          <li class=" no-child login nav-item" data-apiurl="" data-filter="">
+                              <a href="/en/myunited" data-an-track="true" data-track-type="link" data-track-text="My Profile" class="" data-val="My Profile">My Profile</a>
+                          </li>
+                          <li class=" no-child login nav-item" data-apiurl="" data-filter="">
+                              <a href="javascript:void(0)" onclick="showEditProfile();" data-an-track="true" data-track-type="link" data-track-text="Edit Profile" data-val="Edit Profile">Edit Profile</a>
+                          </li>
+                          <li class=" no-child login nav-item" data-apiurl="" data-filter="">
+                              <a href="javascript:void(0)" onclick="submitPreferenceSettings()" data-an-track="true" data-track-type="link" data-track-text="Preference Centre" data-val="Preference Centre">Preference Centre</a>
+                          </li>
+                          <li class=" no-child login nav-item" data-apiurl="" data-filter="">
+                              <a href="/en/myunited/settings" data-an-track="true" data-track-type="link" data-track-text="Settings" class="" data-val="Settings">Settings</a>
+                          </li>
+                      </ul>
+                      <!--Card Section starts here-->
+                      <div class="pull-left">
+                          <p class="home-header__login-link logout">
+                              <span aria-hidden="true">Already signed for United?</span>
+                              <a id="myUnitedLink" href="/en/myunited" data-an-track="true" data-track-type="link" data-track-text="Already signed for United?">
+                                  <span class="screenreader">Already signed for United?</span>
+                                  <strong> Log In</strong>
+                              </a>
+                          </p>
+                      </div>
+                      <div class="home-header__cards">
+                          <h2 class="home-header__cards--heading" tabindex="0">Join United</h2>
+                          <div class="ratio item grid-4">
+                              <div class="mu-content">
+                                  <div class="mu-item">
+                                      <a href="javascript:void(0)" onclick="showLogin();" data-an-track="true" data-track-type="link">
+                                          <div class="img-holder">
+                                              <figure class="adaptive" data-module="adaptive" data-headerimg data-classobj="">
+                                                  <img data-imgset="{&quot;large&quot;:&quot;/0/0/4/242/324152/GettyImages-83100100241526050700444_large.jpg&quot;,&quot;medium&quot;:&quot;/0/0/4/242/324152/GettyImages-83100100211526050700439_medium.jpg&quot;,&quot;thumb&quot;:&quot;/0/0/4/242/324152/GettyImages-83100100261526050700447_thumb.jpg&quot;,&quot;small&quot;:&quot;/0/0/4/242/324152/GettyImages-83100100231526050700441_small.jpg&quot;,&quot;xlarge&quot;:&quot;/0/0/4/242/324152/GettyImages-83100100221526050700439_xlarge.jpg&quot;,&quot;portrait&quot;:&quot;/0/0/4/242/324152/GettyImages-83100100251526050700446_portrait.jpg&quot;,&quot;img1x&quot;:&quot;/0/0/4/242/324152/GettyImages-8310010021526050717599.jpg&quot;}" src="javascript:void(0)" alt="" title="" data-module="visually-hidden" class="visually-hidden" data-fallback-img>
+                                                  <div class="mu-item__gradient"></div>
+                                              </figure>
+                                          </div>
+                                      </a>
+                                      <div class="mu-item__info">
+                                          <a href="javascript:void(0)" onclick="showLogin();" data-an-track="true" data-track-type="link">
+                                              <h2 class="mu-item__title">Sign for United!</h2>
+                                          </a>
+                                          <p class="mu-item__teasure">
+                                              Register now and personalise your profile
+                                          </p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="ratio item grid-4">
+                              <div class="mu-content">
+                                  <div class="mu-item">
+                                      <a href="/en/Tickets-And-Hospitality/Official-Membership" data-an-track="true" data-track-type="link">
+                                          <div class="img-holder">
+                                              <figure class="adaptive" data-module="adaptive" data-headerimg data-classobj="">
+                                                  <img data-imgset="{&quot;large&quot;:&quot;/0/0/4/242/324153/GettyImages-83105478221526050808020_large.jpg&quot;,&quot;medium&quot;:&quot;/0/0/4/242/324153/GettyImages-83105478231526050808020_medium.jpg&quot;,&quot;thumb&quot;:&quot;/0/0/4/242/324153/GettyImages-83105478211526050808019_thumb.jpg&quot;,&quot;small&quot;:&quot;/0/0/4/242/324153/GettyImages-83105478241526050808020_small.jpg&quot;,&quot;xlarge&quot;:&quot;/0/0/4/242/324153/GettyImages-83105478251526050808020_xlarge.jpg&quot;,&quot;portrait&quot;:&quot;/0/0/4/242/324153/GettyImages-83105478261526050808025_portrait.jpg&quot;,&quot;img1x&quot;:&quot;/0/0/4/242/324153/GettyImages-8310547821526050829244.jpg&quot;}" src="javascript:void(0)" alt="" title="" data-module="visually-hidden" class="visually-hidden" data-fallback-img>
+                                                  <div class="mu-item__gradient"></div>
+                                              </figure>
+                                          </div>
+                                      </a>
+                                      <div class="mu-item__info">
+                                          <a href="/en/Tickets-And-Hospitality/Official-Membership" data-an-track="true" data-track-type="link">
+                                              <h2 class="mu-item__title">Official Membership!</h2>
+                                          </a>
+                                          <p class="mu-item__teasure">
+                                              Become an Official Member to buy match tickets
+                                          </p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="dfp-wrapper my-united-dfp" data-an-track="true" data-track-type="dfp">
+                      </div>
+                  </div>
+              </li>
+              <li class=" parent    nav-item" data-apiurl="" data-filter="">
+                  <a href="/en/tickets-and-hospitality" data-an-track="true" data-track-type="link" data-track-text="Tickets &amp; Hospitality">
+                      <span class="web">Tickets &amp; Hospitality</span>
+                      <span class="mobile">Tickets</span>
+                      <span class='icon-header-arrow' tabindex="0">
+                                  <span class="screenreader expand">Expand Tickets</span>
+                      <span class="screenreader collapse">Collapse Tickets</span>
+                      </span>
+                  </a>
+                  <div class="home-header__menu-list sub-nav ">
+                      <ul class=" home-header__sub-data  sub-nav-group">
+                          <li class=" no-child  nav-item" data-apiurl="" data-filter="">
+                              <a href="/en/tickets-and-hospitality" data-an-track="true" data-track-type="link" data-track-text="Tickets &amp; Hospitality Home" class="" data-val="Tickets &amp; Hospitality Home">Tickets &amp; Hospitality Home</a>
+                          </li>
+                          <li class=" no-child  nav-item" data-apiurl="" data-filter="">
+                              <a href="/en/tickets-and-hospitality/match-tickets" data-an-track="true" data-track-type="link" data-track-text="Match Tickets" class="" data-val="Match Tickets">Match Tickets</a>
+                          </li>
+                          <li class=" no-child  nav-item" data-apiurl="" data-filter="">
+                              <a href="http://www.matchdayvip.manutd.com/?utm_source=manutdcom&amp;utm_medium=menu&amp;utm_content=lhm&amp;utm_campaign=mdvip" target="_blank" data-an-track="true" data-track-type="link" data-track-text="Matchday Hospitality" class="" data-val="Matchday Hospitality">Matchday Hospitality</a>
+                          </li>
+                          <li class=" no-child  nav-item" data-apiurl="" data-filter="">
+                              <a href="/en/tickets-and-hospitality/official-membership" data-an-track="true" data-track-type="link" data-track-text="Official Membership" class="" data-val="Official Membership">Official Membership</a>
+                          </li>
+                          <li class=" no-child  nav-item" data-apiurl="" data-filter="">
+                              <a href="/en/tickets-and-hospitality/season-tickets" data-an-track="true" data-track-type="link" data-track-text="Season Tickets" class="" data-val="Season Tickets">Season Tickets</a>
+                          </li>
+                          <li class=" no-child  nav-item" data-apiurl="" data-filter="">
+                              <a href="http://www.executiveclub.manutd.com" target="_blank" data-an-track="true" data-track-type="link" data-track-text="Seasonal Hospitality" class="" data-val="Seasonal Hospitality">Seasonal Hospitality</a>
+                          </li>
+                          <li class=" no-child  nav-item" data-apiurl="" data-filter="Screens%2FSearch">
+                              <a href="/en/tickets-and-hospitality/accessibility" data-an-track="true" data-track-type="link" data-track-text="Accessibility" class="" data-val="Accessibility">Accessibility</a>
+                          </li>
+                          <li class=" no-child  nav-item" data-apiurl="" data-filter="">
+                              <a href="/en/tickets-and-hospitality/test page" data-an-track="true" data-track-type="link" data-track-text="Test Page" class="" data-val="Test Page">Test Page</a>
+                          </li>
+                      </ul>
+                      <!--Card Section starts here-->
+                      <div class="home-header__cards">
+                          <h2 class="home-header__cards--heading" tabindex="0">Latest</h2>
+                          <div class="ratio item grid-4">
+                              <div class="mu-content">
+                                  <div class="mu-item">
+                                      <a href="/en/Tickets-And-Hospitality/Official-Membership" data-an-track="true" data-track-type="link">
+                                          <div class="img-holder">
+                                              <figure class="adaptive" data-module="adaptive" data-headerimg data-classobj="">
+                                                  <img data-imgset="{&quot;large&quot;:&quot;/0/0/5/71/345944/Hero_OM_Banner11526050041904_large.jpg&quot;,&quot;medium&quot;:&quot;/0/0/5/71/345944/Hero_OM_Banner21526050041905_medium.jpg&quot;,&quot;thumb&quot;:&quot;/0/0/5/71/345944/Hero_OM_Banner41526050041907_thumb.jpg&quot;,&quot;small&quot;:&quot;/0/0/5/71/345944/Hero_OM_Banner31526050041907_small.jpg&quot;,&quot;xlarge&quot;:&quot;/0/0/5/71/345944/Hero_OM_Banner61526050041910_xlarge.jpg&quot;,&quot;portrait&quot;:&quot;/0/0/5/71/345944/Hero_OM_Banner51526050041908_portrait.jpg&quot;,&quot;img1x&quot;:&quot;/0/0/5/71/345944/Hero_OM_Banner1526050052608.jpg&quot;}" src="javascript:void(0)" alt="" title="" data-module="visually-hidden" class="visually-hidden" data-fallback-img>
+                                                  <div class="mu-item__gradient"></div>
+                                              </figure>
+                                          </div>
+                                      </a>
+                                      <div class="mu-item__info">
+                                          <a href="/en/Tickets-And-Hospitality/Official-Membership" data-an-track="true" data-track-type="link">
+                                              <h2 class="mu-item__title">Become an Official Member<span class="screenreader">Card</span></h2>
+                                          </a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="ratio item grid-4">
+                              <div class="mu-content">
+                                  <div class="mu-item">
+                                      <a href="/en/Tickets-And-Hospitality/Match-Tickets" data-an-track="true" data-track-type="link">
+                                          <div class="img-holder">
+                                              <figure class="adaptive" data-module="adaptive" data-headerimg data-classobj="">
+                                                  <img data-imgset="{&quot;large&quot;:&quot;/0/0/10/136/690323/GettyImages-95271758231526050090064_large.jpg&quot;,&quot;medium&quot;:&quot;/0/0/10/136/690323/GettyImages-95271758241526050090064_medium.jpg&quot;,&quot;thumb&quot;:&quot;/0/0/10/136/690323/GettyImages-95271758251526050090064_thumb.jpg&quot;,&quot;small&quot;:&quot;/0/0/10/136/690323/GettyImages-95271758261526050090064_small.jpg&quot;,&quot;xlarge&quot;:&quot;/0/0/10/136/690323/GettyImages-95271758221526050090063_xlarge.jpg&quot;,&quot;portrait&quot;:&quot;/0/0/10/136/690323/GettyImages-95271758211526050090063_portrait.jpg&quot;,&quot;img1x&quot;:&quot;/0/0/10/136/690323/GettyImages-9527175821526050109871.jpg&quot;}" src="javascript:void(0)" alt="" title="" data-module="visually-hidden" class="visually-hidden" data-fallback-img>
+                                                  <div class="mu-item__gradient"></div>
+                                              </figure>
+                                          </div>
+                                      </a>
+                                      <div class="mu-item__info">
+                                          <a href="/en/Tickets-And-Hospitality/Match-Tickets" data-an-track="true" data-track-type="link">
+                                              <h2 class="mu-item__title">Match Tickets<span class="screenreader">Card</span></h2>
+                                          </a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="dfp-wrapper my-united-dfp" data-an-track="true" data-track-type="dfp">
+                          <div id='div-gpt-ad-1496741752151-7' style='height:250px; width:970px;'>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+              <li class=" parent    nav-item" data-apiurl="" data-filter="">
+                  <a href="/en/visit-old-trafford" data-an-track="true" data-track-type="link" data-track-text="Old Trafford">
+                      <span class="web">Old Trafford</span>
+                      <span class="mobile">Old Trafford</span>
+                      <span class='icon-header-arrow' tabindex="0">
+                                  <span class="screenreader expand">Expand Old Trafford</span>
+                      <span class="screenreader collapse">Collapse Old Trafford</span>
+                      </span>
+                  </a>
+                  <div class="home-header__menu-list sub-nav ">
+                      <ul class=" home-header__sub-data  sub-nav-group">
+                          <li class=" no-child  nav-item" data-apiurl="" data-filter="">
+                              <a href="/en/visit-old-trafford" data-an-track="true" data-track-type="link" data-track-text="Visit Old Trafford" class="" data-val="Visit Old Trafford">Visit Old Trafford</a>
+                          </li>
+                          <li class=" no-child  nav-item" data-apiurl="" data-filter="">
+                              <a href="/en/visit-old-trafford/museum-stadium-tours" data-an-track="true" data-track-type="link" data-track-text="Museum &amp; Stadium Tours" class="" data-val="Museum &amp; Stadium Tours">Museum &amp; Stadium Tours</a>
+                          </li>
+                          <li class=" no-child  nav-item" data-apiurl="" data-filter="">
+                              <a href="http://www.unitedevents-manutd.com/" target="_blank" data-an-track="true" data-track-type="link" data-track-text="Conferences &amp; Events" class="" data-val="Conferences &amp; Events">Conferences &amp; Events</a>
+                          </li>
+                          <li class=" no-child  nav-item" data-apiurl="" data-filter="">
+                              <a href="/en/visit-old-trafford/meetings-and-events" data-an-track="true" data-track-type="link" data-track-text="Events at Old Trafford" class="" data-val="Events at Old Trafford">Events at Old Trafford</a>
+                          </li>
+                          <li class=" no-child  nav-item" data-apiurl="" data-filter="">
+                              <a href="/en/visit-old-trafford/getting-here" data-an-track="true" data-track-type="link" data-track-text="Getting to Old Trafford" class="" data-val="Getting to Old Trafford">Getting to Old Trafford</a>
+                          </li>
+                      </ul>
+                      <!--Card Section starts here-->
+                      <div class="home-header__cards">
+                          <h2 class="home-header__cards--heading" tabindex="0">Latest</h2>
+                          <div class="ratio item grid-4">
+                              <div class="mu-content">
+                                  <div class="mu-item">
+                                      <a href="/en/Visit-Old-Trafford" data-an-track="true" data-track-type="link">
+                                          <div class="img-holder">
+                                              <figure class="adaptive" data-module="adaptive" data-headerimg data-classobj="">
+                                                  <img data-imgset="{&quot;large&quot;:&quot;/0/0/4/185/309559/Old_Trafford_dusk21526049899864_large.jpg&quot;,&quot;medium&quot;:&quot;/0/0/4/185/309559/Old_Trafford_dusk11526049899864_medium.jpg&quot;,&quot;thumb&quot;:&quot;/0/0/4/185/309559/Old_Trafford_dusk31526049899866_thumb.jpg&quot;,&quot;small&quot;:&quot;/0/0/4/185/309559/Old_Trafford_dusk41526049899866_small.jpg&quot;,&quot;xlarge&quot;:&quot;/0/0/4/185/309559/Old_Trafford_dusk51526049899866_xlarge.jpg&quot;,&quot;portrait&quot;:&quot;/0/0/4/185/309559/Old_Trafford_dusk61526049899867_portrait.jpg&quot;,&quot;img1x&quot;:&quot;/0/0/4/185/309559/Old_Trafford_dusk1526049901933.jpg&quot;}" src="javascript:void(0)" alt="Old Trafford" title="" data-module="visually-hidden" class="visually-hidden" data-fallback-img>
+                                                  <div class="mu-item__gradient"></div>
+                                              </figure>
+                                          </div>
+                                      </a>
+                                      <div class="mu-item__info">
+                                          <a href="/en/Visit-Old-Trafford" data-an-track="true" data-track-type="link">
+                                              <h2 class="mu-item__title">Visit Old Trafford<span class="screenreader">Card</span></h2>
+                                          </a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="ratio item grid-4">
+                              <div class="mu-content">
+                                  <div class="mu-item">
+                                      <a href="http://www.unitedevents-manutd.com" target="_blank" data-an-track="true" data-track-type="link">
+                                          <div class="img-holder">
+                                              <figure class="adaptive" data-module="adaptive" data-classobj="">
+                                                  <img data-imgset="{&quot;large&quot;:&quot;/0/0/5/73/346516/GettyImages-83099935461526049951798_large.jpg&quot;,&quot;medium&quot;:&quot;/0/0/5/73/346516/GettyImages-83099935421526049951792_medium.jpg&quot;,&quot;thumb&quot;:&quot;/0/0/5/73/346516/GettyImages-83099935441526049951793_thumb.jpg&quot;,&quot;small&quot;:&quot;/0/0/5/73/346516/GettyImages-83099935431526049951792_small.jpg&quot;,&quot;xlarge&quot;:&quot;/0/0/5/73/346516/GettyImages-83099935411526049951792_xlarge.jpg&quot;,&quot;portrait&quot;:&quot;/0/0/5/73/346516/GettyImages-83099935451526049951794_portrait.jpg&quot;,&quot;img1x&quot;:&quot;/0/0/5/73/346516/GettyImages-8309993541526049957386.jpg&quot;}" src="javascript:void(0)" alt="" title="" data-module="visually-hidden" class="visually-hidden" data-fallback-img>
+                                                  <div class="mu-item__gradient"></div>
+                                              </figure>
+                                          </div>
+                                      </a>
+                                      <div class="mu-item__info">
+                                          <a href="http://www.unitedevents-manutd.com" target="_blank" data-an-track="true" data-track-type="link">
+                                              <h2 class="mu-item__title">Conferences &amp; Events<span class="screenreader">Card</span></h2>
+                                          </a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="dfp-wrapper my-united-dfp" data-an-track="true" data-track-type="dfp">
+                          <div id='div-gpt-ad-1496741752151-8' style='height:250px; width:970px;'>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+              <li class=" parent   nav-item" data-apiurl="" data-filter="">
+                  <a href="javascript:void(0)" data-an-track="true" data-track-type="link" data-track-text="More">
+                      <span class="web">More</span>
+                      <span class="mobile">More</span>
+                      <span class="icon-header-arrow" tabindex="0">
+                              <span class="screenreader expand">Expand More</span>
+                      <span class="screenreader collapse">Collapse More</span>
+                      </span>
+                  </a>
+                  <div class="home-header__menu-list more-menu sub-nav">
+                      <ul class="sub-nav-group">
+                          <li class="more-menu__heading" data-apiurl="" data-filter="">
+                              <a href="/en/club" data-an-track="true" data-track-type="link" data-track-text="Club Information" class="" data-val="Club Information">
+                                  <span>Club Information<span class="tag-red-arrow"></span></span>
+                                  <span class="icon-plus sub-menu-toggle" tabindex="0">
+                          <span class="screenreader">Expand or Collapse Club Information</span>
+                                  </span>
+                              </a>
+                              <ul class="home-header__sub-data">
+                                  <li>
+                                      <a href="/en/club/brand-protection" data-an-track="true" data-track-type="link" data-track-text="Brand Protection" data-val="Brand Protection">
+                                      Brand Protection
+                                  </a>
+                                  </li>
+                                  <li>
+                                      <a href="/en/club/club-charter" data-an-track="true" data-track-type="link" data-track-text="Club Charter" data-val="Club Charter">
+                                      Club Charter
+                                  </a>
+                                  </li>
+                                  <li>
+                                      <a href="/en/club/football-in-the-community" data-an-track="true" data-track-type="link" data-track-text="Football in the Community" data-val="Football in the Community">
+                                      Football in the Community
+                                  </a>
+                                  </li>
+                                  <li>
+                                      <a href="http://ir.manutd.com" target="_blank" data-an-track="true" data-track-type="link" data-track-text="Investor Relations" data-val="Investor Relations">
+                                      Investor Relations
+                                  </a>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li class="more-menu__heading" data-apiurl="" data-filter="">
+                              <a href="/en/fans" data-an-track="true" data-track-type="link" data-track-text="Fans" class="" data-val="Fans">
+                                  <span>Fans<span class="tag-red-arrow"></span></span>
+                                  <span class="icon-plus sub-menu-toggle" tabindex="0">
+                          <span class="screenreader">Expand or Collapse Fans</span>
+                                  </span>
+                              </a>
+                              <ul class="home-header__sub-data">
+                                  <li>
+                                      <a href="/en/fans/fans-forum" data-an-track="true" data-track-type="link" data-track-text="Fans Forum" data-val="Fans Forum">
+                                      Fans Forum
+                                  </a>
+                                  </li>
+                                  <li>
+                                      <a href="https://display.engagesciences.com/display/container/d/ec7dd258-e256-4e7a-99be-757d217af24b/content" target="_blank" data-an-track="true" data-track-type="link" data-track-text="#ILOVEUNITED" data-val="#ILOVEUNITED">
+                                      #ILOVEUNITED
+                                  </a>
+                                  </li>
+                                  <li>
+                                      <a href="/en/fans/supporters-clubs" data-an-track="true" data-track-type="link" data-track-text="Supporters&#39; Clubs" data-val="Supporters&#39; Clubs">
+                                      Supporters&#39; Clubs
+                                  </a>
+                                  </li>
+                                  <li>
+                                      <a href="/en/fans/chevrolet-car-parking" data-an-track="true" data-track-type="link" data-track-text="Chevrolet Car Parking" data-val="Chevrolet Car Parking">
+                                      Chevrolet Car Parking
+                                  </a>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li class="more-menu__heading" data-apiurl="" data-filter="">
+                              <a href="/en/partners" data-an-track="true" data-track-type="link" data-track-text="Partners" class="" data-val="Partners">
+                                  <span>Partners<span class="tag-red-arrow"></span></span>
+                                  <span class="icon-plus sub-menu-toggle" tabindex="0">
+                          <span class="screenreader">Expand or Collapse Partners</span>
+                                  </span>
+                              </a>
+                              <ul class="home-header__sub-data">
+                                  <li>
+                                      <a href="/en/partners/global" data-an-track="true" data-track-type="link" data-track-text="Global Partners" data-val="Global Partners">
+                                      Global Partners
+                                  </a>
+                                  </li>
+                                  <li>
+                                      <a href="/en/partners/financial" data-an-track="true" data-track-type="link" data-track-text="Financial Partners" data-val="Financial Partners">
+                                      Financial Partners
+                                  </a>
+                                  </li>
+                                  <li>
+                                      <a href="/en/partners/media" data-an-track="true" data-track-type="link" data-track-text="Media Partners" data-val="Media Partners">
+                                      Media Partners
+                                  </a>
+                                  </li>
+                                  <li>
+                                      <a href="/en/partners/regional" data-an-track="true" data-track-type="link" data-track-text="Regional Partners" data-val="Regional Partners">
+                                      Regional Partners
+                                  </a>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li class="more-menu__heading" data-apiurl="" data-filter="">
+                              <a href="/en/history" data-an-track="true" data-track-type="link" data-track-text="History" class="" data-val="History">
+                                  <span>History<span class="tag-red-arrow"></span></span>
+                                  <span class="icon-plus sub-menu-toggle" tabindex="0">
+                          <span class="screenreader">Expand or Collapse History</span>
+                                  </span>
+                              </a>
+                              <ul class="home-header__sub-data">
+                                  <li>
+                                      <a href="/en/history/history-by-decade" data-an-track="true" data-track-type="link" data-track-text="History by Decade" data-val="History by Decade">
+                                      History by Decade
+                                  </a>
+                                  </li>
+                                  <li>
+                                      <a href="/en/history/trophy-room" data-an-track="true" data-track-type="link" data-track-text="Trophy Room" data-val="Trophy Room">
+                                      Trophy Room
+                                  </a>
+                                  </li>
+                                  <li>
+                                      <a href="/en/history/munich-remembered" data-an-track="true" data-track-type="link" data-track-text="Munich Remembered" data-val="Munich Remembered">
+                                      Munich Remembered
+                                  </a>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li class="more-menu__heading" data-apiurl="" data-filter="">
+                              <a href="/en/help" data-an-track="true" data-track-type="link" data-track-text="Help" class="" data-val="Help">
+                                  <span>Help<span class="tag-red-arrow"></span></span>
+                                  <span class="icon-plus sub-menu-toggle" tabindex="0">
+                          <span class="screenreader">Expand or Collapse Help</span>
+                                  </span>
+                              </a>
+                              <ul class="home-header__sub-data">
+                                  <li>
+                                      <a href="/en/help" data-an-track="true" data-track-type="link" data-track-text="Help Centre" data-val="Help Centre">
+                                      Help Centre
+                                  </a>
+                                  </li>
+                                  <li>
+                                      <a href="https://beta.manutd.com/en/help/faqs?int_source=manutd.com&amp;int_medium=menu&amp;int_campaign=generic&amp;int_content=more_help_faqs" data-an-track="true" data-track-type="link" data-track-text="FAQs" data-val="FAQs">
+                                      FAQs
+                                  </a>
+                                  </li>
+                                  <li>
+                                      <a href="https://beta.manutd.com/en/help/club-contacts?int_source=manutd.com&amp;int_medium=menu&amp;int_campaign=generic&amp;int_content=more_help_contactus" data-an-track="true" data-track-type="link" data-track-text="Contact Us" data-val="Contact Us">
+                                      Contact Us
+                                  </a>
+                                  </li>
+                                  <li>
+                                      <a href="/en/help/accessibility" data-an-track="true" data-track-type="link" data-track-text="Accessibility" data-val="Accessibility">
+                                      Accessibility
+                                  </a>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li class="more-menu__heading" data-apiurl="" data-filter="">
+                              <a href="http://www.mufoundation.org/" target="_blank" data-an-track="true" data-track-type="link" data-track-text="MU Foundation" class="" data-val="MU Foundation">
+                                  <span>MU Foundation<span class="tag-red-arrow"></span></span>
+                                  <span class="icon-plus sub-menu-toggle" tabindex="0">
+                          <span class="screenreader">Expand or Collapse MU Foundation</span>
+                                  </span>
+                              </a>
+                              <ul class="home-header__sub-data">
+                                  <li>
+                                      <a href="http://www.mufoundation.org" target="_blank" data-an-track="true" data-track-type="link" data-track-text="Visit MU Foundation" data-val="Visit MU Foundation">
+                                      Visit MU Foundation
+                                  </a>
+                                  </li>
+                              </ul>
+                          </li>
+                      </ul>
+                      <div class="home-header__fulladd">
+                          <div class="dfp-wrapper" data-an-track="true" data-track-type="dfp">
+                              <div id='div-gpt-ad-1496918936236-9' style='height:90px; width:728px;'>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+          </ul>
+          <!--Navigation Ends Here-->
+          <ul class="tertiary-nav">
+          </ul>
+          <div class="language__dropdown">
+              <a href="javascript:void(0)" data-an-track="true" data-track-type="link" data-track-text="english" class="expanded-false" data-val="english" aria-expanded="false">
+                  <span class="selected__language"> English</span>
+                  <span class="icon-drop-down">
+                          <span class="screenreader">Expand or Collapse Website language</span>
+                  </span>
+              </a>
+              <ul class="language__slector" style="display:none">
+                  <li role="option" class=""><a href="/zh" data-an-track="true" lang="zh" data-track-type="link" data-track-text="中文"><span>中文</span></a></li>
+                  <li role="option" class=""><a href="/ja" data-an-track="true" lang="ja" data-track-type="link" data-track-text="日本語"><span>日本語</span></a></li>
+                  <li role="option" class=""><a href="/ko" data-an-track="true" lang="ko" data-track-type="link" data-track-text="한국어"><span>한국어</span></a></li>
+                  <li role="option" class=""><a href="/ar" data-an-track="true" lang="ar" data-track-type="link" data-track-text="العربية"><span>العربية</span></a></li>
+                  <li role="option" class=""><a href="/es" data-an-track="true" lang="es" data-track-type="link" data-track-text="Espa&#241;ol"><span>Espa&#241;ol</span></a></li>
+                  <li role="option" class=""><a href="/fr" data-an-track="true" lang="fr" data-track-type="link" data-track-text="Fran&#231;ais"><span>Fran&#231;ais</span></a></li>
+              </ul>
+          </div>
+      </nav>
+      <div class="home-header__bottom-sponsor">
+          <ul>
+              <li>
+                  <a href="/en/Partners/Global/Chevrolet" target="">
+                      <span class="screenreader">Sponsored by</span>
+                      <img onerror="this.className='no-img'" src="//assets-qa.herculesmanutd.com/AssetPicker/images/0/0/10/113/684420/Chevrolet-DarkBG1522835436502.png" alt="Chevrolet logo" title="" />
+                      <span class="screenreader"> External Website</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="/en/Partners/Global/adidas" target="">
+                      <span class="screenreader">Sponsored by</span>
+                      <img onerror="this.className='no-img'" src="//assets-qa.herculesmanutd.com/AssetPicker/images/0/0/10/113/684410/Adidas-DarkBG1522834856111.png" alt="adidas logo" title="" />
+                      <span class="screenreader"> External Website</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="/en/Partners/Global/Aon" target="">
+                      <span class="screenreader">Sponsored by</span>
+                      <img onerror="this.className='no-img'" src="//assets-qa.herculesmanutd.com/AssetPicker/images/0/0/10/113/684414/Aon-DarkBG1522835169596.png" alt="Aon logo" title="" />
+                      <span class="screenreader"> External Website</span>
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </section>
+  
+</header>

@@ -1,0 +1,64 @@
+.gigya-screen, .gigya-screen *{
+	text-align: right !important;
+	@include font-size(14, important);
+}
+.gigya-screen .gigya-forgotPassword, 
+.gigya-screen .gigya-forgotPassword:link{
+	@include pull-left(important);
+}
+.gigya-screen.landscape .gigya-layout-row .gigya-layout-cell.under-site-login{
+	@include margin-right(0, important);
+}
+#register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider=facebook] button.tabbing-button:before, 
+.gigya-login-providers .gigya-login-providers-list [data-gigya-provider=facebook] button.tabbing-button:before,
+#register-social-login .gigya-login-providers .gigya-login-providers-list [data-gigya-provider=googleplus] button.tabbing-button:before, 
+.gigya-login-providers .gigya-login-providers-list [data-gigya-provider=googleplus] button.tabbing-button:before{
+	transform: translate(50%, -25px);
+}
+.gigya-screen.landscape .gigya-layout-row .gigya-layout-cell.under-site-login{
+	width: 100% !important;
+}
+.gigya-screen.gigya-skinning select{
+	background-position: left 17px !important;
+}
+.gigya-screen .gigya-layout-cell{
+	@include pull-left(important);
+}
+.gigya-screen-dialog-inner #gigya-login-screen #gigya-login-form .gigya-divider-content.gigya-composite-control.gigya-composite-control-label,
+.gigya-screen-dialog-inner #gigya-login-screen #gigya-login-form .with-site-login h3.gigya-composite-control.gigya-composite-control-header{
+	@include text-align(center, important);
+}
+.gigya-show-checkmark.gigya-pending, .gigya-show-checkmark.gigya-valid{
+	background-position: left 5px !important;
+}
+.gigya-screen.landscape .gigya-composite-control.gigya-composite-control-social-login{
+	@include right(inherit, important);
+}
+.email-modal .modal-content input[type=submit] {
+    transform: skew(-10deg);
+    -moz-transform: skew(-10deg);
+    -webkit-transform: skew(-10deg);
+}
+#registerDiv .gigya-composite-control input[type=submit]:hover,
+#registerDiv .gigya-composite-control input[type=button]:hover,
+.gigya-screen-dialog-main .gigya-composite-control input[type=button]:hover, 
+.gigya-screen-dialog-main .gigya-composite-control input[type=submit]:hover{
+    background: $mu-red-hover url($base-path-images + 'icons/follow-live-ar.png') left 30px  center no-repeat !important;
+}
+.gigya-screen input[type=button],
+.gigya-screen input[type=submit],
+.gigya-screen input[type=button]:hover,
+.gigya-screen input[type=submit]:hover,
+.button-forward {
+    background: $mu-red url($base-path-images + 'icons/follow-live-ar.png') left 30px center no-repeat !important;
+}
+.united-profile .favourite-player-select{
+	z-index: 10;
+}
+.gigya-show-checkmark.gigya-valid:focus{
+	background-position: left 5px!important;
+}
+#gigya-verification-sent-screen #lblParentalMessage span,
+#gigya-message-form h2#lblMessage a{
+	@include font-size(14, important);
+}

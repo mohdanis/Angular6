@@ -1,0 +1,12 @@
+@import "../../lang/ar/partials/mixins/utilities";
+@import "../../includes-rtl";
+//@import "../default/base-style";
+@import "common";
+// Override files for rtl
+@import "../../lang/ar/page/home-page";
+@import "../../lang/ar/components/carousal";
+@import "../../lang/ar/components/superherovideo";
+@import "../../lang/ar/components/verticalstrips";
+@import "../../lang/ar/components/collection";
+@import "../../lang/ar/components/spotlight";
+@import "../default/base-ar";

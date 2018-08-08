@@ -1,0 +1,349 @@
+// New Top Panel Design ////
+.mu-item__sponsor {
+    //display: none;
+    @extend %sponsor-padding;
+    @include breakpoint($small, $max-small) {
+        @include padding(6, 6, 6, 6);
+    }
+    &__wrapper {
+		@include px-to-rem(border-radius, 2);
+		@include overflow(hidden);
+		background-color: $mu-black;
+		@include pull-left;
+		@include position(relative);
+		a {
+			@include position(relative);
+			@include display(inline-block);			
+			//@include px-to-rem(max-height, 44);
+			@include px-to-rem(max-height, 40);
+			//padding: 8px 16px;
+			@include padding(8,8,8,8);
+			@include pull-left;			
+			@include breakpoint($small $max-medium) {
+				@include padding(8,8,8,8);
+			}
+			span {
+                &:empty {
+                    @include important(display,none);
+                }
+				&:first-child {
+					@include pull-left;
+					@include color($gray-heading);
+					@include text-align(left);
+					@include margin-right(16);					
+					@include secondry-regular;
+					@include padding-top(6);
+					@include padding-bottom(6);
+					@include text-transform(uppercase);
+					@include font-size(12);
+				}
+				&:last-child {
+					@include pull-right;
+					@include color($player-bg);
+					//@include px-to-rem(height, 28);
+					@include px-to-rem(height, 24);
+					@include display(inline-block);
+                    @include breakpoint($small $max-medium) {
+						@include px-to-rem(height, 24);
+					}
+					img {
+						 //@include px-to-rem(max-width, 90);
+						 @include px-to-rem(max-width, 74);
+						 //@include px-to-rem(max-height, 28);
+						 @include px-to-rem(max-height, 24);
+						 @include margin-left(0);
+						 @include display(inline-block);
+						 vertical-align: middle;
+						 @include breakpoint($small $max-medium) {
+							@include px-to-rem(max-width, 74);
+							@include px-to-rem(max-height, 24);
+						 }
+					}
+					&:before {
+						content: '';
+						@include display(inline-block);
+						vertical-align: middle;
+						
+						@include px-to-rem(height, 24);
+						@include breakpoint($small $max-medium) {
+							@include px-to-rem(height, 24);
+						}
+					}
+				}
+			}
+		}
+    }
+}
+
+.child, .micro-card {
+    .mu-item__sponsor {
+        .mu-item__sponsor__wrapper {
+            @include background($player-bg);
+            @include color($grey-text);
+            @include breakpoint($medium) {
+                @include pull-right;
+            }
+        }
+    }
+    .video,
+    .audio {
+        .mu-item__sponsor {
+            .mu-item__sponsor__wrapper {
+                @include background($social-bg);
+            }
+        }
+    }
+    .external-article,
+    .print-prod {
+        .link-btn-white {
+            span {
+                @include color($mu-black);
+            }
+        }
+    }
+}
+
+.mu-item__sponsor {
+    .external-article,
+    .print-prod {
+        .mu-item__sponsor__wrapper {
+            @include important(background, none);
+            @include padding(0,0,0,0);
+        }
+    }
+}
+
+.grid-3,
+.grid-4,
+.grid-6,
+.grid-8,
+.grid-12 {
+    @include breakpoint($small $max-small) {
+        .mu-item__sponsor {
+            @include position(absolute);
+            @include padding(8, 8, 0, 8);
+            span {
+                @include background($mu-black);
+            }
+        }
+        &.child {
+            .mu-item__sponsor {
+                @include position(absolute);
+                @include padding(8, 8, 0, 8);
+                .mu-item__sponsor__wrapper {
+                    @include background($mu-black);
+                }
+            }
+        }
+        .mu-item__sponsor__wrapper {
+            span {
+                &:first-child {
+                    @include display(none);
+                }
+            }
+        }
+    }
+}
+.grid-6,
+.grid-8,
+.grid-12 {
+    .mu-item__sponsor {
+       .mu-item__sponsor__wrapper {
+            @include breakpoint($small $max-medium) {
+                span {
+                    &:first-child {
+                        @include display(none);
+                    }
+                    @include background(none);
+                }
+            }
+        }
+    }
+   
+}
+    
+
+
+.grid-3,
+.grid-4 {
+    .mu-item__sponsor {
+        @include position(absolute);
+        @include padding(8, 8, 0, 8);
+        .mu-item__sponsor__wrapper {
+            @include background($mu-black);
+            @include pull-left;
+            span {
+                &:first-child {
+                    @include display(none);
+                }
+                @include background(none);
+                //@include padding();
+            }
+        }
+    }
+}
+
+.grid-6 {
+    .mu-item__sponsor {
+        .mu-item__sponsor__wrapper {
+            span {
+                &:first-child {
+                    @include breakpoint($medium $max-large) {
+                        @include display(none);
+                    }
+                    @include breakpoint($xlarge) {
+                        @include display(block);
+                    }
+                }
+            }
+        }
+    }
+} 
+
+
+
+
+// Handle Home page sponsor from here ///
+    #homePage,.tmpls-container,#playerDetail,.home-article-detail {
+        .grid-12,.grid-6,.grid-8,.grid-7 {
+            .mu-item__sponsor {
+                .mu-item__sponsor__wrapper {
+                    .sponsor__light {
+                        @include display(inline-block);
+                    }
+                    .sponsor__dark {
+                        @include display(none);
+                    }
+                }
+            }   
+            &.child {
+                .mu-item__sponsor {
+                    .mu-item__sponsor__wrapper {
+                        @include breakpoint($small $max-small){
+                            .sponsor__light {
+                                @include display(inline-block,important);
+                            }
+                            .sponsor__dark {
+                                 @include display(none,important);
+                            }  
+                        }
+                        .sponsor__light {
+                            @include display(none);
+                        }
+                        .sponsor__dark {
+                            @include display(inline-block);
+                        }
+                    }
+                }
+            }
+        }
+
+        .grid-3,.grid-4 {
+            .mu-item__sponsor {
+                .mu-item__sponsor__wrapper {
+                    .sponsor__light {
+                        @include display(inline-block);
+                    }
+                    .sponsor__dark {
+                        @include display(none);
+                    }
+                }
+            }
+            &.child {
+                .mu-item__sponsor {
+                    .mu-item__sponsor__wrapper {
+                        .sponsor__light {
+                            @include display(inline-block);
+                        }
+                        .sponsor__dark {
+                            @include display(none);
+                        }
+                    }
+                }
+            }
+        }
+
+        //For Videos need reverse condition due to black card background
+        .grid-12,.grid-6,.grid-8,.grid-3,.grid-4,.grid-7 {
+            .mu-item.video {
+                .mu-item__sponsor {
+                    .mu-item__sponsor__wrapper {
+                        .sponsor__light {
+                            @include display(inline-block);
+                        }
+                        .sponsor__dark {
+                            @include display(none);
+                        }
+                    }
+                } 
+            }
+            &.child {
+                .mu-item.video {
+                    .mu-item__sponsor {
+                        .mu-item__sponsor__wrapper {
+                            .sponsor__light {
+                                @include display(inline-block);
+                            }
+                            .sponsor__dark {
+                                @include display(none);
+                            }
+                        }
+                    } 
+                }
+
+            }
+        }
+
+    }
+    //For player detail page sponsor, it's not come inside grid
+    .player-detail__main {
+        .mu-item__sponsor__wrapper {
+            .sponsor__light {
+                @include display(none);
+            }
+            > a {
+                span:first-child {
+                    @include breakpoint($small $max-medium) {
+                        @include display(none);
+                    }
+                }
+            }
+        }
+    }
+    //For micro and mini cad sponsor, it's not come inside grid
+     @include breakpoint($small $max-xsmall) {
+        .mini-card.ratio {
+            .mu-item__sponsor {
+                .mu-item__sponsor__wrapper {
+                    a span:first-child img.sponsor__dark {
+                        @include display(none);
+                    }
+                    img.sponsor__dark {
+                         @include display(none);
+                    }
+                }
+
+            }
+        }
+        .micro-card.ratio {
+            .mu-item__sponsor {
+                .mu-item__sponsor__wrapper {
+                    a span:last-child img.sponsor__light {
+                        @include display(none);
+                    }
+                    img.sponsor__light {
+                        @include display(none);
+                    }
+                }
+
+            }
+        }
+    }
+
+
+//Close home page sponsor
+
+
+
+
+

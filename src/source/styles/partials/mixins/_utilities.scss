@@ -1,0 +1,1262 @@
+//Convert px values in rem with px fallback
+@mixin px-to-rem($property, $values) {
+    $output-px: "";
+    $output-rem: "";
+    @each $value in $values {
+        @if $value !=auto and $value !=0 {
+            $output-px: #{$output-px + " " + $value + px};
+            $output-rem: #{$output-rem + " " + $value / 16 + rem};
+        }
+        @else {
+            $output-px: #{$output-px + " " + $value};
+            $output-rem: #{$output-rem + " " + $value};
+        }
+    }
+    /*.ie8 & {
+        #{$property}: $output-px;
+    }*/
+    #{$property}: $output-px;
+}
+
+//Retina background image(It's not a sprite)
+@mixin retina-background-image($file, $type, $offset-x, $offset-y) {
+    $image-path: $file + "." + $type;
+    $image-height: image-height($image-path);
+    $image-width: image-width($image-path);
+    background-position: $offset-x $offset-y;
+    background-image: url("../../../assets/images" + $image-path);
+    background-size: $image-width $image-height;
+    background-repeat: no-repeat;
+    @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+        background-image: url("../../../assets/images" + $file + "@2x." + $type);
+    }
+}
+
+//Cross browser opacity
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie);
+}
+
+// Verticle center align
+@mixin vertical-align {
+    &:before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+        width: .1px;
+    }
+}
+
+//Text truncate - values are: clip, ellipsis, or a string
+@mixin truncate-text($overflow: ellipsis) {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: $overflow;
+}
+
+//Copied from sprint1 branch
+/*@mixin padding($top: 0,
+$right: 0,
+$bottom: 0,
+$left: 0) {
+    padding: ($top + px) ($right + px) ($bottom + px) ($left + px);
+    //padding: ($top / 16 + rem) ($right / 16 + rem) ($bottom / 16 + rem) ($left / 16 + rem);
+}*/
+
+/*@mixin padding-top($value) {
+    padding-top: $value + px;
+    //padding-top: $value / 16 + rem;
+}*/
+
+//Padding Top
+@mixin padding-top($value: false, $unit: false, $important: false) {
+    @if $value == auto or $value == initial or $value == inherit {
+        @if $unit and $unit == important {
+           @if $value == auto {
+           padding-top: $value +  !important;
+           padding-top: initial + !important;
+           } @else {
+             padding-top: $value !important;
+           }
+      } @else {
+        @if $important == important {
+          @if $value == auto {
+           padding-top: $value +  !important;
+           padding-top: initial +  !important;
+           } @else {
+            padding-top: $value +  !important;
+           }
+        } @else {
+          @if $value == auto {
+           padding-top: $value;
+           padding-top: initial;
+           } @else {
+             padding-top: $value;
+           }
+        }
+      }
+  } @else {
+    @if type-of($value) == number {
+      @if not $unit or $important {
+        @if $important == important {
+          @if $unit == percent {
+            padding-top:$value+unquote("%") +  !important;
+          } @else if $unit == px {
+            padding-top:$value+px +  !important;
+          } @else {
+            padding-top:$value+px +  !important;
+          }
+        } @else {
+          @if $unit == percent {
+            padding-top: $value+unquote("%");
+          } @else if $unit == px {
+            padding-top: $value + px;
+          } @else {
+            padding-top: $value + px;
+          }
+        }
+        } @else if $unit == percent {
+        padding-top: $value+ unquote("%");
+      } @else if $unit == px {
+        padding-top: $value + px;
+      } @else {
+        @if $important == important or $unit == important {
+          padding-top: $value + px +  !important;
+        } @else {
+          padding-top: $value + px;
+        }
+      }
+    } @else {
+        @error '#{ $value } is not a number.';
+    }
+  }
+}
+
+
+/*@mixin padding-bottom($value) {
+    padding-bottom: $value + px;
+    //padding-bottom: $value / 16 + rem;
+}*/
+
+@mixin padding-bottom($value: false, $unit: false, $important: false) {
+    @if $value == auto or $value == initial or $value == inherit {
+        @if $unit and $unit == important {
+           @if $value == auto {
+           padding-bottom: $value +  !important;
+           padding-bottom: initial + !important;
+           } @else {
+             padding-bottom: $value !important;
+           }
+      } @else {
+        @if $important == important {
+          @if $value == auto {
+           padding-bottom: $value +  !important;
+           padding-bottom: initial +  !important;
+           } @else {
+            padding-bottom: $value +  !important;
+           }
+        } @else {
+          @if $value == auto {
+           padding-bottom: $value;
+           padding-bottom: initial;
+           } @else {
+             padding-bottom: $value;
+           }
+        }
+      }
+  } @else {
+    @if type-of($value) == number {
+      @if not $unit or $important {
+        @if $important == important {
+          @if $unit == percent {
+            padding-bottom:$value+unquote("%") +  !important;
+          } @else if $unit == px {
+            padding-bottom:$value+px +  !important;
+          } @else {
+            padding-bottom:$value+px +  !important;
+          }
+        } @else {
+          @if $unit == percent {
+            padding-bottom: $value+unquote("%");
+          } @else if $unit == px {
+            padding-bottom: $value + px;
+          } @else {
+            padding-bottom: $value + px;
+          }
+        }
+        } @else if $unit == percent {
+        padding-bottom: $value+ unquote("%");
+      } @else if $unit == px {
+        padding-bottom: $value + px;
+      } @else {
+        @if $important == important or $unit == important {
+          padding-bottom: $value + px +  !important;
+        } @else {
+          padding-bottom: $value + px;
+        }
+      }
+    } @else {
+        @error '#{ $value } is not a number.';
+    }
+  }
+}
+// Top
+@mixin top($value: false, $unit: false, $important: false) {
+    @if $value == auto or $value == initial or $value == inherit {
+        @if $unit and $unit == important {
+           @if $value == auto {
+           top: $value +  !important;
+           top: initial + !important;
+           } @else {
+             top: $value !important;
+           }
+      } @else {
+        @if $important == important {
+          @if $value == auto {
+           top: $value +  !important;
+           top: initial +  !important;
+           } @else {
+            top: $value +  !important;
+           }
+        } @else {
+          @if $value == auto {
+           top: $value;
+           top: initial;
+           } @else {
+             top: $value;
+           }
+        }
+      }
+  } @else {
+    @if type-of($value) == number {
+      @if not $unit or $important {
+        @if $important == important {
+          @if $unit == percent {
+            top:$value+unquote("%") +  !important;
+          } @else if $unit == px {
+            top:$value+px +  !important;
+          } @else {
+            top:$value+px +  !important;
+          }
+        } @else {
+          @if $unit == percent {
+            top: $value+unquote("%");
+          } @else if $unit == px {
+            top: $value + px;
+          } @else {
+            top: $value + px;
+          }
+        }
+        } @else if $unit == percent {
+        top: $value+ unquote("%");
+      } @else if $unit == px {
+        top: $value + px;
+      } @else {
+        @if $important == important or $unit == important {
+          top: $value + px +  !important;
+        } @else {
+          top: $value + px;
+        }
+      }
+    } @else {
+        @error '#{ $value } is not a number.';
+    }
+  }
+}
+// Bottom
+@mixin bottom($value: false, $unit: false, $important: false) {
+    @if $value == auto or $value == initial or $value == inherit {
+        @if $unit and $unit == important {
+           @if $value == auto {
+           bottom: $value +  !important;
+           bottom: initial + !important;
+           } @else {
+             bottom: $value !important;
+           }
+      } @else {
+        @if $important == important {
+          @if $value == auto {
+           bottom: $value +  !important;
+           bottom: initial +  !important;
+           } @else {
+            bottom: $value +  !important;
+           }
+        } @else {
+          @if $value == auto {
+           bottom: $value;
+           bottom: initial;
+           } @else {
+             bottom: $value;
+           }
+        }
+      }
+  } @else {
+    @if type-of($value) == number {
+      @if not $unit or $important {
+        @if $important == important {
+          @if $unit == percent {
+            bottom:$value+unquote("%") +  !important;
+          } @else if $unit == px {
+            bottom:$value+px +  !important;
+          } @else {
+            bottom:$value+px +  !important;
+          }
+        } @else {
+          @if $unit == percent {
+            bottom: $value+unquote("%");
+          } @else if $unit == px {
+            bottom: $value + px;
+          } @else {
+            bottom: $value + px;
+          }
+        }
+        } @else if $unit == percent {
+        bottom: $value+ unquote("%");
+      } @else if $unit == px {
+        bottom: $value + px;
+      } @else {
+        @if $important == important or $unit == important {
+          bottom: $value + px +  !important;
+        } @else {
+          bottom: $value + px;
+        }
+      }
+    } @else {
+        @error '#{ $value } is not a number.';
+    }
+  }
+}
+
+
+/*@mixin padding-left($value) {
+    padding-left: $value + px;
+    //padding-left: $value / 16 + rem;
+}*/
+
+/*@mixin padding-right($value) {
+    padding-right: $value + px;
+    //padding-right: $value / 16 + rem;
+}*/
+
+/*@mixin margin($top: 0,
+$right: 0,
+$bottom: 0,
+$left: 0) {
+    margin: ($top + px) ($right + px) ($bottom + px) ($left + px);
+    //margin: ($top / 16 + rem) ($right / 16 + rem) ($bottom / 16 + rem) ($left / 16 + rem);
+}*/
+
+/*@mixin margin-bottom($value) {
+    margin-bottom: $value + px;
+    //margin-bottom: $value / 16 + rem;
+}*/
+
+@mixin margin-bottom($value: false, $unit: false, $important: false) {
+    @if $value == auto or $value == initial or $value == inherit {
+        @if $unit and $unit == important {
+           @if $value == auto {
+           margin-bottom: $value +  !important;
+           margin-bottom: initial + !important;
+           } @else {
+             margin-bottom: $value !important;
+           }
+      } @else {
+        @if $important == important {
+          @if $value == auto {
+           margin-bottom: $value +  !important;
+           margin-bottom: initial +  !important;
+           } @else {
+            margin-bottom: $value +  !important;
+           }
+        } @else {
+          @if $value == auto {
+           margin-bottom: $value;
+           margin-bottom: initial;
+           } @else {
+             margin-bottom: $value;
+           }
+        }
+      }
+  } @else {
+    @if type-of($value) == number {
+      @if not $unit or $important {
+        @if $important == important {
+          @if $unit == percent {
+            margin-bottom:$value+unquote("%") +  !important;
+          } @else if $unit == px {
+            margin-bottom:$value+px +  !important;
+          } @else {
+            margin-bottom:$value+px +  !important;
+          }
+        } @else {
+          @if $unit == percent {
+            margin-bottom: $value+unquote("%");
+          } @else if $unit == px {
+            margin-bottom: $value + px;
+          } @else {
+            margin-bottom: $value + px;
+          }
+        }
+        } @else if $unit == percent {
+        margin-bottom: $value+ unquote("%");
+      } @else if $unit == px {
+        margin-bottom: $value + px;
+      } @else {
+        @if $important == important or $unit == important {
+          margin-bottom: $value + px +  !important;
+        } @else {
+          margin-bottom: $value + px;
+        }
+      }
+    } @else {
+        @error '#{ $value } is not a number.';
+    }
+  }
+}
+
+
+/*@mixin margin-top($value) {
+    margin-top: $value + px;
+    //margin-top: $value / 16 + rem;
+}*/
+
+@mixin margin-top($value: false, $unit: false, $important: false) {
+    @if $value == auto or $value == initial or $value == inherit {
+        @if $unit and $unit == important {
+           @if $value == auto {
+           margin-top: $value +  !important;
+           margin-top: initial + !important;
+           } @else {
+             margin-top: $value !important;
+           }
+      } @else {
+        @if $important == important {
+          @if $value == auto {
+           margin-top: $value +  !important;
+           margin-top: initial +  !important;
+           } @else {
+            margin-top: $value +  !important;
+           }
+        } @else {
+          @if $value == auto {
+           margin-top: $value;
+           margin-top: initial;
+           } @else {
+             margin-top: $value;
+           }
+        }
+      }
+  } @else {
+    @if type-of($value) == number {
+      @if not $unit or $important {
+        @if $important == important {
+          @if $unit == percent {
+            margin-top:$value+unquote("%") +  !important;
+          } @else if $unit == px {
+            margin-top:$value+px +  !important;
+          } @else {
+            margin-top:$value+px +  !important;
+          }
+        } @else {
+          @if $unit == percent {
+            margin-top: $value+unquote("%");
+          } @else if $unit == px {
+            margin-top: $value + px;
+          } @else {
+            margin-top: $value + px;
+          }
+        }
+        } @else if $unit == percent {
+        margin-top: $value+ unquote("%");
+      } @else if $unit == px {
+        margin-top: $value + px;
+      } @else {
+        @if $important == important or $unit == important {
+          margin-top: $value + px +  !important;
+        } @else {
+          margin-top: $value + px;
+        }
+      }
+    } @else {
+        @error '#{ $value } is not a number.';
+    }
+  }
+}
+
+
+
+
+/*@mixin margin-right($value) {
+    margin-right: $value + px;
+    //margin-right: $value / 16 + rem;
+}*/
+
+/*@mixin margin-left($value) {
+    margin-left: $value + px;
+    // margin-left: $value / 16 + rem;
+}*/
+
+//Border
+/*@mixin border($width,
+$style,
+$color) {
+    border: ($width + px) $style $color;
+}*/
+@mixin border($width,
+$style,
+$color,
+$important:null) {
+    @if($important and $important == important){
+     border: ($width + px) $style $color + !important;
+    }@else {
+      border: ($width + px) $style $color;
+    }
+}
+
+/*@mixin border-transparent($width,
+$style,
+$color,
+$opacity: 1) {
+    border: ($width + px) $style rgba($color, $opacity);
+}*/
+@mixin border-transparent($width,$style,$color,$opacity: 1,$important:null) {
+    @if($important and $important == important){
+      border: ($width + px) $style rgba($color, $opacity) + !important;
+    }@else {
+      border: ($width + px) $style rgba($color, $opacity);
+    }
+}
+
+/*@mixin border-top($width,
+$style,
+$color,
+$opacity: 1) {
+    border-top: ($width + px) $style rgba($color, $opacity);
+}*/
+@mixin border-top($width,
+$style,
+$color,
+$opacity: 1,
+$important:null) {
+    @if($important and $important == important){
+      border-top: ($width + px) $style rgba($color, $opacity) + !important;
+    }@else {
+      border-top: ($width + px) $style rgba($color, $opacity);
+    }
+}
+
+/*@mixin border-right($width,
+$style,
+$color,
+$opacity: 1) {
+    border-right: ($width + px) $style rgba($color, $opacity);
+}*/
+
+
+/*@mixin border-bottom($width,
+$style,
+$color,
+$opacity: 1) {
+    border-bottom: ($width + px) $style rgba($color, $opacity);
+}*/
+@mixin border-bottom($width,
+$style,
+$color,
+$opacity: 1,
+$important:null) {
+    @if($important and $important == important){
+      border-bottom: ($width + px) $style rgba($color, $opacity) + !important;
+    }@else {
+      border-bottom: ($width + px) $style rgba($color, $opacity);
+    }
+}
+
+/*@mixin border-left($width,
+$style,
+$color,
+$opacity: 1) {
+    border-left: ($width + px) $style rgba($color, $opacity);
+}*/
+
+
+/*@mixin border-none {
+    border: none;
+}*/
+@mixin border-none($important:null) {
+    @if($important and $important == important){
+      border: none + !important;
+    }@else {
+      border: none;
+    }
+}
+
+//Border radius
+/*@mixin border-radius($radius) {
+    border-radius: $radius + px;
+}*/
+@mixin border-radius($radius,$important:null) {
+    @if($important and $important == important){
+      border-radius: $radius + px + !important;
+    }@else {
+      border-radius: $radius + px;
+    }
+}
+
+/*@mixin border-radius-top($radius,
+$radius1) {
+    border-top-left-radius: $radius + px;
+    border-top-right-radius: $radius + px;
+}*/
+@mixin border-radius-top($radius,
+$radius1,$important:null) {
+    @if($important and $important == important){
+      border-top-left-radius: $radius + px + !important;
+    border-top-right-radius: $radius + px + !important;
+    }@else {
+      border-top-left-radius: $radius + px;
+      border-top-right-radius: $radius + px;
+    }
+}
+
+/*@mixin border-radius-bottom($radius,
+$radius1) {
+    border-bottom-left-radius: $radius + px;
+    border-bottom-right-radius: $radius + px;
+}*/
+@mixin border-radius-bottom($radius,
+$radius1,$important:null) {
+    @if($important and $important == important){
+      border-bottom-left-radius: $radius + px + !important;
+      border-bottom-right-radius: $radius + px + !important;
+    }@else {
+      border-bottom-left-radius: $radius + px;
+      border-bottom-right-radius: $radius + px;
+    }
+}
+
+//Display
+/*@mixin display($property) {
+    display: $property;
+}*/
+@mixin display($property,$important:null) {
+    @if($important and $important == important){
+      display: $property + !important;
+    }@else {
+      display: $property;
+    }
+}
+
+//Background color
+/*@mixin background-color($color,
+$opacity: 1) {
+    background-color: $color;
+    background: rgba($color, $opacity);
+}*/
+@mixin background-color($color, $opacity: 1,$important:null ) {
+    @if($important and $important == important){
+      background-color: $color + !important;
+      background: rgba($color, $opacity) + "!important";
+    }@else {
+      background-color: $color;
+      background: rgba($color, $opacity);
+    }
+}
+
+//Color
+/*@mixin color($color) {
+    color: $color;
+}*/
+@mixin color($color,$important:null) {
+    @if($important and $important == important){
+      color: $color + !important;
+    }@else {
+      color: $color;
+    }
+}
+
+//Position(left,right,top,bottom)
+/*@mixin position($position) {
+    position: $position;
+}*/
+@mixin position($position,$important:null) {
+    @if($important and $important == important){
+      position: $position + !important;
+    }@else {
+      position: $position;
+    }
+}
+
+//Text alignment
+/*@mixin text-align($align) {
+    text-align: $align;
+}*/
+
+
+/*
+@mixin pull-none {
+    float: none;
+}*/
+@mixin pull-none($important:null) {
+    @if($important and $important == important){
+      float: none + !important;
+    }@else {
+      float: none;
+    }
+}
+
+/*@mixin clear($direction) {
+    clear: $direction;
+}*/
+
+//Overflow
+/*@mixin overflow($property) {
+    overflow: $property;
+}*/
+@mixin overflow($property,$important:null) {
+    @if($important and $important == important){
+      overflow: $property + !important;
+    }@else {
+      overflow: $property;
+    }
+}
+
+//Z-Index
+/*@mixin z-index($value) {
+    z-index: $value;
+}*/
+@mixin z-index($value,$important:null) {
+    @if($important and $important == important){
+      z-index: $value + !important;
+    }@else {
+      z-index: $value;
+    }
+}
+
+//opacity
+/*@mixin opacity($value) {
+    filter: alpha(opacity=$value * 100);
+    opacity: $value;
+}*/
+@mixin opacity($value,$important:null) {
+  @if($important and $important == important){
+      filter: alpha(opacity=$value * 100) + !important;
+      opacity: $value + !important;
+    }@else {
+      filter: alpha(opacity=$value * 100);
+      opacity: $value;
+    }
+}
+
+
+
+//letterspacing of text
+/*@mixin letter-spacing($value) {
+    letter-spacing: $value + px;
+}*/
+@mixin letter-spacing($value,$important:null) {
+    @if($important and $important == important){
+      letter-spacing: $value + px + !important;
+    }@else {
+      letter-spacing: $value + px;
+    }
+}
+
+//cursor
+@mixin cursor($value) {
+    cursor: $value;
+}
+
+//auto
+@mixin prop-auto($property,
+$values) {
+    $prop-auto: "";
+    $prop-auto: #{$values};
+    #{$property}: $prop-auto;
+}
+
+//Percentage value
+@mixin percentage-value($property,
+$values) {
+    $percent-value: "";
+    $percent-value: #{$values + "%"};
+    #{$property}: $percent-value;
+}
+
+//Gradient
+@mixin card-gradient($direction:bottom-left, $degree:185deg) {
+    @if $direction=="bottom-to-top" {
+        // background-image: -webkit-linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9));
+        // background-image: -ms-linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9));
+        // background-image: -o-linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9));
+        // background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9));
+
+        background:-webkit-linear-gradient($degree,rgba(0,0,0,0) 20%,rgba(0,0,0,0.9) 80%);
+        background:-ms-linear-gradient($degree,rgba(0,0,0,0) 20%,rgba(0,0,0,0.9) 80%);
+        background:-o-linear-gradient($degree,rgba(0,0,0,0) 20%,rgba(0,0,0,0.9) 80%);
+        background:linear-gradient($degree,rgba(0,0,0,0) 20%,rgba(0,0,0,0.9) 80%);
+        height: 70%;
+    }
+    @else if $direction=="tint" {
+        //background-color: rgba(57, 52, 52, 0.8);
+        background: rgba(26, 26, 26, 0.65);
+    }
+    @else {
+        background: rgba(0, 0, 0, 0.3);
+    }
+}
+
+@mixin liner-gradient-bottom() {
+    background-image: -webkit-gradient( linear, 4% 0%, left bottom, color-stop(0.48, rgba(0, 0, 0, 0)), color-stop(0.57, rgb(31, 34, 32)));
+    background-image: -ms-linear-gradient( linear, 4% 0%, left bottom, color-stop(0.48, rgba(0, 0, 0, 0)), color-stop(0.57, rgb(31, 34, 32)));
+    background-image: -o-linear-gradient( linear, 4% 0%, left bottom, color-stop(0.48, rgba(0, 0, 0, 0)), color-stop(0.57, rgb(31, 34, 32)));
+}
+
+@mixin radial-gradient($start-color,
+$end-color,
+$start-per-value,
+$end-per-value) {
+    //background-color:$start-color;
+    background-image: -moz-radial-gradient($start-per-value $start-per-value, circle farthest-corner, $start-color, $end-color $end-per-value);
+    background-image: -webkit-radial-gradient($start-per-value $start-per-value, circle farthest-corner, $start-color, $end-color $end-per-value);
+    background-image: -o-radial-gradient($start-per-value $start-per-value, circle farthest-corner, $start-color, $end-color $end-per-value);
+    background-image: -ms-radial-gradient($start-per-value $start-per-value, circle farthest-corner, $start-color, $end-color $end-per-value);
+    background-image: radial-gradient($start-per-value $start-per-value, circle farthest-corner, $start-color, $end-color $end-per-value)
+}
+
+@mixin vertical-align($position: relative) {
+    position: $position;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+@mixin horizontal-mid($position: relative) {
+    position: $position;
+    left: 50%;
+    -webkit-transform: translate(-50%, 50%);
+    -ms-transform: translate(-50%, 50%);
+    transform: translate(-50%, 50%);
+}
+
+
+@mixin percentage-value($property,
+$values) {
+    $percent-value: "";
+    $percent-value: #{$values + "%"};
+    #{$property}: $percent-value;
+}
+
+@mixin important-value($property,
+$values) {
+    $property-value: "";
+    $property-value: #{$values + "px !important"};
+    #{$property}: $property-value;
+}
+
+@mixin important($property,
+$values) {
+    $property-value: "";
+    $property-value: #{$values + "!important"};
+    #{$property}: $property-value;
+}
+
+@mixin important-color($value) {
+    color: #{$value + "!important"};
+}
+
+/*@mixin margin-auto($value) {
+    margin: $value auto;
+}*/
+
+/*@mixin margin-auto($value,$important:null) {
+    @if($important and $important == important){
+      margin: $value  auto + !important;
+    }@else {
+      margin: $value  auto;
+    }
+}*/
+
+@function str-replace($string, $search, $replace: '') {
+    $index: str-index($string, $search);
+    @if $index {
+      @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+    @return $string;
+  }
+  @mixin margin-auto($value,$important:null) {
+    $val : inspect($value);
+    $leaf: str-index($val, auto);
+      @if($leaf == null) {
+         @if($important and $important == important){
+           margin: $value+px auto + !important;
+         } @else {
+           margin: $value+px auto;
+ 
+         }
+         
+      } @else {
+        $newVal: str-replace($val, " auto", $replace: 'px auto');
+        @if($important and $important == important){
+        margin: $newVal + !important;
+        }@else {
+          margin: $newVal;
+        }
+      }
+  }
+
+/*@mixin font-weight($value) {
+    font-weight: $value;
+}*/
+@mixin font-weight($value,$important:null) {
+    @if($important and $important == important){
+      font-weight: $value + !important;
+    }@else {
+      font-weight: $value;
+    }
+}
+
+/*@mixin font-style($value) {
+    font-style: $value;
+}*/
+@mixin font-style($value,$important:null) {
+    @if($important and $important == important){
+      font-style: $value + !important;
+    }@else {
+      font-style: $value;
+    }
+}
+
+@mixin text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin ellipsis($max-height,
+$lines: 2) {
+    overflow: hidden;
+    max-height: $max-height;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines;
+    text-overflow: -o-ellipsis-lastline;
+}
+
+@mixin multiLineEllipsis($lineHeight: 1.2em,
+$lineCount: 1) {
+    overflow: hidden;
+    position: relative;
+    line-height: $lineHeight;
+    max-height: $lineHeight * $lineCount;
+    text-align: justify;
+    margin-right: -1em;
+    padding-right: 1em;
+    &:before {
+        content: '...';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 1em;
+        height: 1em;
+        margin-top: 0.2em;
+    }
+}
+
+
+/* calculated border-radious top and left */
+
+@mixin calculated-radius($topLeft,
+$topRight) {
+    border-radius: #{$topLeft}#{"%"} / #{$topRight}#{"%"};
+}
+
+/*@mixin overflow($overflow-val) {
+    overflow: $overflow-val;
+}*/
+
+/*@mixin overflow-x($overflow-val) {
+    overflow: $overflow-val;
+}*/
+@mixin overflow-x($overflow-val,$important:null) {
+    @if($important and $important == important){
+      overflow-x: $overflow-val + !important;
+    }@else {
+      overflow-x: $overflow-val;
+    }
+}
+
+/*@mixin overflow-y($overflow-val) {
+    overflow: $overflow-val;
+}*/
+@mixin overflow-y($overflow-val,$important:null) {
+    @if($important and $important == important){
+       overflow-y: $overflow-val + !important;
+    }@else {
+      overflow-y: $overflow-val;
+    }
+}
+
+@mixin overflow-direction($property,
+$overflow-val) {
+    $property: $overflow-val;
+}
+
+/*@mixin font-weight($font-weight__val) {
+    font-weight: $font-weight__val;
+}*/
+
+@mixin word-wrap {
+    word-wrap: break-word;
+}
+
+@mixin calculate-width($percentage-value,
+$pixel-value) {
+    width: calc(#{$percentage-value}#{"%"} - #{$pixel-value}#{"px"});
+}
+
+@mixin calculate-height($percentage-value,
+$pixel-value) {
+    height: calc(#{$percentage-value}#{"%"} - #{$pixel-value}#{"px"});
+}
+
+@mixin font-color($font-color) {
+    color: $font-color !important;
+}
+
+@mixin background-img-center() {
+    background-size: cover !important;
+    background-position: 50% 0 !important;
+    height: 100%;
+    width: 100%
+}
+
+/*@mixin background-none() {
+    background: none;
+}*/
+@mixin background-none($important:null) {
+    @if($important and $important == important){
+      background: none + !important;
+    }@else {
+      background: none;
+    }
+}
+
+@mixin background-img-initial() {
+    background-size: cover !important;
+    background-position: initial !important;
+    height: 100%;
+    width: 100%
+}
+
+@mixin btn-transition($prop,
+$bg,
+$opacity: 1) {
+    background: rgba($bg, $opacity);
+    transition: $prop 1s ease;
+    -webkit-transition: $prop 1s ease;
+    -moz-transition: $prop 1s ease;
+    -o-transition: $prop 1s ease;
+}
+
+@mixin btn-transition-hover($prop,
+$bg,
+$opacity: 1) {
+    background: rgba($bg, $opacity);
+    transition: $prop 0s;
+    -webkit-transition: $prop 0s;
+    -moz-transition: $prop 0s;
+    -o-transition: $prop 0s;
+}
+
+@mixin pull-column($column) {
+    @if $column=="grid-1" {
+        margin-left: 1%;
+        margin-right: 1%;
+        float: left;
+        padding-left: 6.33333%;
+    }
+    @if $column=="grid-2" {
+        margin-left: 1%;
+        margin-right: 1%;
+        float: left;
+        padding-left: 14.66667%;
+    }
+    @if $column=="grid-3" {
+        margin-left: 1%;
+        margin-right: 1%;
+        float: left;
+        padding-left: 23%;
+    }
+    @if $column=="grid-4" {
+        margin-left: 1%;
+        margin-right: 1%;
+        float: left;
+        padding-left: 31.33333%;
+    }
+    @if $column=="grid-5" {
+        margin-left: 1%;
+        margin-right: 1%;
+        float: left;
+        padding-left: 39.66667%;
+    }
+    @if $column=="grid-6" {
+        margin-left: 1%;
+        margin-right: 1%;
+        float: left;
+        padding-left: 48%;
+    }
+    @if $column=="grid-7" {
+        margin-left: 1%;
+        margin-right: 1%;
+        float: left;
+        padding-left: 56.33333%;
+    }
+    @if $column=="grid-8" {
+        margin-left: 1%;
+        margin-right: 1%;
+        float: left;
+        padding-left: 64.66667%;
+    }
+    @if $column=="grid-9" {
+        margin-left: 1%;
+        margin-right: 1%;
+        float: left;
+        padding-left: 73%;
+    }
+    @if $column=="grid-10" {
+        margin-left: 1%;
+        margin-right: 1%;
+        float: left;
+        padding-left: 81.33333%;
+    }
+    @if $column=="grid-11" {
+        margin-left: 1%;
+        margin-right: 1%;
+        float: left;
+        padding-left: 89.66667%;
+    }
+}
+
+@mixin column-width($column) {
+    @if $column=="grid-1" {
+        float: left;
+        width: 6.33333%;
+    }
+    @if $column=="grid-2" {
+        float: left;
+        width: 14.66667%;
+    }
+    @if $column=="grid-3" {
+        float: left;
+        width: 23%;
+    }
+    @if $column=="grid-4" {
+        float: left;
+        width: 31.33333%;
+    }
+    @if $column=="grid-5" {
+        float: left;
+        width: 39.66667%;
+    }
+    @if $column=="grid-6" {
+        float: left;
+        width: 48%;
+    }
+    @if $column=="grid-7" {
+        float: left;
+        width: 56.33333%;
+    }
+    @if $column=="grid-8" {
+        float: left;
+        width: 64.66667%;
+    }
+    @if $column=="grid-9" {
+        float: left;
+        width: 73%;
+    }
+    @if $column=="grid-10" {
+        float: left;
+        width: 81.33333%;
+    }
+    @if $column=="grid-11" {
+        float: left;
+        width: 89.66667%;
+    }
+}
+
+@mixin aspect-ratio($width,
+$height) {
+    position: relative;
+    &:before {
+        display: block;
+        content: " ";
+        width: 100%;
+        padding-top: ($height / $width) * 100%;
+    }
+}
+
+.mu-content,
+.img-holder > figure {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+%two-one {
+    //cinema
+    @include aspect-ratio(2.35,
+    1);
+}
+
+%sixteen-nine {
+    //hd-video
+    @include aspect-ratio(16,
+    9);
+}
+
+%four-three {
+    //monitor
+    @include aspect-ratio(4,
+    3);
+}
+
+%three-four {
+    //tab
+    @include aspect-ratio(3,
+    4);
+}
+
+%one-one {
+    //square
+    @include aspect-ratio(1,
+    1);
+}
+
+//Mixin for blog icon
+
+@mixin event-icons($url){
+  background-image:url("../../assets/images/svg-events/" + $url + ".svg") !important;
+  background-position:top !important;
+  background-size:contain !important;
+}
+
+
+@mixin prefix-vendor($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+ 
+  // Output standard non-prefixed declaration
+  #{$property}: $value;
+}

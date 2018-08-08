@@ -1,0 +1,130 @@
+.grid-12 {
+    .mu-item {
+        .mu-item__title {
+            @include arabic-text-truncate(2, 96, 96);
+        }
+    }
+    .child {
+        .mu-item {
+            .mu-item__info {
+                @include position(relative);
+            }
+            .mu-item__title {
+                @include arabic-text-truncate(2, 72, 72);
+            }
+        }
+    }
+}
+
+.grid-8 {
+    .mu-item {
+        .mu-item__title {
+            @include arabic-text-truncate(2, 48, 48);
+        }
+    }
+    .child {
+        .mu-item {
+            .mu-item__info {
+                @include position(relative);
+            }
+            .mu-item__title {
+                @include arabic-text-truncate(2, 48, 48);
+            }
+            .mu-item__teasure {
+                @include arabic-text-truncate(3, 16, 20);
+            }
+        }
+    }
+}
+
+.grid-6 {
+    .mu-item {
+        .mu-item__title {
+            @include arabic-text-truncate(2, 48, 48);
+        }
+    }
+    .child {
+        .mu-item {
+            .mu-item__info {
+                @include position(relative);
+            }
+            .mu-item__title {
+                @include arabic-text-truncate(2, 48, 48);
+            }
+            .mu-item__teasure {
+                //@include margin-bottom(30);
+                @include arabic-text-truncate(3, 16, 20);
+            }
+        }
+    }
+}
+
+.grid-4 {
+    .mu-item {
+        .mu-item__title {
+            @include arabic-text-truncate(2, 36, 36);
+        }
+    }
+    .child {
+        .mu-item {
+            .mu-item__title {
+                @include arabic-text-truncate(2, 36, 36);
+            }
+            .mu-item__teasure {
+                @include arabic-text-truncate(3, 16, 20);
+            }
+        }
+    }
+}
+
+.grid-3 {
+    .mu-item {
+        .mu-item__title {
+            @include arabic-text-truncate(2, 36, 36);
+        }
+    }
+    .child {
+        .mu-item {
+            .mu-item__title {
+                @include arabic-text-truncate(2, 36, 36);
+            }
+            .mu-item__teasure {
+                @include arabic-text-truncate(3, 16, 20);
+            }
+        }
+    }
+}
+
+.img-tag {
+    @include px-to-rem(left, 0);
+}
+
+// mu-item stats 
+.grid-4 {
+    .stats-item {
+        .head2head {
+            .mu-item__title {
+                margin-right: 20px;
+            }
+        }
+    }
+}
+
+//Modal changes
+.collection__left-panel {
+    .collection__wrapper {
+        .collection-item__heading {
+            @include arabic-text-truncate(2, 40, 48);
+                height: 110px;
+        }
+    }
+}
+
+.collection-item__transcript {
+    @include pull-right;
+}
+
+//video player
+.oo-player-container .oo-control-bar .oo-control-bar-items-wrapper>.oo-control-bar-item:last-child {
+    padding-left: 0!important;
+}

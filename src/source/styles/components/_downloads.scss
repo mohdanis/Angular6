@@ -1,0 +1,68 @@
+// .download {
+//     @include span(6 of 6);
+//     @include breakpoint($xlarge) {
+//         @include span(6 of 12);
+//         @include margin-auto(0);
+//          @include pull-none;
+//     }
+    
+   
+//     h1 {
+//         @include font-size(32);
+//         @include margin-bottom(40);
+//         @include breakpoint($medium) {
+//           @include font-size(48);
+//           @include margin-bottom(57);
+//         }
+//         @include primary-bold;
+//         @include color($mu-black);
+//         @include line-height(0.83);
+//         @include margin-bottom(57);
+//     }
+//     &__items {
+//         @include background($white);
+//         @include padding(22, 42, 22, 42);
+//         @include pull-left;
+//         @include percentage-value(width, 100);
+//         @include margin-bottom(20);
+//         &.grey {
+//             @include background($player-bg);
+//         }
+//     }
+//     &__file-icon {
+//         @include pull-left;
+//         @include position(relative);
+//         @include percentage-value(height, 100);
+//         @include px-to-rem(width, 78);
+//         span {
+//           @include pull-left;
+//           @include percentage-value(width,100);
+//           @include font-size(14);
+//           @include secondry-regular;
+//           @include color($mu-black);
+//           @include margin-top(8);
+//         }
+//     }
+//     &__info {
+//         @include pull-right;
+//         @include calculate-width(100, 78);
+//         h4 {
+//             @include font-size(24);
+//             @include secondry-light;
+//             @include color($mu-black);
+//             @include line-height(1.25);
+//             @include margin-bottom(10);
+//             letter-spacing: -0.2px;
+//         }
+//         p {
+//             @include font-size(16);
+//             @include secondry-regular;
+//             @include color($mu-black);
+//         }
+//         .download-btn {
+//           @extend .transparent-btn-skew;
+//           @include border-none;
+//           @include margin-top(24);
+//         }
+//     }
+// }

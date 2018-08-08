@@ -1,0 +1,28 @@
+<div class="grid-3 ratio">
+    <div class="mu-content">
+        <div data-an-track="true" data-track-type="card" [attr.data-share-url]="item.destinationurl_s" [attr.data-cardname]="item.shortheadline_t" [attr.data-itemid]="item.itemid_s" [attr.data-tags]="item.taglist_sm" [attr.data-published]="item.__published_tdt" [attr.data-contenttype]="item.contenttype_t" [attr.data-author]="item.authornameinfo_s" data-module="social-share" class="mu-item article-card">
+          
+            <a [href]="item.destinationurl_s" data-card="true" tabindex="-1" aria-hidden="true">
+                <div class="img-holder">
+                    <figure class="figure-component" [ngStyle]="{'opacity':'1','background-image': 'url(' + assetUrl+item.celumimagesvariant_s.ImageCropUrl.CropUrl.medium + ')'}">
+                        <img data-share-src [src]="assetUrl+item.celumimagesvariant_s.ImageCropUrl.CropUrl.medium" class="img-responsive img-zoom " [alt]="item.celumimagesvariant_s.ImageCropUrl.AltText" [title]="item.title" />
+                        <div class="mu-item__gradient"></div>
+                    </figure>
+                </div>
+            </a>
+           <!--  <div class="mu-item__sponsor" data-ng-if="!hidePanels" data-ng-include="'/clientviews/common/cardTopPanel.html'+buildRevision" onload="tagType='tag-article';classSet=classSet;item=item;"></div> -->
+            <div class="mu-item__info" *ngIf="item.shortheadline_t">
+                <a [href]="item.destinationurl_s" data-card="true">
+                    <h2 class="mu-item__title" data-share-title  *ngIf="item.shortheadline_t">
+                    {{item.shortheadline_t}}
+                    <span class="screenreader">{{item.contenttype_t}}</span>
+                    </h2>
+                </a>
+                <p class="mu-item__teasure" data-share-desc  *ngIf="item.teaser_t">
+                    {{item.teaser_t}}
+                </p>
+            </div>
+            <!-- <div class="statsbar" data-ng-if="!hidePanels" data-ng-include="'/clientviews/common/cardBottomPanel.html'+buildRevision" onload="item=item;"></div> -->
+        </div>
+    </div>
+</div>

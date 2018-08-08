@@ -1,0 +1,128 @@
+//TO DO: Need to do as per styleguide
+%gradient {
+    @include percentage-value(width, 100);
+    @include percentage-value(height, 100);
+    @include position(absolute);
+    @include overflow(hidden);
+    @include bottom(0);
+}
+%hero-gradient{
+    height: 100%;    
+    background: rgba(57, 52, 52, 0.1);
+    background: -webkit-linear-gradient(5deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 60%);
+    background: -ms-linear-gradient(5deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 60%);
+    background: -o-linear-gradient(5deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 60%);
+    background: linear-gradient(5deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 60%);
+}
+.mu-item__gradient {
+    @extend %gradient;
+    @include card-gradient(bottom-to-top);
+    @include z-index(98);
+    @include breakpoint($small $max-xsmall) {
+        background:-webkit-linear-gradient(180deg, rgba(0,0,0,0) 20%,rgba(0,0,0,0.9) 80%);
+        background:-ms-linear-gradient(180deg,rgba(0,0,0,0) 20%,rgba(0,0,0,0.9) 80%);
+        background:-o-linear-gradient(180deg,rgba(0,0,0,0) 20%,rgba(0,0,0,0.9) 80%);
+        background:linear-gradient(180deg,rgba(0,0,0,0) 20%,rgba(0,0,0,0.9) 80%);
+        @include percentage-value(height,70);
+    }
+}
+
+.mu-item__tint {
+    @extend %gradient;
+    @include card-gradient(tint);
+    @include percentage-value(height, 100);
+    @include z-index(99);
+}
+
+.gradient-card-left {
+    @include card-gradient(left);
+    @extend %img-responsive;
+    &:hover img {
+        @extend %img-transition-hover;
+    }
+}
+
+.gradient-card-right {
+    @extend %gradient;
+    @include card-gradient(right);
+    @extend %img-responsive;
+    &:hover img {
+        @extend %img-transition-hover;
+    }
+}
+
+.gradient-card-top {
+    @extend %gradient;
+    @include card-gradient(top);
+    @extend %img-responsive;
+    &:hover img {
+        @extend %img-transition-hover;
+    }
+}
+
+.gradient-card-bottom {
+    @extend %gradient;
+    @include card-gradient(bottom);
+    @extend %img-responsive;
+    &:hover img {
+        @extend %img-transition-hover;
+    }
+}
+
+.gradient-card-bottom-left {
+    @extend %gradient;
+    @include card-gradient(bottom-left);
+    //@extend %img-responsive;
+    &:hover img {
+        // @extend %img-transition-hover;
+    }
+}
+
+.gradient-card-bottom-right {
+    @extend %gradient;
+    @include card-gradient(bottom-right);
+    @extend %img-responsive;
+    &:hover img {
+        @extend %img-transition-hover;
+    }
+}
+
+.gradient-card-top-left {
+    @extend %gradient;
+    @include card-gradient(top-left);
+    @extend %img-responsive;
+    &:hover img {
+        @extend %img-transition-hover;
+    }
+}
+
+.gradient-card-top-right {
+    @extend %gradient;
+    @include card-gradient(top-right);
+    @extend %img-responsive;
+    &:hover img {
+        @extend %img-transition-hover;
+    }
+}
+
+.mu-item__gradient__poll {
+    background-image: linear-gradient(200deg, rgba(0, 0, 0, 0), rgba(71, 19, 19, 0.52) 25%, #ba0000);
+}
+
+.mu-item__gradient__quiz {
+    background-image: linear-gradient(200deg, rgba(0, 0, 0, 0), rgba(71, 19, 19, 0.52) 25%, #ba0000);
+    transform: rotate(-180deg);
+}
+
+.mu-item__gradient__full {
+    @include percentage-value(width, 100);
+    @include percentage-value(height, 100);
+    @include position(absolute);
+    background-image: linear-gradient(30deg, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.6) 0%, #000000);
+}
+
+.mu-item__gradient-radial {
+    @extend %gradient;
+    @include radial-gradient($start-color, $end-color, 50%, 60%);
+    @include z-index(98);
+}

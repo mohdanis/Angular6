@@ -1,0 +1,27 @@
+// .infographics {
+//   & .mu-item__teasure {
+//     @include display(block);
+//     @include position(absolute);
+//     @include color($white);
+//     @include background-color($black);
+//     @include px-to-rem(bottom, 43);
+//     @include padding(10, 10, 10, 10);
+//     @include z-index(99);
+//     position: absolute !important;
+//     bottom:43px !important;
+//     color:#fff !important;
+//   }
+//   .mu-item__info {
+//     @include display(none);
+//   }
+
+// }
+
+// .grid-6 {
+//   & .infographics {
+//     .mu-item__teasure {
+
+//       @include display(block);
+//     }
+//   }
+// }

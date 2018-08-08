@@ -1,0 +1,122 @@
+.super-hero {
+    .loader-container {
+        @include display(none);
+        @include breakpoint($medium) {
+            @include padding(0);
+            @include px-to-rem(width, 66);
+            @include px-to-rem(height, 66);
+            @include position(absolute);
+            @include left(50, percent);
+            @include top(50, percent);
+            @include margin-left(-33);
+            @include margin-top(-33);
+            @include display(block);
+            @include z-index(99999);
+        }
+    }
+    @include cursor(pointer);
+    -moz-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    -webkit-transition: all 1s ease-out;
+    transition: all 1s ease-out;
+    @include percentage-value(width, 100); // @include percentage-value(height, 100);
+    height: 100vh;
+    @include position(relative); // background-size: cover !important;
+    // background-position: center !important;
+    @include background-color($mu-black);
+    .mu-item__gradient {
+        z-index: 9;
+        height: 100%; //background-color: rgba(57, 52, 52, .7);
+        // background-color: rgba(57, 52, 52, 0.1);
+        // background-image: -webkit-linear-gradient(5deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 60%);
+        // background-image: -ms-linear-gradient(5deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 60%);
+        // background-image: -o-linear-gradient(5deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 60%);
+        // background-image: linear-gradient(5deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 60%);
+    }
+    figure {
+        height: 100%;
+    }
+    & img {
+        @include percentage-value(width, 100);
+        @include percentage-value(height, 100);
+    }
+    &__wrapper {
+        width:auto;
+        //@include percentage-value(width, 100); //@include percentage-value(top, 50);
+        @include bottom(50);
+        @include position(absolute);
+        @include z-index(9999);
+        @include text-align(center);
+        @include padding-left(20);
+        @include padding-right(20);
+        @include breakpoint($medium) {
+            @include padding-left(40);
+            @include padding-right(40);
+        } //transform: translateY(-50%);
+        // .link-btn-white {
+        // } // .red-btn-skew {
+        //     @include pull-left;
+        //     background: transparent;
+        //     border: none;
+        //     @include padding-left(20);
+        //     @include padding-right(20);
+        //     @include breakpoint($medium) {
+        //         @include padding-left(40);
+        //         @include padding-right(40);
+        //     }
+        //     a {
+        //         @include padding(0,0,0,0);
+        //     }
+        // }
+    }
+    &__title {
+        @include color($white); //@include text-align(center);
+        @include text-align(left);
+        @include text-truncate-lines(2, 36, 0.95);
+        @include font-size(36);
+        @include breakpoint($medium) {
+            @include text-truncate-lines(2, 56, 1);
+        }
+        //word-break: break-all; // @include padding-left(20);
+        // @include padding-right(20);
+        // @include breakpoint($medium) {
+        //     @include padding-left(40);
+        //     @include padding-right(40);
+        // }
+        @include primary-regular;
+        @include text-transform(uppercase);
+        @include margin-bottom(12);
+    }
+    &__video-wrapper {
+        @include percentage-value(width, 100);
+        @include important(position, absolute);
+    }
+}
+
+.super-hero__bottom {
+    @include percentage-value(width, 100);
+    @include px-to-rem(height, 44);
+    @include background-color($black, 0.3);
+    @include text-align(center);
+    @include bottom(0);
+    @include position(absolute);
+    @include text-align(center);
+    z-index: 9;
+    i {
+        @include px-to-rem(width, 35);
+        @include px-to-rem(height, 35);
+        @include margin-auto(0 auto);
+    }
+}
+
+.slide__up {
+    @include px-to-rem(width, 27);
+    @include px-to-rem(height, 16);
+    @include margin-top(10);
+    @include margin-left(auto);
+    @include margin-right(auto);
+    @include margin-bottom(0);
+    @include cursor(pointer);
+}
+
+////////////li-child/////////

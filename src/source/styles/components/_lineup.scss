@@ -1,0 +1,595 @@
+%lineup__info {
+    @include span(6 of 6);
+    @include border-bottom(1, solid, $gray-lightest);
+    @include padding(70, 16, 20, 16);
+    @include breakpoint($medium) {
+        @include padding(70, 32, 20, 32);
+    }
+}
+
+%lineup__info_title {
+    @include pull-left;
+    @include span(4 of 6 0);
+    @extend %txt-uppercase;
+    @include tertiary-regular;
+    //@include line-height(1.13);
+    @include font-size(16);
+    @include color($default-text-color);
+    @include font-weight(600);
+    @include line-height(18px);
+    @include margin-bottom(5);
+    &:before {
+        @include border-top(2, solid, $brand-color);
+        @include position(absolute);
+        @include px-to-rem(width, 21);
+        content: '';
+        @include margin-top(-10);
+    }
+}
+
+%lineup__info_teasure {
+    @include span(5 of 6 0);
+    @include font-size(16);
+    @include color($default-text-color);
+    @include secondry-regular;
+    @include line-height(1.38);
+    @include breakpoint($medium) {
+        @include span(12 of 12 0);
+    }
+}
+
+%lineup__tab {
+    //@include span(6 of 6 0);
+    @include border-bottom(1, solid, $gray-lightest);
+    @include breakpoint($medium) {
+        @include border-bottom(0, solid, $gray-lightest);
+    } // @include pull-left;
+    @include position(relative);
+    @include percentage-value(width, 90);
+    @include margin-auto(0);
+}
+
+%team__tab1 {
+    @include pull-left;
+    @include span(3 of 6 0);
+    cursor: pointer;
+    @include padding(0, 0, 0, 10);
+    @include breakpoint($medium) {
+        @include padding(20, 0, 0, 10);
+    }
+    @include position(relative);
+    &:focus {
+        outline-width: 0px;
+    }
+    box-sizing: border-box;
+    li {
+        @include display(none);
+        @include pull-right;
+        // @include line-height(1.14);
+        // @include margin-right(0);
+        // @include text-align(center);
+        // @extend %txt-uppercase;
+        // width: 100%;
+        // letter-spacing: 1.6px;
+        // @include font-size(14);
+        // @include font-weight(400);
+        // @include pull-right;
+        // @include tertiary-regular;
+        @include breakpoint($medium) {
+            @include display(inline-block);
+            width: auto;
+            @include line-height(3);
+            @include margin-right(20);
+            @include margin-top(0);
+        }
+    }
+    li:last-child {
+        @include display(inline-block);
+        @include margin-top(15);
+        @include padding-right(15);
+        @include breakpoint($medium) {
+            @include margin-top(10);
+        }
+        h3 {
+            &.team-heading {
+                @include primary-bold;
+                @include font-size(24);
+                @include breakpoint($medium) {
+                    @include primary-bold;
+                    @include font-size(32);
+                }
+            }
+        }
+    }
+}
+
+%team__tab2 {
+    @include pull-left;
+    @include text-align(left);
+    @include margin(0, 0, 0, 0);
+    @include span(3 of 6 0);
+    cursor: pointer;
+    @include padding(0, 20, 0, 0);
+    @include breakpoint($medium) {
+        @include padding(20, 20, 0, 0);
+    }
+    @include position(relative);
+    &:focus {
+        outline-width: 0px;
+    }
+    box-sizing: border-box;
+    li {
+        @include opacity(0.6);
+        @include text-align(center);
+        @extend %txt-uppercase;
+        @include margin-top(15);
+        @include pull-left; 
+        // @include line-height(1.14);
+        // @include display(block);
+        // width: 100%;
+        // @include tertiary-regular;
+        // @include pull-left;
+        // @include color($mu-black);
+        // letter-spacing: 1.6px;
+        // @include margin-left(0);
+        // @include font-size(14);
+        // font-weight: 400;
+        display: none;
+        @include breakpoint($medium) {
+            @include display(inline-block);
+            width: auto;
+            @include line-height(3);
+            @include margin-left(20);
+            @include margin-top(0);
+        }
+    }
+    li:last-child {
+        @include display(inline-block);
+        @include margin-top(15);
+        @include padding-left(15);
+        @include breakpoint($medium) {
+            @include margin-top(10);
+        }
+        h3 {
+            &.team-heading {
+                @include primary-bold;
+                @include font-size(24);
+                @include breakpoint($medium) {
+                    @include primary-bold;
+                    @include font-size(32);
+                }
+            }
+        }
+    }
+}
+
+%active {
+    @include border-bottom(4, solid, $brand-color);
+    opacity: 1 !important; //@include percentage-value(width,49);   
+    @include span(3 of 6 0);
+    content: '';
+    @include left(0);
+}
+
+.team__tab1 img,
+.team__tab2 img {
+    //@include px-to-rem(width, 40);
+    @include px-to-rem(height, 54);
+}
+
+%team__verses {
+    @include pull-left;
+    @include secondry-regular;
+    color: #1a1a1a;
+    @include margin-left(49.2,percent);
+    @include top(30);
+    @include position(absolute);
+    @include font-size(16);
+    @include font-weight(400);
+    @include line-height(1.13);
+    &:before {
+        @include border-top(8, solid, #000);
+        @include position(absolute);
+        @include px-to-rem(width, 2);
+        content: '';
+        @include margin-left(7);
+        @include margin-top(-11);
+        @include opacity(0.2);
+    }
+    &:after {
+        @include border-top(8, solid, #000);
+        @include position(absolute);
+        @include px-to-rem(width, 2);
+        content: '';
+        @include margin-top(21);
+        @include margin-left(-9);
+        @include opacity(0.2);
+    }
+}
+
+%lineup__time_line {
+    @include span(6 of 6 0);
+    @include text-align(center);
+    @include pull-left;
+    @include margin-top(20); //@include padding(20, 20, 20, 20);
+    li {
+        @include font-size(16);
+        @include color($mu-black);
+        @include secondry-regular; //@include font-weight(600);
+        @include line-height(1.38);
+
+        img {
+            height: auto; 
+            width: auto; 
+            @include px-to-rem(max-height,60);
+            @include px-to-rem(max-width,160);
+
+        }
+    }
+}
+
+%lineup__team {
+    //@include span(6 of 6 0);
+    width: 90%;
+    @include margin-auto(0 auto);
+}
+
+%lineup__team-members {
+    @include position(relative);
+    @include text-align(center);
+    @include percentage-value(width, 100);
+    @include pull-left;
+    @include padding(20, 0, 20, 0);
+    @include breakpoint($medium) {
+        @include padding(20, 10, 0, 10);
+        @include background-color($linup-bg);
+    }
+    @include margin-auto(0 auto);
+    @include px-to-rem(min-height, 300);
+    li {
+        @include span(6 of 6 0);
+        @include pull-left;
+    }
+    .teamFormation {
+        //@include margin-top(-30);
+        @include position(relative);
+    }
+    .golkeeper_place {
+        @include display(none);
+        @include breakpoint($medium) {
+            @include display(block);
+            @include px-to-rem(width, 220);
+            @include border(1, solid, #ccc);
+            border-top: 0;
+            @include px-to-rem(height, 46);
+            @include margin-auto(-19 auto);
+        }
+    }
+    .ground_halfCircle {
+        @include display(none);
+        @include breakpoint($medium) {
+            @include display(block);
+            @include pull-left;
+            width: 100%;
+            @include margin-top(-75);
+            div {
+                @include border(1, solid, #ccc);
+                border-bottom: 0;
+                @include px-to-rem(width, 200);
+                @include px-to-rem(height, 110);
+                @include margin-auto(0 auto);
+                border-bottom-left-radius: 0 !important;
+                border-bottom-right-radius: 0 !important;
+                @include calculated-radius(50, 100);
+            }
+        }
+    }
+}
+
+%lineup__team-icons {
+    @include percentage-value(width, 100);
+    @include px-to-rem(height, 50);
+    @include margin-auto(0 auto);
+    @include padding-left(20); // @include display(inline-block);
+    @include display(inline-table);
+    @include breakpoint($medium) {
+        @include padding-left(0);
+    }
+    .icon-avatar {
+        @include margin-left(8);
+        @include breakpoint($medium) {
+            @include margin-left(0);
+        }
+    }
+    &:nth-child(odd) {
+        @include background-color($white-lighter);
+    }
+    @include padding-top(6);
+    @include breakpoint($medium) {
+        @include padding-top(0);
+        @include px-to-rem(width, 100);
+        @include px-to-rem(height, 100);
+        &:nth-child(odd) {
+            // @include background-color($linup-bg);
+            background: none;
+        }
+    }
+    span {
+        @include pull-left;
+        @include margin-left(10);
+        @include breakpoint($medium) {
+            @include margin-left(33,percent);
+            @include margin-right(33,percent);
+            @include margin-top(0);
+            @include margin-bottom(0);
+        }
+    }
+    img {
+        background-size: cover !important;
+        background-position: top center !important;
+        text-indent: 99999px !important;
+        border-radius: 4px;
+        @include pull-left;
+        @include px-to-rem(width, 28);
+        @include px-to-rem(height, 36);
+        @include breakpoint($medium) {
+            @include px-to-rem(width, 35);
+            @include px-to-rem(height, 56);
+        }
+    }
+    & .icon-avatar {
+        @include px-to-rem(width, 28);
+        @include px-to-rem(height, 36);
+        background-position: -10px 0;
+        @include breakpoint($medium) {
+            @include px-to-rem(width, 35);
+            @include px-to-rem(height, 56);
+            background-position: -63px -74px;
+        }
+        text-indent: 99999px !important;
+    }
+}
+
+%player-name {
+    @include secondry-regular;
+    @include font-size(16);
+    @include font-weight(400);
+    letter-spacing: -0.2px;
+    @include text-align(center);
+    @include color($mu-black);
+    @include margin-top(4);
+    @include pull-left;
+    @include margin-left(8);
+    @extend %txt-uppercase;
+    @include breakpoint($medium) {
+        @include margin-left(0);
+        @include pull-none;
+        @include font-size(14);
+    }
+}
+
+%player-id {
+    @include display(block);
+    @include text-align(center);
+    @include line-height(30,px);
+    text-indent: -30px;
+    @include margin-left(20);
+    @include secondry-regular;
+    @include font-size(16);
+    @include font-weight(600);
+    @include color(#1a1a1a);
+    @include breakpoint($medium) {
+        @include display(none);
+    }
+}
+
+%lineup__team-count-text {
+    @include display(none);
+    @include breakpoint($medium) {
+        @include display(block);
+        @include position(absolute);
+        @include left(45);
+        @include top(40);
+        li {
+            @include px-to-rem(height, 30);
+            @include font-size(16);
+            @include font-weight(400);
+            @include secondry-semibold;
+            &:nth-child(2) {
+                @include font-size(48);
+                font-weight: bold;
+                @include color(#C81617);
+                @include primary-bold;
+                &:before {
+                    @include border-top(1, solid, #C81617);
+                    @include position(absolute);
+                    @include px-to-rem(width, 30);
+                    content: '';
+                    @include margin-left(0);
+                }
+                &:after {
+                    @include border-top(1, solid, #C81617);
+                    @include position(absolute);
+                    @include px-to-rem(width, 30);
+                    content: '';
+                    @include margin-top(46);
+                    @include margin-left(-30);
+                }
+            }
+        }
+    }
+    @include breakpoint($medium $max-medium) {
+        @include left(-10,important);
+    }
+}
+
+%lineup__sub-player {
+    @include percentage-value(width, 100);
+    @include pull-left;
+    @include padding(0, 0, 0, 0);
+    @include breakpoint($medium) {
+        @include padding(10, 10, 10, 16);
+    }
+    @include margin-bottom(50);
+    li {
+        @include display(inline-block);
+        @include pull-left;
+        @include font-size(14);
+        @include margin-top(4);
+        letter-spacing: -0.2px;
+        @include color(#1a1a1a);
+        @include percentage-value(width, 100);
+        @include text-align(center);
+        @include breakpoint($medium) {
+            @include margin-top(12);
+        }
+        img {
+            @include margin-right(10);
+        }
+        span {
+            @include text-transform(capitalize);
+        }
+    } // li:first-child {
+    //     @include display(none);
+    //     @include breakpoint($medium) {
+    //         @include display(block);
+    //         @include margin-top(0);
+    //     }
+    // }
+    @include breakpoint($medium) {
+        @include padding(20, 20, 20, 32);
+    }
+}
+
+/////////////////////
+.lineup {
+    .mu-item__top-panel {
+        @include margin-bottom(61);
+    }
+    &__info {
+        @extend %lineup__info;
+    }
+    &__title {
+        @extend %lineup__info_title;
+        @extend %heading1;
+    }
+    &__teasure {
+        @extend %lineup__info_teasure;
+    }
+    &__tab {
+        @extend %lineup__tab;
+    }
+    .team__verses {
+        @extend %team__verses;
+    }
+    .team__tab1 {
+        @extend %team__tab1;
+        @include padding-right(20);
+        @include padding-bottom(20);
+        @include opacity(0.6);
+        span {
+            &.teamA-img {
+               @include pull-right;
+               @include display(none);
+               @include breakpoint($medium)  {
+                    @include display(block);
+               }
+            }
+            &.teamA-name {
+               @include pull-right; 
+               span.team-heading{
+                    @include margin-right(25);
+                    @include margin-top(15);
+                    @include font-size(32);
+                    @include primary-bold;
+                    @include pull-right;
+                    @include breakpoint($small $max-xsmall)  {
+                        @include font-size(24);
+                        @include primary-bold;
+                    }
+
+               }
+            }
+        }
+    }
+    .team__tab2 {
+        @extend %team__tab2;
+        @include padding-left(20);
+        @include padding-bottom(20);
+        @include opacity(0.6);
+        span {
+             &.teamB-img {
+               @include pull-left; 
+               @include display(none);
+               @include breakpoint($medium)  {
+                    @include display(block);
+               }
+            }
+             &.teamB-name {
+               @include pull-left;
+               span.team-heading{
+                    @include margin-left(25);
+                    @include margin-top(15);
+                    @include font-size(32);
+                    @include primary-bold;
+                    @include pull-left;
+                    @include breakpoint($small $max-xsmall)  {
+                        @include font-size(24);
+                        @include primary-bold;
+                        @include margin-left(0);
+                    }
+               }
+            }
+        }
+    }
+    .active {
+        @extend %active;
+    }
+    &__time_line {
+        @extend %lineup__time_line;
+    }
+    &__team {
+        @extend %lineup__team;
+    }
+    &__team-members {
+        @extend %lineup__team-members;
+    }
+    &__team-icons {
+        @extend %lineup__team-icons;
+    }
+    .player-id {
+        @extend %player-id;
+    }
+    &__team-count-text {
+        @extend %lineup__team-count-text;
+    }
+    &__sub-player {
+        @extend %lineup__sub-player;
+    }
+    .player-name {
+        @extend %player-name;
+        text-transform: capitalize;
+    }
+    .stats-bar {
+        @extend %article__stats-bar;
+        @include border-top(1, solid, $gray-lightest);
+        @include px-to-rem(height, 48);
+        position: relative;
+        &__icons {
+            @extend %article__stats-bar_icons;
+        }
+    }
+    .mu-item__sponsor__wrapper {
+        span {
+            &:first-child {
+                @include display(none);
+            }
+        }
+    }
+    .lineup__team-info {
+        a {
+            @include percentage-value(width,100);
+            @include pull-left;
+        }
+    }
+}

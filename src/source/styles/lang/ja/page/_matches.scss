@@ -1,0 +1,8 @@
+.team-list {
+	.team-btn {        
+        @include font-size(10, en);     
+        @include breakpoint($xsmall) {
+            @include font-size(21, en);
+        }
+    }
+}

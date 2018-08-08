@@ -1,0 +1,392 @@
+/*Generic Form*/
+.generic-form {
+  @include margin-auto(0);
+  @include secondry-regular;
+  .travel__container {
+    @include top(0);
+  }
+
+  .contact-us__block h2{
+    @include margin-bottom(0);
+  }
+}
+
+.genericFormHeadings {
+  @include padding-top(30);
+  h2 {
+    @include font-size(40);
+    @include font-weight(bold);
+    @include text-align(left);
+    color: $mu-black;
+    @include primary-bold;
+    @include line-height(45,px);
+  }
+  p {
+    @include font-size(20);
+    @include font-weight(300);
+    @include text-align(left);
+    color: $vertical-strips;
+    @include secondry-regular;
+  }
+}
+
+.generic-form .contact-us__block {
+  @include margin-auto(0);
+}
+
+.generic_heading {
+  @include clear(left);
+  @include font-size(18);
+  @include font-weight(600);
+  @include line-height(1.22);
+  @include text-align(left);
+  color: $vertical-strips;
+  @include padding-top(48);
+}
+
+.generic_select, .generic_input {
+  border-bottom: 1px solid rgb(167, 167, 167) !important;
+  @include font-size(18);
+  @include margin-top(24);
+  @include margin-bottom(0);
+  @include padding(7,0,7,0, important);
+  @include secondry-regular;
+}
+
+.generic_select:focus, .generic_input:focus, .generic_textarea:focus {
+  outline: none;
+}
+
+.generic_select {
+ color: #797575 !important;
+  option {
+    color: $vertical-strips;
+  }
+}
+
+.generic_textarea {
+  width: 100%;
+  @include px-to-rem(height,90);
+  border: 8px solid #f8f8f8;
+  @include padding(10,10,10,10);
+  @include font-size(18,important);
+  @include margin-top(24);
+  @include margin-bottom(0);
+  @include secondry-regular;
+}
+
+.generic_doblleft {
+  width: 25%;
+  @include pull-left;
+}
+
+.generic_doblmid {
+  width: 45%;
+  @include pull-left;
+  box-sizing: border-box;
+  @include padding(0,10,0,10);
+}
+
+.generic_doblright {
+  width: 30%;
+  @include pull-left;
+}
+
+.generic_datepicker {
+  @include position(relative);
+  span.icon-caldendar {
+    @include display(block);
+    @include position(absolute);
+    @include right(0);
+    @include top(34);
+    @include secondry-regular;
+  }
+}
+
+.generic_upload {
+  @include display(inline-block);
+  @include position(relative);
+  @include px-to-rem(height,30);
+  width: 100%;
+  @include margin-top(24);
+  @include secondry-regular;
+  &:hover {
+    @include opacity(0.95);
+  }
+  input[type="file"] {
+    @include display(inline-block);
+    width: 100%;
+    @include px-to-rem(height,37);
+    @include opacity(0);
+    @include cursor(pointer);
+    @include position(absolute);
+    @include left(0);
+    @include z-index(2);
+  }
+}
+
+.generic_uploadButton {
+  width: 20%;
+  @include px-to-rem(height,30);
+  @include border-radius(4);
+  background-image: linear-gradient(to bottom, #ffffff, #f1f1f1);
+  border: solid 1px #efefef;
+  @include cursor(pointer);
+  @include display(inline-block);
+  box-sizing: content-box;
+  @include position(absolute);
+  @include right(0);
+  @include top(8);
+  @include font-style(italic);
+}
+
+.generic_fileName {
+  @include font-size(18);
+  border-bottom: solid 1px #a7a7a7;
+  @include padding(10,0,10,0);
+  @include display(inline-block);
+  width: 75%;
+  max-width: 100%;
+  color: #797575;
+  @include text-truncate;
+  word-wrap: break-word;
+  @include secondry-regular;
+}
+
+.generic_fileNameafter {
+  color: $vertical-strips;
+}
+
+.generic-checkbox_con {
+  @include margin-top(24);
+  @include secondry-regular;
+  .gencheckLabel {
+    @include padding-right(35);
+    @include padding-top(5);
+    width: 100%;
+  }
+  @include margin-top(24);
+}
+
+/* Large checkboxes */
+
+.generic-checkbox {
+  @include position(absolute);
+  @include opacity(0);
+  + label {
+    @include position(relative);
+    @include cursor(pointer);
+    @include padding(0);
+    width: 100%;
+    @include display(block);
+    &:after {
+      content: '';
+      @include margin-left(10);
+      @include display(inline-block);
+      vertical-align: middle;
+      @include px-to-rem(width,24);
+      @include px-to-rem(height,24);
+      background: $white;
+      border: 1px solid $mu-black;
+      @include pull-right;
+      @include margin-top(-3);
+    }
+  }
+  &:disabled + label:after {
+    box-shadow: none;
+    background: $border-color;
+  }
+  &:checked + label:before {
+    content: '';
+    @include position(absolute);
+    @include right(14);
+    @include top(9);
+    @include px-to-rem(width,2);
+    @include px-to-rem(height,2);
+    @include background-color($mu-black);
+    box-shadow: 2px 0 0 $mu-black, 4px 0 0 $mu-black, 4px -2px 0 $mu-black, 4px -4px 0 $mu-black, 4px -6px 0 $mu-black, 4px -8px 0 $mu-black;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+
+.generic_btnCon {
+  @include margin-top(40);
+  @include secondry-regular;
+}
+
+.generic_skewBtn {
+  transform: skew(-10deg);
+  @include display(inline-block);
+  @include padding(10,30,10,30);
+  @include font-size(14);
+  @include margin-right(20);
+}
+
+.gen_submitBtn {
+  background: $mu-red;
+  color: $white;
+  border: solid 1px #c70101;
+  transition: all 2s ease-out;
+  &:hover {
+    background: $mu-red-hover;
+  }
+}
+
+.gen_resetBtn {
+  background: $white;
+  color: $mu-black;
+  border: solid 1px #dddddd;
+}
+
+#generic_form {
+  .genericErrormsg {
+    color: $mu-red;
+  }
+  .genCaptcha_errormsg {
+    @include display(none);
+    color: $mu-red;
+    @include font-size(18);
+    @include padding-top(5);
+    @include secondry-regular;
+  }
+  .car__park__val{
+    @include margin-bottom(0);
+    @include margin-top(24);
+  }
+  label{
+    @include margin-bottom(0);
+    @include font-size(15);
+  }
+  .car__park__val li label{
+    @include margin-bottom(10);
+    @include font-size(16);
+  }
+  .generic-checkbox_con label span{
+    @include font-size(18);
+  }
+
+}
+
+.generic_succussmsg {
+  @include display(none);
+  color: $mu-green;
+  @include secondry-regular;
+}
+
+.generic_errormsg,
+.captch-error {
+  @include display(none);
+  color: $mu-red;
+  @include secondry-regular;
+}
+
+.genericformhide{
+  @include display(none);
+}
+
+.generic_thanku, .generic_reloginErr{
+  @include display(none);
+  @include secondry-regular;
+  .gen_thanks_heading1{
+    @include font-size(18);
+    @include line-height(1.22);
+    @include text-align(left);
+    color: #232323;
+    font-weight: 600;
+
+  }
+  .gen_thanks_heading2{
+    @include secondry-regular;
+    @include font-size(18);
+    @include line-height(1.22);
+    @include text-align(left);
+    color: #232323;
+    font-weight: 600;
+    @include padding-top(10);
+
+  }
+  .gen_thanks_content{
+    @include secondry-regular;
+    @include font-size(18);
+    @include line-height(1.22);
+    @include text-align(left);
+    color: #232323;
+    @include padding-top(50);
+
+  }
+  .gen_thanks_btn{
+    @include padding(30, 0, 10, 0);
+
+  }
+  .gen_thanks_btn a{
+    background-color: #1a1a1a;
+    @include padding(15, 40, 15, 40); 
+    transform: skew(-10deg);
+    display: inline-block;
+    color: #FFFFFF;
+    @include font-size(14);
+    letter-spacing: 0.9px
+  }
+  .gen_thanks_btntxt{
+    @include font-size(16);
+    @include line-height(1);
+    @include text-align(left);
+    color: #6d6d6d;
+  }
+  .gen_thanks_footer{
+    @include padding-top(60);
+    .gen_thanks_Dep1{
+      @include font-size(16);
+      @include line-height(1.14);
+      @include text-align(left);
+      color: #6d6d6d;
+      font-weight: 600;
+    }
+    .gen_thanks_Dep2{
+      @include font-size(14);
+      @include line-height(1.14);
+      @include text-align(left);
+      color: #6d6d6d;
+      font-weight: 600;
+      @include padding(15, 0, 15, 0);
+    }
+    .gen_thanks_Dep3{
+      @include font-size(14);
+      @include line-height(1.14);
+      @include text-align(left);
+      color: #6d6d6d;
+    }
+  }
+}
+
+
+ @include breakpoint($small $max-small){
+    .generic_doblleft {
+    width: 100%;
+  }
+  .generic_doblmid {
+    width: 100%;
+    @include padding(0);
+  }
+  .generic_doblright {
+    width: 100%;
+  }
+}
+#selectanyone {
+  @include pull-left;
+  width:100%;
+  color:#e76468!important;
+}
+.generic_filesupported{
+    position: absolute;
+    @include right(0);
+    margin-top: 15px;
+    font-size: 16px;
+    font-style: italic;
+}
+  #errorUploadFileTypeMessege,#errorUploadFileSizeMessege{
+    display: none;
+  }
+
+/*Generic Form end*/

@@ -1,0 +1,195 @@
+//Common Layout for articles
+%article {
+  @include position(relative);
+  @extend %full-width;
+  @extend %full-height;
+  figure {
+    @include position(relative);
+    @extend %full-width;
+    img {
+      @extend %full-height;
+      @extend %full-width;
+      @include pull-left;
+      @include z-index(9);
+    }
+  }
+}
+
+%article__info {
+  @extend %full-width;
+  @include position(absolute);
+  @extend %card-padding;
+  @include padding-bottom(0);
+  @include bottom(44);
+  @include z-index(99);
+}
+
+%article__teasure {
+  @extend %paragraph;
+  @include font-size(16);
+  @include line-height(1.4);
+  @include color($white);
+  @include pull-left;
+  clear: both;
+}
+
+%article__info_category {
+  @include margin(0, 0, 5, 0);
+  @include pull-left;
+  @include position(relative);
+  span {
+    @include color($white);
+    @include font-size(14);
+    @include quaternary-semibold;
+    @extend %font-bold;
+    @extend %txt-uppercase;
+    i {
+      @include border-top(2, solid, $brand-color);
+      @include position(absolute);
+      @include px-to-rem(width, 40);
+    }
+  }
+}
+
+%article__info_teasure {
+  @extend %paragraph;
+  @include font-size(16);
+  @include line-height(1.38);
+  @include color($vertical-strips);
+  @include span(6 of 6 0);
+  @include breakpoint($xsmall) {
+    @include margin(0, 0, 0, 0);
+  }
+  @include breakpoint($medium) {
+    @include span(12 of 12 0);
+  }
+}
+
+%article__info_title {
+  @include color($white);
+  @include pull-left;
+  @include span(6 of 6 0);
+  @extend %txt-uppercase;
+  clear: both;
+  @include position(relative);
+  @include breakpoint($medium) {
+    @include span(12 of 12 0);
+  }
+  &:before {
+    @include border-top(2, solid, $brand-color);
+    @include position(absolute);
+    @include px-to-rem(width, 61);
+    content: '';
+    @include top(-16);
+  }
+}
+
+//Common Css for grid mu-item and child
+%card-padding {
+  @include padding(20, 20, 0, 20);
+}
+
+%statsbar-padding {
+  @include padding(0, 20, 0, 20);
+  // @include breakpoint($xxlarge) {
+  //     @include padding(0, 24, 0, 24);
+  // }
+}
+
+%sponsor-padding {
+  @include padding(8, 8, 8, 8);
+}
+
+// %cover-img {
+//   background-size: cover !important;
+//   background-position: center !important;
+//   @include percentage-value(height, 100);
+// }
+
+// %cover-img-initial {
+//   background-size: cover !important;
+//   background-position: top center !important;
+//   @include percentage-value(height, 100);
+//   @include prefix-vendor(transform, scale(1.025) rotate(0.02deg), webkit ms o);
+// }
+
+//For Match Day cards
+%match-day {
+  @extend %article;
+  @extend %white-card;
+  @include margin(0, 0, 0, 0);
+}
+
+//Common article
+.mu-item {
+  @extend %article;
+  @extend %white-component;
+  @include pull-left;
+  &__wrapper {
+    @include px-to-rem(height, 376);
+    @include overflow(hidden);
+  }
+  &__info {
+    @extend %article__info;
+  }
+  &__title {
+    @extend %article__info_title;
+    @extend %heading1;
+    @include font-size(65);
+    @include breakpoint($medium) {
+      @include span(6 of 12 0);
+    }
+  }
+  &__teasure {
+    @extend %article__info_teasure;
+    @include color($white);
+  }
+  figure {
+    @extend %cover-img-initial;
+    @include breakpoint($medium) {
+      @include background-img-initial;
+    }
+    @include z-index(0);
+    img {
+      text-indent: -9999px;
+    }
+  }
+  .img-holder {
+    @include pull-left;
+    @include percentage-value(width, 100);
+    @include percentage-value(height, 100);
+    @include position(relative);
+    // .figure-component {
+    //   transition: all .1s linear;
+    //   transform: scale(0.95);
+    //   opacity: 0 !important;
+    // }
+    // .figure-component.figure-adaptive {
+    //   transform: scale(1);
+    //   opacity: 1 !important;
+    // }
+  }
+  &:not(.video) .img-holder figure {
+      @extend %cover-img-initial;
+      opacity: 0;
+      //transition: opacity 0.5s ease-out, transform .8s cubic-bezier(0.19,1,.22,1);
+      @extend %lazy-load-image-fade;
+    }
+  > a {
+    @include percentage-value(width, 100);
+    @include percentage-value(height, 100);
+    @include pull-left;
+  }
+}
+
+.child {
+  box-shadow: 0 1px 0 0 #f2f2f2;
+}
+
+//Match day cards
+.match-day {
+  @extend %match-day;
+  &__info {
+    @include padding(15, 15, 15, 15);
+  }
+}

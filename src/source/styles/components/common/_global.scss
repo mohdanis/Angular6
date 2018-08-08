@@ -1,0 +1,274 @@
+// Primary background colors
+.background-brand-color {
+    @extend %background-brand-color;
+}
+
+.background-history-color {
+    @extend %background-history-color;
+}
+
+.background-page {
+    @extend %background-page;
+}
+
+.background-black {
+    @extend %background-black;
+}
+
+.background-white {
+    @extend %background-white;
+}
+
+.background-gray {
+    @extend %background-gray;
+}
+
+.background-default {
+    @extend %background-default;
+}
+
+.background-text-color {
+    @extend %background-text-color;
+}
+
+//accent background color
+.background-info {
+    @extend %background-info;
+}
+
+.background-warning {
+    @extend %background-warning;
+}
+
+.background-success {
+    @extend %background-success;
+}
+
+.background-danger {
+    @extend %background-danger;
+}
+
+//Validation background color
+.background-positive {
+    @extend %background-positive;
+}
+
+.background-negative {
+    @extend %background-negative;
+}
+
+//paragraph fonts
+.small-paragraph {
+    @extend %paragraph-regular;
+}
+
+.small-bold-text {
+    @extend %small-bold-text;
+}
+
+// only for demo page
+.colorbox {
+    @extend %colorbox;
+    @include font-size(20);
+}
+
+.horizontal-nav {
+    @extend %horizontal-nav;
+}
+
+h4 {
+    @extend %new-heading4;
+}
+
+//Component height
+%component {
+    //height: $card-height;
+    @include padding(0, 0, 0, 0, important);
+    @extend %bottom-gutter;
+}
+
+%bottom-gutter {
+    @include breakpoint($small) {
+        @include px-to-rem(margin-bottom, 32);
+    }
+    @include breakpoint($xsmall) {
+        @include px-to-rem(margin-bottom, 32);
+    }
+    @include breakpoint($medium) {
+        @include px-to-rem(margin-bottom, 16);
+    }
+    @include breakpoint($large) {
+        @include px-to-rem(margin-bottom, 20);
+    }
+    @include breakpoint($xlarge) {
+        @include px-to-rem(margin-bottom, 24);
+    }
+    @include breakpoint($xxlarge) {
+        @include px-to-rem(margin-bottom, 30);
+    }
+}
+
+%row-gutter {
+    @include breakpoint($small) {
+        @include px-to-rem(margin-bottom, 12);
+    }
+
+    @include breakpoint($medium) {
+        @include px-to-rem(margin-bottom, 16);
+    }
+    @include breakpoint($large) {
+        @include px-to-rem(margin-bottom, 20);
+    }
+    @include breakpoint($xlarge) {
+        @include px-to-rem(margin-bottom, 24);
+    }
+    @include breakpoint($xxlarge) {
+        @include px-to-rem(margin-bottom, 30);
+    }
+}
+
+%card-large {
+    @include percentage-value(width, 100);
+    @include px-to-rem(height, 230);
+    @include breakpoint($xsmall) {
+        @include px-to-rem(height, 200);
+    }
+    @include breakpoint($medium) {
+        @include px-to-rem(height, 360);
+    } // @include breakpoint($large) {
+    //     @include px-to-rem(height, 520);
+    // }
+    @include breakpoint($xlarge) {
+        @include px-to-rem(height, 430);
+    }
+    @include breakpoint($xxlarge) {
+        @include px-to-rem(height, 430);
+    }
+    @include breakpoint($largest) {
+        @include px-to-rem(height, 700);
+    }
+}
+
+%white-component {
+    @extend %white-card;
+    @extend %component;
+    @extend %bottom-gutter;
+}
+
+%black-component {
+    @extend %black-card;
+    @extend %component;
+    @extend %bottom-gutter;
+}
+
+%red-component {
+    @extend %red-card;
+    @extend %component;
+    @extend %bottom-gutter;
+}
+
+.visually-hidden {
+    @extend %visually-hidden;
+}
+
+
+
+/* Closing Animation */
+
+.avatar {
+    background-image: url($base-path + "avatar.png");
+    background-position: 50% -50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #d8d8d8;
+    text-indent: 99999px !important;
+    [lang=ar] & {
+        text-indent: -99999px !important;
+    }
+    border: none !important;
+}
+
+.icon-camera-white {
+    @include margin-top(6);
+    @include margin-right(7);
+}
+.content-center {
+    @include breakpoint($small $max-xsmall){
+       @include text-align(center);
+    }
+    
+}
+
+strong {
+    font-weight: bold;
+}
+
+i,
+em {
+    font-style: italic;
+}
+
+twitterwidget[id^="twitter-widget-"] {
+    width: 100% !important;
+    @include margin-top(0, important);
+
+    &::shadow .EmbeddedTweet {
+        max-width: none !important;
+        border: none !important;
+    }
+
+    &::shadow .TweetAction {
+        pointer-events: none;
+        cursor: default;
+    }
+
+    &::shadow .Tweet-action {
+        cursor: default;
+    }
+
+    &::shadow .Tweet-actions {
+        position: relative;
+        @include top(14);
+    }
+
+    &::shadow .tweet-InformationCircle {
+        display: none;
+    }
+
+    &::shadow .EmbeddedTweet-tweet {
+        border: none !important;
+    }
+
+    &::shadow .MediaCard-widthConstraint {
+        max-width: 100% important;
+    }
+}
+
+.twitter-tweet.twitter-tweet-rendered {
+    width: 100% !important;
+    @include margin-top(0, important);
+}
+
+.mu-item__sponsor {
+    @include z-index(99);
+}
+
+.superhero-dfp {
+    &.containsad {       
+        @include padding-top(15);
+        @include padding-bottom(15);
+    }
+    @include text-align(center);
+    @include background-color($player-bg);
+    .dfp-minheight {
+        @include px-to-rem(min-height,25);
+        @include percentage-value(width,100);
+        @include display(block);
+    }    
+}
+
+.no-img {
+    @include opacity(0);
+    //@include display(none);
+    //@include px-to-rem(height, 0);
+}

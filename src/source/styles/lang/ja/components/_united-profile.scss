@@ -1,0 +1,6 @@
+.united-profile__details .profile__wrapper .profile__info__left .profile-dob p,
+.united-profile__details .profile__wrapper .profile__info__right .profile-signed-date p,
+.united-profile__details .profile__wrapper .profile__info__left .profile-age p,
+.united-profile__details .profile__wrapper .profile__info__right .profile-tshirt-no p {
+    @include font-size(28, en);
+}

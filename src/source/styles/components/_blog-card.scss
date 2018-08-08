@@ -1,0 +1,644 @@
+%matchday-blog-card {
+    @include position(relative);
+    @extend %row-gutter; //From common
+    @include px-to-rem(min-height, 170);
+    @include pull-left;
+    @include background-color($white);
+    @include percentage-value(width, 100);
+    @include breakpoint($xsmall) {
+        @include px-to-rem(min-width, 300);
+    }
+    border: 1px solid rgba(232,232,232,.9);
+}
+
+%matchday-title {
+    @include font-size(18);
+    @include font-weight(600);
+    @include line-height(1.44);
+    @include secondry-semibold;
+    @include color($vertical-strips);
+    &:before {
+        ////@include border-top(1, solid, $grey-light-line);
+        @include position(absolute);
+        @include percentage-value(width, 100);
+        content: '';
+        @include top(-24);
+        @include breakpoint($xsmall) {
+            border: none;
+        }
+    }
+}
+
+%matchday-blogs__left-info {
+    @include display(block);
+    @include padding(0,0,0,0);
+    @include percentage-value(width, 100);
+    @include pull-left;
+    @include text-align(left);
+    @include breakpoint($small $max-small) {
+        @include border-bottom(1, solid, $grey-light-line, 0.4);
+        @include padding-bottom(10);
+    }
+    @include breakpoint($xsmall) {
+        @include padding(0, 16, 0, 16);
+        @include border-right(1, solid, $grey-light-line, 0.4);
+        @include display(inline-block);
+        @include percentage-value(width, 30);
+        @include pull-left;
+        @include text-align(right);
+        @include padding-top(6);
+    }
+    @include breakpoint($large) {
+        @include percentage-value(width, 22);
+    }
+}
+
+%matchday-blogs__right-info {
+    @include span(6 of 6 0);
+    @include display(block);
+    @include margin-top(12);
+    @include breakpoint($xsmall) {
+        @include margin-top(0);
+        @include percentage-value(width, 70);
+        @include display(inline-block);
+    }
+
+    @include breakpoint($large) {
+        @include percentage-value(width, 78);
+    }
+    .blogs__teasure {
+        @include font-size(20);
+        @include color($default-text-color);
+        //@include margin-top(12);
+        @include secondry-light;
+        @include line-height(1.5);
+        @include font-weight(300);
+        white-space: normal;
+        @include pull-left;
+        @include percentage-value(width,100);
+    }
+    .blog-card {
+        h2,
+        p.access {
+            @include display(none);
+        }
+        .noaccess {
+            @include breakpoint($small $max-xsmall) {
+                @include text-transform(uppercase);
+                @include primary-bold;
+                @include font-size(24);
+                @include line-height(22,px);
+            }
+
+            @include breakpoint($medium) {
+                @include margin-top(14);
+                @include margin-bottom(14);
+            }
+            &:empty {
+                @include display(none);
+            }
+        }
+        .kickoff {
+            @include breakpoint($small $max-xsmall){
+                @include display(none,important);
+                + .blogs__title {
+                     @include margin-top(0);
+                }
+            }
+            
+        }
+    }
+}
+
+%matchday-blogs__title-data {
+    @include tertiary-semibold;
+    @include font-size(12);
+    @include line-height(1.17);
+    @include color($mu-black);
+    @include pull-left;
+    @include percentage-value(width, 100);
+    @extend %txt-uppercase;
+    span {
+        &:first-child {
+            @include display(inline-block);
+            @include breakpoint($small $max-small) {
+                @include margin-left(10);
+                @include margin-top(32);
+                @include line-height(1.17);
+                @include text-align(left);
+            }
+            @include breakpoint($xsmall) {
+                @include margin(0);
+                @include margin-bottom(15);
+                @include text-align(right);
+                @include percentage-value(width, 100);
+                word-break: break-all;
+            }
+        }
+        @include breakpoint($xsmall) {
+            @include display(block);
+            @include pull-right;
+            @include margin-top(5);
+            //@include percentage-value(width,100);
+        }
+    }
+    @include breakpoint($xsmall) {
+        @include pull-right;
+    }
+}
+
+.blog-icon {
+    border-radius: 50%;
+    width: 54px;
+    height: 54px;
+    @include breakpoint($xsmall) {
+        width: 76px;
+        height: 76px;
+    }
+    background-color: #d8d8d8; // box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    // border: solid 2px #ffffff;
+    background-position: top;
+    background-size: cover;
+    @include pull-left;
+    @include margin-right(15);
+    @include margin-left(0);
+    @include breakpoint($xsmall) {
+        @include pull-right;
+        @include margin-left(16);
+        @include margin-right(0);
+    }
+}
+blog-card {
+   .mu-sponsor {
+        @include pull-right;
+    }
+}
+.matchday-blog-card {
+    @extend %matchday-blog-card;
+    .mu-item__sponsor__wrapper {
+        //@include pull-right;
+        @include margin-top(8);
+        @include margin-right(8);
+        @include background-color($player-bg);
+        span {
+            &:first-child {
+                @include display(none);
+            }
+        }
+    }
+    .matchday-blogs__info {
+        //TODO: need to be match with zeplin design
+        height: 100px;
+        @include margin(24, 20, 0, 20);
+        @include breakpoint($xsmall) {
+            @include margin(48, 0, 0, 0);
+        } // @include margin-left(16);
+        .blog-card {
+            @extend %blockquotes;
+            @include pull-left;
+            @include padding(0,0,0,0);
+            @include percentage-value(width, 100);
+            &:before {
+                @include breakpoint($small) {
+                    border: none;
+                }
+            }
+            @include breakpoint($xsmall) {
+                @include padding(0, 20, 0, 20);
+            } // @include breakpoint($large) {
+            //     @include padding(0, 20, 0, 20);
+            // }
+            h2,
+            p.access {
+                //@include display(none);
+                @include primary-bold;
+                @include font-size(32);
+                @include line-height(0.88);
+                @include margin-bottom(9);
+                @include color($white); 
+                @include margin-bottom(15,important);
+                // @extend %txt-uppercase;
+            }
+            .blogs__title {
+                @extend %matchday-title;
+            }
+            label.blogs__title {
+                &:empty {
+                    @include display(none);
+                }
+            }
+        }
+        .matchday-blogs__left-info {
+            @extend %matchday-blogs__left-info;
+        }
+        .matchday-blogs__post-time {
+            @include font-size(12);
+            @include tertiary-semibold;
+            @include font-weight(600);
+            @include color($mu-black);
+            @include margin-bottom(20);
+        }
+        .matchday-blogs__title-data {
+            @extend %matchday-blogs__title-data;
+            .matchday-blogs__tag {
+                @include pull-left;
+                @include breakpoint($xsmall) {
+                    @include pull-right;
+                }
+            }
+            img {
+                @include display(none);
+            }
+        }
+        &.Comment {
+            .matchday-blogs__left-info {
+                // @include breakpoint($small $max-small){
+                //    @include margin-top(-24); 
+                // }
+            }
+            .matchday-blogs__title-data {
+                span {
+                    @include percentage-value(width,100);
+                }
+                img {
+                    @include display(block,important);
+
+                }
+                img:not([src]) {
+                    @include display(block,important);
+                }
+                span.authorname {
+                    @include font-size(14);
+                    @include secondry-regular;
+                    @include text-transform(initial);
+                    @include breakpoint($small $max-small){
+                        @include pull-left;
+                        @include margin-top(-18);
+                        @include padding-left(50);
+                        @include font-size(16);
+                    }
+                }
+                span.Comment{
+                    @include display(none);
+                }
+            }
+
+        }
+    }
+    .matchday-blogs__right-info {
+        @extend %matchday-blogs__right-info;
+    }
+    .statsbar {
+        // @include border-top(1, solid, $white-lighter);
+        @include position(relative);
+        height: 44px;
+        @include pull-left;
+        @include margin-top(10);
+        li > span {
+            // @include display(block);
+            @include pull-none;
+            @include vertical-align;
+        }
+    }
+}
+
+.matchday-blog-card {
+    .matchday-blogs__post-time {
+        @include font-size(14);
+        @include line-height(1.29);
+    }
+    .player__headshot {
+        width: 42px;
+        height: 56px;
+        @include breakpoint($xsmall) {
+            width: 61px;
+            height: 81px;
+        }
+    }
+    .matchday-blog-card__MUGoal {
+        @include breakpoint($xsmall) {
+            @include display(none, important);
+        }
+        @include font-size(72);
+        @include color($white);
+        @include margin-left(15);
+        @include primary-bold;
+        @include line-height(0.79);
+        @include pull-left(important);
+        vertical-align: top;
+    }
+    .matchday-blogs__title-data img {
+        @include pull-left;
+        @include breakpoint($xsmall) {
+            @include pull-right;
+        }
+    }
+    .matchday-blogs__info {
+        .blog-card h2,
+        .blog-card p.access {
+            @include font-size(24); //@include margin-bottom(20);
+            @include breakpoint($xsmall) {
+                @include font-size(40);
+            }
+        }
+        .matchday-blogs__post-time {
+            @include font-size(14);
+        }
+    }
+    &.dark-blog .matchday-blogs__title-data .matchday-blogs__tag {
+        @include margin-right(0);
+    }
+}
+
+//
+// New card design changed by RK...
+//
+%common-blog {
+    .blog-card {
+        h2,
+        p.access {
+            @include display(block);
+            @include color($white);
+            @include primary-bold;
+            @include breakpoint($small $max-small) {
+                @include font-size(24);
+                @include line-height(22,px);
+                @include pull-left; //@include padding-top(10);
+            }
+            @include breakpoint($xsmall) {
+                @include font-size(40);
+                @include line-height(36,px);
+            }
+            @include margin-bottom(0);
+            &:before {
+                @include border-left(1, solid, $white, 0.4);
+                @include breakpoint($xsmall) {
+                    border: none;
+                }
+            }
+            &:empty {
+                @include margin(0,0,0,0,important);
+            }
+            &:empty+label {
+                @include margin-top(0,important);
+            }
+        }
+        .blogs__title {
+            @include color($white);
+            @include font-size(18);
+            @include secondry-semibold;
+            @include margin(0, 0, 10, 0);
+
+            // &.ht,
+            // &.HT,
+            // &.FT,
+            // &.ft {
+            //     @include display(block);
+            //     @include breakpoint($medium) {
+            //         @include display(none);
+            //     }
+            // }
+        }
+        .blogs__teasure {
+            @include color($white);
+            @include secondry-light;
+            @include font-size(20);
+            @include line-height(30,px);
+            @include margin-top(0);
+        }
+        h2.match-time,
+        p.match-time.access {
+            @include display(none);
+            @include breakpoint($xsmall) {
+                @include display(block);
+            }
+        }
+        h2.match-result,
+        h2.match-result.access {
+            @include breakpoint($xsmall) {
+                @include display(none);
+            }
+        }
+    }
+    .matchday-blogs__title-data {
+        .match_time {
+            @include color($white);
+            @include primary-bold;
+            @include font-size(40);
+            @include line-height(36,px);
+            @include display(block);
+            @include margin-top(10);
+            @include breakpoint($xsmall) {
+                @include display(none);
+            }
+        }
+        .matchday-blogs__tag {
+            @include margin-right(10);
+        }
+    }
+    .matchday-blogs__left-info {
+        @include breakpoint($small $max-small) {
+            @include display(table);
+        }
+    }
+}
+
+%background-color-blog {
+    .matchday-blogs__post-time {
+        @include color($white);
+        @include margin-bottom(15);
+    }
+    .matchday-blogs__title-data {
+        span {
+            &:first-child {
+                @include display(none);
+            }
+        }
+    }
+}
+
+.matchday-blog-card {
+    &.red-blog {
+        @include background-color($mu-red);
+        @extend %common-blog;
+        @extend %background-color-blog;
+        .matchday-blogs__title-data {
+            img {
+                @include display(block);
+                &:not([src]) {
+                    @include display(block,important);
+                }
+            }
+            .matchday-blogs__tag {
+                @include display(none);
+            }
+        }
+        .blog-card {
+            h2,
+            p.access {
+                @include display(block);
+            }
+            h2.match-result,
+            p.match-result.access {
+                @include breakpoint($xsmall) {
+                    @include display(block);
+                }
+            }
+        }
+        .mu-item__sponsor__wrapper {
+            @include background-color($mu-black);
+        }
+    }
+    &.dark-blog {
+        @include background-color($dark-blog);
+        @extend %common-blog;
+        @extend %background-color-blog;
+        .mu-item__sponsor__wrapper {
+            @include background-color($mu-black);
+        }
+        .statsbar {
+            span.statsbar__time {
+                @include color(white);
+            }
+        }
+    }
+    &.black-blog {
+        @include background-color($mu-grey);
+        @extend %common-blog;
+        @extend %background-color-blog;
+        &.kickoff {
+            h2.match-result,
+            h2.match-result.access {
+                @include breakpoint($small $max-small) {
+                    @include display(block);
+                }
+                @include breakpoint($xsmall) {
+                    @include display(none);
+                }
+            }
+        }
+        .mu-item__sponsor__wrapper {
+            @include background-color($mu-black);
+        }
+        .statsbar {
+            span.statsbar__time {
+                @include color(white);
+            }
+        }
+    }
+    &.non-matchday {
+        @include breakpoint($small $max-small) {
+            .matchday-blogs__post-time {
+                @include display(none);
+            }
+            .matchday-blogs__title-data {
+                span:first-child {
+                    @include margin-top(42);
+                    @include font-size(12);
+                    @include secondry-regular;
+                }
+                .player__headshot {
+                    width: 37px;
+                    height: 50px;
+                }
+                .matchday-blogs__tag {
+                    @include display(none);
+                }
+                img {
+                    @include display(block);
+                    &:not([src]) {
+                        @include display(block,important);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.event-attempt-blocked, .eventsmall-attempt-blocked{
+    @include event-icons(attempt-blocked);
+}
+.event-attempt-missed, .eventsmall-attempt-missed{
+    @include event-icons(attempt-missed);
+}
+.event-attempt-saved, .eventsmall-attempt-saved{
+    @include event-icons(attempt-saved);
+}
+.event-et-ft, .eventsmall-et-ft{
+    @include event-icons(et-ft);
+}
+.event-et-ht, .eventsmall-et-ht{
+    @include event-icons(et-ht);
+}
+.event-et-ko, .eventsmall-et-ko{
+    @include event-icons(et-ko);
+}
+.event-foul, .eventsmall-foul{
+    @include event-icons(foul);
+}
+.event-freekick-won, .eventsmall-freekick-won{
+    @include event-icons(freekick-won);
+}
+.event-full-time, .eventsmall-full-time{
+    @include event-icons(full-time);
+}
+.event-goal, .eventsmall-goal{
+    @include event-icons(goal);
+}
+.event-goal-dark, .eventsmall-goal-dark{
+    @include event-icons(goal-dark);
+}
+.event-great-pass, .eventsmall-great-pass{
+    @include event-icons(great-pass);
+}
+.event-great-skill, .eventsmall-great-skill{
+    @include event-icons(great-skill);
+}
+.event-half-time, .eventsmall-half-time{
+    @include event-icons(half-time);
+}
+.event-injurytime, .eventsmall-injurytime{
+    @include event-icons(injurytime);
+}
+.event-kick-off, .eventsmall-kick-off{
+    @include event-icons(kick-off);
+}
+.event-offside, .eventsmall-offside{
+    @include event-icons(offside);
+}
+.event-penalty-shootout, .eventsmall-penalty-shootout{
+    @include event-icons(penalty-shootout);
+}
+.event-pen-corner, .eventsmall-pen-corner{
+    @include event-icons(pen-corner);
+}
+.event-pen-given, .eventsmall-pen-given{
+    @include event-icons(pen-given);
+}
+.event-pen-missed, .eventsmall-pen-missed{
+    @include event-icons(pen-missed);
+}
+.event-pen-substitution, .eventsmall-pen-substitution{
+    @include event-icons(pen-substitution);
+}
+.event-redcard, .eventsmall-redcard{
+    @include event-icons(redcard);
+}
+.event-rivals-watch, .eventsmall-rivals-watch{
+    @include event-icons(rivals-watch);
+}
+.event-update, .eventsmall-update{
+    @include event-icons(update);
+}
+.event-yellowcard, .eventsmall-yellowcard{
+    @include event-icons(yellowcard);
+}
+
+.eventsmall-attempt-blocked, .eventsmall-attempt-missed, .eventsmall-attempt-saved, .eventsmall-et-ft, .eventsmall-et-ht, .eventsmall-et-ko, .eventsmall-foul, .eventsmall-freekick-won, .eventsmall-full-time, .eventsmall-goal, .eventsmall-goal-dark, .eventsmall-great-pass, .eventsmall-great-skill, .eventsmall-half-time, .eventsmall-injurytime, .eventsmall-kick-off, .eventsmall-offside, .eventsmall-pen-corner, .eventsmall-pen-given, .eventsmall-pen-missed, .eventsmall-pen-substitution, .eventsmall-penalty-shootout, .eventsmall-redcard, .eventsmall-rivals-watch, .eventsmall-update, .eventsmall-yellowcard{
+    @include px-to-rem(width,24);
+    @include px-to-rem(height,24);
+    @include margin-top(0,important);
+}
+

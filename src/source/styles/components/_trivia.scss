@@ -1,0 +1,100 @@
+        .grid-12,
+    .grid-8,
+    .grid-6,
+    .grid-4,
+    .grid-3 {
+        .mu-item {
+            &.trivia {
+                .mu-item__title {
+                    &:before {
+                        @include display(none);
+                    }
+                }
+            }
+        }
+        &.child {
+            .mu-item {
+                &.trivia {
+                    .mu-item__teasure {
+                        @include secondry-regular;
+                        @include font-size(20);
+                        @include line-height(28,px);
+                        @include font-style(italic);
+                    }
+                    .mu-item__title {
+                        &:before {
+                            @include display(none);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .grid-3,
+    .grid-4 {
+        .mu-item {
+            &.trivia {
+                @include breakpoint($large) {
+                    .mu-item__title {
+                        @include font-size(32);
+                        @include primary-bold;
+                    }
+                }
+            }
+        }
+    }
+        /*
+.child {
+    box-shadow:none;
+    .mu-item {
+        &.trivia {
+            .mu-item__title {
+                @include color($white);
+                &:before {
+                    @include border-top(2, solid, $white);
+                }
+            }
+            .mu-item__teasure {
+                @include color($white);
+            }
+        }
+    }
+}
+
+.grid-12 {
+    .child {
+        .mu-item {
+            &.trivia {
+                .mu-item__info {
+                    
+                }
+            }
+        }
+    }
+}
+
+.grid-6,
+.grid-8 {
+    .child {
+        .mu-item {
+            &.trivia {
+                .mu-item__info {
+                    @include px-to-rem(bottom, 40);
+                }
+                .mu-item__title {
+                    @include px-to-rem(height, 80);
+                }
+                @include breakpoint($xsmall) {
+                    .mu-item__title {
+                        @include px-to-rem(height, auto);
+                    }
+                }
+                p {
+                    @include color($white);
+                }
+            }
+        }
+    }
+}
+*/

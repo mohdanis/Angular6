@@ -1,0 +1,135 @@
+%title-print-prod {
+    @include text-truncate-lines(1, 12, 0.9);
+    @include tertiary-semibold;
+    @include text-transform(uppercase);
+    @include color($white);
+    @include margin-bottom(12);
+    @include position(relative);
+    &:before {
+        @include border-top(2, solid, $brand-color);
+        @include position(absolute);
+        @include px-to-rem(width, 61);
+        content: '';
+        @include top(-38);
+    }
+}
+
+.mu-item {
+    &.print-prod {
+        .mu-item__logo-title {
+            @extend %title-print-prod;
+            &:before {
+                @include top(-12);
+            }
+        }
+        .mu-item__title {
+            &:before {
+                @include display(none);
+            }
+        }
+    }
+}
+
+.child {
+    .mu-item {
+        &.print-prod {
+            .mu-item__logo-title {
+                @extend %title-print-prod;
+                @include color($black);
+            }
+            .mu-item__title {
+                &:before {
+                    @include display(none);
+                }
+            }
+        }
+    }
+}
+
+// For only grid 3 and grid-4  to show the color white
+.grid-3,
+.grid-4 {
+    .mu-item {
+        &.print-prod {
+            .mu-item__logo-title {
+                @include display(block);
+                &:before {
+                    @include top(-12);
+                }
+            }
+        }
+    }
+    &.child {
+        .mu-item {
+            &.print-prod {
+                .mu-item__logo-title {
+                    @include margin-bottom(8);
+                    @include display(block);
+                    &:before {
+                        @include top(-38);
+                        @include breakpoint($medium) {
+                            @include top(-34);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.grid-6,
+.grid-8,
+.grid-12 {
+    .mu-item {
+        &.print-prod {
+            .mu-item__logo-title {
+                &:before {
+                    @include breakpoint($medium) {
+                        @include top(-16);
+                    }
+                }
+            }
+        }
+    }
+    &.child {
+        .mu-item {
+            &.print-prod {
+                .mu-item__logo-title {
+                    @include display(block);
+                    &:before {
+                        @include top(-38);
+                        @include breakpoint($medium) {
+                            @include top(-16);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.grid-8{
+    &.child{
+        &.ratio-matchday{
+            .mu-item__info{
+                .mu-item__teasure{
+                    @include margin-top(5);
+                }
+            }
+        }
+    }
+}
+
+.micro-card.ratio {
+    .mu-item {
+        &.print-prod {
+           .mu-item__logo-title {
+                @include color($mu-black);
+            } 
+            .mu-item__info {
+                @include margin-top(-12);
+            }  
+        }  
+    }
+}
+

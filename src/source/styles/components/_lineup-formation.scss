@@ -1,0 +1,46 @@
+.teamFormation_442{}
+.teamFormation_41212{
+	@include breakpoint($medium) {
+       li {
+       	 &:nth-child(3) {
+       	 	div{
+       	 		@include margin-left(-107);
+       	 	}
+       }
+       	 &:nth-child(4) {
+       	 	div:nth-child(2){
+       	 		@include margin-left(200);
+       	 	}
+       }
+       &:nth-child(5) {
+       	 	div{
+       	 		@include margin-left(-107);
+       	 	}
+       }
+    }
+}
+}
+.teamFormation_433{
+@include breakpoint($medium) {
+	li{
+		 &:nth-child(3) {
+       	 		div:nth-child(3){
+       	 		@include margin-left(100);
+       	 	}
+       }
+        &:nth-child(4) {
+       	 		div:nth-child(3){
+       	 		@include margin-left(100);
+       	 	}
+       }
+	}
+}
+	}
+
+	.teamFormation_451{}
+
+	.teamFormation_4411{}
+
+	.teamFormation_4141{}
+
+	.teamFormation_4231{}

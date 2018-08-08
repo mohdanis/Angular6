@@ -1,0 +1,111 @@
+[data-module="news-listing"],
+[data-module="matches"],
+[data-module="player-grid"],
+[data-module="tables"] {
+  @include px-to-rem(min-height, 130);
+  @include breakpoint($medium) {
+    @include px-to-rem(min-height, 170);
+  }
+  @include breakpoint($small, $max-small) {
+    @include px-to-rem(min-height, 170);
+  }
+}
+
+.loader-wrapper {
+  @include bottom(0);
+  @include percentage-value(width, 100);
+  @include percentage-value(height, 100);
+  @include position(absolute);
+  @include padding-top(180);
+  z-index: 999;
+}
+
+.loader-container {
+  @include bottom(0);
+  @include percentage-value(width, 100);
+  @include percentage-value(height, 100);
+  @include position(absolute);
+  @include breakpoint($small, $max-small) {
+    @include padding-top(190);
+  }
+  @include breakpoint($xsmall, $max-medium) {
+    @include padding-top(147);
+  }
+  @include breakpoint($medium) {
+    @include padding-top(220);
+  }
+  z-index: 999;
+}
+
+.mu-pageloader {
+  @include background($white);
+  @include border-transparent(3, solid, $black, 0.05);
+  @include px-to-rem(width, 66);
+  @include px-to-rem(height, 66);
+  @include position(relative);
+  @include margin-auto(0 auto);
+  border-radius: 50%;
+}
+
+.collection {
+  .mu-pageloader {
+    @include background($white, 0);
+    @include border-transparent(3, solid, $mu-red, 0.26);
+  }  
+}
+
+.loader-logo {
+  @include position(absolute);
+  @include px-to-rem(left,6); // hardcoding for arabic
+  @include top(9);
+  @include px-to-rem(width, 44);
+  @include px-to-rem(height, 44);
+  background-image: url($base-path + "reddevil-loader.svg");
+  background-size: contain;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  //border-radius: 50%;
+  z-index: 2;
+}
+
+.loader {
+  @include position(absolute);
+  @include left(-3);
+  @include top(-3);
+  @include border(3, solid, $mu-red);
+  @include px-to-rem(width, 66);
+  @include px-to-rem(height, 66);
+  clip: rect(45px, 100px, 100px, 45px);
+  [lang=ar] & {
+    clip: rect(60px, 100px, 100px, 0px);
+  }
+  border-radius: 50%;
+  z-index: 1;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: muloader 0.9s infinite linear;
+  animation: muloader 0.9s infinite linear;
+}
+
+@-webkit-keyframes muloader {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes muloader {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,23 @@
+.match-item {
+    &__info--team {
+        &.gray-block {
+            @include padding-top(14);
+            @include font-size(25, en);
+            @include line-height(24, px);
+            width: calc(50% - 34px);
+        }
+    }
+}
+
+.home-header__cards .match-card {
+	.match-item {
+    &__info--team {
+    	&.result {
+            @include padding-top(14);
+            @include font-size(25, en);
+            @include line-height(24, px);
+            width: calc(50% - 48px);
+        }
+    }
+	}
+}

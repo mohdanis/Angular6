@@ -1,0 +1,498 @@
+%home-component {
+  @include position(relative);
+  @include pull-left;
+  @include percentage-value(width, 100);
+}
+
+%h5-title {
+  @include font-size(16);
+  @include secondry-regular;
+  @include line-height(1.13);
+  @include color($default-text-color);
+  @extend %txt-uppercase;
+  @include font-style(italic);
+}
+.home-article-detail{
+  .home-hero {
+  @extend %home-component;
+  & .img-holder {
+    figure {
+      @include background-img-center;
+      @include position(absolute);
+      @include breakpoint($medium) {
+        @include background-img-initial;
+      }
+    }
+    // .mu-item__gradient {
+    //     @include background-color($black, 0.3);
+    // }
+  }
+  .home-hero__info {
+    // @include percentage-value(width, 100);
+    @include span(6 of 6 0);
+    //@include vertical-align();
+    @include padding(20,20,20,20);
+    @include pull-none;
+    @include bottom(0);
+    @include position(absolute);
+    @include text-align(left);
+    @include z-index(99);
+    @include color($white);
+    @include breakpoint($xsmall) {
+    @include span(8 of 12 0);
+    @include margin-auto(0);
+    @include top(50,percent);
+    @include position(relative);
+      transform: translateY(-50%);
+      @include text-align(center);
+    }
+    @include breakpoint($medium) {
+      @include span(12 of 12 0);
+    }
+    //@include padding(16);
+    //@include padding(8, 8, 16, 16);
+    // @include breakpoint($small $max-xsmall) {
+    //     // @include percentage-value(height, 100);
+    //     //@include top(60,percent);
+    // }
+    .home-hero__sponsor {
+      @include display(none);
+      @include breakpoint($small $max-xsmall) {
+        @include pull-right;
+      }
+      @include margin-bottom(70);
+      @include padding(10, 10, 10, 10);
+      @include margin-auto(0);
+      & img {
+        @include px-to-rem(max-height, 55);
+        @include background-color($white);
+        @include border(10, solid, $white);
+      }
+    }
+    .home-hero__title {
+      @include primary-regular;
+      @include color($white);
+      @include font-size(36);
+      @include line-height(34,px);
+      @include position(relative);
+      @include px-to-rem(letter-spacing, 1.4);
+      @include line-height(0.89);
+      @include breakpoint($xsmall) {
+        // @include bottom(75);
+        // @include position(absolute);
+        @include font-size(48);
+        // @include text-align(left);
+        @include line-height(44,px);
+        // @include span(7 of 12 0);
+      }
+      // @include breakpoint($medium) {
+      @include breakpoint($large) {
+        //@include margin-top(68);
+        @include font-size(72);
+      }
+      // &:before {
+      //     @include display(none);
+      // }
+      span {
+        @include position(relative);
+      }
+    }
+    .home-hero-cta {
+      @include breakpoint($small $max-small) {
+        @include margin-top(130);
+
+      }
+    }
+    //Todo remove code
+    // .home-hero__line {
+    //    @include display(none);
+    // }
+    .red-btn-skew {
+      @include margin-top(32);
+      @include breakpoint($small $max-small) {
+        //@include bottom(20);
+        // @include margin-top(0);
+        // @include position(absolute);
+        @include left(20);
+      }
+    }
+  }
+  .home-hero__video {
+    @include position(absolute);
+    @include bottom(1);
+    @include z-index(999);
+    @include cursor(pointer);
+  }
+  // To show 1920 after that it shows black screen from both side
+  @extend %hero__conditionaly;
+}
+}
+
+
+//Quotes
+.home-quotes {
+  //@extend %home-component;
+  @extend %bottom-gutter;
+  // .mu-item {
+  //     @include margin-bottom(0);
+  //     &.quote {
+  //         .img-holder {
+  //             .mu-item__gradient {
+  //                 @include background-color($black, 0.42);
+  //             }
+  //             margin: 0 auto;
+  //             figure {
+  //                 @include background-img-center;
+  //                 @include position(absolute);
+  //                 @include breakpoint($medium) {
+  //                     @include background-img-initial;
+  //                 }
+  //             }
+  //         }
+  //         .home-quotes__wrapper {
+  //             @include position(absolute);
+  //             @include bottom(88);
+  //             @include percentage-value(width, 100);
+  //             .home-quotes__info {
+  //                 @include z-index(99);
+  //                 @include position(relative);
+  //                 @include text-align(left);
+  //                 @include percentage-value(width, 100);
+  //                 @include padding-left(16);
+  //                 @include padding-right(56);
+  //                 @include breakpoint($medium) {
+  //                     @include percentage-value(width, 60);
+  //                     @include margin-auto(0);
+  //                 }
+  //             }
+  //             .home-quotes__title {
+  //                 @include color($white);
+  //                 @include secondry-regular;
+  //                 @include font-size(20);
+  //                 @include line-height(28,px);
+  //                 @include position(relative);
+  //                 @include font-style(italic);
+  //                 @include margin-bottom(30);
+  //                 font-stretch: normal;
+  //                 &:before {
+  //                     @include border-top(2, solid, $white);
+  //                     @include position(absolute);
+  //                     @include px-to-rem(width, 61);
+  //                     content: '';
+  //                     @include top(-24);
+  //                 }
+  //             }
+  //             .home-quotes__author {
+  //                 @include margin-bottom(15);
+  //                 @include color($white-lighter);
+  //             }
+  //         }
+  //         &.child {
+  //             .home-quotes__wrapper {
+  //                 @include position(absolute);
+  //                 @include top(99);
+  //             }
+  //             .home-quotes__info {
+  //                 @include percentage-value(width, 100);
+  //                 @include padding(16, 16);
+  //             }
+  //             .img-holder {
+  //                 @include display(none);
+  //             }
+  //             .home-quotes__title {
+  //                 @include color($mu-black);
+  //                 @include font-size(20);
+  //                 @include line-height(28,px);
+  //                 &:before {
+  //                     @include border-top(2, solid, #C8C8C8);
+  //                 }
+  //             }
+  //             .mu-item__sponsor {
+  //                 @include important-value(padding, 8);
+  //                 span {
+  //                     //@include background($social-bg);
+  //                     @include important(background, $social-bg);
+  //                 }
+  //             }
+  //             .statsbar {
+  //                 @include percentage-value(width, 100);
+  //                 @extend %statsbar-padding;
+  //             }
+  //             .home-quotes__author {
+  //                 @include margin-bottom(15);
+  //                 @include color($mu-black);
+  //             }
+  //         }
+  //     }
+  // }
+  // .grid-12 {
+  //     .mu-item {
+  //         &.quote {
+  //             .home-quotes__title {
+  //                 @include breakpoint($medium) {
+  //                     @include font-size(24);
+  //                     @include line-height(36,px);
+  //                 }
+  //             }
+  //         }
+  //     }
+  // }
+  // To show 1920 after that it shows black screen from both side
+  @extend %hero__conditionaly;
+}
+
+.ecommerce-card {
+  @include background-color($white);
+  box-shadow: 0 1px 0 0 #d7d7d7;
+  height: 100%;
+  //@include breakpoint($xsmall) {
+  //    //height: 360px;
+  //}
+  //@include breakpoint($medium) {
+  //    //height: 360px;
+  //}
+  //@include breakpoint($large) {
+  //    //height: 366px;
+  //}
+  //@include breakpoint($xlarge) {
+  //    //height: 444px;
+  //}
+  .ecommerce-card-item {
+    @include padding(32, 0, 0);
+    @include breakpoint($xsmall $max-xsmall) {
+      @include padding(15, 0, 0);
+    }
+    @include margin-auto(0);
+    figure {
+      img {
+        height: 203px;
+        width: initial;
+        @include position(relative);
+        @include left(50,percent);
+        transform: translateX(-50%);
+      }
+    }
+  }
+  .ecommerce-card__info {
+    @include text-align(center);
+    @include position(relative);
+    @include percentage-value(width, 100);
+    @include padding(20,20,16,20);
+    @include bottom(0);
+    .white-btn-skew {
+      @include margin-top(8);
+      @include breakpoint($xlarge) {
+      @include margin-top(14);
+      }
+    }
+  }
+  .ecommerce-card__title {
+    @extend %h5-title;
+    @include font-size(14);
+    @include px-to-rem(height, 36);
+    span {
+      transform: translateY(-50%);
+      @include top(50,percent);
+      @include display(inline-block);
+      @include margin-top(15);
+    }
+  }
+  .ecommerce-card__price {
+    @include font-size(16);
+    font-weight: 600;
+  }
+}
+
+.ecommerce_info {
+  // width: 334px;
+  height: 210px;
+  @include border-radius(2);
+  @include background-color(#4c4c4c);
+  @include position(absolute);
+  @include bottom(0);
+  @include z-index(99);
+  h1,
+  h2 {
+    font-family: ArialNarrow;
+    @include font-size(22);
+    @include font-weight(bold);
+    @include font-style(italic);
+    font-stretch: normal;
+    @include line-height(1.09);
+    @include color($mu-grey-lightest);
+    @include margin(22,22,22,22);
+  }
+  h2 {
+    @include color($chevrolet-yellow);
+  }
+  img.ecommerce_info-logo {
+    @include right(0);
+    @include position(absolute);
+    @include bottom(0);
+  }
+}
+
+.carousal {
+  // .mu-item__gradient {
+  //     background-color: rgba(35, 35, 35, 0.6);
+  // }
+  & .home-hero {
+    // .mu-item__gradient {
+    //     background-color: rgba(35, 35, 35, 0.4);
+    // }
+    &.inner-gutter {
+      @include percentage-value(height, 100);
+    }
+  }
+  & .carousal__sponsor {
+    @extend %carousal-sponsor;
+  }
+  &.carousal-variant-two {
+    .carousal__info {
+     @include padding(0,58,0,58);
+      .carousal__title {
+        @include font-size(24);
+        @include breakpoint($small $max-small) {
+          @include font-size(16);
+        }
+        @include tertiary-bold;
+      }
+    }
+    .carousal__sponsor {
+      @extend %carousal-sponsor;
+    }
+    .black-btn-skew {
+      @include display(none);
+    }
+    // .mu-item__gradient {
+    //     @include background-color($black, 0.5);
+    // }
+    .carousal__info-button {
+      .black-btn-skew {
+        @include display(block);
+      }
+    }
+  }
+}
+
+#homePage {
+  @include background-color(#FFFFFF);
+  .carousal.match-carousal {
+    @include clear(both);
+    .timer {
+      @include display(inline-block);
+      @include border-radius(2);
+      @include background-color(#f2f2f2);
+      border-color: transparent;
+      //margin: 20px 0;
+      @include margin-top(-5);
+      @include padding(6,6,6,6);
+      @include left(50,percent);
+      @include position(relative);
+      transform: translate(-50%, 0);
+      &__logo {
+        @include pull-left;
+        height: 38px;
+        @include padding-top(8);
+        width: 40px;
+        img {
+          height: 23px;
+        }
+      }
+      &__time,
+      .result__time {
+        @include display(block);
+        background: rgba(0, 0, 0, 0) linear-gradient(#c2c2c2 50%, #d4d4d4 50%) repeat scroll 0 0;
+        @include color(#1a1a1a);
+        @include pull-right;
+        @include primary-regular;
+        @include font-size(26);
+        font-stretch: normal;
+        @include font-style(normal);
+        @include font-weight(bold);
+        height: 38px;
+        @include padding(5,10,5,10);
+        @include text-align(center);
+        .injury-time {
+         @include color(#d0021b);
+         @include display(inline-block);
+         @include margin-left(8);
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+  // .mu-item figure {
+  //    @include z-index(1);
+  // }
+  .kitbag {
+    .bx-default-pager {
+      @include bottom(-22);
+    }
+  }
+}
+
+.home-row {
+  &:first-child {
+    .Spotlight,
+    .home-hero {
+      @include margin-top(-16);
+      @include breakpoint($small $max-xsmall) {
+        @include margin-top(0);
+      }
+      @include breakpoint($xxlarge) {
+        @include margin-top(-24);
+      }
+    }
+  }
+  .news-grid {
+    @include margin-bottom(-16);
+    @include breakpoint($xxlarge) {
+      @include margin-bottom(-24);
+    }
+  }
+}
+
+.inner-gutter {
+  @include margin-bottom(24);
+}
+
+%carousal-sponsor {
+  @include position(absolute);
+  @include top(12);
+  @include right(12);
+  @include z-index(9);
+}
+
+%hero-height {
+  @include px-to-rem(height, 457);
+  @include breakpoint($xsmall) {
+    @include px-to-rem(height, 500);
+  }
+  @include breakpoint($medium) {
+    @include px-to-rem(height, 448);
+  }
+  @include breakpoint($large) {
+    @include px-to-rem(height, 351);
+  }
+  @include breakpoint($xlarge) {
+    @include px-to-rem(height, 509);
+  }
+}
+
+%quotes-height {
+  @include px-to-rem(height, 513);
+  @include breakpoint($xsmall) {
+    @include px-to-rem(height, 404);
+  }
+  @include breakpoint($medium) {
+    @include px-to-rem(height, 392);
+  }
+  @include breakpoint($xxlarge) {
+    @include px-to-rem(height, 551);
+  }
+}
+
+.home-article-detail .mu-item__sponsor {
+  @include pull-right;
+}

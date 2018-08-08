@@ -1,0 +1,34 @@
+.filter__right-tab {
+    span.matches-share {
+        i {
+            transform: translate(50%, -50%);
+        }
+    }
+}
+.matches__mainList {
+    &.slide {
+        button.slick-arrow {
+            i {
+                transform: translateX(50%);
+            }
+        }
+    }
+    &.slide {
+        button.slick-arrow {
+            transform: scaleX(-1);
+        }
+    }
+}
+.nav-slide {
+    div.slick-arrow {
+        i {
+            transform: translate(50%, -50%);
+        }
+        &.slick-next {
+            @include left(0);
+        }
+        &.slick-prev {
+            @include right(0);
+        }
+    }
+}

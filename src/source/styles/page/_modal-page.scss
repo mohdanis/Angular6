@@ -1,0 +1,484 @@
+.page-wrap {
+    height: 100%;
+    .main-container {
+        @include padding-top(0);
+        height: 100%;
+        @include breakpoint($small $max-xsmall) {
+            overflow-y: scroll;
+        }
+        @include breakpoint($medium) {
+            height: 100%;
+        }
+        .modal-page.modal-page {
+            @include margin(0, 0, 0, 0);
+        }
+    }
+}
+
+//END
+.modal-page {
+    background: $mu-black;
+    height: 100%;
+    @include position(relative);
+    width: 100%;
+    @include display(table); //@include padding(50, 0, 50, 0);
+    .mu-modal__header {
+        @include padding(0, 0, 0, 0, important);
+    }
+    &__content {
+        // @include display(table-cell);
+        // vertical-align: middle;
+        // width: 100%;
+        height: 100%;
+        &>* {
+            @include pull-left;
+            @include margin-auto(0);
+        }
+        .mu-item__title {
+            //@include font-size(32);
+            @include primary-bold;
+            @include color($white);
+            @include line-height(0.88);
+            @include padding(16, 16, 16, 16);
+            @include pull-left;
+            @include percentage-value(width, 100);
+            &:before {
+                @include display(none);
+            }
+        }
+        .mu-item__video-link {
+            @include secondry-semibold;
+            @include color($white);
+            @include margin-left(16);
+            @include pull-left;
+            @include font-size(12);
+            @include line-height(16, px);
+            span {
+                @include text-transform(uppercase);
+            } //@include border-bottom(1, solid, $white, 0.8);
+        }
+        .mu-item.image-gallery {
+            .mu-item__title {
+                @include padding-left(0);
+            }
+        }
+    }
+    .grid-12.ratio {
+        height: 100%;
+    }
+    &__close {
+        @include position(fixed);
+        @include right(12);
+        @include top(8);
+        cursor: pointer;
+        @include z-index(9999999);
+        width: 24px;
+        height: 24px;
+        @include padding-top(4);
+        border-radius: 50%;
+        @include background-color($mu-black);
+        .icon-close {
+            @include z-index(0);
+        }
+        .icon-cross {
+            @include margin(3, 7, 3, 7, important);
+        }
+    }
+    &__footer {
+        @include position(absolute);
+        @include bottom(12);
+        @include left(0);
+        width: 100%;
+        @include padding(0, 20, 0, 20);
+        span {
+            @include color(#fff);
+            &:first-child {
+                @include pull-left;
+            }
+            &.share {
+                @include left(50, percent);
+                @include position(relative);
+                transform: translate(-50%, 0);
+                cursor: pointer;
+            }
+            &.emoji {
+                @include pull-right;
+                cursor: pointer;
+            }
+        }
+    }
+    .mu-item.video {
+        .mu-item__play {
+            @include left(0);
+            @include bottom(0);
+        }
+        .mu-item__video {
+            @include display(block);
+        }
+    }
+    .mu-modal,
+    .modal-page__content {
+        .mu-item__sponsor__wrapper {
+            .sponsor__dark {
+                @include display(none);
+            }
+        }
+        .mu-modal__header .mu-item__sponsor span:first-child {
+            @include padding-top(5);
+        }
+    }
+}
+
+
+// Non Destination
+.statsbar.non-destination span {
+    @include color(#f2f2f2, important); //@include font-size(14);
+    vertical-align: top;
+    @include margin-left(2); //@include text-transform(lowercase);
+}
+
+.statsbar.non-destination {
+    background-color: transparent;
+    @include padding-left(13);
+    @include padding-right(16);
+    @include position(fixed);
+    @include bottom(0);
+    @include left(0);
+}
+
+// .statsbar.non-destination li:last-child {
+//     @include text-align(right);
+// }
+.home-article-detail__video-panel .mu-item__gradient {
+    background: none !important;
+}
+
+.home-article-detail__video-panel {
+    @include position(relative);
+}
+
+.modalTranscriptSection {
+    @include position(fixed);
+    @include bottom(45);
+}
+
+@media (min-width: 768px) and (max-width: 1366px) {
+    .home-article-detail__video-panel .grid-7 {
+        width: 60% !important;
+    } // .home-article-detail__video-panel.portrait .grid-7 {
+    //     width: 23.4%!important;
+    //     @include padding-bottom(22, percent, important);
+    //     @include margin-auto(0, important);
+    // }
+}
+
+@media only screen and (orientation:landscape) {
+    @media only screen and (max-width: 767px) {
+        .home-article-detail__video-panel .grid-7 {
+            width: 50% !important;
+        }
+        .modal-page__content .mu-item__title {
+            @include padding-bottom(5, important);
+        }
+        .modal-page__content .mu-item__title {
+            @include font-size(25);
+        }
+    }
+}
+
+// @media only screen and (min-device-width: 320px) and (max-device-width: 767px) and (orientation: portrait) {
+//     .mu-item.video .oo-player-container {
+//         min-width: 200px !important;
+//     }
+//     .home-article-detail__video-panel.portrait .grid-7.ratio {
+//         width: 70%!important;
+//         @include padding-bottom(69, percent, important);
+//         @include margin-auto(0, important);
+//     }
+//     .home-article-detail__video-panel .grid-7.ratio {
+//         @include margin-top(77);
+//     }
+// }
+@media (min-width: 1367px) {
+    .home-article-detail__video-panel .grid-7 {
+        //width: 75% !important;
+    }
+}
+
+@media (min-width: 1590px) and (max-width: 1620px) {
+    .home-article-detail__video-panel .grid-7 {
+        width: 64% !important;
+    }
+}
+
+// quote share model change
+.modal-page .modal-page__content {
+    .mu-item.quotes {
+        @include breakpoint($medium $max-large) {
+            .mu-modal__footer {
+                @include bottom(44, important);
+            }
+        }
+
+        .mu-item__title {
+            @include padding-left(0);
+            @include padding-top(0);
+            &:before {
+                @include display(block, important);
+            }
+        }
+    }
+}
+
+// video share model changes.
+.modal-page {
+    .video-non-des {
+        width: 100%;
+        .mu-item__sponsor {
+            @include padding(12, 12, 0, 12, important);
+        }
+
+        .home-article-detail__video-panel.portrait {
+            @include breakpoint($medium) {
+                @include margin-top(44, important);
+                @include margin-bottom(0, important);
+            }
+            .grid-7.ratio {
+                &:before {
+                    @include breakpoint($small) {
+                        @include padding-top(0, percent, important);
+                    }
+                    @include breakpoint($medium) {
+                        @include padding-top(0, percent, important);
+                    }
+                }
+                max-width: none !important;
+                width: 100% !important;
+                @include padding(0, 0, 0, 0, important);
+                @include breakpoint($xsmall) {
+                    width: 50% !important;
+                }
+                @include breakpoint($medium) {
+                    width: 75% !important;
+                }
+                @include breakpoint($large) {
+                    width: 40% !important;
+                }
+                @include breakpoint($xlarge) {
+                    width: 30% !important;
+                }
+                @include breakpoint($xxlarge) {
+                    width: 28% !important;
+                }
+                @include breakpoint($largest) {
+                    width: 35% !important;
+                }
+                .mu-item__info {
+                    @include padding-left(20, important); //@include padding-left(20);
+                    //@include bottom(17);
+                }
+            }
+            .modalTranscriptSection {
+                @include breakpoint($small $max-xsmall) {
+                    @include position(relative, important);
+                    @include bottom(auto, important);
+                    @include padding-top(44);
+                    .mu-item__teasure {
+                        @include percentage-value(max-width, 100);
+                        @include padding-left(16);
+                        @include padding-right(16);
+                        @include padding-bottom(35);
+                    }
+                }
+                @include breakpoint($medium) {
+                    @include padding-top(0);
+                }
+            } // .statsbar.non-destination {
+            //     @include breakpoint($small $max-xsmall) {
+            //         @include background($vertical-strips);
+            //         @include bottom(0);                    
+            //         @include z-index(999);
+            //     }
+            // }
+        }
+
+        .home-article-detail__video-panel {
+            @include margin(0, 0, 20, 0);
+            @include breakpoint($medium) {
+                @include margin(60, 0, 40, 0);
+            }
+            @include breakpoint($medium $max-medium) {
+                .grid-7.ratio {
+                    width: 90% !important;
+                    &:before {
+                        @include padding-top(75, percent, important);
+                    }
+                }
+            }
+        }
+        .mu-item__sponsor {
+            @include breakpoint($small $max-xsmall) {
+                @include display(none);
+            }
+        }
+        .sponsor-mobile {
+            @include display(block);
+            @include pull-left;
+            @include breakpoint($medium) {
+                @include display(none);
+            }
+            .mu-item__sponsor {
+                @include display(block);
+            }
+        }
+        @include breakpoint($large $max-large) {
+            .grid-7.ratio {
+                width: 50% !important;
+            }
+        }
+    }
+
+    @include breakpoint($small $max-xsmall) {
+        .mu-item.video {
+            @include background-color(#232323, 1, important);
+            .innerWrapper.oo-player {
+                @include background-color(#232323, 1, important);
+            }
+        }
+    }
+
+    .home-article-detail__video-panel {
+        &.landscape {
+            @include margin-top(44);
+            @include breakpoint($small $max-small) {
+                height: 100vh;
+            }
+            .grid-7.ratio {
+                @include percentage-value(max-width, 100);
+                &:before {
+                    @include breakpoint($small) {
+                        @include padding-top(75, percent, important);
+                        @include aspect-ratio(3, 4);
+                    }
+                    @include breakpoint($xsmall) {
+                        @include aspect-ratio(16, 9);
+                        @include padding-top(56.25, percent, important);
+                    }
+                }
+
+                @include pull-none;
+                @include margin-auto(0 auto, important);
+                @include breakpoint($small $max-medium) {
+                    width: 100% !important;
+                }
+                @include breakpoint($large) {
+                    width: 95% !important;
+                }
+                @include breakpoint($xlarge) {
+                    width: 66% !important;
+                }
+                @include breakpoint($xxlarge) {
+                    width: 60% !important;
+                }
+                @include breakpoint($largest) {
+                    width: 75% !important;
+                }
+                .mu-item__info {
+                    @include padding-left(20, important);
+                }
+            }
+            .modalTranscriptSection {
+                @include top(0);
+                @include position(relative);
+                .mu-item__teasure {
+                    @include percentage-value(max-width, 100);
+                    @include padding-left(16);
+                    @include padding-right(16);
+                    @include padding-bottom(35);
+                    @include breakpoint($medium) {
+                        width: 80% !important;
+                    }
+                }
+            }
+            .statsbar.non-destination {
+                @include breakpoint($small $max-xsmall) {
+                    @include background($vertical-strips);
+                    @include bottom(0);
+                    @include z-index(996);
+                }
+            }
+            .transcript {
+                @include breakpoint($small $max-small) {
+                    @include margin-bottom(16);
+                }
+            }
+        }
+        .mu-item {
+            &__title {
+                @include font-size(18);
+                @include line-height(1.22);
+            }
+            &__teasure {
+                max-width: 65%;
+                @include padding-left(16);
+                @include breakpoint($medium) {
+                    max-width: 80%;
+                }
+            }
+            &__info {
+                @include bottom(20);
+                .mu-item__play {
+                    @include margin(0);
+                }
+            }
+        }
+        .modalTranscriptSection {
+            width: 100%;
+            .mu-item__title {
+                @include secondry-semibold;
+                @include text-transform(none);
+            }
+        }
+        .transcript {
+            @include pull-right;
+            @include padding-right(16);
+        }
+        .statsbar.non-destination {
+            @include bottom(10);
+        }
+        .stats-bar {
+            @include padding-right(16);
+            width: 100%;
+            li {
+                @include pull-left;
+                &:last-child {
+                    @include pull-right;
+                }
+            }
+            .stats-bar__icons {
+                @include pull-left;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.grid-12.ratio.item.image-gallery-destination {
+    opacity: 0;
+}
+
+.social-share__footer {
+    position: fixed !important;
+}
+
+.modal-page__content {
+    .mu-item__tint {
+        @include display(none);
+    }
+    .mu-item quotes{
+        .mu-item__gradient{
+            background: linear-gradient(rgba(0, 0, 0, 0) -20%, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 0%);
+    outline: none;
+        }
+    }
+}

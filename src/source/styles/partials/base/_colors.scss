@@ -1,0 +1,196 @@
+//Text color
+%brand-color {
+  @include color($brand-color);
+
+  @include font-size(13);
+
+  @include secondry-regular;
+}
+
+%primary-color {}
+
+%secondry-color {
+  @include color($default-color);
+
+  @include font-size(14);
+
+  @include secondry-regular;
+}
+
+//Primary background color
+%background-brand-color {
+  @include background-color($history-color);
+
+  @include color($white);
+
+  @include font-size(13);
+
+  @include secondry-regular;
+}
+
+%background-history-color {
+  @include background-color($history-color);
+
+  @include color($white);
+
+  @include font-size(13);
+
+  @include secondry-regular;
+}
+
+%background-page {
+  @include background-color($background-color);
+
+  @include color($black);
+
+  @include font-size(13);
+
+  @include secondry-regular;
+}
+
+%background-black {
+  @include background-color($black);
+
+  @include color($white);
+
+  @include font-size(13);
+
+  @include secondry-regular;
+}
+
+%background-white {
+  @include background-color($white);
+
+  @include color($black);
+
+  @include font-size(13);
+
+  @include secondry-regular;
+}
+
+%background-gray {
+  @include background-color($gray);
+
+  @include color($black);
+
+  @include font-size(13);
+
+  @include secondry-regular;
+}
+
+%background-default {
+  @include background-color($default-color);
+
+  @include color($white);
+
+  @include font-size(13);
+
+  @include secondry-regular;
+}
+
+%background-text-color {
+  @include background-color($default-text-color);
+
+  @include color($white);
+
+  @include font-size(13);
+
+  @include secondry-regular;
+}
+
+%background-default-gray {
+  @include background-color($gray-light);
+
+  @include color($white);
+
+  @include font-size(13);
+
+  @include secondry-regular;
+}
+
+//Acent background color
+%background-info {
+  @include background-color($info);
+
+  @include color($white);
+
+  @include font-size(13);
+
+  @include secondry-regular;
+}
+
+%background-warning {
+  @include background-color($warning);
+
+  @include color($white);
+
+  @include font-size(13);
+
+  @include secondry-regular;
+}
+
+%background-success {
+  @include background-color($success);
+
+  @include color($white);
+
+  @include font-size(13);
+
+  @include secondry-regular;
+}
+
+%background-danger {
+  @include background-color($danger);
+
+  @include color($white);
+
+  @include font-size(13);
+
+  @include secondry-regular;
+}
+
+//validation
+%validation {
+  @include color($white);
+
+  @include font-size(13);
+
+  @include secondry-regular;
+
+  @include padding(5, 5, 5, 5);
+}
+
+%background-positive {
+  @extend %validation;
+
+  @include background-color($positive);
+}
+
+%background-negative {
+  @extend %validation;
+
+  @include background-color($negative);
+}
+
+//Text default color
+%text-white {
+  @extend %txt-uppercase;
+
+  @include secondry-regular;
+
+  @include font-size(16);
+
+  @include color($white);
+}
+
+%text-black {
+  @extend %txt-uppercase;
+
+  @include secondry-regular;
+
+  @include font-size(16);
+
+  @include color($black);
+}
+
+//Card background colors

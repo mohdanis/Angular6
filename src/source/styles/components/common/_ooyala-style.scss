@@ -1,0 +1,150 @@
+////****---- Ooyala changes start ----****////
+.oo-control-bar-item.oo-logo {
+    display: none;
+}
+
+a.oo-closed-caption.oo-control-bar-item {
+    float: left;
+}
+
+span.oo-icon.oo-icon-share {
+    display: none;
+    float: left;
+    font-size: 0px;
+    opacity: 1 !important;
+    @include advance-sprite-image(#{share-lite}, $icons, $icons2x);
+}
+
+.innerWrapper.oo-player {
+    height: 100% !important;
+}
+
+.oo-player-container {
+    min-width: 304px !important;
+}
+
+span.oo-icon.oo-icon-cc {
+    @include advance-sprite-image(#{cc}, $icons, $icons2x);
+    position: relative;
+    font-size: 0px;
+    height: 20px;
+    width: 18px;
+    float: left;
+    opacity: 1 !important;
+    &:hover {
+        width: 18px !important;
+        height: 20px !important;
+        @include advance-sprite-image(cc-hover);
+    }
+}
+
+.oo-state-screen-info.oo-info-panel-top.oo-info-panel-left {
+    display: none;
+}
+
+a.oo-quality.oo-control-bar-item {
+    float: left;
+}
+
+.oo-popover-button-container .oo-popover {
+    bottom: 70px !important;
+}
+
+.oo-control-bar-items-wrapper {
+    height: 20px;
+}
+
+.oo-content-screen-title {
+    margin: 0 20px;
+}
+
+span.oo-icon.oo-icon-system-replay {
+    color: #EA0000 !important;
+}
+
+a.oo-time-duration.oo-control-bar-duration span {
+    @include secondry-regular;
+}
+
+span.oo-icon.oo-icon-cc {
+    font-size: 0px !important;
+}
+
+.oo-state-screen-description {
+    display: none;
+}
+
+button.oo-action-icon span.oo-icon.oo-icon-play-slick {
+    display: none !important;
+    @media (min-width: 300px) and (max-width: 1024px) {
+        display: block !important;
+        color: white !important;
+    }    
+}
+
+a.oo-share.oo-control-bar-item {
+    display: none;
+}
+
+a.oo-share.oo-control-bar-item {
+    display: none !important;
+}
+a.oo-time-duration.oo-control-bar-duration {
+    top: 3px !important;
+}
+.oo-watermark-container.oo-watermark-no-clickURL.oo-watermark-bottom.oo-watermark-right {
+    display: none !important;
+}
+
+  /////////////////////
+    .oo-scrubber-bar {
+        background-color: #d8d8d8 !important;
+        border-radius: 0px !important;
+    }
+
+    .oo-scrubber-bar-hover {
+        height: 6px;
+        border-radius: 0px !important;
+    }
+
+    .oo-hovered-indicator {
+        background-color: #d0021b !important;
+        border-radius: 0px !important;
+    }
+
+    .oo-buffered-indicator {
+        background-color: #9d9d9d !important;
+        border-radius: 0px !important;
+    }
+
+    .oo-played-indicator {
+        // background: $blue-light;
+        background: #d0021b !important;
+        border-radius: 0px !important;
+    }
+
+    .oo-playhead {
+        background: #ffffff !important;
+        border: 2px solid #ffffff !important;
+    }
+
+    .oo-on {
+        background-color: #d0021b !important;
+    }
+
+    .oo-volume:hover .oo-volume-bar {      
+        background-color: #d0021b !important;
+    }
+
+    .oo-player-container a.oo-volume-bar {
+        background-color: #d0021b !important;
+    }
+
+    .innerWrapper.oo-player {
+        height: 100% !important;
+    }
+
+    .oo-player-container .oo-quality-panel .scrollbar-container.horizontal { 
+        display:block !important; 
+    }
+////****---- Ooyala changes End ----****////

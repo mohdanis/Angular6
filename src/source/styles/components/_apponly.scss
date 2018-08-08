@@ -1,0 +1,139 @@
+    .app-only {
+        @include percentage-value(width, 100);
+        @include pull-left;
+        @include px-to-rem(height, 500);
+        @include breakpoint($medium) {
+            @include px-to-rem(height, 900);
+        }
+        @include position(relative);
+        &__wrapper {
+            @include position(relative);
+            @include breakpoint($large) {
+                @include px-to-rem(max-width, 790);
+            }
+            @include margin-auto(0);
+            @include margin-top(24);
+            @include breakpoint($medium) {
+                @include margin-top(48);
+            }
+            h1 {
+                @include text-align(center);
+                @include margin-bottom(35);
+                @include breakpoint($small $max-xsmall) {
+                    @include font-size(32);
+                    @include line-height(38,px);
+                    @include margin-bottom(4);
+                    @include padding-left(16);
+                    @include padding-right(16);
+                }
+                span {
+                    @include color($mu-red);
+                }
+            }
+            p {
+                @include secondry-light;
+                @include text-align(center);
+                @include font-size(16);
+                @include line-height(20,px);
+                @include px-to-rem(letter-spacing, -0.1);
+                @include margin-bottom(16);
+                @include breakpoint($small $max-xsmall) {
+                    @include padding-left(16);
+                    @include padding-right(16);
+                }
+                @include breakpoint($medium) {
+                    @include font-size(24);
+                    @include line-height(34,px);
+                    @include margin-bottom(32);
+                }
+            }
+        }
+        &__gradient {
+            @include percentage-value(width, 100);
+            @include percentage-value(height, 100);
+            @include position(absolute);
+            background: linear-gradient(-204deg, #f2f2f2 55%, #fff 33.3%);
+            opacity: 1;
+            @include breakpoint($xsmall) {
+                background: linear-gradient(-204deg, #F2F2F0 52%, #fff 33.3%) // linear-gradient(-184deg, rgba(0, 0, 0, 0) 75%, #fff 75.3%);
+            }
+            @include breakpoint($medium) {
+                background: linear-gradient(-204deg, #F2F2F0 51%, #fff 33.3%) // linear-gradient(-184deg, rgba(0, 0, 0, 0) 75%, #fff 75.3%);
+            }
+        }
+        &__img {
+            .img-large {
+                @include display(none);
+                @include margin-auto(0);
+                @include breakpoint($medium) {
+                    @include display(block);
+                }
+            }
+            .img-small {
+                @include display(block);
+                @include margin-auto(0);
+                @include breakpoint($medium) {
+                    @include display(none);
+                }
+            }
+            @include breakpoint($medium) {
+                @include text-align(center);
+                @include position(relative);
+                @include display(block);
+                .download__links {
+                    @include position(absolute);
+                    @include z-index(99);
+                    @include top(0);
+                    @include percentage-value(width, 100);
+                    section {
+                        @include position(relative);
+                        @include margin-top(167);
+                        .mu-logo {
+                            @include text-align(center);
+                            img {
+                                @include margin-bottom(57);
+                                @include px-to-rem(height, 180);
+                            }
+                        }
+                        .icons {
+                            img {
+                                @include margin-bottom(16);
+                                @include px-to-rem(height, 70);
+                            }
+                        }
+                    }
+                }
+            }
+            @include breakpoint($small $max-xsmall) {
+                @include display(block);
+                @include text-align(center);
+                @include position(relative);
+                .download__links {
+                    @include position(absolute);
+                    @include z-index(99);
+                    @include top(0);
+                    @include percentage-value(width, 100);
+                    section {
+                        @include position(relative);
+                        @include margin-top(80);
+                        .mu-logo {
+                            @include text-align(center);
+                            img {
+                                @include margin-bottom(16);
+                                @include px-to-rem(height, 100);
+                            }
+                        }
+                        .icons {
+                            img {
+                                @include margin-bottom(16);
+                                @include px-to-rem(height, 50);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &__bg {
+            @include text-align(center)
+        }
+    }

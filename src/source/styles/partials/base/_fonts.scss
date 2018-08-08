@@ -1,0 +1,62 @@
+@import "compass/css3/font-face";
+
+// BabasNeue
+@include font-face("BebasNeueBold", font-files("BebasNeue/bebasneue_bold-webfont.woff", "BebasNeue/bebasneue_bold-webfont.ttf", "BebasNeue/bebasneue_bold-webfont.svg"), "BebasNeue/bebasneue_bold-webfont.eot");
+@include font-face("BebasNeueBook", font-files("BebasNeue/bebasneue_book-webfont.woff", "BebasNeue/bebasneue_book-webfont.ttf", "BebasNeue/bebasneue_book-webfont.svg"), "BebasNeue/bebasneue_book-webfont.eot");
+@include font-face("BebasNeueLight", font-files("BebasNeue/bebasneue_light-webfont.woff", "BebasNeue/bebasneue_light-webfont.ttf", "BebasNeue/bebasneue_light-webfont.svg"), "BebasNeue/bebasneue_light-webfont.eot");
+@include font-face("BebasNeueRegular", font-files("BebasNeue/bebasneue_regular-webfont.woff", "BebasNeue/bebasneue_regular-webfont.ttf", "BebasNeue/bebasneue_regular-webfont.svg"), "BebasNeue/bebasneue_regular-webfont.eot");
+@include font-face("BebasNeueThin", font-files("BebasNeue/bebasneue_thin-webfont.woff", "BebasNeue/bebasneue_thin-webfont.ttf", "BebasNeue/bebasneue_thin-webfont.svg"), "BebasNeue/bebasneue_thin-webfont.eot");
+
+// SourceSansPro
+@include font-face("SourceSansProBlack", font-files("SourceSansPro/sourcesanspro-black.woff", "SourceSansPro/sourcesanspro-black.ttf", "SourceSansPro/sourcesanspro-black.svg"), "SourceSansPro/sourcesanspro-black.eot");
+@include font-face("SourceSansProBold", font-files("SourceSansPro/sourcesanspro-bold.woff", "SourceSansPro/sourcesanspro-bold.ttf", "SourceSansPro/sourcesanspro-bold.svg"), "SourceSansPro/sourcesanspro-bold.eot");
+@include font-face("SourceSansProLight", font-files("SourceSansPro/sourcesanspro-light.woff", "SourceSansPro/sourcesanspro-light.ttf", "SourceSansPro/sourcesanspro-light.svg"), "SourceSansPro/sourcesanspro-light.eot");
+@include font-face("SourceSansProRegular", font-files("SourceSansPro/sourcesanspro-regular.woff", "SourceSansPro/sourcesanspro-regular.ttf", "SourceSansPro/sourcesanspro-regular.svg"), "SourceSansPro/sourcesanspro-regular.eot");
+@include font-face("SourceSansProSemiBold", font-files("SourceSansPro/sourcesanspro-semibold.woff", "SourceSansPro/sourcesanspro-semibold.ttf", "SourceSansPro/sourcesanspro-semibold.svg"), "SourceSansPro/sourcesanspro-semibold.eot");
+
+// Montserrat
+@include font-face("MontserratBlack", font-files("Montserrat/montserrat-black.woff", "Montserrat/montserrat-black.ttf", "Montserrat/montserrat-black.svg"), "Montserrat/montserrat-black.eot");
+@include font-face("MontserratBold", font-files("Montserrat/montserrat-bold.woff", "Montserrat/montserrat-bold.ttf", "Montserrat/montserrat-bold.svg"), "Montserrat/montserrat-bold.eot");
+@include font-face("MontserratExtraBold", font-files("Montserrat/montserrat-extrabold.woff", "Montserrat/montserrat-extrabold.ttf", "Montserrat/montserrat-extrabold.svg"), "Montserrat/montserrat-extrabold.eot");
+@include font-face("MontserratHairline", font-files("Montserrat/montserrat-hairline.woff", "Montserrat/montserrat-hairline.ttf", "Montserrat/montserrat-hairline.svg"), "Montserrat/montserrat-hairline.eot");
+@include font-face("MontserratLight", font-files("Montserrat/montserrat-light.woff", "Montserrat/montserrat-light.ttf", "Montserrat/montserrat-light.svg"), "Montserrat/montserrat-light.eot");
+@include font-face("MontserratRegular", font-files("Montserrat/montserrat-regular.woff", "Montserrat/montserrat-regular.ttf", "Montserrat/montserrat-regular.svg"), "Montserrat/montserrat-regular.eot");
+@include font-face("MontserratSemiBold", font-files("Montserrat/montserrat-semibold.woff", "Montserrat/montserrat-semibold.ttf", "Montserrat/montserrat-semibold.svg"), "Montserrat/montserrat-semibold.eot");
+@include font-face("MontserratUltraLight", font-files("Montserrat/montserrat-ultralight.woff", "Montserrat/montserrat-ultralight.ttf", "Montserrat/montserrat-ultralight.svg"), "Montserrat/montserrat-ultralight.eot");
+
+// ClearSans
+@include font-face("ClearSansBold", font-files("ClearSans/ClearSansBold.woff", "ClearSans/ClearSansBold.ttf", "ClearSans/ClearSansBold.svg"), "ClearSans/ClearSansBold.eot");
+@include font-face("ClearSansRegular", font-files("ClearSans/ClearSansRegular.woff", "ClearSans/ClearSansRegular.ttf", "ClearSans/ClearSansRegular.svg"), "ClearSans/ClearSansRegular.eot");
+
+// Rajdhani
+@include font-face("RajdhaniRegular", font-files("Rajdhani/rajdhani-regular.woff", "Rajdhani/rajdhani-regular.ttf", "Rajdhani/rajdhani-regular.svg"), "Rajdhani/rajdhani-regular.eot");
+@include font-face("RajdhaniBold", font-files("Rajdhani/rajdhani-bold.woff", "Rajdhani/rajdhani-bold.ttf", "Rajdhani/rajdhani-bold.svg"), "Rajdhani/rajdhani-bold.eot");
+@include font-face("RajdhaniSemiBold", font-files("Rajdhani/RajdhaniSemiBold.woff", "Rajdhani/RajdhaniSemiBold.ttf", "Rajdhani/RajdhaniSemiBold.svg"), "Rajdhani/RajdhaniSemiBold.eot");
+@include font-face("RajdhaniLight", font-files("Rajdhani/rajdhani-light.woff", "Rajdhani/rajdhani-light.ttf", "Rajdhani/rajdhani-light.svg"), "Rajdhani/rajdhani-light.eot");
+@include font-face("RajdhaniMedium", font-files("Rajdhani/rajdhani-medium.woff", "Rajdhani/rajdhani-medium.ttf", "Rajdhani/rajdhani-medium.svg"), "Rajdhani/rajdhani-medium.eot");
+
+// Arabic: Changa
+@include font-face("ChangaBold", font-files("Changa/ChangaBold.woff", "Changa/ChangaBold.ttf", "Changa/ChangaBold.svg"), "Changa/ChangaBold.eot");
+@include font-face("ChangaMedium", font-files("Changa/ChangaMedium.woff", "Changa/ChangaMedium.ttf", "Changa/ChangaMedium.svg"), "Changa/ChangaMedium.eot");
+@include font-face("ChangaLight", font-files("Changa/ChangaLight.woff", "Changa/ChangaLight.ttf", "Changa/ChangaLight.svg"), "Changa/ChangaLight.eot");
+@include font-face("ChangaRegular", font-files("Changa/ChangaRegular.woff", "Changa/ChangaRegular.ttf", "Changa/ChangaRegular.svg"), "Changa/ChangaRegular.eot");
+@include font-face("ChangaExtraLight", font-files("Changa/ChangaExtraLight.woff", "Changa/ChangaExtraLight.ttf", "Changa/ChangaExtraLight.svg"), "Changa/ChangaExtraLight.eot");
+
+// Japanese: Noto Sans JP
+@include font-face("NotoSansMonoCJKjp-Bold", font-files("NotoSansCJKjp/NotoSansJP-Bold.woff", "NotoSansCJKjp/NotoSansJP-Bold.woff2", "NotoSansCJKjp/NotoSansJP-Bold.otf"));
+@include font-face("NotoSansMonoCJKjp-Light", font-files("NotoSansCJKjp/NotoSansJP-Light.woff", "NotoSansCJKjp/NotoSansJP-Light.woff2", "NotoSansCJKjp/NotoSansJP-Light.otf"));
+@include font-face("NotoSansMonoCJKjp-Thin", font-files("NotoSansCJKjp/NotoSansJP-Thin.woff", "NotoSansCJKjp/NotoSansJP-Thin.woff2", "NotoSansCJKjp/NotoSansJP-Thin.otf"));
+@include font-face("NotoSansMonoCJKjp-Regular", font-files("NotoSansCJKjp/NotoSansJP-Regular.woff", "NotoSansCJKjp/NotoSansJP-Regular.woff2", "NotoSansCJKjp/NotoSansJP-Regular.otf"));
+@include font-face("NotoSansMonoCJKjp-Black", font-files("NotoSansCJKjp/NotoSansJP-Black.woff", "NotoSansCJKjp/NotoSansJP-Black.woff2", "NotoSansCJKjp/NotoSansJP-Black.otf"));
+@include font-face("NotoSansMonoCJKjp-DemiLight", font-files("NotoSansCJKjp/NotoSansJP-DemiLight.woff", "NotoSansCJKjp/NotoSansJP-DemiLight.woff2", "NotoSansCJKjp/NotoSansJP-DemiLight.otf"));
+
+// Chinese Simplified: Noto Sans SC
+@include font-face("NotoSansMonoCJKsc-Bold", font-files("NotoSansCJKsc/NotoSansSC-Bold.woff", "NotoSansCJKsc/NotoSansSC-Bold.woff2", "NotoSansCJKsc/NotoSansSC-Bold.otf"));
+@include font-face("NotoSansMonoCJKsc-Light", font-files("NotoSansCJKsc/NotoSansSC-Light.woff", "NotoSansCJKsc/NotoSansSC-Light.woff2", "NotoSansCJKsc/NotoSansSC-Light.otf"));
+@include font-face("NotoSansMonoCJKsc-Thin", font-files("NotoSansCJKsc/NotoSansSC-Thin.woff", "NotoSansCJKsc/NotoSansSC-Thin.woff2", "NotoSansCJKsc/NotoSansSC-Thin.otf"));
+@include font-face("NotoSansMonoCJKsc-Regular", font-files("NotoSansCJKsc/NotoSansSC-Regular.woff", "NotoSansCJKsc/NotoSansSC-Regular.woff2", "NotoSansCJKsc/NotoSansSC-Regular.otf"));
+
+// Korean: KoPubDotum Pro
+@include font-face("KoPubDotum-Bold", font-files("KoPubDotum/KoPubDotum-Bold.woff", "KoPubDotum/KoPubDotum-Bold.ttf"), "KoPubDotum/KoPubDotum-Bold.eot");
+@include font-face("KoPubDotum-Light", font-files("KoPubDotum/KoPubDotum-Light.woff", "KoPubDotum/KoPubDotum-Light.ttf"), "KoPubDotum/KoPubDotum-Light.eot");
+@include font-face("KoPubDotum-Medium", font-files("KoPubDotum/KoPubDotum-Medium.woff", "KoPubDotum/KoPubDotum-Medium.ttf"), "KoPubDotum/KoPubDotum-Medium.eot");

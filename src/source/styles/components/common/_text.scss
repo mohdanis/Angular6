@@ -1,0 +1,56 @@
+//All Headings
+h1 {
+  @extend %heading1;
+}
+
+h2 {
+  @extend %new-heading2;
+}
+
+h3 {
+  @extend %new-heading3;
+}
+
+h4 {
+  @extend %new-heading4;
+}
+
+h5 {
+  @extend %new-heading5;
+}
+
+h6 {
+  @extend %new-heading6;
+}
+
+p {
+  @extend %paragraph;
+}
+
+.blockquote {
+  @extend %blockquote;
+}
+
+.bold {
+  @extend %font-bold;
+}
+
+.italic {
+  @extend %font-italic;
+}
+
+.underline {
+  @extend %font-underline;
+}
+
+hr {
+  @extend %hr;
+}
+
+.orderlist {
+  @extend %orderlist;
+}
+
+.unorderlist {
+  @extend %unorderlist;
+}

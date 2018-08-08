@@ -1,0 +1,27 @@
+.superhero {
+    video {
+        transform: translateX(50%) translateY(-50%);
+    }
+    .superhero-wrapper {
+        &.mute {
+        	.oo-player-container .oo-unmute {
+                @include pull-left;
+            }
+            &.muted {
+                .oo-player-container {
+                   .oo-icon.oo-icon-pause-slick {
+                        @include margin-left(48)
+                    }
+                }
+            }
+            .oo-player-container .oo-control-bar .oo-control-bar-items-wrapper {
+            		direction: rtl;
+            }
+        }          
+    }
+}
+.fullscreen .innerWrapper video {
+    -webkit-transform: translate(0%, -50%);
+    -ms-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
+}

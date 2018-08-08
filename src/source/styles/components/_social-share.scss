@@ -1,0 +1,560 @@
+div.gig-simpleShareUI-button {
+    width: 100% !important;
+    @include margin-right(8);
+    height: 36px !important;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    clear: both;
+}
+
+div.gig-simpleShareUI {
+    background: #f2f2f2;
+    border: 0 !important;
+    box-shadow: 0px 5px 16px rgba(51, 51, 51, 0.7) !important;
+    border-radius: 8px !important;
+    overflow: hidden;
+}
+
+div.gig-simpleShareUI-button:hover {
+    opacity: 1 !important;
+    transform: translate(4px, 0);
+    -webkit-transform: translate(4px, 0);
+    -o-transform: translate(4px, 0);
+    -moz-transform: translate(4px, 0);
+}
+
+div.gig-simpleShareUI-button-inner {
+    @include padding-left(0);
+}
+
+div.gig-simpleShareUI-content {
+    @include padding(14, 14, 5, 14, important);
+}
+
+div[provider="facebook"],
+div[provider="twitter"],
+div[provider="email"],
+div[provider="googleplus"],
+div[provider="qq"],
+div[provider="sina"],
+div[provider="whatsapp"],
+div[provider="more"] {
+    @include position(relative);
+    &:after {
+        content: "";
+        display: block;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        z-index: 0;
+        position: absolute;
+        @include left(0);
+        top: 0;
+    }
+    div {
+        z-index: 1;
+        width: 100% !important;
+        @include padding-left(32);
+        @include pull-left;
+    }
+}
+
+div[provider="twitter"] {
+    &:after {
+        background-color: #26a7df;
+    }
+}
+
+div[provider="facebook"] {
+    &:after {
+        background-color: #4d67a4;
+    }
+}
+
+div[provider="email"] {
+    &:after {
+        background-color: #26a7df;
+    }
+}
+
+div[provider="googleplus"] {
+    &:after {
+        background-color: #d84a36;
+    }
+}
+
+div[provider="qq"] {
+    &:after {
+        background-color: #427bcd;
+    }
+}
+
+div[provider="sina"] {
+    &:after {
+        background-color: #e6162d;
+    }
+}
+
+div[provider="whatsapp"] {
+    &:after {
+        background-color: #6CD94E;
+    }
+}
+
+div[provider="more"] {
+    &:after {
+        background-color: #ccc;
+    }
+}
+
+div[provider="twitter"] div {
+    width: 32px;
+    height: 32px; //border-radius: 50%;
+    background-image: none !important;
+    @include display(inline-block);
+    @include position(relative); //background-color: #26a7df;
+    background-image: url(../../assets/images/icons/twitter-white.png) !important;
+    background-position: 6px;
+}
+
+div[provider="facebook"] div {
+    width: 32px;
+    height: 32px; //border-radius: 50%;
+    background-image: none !important;
+    @include display(block);
+    @include position(relative); //background-color: #4d67a4;
+    background-image: url(../../assets/images/icons/fb.png) !important;
+    background-position: 10px;
+}
+
+div[provider="email"] div {
+    width: 32px;
+    height: 32px; //border-radius: 50%;
+    @include display(block);
+    @include position(relative); //background-color: #26a7df;
+    background-position: 7px;
+}
+
+div[provider="googleplus"] div {
+    width: 32px;
+    height: 32px; //border-radius: 50%;
+    background-image: none !important;
+    @include display(block);
+    @include position(relative); //background-color: #d84a36;
+    background-image: url(../../assets/images/icons/gplus.png) !important;
+    background-position: 3px;
+}
+
+div[provider="qq"] div {
+    width: 32px;
+    height: 32px; //border-radius: 50%;
+    @include display(block);
+    @include position(relative); //background-color: #427bcd;
+    background-image: url(../../assets/images/icons/bell.png)!important;
+    background-position: 7px 6px;
+}
+
+div[provider="sina"] div {
+    width: 32px;
+    height: 32px; //border-radius: 50%;
+    @include display(block);
+    @include position(relative); //background-color: #e6162d;
+    background-image: url(../../assets/images/icons/egg.png)!important;
+    background-position: 3px 6px;
+}
+
+div[provider="whatsapp"] div {
+    width: 32px;
+    height: 32px; //border-radius: 50%;
+    @include display(block);
+    @include position(relative); //background-color: #6CD94E;
+    background-position: 7px;
+}
+
+div[provider="more"] div {
+    width: 32px;
+    height: 32px; //border-radius: 50%;
+    @include display(block);
+    @include position(relative); //background-color: #ccc;
+    background-position: 7px;
+}
+
+div[provider] span {
+    border-radius: 50%;
+    background-image: none !important;
+    @include display(block);
+    @include position(relative);
+    @include padding(8, 7, 7, 14);
+    @include font-size(14);
+    font-weight: normal;
+    color: #585858;
+    text-transform: uppercase;
+    @include tertiary-semibold;
+    font-weight: normal;
+    @include text-align(left);
+}
+
+.bg-gray div.gig-simpleShareUI,
+.bg-white div.gig-simpleShareUI {
+    border: none;
+    border-radius: 0;
+}
+
+.gig-simpleShareUI-inner .gig-simpleShareUI-caption {
+    border-bottom: none;
+    height: 2px;
+}
+
+div.gig-simpleShareUI-inner {
+    background: #f2f2f2 !important;
+    border: 0 !important;
+}
+
+.div.gig-simpleShareUI-caption-text {
+    display: none;
+}
+
+.gig-simpleShareUI-closeButton {
+    position: absolute;
+    @include right(5);
+}
+
+.bg-gray .gig-simpleShareUI {
+    width: 210px !important;
+}
+
+.bg-gray .gig-simpleShareUI div.gig-simpleShareUI-inner {
+    //border: 1px solid #e7e7e7;
+    width: 210px !important;
+}
+
+.gig-simpleShareUI {
+    width: 210px !important;
+}
+
+div.gig-simpleShareUI-closeButton {
+    //background-image: url(../../assets/images/icons/close-black.png) !important;
+    @include padding(14, 14, 14, 14, important);
+    position: absolute !important;
+    @include top(2, important);
+    @include right(2, important);
+    @include margin(0, 0, 0, 0, important);
+    @include pull-none(important);
+    z-index: 9999;
+    cursor: pointer;
+}
+
+div.gig-simpleShareUI-closeButton:before {
+    content: " ";
+    position: absolute;
+    @include left(7);
+    @include right(7);
+    height: 2px;
+    background: #333;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+div.gig-simpleShareUI-closeButton:after {
+    content: " ";
+    position: absolute;
+    @include left(7);
+    @include right(7);
+    height: 2px;
+    background: #333;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.carousal {
+    .social-card {
+        .statsbar {
+            position: absolute !important;
+        }
+    }
+}
+
+.social-card {
+    .statsbar {
+        @include color($mu-black);
+        position: relative !important;
+        a {
+            span {
+                &.statsbar__tag {
+                    @include color($mu-black);
+                }
+                &.statsbar__time {
+                    @include color($mu-black);
+                }
+            }
+        }
+    }
+}
+
+.mu-item,
+.stats-card,
+.profile {
+    overflow: hidden;
+}
+
+.match-day {
+    .stats-card {
+        .icon-share-card-lite {
+            @include display(block, important);
+        }
+    }
+}
+
+
+/*Removing Share icons from selected Cards*/
+
+.mu-item {
+    &.social-card {
+        .statsbar {
+            .icon-share-card-lite {
+                @include display(none);
+            }
+        }
+    }
+}
+
+
+/* Closing*/
+
+.grid-3,
+.grid-4,
+.grid-6,
+.grid-8,
+.grid-12,
+.mini-card,
+.micro-card {
+    .icon-share-card-lite {
+        @include cursor(pointer);
+    }
+    .social-share__footer {
+        @include breakpoint($small $max-xsmall) {
+            width: 100% !important;
+        }
+    }
+}
+
+.grid-3,
+.grid-4,
+.grid-6,
+.grid-8,
+.grid-12 {
+    // @include breakpoint($small $max-small) {
+        .copy-link-btn {
+            width: auto !important; // @include percentage-value(width,100);
+        }
+    // }
+}
+
+.grid-3,
+.grid-4 {
+    .social-share__footer {
+        width: 100% !important;
+    }
+
+    @include breakpoint($medium $max-medium) {
+        .close {
+            @include position(relative, important);
+            @include pull-right(important);
+            @include bottom(8);
+            @include right(0);
+        }
+        .social-share__footer ul {
+            @include percentage-value(width, 100);
+        }
+    }
+}
+
+
+
+
+.mini-card {
+    .social-share__footer {
+        @include percentage-value(width, 100);
+        ul {
+            @include px-to-rem(max-width, 155);
+        }
+        .close {
+            @include position(relative, important);
+            @include pull-right(important);
+            @include bottom(8);
+            @include right(0);
+        }
+        
+    }
+}
+
+
+.micro-card {
+    .social-share__footer {
+        @include breakpoint($small $max-xsmall) {
+            .copy-link-btn {
+                width: auto !important;
+                //@include percentage-value(width, 100);
+            }
+        }
+    }
+}
+
+// .grid-3,.grid-4,.grid-8,.grid-12 {
+//     @include breakpoint($xxlarge) {
+//         .copy-link-btn {
+//              @include percentage-value(width, 100);
+//         }
+//     }
+// }
+
+
+.social-share__footer {
+    @include position(absolute);
+    @include bottom(0);
+    @include z-index(997);
+    @include background($white-lighter);
+    @include padding(10, 10, 0, 10);
+    @include px-to-rem(width, 285);
+    @include right(-400);
+    ul {
+        @include px-to-rem(min-height, 45);
+        @include percentage-value(width, 100);
+        li {
+            margin: 0 4px;
+            @include display(inline-block);
+            @include position(relative);
+            @include prefix-vendor(border-radius, 50%, webkit ms o);
+            @include px-to-rem(width, 32);
+            @include px-to-rem(height, 32);
+            @include margin-bottom(8);
+            @include cursor(pointer);
+            i {
+                @include top(50, percent);
+                @include left(50, percent);
+                @include position(relative);
+                @include margin(0, 0, 0, 0);
+                transform: translate(-50%, -50%);
+                -webkit-transform: translate(-50%, -50%);
+            }
+            &.twitter {
+                background-color: #26a7df; 
+            }
+            &.facebook {
+                background-color: #4d67a4; 
+            }
+            &.whatsapp {
+                background-color: #34af23; 
+                @include display(none);
+                &.showIcon {
+                    @include display(inline-block);
+                }
+            }
+            &.gplus {
+                background-color: #d84a36; 
+            }
+            &.wechat {
+                background-color: #2dc100;
+            }
+            &.egg {
+                background-color: #e6162d; 
+            }
+            &.snapchat {
+                background-color: #427bcd; 
+            }
+            &.email {
+                background-color: #6d6e71; 
+            }
+            &.copy-link-btn {
+                width: 100% !important;
+                button.copy-link {
+                    @include px-to-rem(width, 190);
+                    background: 0 0;
+                    border: none;
+                    vertical-align: top;
+                    cursor: pointer;
+                    @include pull-left;
+                    @include margin-left(-5);
+                }
+                .icon {
+
+                    @include prefix-vendor(border-radius, 50%, webkit ms o);
+                    @include px-to-rem(width, 32);
+                    @include px-to-rem(height, 32);
+                    @include background-color($white);
+                    @include pull-left;
+                    @include padding(6, 6, 6, 6);
+                }
+                .copy-text {
+                    @include pull-left;
+                    @include margin-left(9);
+                    @include margin-top(9);
+                    @include font-size(14);
+                    color: #4b4b4b;
+                }
+            }
+             a:focus,a.non-keyboard-outline{
+                @include pull-left;
+                @include px-to-rem(width,32);
+                @include px-to-rem(height,32);
+            }
+        }
+    }
+
+    .close {
+        @include position(absolute);
+        @include right(10);
+        @include bottom(10);
+         a,a:focus,a.non-keyboard-outline{
+                @include pull-left;
+                @include px-to-rem(width,32);
+                @include px-to-rem(height,32);
+            }
+    }
+}
+
+.mu-modal__footer .social-share__footer,.collection__left-panel .social-share__footer {
+    @include breakpoint($medium){
+        @include important-value(width,285);
+    }
+}
+.mu-modal{
+    .mu-item{
+        &.quotes{
+
+            .social-share__footer{
+
+                 @include breakpoint($small $max-small){
+
+                    @include bottom(55);
+
+                 }
+
+            }
+
+        }
+
+    } 
+
+}
+
+.bodyfixed {
+
+    @include breakpoint($small $max-small){
+
+       @include position(fixed,important);
+
+      
+
+    }
+
+}
+

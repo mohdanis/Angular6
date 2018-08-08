@@ -1,0 +1,1270 @@
+%collection-btn {
+    @include px-to-rem(width, 44);
+    @include px-to-rem(height, 44);
+    @include background-color($grey-btn);
+    @include pull-left;
+    @include margin-right(8); // transition: background-color 3s;
+    transition: background-color .3s ease-out;
+}
+
+%collection-full-width {
+    @include percentage-value(width, 100);
+    @include pull-left;
+}
+
+%collection-line {
+    @extend %collection-full-width;
+    @include border-bottom(1, solid, #363636); //box-shadow: 0 1px 1px 0 #363636;
+}
+
+// %collection-active {
+//     @include background-color($black);
+//     // @include border-left(4, solid, $mu-red);
+//     // @include padding-left(26);
+// }
+%collection-transcript {
+    @include breakpoint($small $max-xsmall) {
+        @include position(absolute);
+        @include margin-top(0);
+        @include right(0);
+    }
+    @include position(relative);
+    @include font-size(12);
+    @include pull-left;
+    @include secondry-semibold;
+    cursor: pointer; // text-decoration: underline;
+    @include margin-top(19);
+    @include line-height(1.33);
+    color: #f2f2f2;
+    text-transform:uppercase;
+    height: 16px;
+}
+
+.collection-item__wrapper {
+    @include position(relative);
+    @include pull-left;
+    width: 100%;
+    @include breakpoint($small $max-xsmall) {
+        @include padding-top(24);
+    }
+}
+
+.collection {
+    .mu-item__player {
+        .oo-unmute {
+            @include margin-top(50);
+        }
+    }
+    @include percentage-value(width, 100);
+    @include percentage-value(height, 100);
+    @include padding(0, 0, 0, 0);
+    @include pull-left;
+    @include overflow-y(hidden);
+    @include background-color($mu-black);
+    @include breakpoint($small $max-xsmall) {
+        @include overflow(scroll);
+    }
+    @include breakpoint($medium) {
+        @include padding(10, 20, 20, 20);
+    }
+    &__left-panel {
+        @include overflow(hidden);
+        @include breakpoint($small $max-small) {
+            @include percentage-value(width, 100);
+            @include padding-left(20);
+            @include padding-right(20);
+            @include margin-left(0);
+            @include margin-right(0);
+            height: auto; // @include overflow(auto);
+        } // @include breakpoint($small $max-xsmall) {
+        //   @include overflow(hidden);
+        // }
+        @include span(6 of 6);
+        @include percentage-value(height, 100);
+        @include breakpoint($medium) {
+            @include span(4 of 12 0);
+            @include margin(0);
+        }
+        @include breakpoint($xxlarge) {
+            @include px-to-rem(width, 450);
+        }
+        @include pull-left;
+        .social-share__footer {
+            bottom: 10px;
+        }
+        & .collection__wrapper {
+            @include pull-left;
+            @include position(relative);
+            @include percentage-value(height, 100);
+            @include percentage-value(width, 100);
+            @include calculate-height(100, 98);
+            .placeholder {
+                @include pull-left;
+                clear: both;
+                @include percentage-value(height, 100);
+                @include percentage-value(width, 100);
+                .collection__listing {
+                    height: calc(100% - 224px);
+                    @include overflow-y(auto);
+                }
+            }
+            .collection-item {
+                @extend %collection-full-width;
+                @include percentage-value(width, 100);
+                @include margin-top(16);
+                @include breakpoint($medium) {
+                    // @include px-to-rem(width, 340);
+                    @include margin-top(0);
+                }
+                @include position(relative);
+                &__sponsor {
+                    @include breakpoint($small $max-xsmall) {
+                        width: auto; // @include pull-right;
+                        // display: inline-block;
+                        // @include margin(0, 0, 0, 0);
+                        @include position(absolute);
+                        @include right(0);
+                        span:first-child {
+                            @include display(none);
+                        }
+                    }
+                    @include percentage-value(width, 100);
+                    @include margin(0, 0, 0, 0); // @include margin(20, 0, 20, 0);
+                    @extend %collection-full-width;
+                }
+                &__heading {
+                    @include font-size(16);
+                    @include line-height(1.38);
+                    @include secondry-semibold;
+                    @include padding-top(0);
+                    @include margin-top(0);
+                    text-transform: initial;
+                    @include color($white);
+                    width: 83%;
+                    @include pull-left;
+                    @extend %txt-uppercase;
+                    @include margin-top(14);
+                    @include position(relative);
+                    word-wrap: break-word;
+                    @include breakpoint($medium) {
+                        @include font-size(32);
+                        @include primary-bold;
+                        @include line-height(1);
+                        width: 100%;
+                        @include margin-top(56);
+                    }
+                }
+                .toggle-nfo {
+                    @include font-size(12);
+                    @include line-height(1.57);
+                    @include color($white);
+                    @include display(block);
+                    cursor: pointer;
+                    @include pull-left;
+                    @include text-transform(uppercase);
+                    @include breakpoint($medium) {
+                        @include display(none);
+                    }
+                }
+                &__teaser {
+                    @include breakpoint($small $max-xsmall) {
+                        @include display(none);
+                    }
+                    @include display(block);
+                    @extend %paragraph;
+                    @extend %collection-full-width;
+                    @include color($white);
+                    @include margin-top(16);
+                    @include text-truncate-lines(3, 18, 1.6);
+                    @include breakpoint($medium) {
+                        @include font-size(16);
+                    }
+                }
+            }
+            .statsbar {
+                @include margin-bottom(10);
+                @include margin-top(16);
+                @include position(relative);
+                height: 43px;
+                @include padding(0, 0, 0, 0);
+                @include pull-left;
+                box-shadow: 0 1px 0 0 rgba(133, 133, 133, 0.3);
+            }
+            .collection__listing {
+                @extend %collection-full-width;
+                @include calculate-height(100, 180);
+                @include overflow-y(auto);
+                @include breakpoint($small $max-xsmall) {
+                    height: 100%;
+                    @include margin-bottom(47);
+                    @include overflow(visible);
+                }
+                & li {
+                    @extend %collection-full-width;
+                    @include padding-bottom(15);
+                    @include padding-top(15);
+                    @include cursor(pointer);
+                    @include position(relative);
+                    @include percentage-value(width, 100);
+                    @extend %collection-line;
+                    transition: background-color .3s ease-out;
+                    & .thumb {
+                        @include px-to-rem(width, 90);
+                        @include pull-left;
+                        @include margin-right(20);
+                        @include px-to-rem(height, 70);
+                        @include overflow(hidden);
+                        img {
+                            @include display(block, important);
+                            @include px-to-rem(width, 90);
+                        }
+                    }
+                    a {
+                        @include pull-left;
+                        @include calculate-width(100, 120);
+                    }
+                    & .details {
+                        // @include calculate-width(100, 87);
+                        width: 100%;
+                        @include pull-right;
+                        @include padding-bottom(30);
+                        .thumb-txt {
+                            @include secondry-regular;
+                            @include font-size(16);
+                            @include color($white);
+                            @include text-align(left);
+                            @include line-height(1.38);
+                            @extend %txt-none;
+                            word-wrap: break-word;
+                        }
+                        &__info {
+                            @include position(absolute);
+                            @include bottom(15);
+                            @include pull-left;
+                            & .icon {
+                                @include pull-left;
+                                @include margin-right(8);
+                                @include margin-top(2);
+                            }
+                            & .play-time {
+                                @include secondry-regular;
+                                @include font-size(14);
+                                @include color($associated-tag-bg);
+                            }
+                            & .time {
+                                @include secondry-light;
+                                @include font-size(14);
+                                @include color($white);
+                                @include line-height(1.43);
+                                @include font-weight(normal);
+                                span {
+                                    @include secondry-light(en);
+                                }
+                            }
+                            & .tag-video {
+                                @include margin-top(6);
+                            }
+                        }
+                    }
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                    .loader-wrapper {
+
+                        @include bottom(0);
+                        @include padding-top(0);
+                        @include position(relative);
+                    }
+                    .loader {
+                        @include font-size(15);
+                    }
+                    &:hover {
+                        // @extend %collection-active;                        
+                        background-color: $black;
+                        .thumb-txt {
+                            text-decoration: underline;
+                        }
+                    }
+                    &.active-list {
+                        // @extend %collection-active;
+                        background-color: $black;
+                    }
+                }
+            }
+        }
+    }
+    &__right-panel {
+        // @include percentage-value(width, 100);
+        @include span(6 of 6 0);
+        @include pull-right(important);
+        @include display(table);
+        @include prop-auto(height, auto);
+        @include breakpoint($medium) {
+            // @include calculate-width(100, 400);
+            @include span(8 of 12 0);
+            @include percentage-value(height, 100);
+        }
+        @include breakpoint($xxlarge) {
+            @include calculate-width(100, 460);
+        } // @include pull-right;
+        .inner__content {
+            @include breakpoint($small $max-xsmall) {
+                @include display(block);
+                @include padding-top(0);
+                @include padding-bottom(0);
+            } // @include percentage-value(max-width, 80);
+            @include percentage-value(width, 100);
+            @include position(relative);
+            @include display(table-cell);
+            @include padding-top(25);
+            @include padding-bottom(35);
+            vertical-align: middle;
+            @include margin-auto(0);
+            @include breakpoint($medium) {
+                @include padding-left(20);
+                @include padding-top(0);
+                @include padding-bottom(0);
+            }
+            // & figure {
+            //     .video-icon-play {
+            //         width: 0;
+            //         height: 0;
+            //         border-top: 21px solid transparent;
+            //         border-left: 40px solid white;
+            //         border-bottom: 21px solid transparent;
+            //         display: block;
+            //         position: absolute;
+            //         background-color: none !important;
+            //         transform: translate(-50%, -50%);
+            //         top: 50%;
+            //         left: 50%;
+            //         z-index:99;
+            //     }
+            //     img {
+            //         display: block;
+            //     }
+            //     @include breakpoint($medium) {
+            //         img,
+            //         .mu-item__gradient,
+            //         .video-icon-play {
+            //             display: none;
+            //         }
+            //     } 
+            // }
+        }
+        .top-view {
+            @include display(table);
+            width: 100%;
+            @include pull-right;
+        }
+        & .navigation {
+            // @include percentage-value(width, 100);
+            @include position(absolute);
+            @include right(23);
+            @include bottom(16);
+            @include pull-right;
+            @include display(none);
+            @include z-index(99);
+            @include breakpoint($medium) {
+                @include display(table-cell);
+            }
+            .collection-btn {
+                @extend %collection-btn;
+                cursor: pointer;
+                i {
+                    @include top(15);
+                    @include left(14);
+                    @include position(relative); // transform: translate(-50%, -50%);
+                    // -webkit-transform: translate(-50%, -50%);
+                }
+                &:hover {
+                    background-color: $white;
+                    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+                    i.icon-prev {
+                        @extend .icon-prev-2;
+                    }
+                    i.icon-next {
+                        @extend .icon-next-2;
+                    }
+                }
+            }
+        }
+        .portrait-video {
+            @include pull-none;
+            @include margin-auto(0);
+        }
+    }
+    .mu-item {
+        @include margin-bottom(0);
+        &__wrapper {
+            @include percentage-value(height, 100);
+        }
+        .video .mu-item__play {
+            @include left(0);
+            @include bottom(0);
+        }
+        figure {
+            @include breakpoint($medium) {
+                background-position: initial;
+            }
+        }
+        &.video {
+            @include percentage-value(width, 100);
+            @include position(relative);
+            height: 0;
+            @include padding-bottom(56.25, percent, important);
+            .img-holder {
+                @include percentage-value(width, 100);
+                @include percentage-value(height, 100);
+                @include position(absolute);
+            }
+        }
+        &.video,
+        &.audio {
+            .oo-player-container {
+                @include display(block);
+                min-width: 10px;
+            }
+        }
+    }
+}
+
+.collection-item {
+    &__transcript {
+        @extend %collection-transcript;
+        @include display(block);
+        &:hover {
+            border-bottom: 1px solid #d8d8d8;
+        }
+    }
+}
+
+.collection-item__up-next {
+    @include pull-left;
+    @include percentage-value(width, 100);
+    @include margin(35, 0, 20, 0);
+    @include display(block);
+    .up-next {
+        @include pull-left;
+        @include font-size(14);
+        @include tertiary-semibold;
+        @include line-height(18, px);
+        letter-spacing: 0.2px;
+        @include position(relative);
+        color: $white;
+        &:after {
+            @include border-top(2, solid, $mu-red);
+            @include position(absolute);
+            @include px-to-rem(width, 48);
+            content: '';
+            @include left(0);
+            @include bottom(-6);
+        }
+    }
+    .autoplay-btn {
+        @include pull-right;
+        @include font-size(14);
+        @include line-height(22, px);
+        letter-spacing: 0.4px;
+        .toggle-on {
+            // @include tertiary-regular;
+            @include font-size(12);
+            @include padding(0, 6, 0, 5);
+            @include margin-left(6);
+            border-radius: 2px;
+            background-color: $mu-green;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.fullscreen {
+    @include percentage-value(width, 100);
+    @include overflow(hidden);
+}
+
+.modal {
+    @extend %modal;
+    @include z-index(9999999);
+    @include color($white);
+    @include background-color($mu-black);
+    section {
+        @include percentage-value(height, 100);
+    }
+}
+
+.mu-item__wrapper {
+    & .bottom-panel {
+        @include position(absolute);
+        @include left(0);
+        @include bottom(43);
+        @include background-color($black, 0.6);
+        @include color($white);
+        @include percentage-value(width, 100);
+        @include padding(10, 10, 10, 10);
+        @include z-index(99);
+        p {
+            @include text-truncate-lines(2, 16, 1.40);
+        }
+    }
+}
+
+.icon-panel {
+    @include position(absolute);
+    @include top(1);
+    @include breakpoint($small $max-xsmall) {
+        @include left(1);
+    }
+    @include breakpoint($medium) {
+        @include right(1);
+    } // span:first-child {
+    //     @include line-height(43, px);
+    //     @include margin-right(0);
+    // }
+    // span.close-btn {
+    //     @include z-index(1);
+    //     background: #1a1a1a;
+    //     @include pull-right;
+    //     width: 24px;
+    //     height: 24px;
+    //     border-radius: 50%;
+    //     @include padding-top(5);
+    //     @include padding-right(4);
+    // }
+    .icon-cross {
+        // @include pull-none;
+        // cursor: pointer;
+        // @include margin-left(0);
+        // @include margin-right(0);
+        // @include px-to-rem(height, 11);
+        // @include display(inline-block);
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        @include top(50, percent);
+        @include left(50, percent);
+        @include position(relative);
+        margin: 0px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* div.gig-simpleShareUI {
+    @include breakpoint($small $max-small) {
+        @include left(4,percent,important);
+    }
+} */
+
+// New Modals Designs//////////////////
+.mu-modal {
+    @extend .modal;
+    z-index: 999999 !important;
+    &__header {
+        @include px-to-rem(height, 44);
+        @include padding(8, 12, 0, 12);
+        @include position(absolute);
+        @include percentage-value(width, 100);
+        @include top(0);
+        @include z-index(9999);
+        .mu-item__sponsor {
+            @include display(inline-block);
+            @include pull-left;
+            span {
+                &:first-child {
+                    @include pull-left;
+                    @include color($gray-heading);
+                    @include text-align(left);
+                    @include margin-right(16);
+                    @include margin-left(8);
+                    @include secondry-regular;
+                    @include padding-top(10);
+                    @include padding-bottom(10);
+                    @include text-transform(uppercase);
+                    @include font-size(12);
+                    @include breakpoint($small $max-xsmall) {
+                        @include display(none);
+                    }
+                }
+                &:last-child {
+                    @include pull-right;
+                    @include color($player-bg);
+                    img {
+                        @include px-to-rem(max-height, 30);
+                    }
+                }
+            }
+        }
+        .icon-close {
+            @include pull-right;
+            @include cursor(pointer);
+            @include z-index(9999);
+        }
+    }
+    &__body {
+        &__container {
+            height: 100vh;
+            img {
+                @include breakpoint($small $max-small) {
+                    @include percentage-value(width, 100);
+                }
+                @include breakpoint($xsmall $max-xsmall) {
+                    @include percentage-value(height, 100);
+                }
+                @include breakpoint($medium) {
+                    @include px-to-rem(max-height, 660);
+                }
+                @include breakpoint($xlarge) {
+                    //@include px-to-rem(max-height, 470);
+                    @include px-to-rem(max-height, 507);
+                }
+                @include breakpoint($xxlarge) {
+                    @include px-to-rem(max-height, 560);
+                }
+                @include breakpoint($largest) {
+                    @include px-to-rem(max-height, 840);
+                }
+            }
+            .gallery-img {
+                @include display(block);
+                @include breakpoint($medium) {
+                    @include important(display, none);
+                }
+            }
+            .gallery-img__bg {
+                @include position(absolute);
+                @include left(60);
+                @include right(60);
+                @include top(0);
+                background-size: contain !important;
+                background-repeat: no-repeat !important;
+                background-position: 50% 50% !important;
+                @include display(none);
+                @include breakpoint($medium) {
+                    @include display(block);
+                    @include margin-top(44);
+                    @include bottom(140);
+                }
+                @include breakpoint($large) {
+                    @include bottom(140);
+                }
+                @include breakpoint($xlarge) {
+                    @include bottom(130);
+                }
+                @include breakpoint($xxlarge) {
+                    @include bottom(130);
+                }
+                @include breakpoint($largest) {
+                    @include bottom(120);
+                }
+                img {
+                    visibility: hidden !important;
+                }
+            }
+            .image-card {
+                @include text-align(center);
+                @include percentage-value(height, 100);
+                @include breakpoint($medium) {
+                    @include padding-top(32);
+                    @include calculate-height(100, 150);
+                }
+                .mu-item__gradient {
+                    @include breakpoint($medium) {
+                        @include display(none);
+                    }
+                }
+                img {
+                    @include breakpoint($small $max-xsmall) {
+                        //@include top(50,percent);
+                        //@include left(50,percent);
+                        @include position(relative); //@include margin(0,0,0,0);
+                        //transform: translate(-50%, -50%);
+                        //-webkit-transform: translate(-50%, -50%);
+                    }
+                }
+                .gallery-img__bg {
+                    @include margin-top(44);
+                }
+            }
+            .slick-slide {
+                height: 100vh;
+                img {
+                    @include display(inline-block);
+                    @include breakpoint($small $max-small) {
+                        -webkit-transform: translate(-50%, -50%);
+                        -ms-transform: translate(-50%, -50%);
+                        transform: translate(-50%, -50%);
+                        @include top(43, percent);
+                        @include left(50, percent);
+                        @include position(relative);
+                    }
+                }
+
+                div.gallery-card__images {
+                        @include pull-left;
+                        @include breakpoint($small $max-xsmall){
+                            height:100vh;
+                        } 
+                }
+            }
+            .slider-prev {
+                @extend %sliderarrow; //@include left(38,percent);
+                left: calc(50% - 60px); //@include breakpoint($xsmall) {
+                //    @include left(44,percent);
+                //}
+                @include breakpoint($medium) {
+                    // @include left(0);
+                    // // Written left:0 no multilingual required
+                    left:0px;
+                }
+                i {
+                    @include top(4);
+                    @include z-index(9999);
+                    @include position(absolute);
+                    // @include left(4);
+                     // // Written left:0 no multilingual required
+                    // left: 4px;
+                }
+            }
+            .slider-next {
+                @extend %sliderarrow; //@include right(30,percent);
+                right: calc(50% - 60px); //@include breakpoint($xsmall) {
+                //    @include right(36,percent);
+                //}
+                @include breakpoint($medium) {
+                    // @include right(0);
+                    // Written right:0 no multilingual required
+                    right:0px;
+                }
+                i {
+                    @include top(4);
+                    @include z-index(9999);
+                    @include position(absolute);
+                    // @include left(4);
+                     // Written left:0 no multilingual required
+                    left: 4px;
+                }
+            }
+            .noimage {
+                //@include padding-top(150);
+                @include text-align(center);
+                @include position(absolute);
+                @include top(45, percent);
+                @include percentage-value(width, 97);
+                @include padding(15, 15, 15, 15);
+            }
+            .slick-initialized.slick-slider .slick-slide,
+            .slick-initialized.slick-slider .slick-slide:first-child {
+                max-height: none !important;
+            }
+            .slick-initialized.slick-slider .slick-slide,
+            .slick-initialized.slick-slider .slick-slide {
+                max-height: none !important;
+            }
+        }
+        .slick-list {
+            .mu-modal__body__description {
+                @include bottom(44);
+                @include breakpoint($medium) {
+                    @include bottom(25);
+                }
+            }
+        }
+        .singleimg {
+            img {
+                @include breakpoint($small $max-xsmall) {
+                    @include important-value(min-height, 100);
+                }
+            }
+            .mu-modal__body__description {
+                @include bottom(48);
+                @include breakpoint($medium) {
+                    @include margin-bottom(0);
+                }
+            }
+            .mu-item__gradient {
+                @include display(block);
+                @include breakpoint($medium) {
+                    @include display(none);
+                }
+            }
+            .image-card {
+                @include breakpoint($medium) {
+                    @include margin-top(47);
+                }
+            }
+        }
+        &__description {
+            @include padding-left(20);
+            @include padding-right(20);
+            @include pull-left;
+            @include percentage-value(width, 100);
+            @include position(absolute);
+            @include bottom(44);
+            @include text-align(left);
+            @include text-align(left);
+            @include z-index(99);
+            @include breakpoint($medium) {
+                @include column-width(grid-8);
+                @include px-to-rem(max-height, 100);
+                @include margin-bottom(50);
+            }
+            .mu-item__teasure {
+                @include color($white);
+                @include font-size(16);
+                @include display(block, important);
+            }
+            .mu-item__paging {
+                @include padding-top(10);
+                @include padding-bottom(10);
+                @include breakpoint($small $max-small) {
+                    @include px-to-rem(width, 50);
+                    @include text-align(center);
+                    @include position(absolute);
+                    @include bottom(-38);
+                    @include left(50, percent);
+                    @include margin-left(-25);
+                }
+            }
+        }
+    }
+    &__footer {
+        @include px-to-rem(height, 44);
+        @include position(absolute);
+        @include bottom(0);
+        @include percentage-value(width, 100);
+        .statsbar {
+            @include padding-left(20);
+            @include padding-right(20);
+        }
+        &.gallery_footer {
+            @include bottom(0);
+            #etrawp-reaction0-icon_img {
+                opacity: 0;
+            }
+        }
+    }
+    .close-btn {
+        @include background($mu-black);
+        @include pull-right;
+        @include px-to-rem(width, 24);
+        @include px-to-rem(height, 24);
+        @include padding-top(0);
+        @include padding-left(5);
+        border-radius: 50%;
+        @include z-index(9999);
+        border: none;
+        cursor: pointer;
+    }
+    button.zoom-btn {
+        background: none;
+        border: none;
+        @include pull-right;
+        @include right(20);
+        @include display(none);
+    }
+    button.zoom-btn.gallery-zoom {
+        @include position(static);
+        @include margin-right(-10);
+    }
+}
+
+//specific code for all card for modal
+.mu-modal {
+    //For Quote
+    .mu-item {
+        &.quotes {
+            height: 100vh;
+            .mu-quotes__wrapper {
+                @include percentage-value(width, 100);
+                @include breakpoint($small $max-xsmall) {
+                    @include padding-left(20);
+                    @include padding-right(40);
+                } //@include important( padding-left, 0);
+                @include breakpoint($medium) {
+                    @include percentage-value(width, 70);
+                    @include padding-left(46);
+                }
+                @include breakpoint($xlarge) {
+                    @include percentage-value(width, 60);
+                    @include padding-left(125);
+                }
+                .mu-quotes__info {
+                    @include breakpoint($small $max-xsmall) {
+                        @include padding-left(0);
+                        @include padding-right(0);
+                    }
+                }
+            }
+            .mu-item__title {
+                @include padding-bottom(16);
+            }
+            .mu-quotes__title {
+                @include breakpoint($small $max-small) {
+                    @include font-size(16);
+                    @include line-height(32, px);
+                }
+                @include font-size(20);
+                @include line-height(40, px);
+            }
+            .mu-quotes__author {
+                @include margin-bottom(48);
+                @include margin-top(35);
+                @include font-size(14);
+                @include pull-left;
+                @include percentage-value(width, 100);
+            }
+            .statsbar {
+                @include breakpoint($small $max-small) {
+                    @include position(fixed);
+                }
+            }
+        }
+        &.no-img {
+            @include background-color($mu-black);
+            .img-holder {
+                @include display(none);
+            }
+        }
+    } //for Trivia
+    //
+    .trivia {
+        .mu-item__info {
+            @include bottom(148);
+            @include percentage-value(width, 100);
+            @include padding-left(20);
+            @include padding-right(20);
+            @include breakpoint($medium) {
+                @include pull-column(grid-1);
+                @include span(6 of 12);
+                @include bottom(148);
+            }
+        }
+        .mu-item__title {
+            @include display(none);
+        }
+        .mu-item__teasure {
+            @include font-size(20);
+            @include line-height(40, px);
+        }
+    }
+    .match-day {
+        @include background-none;
+        @extend .grid-6;
+        @include pull-none;
+        @include margin-auto(0);
+        @include breakpoint($medium) {
+            @include margin-top(45);
+        }
+        &.profile {
+            .match-day__info {
+                .profile__score {
+                    @include pull-none;
+                    @include margin-auto(0);
+                    ul {
+                        li {
+                            @include border-right(1, solid, $associated-tag-bg);
+                            @include important-color($gray-heading);
+                            span {
+                                @include important-color($gray-heading);
+                            }
+                            label {
+                                @include important-color($white);
+                            }
+                        }
+                    }
+                }
+                .profile__details {
+                    @include pull-none;
+                    @include margin-auto(0);
+                    ul {
+                        li {
+                            @include margin-top(32);
+                            @include margin-bottom(4);
+                            @include important-color($gray-heading);
+                            @include tertiary-semibold;
+                            @include font-weight(normal);
+                            span {
+                                @include font-size(16);
+                                @include line-height(1);
+                            }
+                            label {
+                                @include important-color($white);
+                                @include font-size(16);
+                                @include line-height(1.38);
+                            }
+                        }
+                    }
+                }
+            }
+            .profile-pic {
+                ul {
+                    li {
+                        &:first-child {
+                            @include tertiary-semibold;
+                            @include font-size(32);
+                            @include line-height(30, px);
+                            @include px-to-rem(letter-spacing, 0.1);
+                            @include breakpoint($small $max-xsmall) {
+                                @include font-size(24);
+                                @include line-height(1);
+                            }
+                        }
+                        &:last-child {
+                            @include secondry-semibold;
+                            @include font-size(16);
+                            @include line-height(1);
+                            @include margin-top(8);
+                            @include important-color($white);
+                            @include text-transform(uppercase);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+%sliderarrow {
+    display: inline-block!important;
+    @include breakpoint($associated-tag-bg);
+    @include px-to-rem(height, 25);
+    @include px-to-rem(width, 25);
+    @include z-index(9999);
+    @include position(fixed);
+    @include breakpoint($xsmall) {
+        @include position(absolute);
+    }
+    @include cursor(pointer);
+    @include bottom(11); //need to change if not works for
+    //     @media (device-height: 568px) and (height: 529px),
+    //     (device-height: 480px) and (height: 441px) {
+    //         .superhero-scrolldown{
+    //                
+    //         }
+    //     }
+    //     @media (device-height: 568px) and (height: 460px),
+    //     (device-height: 480px) and (height: 372px) {
+    //        .superhero-scrolldown{
+    //   
+    //     }
+    // }
+    @include breakpoint($medium) {
+        @include top(50, percent);
+        @include px-to-rem(height, 56);
+        @include px-to-rem(width, 35);
+        @include bottom(0);
+    }
+}
+
+.non-destination-trans {
+    @include display(none);
+}
+
+.transcript-bg {
+    background: white;
+    width: 100%;
+    height: 100%;
+    @include top(0);
+    @include left(0); // @include pull-left;
+    @include position(fixed);
+    @include z-index(9999999);
+    background-color: white;
+    @include overflow(auto);
+    .top-bar {
+        height: 40px;
+        background-color: #1a1a1a;
+        @include color(white);
+        @include text-align(center); // @include pull-left;
+        width: 100%;
+        @include position(fixed);
+        @include top(0);
+        .transcript-txt {
+            @include padding(9, 0, 9, 0);
+            @include line-height(1.38);
+            @include display(block);
+            @include secondry-regular;
+            @include font-size(16);
+            color: $white;
+            text-transform: initial;
+        }
+        .back-btn {
+            height: 40px;
+            @include margin-left(20);
+            @include pull-left;
+            cursor: pointer;
+        } // span {
+        //     height: 40px;
+        //     @include pull-left;
+        //     // cursor: pointer;
+        // }
+        i {
+            @include pull-left;
+            transform: rotate(180deg);
+            @include position(relative);
+            @include top(50, percent);
+            @include margin-top(-3); // @include vertical-align;
+        }
+    }
+    p,
+    pre {
+        @include span(6 of 6);
+        @include font-size(16);
+        @include line-height(1.38);
+        @include margin-auto(0);
+        @include pull-none(important);
+        @include margin-top(16);
+        @include margin-bottom(27);
+        @include padding-top(40);
+        @include breakpoint($xlarge) {
+            @include margin-top(32);
+            @include margin-bottom(40);
+            @include span(10 of 12 0);
+        }
+    }
+}
+
+.modal-open,
+.modal-open .slick-track {
+    -webkit-transform: none !important;
+    -moz-transform: none !important;
+    -ms-transform: none !important;
+    -o-transform: none !important;
+    transform: none !important;
+}
+
+//For scrollbar of modal
+.collection__listing::-webkit-scrollbar {
+    // width: 11px;
+    @include px-to-rem(width, 11);
+}
+
+.collection__listing::-webkit-scrollbar-track {
+    background-color: #414247;
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);*/
+}
+
+.collection__listing::-webkit-scrollbar-thumb {
+    /*outline: 1px solid slategrey;*/
+    background-color: #6c6c6c;
+}
+
+#modal-close-btn {
+    background: transparent; //@include pull-right;
+    width: 44px;
+    height: 44px; // @include padding-top(5);
+    // @include padding-left(0);
+    // @include padding-right(0);
+    // border-radius: 50%;
+    @include z-index(9999);
+    border: none;
+    cursor: pointer; // @include text-align(center); //hack for Iphone only
+    // @media only screen and (min-device-width: 320px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    //     @include padding-top(4);
+    // }
+    /* Landscape */
+    // @media only screen and (min-device-width: 320px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+    //     @include padding-top(4);
+    // }
+    span {
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        @include top(50, percent);
+        @include left(50, percent);
+        @include position(absolute);
+        height: 24px;
+        width: 24px;
+        background: green;
+        border-radius: 50%;
+        background: #1a1a1a;
+        @include pull-right;
+    }
+}
+
+.gig-button-td img {
+    opacity: 0;
+}
+
+//
+@include breakpoint($small $max-small) {
+    .mu-modal {
+        .slick-list,
+        .slick-track {
+            transform: none;
+        }
+        .mu-modal__body__container {
+            .slider-next,
+            .slider-prev {
+                @include position(fixed);
+            }
+        }
+        .mu-modal__body__description {
+            @include position(fixed);
+        }
+        .mu-modal__footer {
+            @include position(fixed);
+            @include z-index(9999);
+        }
+    }
+}
+
+//loader implenetation
+.video-loader {
+    width: 56px;
+    height: 56px;
+    position: absolute;
+    left: calc(50% - 26px);
+    top: calc(50% - 26px);
+    background: url('http://player.ooyala.com/static/v4/stable/4.6.9/skin-plugin/assets/images/loader_svg.svg') !important;
+    z-index: 99;
+    animation: spin 2s linear infinite;
+}
+
+
+/* Safari */
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+html{
+    -webkit-text-size-adjust: 100%;
+}
+
+//Modal For Quotes
+.mu-modal {
+    .mu-modal__body {
+        .mu-modal__body__container {
+            .home-quotes {
+                .grid-12.ratio:before {
+                    padding-top:100vh;
+                } 
+            }
+        }
+    }
+}
+
+

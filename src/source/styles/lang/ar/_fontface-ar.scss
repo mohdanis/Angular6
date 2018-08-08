@@ -1,0 +1,237 @@
+//primary, secondary, tertiary, quaternary, quinary, senary, septenary, octonary, nonary, and denary
+/*
+  primary: BebasNeueBook
+  secondry: SourceSansProBlack
+  tertiary: MontserratBlack
+  quaternary-en: RajdhaniRegular
+  quinary-en: ClearSansRegular
+*/
+
+
+//Primary font
+
+@mixin primary($locale:null) {
+  @if ($locale == en) {
+    font-family: 'BebasNeueBook', 'Helvetica', sans-serif;
+  } @else {
+    font-family: 'ChangaMedium', 'Helvetica', sans-serif;
+  }
+}
+
+@mixin primary-bold($locale:null) {
+  @if ($locale == en) {
+    font-family: 'BebasNeueBold', 'Helvetica', sans-serif;
+  } @else {
+    font-family: 'ChangaBold', 'Helvetica', sans-serif;
+  }
+}
+
+@mixin primary-light($locale:null) {
+  @if ($locale == en) {
+    font-family: 'BebasNeueLight', 'Helvetica', sans-serif;
+  } @else {
+    font-family: 'ChangaLight', 'Helvetica', sans-serif;
+  }
+}
+
+@mixin primary-regular($locale:null) {
+  @if ($locale == en) {
+    font-family: 'BebasNeueRegular', 'Helvetica', sans-serif;
+  } @else {
+    font-family: 'ChangaRegular', 'Helvetica', sans-serif;
+  }
+}
+
+@mixin primary-thin($locale:null) {
+  @if ($locale == en) {
+    font-family: 'BebasNeueThin', 'Helvetica', sans-serif;
+  } @else {
+    font-family: 'ChangaExtraLight', 'Helvetica', sans-serif;
+  }
+}
+
+//Secondry font
+@mixin secondry($locale:null) {
+  @if ($locale == en) {
+    font-family: 'SourceSansProBlack', 'Helvetica', sans-serif;
+  } @else {
+    font-family: 'ChangaMedium', 'Helvetica', sans-serif;
+  }
+}
+
+@mixin secondry-bold($locale:null) {
+  @if ($locale == en) {
+    font-family: 'SourceSansProBold', 'Helvetica', sans-serif;
+  } @else {
+    font-family: 'ChangaBold', 'Helvetica', sans-serif;
+  }
+}
+
+@mixin secondry-light($locale:null) {
+  @if ($locale == en) {
+    font-family: 'SourceSansProLight', 'Helvetica', sans-serif;
+  } @else {
+    font-family: 'ChangaLight', 'Helvetica', sans-serif;
+  }
+}
+
+@mixin secondry-regular($locale:null) {
+  @if ($locale == en) {
+    font-family: 'SourceSansProRegular', 'Helvetica', sans-serif;
+  } @else {
+    font-family: 'ChangaRegular', 'Helvetica', sans-serif;
+  }
+}
+
+@mixin secondry-semibold($locale:null) {
+  @if ($locale == en) {
+    font-family: 'SourceSansProSemiBold', 'Helvetica', sans-serif;
+  } @else {
+    font-family: 'ChangaBold', 'Helvetica', sans-serif;
+  }
+}
+
+@mixin secondry-semibolditalic($locale:null) {
+  @if ($locale == en) {
+    font-family: 'SourceSansPro-SemiboldItalic', 'Helvetica', sans-serif;
+  } @else {
+    font-family: 'ChangaRegular', 'Helvetica', sans-serif;
+  }
+}
+
+@mixin secondry-lightitalic($locale:null) {
+  @if ($locale == en) {
+    font-family: 'SourceSansPro-LightItalic', 'Helvetica', sans-serif;
+  } @else {
+    font-family: 'ChangaLight', 'Helvetica', sans-serif;
+  }
+}
+
+@mixin secondry-italic($locale:null) {
+  @if ($locale == en) {
+    font-family: 'SourceSansPro-Italic', 'Helvetica', sans-serif;
+  } @else {
+    font-family: 'ChangaRegular', 'Helvetica', sans-serif;
+  }
+}
+
+@mixin secondry-extralightitalic($locale:null) {
+  @if ($locale == en) {
+    font-family: 'SourceSansPro-ExtraLightItalic', 'Helvetica', sans-serif;
+  } @else {
+    font-family: 'ChangaExtraLight', 'Helvetica', sans-serif;
+  }
+}
+
+@mixin secondry-bolditalic($locale:null) {
+  @if ($locale == en) {
+    font-family: 'SourceSansPro-BoldItalic', 'Helvetica', sans-serif;
+  } @else {
+    font-family: 'ChangaBold', 'Helvetica', sans-serif;
+  }
+}
+
+@mixin secondry-blackitalic($locale:null) {
+  @if ($locale == en) {
+    font-family: 'SourceSansPro-BlackItalic', 'Helvetica', sans-serif;
+  } @else {
+    font-family: 'ChangaBold', 'Helvetica', sans-serif;
+  }
+}
+
+//Ternery font
+@mixin tertiary($locale:null) {
+  @if ($locale == en) {
+    font-family: 'MontserratBlack', 'Helvetica', sans-serif;
+  } @else {
+    font-family: 'ChangaMedium', 'Helvetica', sans-serif;
+  }
+}
+
+@mixin tertiary-bold($locale:null) {
+  @if ($locale == en) {
+    font-family: 'MontserratBold', 'Helvetica', sans-serif;
+  } @else {
+    font-family: 'ChangaBold', 'Helvetica', sans-serif;
+  }
+}
+
+@mixin tertiary-extrabold($locale:null) {
+  @if ($locale == en) {
+    font-family: 'MontserratExtraBold', 'Helvetica', sans-serif;
+  } @else {
+    font-family: 'ChangaBold', 'Helvetica', sans-serif;
+  }
+}
+
+@mixin tertiary-hairline($locale:null) {
+  @if ($locale == en) {
+    font-family: 'MontserratHairline', 'Helvetica', sans-serif;
+  } @else {
+    font-family: 'ChangaLight', 'Helvetica', sans-serif;
+  }
+}
+
+@mixin tertiary-light($locale:null) {
+  @if ($locale == en) {
+    font-family: 'MontserratLight', 'Helvetica', sans-serif;
+  } @else {
+    font-family: 'ChangaLight', 'Helvetica', sans-serif;
+  }
+}
+
+@mixin tertiary-regular($locale:null) {
+  @if ($locale == en) {
+    font-family: 'MontserratRegular', 'Helvetica', sans-serif;
+  } @else {
+    font-family: 'ChangaRegular', 'Helvetica', sans-serif;
+  }
+}
+
+@mixin tertiary-semibold($locale:null) {
+  @if ($locale == en) {
+    font-family: 'MontserratSemiBold', 'Helvetica', sans-serif;
+  } @else {
+    font-family: 'ChangaMedium', 'Helvetica', sans-serif;
+  }
+}
+
+@mixin tertiary-ultralight($locale:null) {
+  @if ($locale == en) {
+    font-family: 'MontserratUltraLight', 'Helvetica', sans-serif;
+  } @else {
+    font-family: 'MontserratUltraLight', 'Helvetica', sans-serif;
+  }
+}
+
+//Quaternary
+@mixin quaternary-regular($locale:null) {
+  font-family: 'RajdhaniRegular', 'Helvetica', sans-serif;
+}
+
+@mixin quaternary-bold($locale:null) {
+  font-family: 'RajdhaniBold', 'Helvetica', sans-serif;
+}
+
+@mixin quaternary-semibold($locale:null) {
+  font-family: 'RajdhaniSemiBold', 'Helvetica', sans-serif;
+}
+
+@mixin quaternary-light($locale:null) {
+  font-family: 'RajdhaniLight', 'Helvetica', sans-serif;
+}
+
+@mixin quaternary-medium($locale:null) {
+  font-family: 'RajdhaniMedium', 'Helvetica', sans-serif;
+}
+//Quinary
+
+@mixin quinary-bold($locale:null) {
+  font-family: 'ClearSansBold', 'Helvetica', sans-serif;
+}
+
+@mixin quinary-regular($locale:null) {
+  font-family: 'ClearSansRegular', 'Helvetica', sans-serif;
+}
+
+

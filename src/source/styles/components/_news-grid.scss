@@ -1,0 +1,31 @@
+.news-grid {
+    //rules for three rows
+    //@include pull-left;
+    @include percentage-value(width, 100);
+    background: #f8f8f8 none repeat scroll 0 0;
+    max-width: 1920px;
+    @include pull-none(important);
+    @include margin-auto(0 auto);
+    @include breakpoint($small) {
+        @include padding-top(12);
+    }
+    @include breakpoint($medium) {
+        @include padding-top(16);
+    }
+    @include breakpoint($large) {
+        @include padding-top(20);
+    }
+    @include breakpoint($xlarge) {
+        @include padding-top(24);
+    }
+    @include breakpoint($xxlarge) {
+        @include padding-top(30);
+    }
+    & .three-rows {}
+    .container {
+        @include breakpoint($small $max-small) {
+            @include percentage-value(width, 100);
+            @include percentage-value(max-width, 100);
+        }
+    }
+}

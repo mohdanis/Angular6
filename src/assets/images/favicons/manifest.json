@@ -1,0 +1,20 @@
+{
+  //"name": "Manchester United", // name and short_name disabled: to pick the shortcut name as default page title 
+  //"short_name": "ManUtd.com",
+  "icons": [
+    {
+      "src": "android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "prefer_related_applications": true,
+  "related_applications": [
+    {
+      "platform": "play",
+      "id": "com.manutd.beta"
+    }
+  ]
+}

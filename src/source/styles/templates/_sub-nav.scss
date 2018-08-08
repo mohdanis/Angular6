@@ -1,0 +1,321 @@
+.tickets {
+    &__subnav {
+        @include text-align(center);
+        @include background(#f2f2f2);
+        @include breakpoint($small $max-medium) {
+            @include text-align(left);
+        }
+        li {
+            list-style: none;
+            @include display(inline-block);
+            a {
+                @include padding(10, 20, 13, 20);
+                @include font-size(12);
+                @include tertiary-semibold;
+                @include line-height(1.14);
+                @include color($mu-black);
+                @include letter-spacing(1);
+                @include text-align(center);
+                @include display(block);
+                @extend %txt-uppercase;
+                i {
+                    @include padding(0, 0, 10, 0);
+                    @include pull-none;
+                    @include display(block);
+                    @include margin-top(0);
+                    @include margin-left(auto);
+                    @include margin-right(auto);
+                    @include margin-bottom(10);
+                }
+                border-bottom: none;
+                &.active {
+                    @include border-bottom(3, solid, $mu-red);
+                } // &:hover {
+                //   @include border-bottom(3, solid, $mu-red);
+                // }
+            }
+        }
+    } // &__content {
+    //   max-width: 610px;
+    //   @include margin-auto(0);
+    // }
+    &__block {
+        @include display(inline-block);
+        @include position(relative);
+        @include text-align(center); //@include padding(20, 0, 30, 0);
+        @include padding(20, 0, 0, 0);
+        @include percentage-value(width, 100);
+        .view-less {
+            //@include important(position, inherit);
+            // @include important-value(top, -20);
+            //@include bottom(5);
+            //@include position(relative);
+        }
+        .contact-us__control {
+            @include margin-top(14);
+            @include percentage-value(width, 100);
+            @include pull-left;
+            clear: both;
+            @include breakpoint($large) {
+                @include margin-top(22);
+            }
+            p {
+                @include font-size(14);
+                @include secondry-semibold;
+                @extend %font-italic;
+                @include font-weight(600);
+            }
+        }
+    }
+    &__team {
+        &--crestimage {
+            img {
+                @include margin(0, 7, 0, 7);
+            }
+        }
+        &--name {
+            @include margin(10, 0, 10, 0); // @extend %new-heading2;         
+            @include font-size(32);
+            @include line-height(28,px);
+            @include breakpoint($medium) {
+                @include font-size(40);
+                @include line-height(0.83);
+            }
+        } // &-summary {
+        //     &--time {
+        //         @include tertiary-regular;
+        //         @include font-size(12);
+        //         @include color($mu-black);
+        //     }
+        // }
+        &--summary {
+            // @include tertiary-regular;
+            // @include font-size(18);
+            @include color($mu-black);
+            span {
+                @include percentage-value(width, 100);
+                @include pull-left();
+            } // @include font-size(18);
+            // color: $vertical-strips;
+            // @include margin-bottom(22);
+            // &--time {
+            // @include tertiary-regular;
+            // @include font-size(16);
+            // @include color($mu-black);
+            // }
+        }
+    }
+    &__side {
+        &--nav {
+            @include px-to-rem(min-height, 60);
+            @include display(none);
+            @include breakpoint($large) {
+                @include display(block);
+                @include position(absolute); //@include left(-180);
+                //@include px-to-rem(width, 110);
+                @include left(-220);
+                @include px-to-rem(width, 180);
+                @include margin-top(5);
+                height: auto !important;
+            }
+            li {
+                @include display(inline-block); //@include px-to-rem(width, 110);
+                @include pull-right;
+                @include padding(0, 3, 36, 3);
+                @include breakpoint($large) {
+                    @include display(block);
+                    @include margin(0, 0, 0, 0);
+                    @include pull-none;
+                    @include padding(0, 0, 36, 0);
+                }
+                a {
+                    // @include padding(0, 3, 36, 3);
+                    @include tertiary-regular;
+                    @include font-size(12);
+                    @include color($mu-black);
+                    @include position(relative);
+                    border-bottom: none;
+                    @include line-height(1.17);
+                    letter-spacing: 0.5px;
+                    @extend %txt-uppercase;
+                    @include text-align(right);
+                    @include display(block); // @include breakpoint($large) {
+                    //   @include padding(0, 0, 36, 0);
+                    // }
+                    &.active:after {
+                        border-bottom: 2px solid $mu-red !important;
+                        @include percentage-value(width, 100);
+                        @include pull-right;
+                        @include position(absolute);
+                        content: '';
+                        @include bottom(-7);
+                        @include right(0);
+                         
+                        @include breakpoint($large) {
+                            @include px-to-rem(width, 72); //@include percentage-value(width, 60);
+                        }
+                    }
+                    &:hover {
+                        border-bottom: none;
+
+                        &:after {
+                        
+                            @include percentage-value(width, 100);
+                            @include pull-right;
+                            @include position(absolute);
+                            content: '';
+                            @include bottom(-7);
+                            @include right(0);
+                             // display:none;  
+                             // @include breakpoint($small $max-medium){
+                           border-bottom:none;
+                        // }
+                            @include breakpoint($large) {
+                                 // display:block;  
+                                     @include border-bottom(2, solid, #d6d6d6);
+                                @include px-to-rem(width, 72); // border-bottom: 2px solid #d6d6d6;
+                                // @include percentage-value(width, 60);
+                            }
+                        }
+                    }
+                }
+            }
+            &.touch__swipe {
+                background: none !important;
+                @include display(block);
+                @include position(relative);
+                @include top(0);
+                @include left(0);
+                @include margin(10, 0, 10, 0);
+                @include percentage-value(width, 100);
+                @include px-to-rem(height, 48);
+                @include px-to-rem(min-height, 40);
+                &--container {
+                    @include px-to-rem(min-height, 40);
+                }
+                li {
+                    @include pull-none;
+                    @include padding(0, 5, 0, 5);
+                    width: auto;
+                }
+                @include breakpoint($large) {
+                    @include display(none);
+                }
+                &--container {
+                    @include breakpoint($large) {
+                        @include overflow-x(hidden);
+                    }
+                }
+            }
+        }
+    }
+    &__cta {
+        @include margin(20, 0, 15, 0, important);
+        @include pull-left;
+        width: 100%;
+        a {
+            @include padding(8, 30, 8, 30); //            i {
+            //                @include margin(7,0,0,15,important);
+            //            }
+            border-bottom: none;
+            &:hover {
+                border-bottom: none;
+            }
+        }
+        .white-btn-skew {
+            //border: 1px solid #1a1a1a;
+            @include breakpoint($large) {
+                @include margin-left(8);
+            }
+        }
+    }
+    .touch__swipe {
+        @include background(#f2f2f2);
+    }
+}
+
+.touch {
+    &__swipe {
+        @include overflow-y(hidden);
+        @include px-to-rem(height, 80);
+        &--container {
+            @include overflow-x(scroll);
+            @include overflow-y(hidden);
+        }
+    }
+}
+
+.accordian {
+    &__content {
+        @include display(none);
+        @include margin-top(24);
+        @include pull-left;
+        @include percentage-value(width, 100);
+        p {
+            @extend %paragraph;
+        } // .red-btn-skew {
+        //     @include margin(5,0,5,0);
+        // }
+    }
+}
+
+// .tmpls-container {
+//     .red-btn-skew+.white-btn-skew {
+//         @include margin-top(16);
+//         @include margin-left(0);
+//         @include breakpoint($xsmall) {
+//             @include margin-top(0);
+//             @include margin-left(16);
+//         }
+//     }
+// }
+
+.tmpls-container .carousal .mu-item__gradient {
+    // background: -webkit-linear-gradient(-351deg, rgba(0, 0, 0, .8) 0, rgba(255, 255, 255, 0) 50%);
+    // background: -ms-linear-gradient(-351deg, rgba(0, 0, 0, .8) 0, rgba(255, 255, 255, 0) 50%);
+    // background: -o-linear-gradient(-351deg, rgba(0, 0, 0, .8) 0, rgba(255, 255, 255, 0) 50%);
+    // background: linear-gradient(-351deg, rgba(0, 0, 0, .8) 0, rgba(255, 255, 255, 0) 50%);
+    // @include z-index(98);
+    @include display(block);
+}
+
+.tmpls-container {
+    .carousal .slider-next {
+        //right: -40px;
+         @include right(-45);
+    }
+    .carousal .slider-prev {
+        @include left(-26);
+        
+    }
+    .carousal .carousal-width {
+        @include margin-left(-14);
+    }
+}
+
+
+
+.hero-heading {
+    @include text-align(center);
+    @include percentage-value(width, 100);
+    @include position(absolute);
+    @include bottom(20);
+    @include font-size(40);
+    @include color($white);
+    @include z-index(999);
+    @include line-height(.9);
+    max-width: 80%;
+    @include margin(0, 0, 0, 0);
+    @include margin-left(10, percent);
+    @include margin-right(10, percent);
+    @include breakpoint($large) {
+        max-width: 50%;
+        @include margin(0, 0, 0, 0);
+        @include margin-left(25, percent);
+        @include margin-right(25, percent);
+    }
+    @include breakpoint($xlarge) {
+        @include line-height(.83);
+        @include font-size(72);
+    }
+}

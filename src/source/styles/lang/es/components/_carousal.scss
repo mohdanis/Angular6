@@ -1,0 +1,28 @@
+.match-item {    
+    &__cta {        
+        a {
+            @include padding(13, 10, 13, 10);
+        }
+    }
+}
+.carousal {
+	.slick-list {
+		.grid-3.ratio{
+			.match-day.profile.child{
+				.match-day__info{
+					.profile__score{
+						ul{
+							li{
+								span {
+									white-space:normal;
+									@include display(table-caption);
+									@include px-to-rem(min-height,30);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

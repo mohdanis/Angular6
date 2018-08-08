@@ -1,0 +1,336 @@
+%mu-item__play-icon-left {
+    @include position(absolute);
+    @include left(16);
+    @include bottom(0);
+    img {
+        height: auto;
+        @include cursor(pointer);
+    }
+}
+
+.mu-content {
+    .mu-item {
+        &.video,
+        &.audio {
+            .oo-player-container {
+                min-width: 10px;
+                @include percentage-value(height, 100);
+                display: block;
+                opacity:0;
+            }
+            a.oo-state-screen-selectable{
+                cursor:pointer !important;
+            }
+        }
+    }
+}
+
+.mu-item {
+    &.video,
+    &.audio {
+        @extend %black-card;
+        @include cursor(pointer);
+        figure {
+            @include percentage-value(width, 100);
+            @include percentage-value(height, 100);
+            img {
+                text-indent: -9999px;
+            }
+        }
+        .mu-item__gradient {
+            z-index: 0px;
+        }
+        .mu-item__videoinline {
+            height: 100%;
+        }
+        .mu-item__video {
+            height: 100%;
+            @include position(relative);
+            @include z-index(0); // @include display(none);
+        }
+        & .mu-item__title {
+            @include color($white);
+            &:before {
+                @include display(none);
+            }
+        }
+        .mu-item__teasure {
+            color: $white !important; // @include important-value(color, $white);
+        }
+        .mu-item__player {
+            @include percentage-value(width, 100);
+            @include percentage-value(height, 100);
+            @include z-index(8);
+            @include position(relative);
+        }
+        .mu-item__play {
+            @include margin-bottom(12);
+            @include background-color($mu-red);
+            width: 52px;
+            height: 52px;
+            span {
+                @extend %btn-center;
+            }
+        }
+        .mu-item__info a {
+            @include padding-top(0);
+            @include pull-left;
+        }
+        .mu-item__sponsor__wrapper {
+            z-index: 10;
+        }
+    }
+}
+
+.child {
+    box-shadow: none;
+    .mu-item {
+        &.video,
+        &.audio {
+            // border: 1px solid #404040;
+            .mu-item__play {
+                @include position(absolute);
+                @include left(20);
+                @include bottom(0);
+                z-index: 9;
+            }
+            .mu-item__info {
+                // @include position(initial);
+                @include important(position, static);
+            }
+        }
+    }
+}
+
+.small {
+    .mu-item {
+        &.video,
+        &.audio {
+            .mu-item__title {
+                &:before {
+                    @include display(none);
+                }
+            }
+        }
+    }
+}
+
+.mu-item {
+    &.video {
+        @extend %black-card;
+        figure {
+            @include z-index(9);
+        }
+    }
+}
+
+// .icon-close {
+//     @include z-index(-9);
+//     position: relative;
+// }
+// .icon-close {
+//     @include z-index(9);
+//     position: absolute;
+//
+//     
+// }
+.grid-12 {
+    .mu-item__play {
+        @include breakpoint($medium) {
+            width: 64px !important;
+            height: 64px !important;
+
+        }
+    }
+    .icon-play {
+        @include breakpoint($medium){
+            width: 0;
+            height: 0;
+            border-bottom: 11px solid transparent;
+            border-top: 11px solid transparent;
+            border-left: 14px solid $white;
+            font-size: 0;
+            line-height: 0;
+            background-image:none;
+        }
+    }
+    &.child {
+        .mu-item {
+            &.video,
+            &.audio {
+                @include breakpoint($small $max-small) {
+                    .mu-item__play {
+                        @include top(-86);
+                    }
+                    .mu-item__info {
+                        @include important(position, relative);
+                    } // .mu-item__title {
+                    //     
+                    // }
+                }
+                .mu-item__play {
+                    @include position(absolute);
+                    @include left(20);
+                    @include bottom(0);
+                    @include breakpoint($xxlarge) {
+                        @include left(20);
+                        @include margin-bottom(20);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.grid-3,
+.grid-4 {
+    .mu-item {
+        &.video,
+        &.audio {
+            .mu-item__title {
+                @include margin-top(0);
+            }
+        }
+    }
+    &.child {
+        .mu-item {
+            &.video,
+            &.audio {
+                .mu-item__play {
+                    @include top(-69);
+                    @include breakpoint($xsmall $max-xsmall) {
+                        @include px-to-rem(width, 32);
+                        @include px-to-rem(height, 32);
+                        @include top(-48);
+                        span {
+                            // deleted for carousel video child for mobile landscap 568 
+                            // transform: scale(.5, .5);
+                            transform: scale(.8, .8);
+                            @include left(8);
+                            @include top(7);                          
+                            
+                        }
+                        //@include top(-60);
+                        @include left(16);
+                    }
+                    @include breakpoint($medium) {
+                        @include px-to-rem(width, 44);
+                        @include px-to-rem(height, 44);
+                        @include top(-54);
+                        @include left(20);
+                        // span {
+                        //     transform: scale(0.9);
+                        //     @include left(12);
+                        //     @include top(10);
+                        // }
+                    }
+                }
+                .mu-item__info {
+                    @include padding-top(16,important);
+                    @include important(position, relative);
+                }
+            }
+        }
+    }
+}
+
+.grid-8,
+.grid-6 {
+    &.child {
+        .mu-item {
+            &.video,
+            &.audio {
+                @include breakpoint($small $max-xsmall) {
+                    .mu-item__play {
+                        @include top(-72);
+                    }
+                    .mu-item__info {
+                        @include important(position, relative); 
+                    }
+                }
+            }
+        }
+    }
+}
+
+.grid-8.ratio-matchday.child {
+    .mu-item {
+        &.video,
+        &.audio {
+            .mu-item__title {
+                @include margin-bottom(6);
+            }
+        }
+    }
+}
+
+.grid-6 {
+    .mu-item {
+        &.video,
+        &.audio {
+            .mu-item__title {
+                @include text-truncate-lines(2, 40, 0.9);
+            }
+        }
+    }
+}
+
+.mini-card,
+.micro-card {
+    .mu-item {
+        &.video,
+        &.audio {
+            .mu-item__play {
+                @include breakpoint($small $max-small) {
+                    @include px-to-rem(width, 32);
+                    @include px-to-rem(height, 32);
+                    span {
+                        transform: scale(.8, .8);
+                        @include left(8);
+                        @include top(7);
+                    }
+                    @include top(-45);
+                    @include left(20);
+                }
+            }
+        }
+    }
+}
+
+.micro-card {
+    .mu-item {
+        &.video,
+        &.audio {
+            .mu-item__play {
+                @include left(8);
+                @include bottom(8);
+                @include margin-bottom(0);
+                @include position(absolute);
+                z-index: 99;
+                @include top(initial);
+            }
+            .mu-item__info .mu-item__title {
+                color: $white;
+            }
+            .statsbar span {
+                color: $white !important;
+            }
+        }
+    }
+}
+
+.news-list__block {
+    .grid-12 {
+        &.child {
+            @include margin-top(24);
+        }
+    }
+}
+
+.gigya-login-providers .gigya-login-providers-list .gigya-login-provider-row:nth-child(1) button.tabbing-button div {
+    @extend .icon-facebook-logo-social;
+}
+
+.gigya-login-providers .gigya-login-providers-list .gigya-login-provider-row:nth-child(2) button.tabbing-button div {
+    @extend .icon-google-logo-social;
+}

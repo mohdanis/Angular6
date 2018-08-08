@@ -1,0 +1,163 @@
+@import "../../../en/partials/mixins/common-utilities";
+@function decimal-round ($number, $digits: 0, $mode: round) {
+    $n: 1;
+    // $number must be a number
+    @if type-of($number) != number {
+        @warn '#{ $number } is not a number.';
+        @return $number;
+    }
+    // $digits must be a unitless number
+    @if type-of($digits) != number {
+        @warn '#{ $digits } is not a number.';
+        @return $number;
+    } @else if not unitless($digits) {
+        @warn '#{ $digits } has a unit.';
+        @return $number;
+    }
+    @if $digits > 0 {
+        @for $i from 1 through $digits {
+            $n: $n * 10;
+        }
+    }
+    @if $mode == round {
+        @return round($number * $n) / $n;
+    } @else if $mode == ceil {
+        @return ceil($number * $n) / $n;
+    } @else if $mode == floor {
+        @return floor($number * $n) / $n;
+    } @else {
+        @warn '#{ $mode } is undefined keyword.';
+        @return $number;
+    }
+}
+@function decimal-font-size($size) {
+    @if $size > 14 {
+        $percentage : 25;
+        $number : ($size - ($size * $percentage / 100));
+        @return decimal-round($number, 0, ceil);
+    }
+    @else {
+        @return $size;
+    }
+}
+@function decimal-line-height($size) {
+    $percentage : 38;
+    $number : $size + ($size * $percentage / 100);
+    @return decimal-round($number, 3, floor);
+}
+//Font size in REM with pixel fallback
+/*@mixin font-size($size,$important:null) {
+  @if($important) {
+    font-size: decimal-font-size($size) + px + !important;
+    font-size: decimal-font-size($size) / 16 + rem + !important;
+  } @else {
+    font-size: decimal-font-size($size) + px;
+    font-size: decimal-font-size($size) / 16 + rem;
+  }
+}*/
+// Updated Mixin for inherit English font size for all langs
+@mixin font-size($size,$important:null,$locale:null) {
+  @if($important == en or $locale == en) {
+    @if($important != en or $locale == important) {
+      font-size: $size + px + !important;
+      font-size: $size / 16 + rem + !important;
+    } @else {
+      font-size: $size + px;
+      font-size: $size / 16 + rem;
+    }
+  } @else {
+      @if($important) {
+      font-size: decimal-font-size($size) + px + !important;
+      font-size: decimal-font-size($size) / 16 + rem + !important;
+    } @else {
+      font-size: decimal-font-size($size) + px;
+      font-size: decimal-font-size($size) / 16 + rem;
+    }
+  }
+}
+@mixin text-truncate-lines($lines: 3,
+$font-size: 16,
+$line-height: 1) {
+    font-size: decimal-font-size($font-size) + px;
+    font-size: decimal-font-size($font-size) / 16 + rem;
+    line-height: decimal-line-height($line-height);
+    //max-height: $font-size * $lines * $line-height +px;
+    // font-size: $font-size + px;
+    // line-height: $line-height + rem;
+    // height: $font-size * $lines * $line-height;     
+    // //Fallback for non-webkit 
+    // overflow: hidden;
+    // display: -webkit-box;
+    // @supports (-webkit-line-clamp: $lines) {       
+    //     -webkit-line-clamp: $lines;
+    //     -webkit-box-orient: vertical;
+    //     text-overflow: ellipsis;
+    //     height: auto;
+    //     display: -webkit-box;
+    // }
+}
+@mixin arabic-text-truncate($lines: 3,
+$font-size: 16,
+$line-height: 16) {
+    font-size: arabic-font-size($font-size) + px;
+    font-size: arabic-font-size($font-size) / 16 + rem;
+    line-height: $line-height + px;
+    //height: $lines * $line-height + px;
+    //overflow: hidden;
+    //white-space: nowrap;
+    //text-overflow: ellipsis;
+    //width: 100%;
+}
+//line-height of text
+@mixin line-height($value,
+$unit:null,
+$important:null,
+$font:null) {
+  @if ($font == multi or $unit== multi or $important== multi) {
+    @if ($unit== px and $important== important) {
+        line-height: decimal-round(decimal-line-height($value), 0, ceil)+px + !important;
+    }
+    @else if($unit== px) {
+        @if($important) {
+            line-height: decimal-round(decimal-line-height($value), 0, ceil)+px;
+        }
+        @else {
+            line-height: decimal-round(decimal-line-height($value), 0, ceil)+px;
+        }
+    }
+    @else if($unit== important) {
+        @if($important) {
+            line-height: decimal-line-height($value) + !important;
+        }
+        @else {
+            line-height: decimal-line-height($value) + !important;
+        }
+    }
+    @else {
+        line-height: decimal-line-height($value);
+    }
+  } @else {
+    @if ($unit== px and $important== important) {
+        line-height: $value+px + !important;
+    }
+    @else if($unit== px) {
+        @if($important) {
+            line-height: $value+px;
+        }
+        @else {
+            line-height: $value+px;
+        }
+    }
+    @else if($unit== important) {
+        @if($important) {
+            line-height: $value+ !important;
+        }
+        @else {
+            line-height: $value + !important;
+        }
+    }
+    @else {
+        line-height: $value;
+    }
+  }
+}

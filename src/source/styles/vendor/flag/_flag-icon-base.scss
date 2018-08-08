@@ -1,0 +1,18 @@
+.flag {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  position: relative;
+  display: inline-block;
+  width: (4 / 3) * 1em;
+  line-height: 1em;
+  &:before {
+    content: '\00a0';
+  }
+}
+
+@mixin flag-icon($country) {
+  .flag-#{$country} {
+    background-image: url(#{$flag-icon-css-path}/#{$country}.svg);
+  }
+}

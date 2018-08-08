@@ -1,0 +1,131 @@
+.mu-item {
+    &.audio {
+        @extend %white-card;
+        .mu-item__player {
+            height: 58px;
+            @include position(absolute);
+            @include bottom(0);
+            @include left(0);
+            opacity: 0;
+            min-width: 237px;
+        }
+        & .mu-item__title {
+            @include color($white);
+            &:before {
+                @include display(none);
+            }
+        }
+        .img-holder {
+            @include percentage-value(width, 100);
+        }
+        span.oo-icon.oo-icon-system-fullscreen {
+            @include display(none);
+        }
+        span.oo-icon.oo-icon-share {
+            @include display(none);
+        }
+        .oo-player-container .oo-control-bar .oo-control-bar-items-wrapper .oo-control-bar-duration {
+            @include right(10);
+        }
+        .innerWrapper.oo-player {
+            @include padding-top(9,percent,important);
+        }
+        .oo-control-bar {
+            height: 53px !important;
+        }
+        .oo-scrubber-bar-container {
+            height: 18px !important;
+        }
+        // .oo-player-container .oo-scrubber-bar-container .oo-scrubber-bar-padding {
+        //   @include right(103);
+        // }
+        // .oo-player-container .oo-xsmall .oo-scrubber-bar-container .oo-scrubber-bar-padding {
+        //   @include right(96);
+        // }
+        //.oo-player-container .innerWrapper.oo-player {
+        .oo-player-container .oo-player {
+            background: none !important;
+        }
+        video {
+            opacity: 0.1 !important;
+        }
+    }
+}
+
+.grid-3 {
+    .mu-item {
+        &.audio {
+            .mu-item__info {
+                //@include padding(15, 15, 15, 15);
+                // @include breakpoint($medium) {
+                //     @include padding(20, 20, 20, 20);
+                // }
+            }
+        }
+    }
+}
+
+.grid-4 {
+    .mu-item {
+        &.audio {
+            .mu-item__info {
+                // @include padding(15, 15, 15, 15);
+                // @include breakpoint($medium) {
+                //     @include padding(20, 20, 20, 20);
+                // }
+            }
+        }
+    }
+}
+
+.grid-3,
+.grid-4 {
+    .child {
+        .mu-item {
+            &.audio {
+                .img-holder {
+                    width: 100%;
+                }
+                figure {
+                    height: 100%;
+                }
+                .mu-item__info {
+                    height: auto;
+                    //@include padding(15, 15, 15, 15);
+                    @include bottom(43);
+                    @include top(initial);
+                    // @include breakpoint($medium) {
+                    //     @include padding(20, 20, 20, 20);
+                    // }
+                }
+            }
+        }
+    }
+}
+
+.grid-6 {
+    .child {
+        .mu-item {
+            &.audio {
+                .img-holder {
+                    width: 100%;
+                }
+                figure {
+                    height: 100%;
+                    width: 100%;
+                }
+                .mu-item__info {
+                    //@include padding(15, 15, 15, 15);
+                    @include left(10);
+                    @include bottom(30);
+                    @include top(initial);
+                    height: auto;
+                    @include breakpoint($medium) {
+                        @include span(5 of 6 0);
+                        // @include padding(20, 20, 20, 20);
+                    }
+                }
+            }
+        }
+    }
+}

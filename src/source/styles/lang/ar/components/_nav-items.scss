@@ -1,0 +1,17 @@
+.match-item {
+    &__info {
+        &--team {
+            &.team-vs {
+                transform: skew(10deg);
+                span {
+                    -webkit-transform: translateY(-50%) skew(-10deg);
+                    -ms-transform: translateY(-50%) skew(-10deg);
+                    transform: translateY(-50%) skew(-10deg);
+                }
+            }
+        }
+    }
+    &__cta {
+        transform: skew(10deg);
+    }
+}

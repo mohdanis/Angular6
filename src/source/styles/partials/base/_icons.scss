@@ -1,0 +1,98 @@
+///@depedency {partial} [sprite] [To create sprite images]
+@import "../mixins/sprite";
+//Auto generate classes for each icon as [icon-iconname]
+///icon iterators, having each icons
+///Generates hover effects
+@each $icon in sprite_names($icons)
+{
+  #{$icons-prefix}#{$icon} {
+    @include advance-sprite-image(#{$icon});
+    @include pull-left;
+    @include margin(0,2,0,2);
+    //&:hover {
+    //  @include advance-sprite-image(#{$icon}#{-hover});
+    //}
+  }
+}
+
+@each $tag in 
+// article,
+// collection,
+// competition,
+// ext-article,
+// gallery,
+// print,
+// quiz,
+// quotes,
+// trivia,
+// video-article,
+// twitter,
+// twitter-white,
+// ext-article-dark,
+// poll,
+audio,
+video,
+prev-arrow,
+next-arrow,
+goal,
+goal-dark,
+redCard,
+user,
+live,
+live-black,
+red-arrow,
+white-arrow,
+matchday-goal,
+matchday-RedCard {
+  #{$tags-prefix}#{$tag} {
+    @include advance-sprite-image(#{$tag}, $tags, $tags2x);
+    @include pull-left;
+  }
+}
+
+@each $social in sprite_names($socials) {
+  #{$socials-prefix}#{$social} {
+    @include advance-sprite-image(#{$social}, $socials, $socials2x);
+    @include pull-left;
+  }
+}
+
+//*Now emojis part of SVG sprite*//
+//@each $emoji in sprite_names($emojis) {
+//  #{$emojis-prefix}#{$emoji} {
+//    @include advance-sprite-image(#{$emoji}, $emojis, $emojis2x);
+//    float: left;
+//  }
+//}
+
+@each $eventsmall in sprite_names($eventssmall) {
+  #{$eventssmall-prefix}#{$eventsmall} {
+    @include advance-sprite-image(#{$eventsmall}, $eventssmall, $eventssmall2x);
+    @include pull-left;
+  }
+}
+
+@each $event in sprite_names($events) {
+  #{$events-prefix}#{$event} {
+    @include advance-sprite-image(#{$event}, $events, $events2x);
+    @include pull-left;
+  }
+}
+
+@each $position in sprite_names($positions) {
+  #{$positions-prefix}#{$position} {
+    @include advance-sprite-image(#{$position}, $positions, $positions2x);
+    @include pull-left;
+  }
+}
+
+@each $position in sprite_names($tmpls) {
+  #{$tmpls-prefix}#{$position} {
+    @include advance-sprite-image(#{$position}, $tmpls, $tmpls2x);
+    @include pull-left;
+  }
+}
+
+
+
+

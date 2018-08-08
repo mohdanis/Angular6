@@ -1,0 +1,11 @@
+.gig-share-counter {
+    background-image: none!important;
+    height: auto!important;
+    width: auto!important;
+}
+
+.gig-counter-text {
+    color: #fff!important;
+    font-family: quaternary-semibold, Helvetica, sans-serif!important;
+    @include font-size(14,important);
+}

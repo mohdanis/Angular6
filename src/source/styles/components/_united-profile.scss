@@ -1,0 +1,1683 @@
+@import "../vendor/flag/flag-icon";
+.united-profile {
+    @include position(relative);
+    //@include pull-left;
+    &__top-panel {
+        @include position(relative);
+        & .profile {
+            &__wrapper {
+                //background: rgba(242, 242, 242, 242) linear-gradient(-186deg, #f2f2f2 78%, #ffffff 78.3%) repeat scroll 0 0;
+                background: #f2f2f2;
+                @include span(12 of 12 0);
+                @include padding-top(25);
+                @include px-to-rem(height, 510);
+                @include breakpoint($medium) {
+                    @include px-to-rem(height, 500);
+                }
+                @include breakpoint($large) {
+                    @include px-to-rem(height, 500);
+                }
+                @include breakpoint($xlarge) {
+                    @include px-to-rem(height, 600);
+                }
+                @include pull-left;
+                @include percentage-value(width, 100);
+                @include position(relative);
+                @include overflow(hidden);
+                & .container {
+                    @include position(relative);
+                    @include percentage-value(height, 100);
+                }
+            }
+            &__tshirt-number {
+                // clip: rect(auto auto 510px auto);
+                //transform: rotate(-6deg);
+                span {
+                    // transform: rotate(6deg);
+                    @include breakpoint($xlarge) {
+                        @include font-size(1400);
+                    }
+                    @include breakpoint($medium) {
+                        @include font-size(1000);
+                    }
+                    @include font-size(720);
+                    @include line-height(61,px);
+                    @include color($white);
+                    @include padding-right(11);
+                    @include pull-left;
+                    @include position(absolute);
+                    @include percentage-value(width, 100);
+                    @include primary-regular;
+                    @include text-align(center);
+                    @include color(#848484);
+                    @include opacity(0.11);
+                    //@include z-index(1);
+                    @include line-height(0.7);
+                    @include top(0);
+                }
+                .gradient-skew {
+                    position: absolute;
+                    width: 100%;
+                    background: linear-gradient(-184deg, rgba(0, 0, 0, 0) 75%, #ffffff 73.3%);
+                    height: 100%;
+                    opacity: 1;
+                }
+            }
+            &__details-left {
+                @include percentage-value(width, 50);
+                @include position(relative);
+                @include z-index(9);
+                @include breakpoint($xsmall) {
+                    @include percentage-value(width, 30);
+                    @include margin-left(8);
+                }
+                @include breakpoint($small $xsmall) {
+                    @include percentage-value(height, 39);
+                    @include margin-left(8);
+                }
+                @include breakpoint($medium) {
+                    @include span(4 of 12);
+                    @include percentage-value(height, 100);
+                }
+                @include breakpoint($large) {
+                    @include span(3 of 12);
+                }
+                @include breakpoint($xxlarge) {
+                    @include padding-left(8,percent);
+                }
+                @include position(relative);
+                @include percentage-value(height, 100);
+                h1 {
+                    @include tertiary-semibold;
+                    @include font-size(24);
+                    @include breakpoint($large) {
+                        @include font-size(36);
+                    }
+                    @include line-height(1.08);
+                    @include px-to-rem(letter-spacing, 1);
+                    @include font-weight(normal);
+                    @include percentage-value(width, 100);
+                    @include pull-left;
+                    @include position(relative);
+                    &:after {
+                        @include border-top(2, solid, $mu-black);
+                        @include position(absolute);
+                        @include px-to-rem(width, 64);
+                        @include bottom(-10);
+                        @include left(0);
+                        content: "";
+                        opacity: 0.2;
+                    }
+                }
+                & .member {
+                    @include percentage-value(width, 100);
+                    @include margin-top(10);
+                    @include pull-left;
+                    & h3, & p {
+                        @include font-size(14);
+                        @include secondry-regular;
+                        @include text-transform(uppercase);
+                        @include color($social-bg);
+                        @include padding(21, 0, 9, 0);
+                        @include line-height(14,px);
+                        @include breakpoint ($small $max-medium) {
+                            @include padding(14, 0, 1, 0);
+                        }
+                    }
+                    &__id {
+                        @include percentage-value(width, 100);
+                        @include pull-left;
+                        span {
+                            @include primary-bold;
+                            @include color($social-bg);
+                            @include font-size(16);
+                            @include breakpoint($medium) {
+                                @include font-size(36);
+                            }
+                            @include font-size(36);
+                            @include pull-left;
+                        }
+                        i {
+                            @include pull-left;
+                            @include margin(9, 0, 0, 8);
+                        }
+                    }
+                }
+                & .skew-button {
+                    display: none !important;
+                    @extend %btn-skew;
+                    @include breakpoint ($small $max-medium) {
+                        @include border-none;
+                        @include padding(0, 0, 0, 0);
+                    }
+                    @include breakpoint($large $max-large) {
+                        @include padding(16, 10, 16, 10);
+                    }
+                    //@include padding(13, 26, 13, 26);
+                    @include border(1, solid, $mu-black);
+                    @include margin-top(16);
+                    a {
+                        @include breakpoint($small $max-xsmall) {
+                            @include padding(0);
+                        }
+                        @include padding(14, 26, 14, 26);
+                        span {
+                            @include color($mu-black);
+                            @include font-size(14);
+                            @include secondry-semibold;
+                            @include text-transform(uppercase);
+                            letter-spacing: 0.9px;
+                        }
+                    }
+                    .no-member {
+                        @include margin-top(30);
+                    }
+                    &.cta-tickets {
+                        display: inline-block !important;
+                        @include margin(15, 0, 15, 0);
+                        @include breakpoint($large) {
+                            @include margin(18, 0, 18, 0);
+                        }
+                        a {}
+                        @include breakpoint($large) {
+                            a {
+                                @include pull-left;
+                            }
+                        }
+                    }
+                }
+                & .profile__links {
+                    @include position(absolute);
+                    @include bottom(115);
+                    @include breakpoint($medium) {
+                        @include bottom(100);
+                    }
+                    @include breakpoint($xlarge) {
+                        @include bottom(115); 
+                        @include margin-top(0);
+                    }
+                    @include percentage-value(width, 100);
+                    @include pull-left;
+                    & ul {
+                        li {
+                            &:first-child {
+                                display: none;
+                            }
+                            @include percentage-value(width, 100);
+                            @include pull-left;
+                            label {
+                                a {
+                                    @include font-size(14);
+                                    @include secondry-regular;
+                                    @include color($mu-black);
+                                    @include text-transform(uppercase);
+                                    @extend %font-underline-none;
+                                }
+                                @include pull-left;
+                                @include calculate-width(100, 34);
+                                @include padding-left(10);
+                                @include margin(5, 0, 0, 0);
+                            }
+                            span {
+                                @include margin-bottom(10);
+                                @include px-to-rem(width, 34);
+                                @include px-to-rem(height, 34);
+                                @include percentage-value(border-radius, 50);
+                                @include pull-left;
+                                @include border(1, solid, $mu-black);
+                                @include prefix-vendor(transition, all .2s ease-in-out, webkit ms o);
+                                &:hover {
+                                    @include prefix-vendor(transform,scale(1.1) , webkit ms o);
+                                }
+
+                                i {
+                                    @include top(50,percent);
+                                    @include left(50,percent);
+                                    @include position(relative);
+                                    @include margin(0, 0, 0, 0);
+                                    transform: translate(-50%, -50%);
+                                }
+                            }
+                        }
+                    }
+                    & .sponsor {
+                        //display: none;
+                        @include percentage-value(width, 100);
+                        @include pull-left;
+                        & ul {
+                            li {
+                                label {
+                                    @include font-size(14);
+                                    @include secondry-semibold;
+                                    @include color(#8d8d8d);
+                                    @include pull-left;
+                                    @include px-to-rem(width, 100);
+                                    @include margin-top(0);
+                                }
+                                & img {
+                                    @include px-to-rem(max-height, 25);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &__details-right {
+                @include span(12 of 12);
+                @include position(relative);
+                @include z-index(9);
+                @include display(none);
+                @include breakpoint($medium) {
+                    @include span(4 of 12);
+                    @include pull-right;
+                    @include display(block);
+                }
+                @include breakpoint($large) {
+                    @include span(3 of 12);
+                    @include pull-right;
+                }
+                @include breakpoint($xlarge) {
+                    @include span(3 of 12);
+                    @include pull-right;
+                }
+            }
+            &__jersy {
+                @include span(12 of 12 0);
+                @include position(absolute);
+                @include top(42);
+                @include overflow(hidden);
+                //@include z-index(999);
+                &__number {
+                    @include text-align(center);
+                    @include percentage-value(height, 100);
+                    @include padding-top(42);
+                    @include breakpoint($medium $max-medium) {
+                        @include padding-top(61);
+                        @include margin-top(55);
+                        @include margin-right(40);
+                    }
+                    @include breakpoint($large) {
+                        @include padding-top(70);
+                    }
+                    @include breakpoint($xlarge) {
+                        @include padding-top(100);
+                    }
+                    background-size:contain !important;
+                    h6,
+                    p.lastname {
+                        @include primary-bold;
+                        @include font-size(24);
+                        @include line-height(1.33);
+                        @include breakpoint($large) {
+                            @include font-size(32);
+                            @include line-height(1);
+                        }
+                        @include breakpoint($xlarge) {
+                            @include font-size(36);
+                            @include line-height(0.89);
+                        }
+                        @include text-align(center);
+                        @include color($white);
+                        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+                        @include px-to-rem(min-height, 25);
+                    }
+                    h5,
+                    p {
+                        @include primary-bold;
+                        @include text-align(center);
+                        @include color($white);
+                        @include font-size(120);
+                        @include line-height(1);
+                        @include px-to-rem(min-height, 90);
+                        @include breakpoint($large) {
+                            @include font-size(150);
+                            @include px-to-rem(min-height, 140);
+                        }
+                        @include breakpoint($xlarge) {
+                            @include font-size(200);
+                            @include px-to-rem(min-height, 120);
+                            //@include line-height(1);
+                        }
+                    }
+                }
+                &__image {
+                    @include breakpoint ($small $max-small) {
+                        @include px-to-rem(width, 270);
+                        @include px-to-rem(height, 355);
+                        @include pull-right;
+                        //@include margin-top(25);
+                        @include margin-right(-75);
+                    }
+                    @include breakpoint (375px $max-small) {
+                        @include px-to-rem(height, 385);
+                        @include px-to-rem(width, 305);
+                        @include margin-right(-85);
+                    }
+                    @include breakpoint($xsmall $max-xsmall) {
+                        @include px-to-rem(width, 350);
+                        @include px-to-rem(height, 423);
+                        @include margin-top(35);
+                        //@include pull-right;
+                    }
+                    @include breakpoint($medium) {
+                        @include px-to-rem(width, 350);
+                        @include px-to-rem(height, 423);
+
+                    }
+                    @include breakpoint($large) {
+                        @include px-to-rem(width, 500);
+                        @include px-to-rem(height, 598);
+
+                    }
+                    @include breakpoint($xlarge) {
+                        @include px-to-rem(width, 552);
+                        @include px-to-rem(height, 648);
+            
+                    }
+                    @include margin-auto(0 auto);
+                    .buy-tshirt {
+                        @include pull-left;
+                        @include margin-left(10);
+                        @include margin-top(0);
+                        //            @include display(none);
+                        @include breakpoint($medium $max-medium) {
+                            //              @include display(none);
+                            @include margin-left(10);
+                            @include margin-top(20);
+                        }
+                        @include breakpoint($large) {
+                            @include margin-left(90);
+                            @include margin-top(60);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__details {
+        //@include pull-left;
+        .profile__wrapper {
+            @include padding-top(60);
+            & .profile {
+                &__details {
+                    @include position(relative);
+                    @include percentage-value(height, 100);
+                }
+                &__pic {
+                    @include pull-left;
+                    @include px-to-rem(width, 58);
+                    @include px-to-rem(height, 58);
+                    @include breakpoint($medium) {
+                        @include px-to-rem(width, 99);
+                        @include px-to-rem(height, 99);
+                    }
+                    @include breakpoint($large) {
+                        @include px-to-rem(width, 120);
+                        @include px-to-rem(height, 120);
+                    }
+                    @include breakpoint($xlarge) {
+                        @include px-to-rem(width, 140);
+                        @include px-to-rem(height, 140);
+                    }
+                    @include percentage-value(border-radius, 50);
+                    @include border(4, solid, $white);
+                    @include pull-left;
+                    @include background-color($white-lighter);
+                    background-size: cover !important;
+                    background-position: center top !important;
+                    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+                }
+                &__description {
+                    @include pull-right;
+                    @include secondry-regular;
+                    @include font-size(16);
+                    @include line-height(1.38);
+                    color: #1a1a1a;
+                    @include padding-left(48);
+                    @include breakpoint($small $max-xsmall) {
+                        @include padding-left(16);
+                    }
+                    @include calculate-width(100, 60);
+                    @include breakpoint($medium) {
+                        @include calculate-width(100, 100);
+                    }
+                    @include breakpoint($large) {
+                        @include secondry-light;
+                        @include font-size(21);
+                        @include line-height(1.38);
+                        @include calculate-width(100, 120);
+                        @include margin-top(20);
+                    }
+                    @include breakpoint($xlarge) {
+                        @include font-size(24);
+                        @include line-height(1.42);
+                        @include border-left(1, solid, $mu-black, 0.2);
+                        @include margin-left(16);
+                        @include calculate-width(100, 192);
+                    }
+                }
+                &__info {
+                    @include percentage-value(width, 100);
+                    @include pull-left;
+                    @include padding(42, 0, 0, 0);
+                    @include breakpoint($large) {
+                        @include padding(25, 0, 0, 0);
+                    }
+                    &__left {
+                        @include percentage-value(width, 100);
+                        @include breakpoint($large) {
+                            @include percentage-value(width, 50);
+                        }
+                        @include text-align(left);
+                        @include pull-left;
+                        .profile-dob {
+                            @include margin-right(40);
+                            @include margin-bottom(16);
+                            @include breakpoint($small $max-medium) {
+                                @include percentage-value(width, 69);
+                                @include pull-left;
+                                //@include padding-left(15);
+                                @include margin-right(0);
+                                p {
+                                    @include margin-bottom(0,important);
+                                }
+                            }
+                            //              @include breakpoint($xsmall $max-medium) {
+                            //                @include percentage-value(width, 67);
+                            //                @include margin-right(0);
+                            //              }
+                            @include pull-left;
+                            @extend %united-profile__subheading;
+                            @extend %united-profile__heading;
+                        }
+                        .profile-age {
+                            @include breakpoint($small $max-medium) {
+                                @include percentage-value(width, 30);
+                                @include text-align(right);
+                            }
+                            @include pull-left;
+                            @extend %united-profile__subheading;
+                            @extend %united-profile__heading;
+                        }
+                    }
+                    &__right {
+                        @include percentage-value(width, 100);
+                        @include breakpoint($small $max-medium) {
+                            @include margin-top(22);
+                        }
+                        @include breakpoint($large) {
+                            @include percentage-value(width, 50);
+                        }
+                        @include text-align(left);
+                        @include pull-right;
+                        .profile-signed-date {
+                            @include margin-right(40);
+                            @include margin-bottom(16);
+                            @include breakpoint($large $max-large){
+                                 @include margin-right(23);
+                            }
+                            @include breakpoint($small $max-medium) {
+                                @include percentage-value(width, 69);
+                                @include margin-right(0);
+                            }
+                            @include pull-left;
+                            @extend %united-profile__subheading;
+                            @extend %united-profile__heading;
+                        }
+                        .profile-tshirt-no {
+                            position: relative;
+                            @include px-to-rem(min-width, 80);
+                            @include breakpoint($small $max-medium) {
+                                @include percentage-value(width, 30);
+                                @include text-align(right);
+                            }
+                            @include breakpoint($xlarge) {
+                                @include percentage-value(width, 40);
+                            }
+                            @include pull-left;
+                            @extend %united-profile__subheading;
+                            @extend %united-profile__heading;
+                            h6 {
+                                display: block !important;
+                            }
+                            h1,
+                            p {
+                                @include display(none);
+                            }
+                            input {
+                                @include font-size(40);            
+                                @include primary-bold;
+                                @include background-color($linup-bg);
+                                @include font-color($mu-black);
+                                @include px-to-rem(width, 80);
+                                @include border(1, solid, $input-border);
+                                @include opacity(0.2);
+                                //@include px-to-rem(height, 44);
+                                @include line-height(44,px);
+                                @include padding-left(10);
+                                @include padding-right(10);
+                                @include margin-top(-1);
+                                @include margin-left(-11);
+                                @include breakpoint($small $max-medium) {
+                                    @include padding-left(0);
+                                    @include padding-right(0);
+                                }
+                                @include breakpoint($small $max-xsmall) {
+                                    @include px-to-rem(height, 38);
+                                    @include font-size(36);
+                                    @include margin-top(20);
+                                    @include margin-right(-1);
+                                    @include margin-left(auto);
+                                }
+                                //@include margin-top(-65);
+                                box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.8);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .match-followed {
+            &__wrapper {
+                @include percentage-value(width, 100);
+                @include pull-left;
+            }
+            &__items {
+                @include percentage-value(width, 100);
+                @include pull-left;
+                h6 {
+                    @extend %subhead-h6;
+                }
+                & .grid-6 {
+                    @include breakpoint($small $max-medium) {
+                        @include percentage-value(width, 100);
+                        @include pull-left;
+                        @include margin-bottom(15);
+                        @include margin-left(0);
+                        @include margin-right(0);
+                    }
+                }
+            }
+            .match-item {
+                @include background-color($white);
+                height: 343px !important;
+            }
+        }
+    }
+    &__sidebar {
+        @include position(absolute);
+ 
+        @include top(-220);
+        @include pull-right;
+        @include right(0);
+        @include percentage-value(height, 100);
+        @include display(none);
+        @include breakpoint($medium) {
+            @include span(5 of 12);
+            @include pull-right;
+            @include top(-280);
+            @include display(block);
+        }
+        @include breakpoint($large) {
+            @include span(4 of 12);
+            @include pull-right;
+            @include top(-260);
+            @include display(block);
+        }
+        @include breakpoint($xlarge) {
+            @include span(3 of 12);
+            @include pull-right;
+            @include display(block);
+            @include top(-350);
+        }
+        @include background-color($mu-black);
+        @include position(relative);
+        @include percentage-value(height, 100);
+        @include px-to-rem(min-height, 650);
+    }
+    .united-left {
+        @include span(12 of 12);
+        @include breakpoint($small $max-xsmall) {
+            @include margin-left(0);
+            @include margin-right(0);
+        }
+        @include breakpoint($medium) {
+            @include span(8 of 12);
+        }
+        @include breakpoint($large) {
+            @include span(9 of 12);
+        }
+        @include breakpoint($xlarge) {
+            @include span(10 of 12);
+        }
+        @include breakpoint($xxlarge) {
+            @include span(10 of 12);
+            @include padding-left(8,percent);
+            @include padding-right(8,percent);
+        }
+    }
+    .action-button {
+        @extend %action-btn;
+        @include z-index(9);
+        @include position(relative);
+        @include margin-left(20); 
+        a {
+            &:hover {
+            //background-color: rgba(184, 183, 185, 0.15);
+            @include btn-transition-hover(background, $keylines,0.15);
+            }
+        }
+
+    }
+    .action-button-save {
+        @extend %action-btn;
+        @include z-index(9);
+        @include position(relative);
+        @include margin-left(20);
+        a {
+            @include background-color($mu-red);
+            @include font-color($white);
+            &:hover {
+                @include btn-transition-hover(background, $mu-red-hover);
+            }
+        }
+        &.white-btn {
+            a {
+                @include btn-transition-hover(background, $keylines,0.1);
+            }
+        }
+        
+
+    }
+
+    .favourite-player .favourite-player__title {
+        @include breakpoint($small $max-xsmall) {
+            @include position(relative);
+        }
+    }
+
+    .grey-bg {
+        @include background-color($background-color);
+        @include percentage-value(width, 100);
+        @include pull-left;
+        @include padding-top(45);
+        @include padding-bottom(45);
+    }
+    .white-bg {
+        //@include background-color($white);
+        @include percentage-value(width, 100);
+        @include pull-left;
+        @include padding-top(0);
+        @include padding-bottom(0);
+        @include margin-top(-75);
+        @include breakpoint($medium) {
+            @include padding-top(25);
+            //@include padding-bottom(45);
+        }
+        @include breakpoint($large) {
+            @include padding-top(100);
+            //@include padding-bottom(100);
+        }
+    }
+    .ad-bg {
+        @include percentage-value(width, 100);
+        @include pull-left;
+        @include padding-top(45);
+        @include padding-bottom(45);
+        @include background-color($white);
+    }
+    .favourite-player {
+        @include percentage-value(width, 100);
+        @include pull-left;
+        &__title {
+            @extend %favourite-player-title;
+        }
+        &__pic {
+            @extend %favourite-player-pic;
+        }
+        &__details {
+            @extend %favourite-player-details;
+        }
+        &-select {
+            @include px-to-rem(height, 309);
+            @include border-radius(2);
+            @include background-color($white);
+            @include padding(6, 6, 6, 6);
+            @include position(absolute);
+            @include percentage-value(width, 100);
+            @include z-index(9);
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+            h6,
+            p {
+                @include secondry-regular;
+                @include font-size(16);
+                @include color($mu-black);
+                @include padding(18, 9, 12, 9);
+                @include border-bottom(1, solid, $mu-black);
+            }
+            .icon-close-black {
+                @include position(absolute);
+                @include right(0);
+                @include top(14);
+                @include cursor(pointer);
+            }
+            & .player__list {
+                @include px-to-rem(height, 250);
+                @include overflow-x(auto);
+                ul {
+                    li {
+                        @include percentage-value(width, 100);
+                        @include padding(16, 16, 16, 16);
+                        @include pull-left;
+                        a {
+                            @include secondry-regular;
+                            @include font-size(16);
+                            @include color($mu-black);
+                            @include percentage-value(width, 100);
+                            span:first-child {
+                                @include display(inline-block);
+                                vertical-align: middle;
+                                @include px-to-rem(width, 25);
+                                @include margin-right(10);
+                                img {
+                                    width: 100%;
+                                }
+                            }
+                            span:nth-child(2){
+                                @include display(inline-block);
+                                max-width: calc(100% - 35px);
+                                vertical-align: middle;
+                            }                            
+                            .flag {
+                                @include px-to-rem(height, 20);
+                                @include px-to-rem(width, 28);
+                            }
+                        }
+                        &:hover {
+                            @include background-color($mu-grey, 0.2);
+                        }
+                    }
+                }
+            }
+        }
+        &__no-details {
+            @include pull-right;
+            @include breakpoint($large) {
+                @include padding-left(32);
+            }
+            @include calculate-width(100, 120);
+            @include padding-top(40);
+            h4,
+            p {
+                @include secondry-light;
+                @include font-size(24);
+                @include color($mu-black);
+                @include letter-spacing(-0.4);
+            }
+        }
+        &.show-favourite {
+            @include display(block);
+            @include margin-top(30);
+            @include breakpoint($medium) {
+                @include display(none);
+            }
+        }
+        &.only-small {
+            @include display(block);
+            @include breakpoint($max-xsmall) {
+                @include display(none);
+            }
+        }
+    }
+    .icon-add-player {
+        @include cursor(pointer);
+        @include margin(0, -1, 0, -1);
+    }
+    .margin-bottom {
+        @include margin-bottom(23);
+        @include breakpoint($small $xsmall) {
+            @include margin-bottom(12);
+        }
+    }
+    .narrow {
+        @include important(display, block);
+        @include pull-left;
+        @include breakpoint($large) {
+            @include important(display, none);
+        }
+    }
+    .wide {
+        @include important(display, none);
+        @include pull-left;
+        @include breakpoint($large) {
+            @include important(display, block);
+        }
+    }
+    .icon-check {
+        @include pull-right(important);
+        @include display(none);
+        &.active-check {
+            @include display(block);
+        }
+    }    
+}
+
+%subhead-h6 {
+    @include tertiary-bold;
+    @include color($social-bg);
+    @include font-size(14);
+    @include line-height(18,px);
+    @include text-transform(uppercase);
+    @include position(relative);
+    @include margin-bottom(7);
+    @include display(inline-block);
+
+}
+
+%united-profile__subheading {
+    h6,
+    p.headling {
+        @extend %subhead-h6;
+    }
+}
+
+%united-profile__heading {
+    h1,
+    p {
+        @include font-size(36);
+        @include breakpoint($medium) {
+            @include font-size(40);
+            @include line-height(44,px);
+        }
+        @include primary-bold;
+        @include color($mu-red);
+    }
+}
+
+%favourite-player-title {
+    @include pull-left;
+    @include percentage-value(width, 100);
+    @include margin-bottom(20);
+    @include breakpoint($small $max-xsmall) {
+        @include margin-top(30);
+    }
+    @include breakpoint($large) {
+        @include margin-top(17);
+    }
+    h1,
+    p {
+        @include tertiary-semibold;
+        @include font-size(14);
+        @include position(relative);
+        @include pull-left;
+        @include line-height(14,px);
+        text-transform: uppercase;
+        &:after {
+            //@include border-top(2, solid, $mu-red);
+            @include position(absolute);
+            @include px-to-rem(width, 22);
+            @include bottom(-10);
+            @include left(0);
+            content: "";
+        }
+    }
+}
+
+%favourite-player-pic {
+    @include pull-left;
+    @include px-to-rem(width, 104);
+    @include px-to-rem(height, 104);
+    @include percentage-value(border-radius, 50);
+    @include border(2, solid, $white);
+    @include margin-auto(0 auto); 
+    background-size: cover !important;
+    background-position: top !important;
+    .icon-add-player {
+        @include pull-right;
+    }
+}
+
+%favourite-player-details {
+    @include pull-right;
+    @include calculate-width(100, 120);
+    @include margin-top(10);
+    .first-name {
+        @include font-size(24);
+        @include secondry-light;
+        @include percentage-value(width, 100);
+    }
+    .last-name {
+        @include font-size(24);
+        @include secondry-semibold;
+        @include percentage-value(width, 100);
+    }
+    .country {
+        @include percentage-value(width, 100);
+        @include pull-left;
+        @include margin-top(12);
+        span {
+            &:nth-child(1) {
+                @include pull-left;
+                @include px-to-rem(height, 20);
+            }
+            &:nth-child(2) {
+                @include font-size(14);
+                @include secondry-regular;
+                @include color($mu-black);
+                @include pull-left;
+                @include margin-left(10);
+                @include line-height(14,px);
+            }
+        }
+    }
+    h4,
+    p {
+        @include secondry-light;
+        @include font-size(24);
+        @include color($mu-black);
+        @include letter-spacing(-0.4);
+    }
+}
+
+.switch {
+    @include pull-right;
+    @include position(relative);
+    display: inline-block;
+    @include px-to-rem(height, 30);
+    @include px-to-rem(width, 54);
+    @include bottom(5);
+    input {
+        display: none
+    }
+    &__slider {
+        @include position(absolute);
+        //cursor: pointer;
+        @include top(0);
+        @include left(0);
+        @include right(0);
+        @include bottom(0);
+        background-color: #f2f2f2;
+        -webkit-transition: .4s;
+        transition: .4s;
+        &:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            @include left(5);
+            @include bottom(4);
+            background-color: #494a50;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+    }
+    input:checked + &__slider:before {
+          background-color: #d0011b;
+        }
+    input:focus + &__slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+    input:checked + &__slider:before {
+        -webkit-transform: translateX(23px);
+        -ms-transform: translateX(23px);
+        transform: translateX(23px);
+    }
+    /* Rounded sliders */
+    &__slider.round {
+        border-radius: 34px;
+    }
+    &__slider.round:before {
+        border-radius: 50%;
+    }
+}
+
+//United settings
+.united__title {
+    @include tertiary-semibold;
+    @include font-size(24);
+    @include margin-top(25);
+    font-weight: 600;
+    @include line-height(1.08);
+    letter-spacing: 1px;
+    @extend %txt-uppercase;
+    position: relative;
+    &:after {
+        @include border-bottom(2, solid, $mu-black);
+        @include position(absolute);
+        @include px-to-rem(width, 64);
+        content: '';
+        @include bottom(-10);
+        @include left(0);
+        opacity: 0.2;
+    }
+}
+
+.accordion {
+    @include percentage-value(width, 100);
+    @include pull-left;
+}
+
+.united__row {
+    @include px-to-rem(height, 60);
+    @include pull-left;
+    @include percentage-value(width, 100);
+    @include background-color($white);
+    @include padding(20, 10, 20, 10);
+    //@include cursor(pointer);
+    box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+    span {
+        @include margin-left(6);
+        @include margin-right(26);
+        @include pull-left;
+        /*z-index: 999999 !important;*/
+        position: relative !important;
+    }
+    .accord-title {
+        @include font-size(24);
+        @extend %txt-uppercase;
+        @include primary-regular;
+        @include pull-left;
+        @include color($mu-black);
+    }
+    .full-width {
+        width: 100%
+    }
+    a {
+        @include pull-right;
+    }
+    .icon-next-page-arrow {
+        @include pull-right;
+        @include margin-right(3,important);
+        @include margin-top(8);
+    }
+    .icon-more-img {
+        @include pull-right;
+        @include padding-right(20);
+    }
+    &.active {
+        @include background-color(#EBEAEB);
+        @include margin-bottom(0);
+        .icon-more-img {
+            @extend .icon-less-img;
+            @include margin-top(8);
+            @include pull-right;
+        }
+    }
+    .icon-plus {
+        @include pull-right;
+        @include margin-right(15);
+        @include cursor(pointer);
+    }
+}
+
+.united-detail {
+    @include percentage-value(width, 100);
+    @include pull-left;
+    .united__inner-row {
+        @include margin-bottom(0,important);
+        @extend .united__row;
+        span {
+            //@include px-to-rem(width, 30);
+        }
+        a {
+            //@include padding-left(64);
+        }
+        &:last-child {
+            @include border-bottom(2, solid, $mu-black);
+            @include margin-bottom(8);
+        }
+        .profile-icon {
+            width: 25px;
+        }
+        .profile-text {
+            //@include margin-left(6);
+            width: 100%;
+        }
+    }
+    &.small {
+        .united__inner-row {
+            a {
+                @include secondry-regular;
+                @include font-size(16);
+                //@include margin-left(16);
+                @include pull-left;
+                @include color($mu-black);
+                @include padding-left(0);
+                @extend %text-capitalize;
+            }
+        }
+        &.social {
+            .united__inner-row {
+                span {
+                    @include margin-right(8);
+                }
+            }
+        }
+    }
+}
+
+.setting-title {
+    @include percentage-value(min-width, 50);
+}
+
+.united__sub-title {
+    @include font-size(16);
+    @extend %txt-uppercase;
+    @include margin(36, 0, 8, 0);
+    @include pull-left;
+}
+
+.login-detail {
+    @include margin-top(32);
+    @include pull-left;
+    span {
+        font-weight: 600;
+    }
+    a {
+        @include color($mu-black);
+        @include cursor(pointer);
+    }
+}
+
+///// TODO: remove following temp to fix add on mobile
+///
+.advertisment.ad-bg,
+.advertisment.ad-bg iframe {
+    max-width: 100%;
+}
+
+.small-loader {
+    transform: translateZ(0) scale(0.4) !important;
+    @include margin-top(22,important);
+}
+
+.no-spin::-webkit-inner-spin-button,
+.no-spin::-webkit-outer-spin-button {
+    -webkit-appearance: none !important;
+    @include margin(0,important);
+    -moz-appearance: textfield !important;
+}
+
+.email-modal {
+    background-color: $white;
+    cursor: default;
+    .close {
+        @include pull-right(important);
+        color: black;
+        @include font-size(28);
+        font-weight: bold;
+        @include margin-top(10);
+    }
+    .modal-content {
+        position: relative;
+        @include  left(35,percent);
+
+        input[type="email"],input[type="text"] {
+            @include secondry-regular;
+            @include font-size(18);
+            @include padding-bottom(5);
+            @include margin-top(30);
+            width: 100%;
+            border-top-style: none;
+            border-right-style: none;
+            border-left-style: none;
+            border-bottom: 1px solid rgb(202, 202, 202) !important;
+        }
+        input[type="submit"] {
+            transform: skew(-10deg);
+            -moz-transform: skew(-10deg);
+            color: $white;
+            -webkit-transform: skew(-10deg);
+            cursor: pointer;
+            height: 43px;
+            border-radius: 1.79px;
+            vertical-align: middle;
+            @include margin-left(10);
+            //width: 170px!important;
+            border: none!important;
+            @include text-align(center,important);
+            @include font-size(14,important);
+            text-transform: uppercase!important;
+            //background: 125px 18px no-repeat #c70101!important;
+            @include margin-top(55);
+            @include margin-bottom(30);
+        }
+        .profile-details {
+            @include secondry-regular;
+            @include font-size(18);
+            color: #757575;
+        }
+        .title {
+            //@include margin-top(70);
+            .title-text {
+                @include secondry-semibold;
+                color: $mu-black;
+                font-weight: 700;
+                @include margin-bottom(30);
+                //@include margin-top(10);
+                @include font-size(18);
+                @include breakpoint($small $max-xsmall) {
+                    @include line-height(24,px);
+                }
+            }
+        }
+        .previous-credentials {
+            color: $mu-black;
+            .old-email {
+                display: inline-block;
+            }
+            .email-title {
+                @include font-size(16);
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.left-access {
+    @include pull-left(important);
+    position: absolute !important;
+}
+
+.united-profile__top-panel .profile__details-left .profile__links .sponsor ul li {
+    display: block;
+    @include margin-top(20);
+}
+
+.united-profile__top-panel .profile__details-left .profile__links .sponsor ul li label {
+    @include padding-left(0);
+}
+
+.profile__info .profile__info__right .profile-tshirt-no p.headling {
+    display: block !important
+}
+
+.united-profile__details .profile__wrapper .profile__info__right .profile-tshirt-no p.headling {
+    position: relative;
+    @include text-align(left);
+}
+.united-profile__details .profile__wrapper .profile__info__right .profile-tshirt-no p.headling{
+    @include breakpoint($small $max-medium) {
+        @include text-align(right);
+    }
+}
+
+.united-profile .action-button, .united-profile .action-button-save{
+    @include breakpoint($small $max-medium){
+        @include text-align(left);
+        @include pull-left;
+    }
+    @include breakpoint($small $max-xsmall){
+        @include margin-left(0);
+    }
+}
+.united-profile .profile__details.united-left .action-button, .united-profile .profile__details.united-left .action-button-save{
+    @include breakpoint($medium $max-medium){
+        @include margin-left(0);
+    }
+}
+.profile-tshirt-no input#united-int{
+    @include breakpoint($small $large){
+        @include text-align(right);
+    }
+}
+
+[ng\:cloak],
+[ng-cloak],
+.ng-cloak {
+    display: none!important;
+}
+
+.profile__details-left .white-btn-skew {
+    @include margin-top(17);
+}
+
+@include breakpoint($small $max-xsmall) {
+    .profile__details-left .white-btn-skew a {
+        @include padding(0,0,0,0);
+    }
+    .profile__details-left .white-btn-skew {
+        background: none;
+        border: none;
+    }
+    .profile__details-left .white-btn-skew:hover {
+        box-shadow: none;
+    }
+}
+
+@include breakpoint($small $max-large) {
+    .profile__details-left .white-btn-skew{
+        background: none;
+        border: none;
+    }
+    .profile__details-left .white-btn-skew a {
+        @include padding(0,0,0,0);
+    }
+}
+
+@include breakpoint($small $max-xsmall) {
+    .profile__details-left .white-btn-skew span{
+        @include font-size(12);
+    }
+    .united-profile__top-panel .profile__details-left .profile__links .sponsor ul li label{
+        @include display(none);
+    }
+}
+
+.profile__details-left {
+    z-index: 1;
+}
+
+.profile__details-left.left-access .profile__links ul li a{
+    z-index: 99;
+    @include breakpoint($xlarge){
+
+    }
+}
+
+.profile__details-left.left-access{
+    @include breakpoint($xlarge){
+        @include top(287);
+    }
+    @include breakpoint($large $max-large){
+        @include top(242); 
+    }
+    @include breakpoint($medium $max-medium) {
+        @include top(218);
+    }
+}
+
+.white-btn-skew.no-member.wide {
+    @include margin-top(34);
+}
+
+.white-btn-skew.no-member.narrow {
+    @include margin-top(30);
+}
+
+.profile__details.united-left .row.margin-bottom {
+    @include breakpoint($small $max-xsmall) {
+        @include margin-left(3);
+    }
+}
+
+.united-profile__top-panel .profile__details-left {
+    @include breakpoint($large) {
+        width: 29% !important;
+    }
+}
+
+.united-profile__top-panel .profile__details-left {
+    @include breakpoint($medium) {
+        height: 50%;
+    }
+}
+
+//.profile__details-right .favourite-player .favourite-player_true .favourite-player__title .action-button {
+//    @include breakpoint($large) {
+//        @include top(12);
+//    }
+//}
+
+//.profile__info .profile__info__right .action-button {
+//    @include breakpoint($small $max-xsmall) {
+//        @include right(80);
+//    }
+//    @include breakpoint($medium $max-xlarge) {
+//        @include right(-90);
+//    }
+//}
+
+//.favourite-player .favourite-player__title .action-button {
+//    @include breakpoint($small $max-xsmall) {
+//        @include right(0,important);
+//    }
+//    @include breakpoint($medium $max-xlarge) {
+//        @include right(-5);
+//        @include top(-3);
+//    }
+//}
+//.profile__info__right .profile-tshirt-no .action-button{
+//@include breakpoint($xlarge) {
+//        @include right(0);
+        
+//    }
+//}
+
+.united-profile__details .profile__wrapper .profile__info__right .profile-signed-date p{
+    @include breakpoint($small $max-xsmall) {
+        @include line-height(40,px);
+    }
+}
+.united-profile .united-left{
+    @include breakpoint($small $max-xsmall) {
+        width: 99% !important;
+    }
+}
+.setting-left-section{
+    @include breakpoint($small) {
+        @include padding-left(5,percent);
+    }
+    @include breakpoint($medium $large) {
+        @include padding-left(0,percent);
+    }
+}
+
+.setting-left-section .favourite-player-select{
+    width: 86%;
+}
+.setting-left-section .favourite-player__title{
+    position: relative;
+    @include margin-top(25);
+//    .action-button-save{
+//       @include breakpoint($medium) {
+//            @include top(-5,important);
+//       } 
+//    }
+//    .action-button{
+//       @include breakpoint($medium) {
+//            @include top(-5,important);
+//       } 
+//    }
+}
+
+.profile-tshirt-no input#united-int{
+    color: #6d6d6d !important;
+    opacity: 1;
+    box-shadow: 0px 0px 3px #ccc;
+    border: 1px solid #d4d1d1;
+    height: 55px;
+    @include line-height(55,px); 
+}
+.united-profile .favourite-player .action-button-save a{
+    background: #fff;
+    color: #1a1a1a !important;
+}
+.united-profile .favourite-player .action-button-save a,
+.united-profile .favourite-player .action-button a{
+    @include breakpoint($small $max-xsmall) {
+        @include margin-left(20,important);
+    }
+}
+.united-profile.setting-left-section .favourite-player .action-button-save a{
+//    @include breakpoint($medium) {
+//        @include margin-top(2,important);
+//    }
+}
+.changeemailmesg{
+    position: fixed; 
+    @include top(0); 
+    @include left(0); 
+    width: 320px; 
+    background: #fff; 
+    z-index: 99999; 
+    @include margin-auto(0 auto); 
+    @include right(0); 
+    @include text-align(center);
+    @include padding(10,10,10,10); 
+    @include line-height(13,px); 
+    @include border(1, solid, #ccc);
+}
+.icon-fb-color ~ .switch .switch__slider:before,
+.icon-google-plus-color ~ .switch .switch__slider:before,
+.icon-wechat-color ~ .switch .switch__slider:before,
+.icon-sina-weibo-color ~ .switch .switch__slider:before {
+    background-color: #d0011b;
+    @include right(5);
+    @include left(initial);
+}
+.united-detail.small.social .united__inner-row:nth-child(2) span:nth-child(2){
+    @include padding-left(13);
+}
+.united-detail.small.social .united__inner-row:nth-child(4) span:nth-child(2){
+    @include padding-left(6);
+}
+.united-detail.small.social .united__inner-row:nth-child(5) span:nth-child(2){
+    @include padding-left(8);
+}
+.united__row{
+    cursor: pointer;
+}
+.united__inner-row{
+    cursor: default !important;
+}
+.modal-content p.error-msg{
+    //color: #e76468;
+    @include color($dark-border-bottom);
+    @include font-size(13, important);
+    @include margin-top(10);
+    //border: 1px solid #e76468;
+    //width: 250px;
+    @include text-align(left);
+    //border-radius: 4.4px;
+    //padding: 10px;
+}
+.united-profile.setting-left-section .favourite-player-select{
+    @include margin-top(20);
+}
+.profile__details-left .sponsor ul li label{
+    @include text-transform(uppercase);
+}
+.profile__details-left .sponsor ul li img{
+    @include margin-top(4);
+}
+#model-change-email .email-modal .modal-content{
+    @include position(relative);
+    margin: 0 auto;
+    left: 0;
+    float: none;
+    width: 35%;
+    padding: 0 10px;
+    @include breakpoint($medium $large) {
+        width: 65%;
+    }
+    @include breakpoint($small $max-xsmall) {
+        width: 100%;
+    }
+    h2{
+        @include font-size(40,important);
+        @include padding(64, 24, 24, 0);
+        @include primary-bold;
+        @include text-align(left);
+        @include line-height(48,px);
+        @include breakpoint($small $max-xsmall) {
+            @include font-size(32,important);
+            @include padding(15, 24, 12, 0);
+        }
+    }
+}
+.united-profile__details .profile__wrapper .profile__info__right .profile-tshirt-no p:nth-child(2){
+    @include line-height(43,px);
+}
+.united__settings .united-detail .united__inner-row .accord-title{
+    //@include margin-left(7);
+    @include line-height(38,px);
+}
+.main-container .united-profile .favourite-player__title h1{
+    @include line-height(18,px);
+}
+.advertisment.ad-bg {
+    .container {
+       @include percentage-value(max-width,100);
+       @include percentage-value(width,100);
+       @include pull-left;
+       .advertisment__block {
+           @include percentage-value(width,100);
+           @include pull-left;
+           .grid-12.ad-block {
+               @include percentage-value(width,100);
+               @include pull-none;
+               margin:0px auto;
+           }
+       }
+        
+    }
+}
+.advertisment__block {
+    @include percentage-value(width,100);
+   .ad-block {
+        @include breakpoint($medium $max-medium){
+            @include px-to-rem(width,750);
+            @include pull-none;
+            margin:-7px auto;
+            @include margin-left(-7);
+        }
+        @include breakpoint($large){
+            @include px-to-rem(width,970);
+            @include pull-none;
+            margin:0px auto;
+           
+        }
+
+    } 
+}
+.player__list .loader-wrapper .loader.small-loader{
+    margin-top:0px !important; 
+    left: 40% !important; 
+    right: 50% !important; 
+    top: 35% !important
+}
+.player__list ul li a i.active-check{
+    margin-top: 10px
+}
+.player__list ul li .showerror, .showerror-scenario{
+    @include padding-left(40);
+    @include font-size(14);
+    @include color($mu-red); 
+}
+.united__inner-row .accord-title:hover{
+    @include padding-left(12);
+    transition: padding-left .2s linear;
+    width: 100%;
+    overflow: hidden;
+}
+.united__inner-row .accord-title{
+    transition: padding-left .2s linear;
+}
+.united__settings .united-detail .united__inner-row .accord-title:hover span.hover-underline{
+    //border-bottom: 1px solid #c70101 !important;
+    @include border-bottom(1, solid, $mu-red);
+}
+
+div.united-profile {
+    .profile-tshirt-no {
+        span.action-button, span.action-button-save {
+            @include display(inline-block);
+            @include position(absolute);
+            @include top(0);
+            @include margin-left(16, important);
+            @include breakpoint($small $max-xsmall) {
+                @include margin-left(0, important);
+                @include left(auto);
+                @include right(0);
+                @include top(20);
+            }
+        }
+    }
+    &__details .profile__wrapper .profile__info__right .profile-tshirt-no p:nth-child(2) {
+        @include breakpoint($small $max-xsmall) {
+             @include margin-top(24);
+        }
+    }
+
+}

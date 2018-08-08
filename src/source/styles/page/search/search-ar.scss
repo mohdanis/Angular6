@@ -1,0 +1,7 @@
+@import "../../lang/ar/partials/mixins/utilities";
+@import "../../includes-rtl";
+@import "../default/base-ar";
+@import "common";
+// Override files for rtl
+@import "../../lang/ar/components/carousal";
+@import "../../lang/ar/components/search";

@@ -1,0 +1,57 @@
+.mu-modal {
+    &__body {
+        &__container {
+            .slick-slide {
+                img {
+                    @include breakpoint($small $max-small) {
+                        -webkit-transform: translate(50%, -50%);
+                        -ms-transform: translate(50%, -50%);
+                        transform: translate(50%, -50%);
+                    }
+                }
+            }
+            .slider-prev {
+    //             left: calc(50% - 60px);
+				// @include left(initial);
+				right: calc(100% - 60px);
+            }
+            .slider-next {
+    //             right: calc(50% - 60px);
+				// @include right(initial);
+				left: calc(100% - 60px);
+            }
+        }
+    }
+}
+.transcript-bg {
+    .top-bar {
+        i {
+            transform: rotate(180deg) scaleX(-1);
+        }
+    }
+}
+.collection {
+    &__right-panel {
+        .navigation {
+            .collection-btn {
+                i {
+                    transform: scaleX(-1);
+                }
+            }
+        }
+    }
+}
+#modal-close-btn {
+    span {
+        -webkit-transform: translate(50%, -50%);
+        -ms-transform: translate(50%, -50%);
+        transform: translate(50%, -50%);
+    }
+}
+.icon-panel {    
+    .icon-cross {
+        -webkit-transform: translate(50%, -50%);
+        -ms-transform: translate(50%, -50%);
+        transform: translate(50%, -50%);
+     }
+}

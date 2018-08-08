@@ -1,0 +1,104 @@
+.temp-basic{
+	@include background($white);
+    @include span(12 of 12 2);
+    .basic-temp-block{
+        @include span(10 of 12 2);
+        @include pull-none;
+        @include margin-auto(20);
+
+        @include breakpoint($large){
+            @include span(8 of 12 6);
+            @include pull-none;
+            @include margin-auto(20);
+        }
+
+	    h1{
+	    	@include font-size(46);
+	    	@include line-height(34,px);
+            @include margin-bottom(10);
+
+            @include breakpoint($large){
+                @include font-size(72);
+                @include line-height(60,px);
+            }
+	    }
+
+	    h2{
+	    	@include font-size(32);
+	    	@include line-height(32,px);
+            @include margin-bottom(10);
+
+            @include breakpoint($large){
+                @include font-size(48);
+                @include line-height(40,px);
+            }
+	    }
+        p{
+                @include font-size(18);
+                @include line-height(28,px);
+                @include margin-bottom(10);
+            }
+
+    	.basic_temp_summary{
+	    	p{
+                @include font-size(24);
+                @include line-height(34,px);
+                @include letter-spacing(-0.2);
+                @include secondry-light;
+                @include margin-bottom(10);
+            }
+    	}
+
+        .white-btn-skew{
+            @include margin-bottom(10);
+        }
+
+        .red-btn-skew{
+            @include margin-bottom(10);
+        }
+    }
+
+    .temp-basic-image{
+  
+    	@include span(10 of 12 6);
+        @include padding-top(57);
+        @include padding-bottom(40);
+
+        @include breakpoint($large){
+            @include span(10 of 12 0);
+            @include pull-none;
+            @include margin-auto(20);
+        }
+
+        h1{
+            @include text-align(center);
+        }
+
+    	h2{
+    		@include text-align(center);
+    	}
+    
+}
+    &__section_lhs{
+    	@include span(12 of 12 0);
+        img{
+            @include margin-bottom(10);
+        }
+        @include breakpoint($large){
+            @include span(6 of 12 2);
+        }
+    }
+
+    &__section_rhs{
+    	@include span(12 of 12 0);
+
+        @include breakpoint($large){
+            @include span(6 of 12 2);
+        }
+    }
+
+}
+
+.clear-all-section{
+    @include clear(both);
+}

@@ -1,0 +1,273 @@
+.stats-card {
+    &.head-to-head {
+        .stats-card__info {
+            &__left {}
+            &__right {
+                .chart-area {
+                    // @include percentage-value(width, 100);
+                    // @include breakpoint($medium) {
+                    //     @include percentage-value(width, 80);
+                    //     @include margin-left(10, percent);
+                    //     @include margin-right(10, percent);
+                    // }
+                    @include percentage-value(width, 100);
+                    @include breakpoint($medium) {
+                        @include percentage-value(width, 80);
+                        @include margin-left(10, percent);
+                        @include margin-right(10, percent);
+                        @include pull-left;
+                    }
+                    @include breakpoint($xlarge) {
+                        @include percentage-value(width, 66);
+                        @include margin-left(17, percent);
+                        @include margin-right(17, percent);
+                        @include pull-left;
+                    }
+
+                    .players {
+                        &-vs-player {
+                            @include position(relative);
+                            @include percentage-value(width, 100);
+                            @include px-to-rem(min-height, 80);
+
+                            .player__host {
+                                @include margin-right(0);
+                                @include pull-left;
+
+                                .player-img {
+                                    @extend %player-img-large;
+                                    @include margin-right(0, important);
+                                    img {
+                                        @include pull-left;
+                                    }
+                                }
+                                &.team-images {
+                                    +.vs {
+                                        @include margin-top(25);
+                                    }
+                                }
+                                .notification {
+                                    @extend %match-notification;
+                                }
+                                h3 {
+                                    @extend %h3-players;
+                                }
+                            }
+                            .vs {
+                                @include percentage-value(width, 100);
+                                @include position(absolute);
+
+                                div {
+                                    @extend %vs;
+                                    @extend %skew-btn;
+                                }
+                                h3 {
+                                    @extend %h3-players;
+                                }
+                            }
+                            .player__opponent {
+                                @include pull-right;
+                                @include position(absolute);
+                                @include right(0);
+                                @include top(0);
+                                .player-img {
+                                    @extend %player-img-large;
+                                    @include margin-right(0, important);
+                                }
+                                .notification {
+                                    @extend %match-notification;
+                                    @include right(-5, important);
+                                    left: initial;
+                                }
+                                h3 {
+                                    @extend %h3-players;
+                                }
+                            }
+                        }
+                        &__match-details {
+                            @include percentage-value(width, 100);
+                            @include pull-left;
+                            @include margin-top(20);
+                            ul {
+                                li {
+                                    @extend %barchart;
+
+                                    @include px-to-rem(max-height, 48);
+                                    @include margin-bottom(8);
+                                    @include position(relative);
+                                    @include overflow(hidden);
+                                    span {
+                                        @include position(relative);
+                                        &.scoreA {
+                                            @extend %match-player_result-heading;
+                                            @include color($white);
+                                            @include pull-left;
+                                            @include padding(12, 16, 12, 16);
+                                        }
+                                        &.score-info {
+                                            @extend %match-player_result-title;
+                                            @include color($white);
+                                            @include percentage-value(width, 100);
+                                            @include text-align(center);
+                                            @include pull-none;
+                                            @include display(block);
+                                            @include text-transform(uppercase);
+                                            @include padding(16, 0, 16, 0);
+                                            @include position(absolute);
+                                        }
+                                        &.scoreB {
+                                            @extend %match-player_result-heading;
+                                            @include color($white);
+                                            @include pull-right;
+                                            @include padding(12, 16, 12, 16);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } //for reverse condition
+        &.IsMUEntity-false {
+            .stats-card__info__right {
+                .chart-area {
+                    .players {
+                        .players__match-details {
+                            ul {
+                                li {
+                                    @extend %barchart-IsMUEntity-false;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .statsbar {
+            @include background-color($white);
+            @include position(relative); // @include breakpoint($small $max-xsmall) {
+        }
+    }
+}
+
+
+
+// Grid 3 and grid-4
+.grid-3,
+.grid-4 {
+    .stats-card {
+        &.head-to-head {
+            @include breakpoint($small) {
+                .stats-card__info__left {}
+                .stats-card__info__right {
+                    .chart-area {
+                        @include percentage-value(width, 100);
+                        @include padding-left(0, Percentage, important);
+                        @include padding-right(0, Percentage, important);
+                        @include margin-left(0, Percentage, important);
+                        @include margin-right(0, Percentage, important);
+                        .players {
+                            .players-vs-player {
+                                .player__host {
+                                    .player-img {
+                                        img {
+                                            @include pull-left;
+                                        }
+                                    }
+                                    h3 {
+                                        @include color($mu-black, important);
+                                        @include display(block);
+                                        @include margin-top(8);
+                                        @include pull-left;
+                                        @include text-align(left);
+                                    }
+                                }
+                                .player__opponent {
+                                    img {
+                                        @include pull-right;
+                                    }
+
+                                    h3 {
+                                        @include color($mu-black, important);
+                                        @include display(block);
+                                        @include margin-top(8);
+                                        @include pull-right;
+                                        @include text-align(right);
+                                    }
+                                }
+                                .vs {
+                                    h3 {
+                                        @include color($white);
+                                        @include display(none);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// For grid-12
+.grid-12 {
+    .stats-card {
+        &.head-to-head {
+            .stats-card__info__right {
+                .chart-area {
+                    .players {
+                        .players-vs-player {
+                            .player__host {
+                                .player-img {
+                                    h3 {
+                                        @include breakpoint($small $max-xsmall) {
+                                            @include display(block);
+                                            @include margin-top(8);
+                                            @include text-align(left);
+                                            @include pull-left;
+                                        }
+                                        @include breakpoint($medium) {
+                                            @include display(none);
+                                        }
+                                    }
+                                }
+                            }
+                            .vs {
+                                h3 {
+                                    @include opacity(0);
+                                    @include breakpoint($medium) {
+                                        @include opacity(1);
+                                    }
+                                }
+                            }
+                            .player__opponent {
+                                .player-img {
+                                    h3 {
+                                        @include breakpoint($small $max-xsmall) {
+                                            @include display(block);
+                                            @include margin-top(8);
+                                            @include text-align(right);
+                                            @include pull-right;
+                                        }
+
+                                        @include margin-top(8);
+                                        @include breakpoint($medium) {
+                                            @include display(none);
+                                        }
+                                    }
+                                    img {
+                                        @include pull-right;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+

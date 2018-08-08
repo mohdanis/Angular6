@@ -1,0 +1,56 @@
+//@import "../../includes";
+
+// Tabs
+.nav-tabs {
+  @extend %nav-tabs;
+}
+
+.nav-item {
+  @extend %nav-item;
+}
+
+.tab-content {
+  @extend %tab-content;
+}
+
+.pagination {
+  @extend %pagination;
+}
+
+.page-item {
+  @extend %page-item;
+}
+
+.breadcrumb {
+  @extend %breadcrumb;
+}
+
+.icon-search {
+  @extend %icon-search;
+}
+
+.newsletter {
+  @extend %newsletter;
+
+  @extend %txt-uppercase;
+}
+
+.form-control {
+  @extend %input;
+}
+
+fieldset {
+  background: none;
+  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.1) !important;
+
+  @include position(relative);
+
+  @extend %full-width;
+}
+
+.icon-search {
+  //@include px-to-rem(right, 1);
+  @include right(1,important);
+  height: 38px !important;
+  @include top(-2,important);
+}

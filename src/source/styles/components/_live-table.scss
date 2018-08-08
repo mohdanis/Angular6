@@ -1,0 +1,764 @@
+%live-table__premierLeague {
+    @include position(relative);
+    @include text-align(center);
+    min-height: 20px; // @include margin-top(57);
+    @include margin-top(0);
+    @include margin-bottom(0);
+    // @include margin-top(30);
+    // @include margin-bottom(12);
+    @include breakpoint($medium) {
+        @include margin-top(0); //  @include margin-auto(10 auto);
+        @include margin-bottom(6);
+    }
+    figure {
+        float: none;
+    }
+}
+
+%live-table__table {
+    table {
+        @include percentage-value(width, 100);
+    }
+}
+
+%table-head {
+    width: 100%;
+    @include display(table);
+    table-layout: fixed; // padding: 3px 10px;
+    span {
+        @include font-size(14);
+        @include secondry-semibold;
+        vertical-align: middle;
+        @include line-height(2);
+    }
+    th {
+        height: 30px;
+    }
+}
+
+%table-row {
+    width: 100%;
+    @include display(table);
+    table-layout: fixed;
+    @include padding(3, 10, 3, 10);
+    span {
+        @include font-size(16);
+        @include secondry-regular;
+        @include color($mu-black);
+        vertical-align: middle;
+        @include line-height(2);
+        b {
+            font-weight: bold;
+        }
+    }
+}
+
+%live-table-dark {
+    background-image: linear-gradient(54deg, #390200, #000000);
+}
+
+%last-games {
+    @extend ul;
+    @include pull-left;
+    @include text-align(left);
+    li {
+        @include border-radius(1);
+        @include secondry-regular;
+        @extend %txt-uppercase;
+        @include display(inline-block); //@include padding(3, 3, 3, 3);
+        @include margin(2, 2, 2, 2);
+
+        @include line-height(1, px);
+        @include px-to-rem(height, 25);
+        @include px-to-rem(width, 25); // font-weight: 700;
+        @include text-align(center);
+        span {
+            @include color($white);
+            @include line-height(25.6, px);
+            @include font-size(12);
+        }
+    }
+}
+
+.game-win {
+    @include background-color($mu-green);
+}
+
+.game-loose {
+    @include background-color($mu-red);
+}
+
+.game-draw {
+    @include background-color($gray-draw);
+}
+
+%live-table__table___team {
+    // @extend ul;
+    @include pull-left;
+    width: 100%;
+    span {
+        @include display(inline-block);
+        @include pull-left;
+    }
+    span:last-child {
+        @include line-height(1.6);
+        @include margin-left(0);
+        width: calc(100% - 42px);
+        @include breakpoint($xsmall) {
+            @include margin-left(11);
+        }
+    }
+    span:first-child {
+        @include display(none);
+        width: 28px;
+        height: 28px;
+        border-radius: 100px;
+        @include background-color($white);
+        img {
+            @include margin(2, 2, 2, 2);
+            width: 26px;
+            height: 26px;
+        }
+        @include breakpoint($xsmall) {
+            @include display(inline-block);
+        }
+    }
+}
+
+.live-table {
+    .stats-bar {
+        height: 48px;
+        @include border-top(2, solid, $white-lighter);
+    }
+    &__blog {
+        &__logo {
+            // max-width: 133px;
+            @include margin-auto(0 auto);
+            @include pull-none; // height: auto; // max-height: 120px;
+            // @include breakpoint($xsmall) {
+            //     max-width: 160px;
+            // }
+            img {
+                height: auto !important;
+                width: auto !important;
+                max-height: 60px;
+                max-width: 133px;
+                float: none !important;
+            }
+        }
+        .first-col {
+            width: 2%;
+        }
+        .tenth-col {
+            @include percentage-value(width, 13);
+            @include padding-left(10);
+            @include display(none);
+            @include breakpoint($xlarge) {
+                @include display(table-cell);
+            }
+        }
+        .second-col {
+            width: 2%;
+            @include percentage-value(width, 2);
+        }
+        .third-col {
+            @include percentage-value(width, 23);
+        }
+        .fifth-col,
+        .fourth-col,
+        .ninth-col {
+            @include percentage-value(width, 4);
+        }
+        .eight-col,
+        .seven-col,
+        .sixth-col {
+            @include percentage-value(width, 4);
+        }
+    }
+    .white-btn-skew {
+        @include display(none);
+    }
+}
+
+%fontBold {
+    background-color: rgba(26, 26, 26, 0.07);
+    td,
+    th {
+        font-weight: bold;
+    }
+}
+
+%right-arrow {
+    @include border-left(6, solid, $keylines);
+    @include border-top(6, solid, $black, 0);
+    @include border-bottom(6, solid, $black, 0);
+}
+
+%down-arrow {
+    @include border-top(6, solid, $mu-pink);
+    @include border-left(6, solid, $black, 0);
+    @include border-right(6, solid, $black, 0);
+}
+
+%arrow-up {
+    @include border-bottom(6, solid, $mu-green);
+    @include border-left(6, solid, $black, 0);
+    @include border-right(6, solid, $black, 0);
+}
+
+%neutral {
+    height: 0;
+    @include border-top(3, solid, $gray-draw);
+    @include border-left(0, solid, $black, 0);
+    @include border-right(0, solid, $black, 0);
+}
+
+%arrow-style {
+    width: 12px; //height: 6px;
+    @include pull-left;
+    @include margin-left(10);
+}
+
+%up-arrow {
+    @extend %arrow-up;
+    @extend %arrow-style;
+}
+
+%down-arrow {
+    @extend %arrow-style;
+    @extend %down-arrow;
+}
+
+%neutral-arrow {
+    @extend %arrow-style;
+    @extend %neutral;
+}
+
+%right-arrow {
+    @extend %arrow-style;
+    @extend %right-arrow;
+}
+
+.first-col {
+    @include percentage-value(width, 3);
+    @include display(none);
+    @include breakpoint($xsmall) {
+        @include display(table-cell);
+    }
+    @include breakpoint($medium) {
+        @include percentage-value(width, 5);
+    }
+    @include breakpoint($large) {
+        @include percentage-value(width, 4);
+    }
+    @include breakpoint($xlarge) {
+        @include percentage-value(width, 3);
+    }
+}
+
+.second-col {
+    @include percentage-value(width, 5);
+    @include text-align(center);
+    @include display(table-cell);
+}
+
+.third-col {
+    @include percentage-value(width, 32);
+    @include padding-left(15);
+    word-break: break-word;
+    @include display(table-cell);
+    @include breakpoint($medium) {
+        @include percentage-value(width, 25);
+    }
+}
+
+.fourth-col,
+.fifth-col,
+.eight-col,
+.ninth-col {
+    @include percentage-value(width, 5);
+    @include text-align(center);
+    @include display(table-cell);
+    @include breakpoint($medium) {
+        @include percentage-value(width, 7);
+    }
+}
+
+.sixth-col,
+.seven-col {
+    @include percentage-value(width, 5);
+    @include text-align(center);
+    @include display(none);
+    @include breakpoint($xsmall) {
+        @include display(table-cell);
+    }
+    @include breakpoint($medium) {
+        @include percentage-value(width, 7);
+    }
+}
+
+.tenth-col {
+    @include percentage-value(width, 13);
+    @include padding-left(15);
+    @include display(none);
+    @include breakpoint($medium) {
+        @include percentage-value(width, 21);
+        @include display(table-cell);
+    }
+    @include breakpoint($large) {
+        @include percentage-value(width, 15);
+    }
+    @include breakpoint($xlarge) {
+        @include percentage-value(width, 13);
+        @include padding-left(20);
+    }
+}
+
+.live-table {
+    .live-table__premierLeague {
+        @extend %live-table__premierLeague;
+    }
+    .fontBold {
+        @extend %fontBold;
+    }
+    .table-row {
+        @extend %table-row;
+        &.split-line {
+            @include border-bottom(1, solid, $black, 0.2);
+        }
+    } // .table-body {
+    //     @extend %table-body;
+    // }
+    .table-head {
+        @extend %table-head;
+    } // .horizan-line {
+    //     @extend %horizan-line;
+    // }
+    .last-games {
+        @extend %last-games;
+    }
+    .live-table__table {
+        @extend %live-table__table;
+        .live-table__table___team {
+            @extend %live-table__table___team;
+        }
+    }
+    .up-arrow {
+        @extend %up-arrow;
+    }
+    .down-arrow {
+        @extend %down-arrow;
+    }
+    .neutral-arrow {
+        @extend %neutral-arrow;
+    }
+    .stats-bar {
+        @include position(relative);
+        @include background-color($white);
+    }
+}
+
+.live-table {
+    &.dark {
+        @extend %live-table-dark; // .mu-item__top-panel {
+        //     @extend %top-panel_dark;
+        // }
+        .fontBold {
+            @include background-color($white, 0.15); // background-color: rgba(255, 255, 255, 0.15);
+        }
+        .live-table__table {
+            .table-row {
+                @extend %table-row;
+                span {
+                    @include color($white);
+                }
+                &.split-line {
+                    @include border-bottom(1, solid, $white);
+                }
+            }
+            .table-head {
+                span {
+                    @include color($white);
+                }
+            } // .horizan-line {
+            //     @include border-bottom(2, solid, $white, 0.1);
+            // }
+            .down-arrow {
+                @include border-top(6, solid, $white);
+            }
+            .neutral-arrow {
+                @include border-top(3, solid, $white);
+            }
+            .up-arrow {
+                @include border-bottom(6, solid, $white);
+            }
+        }
+    }
+}
+
+.live-table__teasure {
+    @include font-size(20);
+    @include margin(64, 20, 24, 20);
+    @include secondry-semibold;
+    @include text-transform(none);
+}
+
+.grid-4 {
+    &.matches {
+        figure {
+            float: none; // &.live-table__blog__logo {
+            //     max-width: 133px;
+            //     height: auto;
+            // }
+        }
+        .live-table__premierLeague {
+            margin-top: 39px !important;
+        }
+        .mu-item__sponsor {
+            @include right(0);
+            display: block;
+        }
+        .mu-item__sponsor__wrapper {            
+            background-color: #f8f8f8;
+            // position: relative;
+            @include right(0);
+            // @include margin(8, 8, 8, 8);
+        }
+        .live-table .fontBold .live-table__table___team span {
+            color: #1a1a1a;
+        }
+        .live-table .fontBold {
+            background-color: #f8f8f8;
+        }
+        .live-table__table {
+            width: 100%;
+            text-align: center;
+        }
+        .white-btn-skew {
+            @include margin(20, 0, 20, 0);
+            display: inline-block;
+        }
+        .table-head {
+            @include margin-bottom(9);
+        }
+        .table-row {
+            height: auto !important;
+            @include line-height(2.1);
+        }
+        .live-table {
+            border: 1px solid #f2f2f2; // box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.08);
+            .first-col,
+            .eight-col, // .fourth-col,
+            .sixth-col,
+            .seven-col,
+            .tenth-col {
+                display: none;
+            }
+            .fifth-col, // .eight-col,
+            .fourth-col,
+            .ninth-col {
+                width: 6%;
+                @include padding-right(10);
+            }
+            .second-col {
+                width: 6%;
+            }
+            .third-col {
+                @include padding-left(0);
+                width: 28%;
+                .live-table__table___team {
+                    span:first-child {
+                        display: none;
+                    }
+                    span:last-child {
+                        @include margin-left(11);
+                    }
+                }
+            }
+            th.ng-scope.third-col span {
+                margin-left: 11px;
+            } // .link-btn-black {
+            //     display: block;
+            //     @include margin-bottom(12);
+            //     width: 100%;
+            //     @include padding(8, 24, 4, 24);
+            //     a {
+            //         @include pull-right;
+            //     }
+            // }
+            .against-col,
+            .for-col {
+                @include display(none);
+            }
+        }
+        .live-table__details {
+            @include padding-left(2, percent);
+        }
+    }
+}
+
+.matches-component {
+    .grid-12 {
+        width: 100%;
+        @include margin(0, 0, 0, 0);
+    }
+}
+
+.grid-12 {
+    &.matches {
+        .live-table {
+            .mu-item__top-panel,
+            .mu-item__sponsor {
+                display: none;
+            } // .live-table__premierLeague {
+            //     display: none;
+            // }
+            .against-col,
+            .for-col {
+                @include display(none);
+                width: 4%;
+                @include text-align(center);
+                @include breakpoint($xlarge) {
+                    @include display(table-cell);
+                }
+            }
+            .first-col {
+                @include breakpoint($small $max-small) {
+                    width: 3%;
+                }
+                @include display(table-cell);
+                width: 4%;
+            }
+            .third-col {
+                @include padding-left(10);
+                @include breakpoint($small $max-small) {
+                    //@include padding-left(0);
+                    @include percentage-value(width, 28);
+                }
+                @include breakpoint($xlarge) {
+                    @include percentage-value(width, 30);
+                }
+            }
+            .first-col {
+                @include padding-right(0, important);
+            }
+            .ninth-col {
+                @include breakpoint($small $max-small) {
+                    @include padding-right(5, important);
+                }
+            }
+            .first-col,
+            .fourth-col,
+            .fifth-col,
+            .eight-col,
+            .ninth-col {
+                @include breakpoint($small $max-small) {
+                    @include padding-right(10);
+                    width: 6%;
+                }
+                @include breakpoint($medium) {
+                    width: 4%;
+                }
+                @include breakpoint($xlarge) {
+                    width: 5%;
+                }
+            }
+            .sixth-col,
+            .seven-col {
+                // display: none;
+                @include breakpoint($xsmall) {
+                    @include display(table-cell);
+                    width: 4%;
+                }
+                @include breakpoint($small $max-medium) {
+                    @include display(none);
+                }
+                @include breakpoint($xlarge) {
+                    width: 5%;
+                }
+            }
+            .second-col {
+                width: 3%;
+                @include breakpoint($small $max-small) {
+                    width: 6%;
+                }
+            }
+            .tenth-col {
+                display: none;
+                @include breakpoint($large) {
+                    width: 21%;
+                    @include display(table-cell);
+                } // @include breakpoint($xlarge) {
+                //     width: 26%;
+                // }
+            } // .table-body {
+            //     padding: 0px;
+            // }
+        }
+    }
+}
+
+.matches {
+    .live-table {
+        // .horizan-line {
+        //     width: 100%;
+        // }
+        // .last-games li {
+        //     // @include breakpoint($xlarge) {
+        //     //     @include px-to-rem(height, 34);
+        //     //     @include px-to-rem(width, 34);
+        //     //     @include line-height(2.2);
+        //     // }
+        // }
+        .live-table__table {}
+
+        .neutral-arrow {
+            @extend %right-arrow;
+        }
+        .table-head {
+            // padding: 3px 0px;
+            background-color: #f2f2f2;
+            height: 34px;
+            color: #1a1a1a;
+        }
+        .table-row {
+            height: 45px;
+            @include padding(0, 0, 0, 0); // @include border-bottom(1, solid, $black, 0.2);
+            border-bottom: 1px solid rgba(204, 183, 183, .2);
+            &.split-line {
+                border-bottom: 2px solid rgba(0, 0, 0, 1);
+            }
+            &:last-child {
+                border: none;
+            }
+        }
+        .live-table__table___team {
+            span:last-child {
+                @include line-height(1.8);
+                @include breakpoint($small $max-small) {
+                    width: 100%;
+                }
+            }
+        }
+        .fontBold {
+            background-color: rgba(26, 26, 26, 0);
+            .live-table__table___team {
+                span {
+                    color: $mu-red;
+                }
+            }
+        }
+    }
+}
+
+.live-table__group {
+    height: 44px;
+    @include pull-left;
+    width: 100%;
+    h2 {
+        @include pull-left;
+        @include padding(12, 16, 12, 16);
+        @include font-size(14); // @include secondry-semibold;
+        @include tertiary-semibold;
+        @include line-height(1.14);
+        letter-spacing: 0.4px;
+        color: $mu-black;
+    }
+}
+
+.live-table {
+    &.last-data {
+        .table-row {
+            &:nth-last-child(2),
+            &:nth-last-child(3),
+            &:last-child {
+                background-color: $white-two;
+                box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+            }
+            &:nth-last-child(3) {
+                border-top: 2px solid rgba(0, 0, 0, 1);
+            }
+        }
+    }
+}
+
+.live-table__table {
+    caption {
+        span {
+            @include margin-left(20);
+            @include margin-bottom(12);
+        }
+    }
+}
+
+.live-table__table {
+    tbody {
+        display: table-row-group!important;
+    }
+    tr {
+        display: table-row!important;
+    }
+    th {
+        display: table-cell;
+    }
+    td {
+        display: table-cell;
+        @include secondry-regular(en);
+        @include font-size(16, en);
+    }
+}
+
+.grid-12.matches.live-table__blog {
+    .match-day {
+        @include pull-left;
+    }
+    .mu-item__top-panel {
+        display: block;
+    }
+    .mu-item__sponsor__wrapper {
+        display: block;
+        background-color: #f8f8f8;
+        position: absolute;
+        @include right(0);
+        @include margin(8, 8, 8, 8);
+    }
+    @extend %row-gutter;
+    .live-table__table {
+        text-align: center;
+        padding: 0px 16px;
+    }
+    .white-btn-skew {
+        display: inline-block; // margin-bottom: 8px;
+        // margin-top: 16px;
+        @include margin(16, 0, 16, 0);
+    }
+    .table-row:last-child {
+        border-bottom: 1px solid rgba(204, 183, 183, .2);
+    }
+    .live-table__details {
+        border-bottom: 1px solid #e8e8e8;
+        p {
+            display: block;
+        }
+    }
+}
+
+.live-table__details {
+    margin-bottom: 10px; // border-bottom: 1px solid #e8e8e8;
+    // padding-bottom: 10px;
+    border-bottom: none;
+    h2 {
+        @include tertiary-semibold;
+        @include font-size(14);
+        @include line-height(1.14);
+        letter-spacing: 0.4px;
+        margin-bottom: 6px;
+        color: $mu-black;
+    }
+    p {
+        @include font-size(14);
+        @include line-height(1.14);
+        color: $mu-black;
+        display: none;
+    }
+}

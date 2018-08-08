@@ -1,0 +1,14 @@
+.grid-3,
+.grid-4,
+.grid-6 {
+    .mu-item {
+        &.quiz {
+            label {
+                h6 {
+                    -ms-transform: translate(50%, -50%);
+                    transform: translate(50%, -50%);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,310 @@
+.ad-block {
+    @extend %text-align-center;
+    //@extend .home-row;
+    //@include font-size(10);
+    //@include margin(36, 0, 56, 0); 
+}
+
+// iPhone 5 ad fix - 320px Ad - All Pages
+
+    div.grid-xl, div.grid-12, div.wide-add-panel {
+        &.ad-block {           
+            width: 100% !important;
+            @include margin-left(0, important);
+            @include margin-right(0, important);
+            overflow: visible !important;
+        }
+    }
+
+    // News Listing iPhone ad fix
+    .news-list {
+        &__block {
+            .news-list {
+                &__item {
+                    div.grid-xl, div.grid-12, div.wide-add-panel {
+                        &.ad-block {
+                            &.iphone-ad {
+                                @media only screen and (max-width : 320px) {
+                                    @include margin-left(-2, percent, important);
+                                }
+                            }
+                            &.dashboard {                               
+                                @media only screen and (max-width: 768px) and (min-width: 750px) {
+                                    @include margin-left(-6, important);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Team Lisiting ad fix    
+    .team-grid {
+        &__result {
+            div.grid-xl, div.grid-12, div.wide-add-panel {
+                &.ad-block {
+                    &.dashboard {                               
+                        @media only screen and (max-width: 768px) and (min-width: 750px) {
+                            @include margin-left(-6, important);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Player Profile ad fix    
+    .player-detail {
+        &__bio {
+            div.grid-xl, div.grid-12, div.wide-add-panel {
+                &.ad-block {
+                    &.dashboard {
+                        @media only screen and (max-width : 320px) {
+                                @include margin-left(-3, important);
+                        }                               
+                        @media only screen and (max-width: 768px) and (min-width: 750px) {
+                            @include margin-left(-21, important);
+                        }
+                        @media only screen and (max-width: 1024px) and (min-width: 970px) {
+                            @include margin-left(-13, important);
+                        }
+                    }
+                    &.billboard {
+                        @media only screen and (max-width : 320px) {
+                                @include margin-left(-13, important);
+                        }
+                        @media only screen and (max-width: 768px) and (min-width: 750px) {
+                            @include margin-left(-10, important);
+                        }
+                        @media only screen and (max-width: 1024px) and (min-width: 970px) {
+                            @include margin-left(-13, important);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Matchcenter ad fix    
+    .match-day {
+         .match-day__wrapper {
+             .match-day__container {
+                div.grid-xl, div.grid-12, div.wide-add-panel {
+                    &.ad-block {
+                        @media only screen and (max-width : 320px) {
+                            @include margin-left(-6, important);
+                        } 
+                    }
+                }
+             }
+         }
+    }
+
+    // Matchcenter ad fix
+    #searchResults {
+       div.grid-xl, div.grid-12, div.wide-add-panel {
+            &.ad-block {
+                @media only screen and (max-width : 320px) {
+                    @include margin-left(-1, percent, important);
+                }
+            }
+        } 
+    }
+
+    // Template Pages ad fix
+    .tmpls-container {
+       div.grid-xl, div.grid-12, div.wide-add-panel {
+            &.ad-block {
+                @media only screen and (max-width : 320px) {
+                    @include margin-left(-6, important);
+                }
+            }
+        } 
+    }
+
+    /*
+    .matches-wrapper {
+        .matches-row {
+            div.grid-xl, div.grid-12, div.wide-add-panel {
+                &.ad-block {
+                    @media only screen and (max-width : 320px) {
+                        @include px-to-rem(min-width, 320);
+                        @include margin-left(-6);
+                        @include margin-right(0);
+                        @include overflow(visible);
+                    }
+                    @include breakpoint($medium) {
+                        @include percentage-value(width, 100);
+                        @include px-to-rem(min-width, 300);
+                        @include margin-left(0);
+                        @include margin-right(0);
+                    }
+                }
+            }
+        }
+    }
+    .news-list {
+        &__block {
+            .news-list {
+                &__item {
+                    div.grid-xl, div.grid-12, div.wide-add-panel {
+                        &.ad-block {
+                            @media only screen and (max-width : 320px) {
+                                @include px-to-rem(min-width, 320);
+                                @include margin-left(-6);
+                                @include margin-right(0);
+                                @include overflow(visible);
+                            }
+                            @include breakpoint($medium $max-medium) {
+                                @include percentage-value(width, 100);
+                                @include px-to-rem(min-width, 750);
+                                @include margin-left(-5);
+                                @include margin-right(0);
+                            }
+                            @media only screen and (min-width : 790px) and (max-width : 1023px) {
+                                @include percentage-value(width, 100);
+                                @include px-to-rem(min-width, 750);
+                                @include margin-left(-3);
+                                @include margin-right(0);
+                            }
+                            @media only screen and (min-width : 1024px) and (max-width : 1048px) {
+                                @include percentage-value(width, 100);
+                                @include percentage-value(min-width, 100);
+                                @include margin-left(0);
+                                @include margin-right(0);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .team-grid, .united-profile {
+        &__result, &__details {
+            div.grid-xl, div.grid-12, div.wide-add-panel {
+                &.ad-block {
+                    @media only screen and (max-width : 320px) {
+                        @include px-to-rem(min-width, 320);
+                        @include margin-left(-6, important);
+                        @include margin-right(0);
+                        @include overflow(visible);
+                    }
+                    @include breakpoint($medium $max-medium) {
+                        @include percentage-value(width, 100);
+                        @include px-to-rem(min-width, 750);
+                        //@include margin-left(-15);
+                         @include margin-right(0);
+                    }
+                    @media only screen and (min-width : 790px) and (max-width : 1023px) {
+                        @include percentage-value(width, 100);
+                        @include px-to-rem(min-width, 768);
+                        @include margin-left(-12);
+                        @include margin-right(0);
+                    }
+                    @media only screen and (min-width : 1024px) and (max-width : 1048px) {
+                        @include percentage-value(width, 100);
+                        @include percentage-value(min-width, 100);
+                        @include margin-left(0);
+                        @include margin-right(0);
+                    }
+                }
+            }
+        }
+    }    
+    .player-detail {
+        &__wrapper {
+            div.wide-add-panel {
+                &.ad-block {
+                    @media only screen and (max-width : 320px) {
+                        @include px-to-rem(min-width, 320);
+                        @include margin-left(-13, important);
+                        @include margin-right(0);
+                        @include overflow(visible);
+                    }
+                    @include breakpoint($medium $max-medium) {
+                        @include percentage-value(width, 100);
+                        @include px-to-rem(min-width, 750);
+                        @include margin-left(-20);
+                         @include margin-right(0);
+                    }
+                    @media only screen and (min-width : 769px) and (max-width : 889px) {
+                        @include percentage-value(width, 100);
+                        @include px-to-rem(min-width, 750);
+                        @include margin-left(-28);
+                        @include margin-right(0);
+                    }
+                    @media only screen and (min-width : 890px) and (max-width : 1023px) {
+                        @include percentage-value(width, 100);
+                        @include px-to-rem(min-width, 768);
+                        @include margin-left(-12);
+                        @include margin-right(0);
+                    }
+                    @media only screen and (min-width : 1024px) and (max-width : 1080px) {
+                        @include percentage-value(width, 100);
+                        @include px-to-rem(min-width, 970);
+                        @include margin-left(-12);
+                        @include margin-right(0);
+                    }
+                }
+            }
+        }
+    }
+    .match-day {
+        &__container {
+            div.grid-xl, div.grid-12, div.wide-add-panel {
+                &.ad-block {
+                    @media only screen and (max-width : 320px) {
+                        @include px-to-rem(min-width, 320);
+                        @include margin-left(-16, important);
+                        @include margin-right(0);
+                        @include overflow(visible);
+                    }
+                }
+            }
+        }
+    }*/
+    
+
+
+
+.grid-6 {
+    .ad-block {
+        @include pull-left;
+        // @extend .home-row;
+        @extend %text-align-center;
+    }
+}
+
+.matchday-blog {
+    .grid-12 {
+        &.ad-block {
+            @include margin-top(0);
+            @include margin-bottom(20);
+        }
+    }
+}
+
+.ad-block-hpto {
+    .icon-close {
+        @include z-index(9);
+        position: absolute;
+        @include right(16);
+        @include top(16);
+        cursor: pointer;
+        @include display(display);
+    }
+    div[data-google-query-id] {
+        background-color: $mu-black;
+        @include text-align(center);
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 9999999;
+        .icon-close {
+            @include display(display);
+        }
+    }
+}

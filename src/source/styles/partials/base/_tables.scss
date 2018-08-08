@@ -1,0 +1,79 @@
+//Table
+%table {
+  border-spacing: 0;
+  border-collapse: collapse;
+
+  @extend %full-width;
+
+  @include font-size(14);
+
+  @include secondry-regular;
+
+  @include line-height(16,px);
+
+  @include margin(0, 0, 16, 0);
+
+  th {
+    @extend %font-bold;
+
+    @include padding(10, 10, 10, 10);
+
+    @include border-bottom(1, solid, $gray-lighter);
+  }
+
+  td {
+    @include padding(10, 10, 10, 10);
+
+    @include border-bottom(1, solid, $gray-lighter);
+  }
+}
+
+//Striped table
+%table-striped {
+  @extend %table;
+
+  @include border(1, solid, $gray-lightest);
+
+  thead {
+    @include background-color($gray-lightest);
+  }
+
+  th {
+    @extend %font-bold;
+
+    @include padding(10, 10, 10, 10);
+
+    @include border-bottom(1, solid, $gray-lighter);
+  }
+
+  td {
+    @include padding(10, 10, 10, 10);
+  }
+
+  tr:nth-of-type(even) {
+    @include border-top(1, solid, $gray-lighter);
+
+    @include border-bottom(1, solid, $gray-lighter);
+
+    @include background-color($white-light);
+  }
+
+  tfoot {
+    @include background-color($gray-lightest);
+  }
+}
+
+//Border table(all side border)
+%table-bordered {
+  @extend %table;
+
+  @include border(1, solid, $gray-lightest);
+
+  th {
+    @include border(1, solid, $gray-lightest);
+  }
+
+  td {
+    @include border(1, solid, $gray-lightest);
+  }
+}

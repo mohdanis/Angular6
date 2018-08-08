@@ -1,0 +1,67 @@
+.hero__container {
+    @include pull-left;
+    @include percentage-value(width, 100);
+}
+
+.hero-item:first-child {
+    .grid-6 {
+        @include percentage-value(width, 100);
+        @include margin-right(0);
+        @include pull-left;
+        @include breakpoint($xsmall) {
+            @include percentage-value(width, 49);
+            @include margin-right(1,percent);
+        }
+    }
+}
+
+.hero-item:last-child {
+    .grid-6 {
+        @include percentage-value(width, 100);
+        @include margin-left(0);
+        @include pull-right;
+        @include margin-top(16);
+        @include breakpoint($xsmall) {
+            @include margin-top(0);
+            @include percentage-value(width, 49);
+            @include margin-left(1,percent);
+        }
+    }
+}
+
+.news-list__block {
+    width: 100%;
+}
+
+%hero-sponsor-tag {
+    @include top(8);
+    @include right(8);
+    @include display(none);
+    @include px-to-rem(height, 53);
+    @include padding(15, 20, 15, 10);
+    @include breakpoint($medium) {
+        @include top(initial);
+        @include right(0);
+        @include bottom(44);
+        @include display(block);
+    }
+    li:first-child {
+        @include padding-left(10);
+        @include margin-right(15);
+        @include font-size(12);
+        @include secondry-regular;
+    }
+}
+
+.home-hero {
+    .grid-12.ratio.child {
+        @include breakpoint($small $max-xsmall) {
+            width: 100% !important;
+        }
+    }
+    .grid-12.ratio{
+        @include breakpoint($medium $max-medium){
+            @include aspect-ratio(16, 9);
+        }
+    }
+}

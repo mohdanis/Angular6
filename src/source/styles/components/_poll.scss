@@ -1,0 +1,261 @@
+.poll {
+    &__wrapper {
+        @include percentage-value(width, 100);
+        @include margin-bottom(48);
+        @include margin-top(56);
+        @include position(relative);
+        clear: both;
+        @include breakpoint($xlarge) {}
+        @include breakpoint($small $max-small) {
+            @include padding-left(16);
+            @include padding-right(16);
+            @include pull-left;
+        }
+        @include breakpoint($xsmall $max-xsmall) {
+            @include padding-left(16,percent);
+            @include padding-right(16,percent);
+            @include pull-left;
+        }
+        @include breakpoint($medium) {
+            @include percentage-value(width, 66);
+            @include margin-left(17,percent);
+            @include margin-right(17,percent);
+            @include pull-left;
+        }
+        @include breakpoint($xlarge) {
+            @include percentage-value(width, 50);
+            @include margin-left(25,percent);
+            @include margin-right(25,percent);
+            @include pull-left;
+            @include margin-bottom(56);
+            @include margin-top(68);
+        }
+        .loader-wrapper {
+            @include padding-top(0);
+        }
+    }
+    &__question {
+        @include font-size(18);
+        @include secondry-regular;
+        @include line-height(1.44);
+        @include color($white);
+        @include margin-bottom(20);
+        @include padding-left(12);
+        @include breakpoint($medium) {
+            @include font-size(24);
+            @include padding-left(24);
+            @include margin-bottom(24);
+        }
+    }
+    &__options {
+        @include percentage-value(width, 100);
+        @include pull-left;
+        @include position(relative);
+        @include z-index(9);
+        ul {
+            li {
+                @include percentage-value(width, 100);
+                @include pull-left;
+                @include padding(14, 9, 14, 9);
+                @include text-transform(uppercase);
+                @include background-color(#282828, 0.8);
+                @include color($white);
+                @include position(relative);
+                @include margin-bottom(8);
+                min-height: 44px;
+                overflow: hidden;
+                @include breakpoint($medium) {
+                    min-height: 64px;
+                }
+                label {
+                    @include percentage-value(width, 100);
+                    @include pull-left;
+                    @include percentage-value(height, 100);
+                    @include z-index(9999);
+                    @include position(absolute);
+                    @include margin-bottom(0);
+                    @include font-size(14);
+                    @include secondry-semibold;
+                    @include left(0);
+                    @include top(0);
+                    @include padding-top(12);
+                    @include padding-left(12);
+                    cursor: pointer;
+                    @include breakpoint($medium) {
+                        @include padding-top(22);
+                        @include padding-left(24);
+                        @include font-size(20);
+                    }
+                    .valigntxt {
+                        @include position(absolute);
+                        transform: translateY(-50%);
+                        @include top(50, percent);
+                        @include breakpoint($medium) {
+                            @include left(24);
+                        }
+                        @include left(12);
+                        @include right(64);
+                    }
+                }
+                i {
+                    @include percentage-value(width, 0);
+                    @include pull-left;
+                    @include percentage-value(height, 100);
+                    @include position(absolute);
+                    @include top(0);
+                    @include left(0);
+                    @include margin-bottom(0);
+                    @include background-color($mu-slate);
+                    transform: skew(-10deg) scale(1.1);
+                    @include left(-4);
+                    cursor: pointer;
+                    -webkit-transition: width 4s;
+                    transition: width 4s;
+                    &.selected {
+                        @include background-color($mu-red, 0.8);
+                    }
+                }
+                span {
+                    @include pull-right;
+                    @include primary-bold;
+                    @include color($white);
+                    @include line-height(22,px);
+                    @include font-size(24);
+                    @include position(absolute);
+                    @include z-index(999);
+                    @include right(12);
+                    //@include margin(12,12,12,12);
+                }
+                input[type="radio"] {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    @include left(0);
+                    @include top(0);
+                    z-index: 99998;
+                    opacity: 0;
+                    cursor: pointer;
+                }
+                input[type="radio"]:disabled {
+                    cursor: not-allowed;
+                }
+                .overlay {
+                    @include percentage-value(width, 100);
+                    @include percentage-value(height, 100);
+                    @include position(absolute);
+                    @include z-index(99999);
+                }
+            }
+        }
+        p {
+            @include percentage-value(width, 100);
+            @include pull-left;
+            @include text-align(center);
+            @include breakpoint($large) {
+                @include margin-top(8);
+            }
+            min-height: 25px;
+            span {
+                @include percentage-value(width, 100);
+                @include secondry-regular;
+                @include color($white);
+                @include font-size(16);
+            }
+        }
+    }
+    &.no-img {
+        @include opacity(1);
+    }
+    .emoji {
+        @include pull-right;
+    }
+    .mu-item__gradient {
+        @extend .mu-item__tint;
+        //@include display(none);
+    }
+    .mu-item__sponsor {
+        @include position(absolute);
+        @include top(0);
+        @include right(0);
+    }
+    .img-holder {
+        @include background-color($mu-black)
+    }
+    .poll__img {
+        &.img-holder {
+            .poll__options ul li {
+                @include background-color($black, 0.8);
+            }
+        }
+    }
+    .poll__img + .mu-item__sponsor {
+        @include left(0,important)
+    }
+    &.mu-item.no-img .mu-item__tint{
+        display: none;
+    }
+
+    .poll__options ul li{
+        input[type='radio']:disabled {
+            cursor: default !important;
+            @include margin(0,0,0,0);
+        }
+    }
+}
+
+//Need to delete below code
+%answer {
+    list-style-type: none;
+    @include pull-left;
+    @extend %text-align-center;
+    @include border(1, solid, $brand-color);
+    @include color($white);
+    @include percentage-value(width, 100);
+    @include margin(0, 0, 0, 0);
+    @include px-to-rem(height, 60);
+    @include position(relative);
+    cursor: pointer;
+}
+
+%headingtext {
+    @extend %text-align-center;
+    @include px-to-rem(height, 60);
+    @include secondry-bold;
+    @include color($white);
+    @include margin(0, 0, 40, 0);
+}
+
+.poll-non-desc .grid-12 {
+    height: 100vh;
+
+    .poll__wrapper {
+        @include margin(0,0,0,0);
+        @include top(50,percent);
+        @include left(50,percent);
+        transform: translate(-50%,-50%);
+    }
+}
+
+.poll-non-desc {
+    .close-btn {
+        background: #1a1a1a none repeat scroll 0 0;
+        border-radius: 50%;
+        height: 24px;
+        @include margin-right(5);
+        @include margin-top(8);
+        @include padding(7,5,7,5);
+        position: fixed;
+        @include right(9);
+        width: 24px;
+    }
+}
+.match-day {
+    @include breakpoint($medium $max-medium){
+        .poll__wrapper {
+            @include percentage-value(width,78);
+            @include percentage-value(margin-left,11);
+            @include percentage-value(margin-left,11);
+        }
+    }
+}

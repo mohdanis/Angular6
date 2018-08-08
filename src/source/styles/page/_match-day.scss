@@ -1,0 +1,2035 @@
+.matchday-blogs {
+    @include px-to-rem(height, 124);
+    width: 165px;
+    @include padding(3,8,3,8);
+    @include background-color($white);
+    @include display(inline-block);
+    @include pull-left;
+    //@include margin(0,2,0,2);
+    @include margin-right(4);
+    .blogs-time {
+        @include color($matchday-blogs);
+        @include font-size(14);
+        @extend %txt-uppercase;
+        @include margin(0,0,16,0);
+        @include position(absolute);
+    }
+    &:last-child {
+        @include margin-right(0);
+    }
+    .matchday-blogs__info {
+        @include pull-left;
+        @include margin-top(33);
+        .matchday-blogs__title {
+            &.mugoal, &.mu-goal{
+               @include color($mu-red,important);
+            } 
+        }
+    }
+}
+
+.matchday-blogs__post-time {
+    @include font-size(14);
+    @include color($matchday-blogs);
+    @extend %txt-uppercase;
+}
+
+//.agg-score {
+//    //@include display(none);
+//    @include percentage-value(width, 100);
+//    @include text-align(center);
+//    @include secondry-regular;
+//    @include font-size(18);
+//    @include line-height(1.33);
+//    @include color($white);
+//    @include text-transform(capitalize);
+//    @include margin-top(-30);
+//}
+.agg-score-top {
+    //@include display(none);
+    @include percentage-value(width, 100);
+    @include position(absolute);
+    @include text-align(center);
+    @include left(0);
+    @include top(75);
+    @include px-to-rem(height, 20);
+    @include secondry-regular;
+    @include font-size(14);
+    @include line-height(1.33);
+    @include color($white);
+    @include text-transform(capitalize);
+    // & + h6 {
+    //     @include margin-top(25);
+    // }
+    @include breakpoint($small $max-small) {
+        & ~ .team-details {
+            @include margin-top(20);
+        }
+    }
+    @include breakpoint($large) {
+        & ~ .team-details {
+            @include margin-top(20);
+        }
+    }
+}
+
+.matchday-blogs__title {
+    @include primary-regular;
+    @include font-size(20);
+    @include line-height(0.9);
+    @include color($mu-black);
+    //@include pull-left;
+    // @include margin-top(17);
+    span {
+        @include margin-right(8);
+        @include margin-top(-7);
+    }
+    .mu-goal {
+        color: $mu-red;
+        @include primary-bold;
+        letter-spacing: 0.25px;
+    }
+}
+
+.matchday-blogs__teasure {
+    //@include font-size(14);
+    //@include line-height(1.14);
+    @include color($default-text-color);
+    @include margin-top(12);
+    @include text-truncate-lines(3, 14, 1.14);
+    @include px-to-rem(max-height, 44);
+    @include overflow(hidden);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+.matchday__left-Panel {
+    height: auto;
+    @include text-align(left);
+    @include span(6 of 6 0);
+    @include pull-left;
+    @include position(relative);
+    @include px-to-rem(min-height, 500);
+    @include breakpoint($medium) {
+        @include span(7 of 12);
+    }
+    @include breakpoint($large) {
+        @include span(8 of 12);
+    }
+    @include breakpoint($xxlarge) {
+        @include span(9 of 12);
+    }
+    .chat {
+        @include margin-bottom(20);
+    }
+    .grid-8 {
+        width: 100%;
+        @include margin(0,0,0,0);
+    }
+}
+
+.matchday__right-Panel {
+    @include px-to-rem(min-height, 500);
+    height: auto;
+    @include pull-right;
+    @include position(relative);
+    background-image: linear-gradient(to bottom, #1e1a1f, #2a191b);
+    @include span(6 of 6 last);
+    @include breakpoint($medium) {
+        @include span(5 of 12 last);
+    }
+    @include breakpoint($large) {
+        @include span(4 of 12 last);
+    }
+    @include breakpoint($xxlarge) {
+        @include span(3 of 12 last);
+    }
+    .matchday__right-Panel_shadow {
+        width: 2px;
+        height: 100%;
+        @include opacity(0.6);
+        -webkit-filter: blur(5px);
+        filter: blur(5px);
+        @include background-color(#000000);
+        @include position(absolute);
+        @include left(0);
+    }
+    .stats {
+        //background: rgba(56, 56, 56, .4) !important;
+        @include important(background-color, $matchday-light-bg);
+    }
+    .stats--match {
+        @include color(#fff);
+    }
+    .stats-bar__icons li {
+        @include color(#fff);
+    }
+    .stats-bar {
+        background: rgba(56, 56, 56, .4);
+    }
+    .stats__time {
+        @include pull-left;
+        @include position(absolute);
+        @include bottom(25);
+    }
+}
+
+.matchday-buttons {
+    @include percentage-value(width, 100);
+    @include pull-right;
+    @include display(block);
+    h2 {
+        @include display(inline-block);
+        @include pull-left;
+        @include tertiary-regular;
+        @include pull-left;
+        @include font-size(14);
+        @extend %row-gutter;
+        @include line-height(12,px);
+    }
+    span {
+        @include pull-right;
+        @include margin-left(11);
+    }
+}
+
+.matchday-blogs_slider {
+    width: 100%;
+    height: 124px;
+    @include overflow(hidden);
+    @extend %row-gutter;
+    @include left(0);
+}
+
+.matchday-blog {
+    width: 100%;
+    height: 100%;
+    @include margin-auto(0);
+    @include position(relative);
+    @include text-align(left);
+}
+
+//extras
+.matchday__left-Panel_blogs {
+    @include position(relative);
+    @include clear(both);
+    height: 100%;
+    width: 100%;
+    @include pull-left;
+}
+
+.match-day__hero {
+    @include overflow(hidden);
+    @include margin-bottom(20);
+}
+
+.spotlight-timer img {
+    @include margin-top(5);
+}
+
+.spotlight-wrapper__outer {
+    // height: 180px;
+    @include overflow(hidden);
+    @include position(relative);
+    @include pull-left;
+    width: 100%;
+    height: 100%;
+    @include breakpoint($xsmall) {
+        // height: 237px;
+    }
+    .spotlight-carausal {
+        @include display(block);
+        width: 100%;
+        @include pull-left;
+        @include position(relative);
+        height: 100%;
+        li {
+            div {
+                width: 100%;
+                height: 100%;
+                figure {
+                    @include background-img-center();
+                }
+            }
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            @include pull-left;
+            @include breakpoint($xsmall) {
+                height: 100%;
+            }
+        }
+        .bx-wrapper {
+            height: 100% !important;
+            box-shadow: none;
+            border: none;
+            background: none;
+            .bx-viewport {
+                height: 100% !important;
+                ul {
+                    height: 100% !important;
+                    li {
+                        height: 100% !important;
+                    }
+                }
+            }
+        }
+        // .img-zoom {
+        //     transform: scale(1) !important;
+        //     &:hover {
+        //         transform: scale(1) !important;
+        //     }
+        // }
+        &__top-links {
+            @include percentage-value(width, 100);
+            @include pull-left;
+            @include position(absolute);
+            @include z-index(9);
+            @include top(12);
+            p {
+                @include pull-left;
+                @include margin-left(12);
+                @include padding(0, 5, 3, 5);
+                @include color($white);
+                @include background-color($black, 0.4);
+                .match-center {
+                    @include display(block);
+                }
+                @include breakpoint($small $max-xsmall) {
+                    .match-center {
+                        @include display(none);
+                    }
+                }
+                span {
+                    @include pull-left;
+                    @include secondry-semibold;
+                    @include font-size(14);
+                    a {
+                        @include color($white);
+                        @include font-size(14);
+                        @include secondry-regular;
+                        @extend %font-underline;
+                    }
+                }
+            }
+            .share-box {
+                @include background-color($black, 0.4);
+                // @include padding(15, 15, 15, 15);
+                @include pull-right;
+                //@include margin-right(15);
+                // @include breakpoint($small $max-xsmall) {
+                @include padding(8, 0, 0, 8);
+                //transform:skew(-10deg);
+                @include px-to-rem(width, 34);
+                @include px-to-rem(height, 34);
+                @include margin-right(12);
+                @include display(none);
+                // }
+            }
+        }
+    }
+    .spotlight-video {
+        @include display(block);
+        @include position(absolute);
+        @include left(0);
+        @include top(0);
+        @include z-index(75);
+        @include background-color(#111111);
+        @include pull-left;
+        width: 100%;
+        height: 100%;
+        transition: left .4s linear;
+        // @include display(none);
+        & .mu-item__info,
+        & .stats-bar,
+        & .mu-item__top-panel,
+        & .mu-item__play {
+           @include display(none);
+        }
+        & .mu-item__video {
+            @include display(block);
+            height: 100%;
+        }
+        figure {
+            background: none;
+        }
+        .grid-8,
+        .grid-6 {
+            width: 100%;
+            height: 100%;
+            @include margin-left(0);
+            @include margin-right(0);
+            &:nth-child(1) {
+                width: 100%;
+                height: 100%;
+            }
+            .mu-item {
+                &.video {
+                    height: 180px;
+                    width: 100%;
+                    @include breakpoint($xsmall) {
+                        height: 237px;
+                    }
+                    @include breakpoint($medium) {
+                        height: 315px;
+                    }
+                    @include breakpoint($large) {
+                        height: 315px;
+                    }
+                    @include breakpoint($xlarge) {
+                        height: 443px;
+                    }
+                    @include breakpoint($xxlarge) {
+                        height: 443px;
+                    }
+                    .oo-player-container {
+                        min-width: 200px;
+                        height: 100%;
+                    }
+                    transition: width .4s linear,
+                    height .3s linear;
+                    &.spotlight-scroll__video {
+                        //width: 100%;
+                        //height: 180px;
+                        @include breakpoint($xsmall) {
+                            // width: 324px;
+                            //height: 180px;
+                        }
+                        @include breakpoint($medium) {
+                            width: 314px !important;
+                            height: 176px !important;
+                        }
+                        @include breakpoint($large) {
+                            width: 334px !important;
+                            height: 196px !important;
+                        }
+                        @include breakpoint($xlarge) {
+                            width: 351px !important;
+                            height: 196px !important;
+                        }
+                        @include breakpoint($xxlarge) {
+                            width: 351px !important;
+                            height: 196px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*  scss code end here @ANIS  *************** */
+
+%match-day__button {
+    @include color($white);
+    @include padding(20, 22, 20, 22);
+    @include percentage-value(width, 47);
+    @include margin-left(2,percent);
+    @include margin-right(1,percent);
+    @include background-color($white, 0.1);
+    @include px-to-rem(height, 54);
+    @include tertiary-regular;
+    @include font-size(14);
+    @include text-transform(uppercase);
+    @include pull-left;
+    @include btn-transition(background, $white, 0.1);
+    &:hover {
+        @include btn-transition-hover(background, $white, 0.25);
+        //@include border-transparent(1, solid, $white, 0.1);
+    }
+}
+
+%match-day__button2 {
+    @extend %match-day__button;
+    @include percentage-value(width, 47);
+    @include margin-left(1,percent);
+    @include margin-right(2,percent);
+}
+
+%scrolled-buttons {
+    @include px-to-rem(height, 36);
+    @include px-to-rem(width, 36);
+    @include percentage-value(border-radius, 50);
+    @include border-transparent(1, solid, $white, 0.1);
+    @include padding(0, 0, 0, 0);
+    @include position(relative);
+    @include z-index(99);
+}
+
+%center-icon {
+    @include top(50,percent);
+    @include left(50,percent);
+    @include position(relative);
+    @include margin(0, 0, 0, 0);
+    transform: translate(-50%, -50%);
+}
+
+.main-container > .match-day {
+    //  background-image: linear-gradient(90deg, $white-lighter calc(100% - 352px), rgba(0, 0, 0, 0) 352px), url($base-path + "texture.png");
+    background-color: $mu-black;
+    //background-image: linear-gradient(90deg, #f2f2f2 calc(100% - 352px), rgba(0, 0, 0, 0) 0px), radial-gradient(circle 1px at 75% 100%, #1a1a1a, #1a1a1a 1100px);
+    background-image: none;
+    @include breakpoint($medium) {
+        background-image: linear-gradient(90deg, #f2f2f2 calc(100% - 316px), rgba(0, 0, 0, 0) 0px), radial-gradient(circle 1px at 75% 100%, #1a1a1a, #1a1a1a 1100px);
+        //background-image: linear-gradient(90deg, $white-lighter calc(100% - 316px), rgba(0, 0, 0, 0) 0px), url($base-path + "texture.png"), radial-gradient(circle 1px at 75% 100%, #301717, #0d0a11 1100px);
+    }
+    @include breakpoint($large) {
+        background-image: linear-gradient(90deg, #f2f2f2 calc(100% - 334px), rgba(0, 0, 0, 0) 0px), radial-gradient(circle 1px at 75% 100%, #1a1a1a, #1a1a1a 1100px);
+        //background-image: linear-gradient(90deg, $white-lighter calc(100% - 334px), rgba(0, 0, 0, 0) 0px), url($base-path + "texture.png"), radial-gradient(circle 1px at 75% 100%, #301717, #0d0a11 1100px);
+    }
+    @include breakpoint($xlarge) {
+        background-image: linear-gradient(90deg, #f2f2f2 calc(100% - 352px), rgba(0, 0, 0, 0) 0px), radial-gradient(circle 1px at 75% 100%, #1a1a1a, #1a1a1a 1100px);
+        //background-image: linear-gradient(90deg, $white-lighter calc(100% - 352px), rgba(0, 0, 0, 0) 0px), url($base-path + "texture.png"), radial-gradient(circle 1px at 75% 100%, #301717, #0d0a11 1100px);
+    }
+}
+
+.match-day {
+    .mu-content {
+        @include position(relative,important);
+    }
+    //@include margin-top(45);
+    &__left {
+        @include display(none);
+    }
+    &__left,
+    .muitem.video {
+        @include px-to-rem(height, 180);
+        @include pull-left;
+        @include background-color(#1a1a1a);
+        @include percentage-value(width, 100);
+        @include breakpoint($xsmall) {
+            @include margin-top(0);
+            @include px-to-rem(height, 237);
+            //@include calculate-width(100, 308);
+        }
+        @include breakpoint($xsmall) {
+            @include px-to-rem(height, 254);
+        }
+        @include breakpoint($small-tab){
+            @include px-to-rem(height, 338);
+        }
+        @include breakpoint($medium) {
+            @include px-to-rem(height, 315);
+            @include calculate-width(100, 315);
+        }
+        @include breakpoint($large) {
+            @include px-to-rem(height, 315);
+            @include calculate-width(100, 334);
+        }
+        @include breakpoint($xlarge) {
+            @include px-to-rem(height, 443);
+            @include calculate-width(100, 351);
+        }
+        @include breakpoint($xxlarge) {
+            @include px-to-rem(height, 600);
+            @include calculate-width(100, 351);
+        }
+        @include breakpoint($largest) {
+            @include px-to-rem(height, 780);
+            @include calculate-width(100, 351);
+        }
+        .hero {
+            @include percentage-value(width, 100);
+            @include percentage-value(height, 100);
+        }
+    }
+    &__right {
+        @include percentage-value(width, 100);
+        @include pull-right;
+        //background-image: radial-gradient(circle at 87% 10%, rgba(45, 24, 24, .9), #1a1a1a), linear-gradient(#1a1a1a, #1a1a1a);
+        //background:repeating-linear-gradient(45deg, rgba(065,065,065, 0.2) 0px, rgba(065,065,065, 0.1) 1px, #1a191f 1px, #1a191f 10px) #1a191f;
+        //background: url($base-path + "texture.png") $matchday-dark-bg;
+        overflow-x: hidden;
+        // @include breakpoint($xsmall $max-xsmall) {
+        //     @include percentage-value(width, 100);
+        // }
+        @include breakpoint($medium) {
+            //@include padding-bottom(6);
+            @include px-to-rem(width, 315);
+            @include position(relative);
+            @include right(0);
+            @include percentage-value(height, 100);
+        }
+        @include breakpoint($large) {
+            @include px-to-rem(width, 334);
+        }
+        @include breakpoint($xlarge) {
+            @include px-to-rem(width, 351);
+        }
+    /*  stats right pannel sticky */
+        &.sticky {
+           
+            bottom: 0;
+            height: auto;
+            position: inherit;
+            .footer-in &{
+                position: absolute;
+            }
+            @include breakpoint($medium){
+               position: fixed;
+            }
+        }
+        /* end  stats right pannel sticky */
+        .show-alternet-screen {
+            @include display(none);
+            @include breakpoint($medium) {
+                @include display(none);
+            }
+            @include pull-right;
+            @include px-to-rem(height, 34);
+            @include px-to-rem(width, 60);
+            @include bottom(25);
+            @include right(0);
+            @include position(absolute);
+            @include z-index(9999);
+            @include cursor(pointer);
+            @include background-color($thunder);
+            @include margin-right(-5);
+            transform: skew(-10deg);
+            & i {
+                @include margin(6, 5, 5, 15);
+                transform: skew(10deg);
+            }
+        }
+        .match-stats {
+            @include display(block);
+            @include breakpoint($xsmall) {
+                //@include display(none);
+            }
+            @include breakpoint($medium) {
+                @include important(display, block);
+            }
+        }
+        .match-day {
+            &__spotlight {
+                &__wrapper {
+                    .player-goal-details {
+                       @include margin-top(15);
+                        @include breakpoint($medium) {
+                           @include margin-left(7);
+                        }
+                    }
+                    // .team-details {
+                    //     @include breakpoint($xsmall $max-xsmall) {
+                    //         @include display(none);
+                    //     }
+                    // }
+                    @include breakpoint($small $max-xsmall){
+                       @include padding-top(16);
+                    }
+                    @include padding-top(42);
+                    @include position(relative);
+                    @include pull-left;
+                    @include percentage-value(width, 100);
+                    @include px-to-rem(min-height, 209);
+                    @include padding-bottom(0,important);
+                    
+                    //Changed for Nexus 7, no need to change view on 568
+
+                    // @include breakpoint($xsmall $max-xsmall) {
+                    //     @include px-to-rem(min-height, 236);
+                    //     @include px-to-rem(width, 308);
+                    //     @include right(0);
+                    //     @include top(0);
+                    //     @include position(absolute);
+                    //     // background: radial-gradient(circle at 87% 10%, #0d0a11, #2a1717);
+                    //     @include padding-bottom(0);
+                    //     @include padding-top(12);
+                    // }
+                    @include breakpoint($medium) {
+                        // @include px-to-rem(min-height, 315);
+                        @include padding-top(30);
+                    }
+                    @include breakpoint($large) {
+                        // @include px-to-rem(min-height, 315);
+                        @include padding-top(42);
+                    }
+                    @include breakpoint($xlarge) {
+                        // @include px-to-rem(min-height, 443);
+                        @include padding-top(62);
+                        @include padding-bottom(10,important);
+                    }
+                    .match-penalty {
+                        //display: none;
+                        @include percentage-value(width, 100);
+                        @include px-to-rem(min-height, 25);
+                        @include pull-left;
+                        .match-penalty__team-a {
+                            @include px-to-rem(min-height, 5);
+                            @include percentage-value(width, 35);
+                            @include pull-left;
+                            @include text-align(right);
+                            i {
+                                @include pull-right;
+                                @include margin-left(5);
+                                @include text-align(right);
+                                @include px-to-rem(width, 12);
+                                @include px-to-rem(height, 12);
+                                @include margin-bottom(8);
+                            }
+                        }
+                        .match-penalty__score {
+                            @include percentage-value(width, 30);
+                            @include text-align(center);
+                            @include color($white);
+                            @include secondry-regular;
+                            @include font-size(14);
+                            @include pull-left;
+                            .icon-penalty {
+                                @include pull-none;
+                                @include margin-auto(0);
+                                @include margin-top(10);
+                                @include margin-bottom(10);
+                            }
+                        }
+                        .match-penalty__team-b {
+                            @include px-to-rem(min-height, 5);
+                            @include percentage-value(width, 35);
+                            @include pull-right;
+                            @include text-align(left);
+                            i {
+                                @include pull-left;
+                                @include margin-right(5);
+                                @include text-align(left);
+                                @include px-to-rem(width, 12);
+                                @include px-to-rem(height, 12);
+                                @include margin-bottom(8);
+                            }
+                        }
+                    }
+                }
+                //for match name
+                .match-item {
+                    &__competion-leguename {
+                        @include secondry-semibold;
+                        //   &.matchday-desktop{
+                        //   @include display(block);
+                        //   @include breakpoint($small $max-xsmall) {
+                        //     @include display(none, important);
+                        //   }
+                        // }
+                        // &.matchday-mobile{
+                        //   @include display(none);
+                        //    @include breakpoint($small $max-xsmall) {
+                        //     @include display(block, important);
+                        //   }
+                        // }
+                        @include display(none);
+                        @include breakpoint($small $max-xsmall) {
+                            // @include position(absolute);
+                            @include position(relative);
+                            //@include bottom(10);
+                            @include text-align(center);
+                            @include percentage-value(width, 100);
+                            @include display(block);
+                        }
+                        @include breakpoint($medium) {
+                            @include top(30);
+                            @include margin-bottom(30);
+                            @include display(block);
+                        }
+                    }
+                    &__competion__name {
+                        @include font-size(14);
+                        @include text-align(center);
+                        @include color($white);
+                    }
+                    &__competion__teasure {
+                        @include font-size(14);
+                        @include text-align(center);
+                        @include color($white);
+                        @include margin(0, 0, 0, 0);
+                        @include breakpoint($large) {
+                            @include secondry-semibold;
+                        }
+                    }
+                }
+                //for match details
+                .match-item__info__team {
+                    @include color(#fff);
+                    @include font-size(14);
+                    & .team-logo {
+                        @include text-align(center);
+                        @include px-to-rem(min-height, 78);
+                        img {
+                            @include px-to-rem(max-height, 64);
+                            @include breakpoint($xsmall $max-xsmall) {
+                                @include px-to-rem(max-height, 64);
+                            }
+                            @include breakpoint($medium) {
+                                @include px-to-rem(max-height, 64);
+                            }
+                            @include breakpoint($xlarge) {
+                                @include px-to-rem(max-height, 78);
+                            }
+                        }
+                    }
+                    &.not-started {
+                        @include position(absolute);
+                        @include percentage-value(width, 100);
+                        @include text-align(center);
+                        //@include left(40, percent);
+                    }
+                    h6 {
+                        @include font-size(14);
+                        @include percentage-value(width, 100);
+                        @include pull-left;
+                        //@include margin-top(15);
+                        //@include line-height(30,px);
+                        @include tertiary-semibold;
+                        @include percentage-value(line-height,100);
+                        @include display(none);
+                        @include text-transform(uppercase);
+                        @include text-align(center);
+                        @include breakpoint($xsmall) {
+                            @include display(block);
+                        }
+                        @include breakpoint($large) {
+                            @include display(none);
+                        }
+                    }
+                    span {
+                        @include color(#b8b7b9);
+                        // @include pull-left;
+                        // @include margin-right(8);
+                        // @include breakpoint($xsmall) {
+                        //     @include pull-left;
+                        // }
+                    }
+                    .inplay-goals {
+                        @include primary-bold;
+                        @include font-size(72);
+                        @include color($white);
+                        //@include font-weight(bold);
+                        @include margin-top(0);
+                        @include pull-left;
+                        @include margin-right(0);
+                        @include percentage-value(width, 100);
+                        @include breakpoint($large) {
+                            //@include font-size(48);
+                            //@include margin-top(20);
+                        }
+                        @include breakpoint($xlarge) {
+                            @include font-size(48);
+                        }
+                    }
+                    .inplay__detail {
+                        @include font-size(14);
+                        @include secondry-regular;
+                        @include color($white);
+                        @include pull-left;
+                        @include padding(3, 0, 3, 0);
+                        @include position(relative);
+                        @include display(block);
+                        @include percentage-value(width, 100);
+                        @include breakpoint($xsmall) {
+                            @include display(none);
+                        }
+                        @include breakpoint($medium) {
+                            @include display(block);
+                        }
+                        i {
+                            @include pull-left;
+                            img {
+                                @include px-to-rem(max-width, 15);
+                                @include margin-top(8);
+                            }
+                            &.red-card {
+                                // @include background-color($mu-red);
+                                @include px-to-rem(width, 8);
+                                @include px-to-rem(height, 13);
+                                @include margin-top(3);
+                                @include position(relative);
+                                @include border-radius(2);
+                                @include background-color(#ef021e);
+                            }
+                            &.yellow-card {
+                                @extend .red-card;
+                                @include background-color($mu-yellow);
+                            }
+                            &.icon-goal-shape {
+                                // @include margin-top(5);
+                            }
+                        }
+                    }
+                    // .injury-time {
+                    //     @include padding(6, 5, 6, 5 important);
+                    // }
+                    &.team__a {
+                        .player-goal-details {
+                            @include pull-right;
+                        }
+                        @include pull-left;
+                        @include percentage-value(width, 50);
+                        @include breakpoint($small $max-xsmall) {
+                            @include text-align(center);
+                        }
+                        @include padding-right(10);
+                        &.pre_match {
+                            .match-goal {
+                                @include display(none);
+                            }
+                            .team-logo {
+                                img {
+                                   @include pull-none;
+                                }
+                            }
+                            h6 {
+                                @include percentage-value(width, 100);
+                                @include text-align(center);
+                                @include margin-top(-18);
+                                @include padding-right(0);
+                            }
+                        }
+                        .match-goal {
+                            @include position(relative);
+                            @include pull-right;
+                            @include px-to-rem(min-width, 53);
+                            @include px-to-rem(min-height, 53);
+                            @include breakpoint($xlarge) {
+                                @include px-to-rem(min-width, 30);
+                                @include px-to-rem(min-height, 30);
+                            }
+                            @include text-align(right);
+                            //@include padding-left(20);
+                        }
+                        .inplay-goals {
+                            @include padding-right(10);
+                            @include breakpoint($xlarge) {
+                               @include padding-right(0);
+                                @include padding-top(20);
+                            }
+                        }
+                        .team-logo {
+                            @include margin-bottom(5);
+                            img {
+                                //@include pull-right;
+                                @include pull-none;
+                            }
+                        }
+                        vertical-align: top;
+                        i.red-card,
+                        .yellow-card {
+                            @include pull-right;
+                            @include position(absolute);
+                            @include right(14);
+                            @include breakpoint($xlarge) {
+                                @include right(7);
+                            }
+                            @include top(2);
+                            //@include right(-4);
+                            //@include top(5);
+                        }
+                        .inplay__detail {
+                            @include text-align(right);
+                            @include padding-right(35);
+                            @include breakpoint($xlarge) {
+                                @include padding-right(23);
+                            }
+                            @include line-height(16,px);
+                            i.icon-goal-shape {
+                                @include position(absolute);
+                                @include right(13);
+                                @include breakpoint($xlarge) {
+                                    @include right(4);
+                                }
+                                @include top(5);
+                                @include margin(0, 0, 0, 0)
+                            }
+                        }
+                        .hypen {
+                            @include position(absolute);
+                            @include top(0);
+                            @include breakpoint($xlarge) {
+                                @include top(21);
+                            }
+                            @include right(-16);
+                            font-style: normal;
+                            @include breakpoint($small $max-small) {
+                                @include right(-20);
+                            }
+                            @include pull-right;
+                        }
+                        h6 {
+                            @include percentage-value(width, 100);
+                            @include text-align(center);
+                            @include padding-right(30);
+                        }
+                    }
+                    &.match-goal {
+                        @include pull-left;
+                        @include primary;
+                        @include font-size(24);
+                        //@include percentage-value(width, 25);           
+                        // @include text-align(center);
+                        // vertical-align: top;
+                        // @include position(absolute);
+                        // @include left(37.5, percent);
+                        .match-time {
+                            @include font-size(14);
+                            @include color($keylines);
+                            @include text-transform(uppercase);
+                            @include secondry-regular;
+                            @include line-height(30,px);
+                            @include text-align(center);
+                        }
+                        .match-vs {
+                            @include font-size(14);
+                            @include color($white);
+                            @include text-transform(uppercase);
+                            @include tertiary-semibold;
+                            @include text-align(center);
+                            //@include breakpoint($xlarge) {
+                            @include padding-top(30);
+                            //}
+                            .agg-score-top {
+                                @include top(50);
+                                @include breakpoint($xlarge) {
+                                    @include top(60);
+                                }
+                            }
+                        }
+                    }
+                    &.team__b {
+                        .player-goal-details {
+                           @include pull-left;
+                        }
+                        @include pull-right;
+                        @include percentage-value(width, 50);
+                        vertical-align: top;
+                        @include breakpoint($small $max-xsmall) {
+                            @include text-align(center);
+                        }
+                        @include padding-left(10);
+                        &.pre_match {
+                            .match-goal {
+                                @include display(none);
+                            }
+                            .team-logo {
+                                img {
+                                    @include pull-none;
+                                }
+                            }
+                            h6 {
+                                @include percentage-value(width, 100);
+                                @include text-align(center);
+                                @include margin-top(-18);
+                                @include padding-left(0);
+                            }
+                        }
+                        .match-goal {
+                            @include pull-left;
+                            // @include px-to-rem(min-width, 10);
+                            // @include padding-right(20);
+                            @include px-to-rem(min-width, 53);
+                            @include px-to-rem(min-height, 53);
+                            @include breakpoint($xlarge) {
+                                @include px-to-rem(min-width, 30);
+                                @include px-to-rem(min-height, 30);
+                            }
+                            @include text-align(left);
+                        }
+                        .inplay-goals {
+                            @include padding-left(10);
+                            @include breakpoint($xlarge) {
+                               @include padding-left(0);
+                                @include padding-top(20);
+                            }
+                        }
+                        .team-logo {
+                            @include margin-bottom(5);
+                            img {
+                               // @include pull-left;
+                               @include pull-none;
+                            }
+                        }
+                        i.red-card,
+                        .yellow-card {
+                            @include pull-right;
+                            @include position(absolute);
+                            @include left(17);
+                            @include breakpoint($xlarge) {
+                                @include left(7);
+                            }
+                            @include top(2);
+                        }
+                        .inplay__detail {
+                            @include text-align(left);
+                            @include padding-left(35);
+                            @include breakpoint($xlarge) {
+                                @include padding-left(23);
+                            }
+                            @include line-height(16,px);
+                            i.icon-goal-shape {
+                                @include position(absolute);
+                                @include left(13);
+                                @include breakpoint($xlarge) {
+                                    @include left(0);
+                                }
+                                @include top(5);
+                            }
+                        }
+                        h6 {
+                            @include percentage-value(width, 100);
+                            @include text-align(center);
+                            @include padding-left(30);
+                        }
+                    }
+                }
+                //for timer
+                .match-item {
+                    @include important(height, auto);
+                    @include important-value(padding, 12);
+                    @include percentage-value(width, 100);
+                    @include pull-left;
+                    @include breakpoint($xsmall $max-xsmall) {
+                        @include important-value(padding-top, 8);
+                    }
+                    @include breakpoint($large) {
+                        @include important-value(padding, 20);
+                    }
+                    &__wrapper {
+                        @include percentage-value(width, 100);
+                        @include pull-left;
+                        & .match-item {
+                            @include breakpoint($small $max-small){
+                                @include padding-bottom(0,px,important)
+                            }
+                            @include padding(20, 10, 20, 10);
+
+                            
+                            &__info {
+                                @include pull-left;
+                                @include percentage-value(width, 100);
+                                @include margin-bottom(8);
+                                @include position(relative);
+                                .agg-score {
+                                    @include margin-top(15);
+                                }
+                            }
+                        }
+                    }
+                    &__timer {
+                        .spot-holder {
+                            @include display(inline-block);
+                            @include percentage-value(height,100);
+                        }
+                        .countdown-seprator {
+                           //@include display(none);
+                        }
+                        @include display(table);
+                        //@include px-to-rem(width, 142);
+                        //@include px-to-rem(width, 118);
+                        @include px-to-rem(height, 44);
+                        @include breakpoint($medium) {
+                            //@include px-to-rem(width, 148);
+                            @include px-to-rem(height, 52);
+                        }
+                        //@include background-color($white, 0.1);
+                        @include border-transparent(1, solid, #494a50);
+                        @include border-radius(2);
+                        @include padding(5, 5, 5, 5);
+                        @include margin-auto(8 auto);
+                        @include breakpoint($small $max-xsmall) {
+                            @include margin-auto(5 auto);
+                        }
+                        @include breakpoint($large) {
+                            @include margin-auto(0);
+                        }
+                        &.injury-time {
+                            @include background-color($white);
+                            box-shadow: 0 0 14px 0 rgba(208, 1, 26, 0.6);
+                        }
+                    }
+                    &__logo {                        
+                        &:before {
+                        content: "";
+                        @include display(inline-block);
+                        vertical-align: middle;
+                        @include px-to-rem(height,34);
+                        }
+
+                        @include breakpoint($medium) {
+                           &:before {
+                                @include px-to-rem(height,41);
+                            } 
+                        }
+                        //@include percentage-value(width, 30);
+                        @include pull-left;
+                        @include percentage-value(height, 100);
+                        @include text-align(center);
+                        img {
+                            //@include top(50,percent);
+                            //@include position(relative);
+                            //transform: translate(0, -50%);
+                            @include right(auto,important);
+                            @include px-to-rem(max-width, 41);
+                            vertical-align: middle;
+                            @include margin-left(-4);
+                            @include margin-right(4);
+                        }
+                    }
+                    &__spot-timer {                        
+                        @include primary-bold;
+                        @include font-size(20);
+                        @include font-weight(bold);
+                        @include text-align(center);
+                        @include color($white);
+                        @include pull-right;
+                        @include px-to-rem(min-width, 71);
+                        @include padding(8, 8, 8, 8);
+                        @include percentage-value(height,100);
+                        //letter-spacing: -0.5px;
+                        word-spacing: -1px;
+                        @include breakpoint($medium) {
+                            @include padding(10, 6, 10, 6);
+                            @include font-size(26);
+                            @include px-to-rem(min-width, 94);
+                        }
+                        background: -webkit-linear-gradient(#414145 55%, #4B4C52 45%);
+                        background: -o-linear-gradient(#414145 55%, #4B4C52 45%);
+                        background: -moz-linear-gradient(#414145 55%, #4B4C52 45%);
+                        background: linear-gradient(#414145 55%, #4B4C52 45%);
+                    }
+                }
+            }
+            &__button {
+                //@include display(none);
+                @include percentage-value(width, 100);
+                @include pull-left;
+                @include position(absolute);
+                @include bottom(0);
+                @include breakpoint($small $max-xsmall) {
+                    @include position(absolute);
+                    @include top(5);
+                }
+                .btn-watch,
+                .btn-listen {
+                    @include display(none);
+                    cursor: pointer;
+                    @extend %match-day__button;
+                    @include breakpoint($small $max-xsmall) {
+                        @include px-to-rem(width, 44);
+                        @include px-to-rem(height, 44);
+                        @include margin-top(0);
+                        @include margin-left(8);
+                        @include margin-right(8);
+                        .watchBtn,
+                        .listenBtn {
+                            @include display(none);
+                        }
+                    }
+                    &.active {
+                        @include border-transparent(1, solid, $white, 0.1);
+                        background: none;
+                        pointer-events: none;
+                    }
+                }
+                .btn-listen {
+                    @include pull-right;
+                    @extend %match-day__button2;
+                }
+                .btn-watch__wrapper {
+                    @include px-to-rem(width, 80);
+                    @include margin-auto(0);
+                }
+                .tag-video,
+                .tag-audio {
+                    //@include margin-right(10);
+                    @include position(relative);
+                    @include left(-7);
+                    @include top(-5);
+                    @include breakpoint($large) {
+                        @include margin-right(10);
+                        @include position(static);
+                    }
+                    @include breakpoint($small $xsmall) {
+                        @include left(-6);
+                        @include top(-6);
+                    }
+                }
+                .tag-video {
+                    @include margin-top(3);
+                }
+                .match-info,
+                .match-time {
+                    @include display(none);
+                }
+                &.scrolled-btn {
+                    @include px-to-rem(height, 66);
+                    @include background-color($mu-black);
+                    @include position(fixed);
+                    @include right(0);
+                    @include top(70);
+                    @include margin-top(-70);
+                    @include z-index(999999);
+                    transition: top .3s linear,right .5s linear;
+                    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+                    @include breakpoint($small $max-xsmall) {
+                        @include display(none);
+                    }
+                    @include breakpoint($xsmall) {
+                        @include px-to-rem(width, 324);
+                    }
+                    @include breakpoint($medium) {
+                        @include px-to-rem(width, 315);
+                    }
+                    @include breakpoint($large) {
+                        @include px-to-rem(width, 334);
+                    }
+                    @include breakpoint($xlarge) {
+                        @include px-to-rem(width, 351);
+                    }
+                    & .btn-watch {
+                        cursor: pointer;
+                        @extend %scrolled-buttons;
+                        @include pull-left;
+                        @include margin-left(10);
+                        @include margin-top(15);
+                        @include background-color($deactive-btn);
+                        .tag-video {
+                            @extend %center-icon;
+                        }
+                    }
+                    & .btn-listen {
+                        cursor: pointer;
+                        @extend %scrolled-buttons;
+                        @include pull-right;
+                        @include margin-right(10);
+                        @include margin-top(15);
+                        @include background-color($deactive-btn);
+                        .tag-audio {
+                            @extend %center-icon;
+                        }
+                    }
+                    .btn-watch__wrapper {
+                        width: auto;
+                        .tag-video {
+                            @include margin-top(15);
+                        }
+                        .tag-audio {
+                            @include margin-top(17);
+                        }
+                    }
+                    & .active {
+                        pointer-events: none;
+                        @include background-color($active-btn);
+                    }
+                    & .match-info {
+                        @include top(0);
+                        @include percentage-value(width, 100);
+                        @include padding-left(20);
+                        @include padding-right(20);
+                        @include padding-top(25);
+                        
+                        @include position(absolute);
+                        @include margin-auto(0);
+                        @include text-align(center);
+                        @include display(block);
+                        @include pull-left;
+                        @include padding-right(20);
+                        &.pre_match {
+                            @include padding-top(0);
+                            @include top(25);
+                        }
+                        & > div{
+                            @include pull-left;
+                            width: 100%;
+                        }
+                        &__time {
+                            @include font-size(14);
+                            @include color($keylines);
+                            @include text-transform(uppercase);
+                            @include secondry-regular;
+                            @include line-height(30,px);
+                            @include percentage-value(width, 100);
+                            @include text-align(center);
+                            @include display(block);
+                            //@include margin-top(10);
+                        }
+                        &__teamA {
+                            @include font-size(24);
+                            @include pull-left;
+                            @include primary-regular;
+                            @include percentage-value(width, 35);
+                            @include text-align(right);
+                            @include text-transform(uppercase);
+                            @include color($white);
+                            @include text-align(center);
+                            @include margin-top(-18);
+                            @include px-to-rem(height,52);
+                            @include px-to-rem(min-height,20);
+                            img {
+                                max-height: 52px;
+                            }
+                        }
+                        &__goals {
+                            @include font-size(24);
+                            @include pull-left;
+                            @include primary-regular;
+                            @include percentage-value(width, 24);
+                            @include text-align(left);
+                            @include text-align(center);
+                            @include text-transform(uppercase);
+                            @include color($white);
+                            @include margin-left(3, percent);
+                            @include margin-right(3, percent);
+                            @include margin-top(0);
+                        }
+                        &__teamB {
+                            @include font-size(24);
+                            @include pull-left;
+                            @include primary-regular;
+                            @include percentage-value(width, 35);
+                            @include text-align(left);
+                            @include text-transform(uppercase);
+                            @include color($white);
+                            @include text-align(center);
+                            @include margin-top(-18);
+                            @include px-to-rem(height,52);
+                            @include px-to-rem(min-height,20);
+                            img {
+                                max-height: 52px;
+                            }
+                        }
+                    }
+                    .spotlight-timer {
+                        @include margin-top(-26);
+                    }
+                    .match-info__time{
+                        @include margin-top(-28);
+                    }
+                    .watchBtn,
+                    .listenBtn {
+                        @include display(none);
+                    }
+                }
+            }
+        }
+    }
+    .match-day__wrapper {
+        @include padding-top(24);
+        @include percentage-value(width, 100);
+        @include background-color($white-lighter);
+        //@include padding-top(23);
+        @include pull-left;
+        @include breakpoint($medium) {
+            @include calculate-width(100, 315);
+            @include important(display, block);
+        }
+        @include breakpoint($large) {
+            @include calculate-width(100, 334);
+        }
+        @include breakpoint($xlarge) {
+            @include calculate-width(100, 351);
+        }
+        & .grid-6,
+        & .grid-12 {
+            @include percentage-value(width, 100);
+            @include padding(0, 0, 0, 0);
+            @include margin-left(0);
+            @include margin-right(0);
+            .mu-item__info {
+                // @include percentage-value(width, 100);
+            }
+            .cards {
+                @include position(relative);
+                @include percentage-value(height, 100);
+            }
+            .mu-item__info {
+                @include bottom(0, important);
+            }
+            .img-holder {
+                height: 100%;
+            }
+            .video .mu-item__info {
+                @include bottom(40);
+            }
+        }
+        // Omnly  for Live score page
+        & .score-list .team-vs {
+            @include breakpoint($xsmall $max-medium) {
+                @include font-size(16);
+                @include margin-top(30);
+            }
+        }
+        & .score-list .team-ab-details .home-team-name {
+            @include breakpoint($xsmall $max-medium) {
+                @include font-size(12);
+            }
+        }
+        & .score-list .team-ab-details .away-team-name {
+            @include breakpoint($xsmall $max-medium) {
+                @include font-size(12);
+            }
+        }
+        .match-day__container {
+            @include percentage-value(width, 100);
+            @include padding(0, 16, 0, 16);
+            @include margin-auto(0);
+            @include breakpoint($xsmall) {
+                //@include px-to-rem(min-width, 540);
+                @include padding(0, 16, 0, 16);
+                @include percentage-value(width, 100);
+            }
+            @include breakpoint($medium) {
+                //@include px-to-rem(width, 418);
+                @include padding(0, 16, 0, 16);
+                @include percentage-value(width, 100);
+            }
+            @include breakpoint($large) {
+                @include px-to-rem(width, 652);
+                @include padding(0, 0, 0, 0);
+            }
+            @include breakpoint($xlarge) {
+                @include px-to-rem(width, 820);
+            }
+            @include breakpoint($xxlarge) {
+                @include px-to-rem(width, 830);
+            }
+            .ad-block {
+                @extend %row-gutter;
+                @include margin-top(0);
+                overflow: hidden;
+            }
+        }
+        & .matchday-blog:after,
+        & .news-list__item:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    }
+}
+
+
+/*  internal css start */
+
+.match-day__header {
+    .home-header__bottom-sponsor {
+        // display: block !important;
+        @include margin-top(15, important);
+        @include breakpoint($xsmall) {
+           @include margin-right(330, important);
+        }
+        @include breakpoint($medium) {
+            @include margin-right(325, important);
+        }
+        @include breakpoint($large) {
+           @include margin-right(345, important);
+        }
+        @include breakpoint($xlarge) {
+            @include margin-right(360, important);
+        }
+    }
+}
+
+.spotlight-left__banner {
+    width: 100%;
+    height: 100%
+}
+
+.home-header.scrolled-header {
+    @include z-index(999999);
+}
+
+.match-day__header .hamburger-menu nav {
+    @include display(block, important);
+}
+
+.match-day__header .home-header__bottom-sponsor {
+    @include display(none, important);
+}
+
+.match-day__header nav .nav-menu {
+    display: none;
+}
+.match-day__header.hamburger-menu nav .nav-menu {
+    display: block;
+}
+
+.hamburger-menu nav {
+     @include display(block, important);
+}
+
+.match-day__header a.home-header__bottom-toggle {
+     @include display(block, important);
+}
+
+//.hamburger-menu a.home-header__bottom-toggle {
+//     @include display(block, important);
+//}
+.match-day__header {
+    @include breakpoint($medium) {
+        width: calc(100% - 315px) !important;
+    }
+    @include breakpoint($large) {
+        width: calc(100% - 334px) !important;
+    }
+    @include breakpoint($xlarge) {
+        width: calc(100% - 351px) !important;
+    }
+}
+
+.spotlight__close span {
+    background: rgba(0, 0, 0, .4);
+    @include padding(10, 10, 10, 10);
+    @include pull-right;
+    @include top(-5);
+    @include position(relative);
+    @include margin-left(5);
+}
+
+.spotlight__close {
+    @include display(none);
+    text-decoration: none;
+    @include position(absolute);
+    @include right(10);
+    @include top(10);
+    @include z-index(99999999);
+    @include color(#d8d8d8);
+    @include padding(5, 5, 5, 5);
+    text-transform: capitalize;
+}
+
+.spotlight-video:hover .spotlight__close {
+    @include display(block);
+}
+
+
+/* 
+  Allow angular.js to be loaded in body, hiding cloaked elements until 
+  templates compile.  The !important is important given that there may be 
+  other selectors that are more specific or come later and might alter display.  
+ */
+
+[ng\:cloak],
+[ng-cloak],
+.ng-cloak {
+    @include display(none, important);
+}
+
+
+/*Width of each card is 119px*/
+
+.matchday__left-Panel_blogs {
+    overflow: hidden;
+    width: 100%
+}
+
+.matchday-blogs_slider {
+    width: calc(169px * 6);
+    @include position(relative);
+}
+
+.highlights_button {
+    cursor: pointer;
+}
+
+
+/* internal css end */
+
+
+/*Match day notification*/
+
+.matchday {
+    &-notification {
+        @include text-align(center);
+        a {
+            @include background-color(#d0011b);
+            @include color(#fff);
+            @include secondry-semibold;
+            @include font-size(14);
+            @include border-radius(20);
+            @include display(inline-block);
+            @include line-height(16,px);
+            @include padding(10, 10, 10, 10);
+            @include margin-bottom(10);
+            i {
+                @include margin-left(10);
+                @include pull-right;
+            }
+        }
+    }
+}
+
+.matchday-blogs__slider-wrapper {
+    @include breakpoint($xsmall) {
+        @include px-to-rem(width, 540);
+        @include margin-auto(0);
+    }
+    @include breakpoint($medium) {
+        @include px-to-rem(width, 418);
+        @include margin-auto(0);
+    }
+    @include breakpoint($large) {
+        @include px-to-rem(width, 652);
+        @include margin-auto(0);
+    }
+    @include breakpoint($xlarge) {
+        @include px-to-rem(width, 788);
+        @include margin-auto(0);
+    }
+    @include breakpoint($xxlarge) {
+        @include px-to-rem(width, 809);
+        @include margin-auto(0);
+    }
+}
+
+
+/* internal css end */
+
+
+/*  @ start  stats css */
+
+.match-day__right .stats {
+    @include background-color(#313138, 1, important);
+}
+
+.match-day__right .stats--match li {
+    @include color(#fff);
+}
+
+.match-day__right .stats-bar {
+    @include background-color(#313138, 1, important);
+}
+
+.match-day__right .stats-bar li {
+    @include color(#fff);
+}
+
+.match-day__right .sponsorby {
+    @include display(none, important);
+}
+
+.match-day__right .sponsor-tag {
+    background: none;
+}
+
+.match-day__right .stats--match ul {
+    @include position(relative);
+    @include z-index(99);
+}
+
+.match-overview {
+    @include padding(30, 10, 30, 10);
+    //@include display(none);
+    @include breakpoint($medium) {
+        @include display(block);
+    }
+}
+
+.match-overview__title {
+    @include color(#fff);
+    @include font-size(14);
+    @include tertiary-regular;
+    @include padding-bottom(20);
+}
+
+.blogstats .match-overview__title {
+   @include display(none);
+}
+
+.blogstats .match-overview {
+    @include padding(0, 0, 0, 0);
+    @include margin(5, 0, 5, 0);
+    width: 100%;
+}
+
+.blogstats .match-overview .stats-item {
+    width: 100%;
+    @include margin(0, 0, 0, 0);
+}
+
+
+/* @ end stats css */
+
+.sticky-notification {
+    // @include display(none);
+    @include position(fixed);
+    // Z-Index changed from 999 to 99998 for PBL-72.
+    // Z-Index of Poll was higher than the notification
+    @include z-index(99999);
+    @include top(86);
+    width: 55%;
+    // display:none;
+    left: calc(50% - 175px);
+    transform: translate(-50%, 0);
+    @include breakpoint($small $max-xsmall) {
+        @include left(50,percent);
+    }
+}
+
+.matchday-notification {
+    //@include display(none);
+}
+
+@include breakpoint($medium) {
+    .sticky-rightstats {
+        @include position(fixed);
+        @include bottom(0);
+        height: auto;
+        &.floating-rightstats {
+            @include bottom(-20);
+            @include position(absolute);
+        }
+    }
+}
+
+.match-day {
+    &.profile {
+        figure {
+            @extend %cover-img-initial;
+        }
+		&.child {
+			.mu-item__sponsor {
+				.mu-item__sponsor__wrapper {
+					@include pull-left;
+				}
+			}
+		}
+    }
+    &.lineup {
+        @include margin-bottom(12);
+        @include breakpoint($medium) {
+            @include margin-bottom(24);
+        }
+    }
+
+    image-card .ratio-matchday{
+        @include aspect-ratio(16, 9);
+        @include breakpoint($small $max-small){
+            @include aspect-ratio(1, 1);
+        }
+
+    }
+    infographics .ratio-matchday{
+        @include breakpoint($small $max-small){
+            @include aspect-ratio(1, 1);
+        }
+
+    }
+}
+.match-item__spot-timer {
+   @include line-height(0.8,important);
+    span.extra__time {
+        vertical-align: top;
+        @include font-size(16);
+        @include margin-left(3);
+        @include breakpoint($medium) {
+            @include font-size(18);
+        }
+    }
+}
+
+.match-day__button {
+    .spotlight-timer {
+        @include color(#fff);
+        span.extra__time {
+            @include margin-left(3);
+        }
+    }
+}
+
+.matchday-blog-card {
+    span.statsbar__time {
+        @include pull-left(important);
+        @include color(#1a1a1a);
+    }
+    &.red-blog {
+        span.statsbar__time {
+             @include color(#fff);
+        }
+    }
+    &.dark-blog {
+        span.statsbar__time {
+            @include color(#fff);
+        }
+    }
+}
+
+.emoji {
+    cursor: pointer;
+}
+
+//Highlights mobile swipe
+@supports (backdrop-filter: initial) {
+    .highlight__swipe {
+        backdrop-filter: saturate(180%) blur(20px);
+        background: rgba(242, 242, 242, 0.6)
+    }
+}
+
+@-webkit-keyframes highlight__swipe-slidein {
+    0% {
+        opacity: 0
+    }
+    1% {
+        -webkit-transform: translateX(160px);
+        transform: translateX(160px)
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+}
+
+@keyframes highlight__swipe-slidein {
+    0% {
+        opacity: 0
+    }
+    1% {
+        -webkit-transform: translateX(160px);
+        transform: translateX(160px)
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+}
+
+.highlight__swipe {
+    @include display(none);
+    @include margin-bottom(12);
+    overflow: hidden;
+    @include padding(0, 0, 0, 0);
+    @include position(relative);
+    width: 100%;
+    height: 124px;
+    @include z-index(9987);
+    &-wrapper {
+        @include position(relative);
+        height: 100%;
+        @include z-index(1);
+    }
+    &-items {
+        list-style: none;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        @include padding-bottom(50);
+        white-space: nowrap;
+    }
+    &-item {
+        @include display(inline-block);
+        vertical-align: top;
+        @include pull-none(important);
+        @include position(relative);
+        white-space: normal;
+        //-webkit-animation: highlight__swipe-slidein 350ms backwards;
+        //animation: highlight__swipe-slidein 350ms backwards;
+        &:first-child {
+            @include margin-left(0);
+        }
+        &:last-child {
+            @include margin-right(0);
+        }
+    }
+}
+
+@include breakpoint($small $max-xsmall) {
+    .highlight__swipe {
+        @include display(block);
+    }
+    .matchday-blogs_slider.desktop {
+        @include display(none);
+    }
+    .matchday-buttons span {
+        @include display(none);
+    }
+}
+
+//match centre spotlight injury time
+.injury-time__min {
+    @include color(#d0021b);
+    @include font-size(26);
+    @include margin-left(4);
+}
+
+.match-day__right {
+    i.hypen {
+        @include position(relative);
+        @include left(-10);
+    }
+    .injury-time {
+        .match-item__spot-timer {
+            @include font-size(18);
+            height: 40px;
+            @include breakpoint($small $max-xsmall) {
+                height: 32px;
+            }
+            @include color(#1a1a1a);
+            background: linear-gradient(rgba(42, 42, 42, .1) 55%, #d4d4d4 45%);
+            @include padding(10, 5, 10, 5, important);
+        }
+        .match-mins {
+            @include position(relative);
+            @include top(-2);
+            @include breakpoint($small $medium) {
+               @include top(-5);
+            }
+        }
+        &__min {
+            @include color(#d0021b);
+            @include font-size(26);
+            @include margin-left(4);
+            @include breakpoint($small $medium) {
+                @include top(-3);
+                @include position(relative);
+            }
+        }
+    }
+    .match-day__spotlight {
+        .match-item {
+            @include breakpoint($small $max-small) {
+                @include padding(12, 12, 30, 12, important);
+            }
+            &__info__team {
+                h6 {
+                    @include display(block, important);
+                }
+                @include breakpoint($small $max-small) {                    
+                   h6 {
+                    @include display(none, important);
+                    }
+                }
+                .inplay__detail {
+                    @include display(block);
+                }
+                .team-logo {
+                    @include breakpoint($small $max-xsmall){
+                       @include margin-bottom(10, important);
+                    }
+                    @include margin-bottom(20, important);
+                }
+            }
+        }
+        &__wrapper {
+            // @include padding-bottom(70);
+        }
+    }
+}
+
+.three-dot-loader {
+    @include margin-bottom(15);
+    @include display(inline-block);
+}
+.match-day__right .match-day__spotlight .match-item__logo img{
+  //max-width: 100%;
+  //@include right(2);
+  @include breakpoint($small $max-xsmall) {
+    //@include right(1);
+  } 
+} 
+.match-day__container .grid-12.matches .live-table .mu-item__sponsor {
+    @include display(block);
+    @include position(relative);
+}
+
+

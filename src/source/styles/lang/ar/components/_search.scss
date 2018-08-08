@@ -1,0 +1,14 @@
+ .pager {
+     & .pagination {
+         li {
+             a {
+                 @include breakpoint($small $max-xsmall) {
+                     transform: skewX(10deg);
+                     i {
+                         transform: skewX(-10deg);
+                     }
+                 }
+             }
+         }
+     }
+ }

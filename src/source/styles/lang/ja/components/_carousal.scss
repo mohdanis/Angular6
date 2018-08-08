@@ -1,0 +1,14 @@
+.carousal.match-carousal {
+    .match-item__info--teasure {
+         @include font-size(12);
+    }
+    .match-item__info {
+        .match-item__info--team.team-name {
+            @include font-size(10);
+        }
+    }
+    
+}
+.social-share__footer ul li.copy-link-btn .copy-text {
+	@include font-size(10,important);
+}

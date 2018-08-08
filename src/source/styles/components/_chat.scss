@@ -1,0 +1,205 @@
+%match-day__status-bar {
+    @extend %article__stats-bar_icons;
+    li {
+        @include percentage-value(width, 33.3);
+        @include pull-left;
+        @include padding(0, 0, 0, 0);
+        @include breakpoint($medium) {
+            @include padding(0, 10, 0, 10);
+        }
+        span {
+            @include pull-left;
+            @include margin-left (46,percent);
+        }
+        &:first-child {
+            span {
+                @include margin-left(0);
+                @include pull-left;
+            }
+        }
+        &:last-child {
+            span {
+                @include pull-right;
+            }
+            @include margin-right(0);
+        }
+    }
+}
+
+%chat {
+    @include margin-bottom(20);
+    @include position(relative);
+    @extend %full-width;
+    @extend %full-height;
+    @include px-to-rem(height, 300);
+    @include breakpoint($xsmall) {
+        @include px-to-rem(height, 262);
+    }
+    figure {
+        @include position(absolute);
+        @include pull-right;
+        @include top(100);
+        @include right(16);
+        @include opacity(0.4);
+        @include px-to-rem(height, 102);
+        @include px-to-rem(width, 126);
+        @include breakpoint($xsmall) {
+            @include top(67);
+            @include right(20);
+            @include px-to-rem(height, 128);
+            @include px-to-rem(width, 158);
+        }
+        img {
+            height: inherit;
+            width: inherit;
+        }
+    }
+}
+
+%title {
+    @include color($black);
+    @include tertiary-regular;
+    @include font-weight(normal);
+    @include position(relative);
+    @include span(5 of 6 0);
+    @include margin-left(16);
+    @include margin-top(70);
+    @include text-truncate-lines(3, 18, 1.33);
+    @include text-truncate-lines(2, 18, 1.33);
+    @include breakpoint($xsmall) {
+        @include span(8 of 12 0);
+        @include margin-left(60);
+        @include margin-top(64);
+    }
+    @include breakpoint($xlarge) {
+        @include span(6 of 12 0);
+    }
+    &:after {
+        @include border-top(2, solid, $associated-tag-bg);
+        @include position(absolute);
+        @include px-to-rem(width, 64);
+        content: '';
+        @include left(0);
+        @include bottom(-16);
+    }
+    span {
+        @include color($mu-red);
+    }
+}
+
+%chat__stats-bar {
+    @extend %article__stats-bar;
+    @include background-color($white);
+    @include position(absolute);
+    @include border-top(1, solid, $gray-lightest);
+    @include px-to-rem(height, 44);
+    @include bottom(0);
+}
+
+.chat {
+    @extend %chat;
+    @extend %white-component;
+    .img-holder {
+        height: 100%;
+    }
+    .mu-item__top-panel {
+        .img-tag {
+            li {
+                @extend %txt-initial;
+                background: none;
+                @include color($mu-black);
+                @include border-left(0, solid, transparent);
+            }
+            li:first-child {
+                //background: $twitter-blue;
+                @include px-to-rem(width, 44);
+                span {
+                    @include advance-sprite-image(twitter-white);
+                    @include position(absolute);
+                }
+            }
+        }
+    }
+    &__title {
+        @extend %title;
+    }
+    .white-btn-skew {
+        @include margin-left(16);
+        @include bottom(75);
+        @include position(absolute);
+        @include display(block);
+        span {
+            max-width: 200px;
+            @include overflow(hidden);
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        @include breakpoint($xsmall) {
+            span {
+                max-width: auto;
+            }
+            @include bottom(71);
+            @include margin-left(60);
+        }
+        a {
+            @include padding(11, 11, 11, 11);
+            i {
+                @include margin(3, 0, 0, 10);
+            }
+        }
+    }
+    .stats-bar {
+        @extend %chat__stats-bar;
+        &__icons {
+            @extend %article__stats-bar_icons;
+        }
+    }
+}
+
+.social-card {
+    .statsbar {
+        width: 100% !important;
+    }
+}
+
+// .chat {
+//     &.dark {
+//         @include background-color($chat-dark);
+//         figure {
+//             @include opacity(1);
+//         }
+//         .mu-item__top-panel {
+//             .img-tag {
+//                 li {
+//                     background: none;
+//                     @include color($white);
+//                 }
+//                 li:first-child {
+//                     // background: $twitter-blue;
+//                     @include px-to-rem(width, 44);
+//                     span {
+//                         @include advance-sprite-image(twitter);
+//                         @include position(absolute);
+//                     }
+//                 }
+//             }
+//         }
+//         .chat__title {
+//             @extend %title;
+//             @include color($white);
+//             span {
+//                 @include color($white);
+//             }
+//         }
+//         .chat__conversation {
+//             a {
+//                 @include padding(11, 11, 11, 11);
+//                 @include color($white);
+//                 @include border(1, solid, $white);
+//                 span {
+//                     @include color($white);
+//                 }
+//             }
+//         }
+//     }
+// }

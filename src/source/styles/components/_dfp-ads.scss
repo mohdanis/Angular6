@@ -1,0 +1,411 @@
+.dfp-ads {
+    &-card {
+        .mu-item__info {
+            .mu-item__title {
+                @include tertiary-semibold;
+                text-transform: uppercase;
+                .grid-12 & {
+                    @include font-size(48);
+                    @include line-height(42,px,multi);
+                    @include margin-top(20);
+                }
+                .grid-12.child & {
+                    @include font-size(32);
+                    @include line-height(30,px,multi);
+                    @include margin-top(10);
+                }
+                .grid-8 & {
+                    @include font-size(32);
+                    @include line-height(30,px,multi);
+                    @include margin-top(10);
+                }
+
+                .grid-8.child & {
+                    @include font-size(32);
+                    @include line-height(30,px,multi);
+                    @include margin-top(10);
+                }
+
+                .grid-6 & {
+                    @include font-size(32);
+                    @include line-height(30,px,multi);
+                    @include margin-top(10);
+                }
+
+                .grid-6.child & {
+                    @include font-size(24);
+                    @include line-height(24,px,multi);
+                    @include margin-top(8);
+                }
+
+                .grid-4 &,
+                .grid-3 & {
+                    @include font-size(20);
+                    @include line-height(24,px,multi);
+                    @include margin-top(10);
+                }
+
+                .grid-4.child &,
+                .grid-3.child & {
+                    @include font-size(24);
+                    @include line-height(24,px,multi);
+                    @include margin-top(10);
+                }
+                &:before {
+                    width: 0;
+                    /*transition: width 0.7s ease-out 0.13s;*/
+                }
+            }
+            @include breakpoint($large) {
+                .grid-12 & {
+                    @include padding-left(48);
+                }
+                .grid-12.child & {
+                    @include padding-left(20);
+                    @include margin-top(48,important);
+                }
+                .grid-6.child & {
+                    @include margin-top(48,important);
+                }
+                .grid-8.child & {
+                    @include margin-top(48,important);
+                }
+            }
+        }
+        &:hover .mu-item__info .mu-item__title:before {
+            /*width:64px;*/
+        }
+        .mu-item {
+            .grid-8.child & {
+                border: 1px solid #f2f2f2;
+            }
+            .grid-6.child & {
+                .img-holder {
+                    width: 40%;
+                }
+                .mu-item__info {
+                    width: 60%;
+                }
+            }
+        }
+    }
+    &__cta {
+        @include pull-left;
+        @include margin-top(24);
+        @include padding-right(40,px);
+        span {
+            @include color($white);
+            @include pull-left;
+            @include font-size(14);
+            //white-space: pre-wrap;
+            @include breakpoint($medium $max-medium){
+                @include font-size(12);
+            }
+            font-style: italic;
+            text-transform: uppercase;
+            @include secondry-semibold;
+            @include px-to-rem(letter-spacing,.6);
+            span.dfp-cta-wrapper{
+                @include pull-none;
+                @include display(inline);
+                position: absolute;
+                @include right(-34,px);
+                i {
+                    @include pull-right;
+                    @include margin(4,0,0,8);
+                    &.tag-red-arrow {
+                        .ratio:not(.child) & {
+                            @extend .tag-white-arrow;
+                        }
+                        .ratio:not(.micro-card) & {
+                            @extend .tag-white-arrow;
+                        }     
+                    }
+                }
+
+            }
+        }
+        & > span{
+            border-bottom: 1px solid transparent;
+            padding-bottom: 5px;
+            position: relative;
+            &:hover{
+                border-bottom: 1px solid #c70101;
+            }
+        }
+        .child & {
+            @include margin-top(16);
+            span {
+                @include color($mu-black);
+                @include pull-left;
+            }
+        }
+        
+
+        .grid-12 & {
+            @include margin-top(32);
+        }
+    }
+
+    &__sponsor {
+        img {
+            .grid-12 & {
+                max-height: 70px;
+            }
+            .grid-12.child & {
+                max-height: 58px;
+            }
+            .grid-8 &,
+            .grid-8.child &,
+            .grid-6 &,
+            .grid-6.child &,
+            .grid-4 &,
+            .grid-3 & {
+                @include px-to-rem(max-height,32)
+            }
+            .grid-4.child &,
+            .grid-3.child & {
+                max-height: 34px;
+            }
+        }
+    }
+}
+
+
+.grid-12.ratio,.grid-6.ratio,.grid-7.ratio,.grid-8.ratio,.grid-4.ratio,.grid-3.ratio,.grid-8.ratio-matchday {
+    .mu-item__info {
+        .dfp-ads__sponsor {
+            [data-image-version="light"] {
+                @include display(block);
+            }
+            [data-image-version="dark"] {
+                 @include display(none);
+            }
+        }
+    }
+    &.child {
+        .mu-item__info {
+            .dfp-ads__sponsor {
+                [data-image-version="light"] {
+                    @include display(none);
+                }
+                [data-image-version="dark"] {
+                    @include display(block);
+                }
+            }
+            span.dfp-ads__cta {
+                span {
+                    span.dfp-cta-wrapper {
+                        i.tag-red-arrow { 
+                            @extend .tag-red-arrow;
+                        } 
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+
+.grid-3,.grid-4  {
+    &.ratio {
+        &.child {
+            .dfp-ads-card {
+               span.dfp-ads__cta {
+                    span {
+                        span.dfp-cta-wrapper {
+                            i.tag-red-arrow { 
+                                @extend .tag-red-arrow;
+                            } 
+                        }
+                    }
+                }
+                .mu-item__info {
+                    @include percentage-value(height,68);
+                    .dfp-ads__cta {
+                        @include position(absolute);
+                        @include left(16);
+                        @include bottom(24);
+                    } 
+                } 
+            }
+        }
+        .dfp-ads-card {
+            .mu-item__info {
+                @include bottom(24,important);
+                .dfp-ads__cta {
+                    @include margin-top(12,important);
+                }
+
+            }
+        }
+        
+    }
+}
+// cta bottom align for grid 3 and grid 4
+.grid-4  {
+    &.ratio {
+        &.child {
+            .dfp-ads-card { 
+                .mu-item__info {
+                    @include percentage-value(height,60);
+                    
+                } 
+
+            }
+
+        }
+    }
+}
+
+.grid-6.ratio,.grid-8.ratio,.grid-7.ratio  {
+    .dfp-ads-card {
+        .mu-item__info {
+            @include bottom(32,important);
+            .dfp-ads__cta {
+                @include margin-top(12,important);
+            }
+        }
+    }
+}
+.grid-12.ratio  {
+    .dfp-ads-card {
+        .mu-item__info {
+            @include bottom(26,important);
+        }
+    }
+}
+
+
+//FOR home page micro and Mini card
+
+.ratio.micro-card {
+    .dfp-ads__sponsor {
+        [data-image-version="light"] {
+            @include display(none);
+        }
+        [data-image-version="dark"] {
+             @include display(block);
+        }
+    }
+}
+.ratio.mini-card {
+    .dfp-ads-card .mu-item .mu-item__title{
+        @include primary-bold;
+    }
+    .dfp-ads__sponsor {
+       @include margin-bottom(8);
+       img {
+          @include px-to-rem(max-height,30);
+          @include px-to-rem(max-width,100);
+       }
+        [data-image-version="light"] {
+            @include display(block);
+        }
+        [data-image-version="dark"] {
+             @include display(none);
+        }
+    }
+    &.child {
+        .dfp-ads__sponsor {
+            [data-image-version="light"] {
+                @include display(none);
+            }
+            [data-image-version="dark"] {
+                @include display(block);
+            }
+        }
+    }
+}
+.ratio.micro-card {
+    .dfp-ads-card {
+        .img-holder{
+            .mu-content {
+               @include percentage-value(height,100);
+            }
+        }
+        .dfp-ads__cta {
+            span {
+                @include color($mu-black);
+            }
+            i {
+                &.tag-red-arrow {
+                   @extend .tag-red-arrow;
+                }
+            }
+        }
+        .mu-item .mu-item__info .mu-item__title{
+        @include font-size(14);
+        @include line-height(18,px);
+        }
+       
+    }
+    .dfp-ads__sponsor {
+       @include margin-bottom(8);
+       img {
+          @include px-to-rem(max-height,36);
+       }
+    }
+}
+
+
+
+//FOR Non Matchday and Matchday cards
+.nonmatchday-page {
+    .grid-12.ratio,.grid-8.ratio-matchday {
+        .dfp-ads-card {
+            .mu-item__info {
+                @include bottom(16,important);
+                @include margin-top(24,important);
+                .mu-item__title {
+                    @include margin-top(16);
+                    @include font-size(32);
+                    @include px-to-rem(line-height,30);
+                }
+                .dfp-ads__sponsor img {
+                    @include px-to-rem(max-height,32);
+                }
+            }
+            .dfp-ads__cta {
+                @include margin-top(16);
+            }
+            
+        }
+    }
+    
+}
+.match-day__container {
+    .grid-12.ratio,.grid-8.ratio-matchday {
+        .dfp-ads-card {
+            .mu-item__info {
+                @include bottom(36,important);
+                @include margin-top(24,important);
+                @include breakpoint($small $max-medium){
+                    @include bottom(8,important);
+                
+                }
+                .mu-item__title {
+                    @include margin-top(16);
+                     @include font-size(32);
+                     @include px-to-rem(line-height,30);
+                     
+                }
+                .dfp-ads__sponsor img {
+                    @include px-to-rem(max-height,32);
+                }
+            }
+            .dfp-ads__cta {
+                @include margin-top(16);
+                @include breakpoint($small $max-medium){
+                    @include margin-top(8);
+                }
+            }
+            
+        }
+    }
+}
+
+
+
+

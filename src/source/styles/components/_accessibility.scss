@@ -1,0 +1,419 @@
+/* Skip Navigation Section*/
+
+.skip-navigation {
+    @include position(absolute);
+    @include top(-1000);
+    @include left(-1000);
+    height: 1px;
+    width: 1px;
+    @include text-align(left);
+    @include overflow(hidden);
+}
+
+a.skip-navigation:active,
+a.skip-navigation:focus,
+a.skip-navigation:hover {
+    @include left(0);
+    @include top(0);
+    width: auto;
+    height: auto;
+    @include overflow(visible);
+}
+
+.skip {
+    @include position(absolute);
+    @include top(-1000);
+    @include left(-1000);
+    height: 1px;
+    width: 1px;
+    @include text-align(left);
+    @include overflow(hidden);
+    @include font-size(18);
+    @include font-weight(bold);
+    @include padding(5, 10, 5, 10);
+}
+
+a.skip:active,
+a.skip:focus,
+a.skip:hover {
+    @include left(50, percent);
+    @include top(0);
+    transform: translate(-50%, 0);
+    width: auto;
+    height: auto;
+    @include overflow(visible);
+    @include z-index(999999);
+    @include color($white);
+    @include background-color($mu-red);
+}
+.hideSocialCard {
+    display:none;
+}
+
+
+/*Home page*/
+
+
+/*Super Hero image*/
+
+// .super-hero__wrapper:focus,
+// .super-hero__title:focus,
+// .super-hero__wrapper img:focus,
+// .slide__up:focus {
+//   outline: 1px solid #4285F4;
+// }
+
+/*Super Hero Video*/
+
+// .superhero-wrapper video:focus,
+// .super-hero__title:focus,
+// .superhero-scrolldown a:focus {
+//   outline: 1px solid #4285F4;
+// }
+
+/*Hero Banner*/
+
+// .home-hero img:focus,
+// .home-hero figure:focus,
+// .home-hero__title:focus,
+// .red-btn-skew a:focus {
+//   outline: 1px solid #4285F4;
+// }
+
+/*Carousal*/
+
+// .carousal figure:focus,
+// .carousal__title:focus,
+// .carousal .link:focus,
+// .carousal .bx-controls-direction a:focus,
+// .carousal .mu-item img:focus,
+// .carousal .mu-item__title:focus,
+// .carousal .mu-item__teasure:focus,
+// .carousal .home-statsbar__time:focus,
+// .carousal .home-statsbar__tag:focus,
+// .carousal .mu-item__gallery-title div:focus,
+// .carousal .blockquote:focus,
+// .carousal .quotes p:focus,
+// .carousal .sponsor:focus {
+//   outline: 1px solid #4285F4;
+// }
+
+/*Home Quote*/
+
+// .home-quotes figure:focus,
+// .home-quotes__title:focus,
+// .home-quotes__author:focus,
+// .home-quotes__logo-title:focus {
+//   outline: 1px solid #4285F4;
+// }
+
+/*News Listing page*/
+
+
+/*stats-bar of cards*/
+
+// .stats-bar__icons li:focus {
+//   outline: 1px solid #4285F4;
+// }
+
+/*cards top section*/
+
+// .sponsor-tag li:focus,
+// .img-tag li:focus {
+//   outline: 1px solid #4285F4;
+// }
+// .news-list__filter__tab a:focus {
+//   outline: 1px solid #4285F4;
+// }
+// .mu-item__title:focus {
+//   outline: 1px solid #4285F4;
+// }
+// .mu-item__teasure:focus {
+//   outline: 1px solid #4285F4;
+// }
+// .mu-item__info:focus {
+//   outline: 1px solid #4285F4;
+// }
+// .mu-item__gallery-title spn div:focus {
+//   outline: 1px solid #4285F4;
+// }
+// .bottom-panel p:focus {
+//   outline: 1px solid #4285F4;
+// }
+// .mu-item__gallery-title span div:focus {
+//   outline: 1px solid #4285F4;
+// }
+// .gallery-teaser:focus {
+//   outline: 1px solid #4285F4;
+// }
+// .chat__title:focus {
+//   outline: 1px solid #4285F4;
+// }
+// .link:focus {
+//   outline: 1px solid #4285F4;
+// }
+
+/*Video listing page*/
+
+
+/*Search result page*/
+
+// .search-related h6:focus,
+// .search__tabs li:focus,
+// .related-tag li:focus {
+//   outline: 1px solid #4285F4;
+// }
+*:active,
+*:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+// a.link.ng-binding.non-keyboard-outline {
+//     background: yellow;
+// }
+*:active.non-keyboard-outline,
+*:focus.non-keyboard-outline {
+    outline: none;
+    box-shadow: none;
+    @include breakpoint($medium) {
+        box-shadow: 0 0 4px 0 rgba(0, 121, 193, 0.81);
+        outline: solid 2px #0079c1;
+    } 
+}
+.social-share__footer{
+    li{
+        &:active.non-keyboard-outline,
+        &:focus.non-keyboard-outline{
+            box-shadow: 0 0 4px 0 rgba(0,121,193,.81);
+            outline: #0079c1 solid 2px;
+            overflow : hidden;
+        }     
+    }
+}
+.generic-form{
+    input[type="radio"] {
+        &:focus.non-keyboard-outline,&:active.non-keyboard-outline {
+            box-shadow: 0 0 4px 0 rgba(0,121,193,.81);
+            outline: #0079c1 solid 2px;
+            width: 22px;
+            height: 23px;
+            margin-left: 2px;
+            margin-top: 1px;
+        }
+    }  
+}
+.video_play.figure-adaptive.non-keyboard-outline {
+    outline: none;
+    box-shadow: none;
+    @include breakpoint($medium) {
+        box-shadow: 0 0 4px 0 rgba(0, 121, 193, 0.81);
+        border: solid 2px #0079c1 !important;
+    } 
+}
+
+.news-list__block .mu-item__info {
+    *:active.non-keyboard-outline,
+    *:focus.non-keyboard-outline {
+        box-shadow: 0 0 4px 0 rgba(0, 121, 193, 0.81);
+        outline: solid 2px #0079c1;
+        @include pull-left;
+    }
+}
+
+.mu-item__sponsor__wrapper {
+    *:active.non-keyboard-outline,
+    *:focus.non-keyboard-outline {
+        @include pull-left;
+    }
+}
+
+.home-header__menu-list {
+    *:active.non-keyboard-outline,
+    *:focus.non-keyboard-outline {
+        box-shadow: 0 0 4px 0 rgba(0, 121, 193, 0.81);
+        outline: solid 2px #0079c1;
+    }
+    &:active.non-keyboard-outline,
+    &:focus.non-keyboard-outline {
+        box-shadow: 0 0 4px 0 rgba(0, 121, 193, 0.81);
+        outline: solid 2px #0079c1;
+    }
+}
+
+.footer .sponsor {
+    *:active.non-keyboard-outline,
+    *:focus.non-keyboard-outline {
+        box-shadow: 0 0 4px 0 rgba(0, 121, 193, 0.81);
+        outline: solid 2px #0079c1;
+    }
+}
+
+// .home-header__menu-list *:active.non-keyboard-outline, 
+// .home-header__menu-list *:focus.non-keyboard-outline,
+// .home-header__menu-list:active.non-keyboard-outline,
+// .home-header__menu-list:focus.non-keyboard-outline,
+// .footer .sponsor *:active.non-keyboard-outline,
+// .footer .sponsor *:focus.non-keyboard-outline {
+//     box-shadow: 0 0 4px 0 rgba(0, 121, 193, 0.81);
+//     outline: solid 2px #0079c1;
+// }
+header,
+footer {
+    *:active.non-keyboard-outline,
+    *:focus.non-keyboard-outline {
+        box-shadow: 0 0 4px 0 rgba(248, 230, 0, 0.8);
+        outline: solid 2px #F8E700;
+    }
+}
+
+// header *:active.non-keyboard-outline, header *:focus.non-keyboard-outline,
+// footer *:active.non-keyboard-outline, footer *:focus.non-keyboard-outline {
+//     box-shadow: 0 0 4px 0 rgba(248, 230, 0, 0.8);
+//     outline: solid 2px #F8E700;
+// }
+// 
+header nav {
+    /* start css accessibility */
+    /* Rudimentary mega menu CSS for demonstration */
+    /* mega menu list */
+    .nav-menu {
+        @include display(block);
+        @include position(relative);
+        list-style: none;
+    }
+    /* a top level navigation item in the mega menu */
+    // commented on temporary basis to resolve mobile breakpoint issue 
+    .nav-item {
+        // list-style: none;
+        // @include display(inline-block); 
+    }
+    /* first descendant link within a top level navigation item */
+    .nav-item>a {
+        @include position(relative);
+        @include display(inline-block);
+    }
+    /* focus/open states of first descendant link within a top level 
+           navigation item */
+    .nav-item>a:focus,
+    .nav-item>a.open {
+        /* border: 1px solid #dedede;*/
+    }
+    /* open state of first descendant link within a top level 
+           navigation item */
+    .nav-item>a.open {}
+    /* sub-navigation panel */
+    .sub-nav {
+        @include position(absolute);
+        @include breakpoint($small $max-medium) {
+            @include display(none);
+        }
+        @include breakpoint($large){
+            visibility: hidden;
+            @include prefix-vendor(transition-delay, 0.4s, webkit ms op);
+        }
+        @media (min-device-width: $large) and (max-device-width: $max-large) and (orientation : landscape){
+            visibility: hidden;
+            @include prefix-vendor(transition-delay, 0s, webkit ms op);
+        }
+        
+    }
+    /* sub-navigation panel open state */
+    .sub-nav.open {
+        @include breakpoint($small $max-medium) {
+            @include display(block);
+        }
+        @include breakpoint($large){
+           visibility: visible;
+        }
+        
+
+    }
+    /* list of items within sub-navigation panel */
+    .sub-nav ul {
+        @include display(inline-block);
+    }
+    /* list item within sub-navigation panel */
+    .sub-nav li {
+        @include display(block);
+    }
+    /* end css accessibility */
+}
+/*******************************************
+    ****************
+        *****/
+
+/* 
+    Hero Carousal and grid-12 card with child 
+*/
+
+ #homePage {
+    .grid-12.ratio,.grid-6.ratio,.grid-3.ratio,.grid-4.ratio{
+        .mu-item {
+            &__info {
+                a.non-keyboard-outline {
+                    @include pull-left;
+                    @include padding-top(18);
+                }
+            }
+        }
+        &.child {
+            .mu-item {
+                &__info {
+                    a.non-keyboard-outline {
+                       @include margin-top(-18);
+                    }
+                }
+            }  
+        }
+        /* Video and audio */
+        .mu-item.video,.mu-item.audio,.mu-item.image-gallery {
+            .mu-item__info {
+                a.non-keyboard-outline {
+                    @include padding-top(0);
+                }
+            }
+
+        }
+        &.child {
+            .mu-item.video,.mu-item.audio  {
+               .mu-item__info {
+                    a.non-keyboard-outline {
+                        @include margin-top(0);
+                    }
+                }  
+            }
+
+        }
+    }
+    .carousal {
+        .mu-item__info > a:focus {
+            @include pull-left;
+            @include padding-top(18);
+        }
+        .print-prod, .video {
+            .mu-item__info > a{
+                @include padding-top(0);
+            }
+        }
+    }
+    .mu-item__sponsor__wrapper > a {
+        outline-offset: -2px;
+        overflow: hidden;
+    }
+}
+.grid-7 {
+    .mu-item.video {
+       .mu-item__sponsor__wrapper :focus {
+            outline: none;
+            box-shadow: none;
+            @include breakpoint($medium) {
+                box-shadow: 0 0 4px 0 rgba(0, 121, 193, 0.81);
+                border: solid 2px #0079c1 !important;
+            } 
+            
+        } 
+    }
+}
+
+

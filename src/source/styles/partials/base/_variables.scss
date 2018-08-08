@@ -1,0 +1,277 @@
+$base-font-size: 16px;
+$base-line-height: 4px;
+$unitless-line-height: $base-line-height / ($base-line-height * 0 + 1);
+$header-line-height: $base-font-size * 1.25;
+$base-font-family: Arial,
+"Helvetica",
+sans-serif;
+$header-font-family: $base-font-family;
+$base-font-color: black;
+$base-background-color: white;
+$base-link-color: #333;
+$hover-link-color: darken(#333, 15);
+$base-button-color: $base-link-color;
+$hover-button-color: $hover-link-color;
+$base-border-color: #DDD;
+$video-listing-description: #b0b0b0;
+//Sprite variables
+//$icons: sprite-map("icons/*.png", $layout: smart) !default;
+//$icons2x: sprite-map("icons-2x/*.png", $layout: smart) !default;
+$retina-suffix: "@2x" !default;
+$icons: sprite-map("icons/*.png", $position: 100%, $spacing: 10px, $layout: horizontal, $repeat: no-repeat) !default;
+$icons2x: sprite-map("icons-2x/*.png", $position: 100%, $spacing: 10px, $layout: horizontal, $repeat: no-repeat) !default;
+$icons-prefix: ".icon-";
+$tags: sprite-map("tags/*.png", $position: 100%, $spacing: 10px, $layout: horizontal, $repeat: no-repeat) !default;
+$tags2x: sprite-map("tags-2x/*.png", $position: 100%, $spacing: 10px, $layout: horizontal, $repeat: no-repeat) !default;
+$tags-prefix: ".tag-";
+$socials: sprite-map("socials/*.png", $position: 100%, $spacing: 10px, $layout: horizontal, $repeat: no-repeat) !default;
+$socials2x: sprite-map("socials-2x/*.png", $position: 100%, $spacing: 10px, $layout: horizontal, $repeat: no-repeat) !default;
+$socials-prefix: ".social-";
+$eventssmall: sprite-map("eventssmall/*.png", $position: 100%, $spacing: 10px, $layout: horizontal, $repeat: no-repeat) !default;
+$eventssmall2x: sprite-map("eventssmall-2x/*.png", $position: 100%, $spacing: 10px, $layout: horizontal, $repeat: no-repeat) !default;
+$eventssmall-prefix: ".eventsmall-";
+$events: sprite-map("events/*.png", $position: 100%, $spacing: 10px, $layout: horizontal, $repeat: no-repeat) !default;
+$events2x: sprite-map("events-2x/*.png", $position: 100%, $spacing: 10px, $layout: horizontal, $repeat: no-repeat) !default;
+$events-prefix: ".event-";
+$positions: sprite-map("positions/*.png", $position: 100%, $spacing: 10px, $layout: horizontal, $repeat: no-repeat) !default;
+$positions2x: sprite-map("positions-2x/*.png", $position: 100%, $spacing: 10px, $layout: horizontal, $repeat: no-repeat) !default;
+$positions-prefix: ".pos-";
+$tmpls: sprite-map("tmpls/*.png", $position: 100%, $spacing: 10px, $layout: horizontal, $repeat: no-repeat) !default;
+$tmpls2x: sprite-map("tmpls-2x/*.png", $position: 100%, $spacing: 10px, $layout: horizontal, $repeat: no-repeat) !default;
+$tmpls-prefix: ".tmpl-";
+// MUFC All Used Colors Codes (fonts,button,background etc...)
+
+/* Colors codes used in application*/
+
+//Primary colours
+	$black: #000;
+	$white: #fff;
+	$mu-red: #c70101;
+	$mu-black: #1a1a1a; // 26, 26, 26
+	$mu-slate: #494A50;
+	$mu-grey: #2A2A2A;
+	$mu-safe-red: #ea0000;
+/*==========================*/
+
+//Secondary colours
+	$navigation-bar:#AE0000;
+	$keylines:#b8b7b9;
+	$feed-text:#6D6D6D;
+	$chat-dark: #1c293b;
+	$verified-profile: #11428D;
+	$mu-green: #0f8723; //15, 135, 35
+	$mu-yellow: #F8E71C; //248, 231, 28
+	$alternet:#BC9D4C;
+	$mu-brown:#bc904c;
+
+
+/*==========================*/
+//ACCENT COLOURS
+	$info: #F2C91B;
+	$warning: #1377BD;
+	$success: #50B848;
+	$danger: #C81617;
+	$success: #3c763d;
+	$success-bg: #dff0d8;
+	$success-border: #d0e9c6;
+	$danger: #a94442;
+	$danger-bg: #f2dede;
+	$danger-border: #ebcccc;
+	$info: #31708f;
+	$info-bg: #d9edf7;
+	$info-border: #bcdff1;
+	$warning: #8a6d3b;
+	$warning-bg: #fcf8e3;
+	$warning-border: #faf2cc;
+	$vs:#4b4b4b;
+
+/*==========================*/
+
+//Validation/Cheer center
+	$positive: #34C680;
+	$negative: #EF3547;
+
+/*==========================*/
+
+// Extra used colors for application
+// for all pages
+	
+	$gray: #939294;
+	$gray-dark: #949494;
+	$gray-light: #ccc;
+	$gray-lightest: #f1f1f1;
+	$gray-lighter: #eceeef;
+	$gray-heading :#858585;
+	$dark-gray: #eaeaea;
+	$chart-gray:#7b7b7b;
+	$white-light: #f9f9f9;
+	$white-lighter: #f2f2f2;
+	$mu-grey-dark: #b7b6b8; //100%
+	$mu-grey-light: #dbdbdb; //50%
+	$linup-bg: #fafafa;
+	$border-color: #ddd;
+	$border-light: #55595c;
+	$border-dark: #363636;
+	$card-bg: #161616;
+	$associated-tag-bg: #d8d8d8;
+	$tag-line: #434343;
+	$line: #979797;
+	$border-dark: #dadada;
+	$brand-color: #C81617;
+	$history-color: #8F1010;
+	$background-color: #F3F3F3;
+	$container-card-color: #FEFEFE;
+	$default-color: #231F20;
+	$default-text-color: #4a4a4a;
+	$text-paragraph: #666666;
+	$paragraph-text: #686868;
+	$paragraph-light: #656565;
+	$image-source-color: #6e6e6e;
+	$code-text: #f5f2f;
+	$twitter-blue: #3b90ff;
+	$gray-draw: #707070;
+	$sponsor-gray: #808080;
+	$sponsor-gray-dark: #a6a6a6;
+	$vertical-strips:#232323;
+	$header-nav-bg:#272727;
+	$player-bg:#f8f8f8;
+	$input-border: #8c8c8c;
+	$thunder: #3A3134;
+	$mu-grey-lighter: #ebebeb; //25%
+	$mu-grey-lightest: #f7f7f7; //10%
+	$matchday-blogs: #747474;
+	$grey-light-line:#e8e8e8;
+    $grey-lightest-line:#C8C8C8;
+    $link-line:#9c9c9c;
+    $grey-text:#717171;
+    $grey-btn: #494a50;
+    $border-line: #626262;
+    $light-black:#2c2c2c;
+    $chart-bg: #e9e9e9;
+    $carousal-bdr-gray :#404040;
+    $error-txt : #adadad;
+
+/*==========================*/
+
+//TERTIARY COLOURS
+	$mu-pink: #de0f3c; //222, 15, 60
+	$white-two: #F5F5F5; //245 245 245
+
+/*==========================*/
+
+//Overlay Gradient
+	$start-color: rgba(0, 0, 0, 0.9);
+	$end-color: rgba(0, 0, 0, 0);
+	$white-transparent: rgba(255, 255, 255, 0.2);
+	$black-transparent: rgba(0, 0, 0, 0.2);
+	$opacity: 0.8;
+	$inner-padding: 20;
+	$suggested-color:#9b9b9b;
+
+/*==========================*/
+
+//sticky video
+	$active-btn:#1b1b1b;
+	$deactive-btn:#333233;
+/*==========================*/
+
+//Footer color
+	$social-bg: #2a2a2a;
+	$footer-color: #a3a3a3;
+	$bdr-color:#d9d9d9;
+	$matchday-dark-bg:#2a2a2a;
+	$matchday-light-bg:#3b363e;
+/*==========================*/
+
+//Gutter
+    $gutter: 0px;
+/*==========================*/
+
+//CARD HEIGHTS
+	$card-height: 420px;
+	$small-card-height: 210px;
+	$square-card-height: 314px;
+	$card-small-height: 200px;
+	$card-split-height: 240px;
+	$card-min-height: 100px;
+	$stats-bar-height: 43px;
+	//1440 Braekpoints
+	$grid-12-height-xxlarge: 552px;
+	$grid-6-height-xxlarge: 388px;
+	$grid-3-height-xxlarge: 444px;
+	$grid-3-small-height-xxlarge: 333px;
+	//1280 Braekpoints
+	$grid-12-height-xlarge: 490px;
+	$grid-6-height-xlarge: 343px;
+	$grid-3-height-xlarge: 393px;
+	$grid-3-small-height-xlarge: 295px;
+	//768 Braekpoints
+	$grid-12-height-medium: 432px;
+	$grid-6-height-medium: 360px;
+	$grid-3-height-medium: 360px;
+	//568 Braekpoints
+	$grid-12-height-xsmall: 364px;
+	$grid-6-height-xsmall: 353px;
+	//320 Braekpoints
+	$grid-12-height-small: 480px;
+	$grid-6-height-small: 328px;
+	$grid-6-child-height-small: 366px;
+	$grid-3-height-small: 328px;
+	$grid-3-child-height-small: 366px;
+	//1024 Braekpoints
+	$grid-12-height-large: 391px;
+	$tag-bg: #d3d3d3;
+	$sponsor-text-color: #b3b3b3;
+	$possesion-height: 270px;
+	$goals-height: 380px;
+	$fouls-height: 382px;
+	$fouls-height-small: 414px;
+	$head2head-height-small: 466px;
+	$head2head-height: 360px;
+
+
+//Text Color
+	$dark: #383838; //56 56 56
+	$light: #fff;
+	$collection-btn: #414141;
+	$scrollbar-thumb: #636363;
+	$home-stats-default: #757575;
+	$divider-line: #bebebe;
+	$chevrolet-yellow: #FAB94C;
+	$child-stats: #676767;
+	$child-stats-bold: #686868;
+
+//ortantion
+	$max-small: 567px;
+	$max-xsmall: 767px;
+	$max-medium: 1023px;
+	$max-large: 1279px;
+	$max-xlarge: 1439px;
+	$min-largest: 1441px;
+	$dark-blog: #494a50;
+	$li-border: #e5e5e5;
+	$fixture-red: #d0021b;
+	$min-large: 1025px;
+	$small-tab: 600px;
+	$max-largest: 1921px;
+
+//Background images
+	$base-path:'../../assets/images/bg/';
+	$mu-red-hover: #9f0000;
+
+//skining color	
+	$skinning-link: #757575;
+	$base-path-images:'../../assets/images/';
+	$skinning-gry: #999999;
+	$skinning-ipt: #cacaca;
+	$skinning-reauth: #4e515e;
+	$dark-medium-grey: #999;
+	$dark-border-bottom: #e76468;
+	$skin-error-state: #f00;
+	$skin-provider: #3b5998;
+	$skin-list: #dc4e41;
+	$skin-modern: #eee;
+	$skin-checked: #bbb;
+	$black-cta-hover: #484848;
+	$sina-col: #D32628;
+	$wechat-col: #5FBD35;

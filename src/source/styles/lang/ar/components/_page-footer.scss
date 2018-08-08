@@ -1,0 +1,21 @@
+.footer {
+    &__social-links {
+        .social-icons {
+            ul {
+                li {
+                    a {
+                        i {
+                            transform: translate(50%, -50%);
+                            -webkit-transform: translate(50%, -50%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__menu .footer__menu__links {
+        ul li a, .associated-tag li a {
+            @include font-size(12);
+        }
+    }
+}

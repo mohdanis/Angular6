@@ -1,0 +1,1439 @@
+    .search-panel {
+        @include pull-left;
+        @include percentage-value(width, 100);
+        @include margin-top(10);
+        @include span(6 of 6 0);
+        @include breakpoint($medium) {
+            //@include span(8 of 12);
+            @include calculate-width(100, 326);
+        }
+        @include breakpoint($large) {
+            //@include span(9 of 12);
+            @include calculate-width(100, 326);
+        }
+        // @include breakpoint($xxlarge) {
+        //     @include calculate-width(100, 340);
+        // }
+        &__result {
+            @include position(relative);
+            @include pull-left;
+            @include percentage-value(width, 100);
+            .loader-wrapper {
+                @include top(0);
+            }
+            .loader {
+                @include bottom(80, percent);
+            }
+            & nav {
+                @include percentage-value(width, 100);
+                //@include overflow(hidden);
+                //@include px-to-rem(height, 100);
+                @include pull-left;
+            }
+        }
+        .search-box__panel {
+            @include background-color($player-bg);
+            @include position(relative);
+            @include margin-bottom(16);
+            @include breakpoint($xxlarge) {
+                @include margin-bottom(25);
+                @include px-to-rem(height, 100);
+            }
+            @include breakpoint($small) {
+                @include margin-left(0);
+                @include margin-right(0);
+                width: 100%;
+            }
+            .typeahead-container {
+                @include breakpoint($small $max-xsmall) {
+                    @include margin-top(-8);
+                }
+            }
+            input[type="text"] {
+                @include secondry-light;
+                @include font-size(24);
+                @include font-weight(300);
+                @include color($mu-black);
+                @include important(background, #f8f8f8);
+                // @include background-color($white);
+                @include padding(0);
+                @include margin-bottom(10);
+                @include margin-top(-3);
+                @include px-to-rem(height, 48);
+                @include padding-right(35);
+                border: none;
+                @include border-bottom(1, solid, $line, 0.15);
+                @include px-to-rem(height, 45);
+                @include calculate-width(100, 64);
+                @include margin-left(52);
+                border-radius: 0;
+                @include breakpoint($xxlarge) {
+                    @include font-size(36);
+                    @include margin-bottom(20);
+                    @include margin-top(0);
+                    @include calculate-width(100, 102);
+                    @include margin-left(60);
+                    @include margin-right(42);
+                    // @include font-size(36);
+                    @include px-to-rem(height, 60);
+                    @include padding-right(50);
+                }
+                &:focus {
+                    // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
+                }
+            }
+            img {
+                @include cursor(pointer);
+                @include position(absolute);
+                @include right(12);
+                @include top(23);
+                @include px-to-rem(width, 18);
+                @include breakpoint($xxlarge) {
+                    @include right(48);
+                    @include top(32);
+                    @include px-to-rem(width, 24);
+                }
+            }
+            .icon-search-arrow {
+                @include left(12);
+                @include position(relative);
+                @include top(28);
+                @include z-index(99);
+                @include breakpoint($xxlarge) {
+                    @include top(40);
+                }
+            }
+        }
+        .search__tabs {
+            @include pull-left;
+            @include span(12 of 12 0);
+            @include margin(0, 0, -4, 0);
+            @include overflow-direction(overflow-x, scroll);
+            @include percentage-value(width, 100);
+            & ul {
+                @include percentage-value(width, 100);
+                @include pull-left;
+                li {
+                    @include padding(0, 0, 0, 0);
+                    @include margin-right(24);
+                    &:last-child {
+                        @include margin-right(0);
+                    }
+                    @include px-to-rem(height, 33);
+                    @extend %txt-uppercase;
+                    @include pull-left;
+                    @include cursor(pointer);
+                    @include tertiary-regular;
+                    @include font-size(14);
+                    @include color($image-source-color);
+                    @include font-weight(400);
+                    @include line-height(1.57);
+                    letter-spacing: -0.2px;
+                    @include text-align(center);
+                    &.active {
+                        @include border-bottom(4, solid, $mu-red);
+                        @include font-weight(bold);
+                        @include color($black);
+                    }
+                    &:hover {
+                        border-bottom: 4px solid #9c9c9c;
+                    }
+                }
+            }
+            &__wrapper {
+                @include breakpoint($small $max-xsmall) {
+                    @include margin-left(0);
+                    @include margin-right(0);
+                    width: 100%;
+                }
+            }
+        }
+        .search__items {
+            @include background($white);
+            @include secondry-semibold;
+            @include px-to-rem(min-height, 128);
+            @include span(6 of 6 0);
+            @include margin(0, 0, 16, 0);
+            @include pull-left;
+            @include padding(12, 12, 24, 12);
+            @include position(relative);
+            border: 1px solid #f2f2f2;
+            @include breakpoint($large) {
+                @include padding(24, 24, 24, 24);
+            }
+            @include breakpoint($xsmall) {
+                @include margin-bottom(16);
+            }
+            @include breakpoint($large) {
+                @include margin-bottom(24);
+            }
+            &__detail {
+                @include span(12 of 12 0);
+                @include padding(0, 0, 0, 0);
+                @include breakpoint($medium) {
+                    @include padding(0, 0, 0, 64);
+                }
+                .search-url {
+                    @include display(none);
+                    @include breakpoint($large) {
+                        @include text-truncate-lines(1, 14, 1);
+                        @include display(block);
+                        @include color($line);
+                        @include font-size(14);
+                        @include secondry-regular;
+                        @include pull-left;
+                        @include percentage-value(width, 100);
+                        @include margin-bottom(16);
+                        word-break: break-all;
+                    }
+                }
+                .teasure {
+                    @include font-size(16);
+                    @include margin(0, 0, 0, 0);
+                    @include pull-left;
+                    @include span(12 of 12 0);
+                    strong {
+                        @extend %font-bold;
+                    }
+                }
+                .title {
+                    @include display(none);
+                    @include secondry-semibold;
+                    @include font-size(18);
+                    @include line-height(1.33);
+                    @include pull-left;
+                    @include color($mu-black);
+                    @include margin(0, 0, 0, 0);
+                    text-transform: none;
+                    @include breakpoint($xlarge) {
+                        @include display(block);
+                        @include font-size(20);
+                        @include line-height(1.5);
+                        @include span(12 of 12 0);
+                        @include pull-left;
+                    }
+                    a {
+                        @include color($mu-black);
+                    }
+                }
+                .detail {
+                    @include percentage-value(width, 100);
+                    @include pull-left;
+                    &__left {
+                        //@include percentage-value(width, 100);
+                        width: calc(100% + 24px);
+                        @include overflow(hidden);
+                        //@include px-to-rem(height, 146);
+                        @include margin(-12, -12, 12, -12);
+                        @include position(relative);
+                        @include pull-left;
+                        img,
+                        .img-holder {
+                            @include px-to-rem(height, 146);
+                        }
+                        @include breakpoint($xsmall) {
+                            @include margin(0, 0, 0, 0);
+                            @include px-to-rem(width, 143);
+                            img,
+                            .img-holder {
+                                @include px-to-rem(height, 80);
+                            }
+                        }
+                        @include breakpoint($large) {
+                            @include margin(-24, -24, -24, -24);
+                            @include px-to-rem(width, 243);
+                            img,
+                            .img-holder {
+                                @include px-to-rem(height, 183);
+                            }
+                        }
+                        span {
+                            @include position(absolute);
+                            @include left(8);
+                            @include bottom(8);
+                            @include px-to-rem(height, 52);
+                            @include px-to-rem(width, 52);
+                            @include padding(16, 16, 16, 16);
+                            @include color($white);
+                            @include background-color(#c70101, 1);
+                            z-index: 99;
+                            @include breakpoint($xsmall $max-medium) {
+                                transform: scale(0.6);
+                            }
+                        }
+                        .tag-text {
+                            @include pull-left;
+                            @include margin(-3, 0, 0, 10);
+                            @include secondry-regular;
+                            @include font-size(14);
+                        }
+                        &.image-card span{
+                            background: none;
+                            left: 0;
+                            bottom: 0;
+                            transform-origin: 0 100%;
+                        }
+                    }
+                    &__right {
+                        @include span(6 of 6 0);
+                        @include margin-bottom(15);
+                        @include pull-right;
+                        @include breakpoint($xsmall) {
+                            @include calculate-width(100, 160);
+                        }
+                        @include breakpoint($large) {
+                            @include calculate-width(100, 240)
+                        }
+                        h6 {
+                            @include secondry-regular;
+                            @include font-size(18);
+                            @include font-weight(600);
+                            @include line-height(1.33);
+                            @include display(block);
+                            @include text-truncate-lines(3, 18, 1.33);
+                            @include margin-bottom(10);
+                            @include breakpoint($medium) {
+                                @include text-truncate-lines(2, 18, 1.33);
+                            }
+                            @include breakpoint($xlarge) {
+                                @include display(none);
+                            }
+                            a {
+                                @include color($mu-black);
+                            }
+                        }
+                    }
+                }
+                a {
+                    color: inherit;
+                }
+                .search-statsbar {
+                    @include pull-left;
+                    @include secondry-regular;
+                    @include margin-top(20);
+                }
+                &.news-article {
+                    @include padding(0, 0, 0, 0);
+                    @include breakpoint($xlarge) {
+                        // @include border-left(2, solid, $mu-red);
+                        // @include padding(0, 0, 0, 64);
+                    }
+                    h2 {
+                        @include percentage-value(width, 100);
+                        @include pull-left;
+                    }
+                    & .title {
+                        @include display(block);
+                        @include margin-bottom(4);
+                        @include breakpoint($xlarge) {
+                            @include margin-bottom(4);
+                        }
+                    }
+                    .teasure {
+                        @include pull-left;
+                        @include text-truncate-lines(5, 16, 1.45);
+                        @include breakpoint($xsmall) {
+                            @include text-truncate-lines(2, 16, 1.45);
+                        }
+                        @include breakpoint($medium) {
+                            @include text-truncate-lines(3, 16, 1.45);
+                        }
+                        @include breakpoint($large) {
+                            @include text-truncate-lines(5, 16, 1.45);
+                        }
+                        @include breakpoint($xlarge) {
+                            @include text-truncate-lines(4, 16, 1.45);
+                        }
+                        @include breakpoint($xxlarge) {
+                            @include text-truncate-lines(6, 16, 1.45);
+                        }
+                    }
+                }
+                &.video {
+                    @include padding(0, 0, 0, 0);
+                    .title {
+                        @include display(none);
+                        @include padding(0, 0, 0, 0);
+                        @include breakpoint($xlarge) {
+                            @include display(block);
+                        }
+                    }
+                    .teasure {
+                        @include pull-left;
+                        @include breakpoint($xsmall) {
+                            @include text-truncate-lines(4, 16, 1.45);
+                        }
+                        @include breakpoint($medium) {
+                            @include text-truncate-lines(2, 16, 1.45);
+                        }
+                        @include breakpoint($large) {
+                            @include text-truncate-lines(5, 16, 1.45);
+                        }
+                        @include breakpoint($xlarge) {
+                            @include text-truncate-lines(4, 16, 1.45);
+                        }
+                        @include breakpoint($xxlarge) {
+                            @include text-truncate-lines(6, 16, 1.45);
+                        }
+                    }
+                    .statsbar {
+                        @include padding-left(0);
+                        @include breakpoint($xsmall) {
+                            @include padding-left(160);
+                        }
+                        @include breakpoint($large) {
+                            @include padding-left(240);
+                        }
+                    }
+                }
+                &.audio {
+                    @include padding(0, 0, 0, 0);
+                    .title {
+                        @include display(none);
+                        @include padding(0, 0, 0, 0);
+                        @include breakpoint($xlarge) {
+                            @include padding(0, 0, 0, 64);
+                            @include display(block);
+                        }
+                    }
+                    .tag-text {
+                        @include margin-top(0);
+                    }
+                    .teasure {
+                        @include pull-left;
+                        @include breakpoint($xsmall) {
+                            @include text-truncate-lines(4, 16, 1.45);
+                        }
+                        @include breakpoint($medium) {
+                            @include text-truncate-lines(2, 16, 1.45);
+                        }
+                        @include breakpoint($large) {
+                            @include text-truncate-lines(5, 16, 1.45);
+                        }
+                        @include breakpoint($xlarge) {
+                            @include text-truncate-lines(4, 16, 1.45);
+                        }
+                        @include breakpoint($xxlarge) {
+                            @include text-truncate-lines(6, 16, 1.45);
+                        }
+                    }
+                }
+            }
+            &.profile {
+                @include span(12 of 12);
+                & .search__items__detail {
+                    @include padding-left(0);
+                }
+                @include border-bottom(2, solid, $mu-red);
+                h4 {
+                    @include percentage-value(width, 100);
+                    @include pull-left;
+                    @include font-size(16);
+                    @include secondry-regular;
+                    @include line-height(1.38);
+                    @include text-align(left);
+                    letter-spacing: -0.2px;
+                    @include color($mu-black);
+                    @extend %txt-uppercase;
+                }
+                h5 {
+                    @include percentage-value(width, 100);
+                    @include pull-left;
+                    @include font-size(18);
+                    @include secondry-regular;
+                    @include line-height(1.33);
+                    @include color($mu-black);
+                    @include font-weight(600);
+                    @extend %text-capitalize;
+                }
+            }
+            &__tag {
+                @include text-align(left);
+                @include pull-left;
+                @include percentage-value(width, 100);
+                @include font-size(16);
+                @include secondry-regular;
+                @include font-weight(400);
+                @include color($mu-black);
+                @extend %txt-uppercase;
+                @include margin-bottom(8);
+                @include breakpoint($xlarge) {
+                    @include span(2 of 12 0);
+                    @include text-align(right);
+                    @include pull-right;
+                    @include margin-bottom(0);
+                    @include font-size(14);
+                }
+                a {
+                    @include color($mu-black);
+                }
+            }
+            & > a {
+                color: inherit;
+            }
+        }
+        .search__result-time {
+            //@include span(6 of 6 0);
+            @include font-size(14);
+            @include secondry-regular;
+            @include color($image-source-color);
+            @include font-weight(400);
+            @include line-height(1.57);
+            @include margin-bottom(18);
+            @include margin-top(25);
+            .no-result {
+                // @include background($white-lighter);
+                // @include span(6 of 6 0);
+                @include pull-left;
+                @include margin-top(-40);
+                p {
+                    @include secondry-regular;
+                    @include font-size(16);
+                    @include color($image-source-color);
+                    @include margin(10, 0, 15, 0);
+                    @include margin-bottom(60);
+                    @include percentage-value(width, 90);
+                    @include margin-left(0, percent);
+                    @include margin-right(5, percent);
+                    @include breakpoint($medium) {
+                        @include span(12 of 12 0);
+                        @include margin-left(5, percent);
+                        @include margin-right(5, percent);
+                        @include margin-left(0);
+                    }
+                    b {
+                        @extend %font-bold;
+                    }
+                }
+                .suggested {
+                    @include background($white);
+                    @include padding(0, 0, 30, 0);
+                    @include span(6 of 6 0);
+                    @include pull-left;
+                    &__box {
+                        @include px-to-rem(max-width, 320);
+                        @include border(1, solid, $border-dark);
+                        @include background($dark-gray);
+                        @include margin-top(-37);
+                        @include pull-left;
+                        & h6 {
+                            @include secondry-regular;
+                            @include font-size(16);
+                            @include margin(15, 15, 15, 15);
+                        }
+                        & ul {
+                            @include margin(0, 0, 0, 0);
+                            @include padding(0, 15, 15, 30);
+                            @include span(6 of 6 0);
+                            @include pull-left;
+                            li {
+                                list-style-type: disc;
+                                @include secondry-regular;
+                                @include font-size(14);
+                                @include span(6 of 6 0);
+                                @include pull-left;
+                            }
+                        }
+                    }
+                    &__keywords {
+                        @include percentage-value(width, 100);
+                        @include pull-left;
+                        @include padding(15, 0, 0, 15);
+                        & h4 {
+                            @include secondry-regular;
+                            @include font-size(16);
+                            @include line-height(1.38);
+                            @include px-to-rem(letter-spacing, -0.2);
+                            @include color($mu-black);
+                            @include margin(15, 0, 5, 0);
+                            @include pull-left;
+                            @include span(6 of 6 0);
+                            @extend %txt-uppercase;
+                        }
+                        & ul {
+                            @include percentage-value(width, 100);
+                            @include pull-left;
+                            li {
+                                @include span(6 of 6 0);
+                                @include pull-left;
+                                @include line-height(2.81);
+                                @include secondry-regular;
+                                @include font-size(16);
+                                @extend %font-bold;
+                                @extend %txt-lowercase;
+                                a {
+                                    @include color($mu-black);
+                                }
+                                span {
+                                    @include percentage-value(width, 95);
+                                    width: calc(100% - 20px);
+                                    @include border-bottom(1, solid, $mu-black, 0.15);
+                                    @include pull-left;
+                                }
+                                @include breakpoint($large) {
+                                    @include percentage-value(width, 50);
+                                    @include pull-left;
+                                }
+                            }
+                        }
+                    }
+                    &__wrapper {
+                        @include percentage-value(width, 90);
+                        @include margin-left(5, percent);
+                        @include margin-right(5, percent);
+                        @include breakpoint($medium) {
+                            @include span(12 of 12 0);
+                            @include margin-left(5, percent);
+                            @include margin-right(5, percent);
+                            @include margin-left(0);
+                        }
+                    }
+                }
+            }
+        }
+        .search__results-images {
+            .slick-slide {
+               @include margin-right(6);
+               @include margin-left(6);
+            }
+
+            //@include span(6 of 6 0);
+            @include margin-bottom(24);
+            & h2 {
+                @include span(6 of 6 0);
+                @include font-size(16);
+                @include tertiary-semibold;
+                @include margin-bottom(16);
+                @include margin-top(12);
+                @extend %font-bold;
+                @include padding-left(8);
+            }
+            & .search-swip-carousel {
+                @include span(6 of 6 0);
+                @include border-bottom(1, solid, $line, 0.15);
+                @include pull-left;
+                @include padding(0, 0, 12, 0);
+                @include overflow-x(auto);
+                @include overflow-y(hidden);
+                white-space: nowrap;
+                transition: opacity .2s;
+                .swip-carousel-items {
+                    //@include pull-left;
+                    @include margin-right(12);
+                    @include margin-bottom(12);
+                    @include display(inline-block);
+                    @include pull-none;
+                    @include position(relative);
+                    vertical-align: top;                    
+                    white-space: normal;
+                    visibility: visible!important;
+                    background: #1a1a1a url("../../assets/images/bg/noImage.png") no-repeat center center;
+                    img {
+                        @include px-to-rem(height,146);
+                        &.no-image {
+                            display: inline-block;
+                            min-height: 146px;
+                            min-width: 146px;
+                        }
+                    }
+                }
+            }
+            .bx-has-controls-direction {
+                display: none
+            }
+            .img-holder > figure {
+                position: relative !important;
+                cursor: pointer;
+            }
+            .search-swip-carousel .swip-carousel-items img {
+                height: 146px;
+                width: auto;
+                position: relative;
+            }
+        }
+        ul.search__news {
+            @include span(12 of 12 0);
+            // @include pull-left;
+            @include margin-top(10);
+            @extend %clearfix;
+            // @include bleed(gutter(12));
+            // & .grid-4 {
+            //     // margin-bottom: gutter();
+            //     // @include span(12 of 12);
+            //     @include gallery(3 of 9);
+            //     // margin-bottom: gutter(9);
+            // }
+            & > li.grid-4 {
+                //@include gallery(6 of 6);
+                @include breakpoint($xsmall) {
+                    @include gallery(6 of 12);
+                }
+                @include breakpoint($medium) {
+                    @include gallery(4 of 8);
+                }
+                @include breakpoint($xlarge) {
+                    @include gallery(3 of 9);
+                }
+                // margin-bottom: gutter();
+                // &:nth-child(3n+3) {
+                //     @include last;
+                // }
+            }
+            // @include breakpoint($large) {
+            //     & .grid-4 {
+            //         @include span(6 of 12);
+            //     }
+            // }
+            // @include breakpoint($xlarge) {
+            //     & .grid-4 {
+            //         @include span(4 of 12);
+            //     }
+            // }
+            // & .mu-item {
+            //     @include margin-bottom(0);
+            //     @include px-to-rem(height, 295);
+            //     .mu-item__wrapper {
+            //         @include px-to-rem(height, 248);
+            //     }
+            // }
+            // .stats-bar {
+            //     @extend %stats-bar__center;
+            // }
+            // &.images {
+            //     .grid-4 {
+            //         .mu-item__info {
+            //             @include padding(0);
+            //             @include px-to-rem(bottom, 47);
+            //         }
+            //         .mu-item__title {
+            //             @include padding(16, 16, 0, 16);
+            //             &:before {
+            //                 @include px-to-rem(top, 0);
+            //             }
+            //         }
+            //         .mu-item__teasure {
+            //             @include background-color($mu-black, .7);
+            //             @include padding(12, 16, 12, 16);
+            //             @include display(block);
+            //             p {
+            //                 @include text-truncate-lines(2, 16, 1);
+            //             }
+            //         }
+            //     }
+            // }
+        }
+        // .search-result {
+        //     & .mu-item {
+        //         @include px-to-rem(height, 296);
+        //         // .mu-item__wrapper {
+        //         //     @include px-to-rem(height, 248);
+        //         // }
+        //     }
+        // }
+        .search-sponsor {
+            @include pull-left;
+            @include text-align(right);
+            @include px-to-rem(height,
+            45);
+            @include margin-bottom(10);
+            @include display(table);
+            @include display(none);
+            &.show-mobile {
+                @include breakpoint($small $max-xsmall) {
+                    display: block;
+                    @include margin-top(14);
+                }
+            }
+            &.show-web {
+                @include breakpoint($medium) {
+                    @include display(block);
+                }
+            }
+            & li {
+                @include secondry-regular;
+                @include color($line);
+                @include display(inline-block);
+                @include font-size(14);
+                @include font-weight(400);
+                @include pull-left;
+                @include line-height(1.29);
+                @include padding(0,
+                5,
+                0,
+                5);
+                width: 100%;
+                span {
+                    color: #6e6e6e;
+                    @include pull-left;
+                    @include margin-right(5);
+                    @include px-to-rem(height,
+                    40);
+                    @include calculate-width(100,
+                    110);
+                    @include text-align(right);
+                }
+                img {
+                    @include pull-right;
+                    @include px-to-rem(max-width,
+                    100);
+                    @include px-to-rem(max-height,
+                    70);
+                    @include padding(0,
+                    0,
+                    0,
+                    10);
+                }
+            }
+            .no-image {
+                color: #1a1a1a;
+            }
+            a {
+                @include display(block);
+            }
+        }
+        .search-sponsor__wrapper {
+            @include pull-left;
+            @include percentage-value(width,
+            100);
+            @include border-bottom(1,
+            solid,
+            $white);
+            @include margin-bottom(10);
+            @include breakpoint($medium) {
+                @include display(none);
+            }
+            & .search-sponsor {
+                @include display(block);
+                @include px-to-rem(height,
+                38);
+                @include margin-bottom(0);
+                @include pull-right;
+                img {
+                    @include px-to-rem(max-width,
+                    120);
+                }
+                li {
+                    @include percentage-value(width,
+                    100);
+                }
+            }
+        }
+        .no-margin-bottom {
+            @include margin-bottom(0);
+        }
+        .match-day.profile figure {
+            height: 100%;
+        }
+        // & .match-day.profile {
+        //     .match-day__info {
+        //         .profile__score {
+        //             @include span(6 of 6 0);
+        //             @include padding-bottom(20);
+        //             @include breakpoint($large) {
+        //                 @include span(5 of 12 0);
+        //                 @include pull-left;
+        //             }
+        //         }
+        //     }
+        // }
+        // & .match-day.profile {
+        //     .match-day__info {
+        //         .profile__details {
+        //             @include span(6 of 6 0);
+        //             @include breakpoint($large) {
+        //                 @include span(7 of 12 0);
+        //                 @include pull-left;
+        //                 ul {
+        //                     li {
+        //                         @include pull-left;
+        //                         @include percentage-value(width, 33);
+        //                         @include margin(20, 0, 0, 0);
+        //                     }
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+        .tt-suggestion:first-child {
+            //    @include background-color($suggested-color, 0.1);
+            @include font-weight(bold);
+            @include color($black);
+            pointer-events: none;
+             @include display(block);
+            @include percentage-value(width,100);
+            @include pull-left;
+        }
+        .do-you-mean {
+            //    @include background-color($suggested-color, 0.1);
+            @include font-weight(bold);
+            @include color($black);
+            pointer-events: none;
+            @include margin-left(40);
+            @include margin-top(15);
+        }
+        .do-you-mean + .tt-dataset {
+            @include margin-top(15);
+            .tt-suggestion:first-child {
+                @include font-weight(normal);
+                pointer-events: auto;
+                color: #6e6e6e;
+                background: none;
+                 @include display(block);
+            @include percentage-value(width,100);
+            @include pull-left;
+            }
+        }
+        & .search__results-images .bx-wrapper {
+            background: none;
+            box-shadow: 0 0 0px #ccc;
+            border: none;
+            @include margin-bottom(0);
+            @include pull-left;
+            @include border-bottom(1,solid,$line,0.15);
+            @include px-to-rem(height,171);
+            @include percentage-value(width,100);
+        }
+        & .img-holder figure {
+            background-size: cover;
+            background-position: initial;
+            // @include percentage-value(height, 100);
+        }
+        .profile_sponsor .sponsor-tag li:first-child {
+            @include display(none);
+        }
+        &.full-width {
+            background: #fff none repeat scroll 0 0;
+            @include margin-bottom(0);
+            @include margin-left(0);
+            @include margin-top(0);
+            @include padding-top(16);
+            width: 100%;
+            box-shadow: 140px 0 0 0 #ffffff, -140px 0 0 0 #ffffff;
+            @include breakpoint($medium) {
+                @include padding-top(24);
+            }
+            .grid-9 {
+                @include breakpoint($medium $max-medium) {
+                    @include span(8 of 12);
+                }
+            }
+        }
+        .search-card-click {
+            display: block;
+        }
+        .search-card-click::after {
+            content: " ";
+            height: 100%;
+            @include left(0);
+            position: absolute;
+            @include top(0);
+            width: 100%;
+            z-index: 100;
+        }
+        .search-statsbar,
+        .profile .btn-wrapper .white-btn-skew {
+            position: relative;
+            z-index: 101;
+        }
+        .match-day.profile .mu-item__sponsor {
+            @include left(auto);
+            z-index: 101;
+        }
+        .ad-block {
+            @include margin-bottom(24);
+            @include margin-top(12);
+            @include breakpoint($medium) {
+                @include margin-bottom(40);
+                @include margin-top(20);
+            }
+        }
+    }
+    
+    //closed left panel
+    .sidebar {
+        &.popular-items {
+            @include span(6 of 6);
+            @include pull-right;
+            @include margin-top(10);
+            @include breakpoint($medium) {
+                @include px-to-rem(width,
+                300);
+                @include margin-left(0);
+                @include margin-right(0);
+                //@include span(4 of 12 last);
+                // @include margin-left(0);
+                // @include margin-right(0);
+                // @include pull-right;
+            }
+            // @include breakpoint($large) {
+            //     @include span(3 of 12 last);
+            // }
+            .grid-xl.ad-block {
+                @include percentage-value(width,
+                100);
+                @include margin-left(0);
+                @include margin-right(0);
+            }
+            .search-sponsor {
+                @include px-to-rem(min-height,
+                217);
+                @include pull-left;
+                @include text-align(right);
+                @include percentage-value(width,
+                100);
+                @include display(none);
+                @include breakpoint($medium) {
+                    @include display(block);
+                }
+                & li {
+                    span {
+                        @include pull-left;
+                        @include padding-right(15);
+                    }
+                    @include secondry-regular;
+                    @include color($line);
+                    @include display(inline-block);
+                    @include font-size(14);
+                    @include font-weight(400);
+                    @include line-height(1.29);
+                }
+            }
+            .search-related {
+                @include margin-bottom(7);
+                @include margin-top(25);
+                @include pull-left;
+                h2 {
+                    @include tertiary-regular;
+                    @include font-size(14);
+                    @include font-weight(400);
+                    @include percentage-value(width,
+                    100);
+                    @include line-height(1.57);
+                    @include color($mu-black);
+                    @include pull-left;
+                    @include margin(0,
+                    0,
+                    5,
+                    0);
+                }
+                &.last {
+                    @include margin-bottom(24);
+                }
+                .related-tag {
+                    @extend ul;
+                    @include pull-left;
+                    @include text-align(left);
+                    li {
+                        @include border-radius(1);
+                        @include background-color($white);
+                        @include secondry-regular;
+                        @include display(inline-block);
+                        @include font-size(16);
+                        @include font-weight(400);
+                        @include line-height(1.38);
+                        letter-spacing: -0.2px;
+                        @include text-align(center);
+                        @include margin(5,
+                        10,
+                        5,
+                        0);
+                        @extend %text-capitalize;
+                        a {
+                            @include padding(7,
+                            16,
+                            7,
+                            16);
+                            @include display(inline-block);
+                            @include color($mu-black);
+                            border-bottom: 1px solid $white;
+                            &:hover {
+                                border-bottom: 1px solid $mu-red;
+                            }
+                        }
+                    }
+                }
+                &.ad {
+                    @include display(none);
+                    @include breakpoint($medium) {
+                        @include display(block);
+                    }
+                }
+                & .mu-item {
+                    @include margin-bottom(0);
+                    @include px-to-rem(height,
+                    283);
+                    .mu-item__wrapper {
+                        @include px-to-rem(height,
+                        240);
+                    }
+                }
+                .grid-3 {
+                    @include percentage-value(width,
+                    100);
+                    @include margin-left(0);
+                    @include margin-right(0);
+                }
+            }
+            & .advertisment {
+                @include display(none);
+                @include breakpoint($medium) {
+                    @include display(block);
+                    @include margin-top(15);
+                    @include margin-bottom(15);
+                    @include pull-left;
+                    img {
+                        @include percentage-value(width,
+                        100);
+                        @include pull-left;
+                    }
+                }
+            }
+            .stats-bar {
+                @extend %stats-bar__center;
+            }
+        }
+        .ad-block {
+            @include margin-top(0);
+        }
+    }
+    
+    #searchResults {
+        @include percentage-value(width,
+        100);
+        @include pull-left;
+    }
+    
+    span.icon-search-arrow {
+        @include position(relative);
+        @include top(28);
+        @include left(12);
+        @include z-index(99);
+        @include breakpoint($medium) {
+            @include top(42);
+            @include left(20);
+        }
+    }
+    
+    %stats-bar__center {
+        .stats-bar {
+            @extend %article__stats-bar;
+            @include position(relative);
+            //@include border-top(1, solid, $white-lighter);
+            @include padding(5,
+            0,
+            0,
+            0);
+            &__icons {
+                @extend %article__stats-bar_icons;
+                @include pull-left;
+                @include percentage-value(width,
+                100);
+                li {
+                    @include padding(0,
+                    0,
+                    0,
+                    0);
+                }
+            }
+        }
+    }
+    
+    .paging {
+        @include bottom(0);
+        @include left(0);
+        @include pull-left;
+        @include percentage-value(width,
+        100);
+        @include breakpoint($medium) {
+            // @include pull-right;
+            @include margin-bottom(30);
+            @include margin-top(0);
+        }
+        .pager {
+            @include margin-right(-5);
+            & .next {
+                @include pull-right;
+                @include secondry-regular;
+                @include color($default-text-color);
+                @include font-size(18);
+                @include px-to-rem(width,
+                40);
+                @include margin-top(24);
+                @include margin-left(10);
+                @include cursor(pointer);
+            }
+            & .prev {
+                @include pull-left;
+                @include secondry-regular;
+                @include color($default-text-color);
+                @include font-size(18);
+                @include px-to-rem(width,
+                40);
+                @include margin-top(24);
+                @include margin-right(10);
+                @include cursor(pointer);
+            }
+            ul {
+                @include pull-right;
+                @include breakpoint($small $max-xsmall) {
+                    @include text-align(center);
+                    @include margin-top(20);
+                    width: 100%;
+                }
+                li {
+                    @include pull-left;
+                    @include margin(10,
+                    0,
+                    10,
+                    0);
+                    @include breakpoint($medium) {
+                        @include margin(10,
+                        5,
+                        10,
+                        5);
+                    }
+                    a {
+                        @include margin(0,
+                        4,
+                        0,
+                        4);
+                        @include padding(10,
+                        8,
+                        10,
+                        8);
+                        @include line-height(1.6);
+                        @include font-size(14);
+                        @include secondry-regular;
+                        @include color($default-text-color);
+                        @include pull-left;
+                        @include cursor(pointer);
+                        @include breakpoint($medium) {
+                            @include font-size(18);
+                            @include padding(6,
+                            6,
+                            6,
+                            6);
+                        }
+                        @include breakpoint($large) {
+                            @include padding(10,
+                            8,
+                            10,
+                            8);
+                        }
+                        &.active {
+                            @include border-bottom(2,
+                            solid,
+                            $brand-color);
+                            @include color($mu-black);
+                            @extend %font-bold;
+                        }
+                    }
+                }
+            }
+            .prev-small {
+                @include display(block);
+                @include pull-right;
+                @include breakpoint($medium) {
+                    @include display(none);
+                }
+            }
+            .prev-large {
+                @include display(none);
+                @include pull-right;
+                @include breakpoint($medium) {
+                    @include display(block);
+                }
+            }
+            .next-large {
+                @include pull-left;
+                @include display(none);
+                @include breakpoint($medium) {
+                    @include display(block);
+                }
+            }
+            .next-small {
+                @include pull-left;
+                @include display(block);
+                @include breakpoint($medium) {
+                    @include display(none);
+                }
+            }
+        }
+        & .icon-next-page-arrow {
+            @include pull-right;
+            @include margin-top(10);
+            @include margin-left(15);
+        }
+        & .icon-prev-page-arrow {
+            @include pull-left;
+            @include margin-top(10);
+            @include margin-left(-10);
+            @include padding(0);
+            @include margin-right(10);
+        }
+    }
+    
+    .pager {
+        @include breakpoint($small $xlarge) {
+            @include percentage-value(width,
+            100);
+        }
+        & .pagination {
+            li {
+                @include display(none);
+                @include breakpoint($medium) {
+                    @include display(block);
+                }
+                &:first-child {
+                    @include display(block);
+                    @include pull-left;
+                    @include breakpoint($small $max-xsmall) {
+                        @include pull-none;
+                        @include display(inline-block);
+                        @include text-align(center);
+                        @include color($mu-black);
+                        @include text-transform(uppercase);
+                        letter-spacing: 2px;
+                        a {
+                            @include pull-none;
+                            @include display(inline-block);
+                            .icon-prev-page-arrow {
+                                @include display(none);
+                            }
+                        }
+                    }
+                }
+                &:last-child {
+                    @include display(block);
+                    @include pull-right;
+                    @include breakpoint($small $max-xsmall) {
+                        @include pull-none;
+                        @include display(inline-block);
+                        @include text-align(center);
+                        @include color($mu-black);
+                        @include text-transform(uppercase);
+                        letter-spacing: 2px;
+                        a {
+                            @include pull-none;
+                            @include display(inline-block);
+                            .icon-next-page-arrow {
+                                @include display(none);
+                            }
+                        }
+                    }
+                }
+                a {
+                    @include breakpoint($small $max-xsmall) {
+                        border: 1px solid rgba(26, 26, 26, 0.2);
+                        transform: skewX(-10deg);
+                        @include padding(13,
+                        40,
+                        13,
+                        40,
+                        important);
+                        i {
+                            transform: skewX(10deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .search__items__detail {
+        &.video {
+            cursor: pointer;
+            .search-statsbar {
+                @include bottom(24);
+                position: absolute;
+            }
+            .detail__right {
+                @include margin-bottom(36);
+            }
+        }
+    }
+    
+    // background color for search page.
+    body.search_page {
+        background: #f8f8f8 !important;
+    }
+    
+    .typeahead-container .tt-menu {
+        z-index: 105 !important;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07) !important;
+        @include margin-top(0,
+        important);
+    }
+    
+    .typeahead-container .tt-suggestion {
+        @include padding-left(16,
+        important);
+         @include display(block);
+            @include percentage-value(width,100);
+            @include pull-left;
+        @include breakpoint($medium) {
+            @include padding-left(24,
+            important);
+        }
+    }
+    
+    // sticky search panel
+    .scrolled-header {
+        &+.main-container {
+            .search-panel {
+                &.full-width {
+                    @include left(0);
+                    position: fixed;
+                    @include top(66);
+                    z-index: 999;
+                    min-width: 320px;
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+                    .container {
+                        width: 100%;
+                    }
+                }
+                &:not(.full-width) {
+                    @include margin-top(170);
+                    @include breakpoint($xsmall) {
+                        @include margin-top(210);
+                    }
+                    @include breakpoint($medium) {
+                        @include margin-top(225);
+                    }
+                }
+            }
+            .sidebar {
+                @include breakpoint($medium) {
+                    @include margin-top(255);
+                }
+            }
+        }
+    }
+    
+    .search_page .home-header.scrolled-header .home-header__bottom {
+        box-shadow: none;
+    }
+    
+    .home-header:not(.scrolled-header) +.main-container .search-panel.full-width .container {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    // loader fix
+    .search_page .loader-wrapper {
+        position: fixed;
+        z-index: 9999;
+        @include padding(0);
+        @include top(50,
+        percent);
+        transform: translate(0, -50%);
+        height: auto;
+        @include bottom(auto);
+    }
+
+
+    .search-panel .grid-12.matches .live-table .mu-item__sponsor {
+          @include display(block);
+          @include position(relative);
+    }
+
